@@ -7,7 +7,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sludgewave: ['9L1'],
 			acidspray: ['9L1'],
 			gastroacid: ['9L1'],
-			amnesia: ["9M", "8M", "8V"],
+			amnesia: ["9L1", "8M", "8V"],
 			attract: ["9M", "8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			bide: ["9M", "7V"],
 			bind: ["9M", "7T", "6T", "5T"],
