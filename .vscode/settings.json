@@ -6,5 +6,6 @@
   "typescript.format.semicolons": "insert",
   "eslint.options": {
     "configFile": ".eslintrc.json"
-  }
+	},
+	"nuxt.isNuxtApp": false
 }
