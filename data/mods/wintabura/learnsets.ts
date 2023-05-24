@@ -1007,11 +1007,9 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	butterfree: {
 		learnset: {
 			// New
-				reflect: ["8M"],
 				lightscreen: ["8M"],
 				aromatherapy: ["8M"],
 				stickyweb: ["8M"],
-				drainingkiss: ["8M"],
 			//
 			acrobatics: ["8M", "7M", "6M", "5M"],
 			aerialace: ["7M", "6M", "5M", "4M", "3M", "3S0"],
