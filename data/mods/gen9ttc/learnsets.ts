@@ -34,5 +34,59 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			luminacrash: ["9M"],
 			trickroom: ["8M"],
 		}
-	}
+	},
+	beedrill: {
+		inherit: true,
+		learnset: {
+			crosspoison: ["8M"],
+			dualwingbeat: ["8M"],
+			firstimpression: ["8M"],
+		}
+	},
+	pidgeot: {
+		inherit: true,
+		learnset: {
+			bulkup: ["8M"],
+			extremespeed: ["8M"],
+			aurasphere: ["8M"],
+			hypervoice: ["8M"], // For Mega Pidgeot
+		},
+	},
+	raticate: {
+		inherit: true,
+		learnset: {
+			closecombat: ["8M"],
+			firefang: ["8M"],
+			icefang: ["8M"],
+			psychicfang: ["8M"]
+		}
+	},
+	raticatealola: {
+		inherit: true,
+		learnset: {
+			closecombat: ["8M"],
+			firefang: ["8M"],
+			icefang: ["8M"],
+			psychicfang: ["8M"],
+			partingshot: ["8M"],
+		},
+	},
+	fearow: {
+		inherit: true,
+		learnset: {
+			swordsdance: ["8M"],
+			dualwingbeat: ["8M"],
+			beakblast: ["8M"],
+			foulplay: ["8M"],
+			nightslash: ["8M"],
+			falsesurrender: ["8M"],
+		},
+	},
+	arbok: {
+		inherit: true,
+		learnset: {
+			jawlock: ["8M"],
+			shedtail: ["9M"],
+		},
+	},
 };
