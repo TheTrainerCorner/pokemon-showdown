@@ -20,7 +20,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	blastoise: {
 		inherit: true,
 		learnset: {
-			hydrostream: ["9M"],
+			hydrosteam: ["9M"],
 			steameruption: ["8M"],
 		}
 	},
