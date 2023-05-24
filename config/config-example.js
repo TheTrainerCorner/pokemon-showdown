@@ -177,7 +177,7 @@ Y929lRybWEiKUr+4Yw2O1W0CAwEAAQ==
  */
 exports.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'play.pokemonshowdown.com',
+	client: '34.125.114.43',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 };
@@ -459,7 +459,7 @@ exports.appealurl = '';
  * replsocketprefix - the prefix for the repl sockets to be listening on
  * replsocketmode - the file mode bits to use for the repl sockets
  */
-exports.repl = true;
+exports.repl = false;
 exports.replsocketprefix = './logs/repl/';
 exports.replsocketmode = 0o600;
 
