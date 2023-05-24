@@ -25,7 +25,7 @@ export const Formats: FormatList = [
 		section: "Wintabura Singles",
 		name: "[Gen 9] Random Battle",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with sets that are generated to be competitively viable.`,
-		mod: 'wintabura',
+		mod: 'gen9wintabura',
 		team: 'random',
 		ruleset: ['Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod'],
 	},
@@ -38,13 +38,13 @@ export const Formats: FormatList = [
 	// },
 	{
 		name: "[Gen 9] OU",
-		mod: 'wintabura',
+		mod: 'gen9wintabura',
 		ruleset: ['Standard', 'Dynamax Clause', 'Z-Move Clause'],
 		banlist: ['Uber', 'AG', 'Moody', 'Power Construct', 'Shadow Tag', 'Arena Trap', 'Swagger', 'Misty Explosion'],
 	},
 	{
 		name: "[Gen 9] Ubers",
-		mod: "wintabura",
+		mod: "gen9wintabura",
 		ruleset: ['Standard', 'Dynamax Clause', 'Z-Move Clause'],
 		banlist: ['AG', 'Moody'], 
 	}
