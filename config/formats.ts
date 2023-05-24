@@ -22,10 +22,10 @@ export const Formats: FormatList = [
 	///////////////////////////////////////
 
 	{
-		section: "Wintabura Singles",
+		section: "The Trainer Corner",
 		name: "[Gen 9] Random Battle",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with sets that are generated to be competitively viable.`,
-		mod: 'gen9wintabura',
+		mod: 'gen9ttc',
 		team: 'random',
 		ruleset: ['Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod'],
 	},
@@ -38,13 +38,13 @@ export const Formats: FormatList = [
 	// },
 	{
 		name: "[Gen 9] OU",
-		mod: 'gen9wintabura',
+		mod: 'gen9ttc',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
 		banlist: ['ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Shed Tail'],
 	},
 	{
 		name: "[Gen 9] Ubers",
-		mod: "gen9wintabura",
+		mod: "gen9ttc",
 		ruleset: ['Standard', 'Dynamax Clause', 'Z-Move Clause'],
 		banlist: ['AG', 'Moody'], 
 	}
