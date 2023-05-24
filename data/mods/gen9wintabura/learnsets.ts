@@ -1715,13 +1715,13 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		],
 	},
 	raticatealola: {
+		learnset: {
 		// New
 		closecombat: ["8M"],
 		firefang: ["8M"],
 		icefang: ["8M"],
 		psychicfang: ["8M"],
 		//
-		learnset: {
 			assurance: ["7L19"],
 			attract: ["7M"],
 			bite: ["8V", "7L10"],
