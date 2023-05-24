@@ -3,8 +3,4 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		inherit: true,
 		tier: "OU",	
 	},
-	blastoise: {
-		inherit: true,
-		tier: "UU",
-	}
 };
