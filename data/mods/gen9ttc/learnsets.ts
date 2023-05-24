@@ -16,5 +16,23 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			uturn: ['8M'],
 			burnup: ['8M'],
 		}
+	},
+	blastoise: {
+		inherit: true,
+		learnset: {
+			hydrostream: ["9M"],
+			steameruption: ["8M"],
+		}
+	},
+	butterfree: {
+		inherit: true,
+		learnset: {
+			lightscreen: ["8M"],
+			aromatherapy: ["8M"],
+			stickyweb: ["8M"],
+			psyshock: ["8M"],
+			luminacrash: ["9M"],
+			trickroom: ["8M"],
+		}
 	}
 };
