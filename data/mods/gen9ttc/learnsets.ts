@@ -2,11 +2,10 @@
 
 export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	venusaur: {
-		inherit: true,
 		learnset: {
-			sludgewave: ['9L1'],
-			acidspray: ['9L1'],
-			gastroacid: ['9L1'],
+			sludgewave: ['8M'],
+			acidspray: ['8M'],
+			gastroacid: ['8M'],
 			amnesia: ["9L1", "8M", "8V"],
 			attract: ["9M", "8M", "7M", "7V", "6M", "5M", "4M", "3M"],
 			bide: ["9M", "7V"],
