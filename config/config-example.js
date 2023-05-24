@@ -13,7 +13,7 @@ exports.port = 8000;
  *
  * @type {string}
  */
-exports.bindaddress = '34.125.114.43';
+exports.bindaddress = '0.0.0.0';
 
 /**
  * workers - the number of networking child processes to spawn
