@@ -1,5 +1,7 @@
-export const FormatsData: {[k: string]: SpeciesFormatsData} = {
+export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	venusaur: {
+		inherit: true,
 		tier: "OU",
+		
 	}
 };
