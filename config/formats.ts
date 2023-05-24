@@ -39,8 +39,8 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] OU",
 		mod: 'gen9wintabura',
-		ruleset: ['Standard', 'Dynamax Clause', 'Z-Move Clause'],
-		banlist: ['Uber', 'AG', 'Moody', 'Power Construct', 'Shadow Tag', 'Arena Trap', 'Swagger', 'Misty Explosion'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		banlist: ['ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Shed Tail'],
 	},
 	{
 		name: "[Gen 9] Ubers",
