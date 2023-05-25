@@ -41,7 +41,6 @@ export const Formats: FormatList = [
 		name: "[Gen 9] Draft",
 		mod: 'gen9ttc',
 		ruleset: ['TTC Draft', 'Standard NatDex'],
-		banlist: ['Banned']
 	},
 	{
 		name: "[Gen 9] National Dex",
