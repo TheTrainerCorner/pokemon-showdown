@@ -38,6 +38,12 @@ export const Formats: FormatList = [
 	// 	banlist: [],
 	// },
 	{
+		name: "[Gen 9] Draft",
+		mod: 'gen9ttc',
+		ruleset: ['TTC Draft', 'Standard NatDex'],
+		banlist: ['Banned']
+	},
+	{
 		name: "[Gen 9] National Dex",
 		mod: 'gen9ttc',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
