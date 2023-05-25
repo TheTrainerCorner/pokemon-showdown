@@ -49,5 +49,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 80, atk: 95, def: 89, spa: 65, spd: 99, spe: 75},
 		abilities: {0: "Intimidate", 1: "Shed Skin", H: "Strong Jaw"},
+	},
+
+	primeape: {
+		inherit: true,
+		abilities: {0: "Vital Spirit", 1: "Anger Point", H: "Gorilla Tactics"},
+	},
+	arcanine: {
+		inherit: true,
+		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Strong Jaw"},
 	}
 };
