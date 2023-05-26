@@ -196,14 +196,6 @@ export const Tags: {[id: string]: TagData} = {
 		name: "AG",
 		speciesFilter: species => species.tier === 'AG',
 	},
-	banned: {
-		name: "Banned",
-		speciesFilter: species => species.tier === 'Banned',
-	},
-	"18": {
-		name: "18",
-		speciesFilter: species => species.tier === '18',
-	},
 
 	// Doubles tiers
 	// -------------
