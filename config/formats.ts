@@ -12,5 +12,5 @@ export const Formats: FormatList = [
 		ruleset: [
 			'TTC Draft'
 		]
-	}
+	},
 ];
