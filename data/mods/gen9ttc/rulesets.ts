@@ -6,7 +6,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		ruleset: [
 			'Standard NatDex',
 		],
-		banlist: ['Banned'],
+		banlist: [],
 
 	}
 }
