@@ -24,6 +24,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				
 			}
 		},
+		desc: "When this user uses a bite move, it will heal 1/8 of the damage that was dealt to the target",
+		shortDesc: "Using Bite moves will heal the user 1/8 of the damage dealt.",
 		name: 'Vampire',
 		rating: 4.5,
 		num: -100,
