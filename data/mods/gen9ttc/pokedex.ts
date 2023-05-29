@@ -58,5 +58,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	arcanine: {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Strong Jaw"},
+	},
+	crobat: {
+		inherit: true,
+		abilities: {0: "Inner Focus", 1: "Infiltrator",  H: "Vampire"},
 	}
 };

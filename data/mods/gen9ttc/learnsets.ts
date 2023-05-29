@@ -400,5 +400,15 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			zapcannon: ["7V"],
 			zenheadbutt: ["8M", "7T", "6T", "5T", "4T"],
 		}
+	},
+	crobat: {
+		inherit: true,
+		learnset: {
+			poisonjab: ["8M"],
+			toxicspikes: ["8M"],
+			firefang: ["8M"],
+			thunderfang: ["8M"],
+			icefang: ["8M"],
+		},
 	}
 };
