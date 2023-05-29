@@ -19,7 +19,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	vampire: {
 		onTryHit(source, target, move) {
-			console.log(move.flags['bite']);
+			console.log(move.flags);
 			if(move.flags['bite']) {
 				source.heal(source.baseMaxhp / 8);
 			}
