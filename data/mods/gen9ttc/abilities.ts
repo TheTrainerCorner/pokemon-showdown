@@ -18,10 +18,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		}
 	},
 	vampire: {
-		onTryHit(source, target, move) {
-			console.log(move.flags);
+		onModifyMove(move, pokemon, target) {
 			if(move.flags['bite']) {
-				source.heal(source.baseMaxhp / 8);
+				move.drain = [1, 8];
 			}
 		},
 		desc: "When this user uses a bite move, it will heal 1/8 of the damage that was dealt to the target",
