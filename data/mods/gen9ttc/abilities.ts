@@ -20,8 +20,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	vampire: {
 		onTryHit(source, target, move) {
 			if(move.flags['bite']) {
-				let result = this.heal(source.baseMaxhp / 8);
-				this.debug(`Heal: ${result}`);
+				this.heal(source.baseMaxhp / 8);
+				this.debug('Vampire successfully triggered');
 			}
 		},
 		desc: "When this user uses a bite move, it will heal 1/8 of the damage that was dealt to the target",
