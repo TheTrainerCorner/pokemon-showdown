@@ -43,6 +43,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		name: 'Fly Trap',
+		desc: "Prevents opposing Bug-type Pokemon from choosing to switch out, unless they are holding a Shed Shell.",
+		shortDesc: "Prevents opposing Bug-type Pokemon from choosin to switch out.",
 		rating: 3,
 		num: -101
 	},

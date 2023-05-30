@@ -259,7 +259,219 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			shedtail: ["9M"],
 		},
 	},
-
+	pikachu: {
+		inherit: true,
+		learnset: {
+			zippyzap: ["8M"],
+		}
+	},
+	raichu: {
+		inherit: true,
+		learnset: {
+			zippyzap: ["8M"],
+		}
+	},
+	sandslash: {
+		inherit: true,
+		learnset: {
+			spikyshield: ["8M"],
+			spinout: ["9M"],
+		},
+	},
+	sandslashalola: {
+		inherit: true,
+		learnset: {
+			spikyshield: ["8M"],
+			icespinner: ["9M"],
+		},
+	},
+	nidoking: {
+		inherit: true,
+		learnset: {
+			gunkshot: ["8M"],
+			precipiceblades: ["8M"],
+		}
+	},
+	ninetales: {
+		learnset: {
+			lavaplume: ["8M"],
+			darkvoid: ["8M"],
+			destinybond: ["8M"],
+			nightmare: ["8M"],
+			bittermalice: ["8M"],
+			nightdaze: ["8M"],
+			////////////////////////////////////////////////////
+			agility: ["8M"],
+			attract: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
+			bide: ["7V"],
+			bodyslam: ["8M", "7V", "3T"],
+			burningjealousy: ["8T"],
+			calmmind: ["8M", "8V", "7M", "6M", "5M", "4M"],
+			captivate: ["4M"],
+			confide: ["7M", "6M"],
+			confuseray: ["8L1", "7L1", "7V", "6L1", "5L1", "4L1", "3L1"],
+			covet: ["7T", "6T", "5T"],
+			curse: ["7V"],
+			darkpulse: ["8M", "8V", "7M", "6M", "5T", "4M"],
+			dig: ["8M", "8V", "7V", "6M", "5M", "4M", "3M"],
+			disable: ["8L1"],
+			doubleedge: ["7V", "3T"],
+			doubleteam: ["7M", "7V", "6M", "5M", "4M", "3M"],
+			dreameater: ["8V", "7M", "6M", "5M", "4M"],
+			ember: ["8L1", "8V", "7V", "5L1", "4L1", "3L1"],
+			encore: ["8M"],
+			endure: ["8M", "7V", "4M", "3T"],
+			energyball: ["8M", "7M", "6M", "5M"],
+			extrasensory: ["8L1"],
+			facade: ["8M", "8V", "7M", "6M", "5M", "4M", "3M"],
+			faketears: ["8M"],
+			fireblast: ["8M", "8L1", "8V", "7M", "7V", "6M", "5M", "4M", "3M"],
+			firespin: ["8M", "8L1", "7V", "3L45"],
+			flamecharge: ["7M", "6M", "5M"],
+			flamethrower: ["8M", "8L1", "8V", "7M", "7L1", "6M", "6L1", "5M", "4M", "3M"],
+			flareblitz: ["8M"],
+			foulplay: ["8M", "8V", "7T", "6T", "5T"],
+			frustration: ["7M", "7V", "6M", "5M", "4M", "3M"],
+			gigaimpact: ["8M", "7M", "6M", "5M", "4M"],
+			grudge: ["8L1"],
+			headbutt: ["8V", "7V", "4T"],
+			heatwave: ["8M", "7T", "6T", "5T", "5S0", "4T"],
+			hex: ["8M"],
+			hiddenpower: ["7M", "7V", "6M", "5M", "4M", "3M"],
+			hyperbeam: ["8M", "8V", "7M", "7V", "6M", "5M", "4M", "3M"],
+			hypnosis: ["8V"],
+			imprison: ["8M", "8L1", "7L1", "6L1"],
+			incinerate: ["8L1", "6M", "5M"],
+			inferno: ["8L1"],
+			irontail: ["8M", "8V", "7T", "7V", "6T", "5T", "4M", "3M"],
+			laserfocus: ["7T"],
+			mimic: ["7V", "3T"],
+			mysticalfire: ["8M"],
+			// nastyplot: ["8M", "8L1", "8V", "7L1", "6L1", "5L1", "4L1"], // Removed This move
+			naturalgift: ["4M"],
+			ominouswind: ["4T"],
+			overheat: ["8M", "7M", "6M", "5M", "4M", "3M"],
+			painsplit: ["7T", "6T", "5T", "4T"],
+			payback: ["8M", "7M", "6M", "5M", "4M"],
+			powerswap: ["8M"],
+			protect: ["8M", "8V", "7M", "7V", "6M", "5M", "4M", "3M"],
+			psychup: ["7M", "6M", "5M", "4M"],
+			psyshock: ["8M", "7M", "6M", "5M", "5S0"],
+			quickattack: ["8L1", "8V", "7L1", "7V", "6L1", "5L1", "4L1", "3L1"],
+			rage: ["7V"],
+			reflect: ["8V", "7V"],
+			rest: ["8M", "8V", "7M", "7V", "6M", "5M", "4M", "3M"],
+			return: ["7M", "7V", "6M", "5M", "4M", "3M"],
+			roar: ["7M", "7V", "6M", "5M", "4M", "3M"],
+			roleplay: ["7T", "6T", "5T", "4T"],
+			round: ["8M", "7M", "6M", "5M"],
+			safeguard: ["8M", "8L1", "7M", "7L1", "7V", "6M", "6L1", "5M", "5L1", "4M", "4L1", "3M", "3L1"],
+			scorchingsands: ["8T"],
+			secretpower: ["6M", "4M", "3M"],
+			shadowball: ["8M"],
+			skullbash: ["7V"],
+			sleeptalk: ["8M", "7M", "7V", "6M", "5T", "4M", "3T"],
+			snore: ["8M", "7T", "7V", "6T", "5T", "4T", "3T"],
+			solarbeam: ["8M", "8V", "7M", "6M", "5M", "5S0", "4M"],
+			spite: ["8L1", "7T", "6T", "5T", "4T"],
+			storedpower: ["8M"],
+			substitute: ["8M", "8V", "7M", "7V", "6M", "5M", "4M", "3T"],
+			sunnyday: ["8M", "7M", "7V", "6M", "5M", "4M", "3M"],
+			swagger: ["7M", "7V", "6M", "5M", "4M", "3T"],
+			swift: ["8M", "7V", "4T", "3T"],
+			tackle: ["8V"],
+			tailslap: ["8M"],
+			tailwhip: ["8L1", "8V", "7V"],
+			takedown: ["7V"],
+			toxic: ["8V", "7M", "7V", "6M", "5M", "4M", "3M"],
+			weatherball: ["8M"],
+			willowisp: ["8M", "8L1", "8V", "7M", "6M", "5M", "5S0", "4M"],
+			zenheadbutt: ["8M", "7T", "6T", "5T", "4T"],
+		},
+	},
+	ninetalesalola: {
+		inherit: true,
+		learnset: {
+			haze: ["8M"],
+			cillyreception: ["9M"],
+			glaciate: ["8M"],
+		},
+	},
+	wigglytuff: {
+		inherit: true,
+		learnset: {
+			moonblast: ["8M"],
+		},
+	},
+	crobat: {
+		inherit: true,
+		learnset: {
+			poisonjab: ["8M"],
+			toxicspikes: ["8M"],
+			firefang: ["8M"],
+			thunderfang: ["8M"],
+			icefang: ["8M"],
+		},
+	},
+	vileplume: {
+		inherit: true,
+		learnset: {
+			appleacid: ["8M"],
+			trailblaze: ["9M"],
+			acidspray: ["8M"],
+		},
+	},
+	parasect: {
+		inherit: true,
+		learnset: {
+			crabhammer: ["8M"],
+			grassyglide: ["8M"],
+			spore: ["8M"],
+			uturn: ["8M"],
+			leafblade: ["8M"],
+			pounce: ["8M"],
+			trailblaze: ["9M"],
+		},
+	},
+	venomoth: {
+		inherit: true,
+		learnset: {
+			hex: ["8M"],
+		},
+	},
+	dugtrio: {
+		inherit: true,
+		learnset: {
+			headlongrush: ["8M"],
+		},
+	},
+	dugtrioalola: {
+		inherit: true,
+		learnset: {
+			headlongrush: ["8M"],
+		}
+	},
+	persian: {
+		inherit: true,
+		learnset: {
+			dazzlinggleam: ["8M"],
+			suckerpunch: ["8M"],
+		},
+	},
+	persianalola: {
+		inherit: true,
+		learnset: {
+			suckerpunch: ["8M"],
+			nightdaze: ["8M"],
+		},
+	},
+	golduck: {
+		inherit: true,
+		learnset: {
+			teleport: ["8M"],
+			expandingforce: ["8M"],
+		},
+	},
 	primeape: {
 		inherit: true,
 		learnset: {
@@ -401,14 +613,18 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			zenheadbutt: ["8M", "7T", "6T", "5T", "4T"],
 		}
 	},
-	crobat: {
+	machamp: {
 		inherit: true,
 		learnset: {
-			poisonjab: ["8M"],
-			toxicspikes: ["8M"],
-			firefang: ["8M"],
-			thunderfang: ["8M"],
-			icefang: ["8M"],
+			drainpunch: ["8M"],
+			combattorque: ["9M"],
 		},
-	}
+	},
+	victreebel: {
+		inherit: true,
+		learnset: {
+			solarblade: ["8M"],
+		},
+	},
+	
 };
