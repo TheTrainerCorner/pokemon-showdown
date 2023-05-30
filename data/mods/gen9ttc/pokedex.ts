@@ -279,4 +279,169 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 95, atk: 115, def: 85, spa: 125, spd: 75, spe: 60},
 		abilities: {0: "Ripen", 1: "Lightning Rod", H: "Harvest"},
 	},
+	marowak: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 80, def: 110, spa: 35, spd: 80, spe: 55},
+		abilities: {0: "Rock Head", 1: "Technician", H: "Sand Force"},
+	},
+	marowakalola: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 95, def: 95, spa: 35, spd: 80, spe: 45},
+		abilities: {0: "Cursed Body", 1: "Technician", H: "Rock Head"},
+	},
+	hitmonlee: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 120, def: 53, spa: 35, spd: 110, spe: 60},
+	},
+	hitmonchan: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 105, def: 89, spa: 35, spd: 110, spe: 70},
+	},
+	hitmontop: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 100, def: 100, spa: 35, spd: 110, spe: 80},
+		abilities: {0: "Intimidate", 1: "Technician", H: "Guts"},
+	},
+	lickilicky: {
+		inherit: true,
+		abilities: {0: "Own Tempo", 1: "Unaware", H: "Cloud Nine"},
+	},
+	weezing: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 90, def: 120, spa: 85, spd: 70, spe: 60},
+	},
+	rhyperior: {
+		inherit: true,
+		abilities: {0: "Sap Sipper", 1: "Solid Rock", H: "Reckless"},
+	},
+	chansey: {
+		inherit: true,
+		baseStats: {hp: 230, atk: 5, def: 15, spa: 55, spd: 95, spe: 50},
+		abilities: {0: "Natural Cure", 1: "Serene Grace", H: "Curious Medicine"},
+	},
+	blissey: {
+		inherit: true,
+		types: ["Normal", "Fairy"],
+		baseStats: {hp: 235, atk: 10, def: 25, spa: 95, spd: 120, spe: 55},
+		abilities: {0: "Natural Cure", 1: "Misty Surge", H: "Curious Medicine"},
+	},
+	tangrowth: {
+		inherit: true,
+		abilities: {0: "Tangling Hair", 1: "Innards Out", H: "Regenerator"},
+	},
+	kangaskhan: {
+		inherit: true,
+		abilities: {0: "Adaptability", 1: "Scrappy", H: "Inner Focus"},
+	},
+	kangaskhanmega: {
+		inherit: true,
+		baseStats: {hp: 105, atk: 125, def: 105, spa: 60, spd: 105, spe: 90},
+		abilities: {0: "Sheer Force"},
+	},
+	kingdra: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 85, def: 95, spa: 105, spd: 95, spe: 85},
+	},
+	seaking: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 112, def: 65, spa: 65, spd: 80, spe: 48},
+		abilities: {0: "Swift Swim", 1: "Supreme Overlord", H: "Lightning Rod"},
+	},
+	starmie: {
+		inherit: true,
+		abilities: {0: "Mirror Armor", 1: "Natural Cure", H: "Analytic"},
+	},
+	mrmime: {
+		inherit: true,
+		baseStats: {hp: 50, atk: 45, def: 65, spa: 100, spd: 120, spe: 90},
+		abilities: {0: "Soundproof", 1: "Filter", H: "Psychic Surge"},
+	},
+	mrmimegalar: {
+		inherit: true,
+		abilities: {0: "Snow Warning", 1: "Screen Cleaner", H: "Ice Body"},
+	},
+	mrrime: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 65, def: 75, spa: 110, spd: 100, spe: 100},
+		abilities: {0: "Snow Warning", 1: "Screen Cleaner", H: "Ice Body"},
+	},
+	scyther: {
+		inherit: true,
+		abilities: {0: "Swarm", 1: "Adaptability", H: "Sharpness"},
+	},
+	scizor: {
+		inherit: true,
+		abilities: {0: "Swarm", 1: "Technician", H: "Sharpness"},
+	},
+	jynx: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 50, def: 55, spa: 115, spd: 95, spe: 100},
+		abilities: {0: "Oblivious", 1: "Dazzling", H: "Dry Skin"},
+	},
+	electivire: {
+		inherit: true,
+		types: ["Electric", "Fighting"],
+		baseStats: {hp: 75, atk: 113, def: 67, spa: 95, spd: 85, spe: 95},
+		abilities: {0: "Motor Drive", H: "Iron Fist"},
+	},
+	magmortar: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 95, def: 67, spa: 115, spd: 95, spe: 93},
+		abilities: {0: "Flame Body", H: "Mega Launcher"},
+	},
+	pinsir: {
+		inherit: true,
+		types: ["Bug", "Ground"],
+	},
+	tauros: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 100, def: 95, spa: 65, spd: 70, spe: 110},
+	},
+	gyarados: {
+		inherit: true,
+		types: ["Water", "Dragon"],
+		abilities: {0: "Intimidate", 1: "Anger Point", H: "Moxie"},
+	},
+	gyaradosmega: {
+		inherit: true,
+		types: ["Water", "Dragon"],
+	},
+	lapras: {
+		inherit: true,
+		baseStats: {hp: 120, atk: 75, def: 95, spa: 90, spd: 80, spe: 60},
+		abilities: {0: "Water Absorb", 1: "Drizzle", H: "Rain Dish"},
+	},
+	ditto: {
+		inherit: true,
+		abilities: {0: "Limber", 1: "Illusion", H: "Imposter"},
+	},
+	vaporeon: {
+		inherit: true,
+		abilities: {0: "Water Absorb", 1: "Rain Dish", H: "Hydration"},
+	},
+	jolteon: {
+		inherit: true,
+		abilities: {0: "Volt Absorb", 1: "Electromorphosis", H: "Speed Boost"},
+	},
+	flareon: {
+		inherit: true,
+		baseStats: {hp: 110, atk: 130, def: 95, spa: 60, spd: 65, spe: 65},
+		abilities: {0: "Flash Fire", 1: "Sheer Force", H: "Guts"},
+	},
+	leafeon: {
+		inherit: true,
+		abilities: {0: "Leaf Guard", 1: "Solar Power", H: "Chlorophyll"}
+	},
+	glaceon: {
+		inherit: true,
+		abilities: {0: "Slush Rush", 1: "Snow Warning", H: "Ice Body"},
+	},
+	umbreon: {
+		inherit: true,
+		abilities: {0: "Synchronize", 1: "Dark Aura", H: "Inner Focus"},
+	},
+	espeon: {
+		inherit: true,
+		abilities: {0: "Synchronize", 1: "Magic Guard", H: "Magic Bounce"},
+	},
 };
