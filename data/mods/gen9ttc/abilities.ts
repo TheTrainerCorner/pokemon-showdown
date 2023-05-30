@@ -48,4 +48,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3,
 		num: -101
 	},
+	baller: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if(move.flags['bullet']) {
+				this.debug('Baller boost');
+				return this.chainModify(1.3);
+			}
+		},
+		shortDesc: "This Pokemon's bullet moves have their power multiplied by 1.3.",
+		name: "Baller",
+		rating: 3.5,
+		num: -102,
+	},
 };

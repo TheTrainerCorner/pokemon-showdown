@@ -144,6 +144,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Psychic"],
 		baseStats: {hp: 75, atk: 82, def: 73, spa: 100, spd: 80, spe: 85},
 	},
+	primeape: {
+		inherit: true,
+		abilities: {0: "Vital Spirit", 1: "Anger Point", H: "Gorilla Tactics"},
+	},
+	arcanine: {
+		inherit: true,
+		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Strong Jaw"},
+	},
 	machamp: {
 		inherit: true,
 		baseStats: {hp: 100, atk: 130, def: 90, spa: 65, spd: 95, spe: 55},
@@ -153,12 +161,122 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 80, atk: 105, def: 65, spa: 100, spd: 70, spe: 70},
 		abilities: {0: "Chlorophyll", 1: "Liquid Ooze", H: "Fly Trap"},
 	},
-	primeape: {
+	tentacruel: {
 		inherit: true,
-		abilities: {0: "Vital Spirit", 1: "Anger Point", H: "Gorilla Tactics"},
+		baseStats: {hp: 90, atk: 65, def: 80, spa: 85, spd: 110, spe: 100},
+		abilities: {0: "Clear Body", 1: "Toxic Debris", H: "Levitate"},
 	},
-	arcanine: {
+	golem: {
 		inherit: true,
-		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Strong Jaw"},
+		baseStats: {hp: 90, atk: 120, def: 130, spa: 40, spd: 75, spe: 35},
+		abilities: {0: "Rock Head", 1: "Sturdy", H: "Solid Rock"},
+	},
+	golemalola: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 55, def: 120, spa: 115, spd: 70, spe: 55},
+	},
+	rapidash: {
+		inherit: true,
+		types: ["Normal", "Fire"],
+		baseStats: {hp: 65, atk: 100, def: 70, spa: 60, spd: 80, spe: 125},
+		abilities: {0: "Reckless", 1: "Flash Fire", H: "Flame Body"},
+	},
+	rapidashgalar: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 85, def: 70, spa: 95, spd: 80, spe: 125},
+		abilities: {0: "Fairy Aura", 1: "Pastel Veil", H: "Magic Guard"},
+	},
+	slowbromega: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 65, def: 170, spa: 130, spd: 90, spe: 30},
+	},
+	slowbrogalar: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 80, def: 100, spa: 110, spd: 70, spe: 30},
+	},
+	magnezone: {
+		inherit: true,
+		abilities: {0: "Magnet Pull", 1: "Sturdy", H: "Levitate"},
+	},
+	farfetchd: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 90, def: 65, spa: 58, spd: 70, spe: 90},
+		abilities: {0: "Sharpness", 1: "Inner Focus", H: "Defiant"},
+	},
+	farfetchdgalar: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 95, def: 65, spa: 58, spd: 70, spe: 55},
+		abilities: {0: "Steadfast", 1: "No Guard", H: "Scrappy"},
+	},
+	sirfetchd: {
+		inherit: true,
+		types: ["Fighting", "Flying"],
+		baseStats: {hp: 80, atk: 135, def: 95, spa: 68, spd: 82, spe: 65},
+		abilities: {0: "Steadfast", 1: "Sharpness", H: "Scrappy"},
+	},
+	dodrio: {
+		inherit: true,
+		types: ["Ground", "Flying"],
+		abilities: {0: "Sand Force", 1: "Early Bird", H: "Wind Rider"},
+	},
+	dewgong: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 55, def: 80, spa: 90, spd: 95, spe: 70},
+		abilities: {0: "Thick Fat", 1: "Water Absorb", H: "Slush Rush"},
+	},
+	muk: {
+		inherit: true,
+		baseStats: {hp: 105, atk: 85, def: 95, spa: 75, spd: 100, spe: 50},
+		abilities: {0: "Regenerator", 1: "Gooey", H: "Poison Touch"},
+	},
+	mukalola: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 105, def: 75, spa: 65, spd: 90, spe: 50},
+		abilities: {0: "Poison Touch", 1: "Gluttony", H: "Corrosion"},
+	},
+	gengarmega: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 65, def: 85, spa: 145, spd: 95, spe: 120},
+		abilities: {0: "Perish Body"},
+	},
+	steelix: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 85, def: 200, spa: 55, spd: 80, spe: 30},
+	},
+	steelixmega: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 125, def: 230, spa: 55, spd: 110, spe: 30},
+		abilities: {0: "Steelworker"},
+	},
+	hypno: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 73, def: 80, spa: 83, spd: 115, spe: 70},
+		abilities: {0: "Insomnia", 1: "Bad Dreams", H: "Psychic Surge"},
+	},
+	kingler: {
+		inherit: true,
+		types: ["Water", "Steel"],
+		baseStats: {hp: 65, atk: 130, def: 115, spa: 50, spd: 50, spe: 75},
+	},
+	electrode: {
+		inherit: true,
+		types: ["Electric", "Steel"],
+		baseStats: {hp: 60, atk: 50, def: 70, spa: 100, spd: 80, spe: 150},
+		abilities: {0: "Soundproof", 1: "Baller", H: "Galvanize"},
+	},
+	electrodehisui: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 50, def: 90, spa: 80, spd: 90, spe: 100},
+		abilities: {0: "Soundproof", 1: "Baller", H: "Aftermath"},
+	},
+	exeggutor: {
+		inherit: true,
+		baseStats: {hp: 105, atk: 95, def: 90, spa: 125, spd: 80, spe: 40},
+		abilities: {0: "Sap Sipper", 1: "Thick Fat", H: "Harvest"},
+	},
+	exeggutoralola: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 115, def: 85, spa: 125, spd: 75, spe: 60},
+		abilities: {0: "Ripen", 1: "Lightning Rod", H: "Harvest"},
 	},
 };
