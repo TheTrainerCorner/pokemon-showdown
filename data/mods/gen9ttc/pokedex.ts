@@ -292,6 +292,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	hitmonlee: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 120, def: 53, spa: 35, spd: 110, spe: 60},
+		abilities: {0: "Leg Day", 1: "Reckless", H: "Unburden"},
 	},
 	hitmonchan: {
 		inherit: true,
@@ -444,4 +445,42 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Synchronize", 1: "Magic Guard", H: "Magic Bounce"},
 	},
+	// Gen 3
+	sceptile: {
+		inherit: true,
+		types: ["Grass", "Dragon"],
+		baseStats: {hp: 70, atk: 95, def: 65, spa: 85, spd: 85, spe: 120},
+	},
+	sceptilemega: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 125, def: 75, spa: 110, spd: 85, spe: 145},
+		abilities: {0: "Technician"},
+	},
+	blaziken: {
+		inherit: true,
+		abilities: {0: "Blaze", H: "No Guard"},
+	},
+	blazikenmega: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 145, def: 80, spa: 130, spd: 80, spe: 90},
+		abilities: {0: "Leg Day"},
+	},
+	swampert: {
+		inherit: true,
+		abilities: {0: "Torrent", 1: "Dry Skin", H: "Damp"},
+	},
+	mightyena: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 98, def: 75, spa: 60, spd: 65, spe: 85},
+		abilities: {0: "Intimidate", 1: "Strong Jaw", H: "Moxie"},
+	},
+	linoone: {
+		inherit: true,
+		baseStats: {hp: 78, atk: 75, def: 61, spa: 50, spd: 61, spe: 100},
+		abilities: {0: "Quick Feet", 1: "Gluttony", H: "Technician"},
+	},
+	linoonegalar: {
+		inherit: true,
+		baseStats: {hp: 78, atk: 80, def: 61, spa: 50, spd: 61, spe: 100},
+	}
 };

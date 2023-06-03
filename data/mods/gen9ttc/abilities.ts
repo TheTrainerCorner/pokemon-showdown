@@ -87,5 +87,35 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 8,
 		desc: "",
 		shortDesc: "",
+	},
+	phototaxis: {
+		onAnyModifyBoost(boosts, pokemon) {
+			const unawareUser = this.effectState.target;
+			if(unawareUser === pokemon) return;
+			if(unawareUser === this.activePokemon && pokemon === this.activeTarget) {
+				boosts['def'] = 0;
+				boosts['spd'] = 0;
+				boosts['evasion'] = 0;
+			}
+			if(pokemon === this.activePokemon && unawareUser === this.activeTarget) {
+				boosts['atk'] = 0;
+				boosts['def'] = 0;
+				boosts['spa'] = 0;
+				boosts['accuracy'] = 0;
+			}
+		},
+		onTryHit(target, source, move) {
+			if(target !== source && move.type === 'Electric') {
+				if(this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Phototaxis');
+				}
+
+				return null;
+			}
+		},
+		isBreakable: true,
+		name: "Phototaxis",
+		num: -104,
+		shortDesc: "Ignores stat changes; Heals 1/4 max HP & immune to Electric type attacks."
 	}
 };
