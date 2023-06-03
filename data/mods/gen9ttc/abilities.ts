@@ -1,4 +1,5 @@
 export const Abilities: {[k: string]: ModdedAbilityData} = {
+	// Mod Abilities
 	solarpower: {
 		inherit: true,
 		onModifyAtkPriority: 5,
@@ -17,6 +18,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return this.chainModify(1.3);
 		}
 	},
+	forecast: {
+		inherit: true,
+		onStart(pokemon) {
+			if(pokemon.hasItem('damprock')) this.field.setWeather('raindance');
+			else if(pokemon.hasItem('heatrock')) this.field.setWeather('sunnyday');
+			else if(pokemon.hasItem('smoothrock')) this.field.setWeather('sandstorm');
+			else if(pokemon.hasItem('icyrock')) this.field.setWeather('snow');
+		},
+		desc: "If this pokemon is a Castorm, its type changes to the current weather, as well as summons weather depending on the weather rock it is holding.",
+		shortDesc: "Summons weather based on held weather rock, then changes types to match the weather."
+	},
+	// New Abilities
 	vampire: {
 		onModifyMove(move, pokemon, target) {
 			if(move.flags['bite']) {
@@ -61,4 +74,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3.5,
 		num: -102,
 	},
+	legday: {
+		onBasePowerPriority: 43,
+		onBasePower(basePower, attacker, defender, move) {
+			if(move.flags['kick']) {
+				this.debug('Leg Day Boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		name: "Leg Day",
+		rating: 3,
+		gen: 8,
+		desc: "",
+		shortDesc: "",
+	}
 };
