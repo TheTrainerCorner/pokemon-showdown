@@ -520,4 +520,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 65, atk: 120, def: 80, spa: 50, spd: 65, spe: 70},
 	},
+	slaking: {
+		inherit: true,
+		baseStats: {hp: 140, atk: 150, def: 100, spa: 75, spd: 70, spe: 95},
+	}
 };
