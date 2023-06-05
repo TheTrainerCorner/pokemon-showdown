@@ -29,6 +29,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If this pokemon is a Castorm, its type changes to the current weather, as well as summons weather depending on the weather rock it is holding.",
 		shortDesc: "Summons weather based on held weather rock, then changes types to match the weather."
 	},
+	truant: {
+		inherit: true,
+		onBeforeMove(pokemon) {
+			if(pokemon.removeVolatile('truant') && !(this.activeMove!.status == 'status' && this.activeMove?.flags['heal'])) {
+				this.add('cant', pokemon, 'ability: Truant');
+				return false;
+			}
+			pokemon.addVolatile('truant');
+		}
+	},
 	// New Abilities
 	vampire: {
 		onModifyMove(move, pokemon, target) {

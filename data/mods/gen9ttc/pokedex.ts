@@ -482,5 +482,42 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	linoonegalar: {
 		inherit: true,
 		baseStats: {hp: 78, atk: 80, def: 61, spa: 50, spd: 61, spe: 100},
-	}
+	},
+	beautifly: {
+		inherit: true,
+		types: ["Bug", "Fairy"],
+		baseStats: {hp: 60, atk: 70, def: 65, spa: 100, spd: 65, spe: 82},
+		abilities: {0: "Compound Eyes", H: "Serene Grace"},
+	},
+	dustox: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 60, def: 80, spa: 60, spd: 95, spe: 65},
+		abilities: {0: "Shield Dust", 1: "Compound Eyes", H: "Phototaxis"},
+	},
+	shiftry: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 110, def: 60, spa: 100, spd: 60, spe: 80},
+	},
+	swellow: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 85, def: 60, spa: 85, spd: 60, spe: 125},
+		abilities: {0: "Guts", 1: "Scrappy", H: "Aerilate"},
+	},
+	gardevoir: {
+		inherit: true,
+		baseStats: {hp: 68, atk: 65, def: 70, spa: 125, spd: 115, spe: 80},
+	},
+	gardevoirmega: {
+		inherit: true,
+		baseStats: {hp: 68, atk: 85, def: 70, spa: 165, spd: 135, spe: 100},
+	},
+	masquerain: {
+		inherit: true,
+		types: ["Bug", "Water"],
+		baseStats: {hp: 80, atk: 60, def: 72, spa: 100, spd: 82, spe: 85},
+	},
+	breloom: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 120, def: 80, spa: 50, spd: 65, spe: 70},
+	},
 };
