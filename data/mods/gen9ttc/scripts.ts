@@ -21,5 +21,5 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.kick = 1;
 		}
 
-	}
+	},
 }

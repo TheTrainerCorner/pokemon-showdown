@@ -31,13 +31,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	truant: {
 		inherit: true,
-		onBeforeMove(pokemon) {
-			if(pokemon.removeVolatile('truant') && !(this.activeMove!.status == 'status' && this.activeMove?.flags['heal'])) {
-				this.add('cant', pokemon, 'ability: Truant');
-				return false;
+		onBeforeMove(pokemon, target, move) {
+			if(pokemon.removeVolatile('truant')) {
+				if(!move.heal) {
+					this.add('cant', pokemon, 'ability: Truant');
+					return false;
+				}
+				return true;
 			}
 			pokemon.addVolatile('truant');
-		}
+		},
+		shortDesc: "This Pokemon can only use healing moves every other turn.",
 	},
 	// New Abilities
 	vampire: {
