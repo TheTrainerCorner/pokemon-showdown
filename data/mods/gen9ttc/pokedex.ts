@@ -535,6 +535,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Water", "Dark"],
 		abilities: {0: "Torrent", 1: "Rough Skin", H: "Sheer Force"},
 	},
+	furret: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 81, def: 74, spa: 45, spd: 55, spe: 90},
+		abilities: {0: "Pickpocket", 1: "Fur Coat", H: "Speed Boost"},
+	},
 	// Gen 3
 	sceptile: {
 		inherit: true,

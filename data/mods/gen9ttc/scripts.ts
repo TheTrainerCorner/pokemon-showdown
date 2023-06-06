@@ -21,5 +21,11 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.kick = 1;
 		}
 
+		// New Learnsets
+		// Furret
+		this.modData('Learnsets', 'furret').learnset.playrough = ['8M'];
+		// Noctowl
+		this.modData('Learnsets', 'noctowl').learnset.moongeistbeam = ['8M'];
+		this.modData('Learnsets', 'noctowl').learnset.psyshock = ['8M'];
 	},
 }
