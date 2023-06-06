@@ -131,5 +131,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Phototaxis",
 		num: -104,
 		shortDesc: "Ignores stat changes; Heals 1/4 max HP & immune to Electric type attacks."
-	}
+	},
+	versatility: {
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			this.debug('Versatility boost');
+			return this.chainModify([4915, 4096]);
+		},
+		shortDesc: "All attacking moves used by this Pokemon are increased by 1.2x",
+		name: "Versatility",
+		num: -105,
+		rating: 5,
+	},
 };

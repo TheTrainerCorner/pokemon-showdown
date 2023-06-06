@@ -523,5 +523,29 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	slaking: {
 		inherit: true,
 		baseStats: {hp: 140, atk: 150, def: 100, spa: 75, spd: 70, spe: 95},
-	}
+	},
+	ninjask: {
+		inherit: true,
+		baseStats: {hp: 71, atk: 90, def: 50, spa: 50, spd: 50, spe: 160},
+	},
+	exploud: {
+		inherit: true,
+		baseStats: {hp: 104, atk: 71, def: 63, spa: 91, spd: 73, spe: 73},
+		abilities: {0: "Soundproof", 1: "Punk Rock", H: "Scrappy"},
+	},
+	hariyama: {
+		inherit: true,
+		baseStats: {hp: 144, atk: 130, def: 75, spa: 40, spd: 98, spe: 50},
+	},
+	probopass: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 45, def: 145, spa: 70, spd: 150, spe: 40},
+		abilities: {0: "Sturdy", 1: "Magnet Pull", H: "Levitate"},
+	},
+	delcatty: {
+		inherit: true,
+		types: ["Normal", "Fairy"],
+		baseStats: {hp: 75, atk: 65, def: 65, spa: 65, spd: 60, spe: 95},
+		abilities: {0: "Wonder Skin", 1: "Pixilate", H: "Versatility"},
+	},
 };
