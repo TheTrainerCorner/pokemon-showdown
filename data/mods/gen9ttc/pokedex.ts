@@ -540,6 +540,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 81, def: 74, spa: 45, spd: 55, spe: 90},
 		abilities: {0: "Pickpocket", 1: "Fur Coat", H: "Speed Boost"},
 	},
+	noctowl: {
+		inherit: true,
+		types: ["Psychic", "Flying"],
+		baseStats: {hp: 100, atk: 50, def: 60, spa: 86, spd: 96, spe: 85},
+		abilities: {0: "Insomnia", 1: "Trace", H: "Tinted Lens"},
+	},
+	ledian: {
+		inherit: true,
+		types: ["Bug", "Fighting"],
+		baseStats: {hp: 80, atk: 100, def: 75, spa: 15, spd: 110, spe: 95},
+	},
+	ariados: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 100, def: 70, spa: 80, spd: 70, spe: 90},
+	},
 	// Gen 3
 	sceptile: {
 		inherit: true,
