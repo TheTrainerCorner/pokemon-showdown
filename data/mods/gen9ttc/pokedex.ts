@@ -513,6 +513,28 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Synchronize", H: "Protean"},
 	},
+	// Gen 2
+	meganium: {
+		inherit: true,
+		types: ["Grass", "Fairy"],
+		baseStats: {hp: 100, atk: 60, def: 100, spa: 95, spd: 100, spe: 65},
+		abilities: {0: "Overgrow", 1: "Regenerator", H: "Serene Grace"},
+	},
+	typhlosion: {
+		inherit: true,
+		types: ["Fire", "Ground"],
+		baseStats: {hp: 78, atk: 109, def: 69, spa: 109, spd: 72, spe: 111},
+		abilities: {0: "Blaze", 1: "Anger Point", H: "Flash Fire"},
+	},
+	typhlosionhisui: {
+		inherit: true,
+		abilities: {0: "Blaze", 1: "Perish Body", H: "Shadow Shield"},
+	},
+	feraligatr: {
+		inherit: true,
+		types: ["Water", "Dark"],
+		abilities: {0: "Torrent", 1: "Rough Skin", H: "Sheer Force"},
+	},
 	// Gen 3
 	sceptile: {
 		inherit: true,
