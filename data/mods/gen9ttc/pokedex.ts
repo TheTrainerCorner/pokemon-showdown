@@ -555,6 +555,31 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 60, atk: 100, def: 70, spa: 80, spd: 70, spe: 90},
 	},
+	xatu: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 75, def: 70, spa: 95, spd: 70, spe: 95},
+		abilities: {0: "Magic Guard", 1: "Tinted Lens", H: "Magic Bounce"},
+	},
+	ampharos: {
+		inherit: true,
+		abilities: {0: "Static", 1: "Lightning Rod", H: "Cotton Down"},
+	},
+	ampharosmega: {
+		inherit: true,
+		abilities: {0: "Dragon's Maw"},
+	},
+	bellossom: {
+		inherit: true,
+		types: ["Grass", "Fairy"],
+		baseStats: {hp: 80, atk: 80, def: 95, spa: 105, spd: 100, spe: 80},
+		abilities: {0: "Chlorophyll", H: "Dancer"},
+	},
+	sudowoodo: {
+		inherit: true,
+		types: ["Rock", "Grass"],
+		baseStats: {hp: 75, atk: 115, def: 115, spa: 30, spd: 85, spe: 30},
+		abilities: {0: "Sturdy", 1: "Rock Head", H: "Grassy Surge"},
+	},
 	// Gen 3
 	sceptile: {
 		inherit: true,
