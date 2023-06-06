@@ -152,6 +152,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Strong Jaw"},
 	},
+	poliwrath: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 85, def: 95, spa: 70, spd: 90, spe: 70},
+	},
+	politoed: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 65, def: 70, spa: 105, spd: 95, spe: 70},
+	},
 	machamp: {
 		inherit: true,
 		baseStats: {hp: 100, atk: 130, def: 90, spa: 65, spd: 95, spe: 55},
@@ -444,6 +452,66 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	espeon: {
 		inherit: true,
 		abilities: {0: "Synchronize", 1: "Magic Guard", H: "Magic Bounce"},
+	},
+	porygon2: {
+		inherit: true,
+		types: ["Normal", "Electric"],
+	},
+	porygonz: {
+		inherit: true,
+		types: ["Normal", "Electric"],
+		baseStats: {hp: 85, atk: 80, def: 75, spa: 125, spd: 80, spe: 90},
+	},
+	omastar: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 60, def: 125, spa: 115, spd: 90, spe: 55},
+		abilities: {0: "Swift Swim", 1: "Shell Armor", H: "Iron Barbs"},
+	},
+	kabutops: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 120, def: 105, spa: 65, spd: 80, spe: 85},
+		abilities: {0: "Swift Swim", 1: "Battle Armor", H: "Sharpness"},
+	},
+	aerodactyl: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 115, def: 65, spa: 60, spd: 75, spe: 130},
+		abilities: {0: "Intimidate", 1: "Pressure", H: "Unnerve"},
+	},
+	aerodactylmega: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 135, def: 85, spa: 70, spd: 95, spe: 150},
+	},
+	articuno: {
+		inherit: true,
+		baseStats: {hp: 100, atk: 65, def: 110, spa: 105, spd: 140, spe: 70},
+		abilities: {0: "Pressure", H: "Snow Warning"},
+	},
+	articunogalar: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 70, def: 85, spa: 125, spd: 100, spe: 105},
+		abilities: {0: "Competitive", H: "Psychic Surge"},
+	},
+	zapdos: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 75, def: 100, spa: 125, spd: 90, spe: 100},
+		abilities: {0: "Pressure", H: "Electric Surge"},
+	},
+	zapdosgalar: {
+		inherit: true,
+		abilities: {0: "Defiant", H: "Wind Rider"},
+	},
+	moltres: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 100, def: 105, spa: 125, spd: 85, spe: 90},
+		abilities: {0: "Pressure", H: "Drought"},
+	},
+	moltresgalar: {
+		inherit: true,
+		abilities: {0: "Berserk", H: "Dark Aura"},
+	},
+	mew: {
+		inherit: true,
+		abilities: {0: "Synchronize", H: "Protean"},
 	},
 	// Gen 3
 	sceptile: {
