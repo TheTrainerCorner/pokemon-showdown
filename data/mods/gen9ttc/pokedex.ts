@@ -1,5 +1,6 @@
 import { stats } from '../../../server/chat-plugins/randombattles/winrates';
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+	//#region Gen 1
 	venusaur: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 77, def: 90, spa: 95, spd: 105, spe: 80},
@@ -513,7 +514,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Synchronize", H: "Protean"},
 	},
-	// Gen 2
+	//#endregion
+	//#region Gen 2
 	meganium: {
 		inherit: true,
 		types: ["Grass", "Fairy"],
@@ -580,7 +582,54 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 115, def: 115, spa: 30, spd: 85, spe: 30},
 		abilities: {0: "Sturdy", 1: "Rock Head", H: "Grassy Surge"},
 	},
-	// Gen 3
+	jumpluff: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 75, def: 85, spa: 55, spd: 95, spe: 110},
+		abilities: {0: "Speed Boost", 1: "Cotton Guard", H: "Infiltrator"},
+	},
+	ambipom: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 115, def: 66, spa: 60, spd: 66, spe: 115},
+		abilities: {0: "Technician", 1: "Armor Tail", H: "Skill Link"},
+	},
+	sunflora: {
+		inherit: true,
+		types: ["Grass", "Fire"],
+		baseStats: {hp: 95, atk: 30, def: 85, spa: 120, spd: 85, spe: 55},
+		abilities: {0: "Chlorophyll", 1: "Solar Power", H: "Drought"},
+	},
+	unown: {
+		inherit: true,
+		types: ["Psychic", "Ghost"],
+		baseStats: {hp: 55, atk: 72, def: 48, spa: 72, spd: 48, spe: 98},
+	},
+	yanmega: {
+		inherit: true,
+		types: ["Bug", "Dragon"],
+		baseStats: {hp: 86, atk: 96, def: 86, spa: 116, spd: 56, spe: 95},
+		abilities: {0: "Speed Boost", 1: "Tinted Lens", H: "Compound Eyes"},
+	},
+	quagsire: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 85, def: 85, spa: 65, spd: 85, spe: 35},
+	},
+	honchkrow: {
+		inherit: true,
+		abilities: {0: "Intimidate", 1: "Shadow Shield", H: "Moxie"},
+	},
+	mismagius: {
+		inherit: true,
+		types: ["Ghost", "Fairy"],
+		baseStats: {hp: 75, atk: 60, def: 60, spa: 115, spd: 105, spe: 110},
+		abilities: {0: "Levitate", H: "Magic Guard"},
+	},
+	girafarig: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 90, def: 65, spa: 100, spd: 65, spe: 95},
+		abilities: {0: "Sap Sipper", 1: "Lightning", H: "Scrappy"},
+	},
+	//#endregion
+	//#region Gen 3
 	sceptile: {
 		inherit: true,
 		types: ["Grass", "Dragon"],
@@ -683,4 +732,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 65, def: 65, spa: 65, spd: 60, spe: 95},
 		abilities: {0: "Wonder Skin", 1: "Pixilate", H: "Versatility"},
 	},
+	//#endregion
+	//#region Gen 4
+	
+	//#endregion
 };
