@@ -628,6 +628,90 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 90, def: 65, spa: 100, spd: 65, spe: 95},
 		abilities: {0: "Sap Sipper", 1: "Lightning", H: "Scrappy"},
 	},
+	forretress: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 90, def: 140, spa: 45, spd: 90, spe: 40},
+	},
+	dunsparce: {
+		inherit: true,
+		types: ["Ground"],
+		baseStats: {hp: 100, atk: 75, def: 75, spa: 75, spd: 75, spe: 65},
+		abilities: {0: "Serene Grace", 1: "Levitate", H: "Super Luck"},
+	},
+	granbull: {
+		inherit: true,
+		types: ["Fairy", "Dark"],
+		baseStats: {hp: 90, atk: 120, def: 75, spa: 60, spd: 60, spe: 85},
+		abilities: {0: "Intimidate", 1: "Guts", H: "Justified"},
+	},
+	qwilfish: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 75, def: 85, spa: 55, spd: 85, spe: 60},
+		abilities: {0: "Poison Point", 1: "Iron Barbs", H: "Intimidate"},
+	},
+	qwilfishhisui: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 95, def: 60, spa: 85, spd: 60, spe: 75},
+		abilities: {0: "Poison Point", 1: "Swift Swim", H: "Corrosion"},
+	},
+	overqwil: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 105, def: 95, spa: 85, spd: 85, spe: 85},
+		abilities: {0: "Poison Point", 1: "Swift Swim", H: "Intimidate"},
+	},
+	heracross: {
+		inherit: true,
+		abilities: {0: "Sap Sipper", 1: "Guts", H: "Moxie"},
+	},
+	weavile: {
+		inherit: true,
+		abilities: {0: "Pressure", H: "Infiltator"},
+	},
+	ursaring: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 130, def: 95, spa: 75, spd: 80, spe: 55},
+	},
+	ursaluna: {
+		inherit: true,
+		baseStats: {hp: 110, atk: 130, def: 105, spa: 45, spd: 80, spe: 50},
+	},
+	magcargo: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 50, def: 120, spa: 115, spd: 100, spe: 60},
+		abilities: {0: "Sturdy", 1: "Flame Body", H: "Desolate Land"},
+	},
+	mamoswine: {
+		inherit: true,
+		abilities: {0: "Oblivious", 1: "Thick Fat", H: "Gluttony"},
+	},
+	corsola: {
+		inherit: true,
+		baseStats: {hp: 65, atk: 95, def: 95, spa: 65, spd: 95, spe: 50},
+		abilities: {0: "Rock Head", 1: "Natural Cure", H: "Regenerator"},
+	},
+	corsolagalar: {
+		inherit: true,
+		types: ["Ghost", "Rock"],
+		baseStats: {hp: 80, atk: 55, def: 90, spa: 65, spd: 90, spe: 30},
+		abilities: {0: "Cursed Body", H: "Regenerator"},
+	},
+	cursola: {
+		inherit: true,
+		types: ["Ghost", "Rock"],
+		baseStats: {hp: 90, atk: 95, def: 90, spa: 145, spd: 130, spe: 30},
+		abilities: {0: "Perish Body", H: "Regenerator"},
+	},
+	octillery: {
+		inherit: true,
+		baseStats: {hp: 100, atk: 50, def: 100, spa: 150, spd: 100, spe: 15},
+		abilities: {0: "Mega Launcher", 1: "Sniper", H: "Artillery"},
+	},
+	delibird: {
+		inherit: true,
+		types: ["Ice", "Fairy"],
+		baseStats: {hp: 80, atk: 80, def: 75, spa: 80, spd: 80, spe: 90},
+		abilities: {0: "Vital Spirit", 1: "Slush Rush", H: "Refrigerate"},
+	},
 	//#endregion
 	//#region Gen 3
 	sceptile: {

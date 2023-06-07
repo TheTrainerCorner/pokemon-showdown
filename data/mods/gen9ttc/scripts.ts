@@ -640,6 +640,62 @@ export const Scripts: ModdedBattleScriptsData = {
 			['jumpkick', 8],
 			['uturn', 8],
 		]);
+		learnsetAdd('gligar', [
+			['dualwingbeat', 8],
+		]);
+		learnsetAdd('gliscor', [
+			['dualwingbeat', 8],
+		]);
+		learnsetAdd('granbull', [
+			['drainpunch', 8],
+			['knockoff', 8],
+		]);
+		learnsetAdd('qwilfish', [
+			['banefulbunker', 8],
+			['spikeyshield', 8],
+		]);
+		learnsetAdd('heracross', [
+			['firstimpression', 8],
+			['drainpunch', 8],
+		]);
+		learnsetAdd('weavile', [
+			['suckerpunch', 8],
+		]);
+		learnsetAdd('magcargo', [
+			['slackoff', 8],
+			['powergem', 8],
+			['meteorbeam', 8],
+			['magmastorm', 8],
+		]);
+		learnsetAdd('mamoswine', [
+			['headlongrush', 8],
+		]);
+		learnsetAdd('corsola', [
+			['flipturn', 8],
+		]);
+		learnsetAdd('corsolagalar', [
+			['teleport', 8],
+			['shadowsneak', 8],
+			['toxic', 8],
+		]);
+		// Cursola will gain teleport, shadow sneak, and toxic
+		// due to inheritences.
+		learnsetAdd('octillery', [
+			['aquaring', 8],
+			['thunderbolt', 8],
+			['meteorbeam', 8],
+			['aurasphere', 8],
+			['shadowball', 8],
+			['aeroblast', 8],
+			['darkpulse', 8],
+			['moonblast', 8],
+			['dragonpulse', 8],
+			['originpulse', 8],
+		]);
+		learnsetAdd('delibird', [
+			['dazzlinggleam', 8],
+			['playrough', 8],
+		]);
 		//#endregion
 		//#region Gen 3
 		learnsetAdd('sceptile', [

@@ -99,8 +99,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Leg Day",
 		rating: 3,
 		gen: 8,
-		desc: "",
-		shortDesc: "",
+		shortDesc: "Kicking moves used by this pokemon are 1.3x stronger.",
 	},
 	phototaxis: {
 		onAnyModifyBoost(boosts, pokemon) {
@@ -142,5 +141,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Versatility",
 		num: -105,
 		rating: 5,
+	},
+	artillery: {
+		onAfterMove(source, target, move) {
+			if(move.category !== 'Status') {
+				source.clearBoosts();
+				this.add('-clearboost', source, '[from] ability: Artillery');
+			} else {
+				this.boost({spa: 1});
+			}
+		},
+		name: "Artillery",
+		shortDesc: "When this pokemon doesn't use a damaging move, Special Attack raises by 1 stage; Removes all positive stats after using a damaging move.",
+		num: -106,
+		rating: 4,
 	},
 };
