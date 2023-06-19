@@ -843,6 +843,69 @@ export const Scripts: ModdedBattleScriptsData = {
 			['suckerpunch', 8],
 			['tarshot', 8],
 		]);
+		learnsetAdd('sableye', [
+			['baddybad', 8],
+			['nightdaze', 8],
+			['nightslash', 8],
+		]);
+		learnsetAdd('mawile', [
+			['hyperfang', 8],
+			['jawlock', 8],
+		]);
+		learnsetAdd('aggron', [
+			['dragonhammer', 8],
+			['hammerarm', 8],
+			['powerwhip', 8],
+		]);
+		learnsetAdd('medicham', [
+			['expandingforce', 8],
+			['teleport', 8],
+			['tripleaxel', 8],
+		]);
+		learnsetAdd('manectric', [
+			['darkpulse', 8],
+			['thundercage', 8],
+			['workup', 8],
+			['wildboltstorm', 9],
+		]);
+		learnsetAdd('plusle', [
+			['weatherball', 8],
+			['knockoff', 8],
+			['risingvoltage', 8],
+		]);
+		learnsetAdd('minun', [
+			['extremespeed', 8],
+			['knockoff', 8],
+			['risingvoltage', 8],
+		]);
+		learnsetAdd('volbeat', [
+			['voltswitch', 8],
+			['paraboliccharge', 8],
+			['weatherball', 8],
+		]);
+		learnsetAdd('illumise', [
+			['pollenpuff', 8],
+			['lunge', 8],
+			['dualwingbeat', 8],
+			['firstimpression', 8],
+			['skittersmack', 8],
+		]);
+		learnsetAdd('roserade', [
+			['appleacid', 8],
+			['sludgewave', 8],
+			['drainingkiss', 8],
+		]);
+		learnsetAdd('swalot', [
+			['earthpower', 8],
+			['hydropump', 8],
+			['focusblast', 8],
+			['blizzard', 8],
+			['poisonjab', 8],
+		]);
+		learnsetAdd('sharpedo', [
+			['wavecrash', 9],
+			['fishiousrend', 8],
+		]);
 		//#endregion
 		//#endregion
 	},

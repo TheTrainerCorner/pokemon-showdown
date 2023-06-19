@@ -880,6 +880,68 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 65, def: 65, spa: 65, spd: 60, spe: 95},
 		abilities: {0: "Wonder Skin", 1: "Pixilate", H: "Versatility"},
 	},
+	sableyemega: {
+		inherit: true,
+		baseStats: {hp: 50, atk: 85, def: 125, spa: 85, spd: 115, spe: 30},
+	},
+	mawile: {
+		inherit: true,
+		baseStats: {hp: 50, atk: 85, def: 85, spa: 55, spd: 85, spe: 60},
+		abilities: {0: "Strong Jaw", 1: "Intimidate", H: "Sheer Force"},
+	},
+	mawilemega: {
+		inherit: true,
+		baseStats: {hp: 50, atk: 105, def: 125, spa: 55, spd: 105, spe: 60},
+	},
+	aggron: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 110, def: 185, spa: 60, spd: 60, spe: 50},
+	},
+	aggronmega: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 140, def: 235, spa: 60, spd: 80, spe: 50},
+	},
+	medicham: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 65, def: 75, spa: 60, spd: 75, spe: 85},
+	},
+	medichammega: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 95, def: 85, spa: 80, spd: 85, spe: 100},
+	},
+	menectricmega: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 75, def: 80, spa: 130, spd: 80, spe: 140},
+	},
+	plusle: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 50, def: 40, spa: 85, spd: 75, spe: 110},
+		abilities: {0: "Plus", 1: "Lightning Rod", H: "Transistor"},
+	},
+	minun: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 85, def: 75, spa: 50, spd: 45, spe: 110},
+		abilities: {0: "Minus", 1: "Volt Absorb", H: "Galvanize"},
+	},
+	volbeat: {
+		inherit: true,
+		types: ["Bug", "Electric"],
+		baseStats: {hp: 80, atk: 47, def: 75, spa: 90, spd: 85, spe: 100},
+	},
+	illumise: {
+		inherit: true,
+		types: ["Bug", "Fairy"],
+		baseStats: {hp: 80, atk: 73, def: 75, spa: 47, spd: 85, spe: 100},
+	},
+	swalot: {
+		inherit: true,
+		baseStats: {hp: 100, atk: 93, def: 83, spa: 93, spd: 83, spe: 55},
+		abilities: {0: "Liquid Ooze", 1: "Gluttony", H: "Regenerator"},
+	},
+	sharpedo: {
+		inherit: true,
+		abilities: {0: "Rough Skin", 1: "Reckless", H: "Speed Boost"},
+	},
 	//#endregion
 	//#region Gen 4
 	
