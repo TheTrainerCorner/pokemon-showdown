@@ -712,6 +712,66 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 80, atk: 80, def: 75, spa: 80, spd: 80, spe: 90},
 		abilities: {0: "Vital Spirit", 1: "Slush Rush", H: "Refrigerate"},
 	},
+	skaromry: {
+		inherit: true,
+		abilities: {0: "Light Metal", 1: "Sturdy", H: "Intimidate"},
+	},
+	houndoom: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 90, def: 50, spa: 120, spd: 80, spe: 100},
+	},
+	houndoommega: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 90, def: 90, spa: 150, spd: 90, spe: 115},
+		abilities: {0: "Intimidate"},
+	},
+	donphan: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 120, def: 120, spa: 60, spd: 90, spe: 50},
+		abilities: {0: "Sturdy", 1: "Technician", H: "Sand Rush"},
+	},
+	stantler: {
+		inherit: true,
+		baseStats: {hp: 73, atk: 95, def: 82, spa: 85, spd: 85, spe: 85},
+	},
+	wyrdeer: {
+		inherit: true,
+		baseStats: {hp: 103, atk: 115, def: 92, spa: 110, spd: 95, spe: 105},
+		abilities: {0: "Intimidate", 1: "Frisk", H: "Stamina"},
+	},
+	smeargle: {
+		inherit: true,
+		baseStats: {hp: 55, atk: 50, def: 55, spa: 50, spd: 55, spe: 75},
+		abilities: {0: "Own Tempo", 1: "Inner Focus", H: "Color Change"},
+	},
+	miltank: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 90, def: 105, spa: 40, spd: 85, spe: 100},
+		abilities: {0: "Thick Fat", 1: "Scrappy", H: "Cud Chew"},
+	},
+	raikou: {
+		inherit: true,
+		types: ['Electric', 'Flying'],
+		baseStats: {hp: 100, atk: 85, def: 100, spa: 115, spd: 100, spe: 115},
+		abilities: {0: "Pressure", H: "Radiating Light"},
+	},
+	entei: {
+		inherit: true,
+		types: ['Fire', 'Ground'],
+		baseStats: {hp: 110, atk: 100, def: 85, spa: 100, spd: 80, spe: 105},
+		abilities: {0: "Pressure", H: "Mighty Fire"},
+	},
+	suicune: {
+		inherit: true,
+		types: ['Water', 'Ice'],
+		baseStats: {hp: 100, atk: 50, def: 115, spa: 100, spd: 115, spe: 100},
+		abilities: {0: "Pressure", H: "Silent Water"},
+	},
+	celebi: {
+		inherit: true,
+		baseStats: {hp: 110, atk: 100, def: 100, spa: 110, spd: 100, spe: 100},
+		abilities: {0: "Natural Cure", H: "Magic Bounce"},
+	},
 	//#endregion
 	//#region Gen 3
 	sceptile: {
@@ -761,6 +821,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 80, atk: 60, def: 80, spa: 60, spd: 95, spe: 65},
 		abilities: {0: "Shield Dust", 1: "Compound Eyes", H: "Phototaxis"},
+	},
+	ludicolo: {
+		inherit: true,
+		abilities: {0: "Swift Swim", 1: "Rain Dish", H: "Dancer"},
 	},
 	shiftry: {
 		inherit: true,

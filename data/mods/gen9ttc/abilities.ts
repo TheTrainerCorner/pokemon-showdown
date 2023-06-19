@@ -156,4 +156,100 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: -106,
 		rating: 4,
 	},
+	radiatinglight: {
+		//#region Lightning Rod
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Electric') {
+				if(!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Radiating Light');
+				}
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Electric' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if(this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Radiating Light');
+				}
+				return this.effectState.target;
+			}
+		},
+		//#endregion
+		//#region Electric Surge
+		onStart(source) {
+			this.field.setTerrain('electricterrain');
+		},
+		//#endregion
+		isBreakable: true,
+		name: 'Radiating Light',
+		shortDesc: "Lightning Rod + Electric Terrain",
+		num: -107,
+		rating: 5,
+	},
+	mightyfire: {
+		//#region Drought
+		onStart(source) {
+			for (const action of this.queue) {
+				if (action.choice === 'runPrimal' && action.pokemon === source && source.species.id === 'groudon') return;
+				if (action.choice !== 'runSwitch' && action.choice !== 'runPrimal') break;
+			}
+			this.field.setWeather('sunnyday');
+		},
+		//#endregion
+		//#region Flash Fire
+		onTryHit(target, source, move){
+			if (target !== source && move.type === 'Fire') {
+				move.accuracy = true;
+				if (!target.addVolatile('flashfire')) {
+					this.add('-immune', target, '[from] ability: Flash Fire');
+				}
+				return null;
+			}
+		},
+		onEnd(pokemon) {
+			pokemon.removeVolatile('flashfire');
+		},
+		//#endregion
+		isBreakable: true,
+		name: "Mighty Fire",
+		shortDesc: "Drought + Flash Fire",
+		num: -108,
+		rating: 5,
+	},
+	silentwater: {
+		//#region Storm Drain
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.boost({spa: 1})) {
+					this.add('-immune', target, '[from] ability: Storm Drain');
+				}
+				return null;
+			}
+		},
+		onAnyRedirectTarget(target, source, source2, move) {
+			if (move.type !== 'Water' || move.flags['pledgecombo']) return;
+			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
+				if (move.smartTarget) move.smartTarget = false;
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Storm Drain');
+				}
+				return this.effectState.target;
+			}
+		},
+		//#endregion
+		//#region Misty Surge
+		onStart(source) {
+			this.field.setTerrain('mistyterrain');
+		},
+		//#endregion
+		isBreakable: true,
+		name: 'Silent Water',
+		shortDesc: 'Storm Drain + Misty Surge',
+		num: -109,
+		rating: 5,
+	},
 };

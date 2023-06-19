@@ -742,6 +742,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			['skittersmack', 8],
 			['hurricane', 8],
 		]);
+		learnsetAdd('ludicolo', [
+			['quiverdance', 8],
+			['teeterdance', 8],
+		]);
 		learnsetAdd('shiftry', [
 			['partingshot', 8],
 		]);
@@ -800,6 +804,44 @@ export const Scripts: ModdedBattleScriptsData = {
 			['ironhead', 8],
 			['drainingkiss', 8],
 			['flamethrower', 8],
+		]);
+		learnsetAdd('mantine', [
+			['flipturn', 8]
+		]);
+		learnsetAdd('houndoom', [
+			['fierywrath', 8],
+			['scorching sands', 8]
+		]);
+		// Mega-Houndoom will inherit Fiery Wrath and Scorching Sands.
+		learnsetAdd('donphan', [
+			['flamewheel', 8],
+			['spinout', 8],
+		]);
+		learnsetAdd('wyrdeer', [
+			['recover', 8],
+		]);
+		learnsetAdd('miltank', [
+			['recycle', 8],
+		]);
+		learnsetAdd('raikou', [
+			['firefang', 8],
+			['icefang', 8],
+			['playrough', 8],
+			['floatyfall', 8],
+		]);
+		learnsetAdd('entei', [
+			['earthquake', 8],
+			['earthpower', 8],
+		]);
+		learnsetAdd('suicune', [
+			['hypervoice', 8],
+			['round', 8],
+			['echoedvoice', 8],
+			['thunderbolt', 8],
+		]);
+		learnsetAdd('tyranitar', [
+			['suckerpunch', 8],
+			['tarshot', 8],
 		]);
 		//#endregion
 		//#endregion
