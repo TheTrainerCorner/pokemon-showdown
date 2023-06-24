@@ -197,12 +197,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpD(100)
 				.setSpe(50)
 			.pokemon.learnset()
-				.addMove('lightscreen')
-				.addMove('aromatherapy')
-				.addMove('stickyweb')
-				.addMove('psyshock')
-				.addMove('luminacrash')
-				.addMove('trickroom');
+				.addMove('Light Screen')
+				.addMove('Aromatherapy')
+				.addMove('Sticky Web')
+				.addMove('Psyshock')
+				.addMove('Lumina Crash')
+				.addMove('Trick Room');
 		
 		modifyPokemon('beedrill')
 			.ability()
@@ -212,9 +212,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpA(20)
 				.setSpe(105)
 			.pokemon.learnset()
-				.addMove('crosspoison')
-				.addMove('dualwingbeat')
-				.addMove('firstimpression');
+				.addMove('Cross Poison')
+				.addMove('Dual Wingbeat')
+				.addMove('First Impression');
 		
 		modifyPokemon('pidgeot')
 			.ability()
@@ -227,11 +227,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpA(80)
 				.setSpe(96)
 			.pokemon.learnset()
-				.addMove('hypervoice')
-				.addMove('bulkup')
-				.addMove('extremespeed')
-				.addMove('aurasphere')
-				.addMove('dualwingbeat');
+				.addMove('Hyper Voice')
+				.addMove('Bulk Up')
+				.addMove('Extreme Speed')
+				.addMove('Aura Sphere')
+				.addMove('Dual Wingbeat');
 
 		modifyPokemon('raticate')
 			.ability()
@@ -241,10 +241,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAtk(96)
 				.setSpe(102)
 			.pokemon.learnset()
-				.addMove('closecombat')
-				.addMove('firefang')
-				.addMove('icefang')
-				.addMove('psychicfang');
+				.addMove('Close Combat')
+				.addMove('Fire Fang')
+				.addMove('Ice Fang')
+				.addMove('Psychic Fang');
 			
 		modifyPokemon('raticatealola')
 			.ability()
@@ -255,11 +255,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpD(90)
 				.setSpe(60)
 			.pokemon.learnset()
-				.addMove('closecombat')
-				.addMove('firefang')
-				.addMove('icefang')
-				.addMove('psychicfang')
-				.addMove('partingshot');
+				.addMove('Close Combat')
+				.addMove('Fire Fang')
+				.addMove('Ice Fang')
+				.addMove('Psychic Fang')
+				.addMove('Parting Shot');
 
 		modifyPokemon('fearow')
 			.changeType('Dark', 'Flying')
@@ -272,12 +272,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpD(51)
 				.setSpe(105)
 			.pokemon.learnset()
-				.addMove('swordsdance')
-				.addMove('dualwingbeat')
-				.addMove('beakblast')
-				.addMove('foulplay')
-				.addMove('nightslash')
-				.addMove('falsesurrender');
+				.addMove('Swords Dance')
+				.addMove('Dual Wingbeat')
+				.addMove('Beak Blast')
+				.addMove('Foul Play')
+				.addMove('Night Slash')
+				.addMove('False Surrender');
 
 		modifyPokemon('arbok')
 			.ability()
@@ -297,7 +297,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpA(60)
 				.setSpe(100)
 			.pokemon.learnset()
-				.addMove('zippyzap');
+				.addMove('Zippy Zap');
 
 		modifyPokemon('raichu')
 			.ability()
@@ -306,7 +306,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAtk(100)
 				.setSpA(100)
 			.pokemon.learnset()
-				.addMove('zippyzap');
+				.addMove('Zippy Zap');
 
 		modifyPokemon('raichualola')
 			.baseStat()
@@ -320,15 +320,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAtk(105)
 				.setSpD(75)
 			.pokemon.learnset()
-				.addMove('spikyshield')
-				.addMove('spinout');
+				.addMove('Spiky Shield')
+				.addMove('Spin Out');
 			
 		modifyPokemon('sandslashalola')
 			.ability()
 				.set0('Rough Skin')
 			.pokemon.learnset()
-				.addMove('spikyshield')
-				.addMove('icespinner', 9);
+				.addMove('Spiky Shield')
+				.addMove('Ice Spinner', 9);
 
 		modifyPokemon('nidoqueen')
 			.baseStat()
@@ -344,8 +344,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpA(75)
 				.setSpe(95)
 			.pokemon.learnset()
-				.addMove('gunkshot')
-				.addMove('precipiceblades');
+				.addMove('Gunk Shot')
+				.addMove('Precipice Blades');
 
 		modifyPokemon('clefable');
 
@@ -357,13 +357,13 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.baseStat()
 				.setSpA(91)
 			.pokemon.learnset()
-				.addMove('lavaplume')
-				.addMove('darkvoid')
-				.addMove('destinybond')
-				.addMove('nightmare')
-				.addMove('bittermalice')
-				.addMove('nightdaze')
-				.removeMove('nastyplot');
+				.addMove('Lava Plume')
+				.addMove('Dark Void')
+				.addMove('Destiny Bond')
+				.addMove('Nightmare')
+				.addMove('Bitter Malice')
+				.addMove('Night Daze')
+				.removeMove('Nasty Plot');
 
 		modifyPokemon('ninetalesalola')
 			.baseStat()
@@ -371,9 +371,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDef(85)
 				.setSpD(110)
 			.pokemon.learnset()
-				.addMove('haze')
-				.addMove('chillyreception')
-				.addMove('glaciate');
+				.addMove('Haze')
+				.addMove('Chilly Reception')
+				.addMove('Glaciate');
 
 		modifyPokemon('wigglytuff')
 			.ability()
@@ -384,27 +384,27 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpD(60)
 				.setSpe(55)
 			.pokemon.learnset()
-				.addMove('moonblast');
+				.addMove('Moonblast');
 
 		modifyPokemon('crobat')
 			.ability()
 				.set1('Infiltrator')
 				.setH('Vampire') // New Ability
 			.pokemon.learnset()
-				.addMove('poisonjab')
-				.addMove('toxicspikes')
-				.addMove('firefang')
-				.addMove('thunderfang')
-				.addMove('icefang');
+				.addMove('Poison Jab')
+				.addMove('Toxic Spikes')
+				.addMove('Fire Fang')
+				.addMove('Thunder Fang')
+				.addMove('Ice Fang');
 
 		modifyPokemon('vileplume')
 			.ability()
 				.set0('Lingering Aroma')
 				.set1('Neutralizing Gas')
 			.pokemon.learnset()
-				.addMove('appleacid')
-				.addMove('trailblaze', 9)
-				.addMove('acidspray');
+				.addMove('Apple Acid')
+				.addMove('Trailblaze', 9)
+				.addMove('Acid Spray');
 
 		modifyPokemon('parasect')
 			.ability()
@@ -415,25 +415,25 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDef(100)
 				.setSpe(55)
 			.pokemon.learnset()
-				.addMove('crabhammer')
-				.addMove('grassyglide')
-				.addMove('spore')
-				.addMove('uturn')
-				.addMove('leafblade')
-				.addMove('pounce')
-				.addMove('trailblaze', 9);
+				.addMove('Crabhammer')
+				.addMove('Grassy Glide')
+				.addMove('Spore')
+				.addMove('U Turn')
+				.addMove('Leaf Blade')
+				.addMove('Pounce')
+				.addMove('Trailblaze', 9);
 
 		modifyPokemon('venomoth')
 			.ability()
 				.setH('Compound Eyes')
 			.pokemon.learnset()
-				.addMove('hex');
+				.addMove('Hex');
 		
 		modifyPokemon('dugtrio')
 			.ability()
 				.set1('Emergency Exit')
 			.pokemon.learnset()
-				.addMove('headlongrush');
+				.addMove('Headlong Rush');
 
 		modifyPokemon('dugtrioalola')
 			.ability()
@@ -441,7 +441,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.baseStat()
 				.setAtk(105)
 			.pokemon.learnset()
-				.addMove('headlongrush');
+				.addMove('Headlong Rush');
 
 		modifyPokemon('persian')
 			.ability()
@@ -450,8 +450,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAtk(90)
 				.setSpA(70)
 			.pokemon.learnset()
-				.addMove('dazzlinggleam')
-				.addMove('suckerpunch');
+				.addMove('Dazzling Gleam')
+				.addMove('Sucker Punch');
 
 		modifyPokemon('persianalola')
 			.ability()
@@ -460,8 +460,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAtk(65)
 				.setSpA(90)
 			.pokemon.learnset()
-				.addMove('suckerpunch')
-				.addMove('nightdaze');
+				.addMove('Sucker Punch')
+				.addMove('Night Daze');
 
 		modifyPokemon('golduck')
 			.changeType('Water', 'Psychic')
@@ -470,29 +470,29 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDef(73)
 				.setSpA(100)
 			.pokemon.learnset()
-				.addMove('teleport')
-				.addMove('expandingforce');
+				.addMove('Teleport')
+				.addMove('Expanding Force');
 
 		modifyPokemon('primeape')
 			.ability()
 				.setH('Gorilla Tactics')
 			.pokemon.learnset()
-				.addMove('knockoff');
+				.addMove('Knock Off');
 
 		modifyPokemon('arcanine')
 			.ability()
 				.setH('Strong Jaw')
 			.pokemon.learnset()
-				.addMove('thunderwave')
-				.addMove('icefang');
+				.addMove('Thunder Wave')
+				.addMove('Ice Fang');
 
 		modifyPokemon('poliwrath')
 			.baseStat()
 				.setAtk(85)
 			.pokemon.learnset()
-				.addMove('surgingstrikes')
-				.addMove('flipturn')
-				.addMove('jetpunch', 9);
+				.addMove('Surging Strikes')
+				.addMove('Flip Turn')
+				.addMove('Jet Punch', 9);
 
 		modifyPokemon('politoed')
 			.baseStat()
@@ -502,13 +502,13 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSpA(105)
 				.setSpD(95)
 			.pokemon.learnset()
-				.addMove('flipturn')
-				.addMove('lifedew');
+				.addMove('Flip Turn')
+				.addMove('Life Dew');
 
 		modifyPokemon('alakazam')
 			.learnset()
-				.removeMove('counter')
-				.removeMove('barrier');
+				.removeMove('Counter')
+				.removeMove('Barrier');
 
 		modifyPokemon('machamp')
 			.baseStat()
@@ -516,8 +516,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDef(90)
 				.setSpD(95)
 			.pokemon.learnset()
-				.addMove('drainpunch')
-				.addMove('combattorque');
+				.addMove('Drain Punch')
+				.addMove('Combat Torque');
 
 		modifyPokemon('victreebel')
 			.ability()
@@ -527,7 +527,310 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDef(70)
 				.setSpe(75)
 			.pokemon.learnset()
-				.addMove('solarblade');
+				.addMove('Solar Blade');
+
+		modifyPokemon('tentacruel')
+			.ability()
+				.set1('Toxic Debris')
+				.setH('Levitate')
+			.pokemon.baseStat()
+				.setHp(90)
+				.setAtk(65)
+				.setDef(80)
+				.setSpA(85)
+				.setSpD(110)
+			.pokemon.learnset()
+				.addMove('Flip Turn')
+				.addMove('Nasty Plot')
+				.addMove('Octolock')
+				.addMove('Spikes')
+				.addMove('Recover');
+
+		modifyPokemon('golem')
+			.ability()
+				.setH('Solid Rock')
+			.pokemon.baseStat()
+				.setHp(90)
+				.setSpA(40)
+				.setSpD(75)
+				.setSpe(35)
+			.pokemon.learnset()
+				.addMove('Body Press')
+				.addMove('Head Smash')
+				.addMove('Rapid Spin');
+
+		modifyPokemon('golemalola')
+			.baseStat()
+				.setHp(85)
+				.setAtk(55)
+				.setDef(120)
+				.setSpA(115)
+				.setSpD(70)
+				.setSpe(55)
+			.pokemon.learnset()
+				.addMove('Flash Cannon')
+				.addMove('Power Gem')
+				.addMove('Steel Beam')
+				.addMove('Thousand Arrows')
+				.addMove('Zap Cannon');
+
+		modifyPokemon('rapidash')
+			.changeType('Normal', 'Fire')
+			.ability()
+				.set0('Reckless')
+			.pokemon.baseStat()
+				.setSpA(60)
+				.setSpe(125)
+			.pokemon.learnset()
+				.addMove('Fire Lash')
+				.addMove('Jump Kick')
+				.addMove('Blaze Kick')
+				.addMove('Bulldoze')
+				.addMove('Horn Leech');
+
+		modifyPokemon('rapidashgalar')
+			.ability()
+				.set0('Fairy Aura')
+				.setH('Magic Guard')
+			.pokemon.baseStat()
+				.setAtk(85)
+				.setSpA(95)
+				.setSpe(125)
+			.pokemon.learnset()
+				.addMove('Fire Lash')
+				.addMove('Moonblast')
+				.addMove('Luster Purge')
+				.addMove('Psyblade', 9)
+				.addMove('Cosmic Power');
+
+		modifyPokemon('slowbro');
+
+		modifyPokemon('slowbromega')
+			.baseStat()
+				.setAtk(65)
+				.setDef(170)
+				.setSpD(90);
+
+		modifyPokemon('slowbrogalar')
+			.baseStat()
+				.setAtk(80)
+				.setDef(100)
+				.setSpA(110)
+			.pokemon.learnset()
+				.addMove('Teleport')
+				.addMove('Toxic');
+
+		modifyPokemon('slowking');
+
+		modifyPokemon('slowkinggalar')
+			.learnset()
+				.addMove('Toxic');
+
+		modifyPokemon('magnezone')
+			.ability()
+				.setH('Levitate');
+
+		modifyPokemon('farfetchd')
+			.ability()
+				.set0('Sharpness')
+			.pokemon.baseStat()
+				.setHp(65)
+				.setDef(65)
+				.setSpD(70)
+				.setSpe(90)
+			.pokemon.learnset()
+				.addMove('Drill Peck')
+				.addMove('Dual Wingbeat')
+				.addMove('X Scissor')
+				.addMove('Aqua Cutter', 9)
+				.addMove('Ceaseless Edge');
+
+		modifyPokemon('farfetchdgalar')
+			.ability()
+				.set1('No Guard')
+			.pokemon.baseStat()
+				.setHp(70)
+				.setDef(65)
+				.setSpD(70)
+			.pokemon.learnset()
+				.addMove('Sacred Sword')
+				.addMove('Drill Peck')
+				.addMove('Brick Break');
+
+		modifyPokemon('sirfetchd')
+			.changeType('Fighting', 'Flying')
+			.ability()
+				.set1('Sharpness')
+			.pokemon.baseStat()
+				.setHp(80)
+			.pokemon.learnset()
+				.addMove('Sacred Sword')
+				.addMove('Roost')
+				.addMove('Toxic')
+				.addMove('Drill Run')
+				.addMove('Behemoth Blade');
+
+		modifyPokemon('dodrio')
+			.changeType('Ground', 'Flying')
+			.ability()
+				.set0('Sand Force')
+				.setH('Wind Rider')
+			.pokemon.learnset()
+				.addMove('U Turn')
+				.addMove('Dual Wingbeat')
+				.addMove('Triple Axel')
+				.addMove('Earthquake')
+				.addMove('Rock Slide')
+				.addMove('High Horsepower')
+				.addMove('Head Smash')
+				.removeMove('Fly');
+
+		modifyPokemon('dewgong')
+			.ability()
+				.set1('Water Absorb')
+				.setH('Slush Rush')
+			.pokemon.baseStat()
+				.setAtk(55)
+				.setSpA(90)
+			.pokemon.learnset()
+				.addMove('Scald')
+				.addMove('Flip Turn')
+				.addMove('Hydro Pump')
+				.addMove('Megahorn')
+				.addMove('Freeze-Dry')
+				.addMove('Chilling Water');
+
+		modifyPokemon('muk')
+			.ability()
+				.set0('Regenerator')
+				.set1('Gooey')
+			.pokemon.baseStat()
+				.setAtk(85)
+				.setDef(95)
+				.setSpA(75)
+			.pokemon.learnset()
+				.removeMove('Moonblast')
+				.addMove('Poison Fang');
+
+		modifyPokemon('mukalola')
+			.ability()
+				.setH('Corrosion')
+			.pokemon.baseStat()
+				.setHp(85)
+				.setSpD(90)
+			.pokemon.learnset()
+				.removeMove('Moonblast')
+				.addMove('Parting Shot')
+				.addMove('Sucker Punch');
+
+		modifyPokemon('cloyster');
+		modifyPokemon('gengar');
+
+		modifyPokemon('gengarmega')
+			.ability()
+				.set0('Perish Body')
+			.pokemon.baseStat()
+				.setHp(65)
+				.setDef(85)
+				.setSpA(145)
+				.setSpe(120);
+
+		modifyPokemon('steelix')
+			.baseStat()
+				.setSpD(80)
+			.pokemon.learnset()
+				.addMove('Coil');
+
+		modifyPokemon('steelixmega')
+			.ability()
+				.set0('Steelworker')
+			.pokemon.baseStat()
+				.setSpD(110);
+
+		modifyPokemon('hypno')
+			.ability()
+				.setH('Psychic Surge')
+				.set1('Bad Dreams')
+			.pokemon.baseStat()
+				.setDef(80)
+				.setSpA(83)
+				.setSpe(70)
+			.pokemon.learnset()
+				.addMove('Expanding Force');
+
+		modifyPokemon('kingler')
+			.changeType('Water', 'Steel')
+			.baseStat()
+				.setHp(65)
+			.pokemon.learnset()
+				.addMove('Flip Turn')
+				.addMove('Aqua Jet')
+				.addMove('Close Combat')
+				.addMove('Ice Punch')
+				.addMove('Meteor Mash')
+				.addMove('Bullet Punch');
+
+		modifyPokemon('electrode')
+			.changeType('Electric', 'Steel')
+			.ability()
+				.setH('Galvanize')
+				.set1('Baller')
+			.pokemon.baseStat()
+				.setSpA(100)
+			.pokemon.learnset()
+				.addMove('Weather Ball')
+				.addMove('Flash Cannon')
+				.addMove('Focus Blast')
+				.addMove('Shadow Ball')
+				.addMove('Aura Sphere')
+				.addMove('Magnet Bomb');
+
+		modifyPokemon('electrodehisui')
+			.ability()
+				.set1('Baller')
+			.pokemon.baseStat()
+				.setHp(80)
+				.setDef(90)
+				.setSpD(90)
+				.setSpe(100)
+			.pokemon.learnset()
+				.addMove('Leaf Storm')
+				.addMove('Sappy Seed')
+				.addMove('Giga Drain')
+				.addMove('Energy Ball')
+				.addMove('Acid Spray')
+				.addMove('Mist Ball')
+				.addMove('Sludge Bomb')
+				.addMove('Pollen Puff')
+				.addMove('Weather Ball');
+				
+		modifyPokemon('exeggutor')
+			.ability()
+				.set1('Thick Fat')
+				.set0('Sap Sipper')
+			.pokemon.baseStat()
+				.setHp(105)
+				.setDef(90)
+				.setSpD(80)
+				.setSpe(40)
+			.pokemon.learnset()
+				.removeMove('Power Whip')
+				.addMove('Weather Ball')
+				.addMove('Earth Power');
+
+		modifyPokemon('exeggutoralola')
+			.ability()
+				.set1('Lightning Rod')
+				.set0('Ripen')
+			.pokemon.baseStat()
+				.setAtk(115)
+				.setSpe(60)
+			.pokemon.learnset()
+				.addMove('Weather Ball')
+				.addMove('Focus Blast')
+				.addMove('Earth Power')
+				.addMove('Leaf Blade');
+				
 		//#endregion
 		//#endregion
 		
