@@ -873,7 +873,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 60, atk: 95, def: 85, spa: 80, spd: 85, spe: 100},
 	},
-	menectricmega: {
+	manectricmega: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 75, def: 80, spa: 130, spd: 80, spe: 140},
 	},
