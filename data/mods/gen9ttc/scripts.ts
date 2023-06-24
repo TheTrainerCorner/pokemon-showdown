@@ -1,4 +1,6 @@
+import { ModdedDex } from '../../../sim/dex';
 import { Learnset } from '../../../sim/dex-species';
+
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen9',
 	init() {
@@ -22,6 +24,90 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.kick = 1;
 		}
 		//#endregion
+
+		let modifyPokemon = (pokemon: string) => {
+
+			let changeType = (type1: string, type2?: string) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).types = type2 ? [type1, type2] : [type1];
+				return modifyPokemon(pokemon);
+			}
+
+			let addMove = (name: string, gen: number = 8) => {
+				this.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase()] = [`${gen}M`];
+				return modifyPokemon(pokemon);
+			}
+
+			let removeMove = (name: string) => {
+				this.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase()] = [];
+				return modifyPokemon(pokemon);
+			}
+
+			let setHp = (stat: number) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).baseStats['hp'] = stat;
+				return modifyPokemon(pokemon);
+			}
+
+			let setAtk = (stat: number) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).baseStats['atk'] = stat;
+				return modifyPokemon(pokemon);
+			}
+			
+			let setDef = (stat: number) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).baseStats['def'] = stat;
+				return modifyPokemon(pokemon);
+			}
+
+			let setSpA = (stat: number) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).baseStats['spa'] = stat;
+				return modifyPokemon(pokemon);
+			}
+
+			let setSpD = (stat: number) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).baseStats['spd'] = stat;
+				return modifyPokemon(pokemon);
+			}
+
+			let setSpe = (stat: number) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).baseStats['spe'] = stat;
+				return modifyPokemon(pokemon);
+			}
+
+			let setAbility0 = (name: string) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).abilities['0'] = name;
+				return modifyPokemon(pokemon);
+			}
+
+			let setAbility1 = (name: string) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).abilities['1'] = name;
+				return modifyPokemon(pokemon);
+			}
+
+			let setAbilityH = (name: string) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).abilities['H'] = name;
+				return modifyPokemon(pokemon);
+			}
+
+			let setAbilityS = (name: string) => {
+				this.modData('Pokedex', pokemon.toLowerCase()).abilities['S'] = name;
+				return modifyPokemon(pokemon);
+			}
+
+			return {
+				addMove,
+				removeMove,
+				setHp,
+				setAtk,
+				setDef,
+				setSpA,
+				setSpD,
+				setSpe,
+				changeType,
+				setAbility0,
+				setAbility1,
+				setAbilityH,
+				setAbilityS
+			}
+		}
 		
 		//#region Functions
 		let learnsetRemove = (pokemon: string, moves: string[]) => {
@@ -36,43 +122,85 @@ export const Scripts: ModdedBattleScriptsData = {
 				this.modData('Learnsets', pokemon.toLowerCase()).learnset[move[0].toLowerCase()] = [`${move[1]}M`];
 			}
 		}
+
 		//#endregion
+
+		//#region Modify Pokemon
+		//#region Gen 1
+		modifyPokemon('venusaur')
+			.setHp(90)
+			.setAtk(77)
+			.setDef(90)
+			.setSpA(95)
+			.setSpD(105)
+			.addMove('sludgewave')
+			.addMove('acidspray')
+			.addMove('gastroacid');
+
+		modifyPokemon('charizard')
+			.setAtk(94)
+			.setSpe(105)
+			.addMove('firelash')
+			.addMove('uturn')
+			.addMove('burnup');
+
+		modifyPokemon('charizardmegax')
+			.setAtk(135)
+			.setSpe(105);
 		
+		modifyPokemon('charizardmegay')
+			.setSpe(110);
+
+		modifyPokemon('blastoise')
+			.setAbility1('Shell Armor')
+			.setAtk(63)
+			.setDef(120)
+			.addMove('hydrosteam', 9)
+			.addMove('streameruption');
+
+		modifyPokemon('butterfree')
+			.changeType('Bug', 'Pyschic')
+			.setHp(75)
+			.setDef(75)
+			.setSpA(100)
+			.setSpD(100)
+			.setSpe(50)
+			.addMove('lightscreen')
+			.addMove('aromatherapy')
+			.addMove('stickyweb')
+			.addMove('psyshock')
+			.addMove('luminacrash')
+			.addMove('trickroom');
+		
+		modifyPokemon('beedrill')
+			.setAbility1('Merciless')
+			.setAtk(100)
+			.setSpA(20)
+			.setSpe(105)
+			.addMove('crosspoison')
+			.addMove('dualwingbeat')
+			.addMove('firstimpression');
+
+		modifyPokemon('pidgeot')
+			.setAbility0('frisk')
+			.setAbility1('Early Bird')
+			.setAbilityH('Defiant')
+			.setAtk(95)
+			.setDef(85)
+			.setSpA(80)
+			.setSpe(96)
+			.addMove('hypervoice')
+			.addMove('bulkup')
+			.addMove('extremespeed')
+			.addMove('aurasphere')
+			.addMove('dualwingbeat');
+
+		//#endregion
+		//#endregion
+
 		//#region Learnsets
 		//#region Gen 1
-		learnsetAdd('venusaur', [
-			['sludgewave', 8],
-			['acidspray', 8],
-			['gastroacid', 8],
-		]);
-		learnsetAdd('charizard', [
-			['firelash', 8],
-			['uturn', 8],
-			['burnup', 8],
-		]);
-		learnsetAdd('blastoise', [
-			['hydrosteam', 9],
-			['steameruption', 8],
-		]);
-		learnsetAdd('butterfree', [
-			['lightscreen', 8],
-			['aromatherapy', 8],
-			['stickyweb', 8],
-			['psyshock', 8],
-			['luminacrash', 9],
-			['trickroom', 8],
-		]);
-		learnsetAdd('beedrill', [
-			['crosspoison', 8],
-			['dualwingbeat', 8],
-			['firstimpression', 8],
-		]);
-		learnsetAdd('pidgeot', [
-			['bulkup', 8],
-			['extremespeed', 8],
-			['aurasphere', 8],
-			['hypervoice', 8],
-		]);
+
 		learnsetAdd('raticate', [
 			['closecombat', 8],
 			['firefang', 8],
@@ -905,6 +1033,19 @@ export const Scripts: ModdedBattleScriptsData = {
 		learnsetAdd('sharpedo', [
 			['wavecrash', 9],
 			['fishiousrend', 8],
+		]);
+		learnsetAdd('wailord', [
+			['bouncybubble', 8],
+			['originpulse', 8],
+			['focusblast', 8],
+			['wavecrash', 8],
+		]);
+		learnsetAdd('camerupt', [
+			['scorchingsands', 8],
+			['slackoff', 8],
+			['magmastorm', 8],
+			['scald', 8],
+			['steameruption', 9],
 		]);
 		//#endregion
 		//#endregion

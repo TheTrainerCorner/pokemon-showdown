@@ -1,42 +1,6 @@
 import { stats } from '../../../server/chat-plugins/randombattles/winrates';
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	//#region Gen 1
-	venusaur: {
-		inherit: true,
-		baseStats: {hp: 90, atk: 77, def: 90, spa: 95, spd: 105, spe: 80},
-	},
-	charizard: {
-		inherit: true,
-		baseStats: {hp: 78, atk: 94, def: 78, spa: 109, spd: 85, spe: 105},
-	},
-	charizardmegax: {
-		inherit: true,
-		baseStats: {hp: 78, atk: 135, def: 111, spa: 130, spd: 85, spe: 105},
-	},
-	charizardmegay: {
-		inherit: true,
-		baseStats: {hp: 78, atk: 104, def: 78, spa: 159, spd: 115, spe: 110},
-	},
-	blastoise: {
-		inherit: true,
-		baseStats: {hp: 79, atk: 63, def: 120, spa: 85, spd: 105, spe: 78},
-		abilities: {0: "Torrent", 1: "Shell Armor", H: "Rain Dish"},
-	},
-	butterfree: {
-		inherit: true,
-		types: ["Bug", "Psychic"],
-		baseStats: {hp: 75, atk: 45, def: 75, spa: 100, spd: 100, spe: 50},
-	},
-	beedrill: {
-		inherit: true,
-		baseStats: {hp: 65, atk: 100, def: 40, spa: 20, spd: 80, spe: 105},
-		abilities: {0: "Swarm", 1: "Merciless", H: "Sniper"},
-	},
-	pidgeot: {
-		inherit: true,
-		baseStats: {hp: 83, atk: 95, def: 85, spa: 80, spd: 70, spe: 96},
-		abilities: {0: "Frisk", 1: "Early Bird", H: "Defiant"},
-	},
 	raticate: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 96, def: 60, spa: 50, spd: 70, spe: 102},
@@ -941,6 +905,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sharpedo: {
 		inherit: true,
 		abilities: {0: "Rough Skin", 1: "Reckless", H: "Speed Boost"},
+	},
+	wailord: {
+		inherit: true,
+		baseStats: {hp: 155, atk: 70, def: 70, spa: 95, spd: 70, spe: 45},
+		abilities: {0: "Filter", 1: "Oblivious", H: "Primordial Sea"},
+	},
+	camerupt: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 100, def: 70, spa: 105, spd: 75, spe: 40},
+	},
+	cameruptmega: {
+		inherit: true,
 	},
 	//#endregion
 	//#region Gen 4
