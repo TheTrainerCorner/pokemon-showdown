@@ -676,10 +676,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 80, atk: 80, def: 75, spa: 80, spd: 80, spe: 90},
 		abilities: {0: "Vital Spirit", 1: "Slush Rush", H: "Refrigerate"},
 	},
-	skaromry: {
-		inherit: true,
-		abilities: {0: "Light Metal", 1: "Sturdy", H: "Intimidate"},
-	},
+	// skaromry: {
+	// 	inherit: true,
+	// 	abilities: {0: "Light Metal", 1: "Sturdy", H: "Intimidate"},
+	// },
 	houndoom: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 90, def: 50, spa: 120, spd: 80, spe: 100},
