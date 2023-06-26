@@ -831,6 +831,170 @@ export const Scripts: ModdedBattleScriptsData = {
 				.addMove('Earth Power')
 				.addMove('Leaf Blade');
 				
+		modifyPokemon('marowak')
+			.ability()
+				.set1('Technician')
+				.setH('Sand Force')
+			.pokemon.baseStat()
+				.setHp(75)
+				.setSpA(35)
+				.setSpe(55)
+			.pokemon.learnset()
+				.addMove('Head Smash')
+				.addMove('Headlong Rush');
+
+		modifyPokemon('marowakalolan')
+			.ability()
+				.set1('Technician')
+			.pokemon.baseStat()
+				.setAtk(95)
+				.setDef(95)
+				.setSpA(35)
+			.pokemon.learnset()
+				.addMove('Head Smash')
+				.addMove('Headlong Rush');
+
+		modifyPokemon('hitmonlee')
+			.ability()
+				.set0('Leg Day') // New ability
+			.pokemon.baseStat()
+				.setHp(70)
+				.setSpe(60)
+			.pokemon.learnset()
+				.addMove('Pyro Ball')
+				.addMove('Triple Axel');
+
+		modifyPokemon('hitmonchan')
+			.baseStat()
+				.setHp(75)
+				.setDef(89)
+				.setSpe(70)
+			.pokemon.learnset()
+				.addMove('Sucker Punch')
+				.addMove('Cross Chop');
+
+		modifyPokemon('hitmontop')
+			.ability()
+				.setH('Guts')
+			.pokemon.baseStat()
+				.setHp(60)
+				.setAtk(100)
+				.setDef(100)
+				.setSpe(80)
+			.pokemon.learnset()
+				.addMove('U Turn');
+
+		modifyPokemon('lickilicky')
+			.ability()
+				.set1("Unaware");
+
+		modifyPokemon('weezing')
+			.baseStat()
+				.setHp(85)
+			.pokemon.learnset()
+				.addMove('Energy Ball')
+				.addMove('Defog')
+				.addMove('Acid Spray')
+				.addMove('Recover');
+
+		modifyPokemon('weezinggalar')
+			.learnset()
+				.addMove('Energy Ball')
+				.addMove('Draining Kiss');
+
+		modifyPokemon('rhyperior')
+			.ability()
+				.set0('Sap Sipper')
+			.pokemon.learnset()
+				.addMove('Headlong Rush')
+				.addMove('Head Smash');
+				
+		modifyPokemon('chansey')
+			.ability()
+				.setH('Curious Medicine')
+			.pokemon.baseStat()
+				.setHp(230)
+				.setDef(15)
+				.setSpA(55)
+				.setSpD(95)
+			.pokemon.learnset()
+				.addMove('Revival Blessing')
+				.addMove('Haze');
+
+		modifyPokemon('blissey')
+			.changeType('Normal', 'Fairy')
+			.ability()
+				.setH('Curious Medicine')
+				.set1('Misty Surge')
+			.pokemon.baseStat()
+				.setHp(235)
+				.setDef(25)
+				.setSpA(95)
+				.setSpD(120)
+			.pokemon.learnset()
+				// Chansey already gets Revival Blessing and Haze
+				.addMove('Energy Ball')
+				.addMove('Hypnosis');
+
+		modifyPokemon('tangrowth')
+			.ability()
+				.set0('Tangling Hair')
+				.set1('Innards out');
+
+		modifyPokemon('kangaskhan')
+			.ability()
+				.set0('Adaptibilty')
+			.pokemon.learnset()
+				.removeMove('Seismic Toss')
+				.removeMove('Power up Punch');
+
+		modifyPokemon('kangaskhanmega')
+			.ability()
+				.set0('Sheer Force')
+			.pokemon.baseStat()
+				.setDef(105)
+				.setSpD(105)
+				.setSpe(90);
+
+		modifyPokemon('kingdra')
+			.baseStat()
+				.setAtk(85)
+				.setSpA(105)
+			.pokemon.learnset()
+				.addMove('Snipe Shot')
+				.addMove('Origin Pulse');
+
+		modifyPokemon('seaking')
+			.ability()
+				.set1('Supreme Overlord')
+			.pokemon.baseStat()
+				.setHp(112)
+				.setSpe(48)
+			.pokemon.learnset()
+				.addMove('Aqua Jet')
+				.addMove('Crunch')
+				.addMove('Horn Leech')
+				.addMove('Liquidation');
+
+		modifyPokemon('starmie')
+			.ability()
+				.set0('Mirror Armor');
+
+		modifyPokemon('mrmime')
+			.ability()
+				.setH('Psychic Surge')
+			.pokemon.baseStat()
+				.setHp(50)
+			.pokemon.learnset()
+				.addMove('Moonblast')
+				.addMove('Misty Explosion');
+
+		modifyPokemon('mrmimegalar')
+			.ability()
+				.set0('Snow Warning')
+			.pokemon.learnset()
+				.addMove('Toxic')
+				.addMove('Teleport');
 		//#endregion
 		//#endregion
 		
