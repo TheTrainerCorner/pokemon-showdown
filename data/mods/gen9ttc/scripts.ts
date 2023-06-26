@@ -3,6 +3,7 @@ import { Learnset } from '../../../sim/dex-species';
 
 // Generations Files
 import Gen1 from './gens/gen1';
+import Gen2 from './gens/gen2';
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen9',
@@ -137,39 +138,8 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		// Generation 1
 		Gen1(this);
-
-		//#region Gen 2
-		modifyPokemon('meganium')
-			.changeType('Grass', 'Fairy')
-			.ability()
-				.setH('Serene Grace')
-				.set1('Regenerator')
-			.pokemon.baseStat()
-				.setHp(100)
-				.setAtk(60)
-				.setSpA(95)
-				.setSpe(65)
-			.pokemon.learnset()
-				.addMove('Moonblast')
-				.addMove('Draining Kiss')
-				.addMove('Wish')
-				.addMove('Springtide Storm', 9)
-				.addMove('Roar');
-
-		modifyPokemon('typhlosion')
-			.changeType('Fire', 'Ground')
-			.ability()
-				.set1('Anger Point')
-			.pokemon.baseStat()
-				.setAtk(109)
-				.setDef(69)
-				.setSpD(72)
-				.setSpe(111)
-			.pokemon.learnset()
-				.addMove('Earth Power')
-				.addMove('Trailblaze');
-		//#endregion
-		//#endregion
+		// Generation 2
+		Gen2(this);
 		
 	},
 };
