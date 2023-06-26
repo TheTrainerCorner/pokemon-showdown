@@ -995,6 +995,315 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset()
 				.addMove('Toxic')
 				.addMove('Teleport');
+
+		modifyPokemon('mrrime')
+			.ability()
+				.set0('Snow Warning')
+			.pokemon.baseStat()
+				.setAtk(65)
+				.setSpe(100)
+			.pokemon.learnset()
+				.addMove('Toxic')
+				.addMove('Teleport');
+
+		modifyPokemon('scyther')
+			.ability()
+				.set1('Adaptability')
+				.setH('Sharpness')
+			.pokemon.learnset()
+				.addMove('Fly')
+				.addMove('Kowtow Cleave')
+				.addMove('Leaf Blade');
+
+		modifyPokemon('scizor')
+			.ability()
+				.setH('Sharpness')
+			.pokemon.learnset()
+				.addMove('Fly')
+				.addMove('Kowtow Cleave')
+				.addMove('Leaf Blade');
+
+		modifyPokemon('scizormega');
+
+		modifyPokemon('jynx')
+			.ability()
+				.set1('Dazzling')
+			.pokemon.baseStat()
+				.setHp(70)
+				.setDef(55)
+				.setSpe(100)
+			.pokemon.learnset()
+				.addMove('Psystrike')
+				.addMove('Aura Sphere')
+				.addMove('Freeze Dry')
+				.addMove('Psycho Boost');
+
+		modifyPokemon('electivire')
+			.changeType('Electric', 'Fighting')
+			.ability()
+				.setH('Iron Fist')
+			.pokemon.baseStat()
+				.setAtk(113)
+			.pokemon.learnset()
+				.addMove('Plasma Fists')
+				.addMove('Mach Punch')
+				.addMove('Close Combat');
+
+		modifyPokemon('magmortar')
+			.ability()
+				.setH('Mega Launcher')
+			.pokemon.baseStat()
+				.setSpA(115)
+				.setSpe(93)
+			.pokemon.learnset()
+				.addMove('Magma Storm')
+				.addMove('Meteor Beam')
+				.addMove('Scald')
+				.addMove('Steam Eruption')
+				.addMove('Dark Pulse')
+				.addMove('Aura Sphere');
+
+		modifyPokemon('pinsir')
+			.changeType('Bug', 'Ground')
+			.learnset()
+				.addMove('Megahorn')
+				.addMove('U Turn')
+				.addMove('First Impression');
+
+		modifyPokemon('pinsirmega');
+
+		modifyPokemon('tauros')
+			.baseStat()
+				.setSpA(65)
+			.pokemon.learnset()
+				.addMove('Play Rough')
+				.addMove('Flare Blitz')
+				.addMove('Headlong Rush')
+				.addMove('Power Gem');
+		
+		modifyPokemon('gyarados')
+			.changeType('Water', 'Dragon')
+			.ability()
+				.set1('Anger Point')
+			.pokemon.learnset()
+				.addMove('Flip Turn')
+				.addMove('Draco Meteor');
+
+		modifyPokemon('gyaradosmega')
+			.changeType('Water', 'Dragon');
+
+		modifyPokemon('lapras')
+			.ability()
+				.set1('Drizzle')
+				.setH('Rain Dish')
+			.pokemon.baseStat()
+				.setHp(120)
+				.setAtk(75)
+				.setDef(95)
+				.setSpA(90)
+				.setSpD(80)
+			.pokemon.learnset()
+				.addMove('Scald')
+				.addMove('Wish')
+				.addMove('Boomburst')
+				.addMove('Calm Mind');
+
+		modifyPokemon('ditto')
+			.ability()
+				.set1('Illusion');
+
+		modifyPokemon('vaporeon')
+			.ability()
+				.set1('Rain Dish');
+
+		modifyPokemon('jolteon')
+			.ability()
+				.set1('Electromorphosis')
+				.setH('Speed Boost')
+			.pokemon.learnset()
+				.addMove('Spikes');
+
+		modifyPokemon('flareon')
+			.ability()
+				.set1('Sheer Force')
+			.pokemon.baseStat()
+				.setHp(110)
+				.setDef(95)
+				.setSpA(60)
+				.setSpD(65)
+			.pokemon.learnset()
+				.addMove('Sacred Fire')
+				.addMove('Stomping Tantrum')
+				.addMove('Play Rough')
+				.addMove('Bulk Up')
+				.addMove('Agility')
+				.addMove('Thunder Fang')
+				.addMove('Morning Sun');
+		
+		modifyPokemon('leafeon')
+			.ability()
+				.set1('Solar Power')
+			.pokemon.learnset()
+				.addMove('Jump Kick')
+				.addMove('Stomping Tantrum')
+				.addMove('Leech Seed');
+
+		modifyPokemon('glaceon')
+			.ability()
+				.set1('Snow Warning')
+				.setH('Slush Rush');
+
+		modifyPokemon('umbreon')
+			.ability()
+				.set1('Dark Aura')
+			.pokemon.learnset()
+				.addMove('Knock Off');
+
+		modifyPokemon('espeon')
+			.ability()
+				.set1('Magic Guard')
+			.pokemon.learnset()
+				.addMove('Teleport');
+
+		modifyPokemon('porygon2')
+			.changeType('Normal', 'Electric');
+		
+		modifyPokemon('porygonz')
+			.changeType('Normal', 'Electric')
+			.baseStat()
+				.setDef(75)
+				.setSpA(125)
+				.setSpD(80)
+			.pokemon.learnset()
+				.addMove('Expanding Force')
+				.addMove('Techno Blast');
+
+		modifyPokemon('omastar')
+			.ability()
+				.setH('Iron Barbs')
+			.pokemon.baseStat()
+				.setHp(80)
+				.setSpD(90)
+			.pokemon.learnset()
+				.addMove('Power Gem')
+				.addMove('Rapid Spin')
+				.addMove('Spikey Shield')
+				.addMove('Sludge Bomb')
+				.addMove('Acid Armor');
+
+		modifyPokemon('kabutops')
+			.ability()
+				.setH('Sharpness')
+			.pokemon.baseStat()
+				.setHp(70)
+				.setAtk(120)
+				.setSpD(80)
+				.setSpe(85)
+			.pokemon.learnset()
+				.addMove('Focus Energy')
+				.addMove('Leaf Blade')
+				.addMove('Aqua Cutter', 9);
+
+		modifyPokemon('aerodactyl')
+			.ability()
+				.set0('Intimidate')
+			.pokemon.baseStat()
+				.setAtk(115);
+
+		modifyPokemon('aerodactylmega')
+			.baseStat()
+				.setHp(90);
+
+		modifyPokemon('snorlax')
+			.learnset()
+				.addMove('Slack Off')
+				.addMove('Stuff Cheeks');
+
+		modifyPokemon('articuno')
+			.ability()
+				.setH('Snow Warning')
+			.pokemon.baseStat()
+				.setHp(100)
+				.setAtk(65)
+				.setDef(110)
+				.setSpA(105)
+				.setSpD(140)
+				.setSpe(70)
+			.pokemon.learnset()
+				.addMove('Calm Mind')
+				.addMove('Focus Blast')
+				.addMove('Glaciate')
+				.addMove('Bleakwind Storm', 9);
+
+		modifyPokemon('articunogalar')
+			.ability()
+				.set1('Psychic Surge')
+			.pokemon.baseStat()
+				.setAtk(70)
+				.setSpe(105)
+			.pokemon.learnset()
+				.addMove('Roost')
+				.addMove('Toxic')
+				.addMove('Defog')
+				.addMove('Esper Wing')
+				.addMove('Lumina Crash', 9);
+
+		modifyPokemon('zapdos')
+			.ability()
+				.setH('Electric Surge')
+			.pokemon.baseStat()
+				.setAtk(75)
+				.setDef(100)
+			.pokemon.learnset()
+				.addMove('Bolt Beak')
+				.addMove('Fusion Bolt');
+
+		modifyPokemon('zapdosgalar')
+			.ability()
+				.set1('Wind Rider')
+			.pokemon.learnset()
+				.addMove('Roost')
+				.addMove('Defog')
+				.addMove('Toxic')
+				.addMove('Bolt Beak')
+				.addMove('Triple Kick')
+				.addMove('Triple Axel')
+				.addMove('Axe Kick');
+
+		modifyPokemon('moltres')
+			.ability()
+				.setH('Drought')
+			.pokemon.baseStat()
+				.setDef(105)
+			.pokemon.learnset()
+				.addMove('Inferno')
+				.addMove('Fusion Flare');
+
+		modifyPokemon('moltresgalar')
+			.ability()
+				.set1('Dark Aura')
+			.pokemon.learnset()
+				.addMove('Roost')
+				.addMove('Defog')
+				.addMove('Scorching Sands')
+				.addMove('Toxic')
+				.addMove('Night Daze')
+				.addMove('Flamethrower');
+
+		modifyPokemon('dragonite');
+
+		modifyPokemon('mew')
+			.ability()
+				.set1('Protean');
+
+		// NO ONE CARES ABOUT MEWTWO!!!!
+		modifyPokemon('mewtwo');
+		modifyPokemon('mewtwomegax');
+		modifyPokemon('mewtwomegay');
+		//#endregion
+
+		//#region Gen 2
+		
 		//#endregion
 		//#endregion
 		
