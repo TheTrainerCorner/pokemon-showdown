@@ -26,7 +26,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 
 		let modifyPokemon = (pokemon: string) => {
-
+			
 			let baseStat = () => {
 				return {
 					setHp,
@@ -843,7 +843,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.addMove('Head Smash')
 				.addMove('Headlong Rush');
 
-		modifyPokemon('marowakalolan')
+		modifyPokemon('marowakalola')
 			.ability()
 				.set1('Technician')
 			.pokemon.baseStat()
