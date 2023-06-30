@@ -876,8 +876,7 @@ modifyPokemon('chansey')
 		.setSpA(55)
 		.setSpD(95)
 	.pokemon.learnset()
-		.addMove('Revival Blessing')
-		.addMove('Haze');
+		.addMove('Revival Blessing');
 
 modifyPokemon('blissey')
 	.changeType('Normal', 'Fairy')
@@ -890,7 +889,7 @@ modifyPokemon('blissey')
 		.setSpA(95)
 		.setSpD(120)
 	.pokemon.learnset()
-		// Chansey already gets Revival Blessing and Haze
+		// Chansey already gets Revival Blessing
 		.addMove('Energy Ball')
 		.addMove('Hypnosis');
 

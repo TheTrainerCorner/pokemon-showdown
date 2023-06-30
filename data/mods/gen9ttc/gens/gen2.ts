@@ -168,4 +168,59 @@ modifyPokemon('furret')
 		.setDef(74)
 	.pokemon.learnset()
 		.addMove('Play Rough');
+
+modifyPokemon('noctowl')
+	.changeType('Psychic', 'Flying')
+	.ability()
+		.set1('Trace')
+	.pokemon.baseStat()
+		.setDef(60)
+		.setSpe(85)
+	.pokemon.learnset()
+		.addMove('Moongeist Beam')
+		.addMove('Psyshock');
+
+modifyPokemon('Ledian')
+	.changeType('Bug', 'Fighting')
+	.baseStat()
+		.setHp(80)
+		.setAtk(100)
+		.setDef(75)
+		.setSpA(15)
+		.setSpe(95)
+	.pokemon.learnset()
+		.addMove('Sucker Punch')
+		.addMove('Fire Punch');
+
+modifyPokemon('ariados')
+	.baseStat()
+		.setHp(60)
+		.setAtk(100)
+		.setSpA(80)
+		.setSpe(90)
+	.pokemon.learnset()
+		.addMove('Skitter Smack')
+		.addMove('Nasty Plot')
+		.addMove('Taunt')
+		.addMove('Torment')
+		.addMove('U Turn')
+		.addMove('Knock Off');
+
+modifyPokemon('lanturn')
+	.learnset()
+		.addMove('Parabolic Charge');
+
+modifyPokemon('togekiss')
+	.learnset()
+		.addMove('Moonblast')
+		.addMove('Ice Beam');
+
+modifyPokemon('xatu')
+	.ability()
+		.set0('Magic Guard')
+		.set1('Tinted Lens')
+	.pokemon.baseStat()
+		.setHp(75);
+
+
 }
