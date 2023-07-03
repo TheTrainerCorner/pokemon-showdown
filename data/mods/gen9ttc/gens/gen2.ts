@@ -207,7 +207,9 @@ modifyPokemon('ariados')
 		.addMove('Knock Off');
 
 modifyPokemon('lanturn')
-	.learnset()
+	.ability()
+		.set1('Hydration')
+	.pokemon.learnset()
 		.addMove('Parabolic Charge');
 
 modifyPokemon('togekiss')
@@ -425,11 +427,149 @@ modifyPokemon('qwilfish')
 	.ability()
 		.set1('Iron Barbs')
 	.pokemon.baseStat()
-		.setHp(85)
-		.setAtk(75)
+		.setHp(75)
 		.setSpD(85)
-		.setSpe(60)
 	.pokemon.learnset()
 		.addMove('Baneful Bunker')
 		.addMove('Spikey Shield');
+
+modifyPokemon('qwilfishhisui')
+	.ability()
+		.set1('Corrosion')
+	.pokemon.baseStat()
+		.setHp(85)
+		.setAtk(75)
+		.setSpD(85)
+		.setSpe(75);
+
+modifyPokemon('overqwil')
+	.ability()
+		.set0('Poison Touch')
+	.pokemon.baseStat()
+		.setHp(100)
+		.setSpA(80)
+		.setSpD(90);
+
+modifyPokemon('shuckle');
+
+modifyPokemon('heracross')
+	.ability()
+		.set0('Sap Sipper')
+	.pokemon.learnset()
+		.addMove('First Impression')
+		.addMove('Drain Punch');
+
+modifyPokemon('weavile')
+	.ability()
+		.setH('Infiltator')
+	.pokemon.learnset()
+		.addMove('Sucker Punch');
+
+modifyPokemon('ursaring')
+	.baseStat()
+		.setDef(95)
+		.setSpD(80);
+
+modifyPokemon('ursaluna')
+	.baseStat()
+		.setHp(110)
+		.setAtk(130);
+
+modifyPokemon('magcargo')
+	.ability()
+		.setH('Desolate Land')
+		.set0('Sturdy')
+	.pokemon.baseStat()
+		.setHp(80)
+		.setSpA(115)
+		.setSpD(100)
+		.setSpe(60)
+	.pokemon.learnset()
+		.addMove('Slack Off')
+		.addMove('Power Gem')
+		.addMove('Meteor Beam')
+		.addMove('Magma Storm');
+
+modifyPokemon('mamoswine')
+	.ability()
+		.set1('Thick Fat')
+		.setH('Gluttony')
+	.pokemon.learnset()
+		.addMove('Headlong Rush');
+
+modifyPokemon('corsola')
+	.ability()
+		.set0('Rock Head')
+	.pokemon.baseStat()
+		.setAtk(95)
+		.setSpe(50)
+	.pokemon.learnset()
+		.addMove('Flip Turn');
+
+modifyPokemon('corsolagalar')
+	.changeType('Ghost', 'Rock')
+	.ability()
+		.set0('Cursed Body')
+		.setH('Regenerator')
+	.pokemon.baseStat()
+		.setHp(80)
+		.setDef(90)
+		.setSpD(90)
+	.pokemon.learnset()
+		.addMove('Teleport')
+		.addMove('Shadow Sneak')
+		.addMove('Toxic');
+
+modifyPokemon('cursola')
+	.changeType('Ghost', 'Rock')
+	.ability()
+		.set0('Perish Body')
+		.setH('Regenerator')
+	.pokemon.baseStat()
+		.setHp(90)
+		.setSpD(90)
+	.pokemon.learnset();
+	// Corsola-Galar already has the following:
+	// Teleport, Shadow Sneak, and Toxic
+	// Cursola will gain these moves through
+	// Inheritances
+
+modifyPokemon('octillery')
+	.ability()
+		.setH('Artillery')
+		.set0('Mega Launcher')
+	.pokemon.baseStat()
+		.setHp(100)
+		.setAtk(50)
+		.setDef(100)
+		.setSpA(150)
+		.setSpD(100)
+		.setSpe(15)
+	.pokemon.learnset()
+		.addMove('Aqua Ring')
+		.addMove('Thunderbolt')
+		.addMove('Meteor Beam')
+		.addMove('Aura Sphere')
+		.addMove('Shadow Ball')
+		.addMove('Aeroblast')
+		.addMove('Dark Pulse')
+		.addMove('Moonblast')
+		.addMove('Dragon Pulse')
+		.addMove('Origin Pulse');
+
+modifyPokemon('delibird')
+	.changeType('Ice', 'Fairy')
+	.ability()
+		.setH('Refrigerate')
+		.set1('Slush Rush')
+	.pokemon.baseStat()
+		.setHp(80)
+		.setAtk(80)
+		.setDef(75)
+		.setSpA(80)
+		.setSpD(80)
+		.setSpe(90)
+	.pokemon.learnset()
+		.addMove('Dazzling Gleam')
+		.addMove('Play Rough');
 }

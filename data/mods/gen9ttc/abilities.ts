@@ -252,4 +252,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: -109,
 		rating: 5,
 	},
+	elemental: {
+		onSourceModifyAccuracy(accuracy, target, source, move) {
+			if (!source.types.includes(move.type)) return;
+			if (typeof accuracy !== 'number') return;
+			this.debug('elemental - enhancing accuracy');
+			return this.chainModify([5325, 4096]);
+		},
+		onSourceModifyAccuracyPriority: -1,
+		name: "Elemental",
+		shortDesc: "STAB moves accuracy are boosted by 1.3x",
+		rating: 3,
+		num: -110,
+	},
 };
