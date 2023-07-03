@@ -1,5 +1,5 @@
 import { ModdedDex } from "./../../../../sim/dex";
-export default function Gen2 (dex: ModdedDex) {
+export default function Gen3 (dex: ModdedDex) {
 	let modifyPokemon = (pokemon: string) => {
 			
 		let baseStat = () => {
@@ -273,4 +273,15 @@ modifyPokemon('masquerain')
 		.addMove('Flip Turn')
 		.addMove('Muddy Water')
 		.addMove('Psychic');
+
+modifyPokemon('breloom')
+	.baseStat()
+		.setHp(65)
+		.setAtk(120)
+		.setSpA(50)
+		.setSpD(65)
+	.pokemon.learnset()
+		.addMove('Grassy Glide')
+		.addMove('Power Whip')
+		.addMove('Trailblaze');
 }
