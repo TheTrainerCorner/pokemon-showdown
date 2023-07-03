@@ -4,6 +4,7 @@ import { Learnset } from '../../../sim/dex-species';
 // Generations Files
 import Gen1 from './gens/gen1';
 import Gen2 from './gens/gen2';
+import Gen3 from './gens/gen3';
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen9',
@@ -140,6 +141,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		Gen1(this);
 		// Generation 2
 		Gen2(this);
+		// Generation 3
+		Gen3(this);
 		
 	},
 };

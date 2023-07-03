@@ -572,4 +572,139 @@ modifyPokemon('delibird')
 	.pokemon.learnset()
 		.addMove('Dazzling Gleam')
 		.addMove('Play Rough');
+
+modifyPokemon('mantine')
+	.learnset()
+		.addMove('Flip Turn');
+
+modifyPokemon('skarmory')
+	.ability()
+		.set0('Light Metal')
+		.setH('Intimidate');
+
+modifyPokemon('houndoom')
+	.baseStat()
+		.setSpA(120)
+		.setSpe(100)
+	.pokemon.learnset()
+		.addMove('Fiery Wrath')
+		.addMove('Scorching Sands');
+
+modifyPokemon('houndoommega')
+	.ability()
+		.set0('Intimidate')
+	.pokemon.baseStat()
+		.setSpA(150)
+	.pokemon.learnset()
+		// Houndoom gets the following:
+		// Fiery Wrath, and Scorching Sands
+		// Houndoom-Mega will gain these through
+		// Inheritance
+
+modifyPokemon('donphan')
+	.ability()
+		.setH('Sand Rush')
+		.set1('Technician')
+	.pokemon.baseStat()
+		.setSpD(90)
+	.pokemon.learnset()
+		.addMove('Flame Wheel')
+		.addMove('Spin Out', 9);
+
+modifyPokemon('stantler')
+	.baseStat()
+		.setDef(82)
+		.setSpD(85);
+
+modifyPokemon('wyrdeer')
+	.ability()
+		.setH('Stamina')
+	.pokemon.baseStat()
+		.setAtk(115)
+		.setDef(92)
+		.setSpA(110)
+		.setSpD(95)
+		.setSpe(105)
+	.pokemon.learnset()
+		.addMove('Recover');
+
+modifyPokemon('smeargle')
+	.ability()
+		.set1('Inner Focus')
+		.setH('Color Change')
+	.pokemon.baseStat()
+		.setAtk(50)
+		.setDef(55)
+		.setSpA(50)
+		.setSpD(55);
+
+modifyPokemon('miltank')
+	.ability()
+		.setH('Cud Chew')
+	.pokemon.baseStat()
+		.setAtk(90)
+		.setSpD(85)
+	.pokemon.learnset()
+		.addMove('Recycle');
+
+modifyPokemon('raikou')
+	.changeType('Electic', 'Normal')
+	.ability()
+		.setH('Radiating Light')
+	.pokemon.baseStat()
+		.setHp(100)
+		.setDef(100)
+	.pokemon.learnset()
+		.addMove('Fire Fang')
+		.addMove('Ice Fang')
+		.addMove('Play Rough')
+		.addMove('Hyper Voice');
+
+modifyPokemon('entei')
+	.changeType('Fire', 'Ground')
+	.ability()
+		.setH('Mighty Fire')
+	.pokemon.baseStat()
+		.setHp(110)
+		.setAtk(100)
+		.setSpA(100)
+		.setSpD(80)
+		.setSpe(105)
+	.pokemon.learnset()
+		.addMove('Earthquake')
+		.addMove('Earth Power');
+
+modifyPokemon('suicune')
+	.changeType('Water', 'Ice')
+	.ability()
+		.setH('Silent Water')
+	.pokemon.baseStat()
+		.setAtk(50)
+		.setSpA(100)
+		.setSpe(100)
+	.pokemon.learnset()
+		.addMove('Hyper Voice')
+		.addMove('Round')
+		.addMove('Echoed Voice')
+		.addMove('Thunderbolt');
+
+modifyPokemon('tyranitar')
+	.learnset()
+		.addMove('Sucker Punch')
+		.addMove('Tar Shot');
+
+modifyPokemon('tyranitarmega');
+
+modifyPokemon('celebi')
+	.ability()
+		.setH('Magic Bounce')
+	.pokemon.baseStat()
+		.setHp(110)
+		.setSpA(110);
+
+modifyPokemon('lugia');
+
+modifyPokemon('hooh');
+
+
 }
