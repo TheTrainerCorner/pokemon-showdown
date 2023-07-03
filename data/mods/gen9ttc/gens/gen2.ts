@@ -648,7 +648,7 @@ modifyPokemon('miltank')
 		.addMove('Recycle');
 
 modifyPokemon('raikou')
-	.changeType('Electic', 'Normal')
+	.changeType('Electric', 'Normal')
 	.ability()
 		.setH('Radiating Light')
 	.pokemon.baseStat()
