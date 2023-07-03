@@ -10493,7 +10493,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 34,
 		eggGroups: ["Field"],
 		// otherFormes: ["Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
-		formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
+		// formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
 	},
 	sawsbucksummer: {
 		num: 586,
@@ -10510,7 +10510,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 34,
 		eggGroups: ["Field"],
 		// cosmeticFormes: ["Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
-		formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
+		// formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
 	},
 	sawsbuckwinter: {
 		num: 586,
@@ -10527,7 +10527,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 34,
 		eggGroups: ["Field"],
 		// cosmeticFormes: ["Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
-		formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
+		// formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
 	},
 	sawsbuckautumn: {
 		num: 586,
@@ -10544,7 +10544,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 34,
 		eggGroups: ["Field"],
 		// cosmeticFormes: ["Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
-		formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
+		// formeOrder: ["Sawsbuck", "Sawsbuck-Summer", "Sawsbuck-Autumn", "Sawsbuck-Winter"],
 	},
 	//#endregion
 	emolga: {
