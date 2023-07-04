@@ -493,4 +493,68 @@ modifyPokemon('swalot')
 		.addMove('Focus Blast')
 		.addMove('Blizzard')
 		.addMove('Poison Jab');
+
+modifyPokemon('sharpedo')
+	.ability()
+		.set1('Reckless')
+	.pokemon.learnset()
+		.addMove('Wave Crash')
+		.addMove('Fishious Rend');
+
+modifyPokemon('sharpedomega');
+
+modifyPokemon('wailord')
+	.ability()
+		.set0('Filter')
+		.setH('Primordial Sea')
+	.pokemon.baseStat()
+		.setHp(155)
+		.setAtk(70)
+		.setDef(70)
+		.setSpA(95)
+		.setSpD(70)
+		.setSpe(45)
+	.pokemon.learnset()
+		.addMove('Bouncy Bubble')
+		.addMove('Origin Pulse')
+		.addMove('Focus Blast')
+		.addMove('Wave Crash');
+	
+modifyPokemon('camerupt')
+	.baseStat()
+		.setHp(90)
+	.pokemon.learnset()
+		.addMove('Scorching Sands')
+		.addMove('Slack Off')
+		.addMove('Magma Storm')
+		.addMove('Scald')
+		.addMove('Steam Eruption');
+
+modifyPokemon('cameruptmega')
+	.baseStat()
+		.setHp(95)
+		.setAtk(100)
+		.setDef(105)
+		.setSpD(110);
+
+modifyPokemon('torkoal')
+	.baseStat()
+		.setAtk(70)
+		.setSpA(95)
+	.pokemon.learnset()
+		.addMove('Magma Storm');
+
+modifyPokemon('grumpig')
+	.ability()
+		.set1('Limber')
+		.setH('Cud Chew')
+	.pokemon.baseStat()
+		.setHp(90)
+		.setDef(70)
+		.setSpA(95)
+		.setSpD(115)
+	.pokemon.learnset()
+		.addMove('Slack Off')
+		.addMove('Expanding Force')
+		.addMove('Nasty Plot');
 }

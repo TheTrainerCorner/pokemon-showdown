@@ -250,6 +250,83 @@ export const Tags: {[id: string]: TagData} = {
 		name: "ND RU",
 		speciesFilter: species => species.natDexTier === 'RU',
 	},
+	// Draft Tiers
+	"1": {
+		name: "1",
+		speciesFilter: species => species.draftTier === '1',
+	},
+	"2": {
+		name: "2",
+		speciesFilter: species => species.draftTier === '2',
+	},
+	"3": {
+		name: "3",
+		speciesFilter: species => species.draftTier === '3',
+	},
+	"4": {
+		name: "4",
+		speciesFilter: species => species.draftTier === '4',
+	},
+	"5": {
+		name: "5",
+		speciesFilter: species => species.draftTier === '5',
+	},
+	"6": {
+		name: "6",
+		speciesFilter: species => species.draftTier === '6',
+	},
+	"7": {
+		name: "7",
+		speciesFilter: species => species.draftTier === '7',
+	},
+	"8": {
+		name: "8",
+		speciesFilter: species => species.draftTier === '8',
+	},
+	"9": {
+		name: "9",
+		speciesFilter: species => species.draftTier === '9',
+	},
+	"10": {
+		name: "10",
+		speciesFilter: species => species.draftTier === '10',
+	},
+	"11": {
+		name: "11",
+		speciesFilter: species => species.draftTier === '11',
+	},
+	"12": {
+		name: "12",
+		speciesFilter: species => species.draftTier === '12',
+	},
+	"13": {
+		name: "13",
+		speciesFilter: species => species.draftTier === '13',
+	},
+	"14": {
+		name: "14",
+		speciesFilter: species => species.draftTier === '14',
+	},
+	"15": {
+		name: "15",
+		speciesFilter: species => species.draftTier === '15',
+	},
+	"16": {
+		name: "16",
+		speciesFilter: species => species.draftTier === '16',
+	},
+	"17": {
+		name: "17",
+		speciesFilter: species => species.draftTier === '17',
+	},
+	"18": {
+		name: "18",
+		speciesFilter: species => species.draftTier === '18',
+	},
+	"Banned": {
+		name: "Banned",
+		speciesFilter: species => species.draftTier === 'Banned',
+	},
 
 	// Legality tags
 	past: {

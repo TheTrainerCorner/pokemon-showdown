@@ -114,7 +114,7 @@ export interface RoomSettings {
 	introMessage?: string | null;
 	staffMessage?: string | null;
 	rulesLink?: string | null;
-	dataCommandTierDisplay?: 'tiers' | 'doubles tiers' | 'National Dex tiers' | 'numbers';
+	dataCommandTierDisplay?: 'tiers' | 'doubles tiers' | 'National Dex tiers' | 'numbers' | 'Draft tiers';
 	requestShowEnabled?: boolean | null;
 	permissions?: {[k: string]: GroupSymbol};
 	minorActivity?: PollData | AnnouncementData;
