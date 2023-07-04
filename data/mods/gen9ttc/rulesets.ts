@@ -1,6 +1,6 @@
 export const Rulesets: {[k: string]: ModdedFormatData} = {
 	ttcDraft: {
-		name: "The Trainer Corner's Draft",
+		name: "TTC Draft",
 		effectType: 'ValidatorRule',
 		desc: 'The Draft format for The Trainer Corner',
 		ruleset: [
