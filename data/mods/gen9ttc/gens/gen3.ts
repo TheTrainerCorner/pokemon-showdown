@@ -284,4 +284,213 @@ modifyPokemon('breloom')
 		.addMove('Grassy Glide')
 		.addMove('Power Whip')
 		.addMove('Trailblaze');
+
+modifyPokemon('slaking')
+	.baseStat()
+		.setHp(140)
+		.setAtk(150)
+		.setSpA(75)
+		.setSpD(70)
+		.setSpe(95)
+	.pokemon.learnset()
+		.addMove('Knock Off');
+
+modifyPokemon('ninjask')
+	.baseStat()
+		.setHp(71)
+		.setDef(50)
+	.pokemon.learnset()
+		.addMove('First Impression')
+		.addMove('Drill Run')
+		.addMove('Lunge')
+		.addMove('Fell Stinger')
+		.addMove('Pounce')
+		.addMove('Infestation');
+
+modifyPokemon('shedinja')
+	.learnset()
+		.addMove('Fly');
+
+modifyPokemon('exploud')
+	.ability()
+		.set1('Punk Rock')
+	.pokemon.baseStat()
+		.setAtk(71)
+		.setSpe(73)
+	.pokemon.learnset()
+	.addMove('Overdrive');
+
+modifyPokemon('hariyama')
+	.baseStat()
+		.setAtk(130)
+		.setDef(75)
+		.setSpD(98)
+	.pokemon.learnset()
+		.addMove('High Horsepower');
+
+modifyPokemon('probopass')
+	.ability()
+		.setH('Levitate')
+	.pokemon.baseStat()
+		.setHp(65)
+		.setAtk(45)
+		.setSpA(70)
+	.pokemon.learnset()
+		.addMove('Rising Voltage');
+	
+modifyPokemon('delcatty')
+	.changeType('Normal', 'Fairy')
+	.ability()
+		.setH('Versatility')
+		.set1('Pixilate')
+		.set0('Wonder Skin')
+	.pokemon.baseStat()
+		.setHp(75)
+		.setAtk(65)
+		.setSpA(65)
+		.setSpD(60)
+		.setSpe(95)
+	.pokemon.learnset()
+		.addMove('Moonblast')
+		.addMove('Dazzling Gleam')
+		.addMove('Extreme Speed')
+		.addMove('Moonlight')
+		.addMove('Morning Sun')
+		.addMove('Iron Head')
+		.addMove('Draining Kiss')
+		.addMove('Flamethrower');
+
+modifyPokemon('sableye')
+	.learnset()
+		.addMove('Baddy Bad')
+		.addMove('Night Daze')
+		.addMove('Night Slash');
+
+modifyPokemon('sableyemega')
+	.baseStat()
+		.setSpe(30);
+
+modifyPokemon('mawile')
+	.ability()
+		.set0('Strong Jaw')
+	.pokemon.baseStat()
+		.setSpD(85)
+		.setSpe(60)
+	.pokemon.learnset()
+		.addMove('Hyper Fang')
+		.addMove('Jaw Lock');
+
+modifyPokemon('mawilemega')
+	.baseStat()
+		.setSpD(105)
+		.setSpe(60);
+
+modifyPokemon('aggron')
+	.baseStat()
+		.setDef(185)
+	.pokemon.learnset()
+		.addMove('Dragon Hammer')
+		.addMove('Hammer Arm')
+		.addMove('Power Whip');
+
+modifyPokemon('aggronmega')
+	.baseStat()
+		.setDef(235);
+
+modifyPokemon('medicham')
+	.baseStat()
+		.setAtk(65)
+		.setSpe(85)
+	.pokemon.learnset()
+		.addMove('Expanding Force')
+		.addMove('Teleport')
+		.addMove('Triple Axel');
+
+modifyPokemon('medichammega')
+	.baseStat()
+		.setAtk(95);
+
+modifyPokemon('manectric')
+	.learnset()
+		.addMove('Dark Pulse')
+		.addMove('Thunder Cage')
+		.addMove('Work Up')
+		.addMove('Wildbolt Storm');
+
+modifyPokemon('manectricmega')
+	.baseStat()
+		.setSpA(130)
+		.setSpe(140);
+
+modifyPokemon('plusle')
+	.ability()
+		.set1('Lightning Rod')
+		.setH('Transistor')
+	.pokemon.baseStat()
+		.setSpe(110)
+	.pokemon.learnset()
+		.addMove('Weather Ball')
+		.addMove('Knock Off')
+		.addMove('Rising Voltage');
+
+modifyPokemon('minun')
+	.ability()
+		.set1('Volt Absorb')
+		.setH('Galvanize')
+	.pokemon.baseStat()
+		.setAtk(85)
+		.setDef(75)
+		.setSpA(50)
+		.setSpD(45)
+		.setSpe(110)
+	.pokemon.learnset()
+		.addMove('Extreme Speed')
+		.addMove('Knock Off')
+		.addMove('Rising Voltage');
+
+modifyPokemon('volbeat')
+	.changeType('Bug', 'Electric')
+	.baseStat()
+		.setHp(80)
+		.setAtk(47)
+		.setSpA(90)
+		.setSpe(100)
+	.pokemon.learnset()
+		.addMove('Volt Switch')
+		.addMove('Parabolic Charge')
+		.addMove('Weather Ball');
+
+modifyPokemon('illumise')
+	.changeType('Bug', 'Fairy')
+	.baseStat()
+		.setHp(80)
+		.setAtk(73)
+		.setSpA(47)
+		.setSpe(100)
+	.pokemon.learnset()
+		.addMove('Pollen Puff')
+		.addMove('Lunge')
+		.addMove('Dual Wingbeat')
+		.addMove('First Impression')
+		.addMove('Skitter Smack');
+
+modifyPokemon('roserade')
+	.learnset()
+		.addMove('Apple Acid')
+		.addMove('Sludge Wave')
+		.addMove('Draining Kiss');
+
+modifyPokemon('swalot')
+	.ability()
+		.setH('Regenerator')
+		.set1('Gluttony')
+	.pokemon.baseStat()
+		.setAtk(93)
+		.setSpA(93)
+	.pokemon.learnset()
+		.addMove('Earth Power')
+		.addMove('Hydro Pump')
+		.addMove('Focus Blast')
+		.addMove('Blizzard')
+		.addMove('Poison Jab');
 }
