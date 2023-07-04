@@ -83,7 +83,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			"zippyzap"
 		];
 		for(let move of legalList) {
-			this.modData('Moves', move).isNonstandard = null;
+			this.modData('Moves', move).isNonstandard = 'Past';
 		}
 		//#endregion
 
