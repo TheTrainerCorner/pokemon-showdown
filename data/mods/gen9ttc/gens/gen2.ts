@@ -226,7 +226,7 @@ modifyPokemon('xatu')
 
 modifyPokemon('ampharos')
 	.ability()
-		.set1('Lighting Rod')
+		.set1('Lightning Rod')
 		.setH('Cotton Down')
 	.pokemon.learnset()
 		.addMove('Parabolic Charge')

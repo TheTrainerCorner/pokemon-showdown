@@ -900,7 +900,7 @@ modifyPokemon('tangrowth')
 
 modifyPokemon('kangaskhan')
 	.ability()
-		.set0('Adaptibilty')
+		.set0('Adaptability')
 	.pokemon.learnset()
 		.removeMove('Seismic Toss')
 		.removeMove('Power up Punch');
