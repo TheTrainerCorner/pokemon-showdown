@@ -25,7 +25,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Draft Mode",
 		mod: 'gen9ttc',
-		ruleset: ["TTC Draft", "OHKO Clause", "Evasion Clause", "Species Clause", "Sleep Clause Mod"],
+		ruleset: ["Draft"],
 	}
 
 	// // S/V Singles
