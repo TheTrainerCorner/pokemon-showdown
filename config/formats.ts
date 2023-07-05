@@ -41,7 +41,28 @@ export const Formats: FormatList = [
 		 * Wildbolt Storm
 		 */
 		unbanlist: [
-			// Unobtainable Abilities
+			// Unobtainable Moves
+			'Barb Barrage',
+			'Blazing Torque',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Dire Claw',
+			'Esper Wing',
+			'Infernal Parade',
+			'Magical Torque',
+			'Mountain Gale',
+			'Mystical Power',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Shelter',
+			'Springtide Storm',
+			'Stone Axe',
+			'Triple Arrows',
+			'Victory Dance',
+			'Wicked Torque',
+			// LGPE
 			'LGPE'
 		],
 	},
