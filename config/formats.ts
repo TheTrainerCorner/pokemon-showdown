@@ -52,7 +52,6 @@ export const Formats: FormatList = [
 			'Infernal Parade',
 			'Magical Torque',
 			'Mountain Gale',
-			'Mystical Power',
 			'Noxious Torque',
 			'Psyshield Bash',
 			'Raging Fury',
