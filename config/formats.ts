@@ -48,7 +48,7 @@ export const Formats: FormatList = [
 		name: "[Gen 9] TTC PTR",
 		desc: "This is the Official PTR for TTC.",
 		ruleset: [
-			'+Obtainable',
+			'Obtainable',
 			'+Past', 
 			'Species Clause',
 			'OHKO Clause',
