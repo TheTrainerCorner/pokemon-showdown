@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 		desc: "The Official Draft Format for TTC",
 		mod: 'gen9ttc',
 		ruleset: [
-			'+Obtainable',
+			'Obtainable',
 			'+Past', 
 			'Species Clause',
 			'OHKO Clause',
