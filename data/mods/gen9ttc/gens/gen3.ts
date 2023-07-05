@@ -557,4 +557,33 @@ modifyPokemon('grumpig')
 		.addMove('Slack Off')
 		.addMove('Expanding Force')
 		.addMove('Nasty Plot');
+
+modifyPokemon('spinda')
+	.changeType('Normal', 'Psychic')
+	.baseStat()
+		.setHp(80)
+		.setAtk(80)
+		.setDef(80)
+		.setSpA(80)
+		.setSpD(80)
+		.setSpe(890)
+	.pokemon.learnset()
+		.addMove('Close Combat')
+		.addMove('Future Sight')
+		.addMove('Expanding Force')
+		.addMove('Psycho Boost')
+		.addMove('Stored Power');
+
+modifyPokemon('flygon')
+	.changeType('Bug', 'Dragon')
+	.ability()
+		.setH('Tinted Lens')
+	.pokemon.baseStat()
+		.setHp(100)
+		.setDef(85)
+		.setSpA(105)
+		.setSpD(90)
+	.pokemon.learnset()
+		.addMove('Skitter Smack')
+		.addMove('Pounce');
 }
