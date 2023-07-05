@@ -1,9 +1,7 @@
 export const Rulesets: {[k: string]: ModdedFormatData} = {
 	standard: {
 		inherit: true,
-		ruleset: [
-			'Obtainable', '+Unobtainable', '+Past', '+Unreleased', 'Sleep Clause Mod', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Items Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod'
-		],
+		ruleset: ['Standard NatDex'],
 		unbanlist: [
 			// Unobtainable
 			'Barb Barrage',
