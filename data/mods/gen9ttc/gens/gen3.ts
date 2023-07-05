@@ -654,4 +654,305 @@ modifyPokemon('lunatone')
 		.addMove('Surf')
 		.addMove('Whirlpool')
 		.addMove('Aqua Ring');
+
+modifyPokemon('solrock')
+	.changeType('Fire', 'Psychic')
+	.baseStat()
+		.setAtk(105)
+		.setSpe(76)
+	.pokemon.learnset()
+		.addMove('Photon Geyser')
+		.addMove('Teleport')
+		.addMove('Psycho Cut');
+
+modifyPokemon('whiscash')
+	.ability()
+		.set1('Unaware')
+		.setH('Water Bubble')
+	.pokemon.baseStat()
+		.setHp(115)
+		.setAtk(73)
+		.setDef(78)
+		.setSpA(71)
+		.setSpe(65)
+	.pokemon.learnset()
+		.addMove('Wave Crash', 9);
+
+modifyPokemon('crawdaunt');
+
+modifyPokemon('claydol')
+	.learnset()
+		.addMove('Shore Up');
+
+modifyPokemon('cradily')
+	.ability()
+		.set1('Water Absorb')
+	.pokemon.baseStat()
+		.setHp(106)
+		.setDef(107)
+	.pokemon.learnset()
+		.addMove('Sappy Seed')
+		.addMove('Power Gem')
+		.addMove('Strength Sap')
+		.addMove('Surf')
+		.addMove('Razor Shell')
+		.addMove('Snap Trap');
+
+modifyPokemon('armaldo')
+	.ability()
+		.set1('Compound Eyes')
+	.pokemon.baseStat()
+		.setSpe(75)
+	.pokemon.learnset()
+		.addMove('First Impression')
+		.addMove('Skitter Smack')
+		.addMove('Autotomize')
+		.addMove('Leech Life')
+		.addMove('Razor Shell')
+		.addMove('Flip Turn');
+
+modifyPokemon('milotic')
+	.baseStat()
+		.setHp(103)
+		.setDef(74)
+		.setSpA(97)
+	.pokemon.learnset()
+		.addMove('Bouncy Bubble');
+
+modifyPokemon('castform')
+	.baseStat()
+		.setHp(85)
+		.setAtk(85)
+		.setDef(85)
+		.setSpA(85)
+		.setSpD(85)
+		.setSpe(85);
+
+modifyPokemon('kecleon')
+	.baseStat()
+		.setHp(85)
+		.setAtk(100);
+
+modifyPokemon('banette')
+	.ability()
+		.set0('Cursed Body')
+		.setH('Prankster')
+	.pokemon.baseStat()
+		.setDef(75)
+		.setSpD(73)
+		.setSpe(68)
+	.pokemon.learnset()
+		.addMove('Poltergeist')
+		.addMove('Poison Jab');
+
+modifyPokemon('banettemega')
+	.changeType('Ghost', 'Normal')
+	.baseStat()
+		.setAtk(165)
+		.setDef(85)
+		.setSpD(93)
+		.setSpe(78);
+
+modifyPokemon('dusclops')
+	.baseStat()
+		.setHp(45);
+
+modifyPokemon('Dusknoir')
+	.ability()
+		.set1('Intimidate')
+	.pokemon.baseStat()
+		.setHp(50);
+
+modifyPokemon('tropius')
+	.changeType('Grass', 'Dragon')
+	.baseStat()
+		.setSpA(92)
+		.setSpe(71)
+	.pokemon.learnset()
+		.addMove('Weather Ball')
+		.addMove('Draco Meteor')
+		.addMove('Dual Wingbeat');
+
+modifyPokemon('chimecho')
+	.changeType('Psychic', 'Ghost')
+	.ability()
+		.set0('Neuroforce')
+		.setH('Soul-Heart')
+	.pokemon.baseStat()
+		.setHp(90)
+		.setSpA(95)
+		.setSpe(80)
+	.pokemon.learnset()
+		.addMove('Hex')
+		.addMove('Will o Wisp')
+		.addMove('Bitter Malice')
+		.addMove('Infernal Parade');
+
+modifyPokemon('absol')
+	.baseStat()
+		.setSpe(98);
+
+modifyPokemon('absolmega')
+	.changeType('Dark', 'Fairy')
+	.baseStat()
+		.setDef(65)
+		.setSpA(120)
+		.setSpD(65)
+		.setSpe(118);
+
+modifyPokemon('glalie')
+	.ability()
+		.setH('Refrigerate')
+	.pokemon.learnset()
+		.addMove('Meteor Mash')
+		.addMove('Quick Attack')
+		.addMove('Fake Out')
+		.addMove('Hyper Voice');
+
+modifyPokemon('glaliemega')
+	.changeType('Ice', 'Steel')
+	.baseStat()
+		.setAtk(130)
+		.setDef(85)
+		.setSpA(110);
+
+modifyPokemon('walrein')
+	.ability()
+		.setH('Fur Coat')
+	.pokemon.baseStat()
+		.setHp(105)
+	.pokemon.learnset()
+		.addMove('Scald')
+		.addMove('Flip Turn')
+		.addMove('Slack Off')
+		.addMove('Freeze Dry');
+
+modifyPokemon('huntail')
+	.changeType('Water', 'Dark')
+	.ability()
+		.set0('Intimidate')
+		.setH('Defiant')
+	.pokemon.learnset()
+		.addMove('Liquidation')
+		.addMove('Psychic Fangs')
+		.addMove('Flip Turn')
+		.addMove('Scale Shot');
+
+modifyPokemon('gorebyss')
+	.changeType('Water', 'Fairy')
+	.ability()
+		.set0('Dazzling')
+		.setH('Regenerator')
+	.pokemon.baseStat()
+		.setSpA(104)
+	.pokemon.learnset()
+		.addMove('Moonblast')
+		.addMove('Dazzling Gleam')
+		.addMove('Flip Turn');
+
+modifyPokemon('relicanth')
+	.baseStat()
+		.setAtk(100)
+	.pokemon.learnset()
+		.addMove('Flip Turn');
+
+modifyPokemon('luvdisc')
+	.changeType('Water', 'Fairy')
+	.ability()
+		.setH('Soul-Heart')
+	.pokemon.baseStat()
+		.setHp(48)
+		.setSpA(95)
+	.pokemon.learnset()
+		.addMove('Flip Turn')
+		.addMove('Dazzling Gleam')
+		.addMove('Moonblast')
+		.addMove('Scale Shot')
+		.addMove('Fleur Cannon')
+		.addMove('Snipe Shot');
+
+modifyPokemon('salamence')
+	.baseStat()
+		.setAtk(110)
+		.setSpA(135)
+	.pokemon.learnset()
+		.addMove('Aeroblast');
+
+modifyPokemon('salamencemega')
+	.ability()
+		.set0('Intimidate')
+	.pokemon.baseStat()
+		.setAtk(120)
+		.setSpA(145)
+		.setSpe(110);
+
+modifyPokemon('metagross')
+	.learnset()
+		.addMove('Heavy Slam');
+
+modifyPokemon('metagrossmega')
+	.ability()
+		.set0('Heavy Metal')
+	.pokemon.baseStat()
+		.setDef(140)
+		.setSpA(95)
+		.setSpD(105)
+		.setSpe(100);
+
+modifyPokemon('regirock')
+	.ability()
+		.set1('Solid Rock')
+	.pokemon.learnset()
+		.addMove('Rock Wrecker', 9);
+
+modifyPokemon('regice')
+	.ability()
+		.set1('Filter')
+	.pokemon.learnset()
+		.addMove('Freeze Dry')
+		.addMove('Glaciate')
+		.addMove('Haze');
+
+modifyPokemon('registeel')
+	.ability()
+		.setH('Heavy Metal')
+	.pokemon.learnset()
+		.addMove('Double Iron Bash');
+
+modifyPokemon('latias')
+	.learnset()
+		.addMove('Expanding Force')
+		.addMove('Teleport')
+		.addMove('Lumina Crash', 9)
+		.removeMove('Stored Power')
+		.removeMove('Roost')
+		.removeMove('Recover');
+
+modifyPokemon('latiasmega')
+	.baseStat()
+		.setSpA(120);
+
+modifyPokemon('latios')
+	.learnset()
+		.addMove('Expanding Force')
+		.addMove('Teleport')
+		.removeMove('Stored Power')
+		.removeMove('Roost')
+		.removeMove('Recover');
+
+modifyPokemon('latiosmega')
+	.baseStat()
+		.setDef(90)
+		.setSpD(110);
+
+modifyPokemon('jirachi')
+	.learnset()
+		.addMove('Lumina Crash', 9);
+
+modifyPokemon('groudon');
+modifyPokemon('groudonprimal');
+modifyPokemon('kyogre');
+modifyPokemon('kyogreprimal');
+modifyPokemon('rayquaza');
+modifyPokemon('rayquazamega');
 }
