@@ -35,6 +35,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.kick = 1;
 		}
 		//#endregion
+		//#region Fixing tiers
+		this.modData('FormatsData', 'gengarmega').natDexTier = 'OU';
+		//#endregion
 
 		//#region Modifying Pokemon
 		// Generation 1
