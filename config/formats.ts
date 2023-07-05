@@ -26,14 +26,19 @@ export const Formats: FormatList = [
 		name: "[Gen 9] TTC Draft",
 		desc: "The Official Draft Format for TTC",
 		mod: 'gen9ttc',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: [
-			'ND Uber', 'ND AG'
-		],
-		unbanlist: [
-			'Springtide Storm',
-			'Zippy Zap',
-			'Sappy Seed'
+		ruleset: [
+			'+ Obtainable',
+			'+ Past', 
+			'Species Clause',
+			'OHKO Clause',
+			'Evasion Items Clause',
+			'Evasion Moves Clause',
+			'Evasion Abilities Clause',
+			'Moody Clause',
+			'Swagger Clause',
+			'Team Preview',
+			'Nickname Clause',
+			'+ Unobtainable',
 		]
 	},
 	{
@@ -42,15 +47,20 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] TTC PTR",
 		desc: "This is the Official PTR for TTC.",
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: [
-			'ND AG',
+		ruleset: [
+			'+ Obtainable',
+			'+ Past', 
+			'Species Clause',
+			'OHKO Clause',
+			'Evasion Items Clause',
+			'Evasion Moves Clause',
+			'Evasion Abilities Clause',
+			'Moody Clause',
+			'Swagger Clause',
+			'Team Preview',
+			'Nickname Clause',
+			'+ Unobtainable',
 		],
-		unbanlist: [
-			'Springtide Storm',
-			'Zippy Zap',
-			'Sappy Seed'
-		]
 	}
 
 	// // S/V Singles
