@@ -1,7 +1,7 @@
 import { ModdedDex } from "./../../../../sim/dex";
 export default function Gen3 (dex: ModdedDex) {
 	let modifyPokemon = (pokemon: string) => {
-			
+			pokemon = pokemon.includes('-') ? pokemon.replace('-', '').toLowerCase().trim() : pokemon.toLowerCase().trim();
 		let baseStat = () => {
 			return {
 				setHp,
@@ -586,4 +586,72 @@ modifyPokemon('flygon')
 	.pokemon.learnset()
 		.addMove('Skitter Smack')
 		.addMove('Pounce');
+
+modifyPokemon('cacturne')
+	.ability()
+		.set0('Water Absorb')
+		.setH('Sand Rush')
+	.pokemon.baseStat()
+		.setAtk(125)
+		.setSpA(125)
+	.pokemon.learnset()
+		.addMove('Knock Off')
+		.addMove('Scorching Sands');
+
+modifyPokemon('altaria')
+	.baseStat()
+		.setHp(85)
+	.pokemon.learnset()
+		.addMove('Brave Bird')
+		.addMove('Calm Mind');
+
+modifyPokemon('altariamega')
+	.baseStat()
+		.setHp(85);
+
+modifyPokemon('Zangoose')
+	.ability()
+		.set0('Tough Claws')
+	.pokemon.baseStat()
+		.setHp(79)
+		.setSpA(50)
+		.setSpe(97)
+	.pokemon.learnset()
+		.addMove('False Surrender')
+		.addMove('Sucker Punch')
+		.addMove('Darkest Lariat')
+		.addMove('Lash Out');
+
+modifyPokemon('seviper')
+	.changeType('Poison', 'Dark')
+	.ability()
+		.setH('Merciless')
+	.pokemon.baseStat()
+		.setAtk(105)
+		.setSpA(105)
+		.setSpe(78)
+	.pokemon.learnset()
+		.addMove('Jaw Lock')
+		.addMove('Power Whip')
+		.addMove('Hypnosis')
+		.addMove('Fire Blast')
+		.addMove('Thunder Fang')
+		.addMove('Fire Fang')
+		.addMove('Ice Fang')
+		.addMove('Gunk Shot')
+		.addMove('Scale Shot');
+
+modifyPokemon('lunatone')
+	.changeType('Water', 'Psychic')
+	.baseStat()
+		.setSpA(105)
+		.setSpe(76)
+	.pokemon.learnset()
+		.addMove('Photon Geyser')
+		.addMove('Teleport')
+		.addMove('Expanding Force')
+		.addMove('Lumina Crash')
+		.addMove('Surf')
+		.addMove('Whirlpool')
+		.addMove('Aqua Ring');
 }
