@@ -31,10 +31,19 @@ export const Formats: FormatList = [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
 		],
+		// Already Allowed:
+		/**
+		 * Lutrous Globe
+		 * Bleakwind Storm
+		 * Lunar Blessing
+		 * Mystical Power
+		 * Sandsear Storm
+		 * Wildbolt Storm
+		 */
 		unbanlist: [
-			'Springtide Storm',
-			'Zippy Zap',
-			'Sappy Seed'
+			// Unobtainable Abilities
+			'Unobtainable',
+			'LGPE'
 		],
 	},
 	{
