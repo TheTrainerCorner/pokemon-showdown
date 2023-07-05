@@ -42,7 +42,6 @@ export const Formats: FormatList = [
 		 */
 		unbanlist: [
 			// Unobtainable Abilities
-			'Unobtainable',
 			'LGPE'
 		],
 	},
