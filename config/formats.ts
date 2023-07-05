@@ -25,7 +25,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Draft Mode",
 		mod: 'gen9ttc',
-		ruleset: ["Draft"],
+		ruleset: ["Standard"],
 	}
 
 	// // S/V Singles

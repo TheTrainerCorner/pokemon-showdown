@@ -1,11 +1,53 @@
 export const Rulesets: {[k: string]: ModdedFormatData} = {
-	ttcDraft: {
-		effectType: 'ValidatorRule',
-		name: "TTC Draft",
-		desc: 'The Draft format for The Trainer Corner',
+	standard: {
+		inherit: true,
 		ruleset: [
-			'Obtainable', '+Unobtainable', '+Past', 'Sketch Post-Gen 7 Moves', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
+			'Obtainable', '+Unobtainable', '+Past', '+Unreleased', 'Sleep Clause Mod', 'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Items Clause', 'Evasion Moves Clause', 'Endless Battle Clause', 'HP Percentage Mod', 'Cancel Mod'
 		],
+		unbanlist: [
+			// Unobtainable
+			'Barb Barrage',
+			'Blazing Torque',
+			'Bleakwind Storm',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Cosmic Power',
+			'Dire Claw',
+			'Esper Wing',
+			'Heal Bell',
+			'Infernal Parade',
+			'Lunar Blessing',
+			'Magical Torque',
+			'Mountain Gale',
+			'Mystical Power',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Sandsear Storm',
+			'Shelter',
+			'Simple Beam',
+			'Springtide Storm',
+			'Stone Axe',
+			'Triple Axel',
+			'Victory Dance',
+			'Wicked Torque',
+			'Wildbolt Storm',
 
+			// LGPE
+			"Baddy Bad",
+			"Bouncy Bubble",
+			"Buzzy Buzz",
+			"Floaty Fall",
+			"Freezy Frost",
+			"Glitzy Glow",
+			"Pikapapow",
+			"Snappy Seed",
+			"Sizzly Slide",
+			"Sparkly Swirl",
+			"Splishy Splash",
+			"Veeveevolley",
+			"Zippy Zap",
+		]
 	}
 }

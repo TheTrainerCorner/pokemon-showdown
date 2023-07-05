@@ -36,57 +36,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 		//#endregion
 
-		//#region Legalizing all moves
-		let legalList:string[] = [
-			// Unobtainable
-			"barbbarrage",
-			// "blazingtorque",
-			// "bleakwindstorm",
-			// "ceaselessedge",
-			// "chloroblast",
-			// "combattorque",
-			// "cosmicpower",
-			// "direclaw",
-			// "esperwing",
-			// "healbell",
-			// "infernalparade",
-			// "lunarblessing",
-			// "magicaltorque",
-			// "mountaingale",
-			// "mysticalpower",
-			// "noxioustorque",
-			// "powershift",
-			// "psyshieldbash",
-			// "ragingfury",
-			// "sandsearstorm",
-			// "shelter",
-			// "simplebeam",
-			// "springtidestorm",
-			// "stoneaxe",
-			// "triplearrows",
-			// "victorydance",
-			// "wickedtorque",
-			// "wildboltstorm",
-			// // LGPE
-			// "baddybad",
-			// "bouncybubble",
-			// "buzzybuzz",
-			// "floatyfall",
-			// "freezyfrost",
-			// "glitzyglow",
-			// "pikapapow",
-			// "snappyseed",
-			// "sizzlyslide",
-			// "sparklyswirl",
-			// "splishysplash",
-			// "veeveevolley",
-			// "zippyzap"
-		];
-		for(let move of legalList) {
-			this.modData('Moves', move).isNonstandard = 'Past';
-		}
-		//#endregion
-
 		//#region Modifying Pokemon
 		// Generation 1
 		Gen1(this);
