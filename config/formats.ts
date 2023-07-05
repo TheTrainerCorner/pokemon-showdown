@@ -27,8 +27,8 @@ export const Formats: FormatList = [
 		desc: "The Official Draft Format for TTC",
 		mod: 'gen9ttc',
 		ruleset: [
-			'+ Obtainable',
-			'+ Past', 
+			'+Obtainable',
+			'+Past', 
 			'Species Clause',
 			'OHKO Clause',
 			'Evasion Items Clause',
@@ -38,7 +38,7 @@ export const Formats: FormatList = [
 			'Swagger Clause',
 			'Team Preview',
 			'Nickname Clause',
-			'+ Unobtainable',
+			'+Unobtainable',
 		]
 	},
 	{
@@ -48,8 +48,8 @@ export const Formats: FormatList = [
 		name: "[Gen 9] TTC PTR",
 		desc: "This is the Official PTR for TTC.",
 		ruleset: [
-			'+ Obtainable',
-			'+ Past', 
+			'+Obtainable',
+			'+Past', 
 			'Species Clause',
 			'OHKO Clause',
 			'Evasion Items Clause',
@@ -59,7 +59,7 @@ export const Formats: FormatList = [
 			'Swagger Clause',
 			'Team Preview',
 			'Nickname Clause',
-			'+ Unobtainable',
+			'+Unobtainable',
 		],
 	}
 
