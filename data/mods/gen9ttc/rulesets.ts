@@ -42,7 +42,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			"Freezy Frost",
 			"Glitzy Glow",
 			"Pikapapow",
-			"Snappy Seed",
+			"Sappy Seed",
 			"Sizzly Slide",
 			"Sparkly Swirl",
 			"Splishy Splash",
