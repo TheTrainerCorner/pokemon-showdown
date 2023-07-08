@@ -117,6 +117,7 @@ modifyPokemon('torterra')
     .addMove('Grassy Glide')
     .addMove('Rapid Spin')
     .addMove('Headlong Rush');
+
 modifyPokemon('infernape')
   .ability()
      .set1('Steadfast')
@@ -124,6 +125,7 @@ modifyPokemon('infernape')
     .addMove('Ice Punch')
     .addMove('Drain Punch')
     .addMove('Sucker Punch');
+
 modifyPokemon('empoleon')
 		.ability()
 			 .set1('Pressure')
@@ -139,6 +141,7 @@ modifyPokemon('empoleon')
 			.addMove('Ice Spinner')
 			.addMove('Ice Shard')
 			.addMove('Icicle Crash');
+
 modifyPokemon('staraptor')
   .changeType('Flying', 'Fighting')
   .ability()
@@ -155,6 +158,7 @@ modifyPokemon('staraptor')
     .addMove('Dual Wingbeat')
     .addMove('Flare Blitz')
     .addMove('Facade');
+
 modifyPokemon('bibarel')
   .changeType('Water', 'Grass')
   .ability()
@@ -175,6 +179,7 @@ modifyPokemon('bibarel')
     .addMove('Psychic Fang')
     .addMove('Energy Ball')
     .addMove('Stuff Cheeks');
+
 modifyPokemon('kricketune')
   .ability()
      .set1('Punk Rock')
@@ -194,6 +199,7 @@ modifyPokemon('kricketune')
     .addMove('Toxic Spikes')
     .addMove('Twineedle')
     .addMove('Pin Missle');
+
 modifyPokemon('luxray')
   .changeType('Electric', 'Dark')
   .ability()
@@ -207,6 +213,7 @@ modifyPokemon('luxray')
     .addMove('Sucker Punch')
     .addMove('Knock Off')
     .addMove('Bulk Up');
+
 modifyPokemon('rampardos')
   .ability()
      .set0('Rock Head')
@@ -218,6 +225,7 @@ modifyPokemon('rampardos')
   .pokemon.learnset()
     .addMove('Head Smash')
     .addMove('Accelerock');
+
 modifyPokemon('bastiodon')
   .changeType('Ground', 'Steel')
   .ability()
@@ -233,6 +241,7 @@ modifyPokemon('bastiodon')
     .addMove('Behemoth Bash')
     .addMove('Body Press')
     .addMove('Heavy Slam');
+
 modifyPokemon('wormadam')
   .ability()
      .set0('Natures Gift')
@@ -249,7 +258,8 @@ modifyPokemon('wormadam')
     .addMove('Chloroblast')
     .addMove('Strength Sap')
     .addMove('Leech Seed');
-modifyPokemon('wormadam trash')
+
+modifyPokemon('wormadamtrash')
   .ability()
      .set0('Garbage Disposal')
   .pokemon.baseStat()
@@ -260,7 +270,8 @@ modifyPokemon('wormadam trash')
     .addMove('Recover')
     .addMove('Sludge Bomb')
     .addMove('Steel Beam');
-modifyPokemon('wormadam sandy')
+
+modifyPokemon('wormadamsandy')
   .ability()
      .set0('Earth Eater')
   .pokemon.baseStat()
@@ -276,6 +287,7 @@ modifyPokemon('wormadam sandy')
     .addMove('Leech Life')
     .addMove('Skitter Smack')
     .addMove('Lunge');
+
 modifyPokemon('mothim')
 		.ability()
 			 .set0('Compound Eyes')
@@ -291,6 +303,7 @@ modifyPokemon('mothim')
 			.addMove('Skitter Smack')
 			.addMove('Moonblast')
 			.addMove('Leech Life');
+
 modifyPokemon('vespiquen')
   .changeType('Bug', 'Fighting')
   .ability()
@@ -309,6 +322,7 @@ modifyPokemon('vespiquen')
     .addMove('Extreme Speed')
     .addMove('No Retreat')
     .addMove('Focus Blast');
+
 modifyPokemon('pachirisu')
   .ability()
      .set0('Cheek Pouch')
@@ -326,6 +340,7 @@ modifyPokemon('pachirisu')
     .addMove('Extreme Speed')
     .addMove('Stuff Cheeks')
     .addMove('Reflect');
+
 modifyPokemon('floatzel')
   .baseStat()
     .setHp(90)
@@ -341,6 +356,7 @@ modifyPokemon('floatzel')
     .addMove('U Turn')
     .addMove('Iron Head')
     .addMove('Fake Out');
+
 modifyPokemon('cherrim')
   .ability()
      .set1('Chlorophyll')
@@ -351,6 +367,7 @@ modifyPokemon('cherrim')
   .pokemon.learnset()
     .addMove('Grav Apple')
     .addMove('Moonblast');
+
 modifyPokemon('gastrodon')
   .ability()
      .setH('Suction Cups')
@@ -361,6 +378,7 @@ modifyPokemon('gastrodon')
   .pokemon.learnset()
     .addMove('Haze')
     .addMove('Calm Mind');
+
 modifyPokemon('drifblim')
   .ability()
      .set1('Perish Body')
@@ -375,16 +393,19 @@ modifyPokemon('drifblim')
     .addMove('Poltergeist')
     .addMove('Nasty Plot')
     .addMove('Hurricane');
+
 modifyPokemon('lopunny')
   .changeType('Fairy', 'Fighting')
   .ability()
      .set0('Fluffy')
      .set1('Pixilate');
-modifyPokemon('lopunny mega')
+
+modifyPokemon('lopunnymega')
   .changeType('Fairy', 'Fighting')
   .baseStat()
     .setAtk(126)
     .setSpe(125);
+
 modifyPokemon('purugly')
   .ability()
      .set1('Tough Claws')
@@ -399,6 +420,7 @@ modifyPokemon('purugly')
     .addMove('Earthquake')
     .addMove('Crunch')
     .addMove('Bulk Up');
+
 modifyPokemon('skuntank')
   .ability()
      .setH('Gluttony')
@@ -412,6 +434,7 @@ modifyPokemon('skuntank')
     .addMove('Sludge Wave')
     .addMove('Iron Tail')
     .addMove('Scorching Sands');
+
 modifyPokemon('bronzong')
   .baseStat()
     .setDef(121)
@@ -420,6 +443,7 @@ modifyPokemon('bronzong')
   .pokemon.learnset()
     .addMove('Recover')
     .addMove('Teleport');
+
 modifyPokemon('chatot')
 		.ability()
 			 .set0('Scrappy')
@@ -435,6 +459,7 @@ modifyPokemon('chatot')
 			.addMove('Sparkling Aria')
 			.addMove('Relic Song')
 			.addMove('Parting Shot');
+
 modifyPokemon('spiritomb')
 			.ability()
 				 .set1('Cursed Body')
@@ -448,16 +473,19 @@ modifyPokemon('spiritomb')
 				.setSpe(25)
 			.pokemon.learnset()
 				.addMove('Moonlight');
+
 modifyPokemon('garchomp')
-			.ability()
-				.set0('Sand Rush')
-			.pokemon.baseStat()
-				.setSpA(100)
-			.pokemon.learnset()
-				.addMove('Glare');
-				modifyPokemon('garchomp mega')
-				.ability()
-					 .set0('Sheer Force');
+		.ability()
+			.set0('Sand Rush')
+		.pokemon.baseStat()
+			.setSpA(100)
+		.pokemon.learnset()
+			.addMove('Glare');
+
+modifyPokemon('garchompmega')
+		.ability()
+			.set0('Sheer Force');
+
 modifyPokemon('lucario')
   .changeType('Fighting', 'Psychic')
   .ability()
@@ -467,7 +495,7 @@ modifyPokemon('lucario')
     .addMove('Psyshock')
     .addMove('Psycho Cut');
 
-modifyPokemon('lucario mega')
+modifyPokemon('lucariomega')
   .changeType('Fighting', 'Psychic')
   .ability()
      .set0('Unseen Fist')
@@ -514,6 +542,7 @@ modifyPokemon('toxicroak')
 			.addMove('Liquidation')
 			.addMove('Aqua Jet')
 			.addMove('Flip Turn');
+
 modifyPokemon('carnivine')
   .changeType('Grass', 'Flying')
   .ability()
@@ -547,8 +576,8 @@ modifyPokemon('lumineon')
     .addMove('Moonblast')
     .addMove('Flip Turn')
     .addMove('Calm Mind');
+
 modifyPokemon('abomasnow')
-  .changeType('Type 1', 'Type 2')
   .ability()
      .setH('Grassy Surge')
   .pokemon.baseStat()
@@ -563,22 +592,7 @@ modifyPokemon('abomasnow')
     .addMove('Horn Leech')
     .addMove('Shadow Claw')
     .addMove('Superpower');
-modifyPokemon('abomasnow')
-  .changeType('Type 1', 'Type 2')
-  .ability()
-     .setH('Grassy Surge')
-  .pokemon.baseStat()
-    .setAtk(102)
-    .setSpA(97)
-    .setSpD(90)
-    .setSpe(70)
-  .pokemon.learnset()
-    .addMove('Bulk Up')
-    .addMove('Curse')
-    .addMove('Stone Edge')
-    .addMove('Horn Leech')
-    .addMove('Shadow Claw')
-    .addMove('Superpower');
+
 modifyPokemon('gallade')
   .ability()
      .set0('Defiant')
@@ -586,11 +600,13 @@ modifyPokemon('gallade')
     .setSpe(90)
   .pokemon.learnset()
     .addMove('Play Rough');
+
 modifyPokemon('gallademega')
   .ability()
      .set0('Sharpness')
   .pokemon.baseStat()
     .setAtk(145);
+
 modifyPokemon('froslass')
   .ability()
      .set1('Cursed Body')
@@ -604,6 +620,7 @@ modifyPokemon('froslass')
   .pokemon.learnset()
     .addMove('Shadow Sneak')
     .addMove('Freeze Dry');
+
 modifyPokemon('rotom')
   .ability()
      .setH('Prankster')
@@ -613,7 +630,8 @@ modifyPokemon('rotom')
   .pokemon.learnset()
     .addMove('Topsy Turvy')
     .addMove('Rapid Spin');
-modifyPokemon('rotom mow')
+
+modifyPokemon('rotommow')
   .ability()
      .set1('Grassy Surge')
      .setH('Sap Sipper')
@@ -640,7 +658,8 @@ modifyPokemon('rotom mow')
     .addMove('Drill Run')
     .addMove('Explosion')
     .addMove('Lands Wrath');
-modifyPokemon('rotom wash')
+
+modifyPokemon('rotomwash')
   .ability()
      .set1('Pressure')
      .setH('Water Absorb')
@@ -655,7 +674,8 @@ modifyPokemon('rotom wash')
     .addMove('Scald')
     .addMove('Flip Turn')
     .addMove('Whirlpool');
-modifyPokemon('rotom heat')
+
+modifyPokemon('rotomheat')
   .ability()
      .set1('Flash Fire')
      .setH('Steam Engine')
@@ -670,7 +690,8 @@ modifyPokemon('rotom heat')
     .addMove('Flare Blitz')
     .addMove('Wild Charge')
     .addMove('Volt Tackle');
-modifyPokemon('rotom frost')
+
+modifyPokemon('rotomfrost')
   .ability()
      .set1('Refrigerate')
      .setH('Slush Rush')
@@ -688,7 +709,8 @@ modifyPokemon('rotom frost')
     .addMove('Snowscape')
     .addMove('Chilly Reception')
     .addMove('Freezy Frost');
-modifyPokemon('rotom fan')
+
+modifyPokemon('rotomfan')
   .ability()
      .set0('Volt Absorb')
      .set1('Aerilate')
@@ -706,6 +728,7 @@ modifyPokemon('rotom fan')
     .addMove('Bleakwind Storm')
     .addMove('Wildbolt Storm')
     .addMove('Whirlwind');
+
 modifyPokemon('uxie')
   .ability()
      .set1('Synchronize')
@@ -717,6 +740,7 @@ modifyPokemon('uxie')
     .addMove('Chilling Water')
     .addMove('Natures Madness')
     .addMove('Mystical Fire');
+
 modifyPokemon('mesprit')
   .ability()
      .set1('Synchronize')
@@ -729,6 +753,7 @@ modifyPokemon('mesprit')
     .addMove('Mist Ball')
     .addMove('Mystical Fire')
     .addMove('Natures Madness');
+
 modifyPokemon('azelf')
   .ability()
      .set1('Synchronize')
@@ -739,12 +764,14 @@ modifyPokemon('azelf')
     .addMove('Iron Head')
     .addMove('Chilling Water')
     .addMove('Natures Madness');
+
 modifyPokemon('regigigas')
   .baseStat()
     .setHp(120)
     .setAtk(140)
   .pokemon.learnset()
     .addMove('Lands Wrath');
+
 modifyPokemon('Cresselia')
   .ability()
      .set1('Sweet Veil')
@@ -755,6 +782,7 @@ modifyPokemon('Cresselia')
   .pokemon.learnset()
     .addMove('Focus Blast')
     .addMove('Teleport');
+
 modifyPokemon('manaphy')
   .learnset()
     .addMove('Aqua Jet')
