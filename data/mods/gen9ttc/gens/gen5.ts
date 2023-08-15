@@ -83,6 +83,7 @@ export default function Gen5 (dex: ModdedDex) {
 		}
 
 		let set1 = (name: string) => {
+			console.log(dex.modData('Pokedex', pokemon.toLowerCase()));
 			dex.modData('Pokedex', pokemon.toLowerCase()).abilities['1'] = name;
 			return ability();
 		}
