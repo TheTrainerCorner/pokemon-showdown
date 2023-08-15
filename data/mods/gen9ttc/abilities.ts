@@ -265,4 +265,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3,
 		num: -110,
 	},
+	cleanup: {
+		onStart(pokemon) {
+			let activated = false;
+			for(const sideCondition of ['stealthrocks', 'toxicspikes', 'spikes', 'stickywebs']){
+				for(const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if(side.getSideCondition(sideCondition)) {
+						if(!activated) {
+							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
+				}
+			}
+		},
+		name: "Clean Up",
+		shortDesc: "On Switch-In, all hazards are removed",
+		rating: 5,
+		num: -111,
+	}
 };
