@@ -83,7 +83,6 @@ export default function Gen5 (dex: ModdedDex) {
 		}
 
 		let set1 = (name: string) => {
-			console.log(dex.modData('Pokedex', pokemon.toLowerCase()));
 			dex.modData('Pokedex', pokemon.toLowerCase()).abilities['1'] = name;
 			return ability();
 		}
@@ -232,7 +231,7 @@ modifyPokemon('simipour')
 		.addMove('Freeze Dry')
 		.addMove('Glare');
 
-modifyPokemon('mushama')
+modifyPokemon('musharna')
 	.ability()
 		.set0('Unaware')
 		.set1('Levitate')
