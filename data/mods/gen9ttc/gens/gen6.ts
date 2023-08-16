@@ -277,7 +277,7 @@ export default function Gen6 (dex: ModdedDex) {
 		.pokemon.learnset()
 			.addMove('Ice Beam')
 			.addMove('Snipe Shot');
-	modifyPokemon('clawjitzer')
+	modifyPokemon('clawitzer')
 		.ability()
 			.set1('Sniper')
 		.pokemon.baseStat()
