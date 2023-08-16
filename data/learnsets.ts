@@ -72509,7 +72509,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			workup: ["7M"],
 		},
 	},
-	oricoriosenu: {
+	oricoriosensu: {
 		learnset: {
 			acrobatics: ["9M", "9L23", "7M"],
 			aerialace: ["9M", "7M"],
