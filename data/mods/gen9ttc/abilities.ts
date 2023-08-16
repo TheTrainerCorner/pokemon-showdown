@@ -284,5 +284,65 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "On Switch-In, all hazards are removed",
 		rating: 5,
 		num: -111,
+	},
+	grasspelt: {
+		inherit: true,
+		onModifyDefPriority: 6,
+		onModifySpDPriority: 6,
+		onModifyDef(pokemon) {
+			if (this.field.isTerrain('grassyterrain')) return this.chainModify(1.5);
+			else return this.chainModify(1.25);
+		},
+		onModifySpD(pokemon) {
+			if (this.field.isTerrain('grassyterrain')) return this.chainModify(1.5);
+			else return this.chainModify(1.25);
+		},
+		shortDesc: 'If Grassy Terrain, 1.5x boost to Def and Sp.Def;Without Grassy Terrain, 1.25x to Def and Sp.Def.',
+	},
+	honeygather: {
+		inherit: true,
+		onTryHeal(damage, target, source, effect) {
+			const heals = ['drain', 'leechseed', 'ingrain', 'aquaring', 'strengthsap'];
+			if(heals.includes(effect.id)) {
+				return this.chainModify(1.2);
+			}
+		},
+		shortDesc: "Gains 1.2x more healing when using a move with a recovery secondary effect."
+	},
+	emergencyexit: {
+		onBeforeTurn(pokemon) {
+			pokemon.abilityState.originalHP = pokemon.hp;
+		},
+		onStart(pokemon) {
+			pokemon.abilityState.originalHP = pokemon.hp;
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 2 && pokemon.abilityState.originalHP > pokemon.maxhp / 2) {
+				if (!this.canSwitch(pokemon.side) || pokemon.forceSwitchFlag || pokemon.switchFlag) return;
+				for (const side of this.sides) {
+					for (const active of side.active) {
+						active.switchFlag = false;
+					}
+				}
+				pokemon.switchFlag = true;
+				this.add('-active', pokemon, 'ability: Emergency Exit');
+			}
+		},
+		shortDesc: "If this Pokemon is below 1/2 HP at the end of the turn, it switches out.",
+		name: "Emergency Exit",
+		rating: 1,
+		num: 194,
+	},
+	watercompaction: {
+		inherit: true,
+		onSourceModifyDamage(damage, source, target, move) {
+			if(move.type == 'Water') {
+				return this.chainModify(0.25);
+			}
+		},
+		desc: "This Pokemon takes 25% less damage from Water-type moves, and its Defense is raised 2 stages after it is hit by one.",
+		shortDesc: "Reduces water damage by 25%; +2 def when hit by water move",
 	}
 };

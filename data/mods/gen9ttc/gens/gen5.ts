@@ -313,7 +313,7 @@ modifyPokemon('conkeldurr')
 	.baseStat()
 		.setAtk(130)
 	.pokemon.learnset()
-		.addMove('Accelerock')
+		.addMove('Accelrock')
 		.addMove('Head Smash');
 modifyPokemon('seismitoad')
 	.ability()
@@ -1001,6 +1001,7 @@ modifyPokemon('reshiram');
 modifyPokemon('zekrom');
 modifyPokemon('kyurem')
 	.learnset()
+		.removeMove('Dragon Dance')
 		.addMove('Ice Shard');
 modifyPokemon('kyuremwhite');
 modifyPokemon('kyuremblack')

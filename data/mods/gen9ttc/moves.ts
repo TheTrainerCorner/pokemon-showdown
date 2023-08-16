@@ -19,4 +19,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			}
 		}
 	},
+	diamondstorm: {
+		inherit: true,
+		category: "Special"
+	},
+	beakblast: {
+		inherit: true,
+		priority: 0,
+	}
 };
