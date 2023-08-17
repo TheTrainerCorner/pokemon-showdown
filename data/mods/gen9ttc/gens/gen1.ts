@@ -144,7 +144,7 @@ modifyPokemon('blastoise')
 		.setDef(120)
 	.pokemon.learnset()
 		.addMove('Hydro Steam', 9)
-		.addMove('Stream Eruption');
+		.addMove('Steam Eruption');
 
 modifyPokemon('butterfree')
 	.changeType('Bug', 'Psychic')
