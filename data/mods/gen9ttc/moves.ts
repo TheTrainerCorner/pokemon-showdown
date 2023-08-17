@@ -27,6 +27,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		priority: 0,
 	},
+	wickedblow: {
+		inherit: true,
+		basePower: 70,
+	},
 	snuggle: {
 		num: -1,
 		category: "Physical",
@@ -42,5 +46,55 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		secondary: null,
 		target: "normal",
 		contestType: "Tough",
+	},
+	shelter: {
+		inherit: true,
+		volatileStatus: 'protect',
+		stallingMove: true,
+		boosts: {
+			def: 1,
+		},
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if(!move.flags['protect']) {
+					if(['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if(move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if(move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Shelter');
+				}
+				const lockedmove = source.getVolatile('lockedmove');
+				if(lockedmove) {
+					// Outrage counter is reset
+					if(source.volatiles['lockedmove'].duration === 2) {
+						delete source.volatiles['lockedmove'];
+					}
+				}
+				return this.NOT_FAIL;
+			}
+		},
+		shortDesc: "Protects the user and raises Defense by 1 stage"
+	},
+	filletaway: {
+		inherit: true,
+		onHit(pokemon) {
+			this.directDamage(pokemon.maxhp / 4);
+		},
+		desc: "Raises the user's Attack, Special Attack, and Speed by 2 stages in exchange for the user losing 1/4 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Special Attack, and Speed stat stages would not change.",
+		shortDesc: "+2 Attack, Sp. Atk, Speed for 1/4 user's max HP.",
 	},
 };
