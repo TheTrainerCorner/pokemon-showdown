@@ -344,5 +344,72 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		desc: "This Pokemon takes 25% less damage from Water-type moves, and its Defense is raised 2 stages after it is hit by one.",
 		shortDesc: "Reduces water damage by 25%; +2 def when hit by water move",
-	}
+	},
+	steamengine: {
+		inherit: true,
+		onSourceModifyDamage(damage, source, target, move) {
+			if(['Water', 'Fire'].includes(move.type)) {
+				return this.chainModify(0.25);
+			}
+		},
+		desc: "This Pokemon's Speed is raised by 6 stage and takes 25% less damage from Water and Fire type Moves.",
+		shortDesc: "This Pokemon's Speed is raised by 6 stage and takes 25% less damage when hit by a Water or Fire type move."
+	},
+	bugout: {
+		onModifyDamage(relayVar, source, target, move) {
+			if(move.type == 'Bug') {
+				this.debug('Bug Out boost');
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Bug Out",
+		num: -112,
+		desc: "All bug moves are boosted by 1.5x from this pokemon.",
+		shortDesc: "All Bug-type Moves are boosted by 1.5x from this Pokemon.",
+	},
+	gulpmissile: {
+		inherit: true,
+		onEnd(pokemon) {
+			if(['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
+				if(this.randomChance(1,2)) {
+					const forme = pokemon.hp <= pokemon.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
+					pokemon.formeChange(forme);
+				}
+			} else {
+				if(this.randomChance(1, 4)) {
+					const forme = pokemon.hp <= pokemon.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
+					pokemon.formeChange(forme);
+				}
+			}
+		},
+		shortDesc: 'When hit after gulping/gorging, attacker takes 1/4 max HP and -1 Def or Para; 25% chance of refreshing and 50% of refreshing in Rain.'
+	},
+	fishbuffet: {
+		onModifyDamage(damage, source, target, move) {
+			if(target.types.includes('Water') && move.category === 'Physical') {
+				this.chainModify(2);
+			}
+		},
+		name: "Fish Buffet",
+		num: -113,
+		desc: "All physical moves used will deal Super Effective damage to water types",
+		shortDesc: "All phsyical moves used will deal Super Effective damage to water types",
+	},
+	battlepride: {
+		// Intrepid Sword
+		onStart(pokemon){
+			if (this.effectState.swordBoost) return;
+			if (this.boost({atk: 1}, pokemon)) {
+				this.effectState.swordBoost = true;
+			}
+		},
+		// Stamina
+		onDamagingHit(damage, target, source, effect) {
+			this.boost({def: 1});
+		},
+		name: "Battle Pride",
+		num: -114,
+		desc: "Intrepid Sword + Stamina",
+		shortDesc: "Intrepid Sword + Stamina",
+	},
 };
