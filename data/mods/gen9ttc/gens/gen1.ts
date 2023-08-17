@@ -1254,7 +1254,7 @@ modifyPokemon('dragonite');
 
 modifyPokemon('mew')
 	.ability()
-		.set1('Protean');
+		.set1('Illusion');
 
 // NO ONE CARES ABOUT MEWTWO!!!!
 modifyPokemon('mewtwo');

@@ -26,5 +26,21 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	beakblast: {
 		inherit: true,
 		priority: 0,
-	}
+	},
+	snuggle: {
+		num: -1,
+		category: "Physical",
+		name: "Snuggle",
+		shortDesc: "Traps and damages the target for 4-5 turns.",
+		priority: 0,
+		accuracy: 90,
+		basePower: 30,
+		type: "Fairy",
+		pp: 20,
+		flags: { contact: 1, protect: 1, mirror: 1},
+		volatileStatus: 'partiallytrapped',
+		secondary: null,
+		target: "normal",
+		contestType: "Tough",
+	},
 };

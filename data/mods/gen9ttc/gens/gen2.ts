@@ -393,7 +393,7 @@ modifyPokemon('Forretress')
 		.setSpD(90);
 
 modifyPokemon('dunsparce')
-	.changeType('Ground')
+	.changeType('Normal', 'Ground')
 	.ability()
 		.set1('Levitate')
 		.setH('Super Luck')
