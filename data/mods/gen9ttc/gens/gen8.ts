@@ -479,10 +479,10 @@ export default function Gen8 (dex: ModdedDex) {
 			.addMove('Sucker Punch')
 			.addMove('Pursuit')
 			.addMove('Knock Off');
-	modifyPokemon('Regieleki')
+	modifyPokemon('regieleki')
 		.baseStat()
 			.setHp(95);
-	modifyPokemon('regidraco')
+	modifyPokemon('regidrago')
 		.learnset()
 			.addMove('Core Enforcer')
 			.addMove('Flamethrower');
