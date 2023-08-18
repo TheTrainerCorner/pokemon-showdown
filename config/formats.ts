@@ -20,7 +20,7 @@ The column value will be ignored for repeat sections.
 export const Formats: FormatList = [
 	{ section: "TTC Draft" },
 	{
-		name: "[Gen 9]Official Draft",
+		name: "[Gen 9] Official Draft",
 		desc: "This is the Official Draft Mod for The Trainer's Corner!",
 
 		mod: 'gen9ttc',
