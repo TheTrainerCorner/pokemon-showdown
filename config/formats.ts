@@ -18,69 +18,15 @@ The column value will be ignored for repeat sections.
 */
 
 export const Formats: FormatList = [
+	{ section: "TTC Draft" },
+	{
+		name: "[Gen 9] Official Draft",
+		desc: "This is the Official Draft Mod for The Trainer's Corner!",
 
-	{
-		section: "Draft",
-	},
-	{
-		name: "[Gen 9] National Dex Draft",
-		desc: "The Official Draft Format for TTC",
 		mod: 'gen9ttc',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: [
-			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-		],
-		// Already Allowed:
-		/**
-		 * Lutrous Globe
-		 * Bleakwind Storm
-		 * Lunar Blessing
-		 * Mystical Power
-		 * Sandsear Storm
-		 * Wildbolt Storm
-		 */
-		unbanlist: [
-			// Unobtainable Moves
-			'Barb Barrage',
-			'Blazing Torque',
-			'Ceaseless Edge',
-			'Chloroblast',
-			'Combat Torque',
-			'Dire Claw',
-			'Esper Wing',
-			'Infernal Parade',
-			'Magical Torque',
-			'Mountain Gale',
-			'Noxious Torque',
-			'Psyshield Bash',
-			'Raging Fury',
-			'Shelter',
-			'Springtide Storm',
-			'Stone Axe',
-			'Triple Arrows',
-			'Victory Dance',
-			'Wicked Torque',
-			// LGPE
-			'LGPE'
-		],
+		ruleset: ['TTC Single'],
 	},
-	{
-		section: "Public Test Realm",
-	},
-	{
-		name: "[Gen 9] National Dex TTC PTR",
-		desc: "This is the Official PTR for TTC.",
-		mod: 'gen9ttc',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
-		banlist: [
-			'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
-		],
-		unbanlist: [
-			'Springtide Storm',
-			'Zippy Zap',
-			'Sappy Seed'
-		],
-	},
+	{ section: "Other Draft Leagues" },
+	{ section: "Public Test Relam" },
+
 ];

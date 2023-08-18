@@ -1,12 +1,19 @@
 export const Rulesets: {[k: string]: ModdedFormatData} = {
-	ttcdraft: {
-		effectType: "ValidatorRule",
-		name: "TTC Draft",
-		desc: "The custom draft league ruleset",
+	ttcsingle: {
+		effectType: 'ValidatorRule',
+		name: 'TTC Single',
+		desc: "The Trainer's Corner Single Battle ruleset.",
 		ruleset: [
-			'Standard NatDex',
+			'Standard', 'Dynamax Clause', 'Gems Clause',
 		],
-		banlist: [],
+		banlist: [
+			'Uber', 'AG',
+			'Moody', 'Power Construct', 'Shadow Tag', 'Arena Trap', 'Centiskorch-Sevii + Shed Skin', 'Centiskorch-Sevii + Mold Breaker',
+			'Swagger', 'Dark Hole', 'Hydro Cannon', 'Blast Burn', 'Frenzy Plant', 'Shed Tail', 'Last Respects',
+			'Eevium Z', "Mewnium Z",
+		],
+		unbanlist: [
 
+		],
 	}
 }

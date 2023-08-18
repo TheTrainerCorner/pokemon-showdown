@@ -12,9 +12,23 @@ import Gen7 from './gens/gen7';
 import Gen8 from './gens/gen8';
 import Gen9 from './gens/gen9';
 
+
+// Tier Files
+import { OUList } from './tiers/ou';
+import { UbersList } from './tiers/ubers';
+import { IllegalList } from './tiers/illegal';
+
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen9',
 	init() {
+		//#region Functions
+		const changeNatDexTier = (pokemon: string, tier: string) => {
+			this.modData('FormatsData', pokemon.toLowerCase().replace(/ +/g, '').replace('-', '')).natDexTier = tier.toUpperCase();
+		}
+		const changeTier = (pokemon: string, tier: string) => {
+			this.modData('FormatsData', pokemon.toLowerCase().replace(/ +/g, '').replace('-', '')).tier = tier.toUpperCase();
+		}
+		//#endregion
 		//#region Add Kick Move Flag to moves
 		let kickMoves: string[] = [
 			"blazekick",
@@ -49,36 +63,22 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.hammer = 1;
 		}
 		//#endregion
-		//#region Fixing tiers
-		this.modData('FormatsData', 'gengarmega').natDexTier = 'OU';
-		this.modData('FormatsData', 'lucariomega').natDexTier = 'OU';
-		this.modData('FormatsData', 'metagrossmega').natDexTier = 'OU';
-		//#endregion
-		//#region Quick Move Changes
-		this.modData('Moves', 'zippyzap').basePower = 50;
-		this.modData('Moves', 'zippyzap').willCrit = true;
-		this.modData('Moves', 'zippyzap').priority = 2;
-		this.modData('Moves', 'zippyzap').secondary = null;
-
-		this.modData('Moves', 'nightdaze').basePower = 80;
-		this.modData('Moves', 'nightdaze').secondary = {
-			chance: 30,
-			volatileStatus: 'flinch',
-		};
-
-		//#region Palafin Evolution
-		this.modData('Pokedex', 'palafin').otherFormes = [];
-		this.modData('Pokedex', 'palafin').formeOrder = [];
-		this.modData('Pokedex', 'palafin').evos = ['Palafin-Hero'];
-		this.modData('Pokedex', 'palafin').baseForme = undefined;
-
-		this.modData('Pokedex', 'palafinhero').requiredAbility = undefined;
-		this.modData('Pokedex', 'palafinhero').battleOnly = undefined;
-		this.modData('Pokedex', 'palafinhero').prevo = "Palafin";
-		this.modData('Pokedex', 'palafinhero').evoLevel = 40;
-		this.modData('Pokedex', 'palafinhero').baseSpecies = undefined;
-		this.modData('Pokedex', 'palafinhero').forme = undefined;
-		
+		//#region Modifying Tiers
+		//Illegal Tier
+		for(let poke of IllegalList) {
+			changeNatDexTier(poke, "Illegal");
+			changeTier(poke, "Illegal");
+		}
+		//Uber Tier
+		for(let poke of UbersList) {
+			changeNatDexTier(poke, "Uber");
+			changeTier(poke, "Uber");
+		}
+		// OU Tier
+		for(let poke of OUList) {
+			changeNatDexTier(poke, "OU");
+			changeTier(poke, "OU");
+		}
 		//#endregion
 
 		//#region Modifying Pokemon

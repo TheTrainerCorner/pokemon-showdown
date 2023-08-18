@@ -141,4 +141,19 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If Rain is active, will deal damage, kill self, and remove rain. If rain is not active, it will kill self and remove rain.",
 		shortDesc: "If Rain, deal damage, kill self, and remove rain; Else kill self and remove rain."
 	},
+	zippyzap: {
+		inherit: true,
+		basePower: 50,
+		willCrit: true,
+		priority: 2,
+		secondary: null,
+	},
+	nightdaze: {
+		inherit: true,
+		basePower: 80,
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
+	},
 };
