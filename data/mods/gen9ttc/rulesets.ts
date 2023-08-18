@@ -12,5 +12,19 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		unbanlist: [
 
 		],
+	},
+	ttcptr: {
+		effectType: 'ValidatorRule',
+		name: 'TTC PTR',
+		desc: "The Trainer's Corner PTR ruleset.",
+		ruleset: [
+			'Standard', 'Dynamax Clause', 'Gems Clause', '+Past', '+Unobtainable',
+		],
+		banlist: [
+			'AG',
+		],
+		unbanlist: [
+			'Uber',
+		]
 	}
 }

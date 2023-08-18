@@ -20,7 +20,7 @@ The column value will be ignored for repeat sections.
 export const Formats: FormatList = [
 	{ section: "TTC Draft" },
 	{
-		name: "[Gen 9] Official Draft",
+		name: "Official Draft",
 		desc: "This is the Official Draft Mod for The Trainer's Corner!",
 
 		mod: 'gen9ttc',
@@ -28,5 +28,11 @@ export const Formats: FormatList = [
 	},
 	{ section: "Other Draft Leagues" },
 	{ section: "Public Test Relam" },
+	{
+		name: "PTR Format",
+		desc: "This is the PTR format to test pokemon changes.",
+		mod: 'gen9ttc',
+		ruleset: ['TTC PTR'],
+	}
 
 ];
