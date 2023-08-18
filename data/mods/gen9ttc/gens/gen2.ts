@@ -209,8 +209,16 @@ modifyPokemon('ariados')
 modifyPokemon('lanturn')
 	.ability()
 		.set1('Hydration')
+	.pokemon.baseStat()
+		.setDef(68)
+		.setSpA(81)
+		.setSpD(81)
 	.pokemon.learnset()
-		.addMove('Parabolic Charge');
+		.addMove('Parabolic Charge')
+		.addMove('Flip Turn')
+		.addMove('Flash Cannon')
+		.addMove('Reflect')
+		.addMove('Light Screen');
 
 modifyPokemon('togekiss')
 	.learnset()
@@ -267,7 +275,7 @@ modifyPokemon('sudowoodo')
 		.setSpD(85)
 	.pokemon.learnset()
 		.addMove('First Impression')
-		.addMove('Grass Glide');
+		.addMove('Grassy Glide');
 
 modifyPokemon('jumpluff')
 	.ability()
@@ -431,7 +439,7 @@ modifyPokemon('qwilfish')
 		.setSpD(85)
 	.pokemon.learnset()
 		.addMove('Baneful Bunker')
-		.addMove('Spikey Shield');
+		.addMove('Spiky Shield');
 
 modifyPokemon('qwilfishhisui')
 	.ability()
@@ -461,7 +469,7 @@ modifyPokemon('heracross')
 
 modifyPokemon('weavile')
 	.ability()
-		.setH('Infiltator')
+		.setH('Infiltrator')
 	.pokemon.learnset()
 		.addMove('Sucker Punch');
 
@@ -527,6 +535,7 @@ modifyPokemon('cursola')
 		.setH('Regenerator')
 	.pokemon.baseStat()
 		.setHp(90)
+		.setDef(90)
 		.setSpD(90)
 	.pokemon.learnset();
 	// Corsola-Galar already has the following:

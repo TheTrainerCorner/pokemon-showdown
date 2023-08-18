@@ -202,7 +202,7 @@ modifyPokemon('raticate')
 		.addMove('Close Combat')
 		.addMove('Fire Fang')
 		.addMove('Ice Fang')
-		.addMove('Psychic Fang');
+		.addMove('Psychic Fangs');
 	
 modifyPokemon('raticatealola')
 	.ability()
@@ -216,7 +216,7 @@ modifyPokemon('raticatealola')
 		.addMove('Close Combat')
 		.addMove('Fire Fang')
 		.addMove('Ice Fang')
-		.addMove('Psychic Fang')
+		.addMove('Psychic Fangs')
 		.addMove('Parting Shot');
 
 modifyPokemon('fearow')
@@ -224,7 +224,7 @@ modifyPokemon('fearow')
 	.ability()
 		.set0('Frisk')
 	.pokemon.baseStat()
-		.setHp(80)
+		.setHp(75)
 		.setAtk(100)
 		.setDef(55)
 		.setSpD(51)
@@ -284,6 +284,10 @@ modifyPokemon('sandslash')
 modifyPokemon('sandslashalola')
 	.ability()
 		.set0('Rough Skin')
+	.pokemon.baseStat()
+		.setHp(80)
+		.setDef(135)
+		.setSpD(80)
 	.pokemon.learnset()
 		.addMove('Spiky Shield')
 		.addMove('Ice Spinner', 9);
@@ -320,8 +324,8 @@ modifyPokemon('ninetales')
 		.addMove('Destiny Bond')
 		.addMove('Nightmare')
 		.addMove('Bitter Malice')
-		.addMove('Night Daze')
-		.removeMove('Nasty Plot');
+		.addMove('Night Daze');
+		//.removeMove('Nasty Plot');
 
 modifyPokemon('ninetalesalola')
 	.baseStat()
@@ -464,9 +468,9 @@ modifyPokemon('politoed')
 		.addMove('Life Dew');
 
 modifyPokemon('alakazam')
-	.learnset()
-		.removeMove('Counter')
-		.removeMove('Barrier');
+	// .learnset()
+	// 	.removeMove('Counter')
+	// 	.removeMove('Barrier');
 
 modifyPokemon('machamp')
 	.baseStat()
@@ -641,7 +645,7 @@ modifyPokemon('dodrio')
 		.addMove('Rock Slide')
 		.addMove('High Horsepower')
 		.addMove('Head Smash')
-		.removeMove('Fly');
+		// .removeMove('Fly');
 
 modifyPokemon('dewgong')
 	.ability()
@@ -655,7 +659,7 @@ modifyPokemon('dewgong')
 		.addMove('Flip Turn')
 		.addMove('Hydro Pump')
 		.addMove('Megahorn')
-		.addMove('Freeze-Dry')
+		.addMove('Freeze Dry')
 		.addMove('Chilling Water');
 
 modifyPokemon('muk')
@@ -772,7 +776,7 @@ modifyPokemon('exeggutor')
 		.setSpD(80)
 		.setSpe(40)
 	.pokemon.learnset()
-		.removeMove('Power Whip')
+		// .removeMove('Power Whip')
 		.addMove('Weather Ball')
 		.addMove('Earth Power');
 
@@ -925,7 +929,7 @@ modifyPokemon('seaking')
 	.ability()
 		.set1('Supreme Overlord')
 	.pokemon.baseStat()
-		.setHp(112)
+		.setAtk(112)
 		.setSpe(48)
 	.pokemon.learnset()
 		.addMove('Aqua Jet')
@@ -1144,7 +1148,7 @@ modifyPokemon('omastar')
 	.pokemon.learnset()
 		.addMove('Power Gem')
 		.addMove('Rapid Spin')
-		.addMove('Spikey Shield')
+		.addMove('Spiky Shield')
 		.addMove('Sludge Bomb')
 		.addMove('Acid Armor');
 
@@ -1211,7 +1215,7 @@ modifyPokemon('zapdos')
 		.set1('Elemental')
 		.setH('Electric Surge')
 	.pokemon.baseStat()
-		.setAtk(75)
+		.setAtk(85)
 		.setDef(100)
 	.pokemon.learnset()
 		.addMove('Bolt Beak')
