@@ -12,12 +12,6 @@ import Gen7 from './gens/gen7';
 import Gen8 from './gens/gen8';
 import Gen9 from './gens/gen9';
 
-
-// Tier Files
-import { OUList } from './tiers/ou';
-import { UbersList } from './tiers/ubers';
-import { IllegalList } from './tiers/illegal';
-
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen9',
 	init() {
@@ -64,21 +58,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 		//#endregion
 		//#region Modifying Tiers
-		//Illegal Tier
-		for(let poke of IllegalList) {
-			changeNatDexTier(poke, "Illegal");
-			changeTier(poke, "Illegal");
-		}
-		//Uber Tier
-		for(let poke of UbersList) {
-			changeNatDexTier(poke, "Uber");
-			changeTier(poke, "Uber");
-		}
-		// OU Tier
-		for(let poke of OUList) {
-			changeNatDexTier(poke, "OU");
-			changeTier(poke, "OU");
-		}
+
 		//#endregion
 
 		//#region Modifying Pokemon

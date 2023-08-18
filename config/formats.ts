@@ -24,7 +24,8 @@ export const Formats: FormatList = [
 		desc: "This is the Official Draft Mod for The Trainer's Corner!",
 
 		mod: 'gen9ttc',
-		ruleset: ['TTC Single'],
+		ruleset: ['Standard NatDex'],
+		
 	},
 	{ section: "Other Draft Leagues" },
 	{ section: "Public Test Relam" },
