@@ -412,4 +412,125 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Intrepid Sword + Stamina",
 		shortDesc: "Intrepid Sword + Stamina",
 	},
+	pigout: {
+		onResidual(pokemon) {
+			if(this.randomChance(1,2)) {
+				let rand = this.random(1, 3);
+
+				switch(rand) {
+					case 1:
+						// Strius Berry
+						this.debug('Consume Strius Berry');
+						if(!(this.runEvent('TryHeal', pokemon))) return false;
+						this.heal(pokemon.baseMaxhp / 4);
+						break;
+					case 2:
+						// Lum Berry
+						this.debug('Consume Lum Berry');
+						if(pokemon.status || pokemon.volatiles['confusion']) {
+							pokemon.cureStatus();
+							pokemon.removeVolatile('confusion');
+						}
+
+						break;
+					case 3:
+						// Straf Berry
+						this.debug('Consume Straf Berry');
+						const stats: BoostID[] = [];
+						let stat: BoostID;
+						for(stat in pokemon.boosts) {
+							if(stat !== 'accuracy' && stat !== 'evasion' && pokemon.boosts[stat] > 6) {
+								stats.push(stat);
+							}
+						}
+						if(stats.length) {
+							const randomStat = this.sample(stats);
+							const boost: SparseBoostsTable = {};
+							boost[randomStat] = 2;
+							this.boost(boost);
+						}
+						break;
+				}
+			}
+		},
+		name: "Pig Out",
+		num: -115,
+		desc: "Every turn, 50% chance to find and immediately consume 1 of 3 potential berries; Sitrus Berry, Lum Berry, or Starf Berry.",
+		shortDesc: "50% chance to find and immediately consume 1 of 3 berries; Stirus Berry, Lum Berry, or Straf Berry.",
+	},
+	plunder: {
+		onStart(pokemon) {
+			let activated = false;
+			for(const target of pokemon.adjacentFoes()) {
+				if(!activated) {
+					this.add('-ability', pokemon, 'Plunder', 'boost');
+					activated = true;
+				}
+				if(target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({def: -1}, target, pokemon, null, true);
+					this.add('-start', pokemon, 'Plunder');
+					target.addVolatile('embargo');
+					this.singleEvent('End', target.getItem(), pokemon.itemState, target);
+				}
+			}
+		},
+		onResidualOrder: 21,
+		onEnd(pokemon) {
+			for(const target of pokemon.adjacentFoes()) {
+				target.removeVolatile('embargo');
+				this.add('-end', target, 'Plunder');
+			}
+		},
+		name: "Plunder",
+		num: -116,
+		desc: "Upon switch-in, opponet loses access to current item while this pokemon is out and lowers defense by 1 stage.",
+		shortDesc: "Upon switch-in, drops Def by 1 stage; Opponent loses access to current item while this pokemon is out.",
+	},
+	neurophysics: {
+		onDamagingHit(damage, target, source, move) {
+			this.field.setTerrain('electricterrain');
+		},
+		name: "Neurophysics",
+		num: -117,
+		desc: "When this Pokemon is hit by an attack, the effect of Electric Terrain begins.",
+		shortDesc: "When this Pokemon is hit by an attack, the effect of Electric Terrain begins.",
+	},
+	terraforming: {
+		onStart(pokemon) {
+			this.field.clearTerrain();
+			this.field.clearWeather();
+		},
+		name: "Terraforming",
+		num: -118,
+		desc: "Upon switch-in, Terrain and/or Weather is removed from the field.",
+		shortDesc: "Upon switch-in, Terrain and/or Weather is removed from the field.",
+	},
+	hammerdown: {
+		onBasePowerPriority: 43,
+		onBasePower(basePower, attacker, defender, move) {
+			if(move.flags['hammer']) {
+				this.debug('Leg Day Boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		name: "Hammer Down",
+		num: -119,
+		desc: "Boosts hammer moves by 1.3x",
+		shortDesc: "Boosts hammer moves by 1.3x",
+	},
+	innersolstice: {
+		onDamagingHit(damage, target, source, move) {
+			if(move.type === 'Fire') {
+				this.boost({atk: 1, def: 1, spd: 1});
+				this.debug('Inner Solstice Second Effect Triggers; Switching to Fluffy');
+				target.setAbility('Fluffy');
+			}
+		},
+		name: "Inner Solstice",
+		num: -120,
+		desc: "Upon being hit by a fire move, this Pokemon's Atk, Def & SpDef are raised by one stage; ability is then changed to Fluffy",
+		shortDesc: "Upon being hit by a fire move, this Pokemon's Atk, Def & SpDef are raised by one stage; ability is then changed to Fluffy",
+	}
 };

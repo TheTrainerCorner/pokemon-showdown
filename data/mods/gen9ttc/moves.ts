@@ -97,4 +97,44 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Raises the user's Attack, Special Attack, and Speed by 2 stages in exchange for the user losing 1/4 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Special Attack, and Speed stat stages would not change.",
 		shortDesc: "+2 Attack, Sp. Atk, Speed for 1/4 user's max HP.",
 	},
+	terahammer: {
+		num: -2,
+		accuracy: 90,
+		basePower: 80,
+		category: "Physical",
+		name: "Tera Hammer",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, hammer: 1},
+		onModifyType(move, pokemon) {
+			move.type = pokemon.teraType || 'Normal';
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
+	},
+	sushityphoon: {
+		num: -3,
+		accuracy: 100,
+		basePower: 150,
+		category: "Special",
+		name: "Sushi Typhoon",
+		pp: 1,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onTry() {
+			return this.field.isWeather('raindance') || this.field.isWeather('primordialsea');
+		},
+		onAfterMove(source, target, move) {
+			source.faint();
+			this.debug('Fainted due to Sushi Typhoon');
+			this.field.clearWeather();
+			this.debug('Weather Cleared due to Sushi Typhoon');
+		},
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Clever",
+	},
 };

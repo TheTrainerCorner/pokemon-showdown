@@ -587,7 +587,12 @@ modifyPokemon('slowking');
 modifyPokemon('slowkinggalar')
 	.learnset()
 		.addMove('Toxic');
-
+modifyPokemon('magneton')
+	.ability()
+		.set1('Levitate')
+	.pokemon.baseStat()
+		.setDef(100)
+		.setSpD(80);
 modifyPokemon('magnezone')
 	.ability()
 		.setH('Levitate');

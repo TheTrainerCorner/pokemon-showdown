@@ -35,8 +35,36 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.kick = 1;
 		}
 		//#endregion
+		//#region Hammer Moves
+		let hammerMoves: string[] = [
+			"hammerarm",
+			"crabhammer",
+			"dragonhammer",
+			"gigatonhammer",
+			"icehammer",
+			"woodhammer",
+			"terahammer"
+		];
+		for(let move of hammerMoves) {
+			this.modData('Moves', move).flags.hammer = 1;
+		}
+		//#endregion
 		//#region Fixing tiers
 		this.modData('FormatsData', 'gengarmega').natDexTier = 'OU';
+		//#endregion
+		//#region Palafin Evolution
+		this.modData('Pokedex', 'palafin').otherFormes = [];
+		this.modData('Pokedex', 'palafin').formeOrder = [];
+		this.modData('Pokedex', 'palafin').evos = ['Palafin-Hero'];
+		this.modData('Pokedex', 'palafin').baseForme = undefined;
+
+		this.modData('Pokedex', 'palafinhero').requiredAbility = undefined;
+		this.modData('Pokedex', 'palafinhero').battleOnly = undefined;
+		this.modData('Pokedex', 'palafinhero').prevo = "Palafin";
+		this.modData('Pokedex', 'palafinhero').evoLevel = 40;
+		this.modData('Pokedex', 'palafinhero').baseSpecies = undefined;
+		this.modData('Pokedex', 'palafinhero').forme = undefined;
+		
 		//#endregion
 
 		//#region Modifying Pokemon

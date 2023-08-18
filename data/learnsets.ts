@@ -84700,7 +84700,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			hex: ["9M"],
 			hyperbeam: ["9M"],
 			icefang: ["9M"],
-			lastrespects: ["9L0"],
+			//lastrespects: ["9L0"],
 			lick: ["9L3"],
 			mudshot: ["9M"],
 			mudslap: ["9M"],

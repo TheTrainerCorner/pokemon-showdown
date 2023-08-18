@@ -41,8 +41,9 @@ interface MoveFlags {
 	failmimic?: 1; // Cannot be copied by Mimic.
 	futuremove?: 1; // Targets a slot, and in 2 turns damages that slot.
 	gravity?: 1; // Prevented from being executed or selected during Gravity's effect.
+	hammer?: 1; // Hammer moves
 	heal?: 1; // Prevented from being executed or selected during Heal Block's effect.
-	kick?: 1;
+	kick?: 1; // Kick Moves
 	mirror?: 1; // Can be copied by Mirror Move.
 	mustpressure?: 1; // Additional PP is deducted due to Pressure when it ordinarily would not.
 	noassist?: 1; // Cannot be selected by Assist.

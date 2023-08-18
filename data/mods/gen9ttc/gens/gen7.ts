@@ -530,7 +530,12 @@ export default function Gen7 (dex: ModdedDex) {
 			.addMove('Parting Shot')
 			.addMove('Pursuit')
 			.addMove('Sucker Punch');
-	modifyPokemon('naganadel');
+	modifyPokemon('naganadel')
+		.ability()
+			.setH('Poison Point')
+		.pokemon.baseStat()
+			.setSpA(107)
+			.setSpe(101);
 	modifyPokemon('necrozma');
 	modifyPokemon('necrozmaduskmane');
 	modifyPokemon('necrozmadawnwings');

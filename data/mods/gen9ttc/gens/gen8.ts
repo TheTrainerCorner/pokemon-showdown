@@ -276,7 +276,19 @@ export default function Gen8 (dex: ModdedDex) {
 			.addMove('Dark Pulse')
 			.addMove('Knock Off')
 			.addMove('Pursuit');
-	modifyPokemon('toxtricitylowkey');
+	modifyPokemon('toxtricitylowkey')
+		.ability()
+			.set1('Volt Absorb')
+		.pokemon.baseStat()
+			.setAtk(114)
+			.setSpA(98)
+			.setSpe(90)
+		.pokemon.learnset()
+			.addMove('Knock Off')
+			.addMove('Shift Gear')
+			.addMove('Nasty Plot')
+			.addMove('Dark Pulse')
+			.addMove('Pursuit');
 	modifyPokemon('centiskorch')
 		.ability()
 			.setH('Adaptability')

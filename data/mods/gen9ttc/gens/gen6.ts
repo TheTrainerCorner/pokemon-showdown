@@ -234,6 +234,10 @@ export default function Gen6 (dex: ModdedDex) {
 			.setSpD(96)
 		.pokemon.learnset()
 			.addMove('Ice Beam');
+	modifyPokemon('doublade')
+		.ability()
+			.set1('Cursed Body')
+			.setH('Levitate');
 	modifyPokemon('aegislash')
 		.learnset()
 			.addMove('Behemoth Bash')
