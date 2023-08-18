@@ -51,7 +51,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 		//#region Fixing tiers
 		this.modData('FormatsData', 'gengarmega').natDexTier = 'OU';
-		this.modData('FormatsData', 'palafinhero').natDexTier = 'OU';
 		this.modData('FormatsData', 'lucariomega').natDexTier = 'OU';
 		this.modData('FormatsData', 'metagrossmega').natDexTier = 'OU';
 		//#endregion

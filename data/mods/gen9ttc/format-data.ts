@@ -1,1 +1,6 @@
-export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {};
+export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
+	palafinhero: {
+		isNonstandard: "Past",
+		natDexTier: "OU",
+	},
+};
