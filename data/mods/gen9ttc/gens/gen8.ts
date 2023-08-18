@@ -194,6 +194,7 @@ export default function Gen8 (dex: ModdedDex) {
 	modifyPokemon('boltund')
 		.ability()
 			.set1('Teravolt')
+			.setH('Static')
 		.pokemon.baseStat()
 			.setAtk(100)
 			.setSpA(80)
