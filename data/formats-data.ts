@@ -5597,6 +5597,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DOU",
 		natDexTier: "Uber",
 	},
+	palafinhero: {
+		tier: "Uber",
+		doublesTier: "DOU",
+		natDexTier: "Uber",
+	},
 	smoliv: {
 		tier: "LC",
 	},
