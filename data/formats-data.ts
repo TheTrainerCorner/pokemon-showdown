@@ -5182,6 +5182,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
+	toxtricitylowkey: {
+		tier: "RUBL",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
 	toxtricitygmax: {
 		isNonstandard: "Past",
 		tier: "Illegal",
