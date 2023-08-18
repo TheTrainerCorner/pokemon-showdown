@@ -1,7 +1,6 @@
 import { ModdedDex } from "./../../../../sim/dex";
 export default function Gen8 (dex: ModdedDex) {
 	let modifyPokemon = (pokemon: string) => {
-		console.log(dex.modData('FormatsData', pokemon.toLowerCase()).tier);
 		if(dex.modData('FormatsData', pokemon.toLowerCase()).tier !== undefined && dex.modData('FormatsData', pokemon.toLowerCase()).tier === "Illegal") {
 			dex.modData('FormatsData', pokemon.toLowerCase()).tier = "OU";
 		}	
