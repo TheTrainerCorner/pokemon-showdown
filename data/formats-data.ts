@@ -5645,6 +5645,11 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
+	mausholdfour: {
+		tier: "UU",
+		doublesTier: "DUU",
+		natDexTier: "RU",
+	},
 	cetoddle: {
 		tier: "LC",
 	},
