@@ -1,7 +1,9 @@
 import { ModdedDex } from "./../../../../sim/dex";
 export default function Gen5 (dex: ModdedDex) {
 	let modifyPokemon = (pokemon: string) => {
-			
+		if(dex.modData('FormatsData', pokemon.toLowerCase()).tier === "Illegal") {
+			dex.modData('FormatsData', pokemon.toLowerCase()).tier = "OU";
+		}	
 		let baseStat = () => {
 			return {
 				setHp,
