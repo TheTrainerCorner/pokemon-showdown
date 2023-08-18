@@ -467,7 +467,7 @@ modifyPokemon('politoed')
 		.addMove('Flip Turn')
 		.addMove('Life Dew');
 
-modifyPokemon('alakazam')
+modifyPokemon('alakazam');
 	// .learnset()
 	// 	.removeMove('Counter')
 	// 	.removeMove('Barrier');
