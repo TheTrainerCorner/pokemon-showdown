@@ -51,7 +51,22 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 		//#region Fixing tiers
 		this.modData('FormatsData', 'gengarmega').natDexTier = 'OU';
+		this.modData('FormatsData', 'palafinhero').natDexTier = 'OU';
+		this.modData('FormatsData', 'lucariomega').natDexTier = 'OU';
+		this.modData('FormatsData', 'metagrossmega').natDexTier = 'OU';
 		//#endregion
+		//#region Quick Move Changes
+		this.modData('Moves', 'zippyzap').basePower = 50;
+		this.modData('Moves', 'zippyzap').willCrit = true;
+		this.modData('Moves', 'zippyzap').priority = 2;
+		this.modData('Moves', 'zippyzap').secondary = null;
+
+		this.modData('Moves', 'nightdaze').basePower = 80;
+		this.modData('Moves', 'nightdaze').secondary = {
+			chance: 30,
+			volatileStatus: 'flinch',
+		};
+
 		//#region Palafin Evolution
 		this.modData('Pokedex', 'palafin').otherFormes = [];
 		this.modData('Pokedex', 'palafin').formeOrder = [];

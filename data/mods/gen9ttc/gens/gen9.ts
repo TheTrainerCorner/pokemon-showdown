@@ -37,7 +37,7 @@ export default function Gen9 (dex: ModdedDex) {
 			return modifyPokemon(pokemon);
 		}
 
-		let addMove = (name: string, gen: number = 8) => {
+		let addMove = (name: string, gen: number = 9) => {
 			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +/g, '')] = [`${gen}M`];
 			return learnset();
 		}

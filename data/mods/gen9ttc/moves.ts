@@ -113,6 +113,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Tough",
+		desc: "Changes type based on the user's tera type.",
+		shortDesc: "Changes type based on the user's tera type."
 	},
 	sushityphoon: {
 		num: -3,
@@ -120,7 +122,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 150,
 		category: "Special",
 		name: "Sushi Typhoon",
-		pp: 1,
+		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onTry() {
@@ -136,5 +138,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		type: "Water",
 		contestType: "Clever",
+		desc: "If Rain is active, will deal damage, kill self, and remove rain. If rain is not active, it will kill self and remove rain.",
+		shortDesc: "If Rain, deal damage, kill self, and remove rain; Else kill self and remove rain."
 	},
 };

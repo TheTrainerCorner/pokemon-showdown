@@ -267,18 +267,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	cleanup: {
 		onStart(pokemon) {
-			let activated = false;
-			for(const sideCondition of ['stealthrocks', 'toxicspikes', 'spikes', 'stickywebs']){
-				for(const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
-					if(side.getSideCondition(sideCondition)) {
-						if(!activated) {
-							this.add('-activate', pokemon, 'ability: Screen Cleaner');
-							activated = true;
-						}
-						side.removeSideCondition(sideCondition);
-					}
+			this.add('-activate', pokemon, 'ability: Clean Up');
+			let success = false;
+			const removeAll = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
+			];
+			for(const sideCondition of removeAll) {
+				if (pokemon.side.removeSideCondition(sideCondition)) {
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Clean Up', '[of] ' + pokemon);
+					success = true;
+				}
+				if(pokemon.adjacentFoes()[0].side.removeSideCondition(sideCondition)) {
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Clean Up', '[of] ' + pokemon);
+					success = true;
 				}
 			}
+			return success;
 		},
 		name: "Clean Up",
 		shortDesc: "On Switch-In, all hazards are removed",
@@ -386,8 +390,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	fishbuffet: {
 		onModifyDamage(damage, source, target, move) {
-			if(target.types.includes('Water') && move.category === 'Physical') {
-				this.chainModify(2);
+			if(target.getTypes().includes('Water') && move.category === 'Physical') {
+				this.add('-activate', source, 'ability: Fish Buffet');
+				return this.chainModify(1.5);
 			}
 		},
 		name: "Fish Buffet",
@@ -523,9 +528,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	innersolstice: {
 		onDamagingHit(damage, target, source, move) {
 			if(move.type === 'Fire') {
+				this.add('-activate', target, 'ability: Inner Solstice');
 				this.boost({atk: 1, def: 1, spd: 1});
-				this.debug('Inner Solstice Second Effect Triggers; Switching to Fluffy');
-				target.setAbility('Fluffy');
+				target.setAbility('fluffy');
+				this.runEvent('SetAbility', target, null, this.effect, 'fluffy');
 			}
 		},
 		name: "Inner Solstice",
