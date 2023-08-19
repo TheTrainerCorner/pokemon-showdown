@@ -594,7 +594,7 @@ modifyPokemon('magneton')
 		.setSpD(80);
 modifyPokemon('magnezone')
 	.ability()
-		.setH('Levitate');
+		.set1('Levitate');
 
 modifyPokemon('farfetchd')
 	.ability()

@@ -71,6 +71,8 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex TTC PTR",
 		desc: "This is the Official PTR for TTC.",
+		
+		mod: "gen9ttc",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
 		banlist: [
 			'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
