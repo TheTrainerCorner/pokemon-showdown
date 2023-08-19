@@ -517,7 +517,7 @@ export default function Gen8 (dex: ModdedDex) {
 	modifyPokemon('calyrexshadow');
 	modifyPokemon('kleavor')
 		.learnset()
-			.addMove('Accelrock')
+			.addMove('Accelerock')
 			.addMove('Ceaseless Edge');
 	modifyPokemon('Sneasler')
 		.ability()

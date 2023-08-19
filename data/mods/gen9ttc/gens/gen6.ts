@@ -193,7 +193,7 @@ export default function Gen6 (dex: ModdedDex) {
 		.pokemon.learnset()
 			.addMove('Close Combat')
 			.addMove('High Jump Kick')
-			.addMove('Accelrock')
+			.addMove('Accelerock')
 			.addMove('Drill Run')
 			.addMove('Stone Edge');
 	modifyPokemon('pangoro')

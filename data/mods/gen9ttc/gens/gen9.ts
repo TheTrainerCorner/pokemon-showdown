@@ -591,7 +591,7 @@ export default function Gen9 (dex: ModdedDex) {
 		.pokemon.baseStat()
 			.setSpD(94)
 		.pokemon.learnset()
-			.addMove('Accelrock')
+			.addMove('Accelerock')
 			.addMove('Bolt Strike');
 	modifyPokemon('baxcalibur');
 	modifyPokemon('gholdengo');
