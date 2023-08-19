@@ -361,7 +361,7 @@ export default function Gen6 (dex: ModdedDex) {
 		.changeType('Dragon', 'Poison')
 		.ability()
 			.set0('Gooey')
-			.set1('Corrsion')
+			.set1('Corrosion')
 			.setH('Multiscale')
 		.pokemon.baseStat()
 			.setAtk(105)
