@@ -538,5 +538,33 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: -120,
 		desc: "Upon being hit by a fire move, this Pokemon's Atk, Def & SpDef are raised by one stage; ability is then changed to Fluffy",
 		shortDesc: "Upon being hit by a fire move, this Pokemon's Atk, Def & SpDef are raised by one stage; ability is then changed to Fluffy",
+	},
+	naturesgift: {
+		onTryHit(target, source, move) {
+			if(target !== source && move.type === 'Grass') {
+				if(!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, "[from] ability: Nature's Gift");
+				}
+				return null;
+			}
+		},
+		isBreakable: true,
+		name: "Nature's Gift",
+		rating: 3.5,
+		num: -121,
+	},
+	garbagedisposal: {
+		onTryHit(target, source, move) {
+			if(target !== source && move.type === 'Steel') {
+				if(!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, "[from] ability: Garbage Disposal");
+				}
+				return null;
+			}
+		},
+		isBreakable: true,
+		name: "Garbage Disposal",
+		rating: 3.5,
+		num: -122,
 	}
 };

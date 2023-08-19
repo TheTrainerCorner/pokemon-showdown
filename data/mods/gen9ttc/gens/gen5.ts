@@ -1022,4 +1022,9 @@ modifyPokemon('meloetta')
 	.pokemon.learnset()
 		.addMove('Parting Shot')
 		.addMove('Future Sight');
+modifyPokemon('keldeo')
+	.baseStat()
+		.setHp(81)
+		.setAtk(101)
+		.setSpe(118);
 }
