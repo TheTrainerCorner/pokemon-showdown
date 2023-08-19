@@ -552,6 +552,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Nature's Gift",
 		rating: 3.5,
 		num: -121,
+		desc: "This Pokemon is immune to Grass-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Grass-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Grass moves; Grass immunity.",
 	},
 	garbagedisposal: {
 		onTryHit(target, source, move) {
@@ -566,5 +568,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Garbage Disposal",
 		rating: 3.5,
 		num: -122,
+		desc: "This Pokemon is immune to Steel-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Steel-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Steel moves; Steel immunity.",
 	}
 };
