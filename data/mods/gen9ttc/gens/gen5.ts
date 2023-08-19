@@ -1027,4 +1027,9 @@ modifyPokemon('keldeo')
 		.setHp(81)
 		.setAtk(101)
 		.setSpe(118);
+modifyPokemon('keldeoresolute')
+	.baseStat()
+		.setHp(81)
+		.setAtk(101)
+		.setSpe(118);
 }

@@ -447,11 +447,14 @@ export default function Gen9 (dex: ModdedDex) {
 	// Now a evo of palafin
 	.ability()
 		.set0('Wonder Skin')
-		.set1('Liquid Voice')
+		.set1('Water Veil')
 		.setH('Emergency Exit')
 	.pokemon.baseStat()
 		.setAtk(100)
-		.setSpD(97);
+		.setSpD(97)
+	.pokemon.learnset()
+		.addMove('Thunder Punch')
+		.addMove('Drain Punch');
 	modifyPokemon('revavroom')
 		.learnset()
 			.addMove('U Turn')

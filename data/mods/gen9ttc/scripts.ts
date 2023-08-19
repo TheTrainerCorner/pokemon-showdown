@@ -58,7 +58,33 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 		//#endregion
 		//#region Modifying Tiers
-
+		changeNatDexTier('alakazammega', 'OU');
+		changeNatDexTier('annihilape', 'OU');
+		changeNatDexTier('blazikenmega', 'OU');
+		changeNatDexTier('chienpao', 'OU');
+		changeNatDexTier('chiyu', 'OU');
+		changeNatDexTier('darmanitangalar', 'OU');
+		changeNatDexTier('espathra', 'OU');
+		changeNatDexTier('dracovish', 'OU');
+		changeNatDexTier('fluttermane', 'OU');
+		changeNatDexTier('houndstone', 'OU');
+		changeNatDexTier('ironbundle', 'OU');
+		changeNatDexTier('kangaskhanmega', 'OU');
+		changeNatDexTier('kyuremblack', 'OU');
+		changeNatDexTier('landorus', 'OU');
+		changeNatDexTier('lucariomega', 'OU');
+		changeNatDexTier('melmetal', 'OU');
+		changeNatDexTier('metagrossmega', 'OU');
+		changeNatDexTier('naganadel', 'OU');
+		changeNatDexTier('palafin', 'OU');
+		changeNatDexTier('palafinhero', 'OU');
+		changeNatDexTier('regieleki', 'OU');
+		changeNatDexTier('roaringmoon', 'OU');
+		changeNatDexTier('salamencemega', 'OU');
+		changeNatDexTier('spectrier', 'OU');
+		changeNatDexTier('urshifu', 'OU');
+		changeNatDexTier('walkingwake', 'OU');
+		changeNatDexTier('zygarde', 'OU');
 		//#endregion
 
 		//#region Modifying Pokemon

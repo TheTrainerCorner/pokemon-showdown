@@ -629,11 +629,11 @@ modifyPokemon('wyrdeer')
 	.ability()
 		.setH('Stamina')
 	.pokemon.baseStat()
-		.setAtk(115)
-		.setDef(92)
+		.setAtk(110)
+		.setDef(82)
 		.setSpA(110)
-		.setSpD(95)
-		.setSpe(105)
+		.setSpD(85)
+		.setSpe(75)
 	.pokemon.learnset()
 		.addMove('Recover');
 
@@ -661,8 +661,8 @@ modifyPokemon('raikou')
 	.ability()
 		.setH('Radiating Light')
 	.pokemon.baseStat()
-		.setHp(100)
-		.setDef(100)
+		.setAtk(75)
+		.setDef(85)
 	.pokemon.learnset()
 		.addMove('Fire Fang')
 		.addMove('Ice Fang')
@@ -706,10 +706,7 @@ modifyPokemon('tyranitarmega');
 
 modifyPokemon('celebi')
 	.ability()
-		.setH('Magic Bounce')
-	.pokemon.baseStat()
-		.setHp(110)
-		.setSpA(110);
+		.setH('Magic Bounce');
 
 modifyPokemon('lugia');
 
