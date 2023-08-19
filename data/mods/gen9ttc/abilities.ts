@@ -530,8 +530,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if(move.type === 'Fire') {
 				this.add('-activate', target, 'ability: Inner Solstice');
 				this.boost({atk: 1, def: 1, spd: 1});
-				target.setAbility('fluffy');
-				this.runEvent('SetAbility', target, null, this.effect, 'fluffy');
+				const oldAbility = target.setAbility('fluffy');
+				if(oldAbility) {
+					this.add('-ability', target, target.getAbility().name, '[from] ability: Inner Solstice');
+					return;
+				}
+				return oldAbility as false | null;
 			}
 		},
 		name: "Inner Solstice",
