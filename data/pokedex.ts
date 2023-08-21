@@ -10498,8 +10498,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	sawsbucksummer: {
 		num: 586,
 		name: "Sawsbuck-Summer",
-		baseSpecies: 'Sawsbuck',
-		forme: 'Summer',
+		// baseSpecies: 'Sawsbuck',
+		// forme: 'Summer',
 		types: ["Normal", "Grass"],
 		baseStats: {hp: 80, atk: 100, def: 70, spa: 60, spd: 70, spe: 95},
 		abilities: {0: "Chlorophyll", 1: "Sap Sipper", H: "Serene Grace"},
@@ -10513,8 +10513,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	sawsbuckwinter: {
 		num: 586,
 		name: "Sawsbuck-Winter",
-		baseSpecies: 'Sawsbuck',
-		forme: 'Winter',
+		// baseSpecies: 'Sawsbuck',
+		// forme: 'Winter',
 		types: ["Normal", "Grass"],
 		baseStats: {hp: 80, atk: 100, def: 70, spa: 60, spd: 70, spe: 95},
 		abilities: {0: "Chlorophyll", 1: "Sap Sipper", H: "Serene Grace"},
@@ -10530,8 +10530,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	sawsbuckautumn: {
 		num: 586,
 		name: "Sawsbuck-Autumn",
-		baseSpecies: 'Sawsbuck',
-		forme: 'Autumn',
+		// baseSpecies: 'Sawsbuck',
+		// forme: 'Autumn',
 		types: ["Normal", "Grass"],
 		baseStats: {hp: 80, atk: 100, def: 70, spa: 60, spd: 70, spe: 95},
 		abilities: {0: "Chlorophyll", 1: "Sap Sipper", H: "Serene Grace"},
