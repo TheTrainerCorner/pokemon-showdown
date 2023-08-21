@@ -589,6 +589,7 @@ export class TeamValidator {
 				if (!ability.name || ability.name === 'No Ability') {
 					problems.push(`${name} needs to have an ability.`);
 				} else if (!Object.values(species.abilities).includes(ability.name)) {
+					console.log(tierSpecies.abilities);
 					if (tierSpecies.abilities[0] === ability.name) {
 						set.ability = species.abilities[0];
 					} else {
