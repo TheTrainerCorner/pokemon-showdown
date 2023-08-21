@@ -563,7 +563,7 @@ export class TeamValidator {
 				set.teraType = type.name;
 			}
 		}
-
+		console.debug(tierSpecies);
 		let problem = this.checkSpecies(set, species, tierSpecies, setHas);
 		if (problem) problems.push(problem);
 
