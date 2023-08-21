@@ -160,5 +160,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 50,
 		priority: 1,
+		shortDesc: "Power doubles during Bounce, Fly, and Sky Drop; +1 Priority."
 	}
 };
