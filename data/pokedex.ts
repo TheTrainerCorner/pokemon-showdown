@@ -10506,6 +10506,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 1.9,
 		weightkg: 92.5,
 		color: "Brown",
+		prevo: "Deerling",
+		evoLevel: 34,
 		eggGroups: ["Field"],
 	},
 	sawsbuckwinter: {
@@ -10519,6 +10521,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 1.9,
 		weightkg: 92.5,
 		color: "Brown",
+		prevo: "Deerling",
+		evoLevel: 34,
 		eggGroups: ["Field"],
 	},
 	sawsbuckautumn: {
@@ -10532,6 +10536,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 1.9,
 		weightkg: 92.5,
 		color: "Brown",
+		prevo: "Deerling",
+		evoLevel: 34,
 		eggGroups: ["Field"],
 	},
 	//#endregion
