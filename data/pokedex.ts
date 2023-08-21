@@ -10473,7 +10473,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 0.6,
 		weightkg: 19.5,
 		color: "Pink",
-		evos: ["Sawsbuck"],
+		evos: ["Sawsbuck", "Sawsbuck-Summer"],
 		eggGroups: ["Field"],
 		cosmeticFormes: ["Deerling-Summer", "Deerling-Autumn", "Deerling-Winter"],
 		formeOrder: ["Deerling", "Deerling-Summer", "Deerling-Autumn", "Deerling-Winter"],

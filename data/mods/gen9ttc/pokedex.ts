@@ -16,8 +16,4 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseSpecies: undefined,
 		forme: undefined,
 	},
-	sawsbucksummer: {
-		inherit: true,
-		abilities: {0: 'Chlorophyll', 1: 'Flash Fire', H: 'Serene Grace'},
-	}
 };
