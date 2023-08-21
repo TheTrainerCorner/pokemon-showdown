@@ -369,6 +369,13 @@ modifyPokemon('cherrim')
   .pokemon.learnset()
     .addMove('Grav Apple')
     .addMove('Moonblast');
+modifyPokemon('cherrimsunshine')
+	.ability()
+		.set1('Chlorophyll')
+	.pokemon.baseStat()
+		.setDef(75)
+		.setSpA(92)
+		.setSpe(90);
 
 modifyPokemon('gastrodon')
   .ability()

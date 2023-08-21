@@ -152,7 +152,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		name: "Artillery",
-		shortDesc: "When this pokemon doesn't use a damaging move, Special Attack raises by 1 stage; Removes all positive stats after using a damaging move.",
+		desc: "When this pokemon doesn't use a damaging move, Special Attack raises by 1 stage; Removes all positive stats after using a damaging move.",
+		shortDesc: "Non-Damaging Move = +1 SpA; Damaging Move = Removes all Positive Stat Changes",
 		num: -106,
 		rating: 4,
 	},
@@ -440,7 +441,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 						break;
 					case 3:
 						// Straf Berry
-						this.debug('Consume Straf Berry');
+						this.debug('Consume Starf Berry');
 						const stats: BoostID[] = [];
 						let stat: BoostID;
 						for(stat in pokemon.boosts) {
@@ -461,7 +462,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Pig Out",
 		num: -115,
 		desc: "Every turn, 50% chance to find and immediately consume 1 of 3 potential berries; Sitrus Berry, Lum Berry, or Starf Berry.",
-		shortDesc: "50% chance to find and immediately consume 1 of 3 berries; Stirus Berry, Lum Berry, or Straf Berry.",
+		shortDesc: "50% chance to find and immediately consume 1 of 3 berries; Stirus Berry, Lum Berry, or Starf Berry.",
 	},
 	plunder: {
 		onStart(pokemon) {
@@ -541,7 +542,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Inner Solstice",
 		num: -120,
 		desc: "Upon being hit by a fire move, this Pokemon's Atk, Def & SpDef are raised by one stage; ability is then changed to Fluffy",
-		shortDesc: "Upon being hit by a fire move, this Pokemon's Atk, Def & SpDef are raised by one stage; ability is then changed to Fluffy",
+		shortDesc: "If hit by a Fire move, + 1 Atk, Def, and SpDef; Ability changes to Fluffy",
 	},
 	naturesgift: {
 		onTryHit(target, source, move) {

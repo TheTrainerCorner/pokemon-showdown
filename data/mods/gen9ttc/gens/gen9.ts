@@ -418,7 +418,7 @@ export default function Gen9 (dex: ModdedDex) {
 		.changeType('Water', 'Rock')
 		.ability()
 			.set1('Skill Link')
-			.setH('Techician')
+			.setH('Technician')
 		.pokemon.learnset()
 			.addMove('Rock Blast')
 			.addMove('Smack Down')
