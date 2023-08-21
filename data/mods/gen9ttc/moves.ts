@@ -156,4 +156,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			volatileStatus: 'flinch',
 		},
 	},
+	gust: {
+		inherit: true,
+		basePower: 50,
+		priority: 1,
+	}
 };
