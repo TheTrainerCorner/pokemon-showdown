@@ -177,7 +177,7 @@ Y929lRybWEiKUr+4Yw2O1W0CAwEAAQ==
  */
 exports.routes = {
 	root: 'pokemonshowdown.com',
-	client: '34.125.114.43',
+	client: 'play.thetrainercorner.net',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 };
