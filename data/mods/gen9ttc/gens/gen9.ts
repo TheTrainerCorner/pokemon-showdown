@@ -576,9 +576,9 @@ export default function Gen9 (dex: ModdedDex) {
 			.setSpD(80)
 			.setSpe(116);
 	modifyPokemon('ironhands')
-		.ability()
-			.setH('Iron Fist')
-		.pokemon.learnset()
+		// .ability()
+		// 	.setH('Iron Fist')
+		.learnset()
 			.addMove('Plasma Fists');
 	modifyPokemon('ironjugulis')
 		.ability()

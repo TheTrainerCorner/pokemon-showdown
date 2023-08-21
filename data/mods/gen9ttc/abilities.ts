@@ -258,7 +258,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (!source.types.includes(move.type)) return;
 			if (typeof accuracy !== 'number') return;
 			this.debug('elemental - enhancing accuracy');
-			return this.chainModify([5325, 4096]);
+			return this.chainModify([4915, 4096]);
 		},
 		onSourceModifyAccuracyPriority: -1,
 		name: "Elemental",

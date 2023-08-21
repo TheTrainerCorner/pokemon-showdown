@@ -504,9 +504,9 @@ export default function Gen7 (dex: ModdedDex) {
 	modifyPokemon('nihilego')
 		.ability()
 			.setH('Filter');
-	modifyPokemon('buzzwole')
-		.ability()
-			.setH('Guts');
+	modifyPokemon('buzzwole');
+		// .ability()
+		// 	.setH('Guts');
 	modifyPokemon('xurkitree')
 		.ability()
 			.setH('Volt Absorb')

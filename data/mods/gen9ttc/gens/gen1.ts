@@ -470,7 +470,10 @@ modifyPokemon('alakazam');
 	// .learnset()
 	// 	.removeMove('Counter')
 	// 	.removeMove('Barrier');
-
+modifyPokemon('alakazammega')
+	.baseStat()
+		.setSpe(135);
+		
 modifyPokemon('machamp')
 	.baseStat()
 		.setHp(100)
@@ -882,9 +885,9 @@ modifyPokemon('chansey')
 		.setHp(230)
 		.setDef(15)
 		.setSpA(55)
-		.setSpD(95)
-	.pokemon.learnset()
-		.addMove('Revival Blessing');
+		.setSpD(95);
+	// .pokemon.learnset()
+	// 	.addMove('Revival Blessing');
 
 modifyPokemon('blissey')
 	.changeType('Normal', 'Fairy')
