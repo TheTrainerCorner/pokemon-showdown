@@ -292,8 +292,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	grasspelt: {
 		inherit: true,
-		onModifyDefPriority: 6,
-		onModifySpDPriority: 7,
+		onModifyDefPriority: 5,
+		onModifySpDPriority: 5,
 		onModifyDef(pokemon) {
 			if (this.field.isTerrain('grassyterrain')) return this.chainModify(1.5);
 			else return this.chainModify(1.25);
