@@ -4,4 +4,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 		natDexTier: "OU",
 	},
+	sawsbucksummer: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	}
 };

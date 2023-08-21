@@ -15,5 +15,5 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 40,
 		baseSpecies: undefined,
 		forme: undefined,
-	}
+	},
 };
