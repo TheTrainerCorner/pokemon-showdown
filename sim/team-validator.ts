@@ -563,12 +563,11 @@ export class TeamValidator {
 				set.teraType = type.name;
 			}
 		}
-		console.debug(tierSpecies);
+
 		let problem = this.checkSpecies(set, species, tierSpecies, setHas);
 		if (problem) problems.push(problem);
 
 		problem = this.checkItem(set, item, setHas);
-		if (problem) problems.push(problem);
 		if (ruleTable.has('obtainablemisc')) {
 			if (dex.gen === 4 && item.id === 'griseousorb' && species.num !== 487) {
 				problems.push(`${set.name} cannot hold the Griseous Orb.`, `(In Gen 4, only Giratina could hold the Griseous Orb).`);
