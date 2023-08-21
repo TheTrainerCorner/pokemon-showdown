@@ -344,21 +344,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onSourceModifyDamage(damage, source, target, move) {
 			if(move.type == 'Water') {
-				return this.chainModify(0.25);
+				return this.chainModify(0.5);
 			}
 		},
-		desc: "This Pokemon takes 25% less damage from Water-type moves, and its Defense is raised 2 stages after it is hit by one.",
-		shortDesc: "Reduces water damage by 25%; +2 def when hit by water move",
+		desc: "This Pokemon takes 50% less damage from Water-type moves, and its Defense is raised 2 stages after it is hit by one.",
+		shortDesc: "Reduces water damage by 50%; +2 def when hit by water move",
 	},
 	steamengine: {
 		inherit: true,
 		onSourceModifyDamage(damage, source, target, move) {
 			if(['Water', 'Fire'].includes(move.type)) {
-				return this.chainModify(0.25);
+				return this.chainModify(0.5);
 			}
 		},
-		desc: "This Pokemon's Speed is raised by 6 stage and takes 25% less damage from Water and Fire type Moves.",
-		shortDesc: "This Pokemon's Speed is raised by 6 stage and takes 25% less damage when hit by a Water or Fire type move."
+		desc: "This Pokemon's Speed is raised by 6 stage and takes 50% less damage from Water and Fire type Moves.",
+		shortDesc: "This Pokemon's Speed is raised by 6 stage and takes 50% less damage when hit by a Water or Fire type move."
 	},
 	bugout: {
 		onModifyDamage(relayVar, source, target, move) {
@@ -374,20 +374,27 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	gulpmissile: {
 		inherit: true,
-		onEnd(pokemon) {
-			if(['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
-				if(this.randomChance(1,2)) {
-					const forme = pokemon.hp <= pokemon.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
-					pokemon.formeChange(forme);
+		onDamagingHit(damage, target, source, move) {
+			if (!source.hp || !source.isActive || target.transformed || target.isSemiInvulnerable()) return;
+			if(['cramorantgulping', 'cramorantgorging'].includes(target.species.id)) {
+				this.damage(source.baseMaxhp / 4, source, target);
+				if(target.species.id === 'cramorantgulping') {
+					this.boost({def: -1}, source, target, null, true);
+				} else {
+					source.trySetStatus('par', target, move);
 				}
-			} else {
-				if(this.randomChance(1, 4)) {
-					const forme = pokemon.hp <= pokemon.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
-					pokemon.formeChange(forme);
+				// Refreshing the forme change
+				if((['raindance', 'primordialsea'].includes(target.effectiveWeather()) && this.randomChance(1, 2)) || this.randomChance(1, 4)) {
+					const forme = target.hp <= target.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
+					source.formeChange(forme);
+				} else {
+					target.formeChange('cramorant', move)
 				}
 			}
+
 		},
-		shortDesc: 'When hit after gulping/gorging, attacker takes 1/4 max HP and -1 Def or Para; 25% chance of refreshing and 50% of refreshing in Rain.'
+
+		shortDesc: 'When hit after gulping/gorging, attacker takes 1/4 max HP and -1 Def or Para; 1/2 Reset in rain, else 1/4.'
 	},
 	fishbuffet: {
 		onModifyDamage(damage, source, target, move) {
