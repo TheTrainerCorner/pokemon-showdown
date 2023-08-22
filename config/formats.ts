@@ -26,10 +26,10 @@ export const Formats: FormatList = [
 		name: "[Gen 9] National Dex Draft",
 		desc: "The Official Draft Format for TTC",
 		mod: 'gen9ttc',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shed Tail',
 		],
 		// Already Allowed:
 		/**
@@ -62,7 +62,8 @@ export const Formats: FormatList = [
 			'Victory Dance',
 			'Wicked Torque',
 			// LGPE
-			'LGPE'
+			'LGPE',
+			'Baton Pass',
 		],
 	},
 	{
@@ -73,10 +74,10 @@ export const Formats: FormatList = [
 		desc: "This is the Official PTR for TTC.",
 		
 		mod: "gen9ttc",
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod'],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
 			'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Baton Pass', 'Last Respects', 'Shed Tail',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shed Tail',
 		],
 		unbanlist: [
 			'Springtide Storm',

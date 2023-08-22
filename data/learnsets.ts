@@ -60622,7 +60622,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			chargebeam: ["7M", "6M", "5M"],
 			confide: ["7M", "6M"],
 			confusion: ["8L1", "7L1", "6L1", "5L1"],
-			cosmicpower: ["8M"],
+			// cosmicpower: ["8M"],
 			darkpulse: ["8M", "7M", "6M", "5T"],
 			doubleteam: ["7M", "6M", "5M"],
 			dreameater: ["7M", "6M", "5M"],

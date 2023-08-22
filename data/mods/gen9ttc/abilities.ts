@@ -262,7 +262,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onSourceModifyAccuracyPriority: -1,
 		name: "Elemental",
-		shortDesc: "STAB moves accuracy are boosted by 1.3x",
+		shortDesc: "STAB moves accuracy are boosted by 1.2x",
 		rating: 3,
 		num: -110,
 	},
@@ -292,12 +292,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	grasspelt: {
 		inherit: true,
-		onModifyDefPriority: 5,
-		onModifySpDPriority: 5,
+		onModifyDefPriority: 6,
 		onModifyDef(pokemon) {
 			if (this.field.isTerrain('grassyterrain')) return this.chainModify(1.5);
 			else return this.chainModify(1.25);
 		},
+		onModifySpDPriority: 6,
 		onModifySpD(pokemon) {
 			if (this.field.isTerrain('grassyterrain')) return this.chainModify(1.5);
 			else return this.chainModify(1.25);
@@ -332,7 +332,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 					}
 				}
 				pokemon.switchFlag = true;
-				this.add('-active', pokemon, 'ability: Emergency Exit');
+				this.add('-activate', pokemon, 'ability: Emergency Exit');
 			}
 		},
 		shortDesc: "If this Pokemon is below 1/2 HP at the end of the turn, it switches out.",
@@ -385,10 +385,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 				// Refreshing the forme change
 				if((['raindance', 'primordialsea'].includes(target.effectiveWeather()) && this.randomChance(1, 2)) || this.randomChance(1, 4)) {
-					const forme = target.hp <= target.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
+					const forme = source.hp <= source.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
 					source.formeChange(forme);
 				} else {
-					target.formeChange('cramorant', move)
+					source.formeChange('cramorant', move)
 				}
 			}
 
@@ -428,7 +428,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	pigout: {
 		onResidual(pokemon) {
 			if(this.randomChance(1,2)) {
-				let rand = this.random(1, 3);
+				let rand = this.random(3) + 1;
 
 				switch(rand) {
 					case 1:
@@ -469,7 +469,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Pig Out",
 		num: -115,
 		desc: "Every turn, 50% chance to find and immediately consume 1 of 3 potential berries; Sitrus Berry, Lum Berry, or Starf Berry.",
-		shortDesc: "50% chance to find and immediately consume 1 of 3 berries; Stirus Berry, Lum Berry, or Starf Berry.",
+		shortDesc: "50% chance to eat 1 of 3 Berries; Sitrus, Lum, or Starf",
 	},
 	plunder: {
 		onStart(pokemon) {
@@ -499,7 +499,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Plunder",
 		num: -116,
 		desc: "Upon switch-in, opponet loses access to current item while this pokemon is out and lowers defense by 1 stage.",
-		shortDesc: "Upon switch-in, drops Def by 1 stage; Opponent loses access to current item while this pokemon is out.",
+		shortDesc: "Upon switch-in, -1 def to target; Adds embargo to target",
 	},
 	neurophysics: {
 		onDamagingHit(damage, target, source, move) {

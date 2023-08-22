@@ -407,7 +407,7 @@ export default function Gen7 (dex: ModdedDex) {
 		.ability()
 			.set1('Sand Stream')
 		.pokemon.baseStat()
-			.setDef(120)
+			.setDef(110)
 			.setSpD(85)
 		.pokemon.learnset()
 			.addMove('Hex');
@@ -504,9 +504,9 @@ export default function Gen7 (dex: ModdedDex) {
 	modifyPokemon('nihilego')
 		.ability()
 			.setH('Filter');
-	modifyPokemon('buzzwole');
-		// .ability()
-		// 	.setH('Guts');
+	modifyPokemon('buzzwole')
+		.ability()
+			.setH('Inner Focus');
 	modifyPokemon('xurkitree')
 		.ability()
 			.setH('Volt Absorb')
@@ -517,7 +517,7 @@ export default function Gen7 (dex: ModdedDex) {
 			.setH('Steelworker');
 	modifyPokemon('kartana')
 		.ability()
-			.setH('Sharpness');
+			.setH('Clear Body');
 	modifyPokemon('guzzlord')
 		.ability()
 			.setH('Dark Aura')
@@ -547,7 +547,7 @@ export default function Gen7 (dex: ModdedDex) {
 			.setSpD(132);
 	modifyPokemon('blacephalon')
 		.ability()
-			.setH('Prankster')
+			.setH('Flash Fire')
 		.pokemon.learnset()
 			.addMove('Scorching Sands');
 	modifyPokemon('zeraora')

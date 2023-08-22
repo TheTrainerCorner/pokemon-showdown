@@ -17,5 +17,29 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			}
 			return problems;
 		}
+	},
+	nocalmmindforthepatioset: {
+		effectType: "ValidatorRule",
+		name: 'No Calm Mind For The Patio Set',
+		desc: "Prevents Mega Patios set from using Calm Mind",
+		onValidateSet(set) {
+			const problems = [];
+			let latios = this.dex.species.get('Latios');
+			let latias = this.dex.species.get('Latias');
+
+			let omegaStone = this.dex.items.get('Latiosite');
+			let amegaStone = this.dex.items.get('Latiasite');
+
+			let calmMind = this.dex.moves.get('Calm Mind');
+
+			if([latios.name, latias.name].includes(set.species)) {
+				if([omegaStone.name, amegaStone.name].includes(set.item)) {
+					if(set.moves.includes(calmMind.name)) {
+						problems.push(`${set.name} can not have Calm Mind due to having their mega stone!`);
+					}
+				}
+			}
+			return problems;
+		}
 	}
 }

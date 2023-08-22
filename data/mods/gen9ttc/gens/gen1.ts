@@ -1223,7 +1223,7 @@ modifyPokemon('zapdos')
 		.setH('Electric Surge')
 	.pokemon.baseStat()
 		.setAtk(85)
-		.setDef(100)
+		.setDef(85)
 	.pokemon.learnset()
 		.addMove('Bolt Beak')
 		.addMove('Fusion Bolt');
