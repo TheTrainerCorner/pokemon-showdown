@@ -99,13 +99,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 			const requireObtainable = this.ruleTable.has('obtainable');
 			if (requireObtainable) {
-				if (species.natDexTier === "Unreleased") {
-					const basePokemon = this.toID(species.baseSpecies);
-					if (this.ruleTable.has(`+pokemon:${species.id}`) || this.ruleTable.has(`+basepokemon:${basePokemon}`)) {
-						return;
-					}
-					return [`${set.name || set.species} does not exist in the National Dex.`];
-				}
+				// if (species.natDexTier === "Unreleased") {
+				// 	const basePokemon = this.toID(species.baseSpecies);
+				// 	if (this.ruleTable.has(`+pokemon:${species.id}`) || this.ruleTable.has(`+basepokemon:${basePokemon}`)) {
+				// 		return;
+				// 	}
+				// 	return [`${set.name || set.species} does not exist in the National Dex.`];
+				// }
 				for (const moveid of set.moves) {
 					const move = this.dex.moves.get(moveid);
 					if (move.isNonstandard === 'Unobtainable' && move.gen === this.dex.gen || move.id === 'lightofruin') {
