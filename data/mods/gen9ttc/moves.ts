@@ -147,6 +147,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		willCrit: true,
 		priority: 2,
 		secondary: null,
+		shortDesc: "Nearly always goes first; Always Crit",
+		desc: "Nearly always goes first; Always Crit",
 	},
 	nightdaze: {
 		inherit: true,
