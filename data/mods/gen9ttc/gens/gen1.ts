@@ -907,7 +907,7 @@ modifyPokemon('blissey')
 modifyPokemon('tangrowth')
 	.ability()
 		.set0('Tangling Hair')
-		.set1('Innards out');
+		.set1('Innards Out');
 
 modifyPokemon('kangaskhan')
 	.ability()

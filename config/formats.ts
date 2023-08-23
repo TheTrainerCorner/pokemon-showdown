@@ -41,6 +41,7 @@ export const Formats: FormatList = [
 		 * Wildbolt Storm
 		 */
 		unbanlist: [
+			'Unobtainable',
 			// Unobtainable Moves
 			'Barb Barrage',
 			'Blazing Torque',
@@ -80,9 +81,30 @@ export const Formats: FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shed Tail',
 		],
 		unbanlist: [
+			'Unobtainable',
+			// Unobtainable Moves
+			'Barb Barrage',
+			'Blazing Torque',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Dire Claw',
+			'Esper Wing',
+			'Infernal Parade',
+			'Magical Torque',
+			'Mountain Gale',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Shelter',
 			'Springtide Storm',
-			'Zippy Zap',
-			'Sappy Seed'
+			'Stone Axe',
+			'Triple Arrows',
+			'Victory Dance',
+			'Wicked Torque',
+			// LGPE
+			'LGPE',
+			'Baton Pass',
 		],
 	}
 ];
