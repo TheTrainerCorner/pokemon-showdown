@@ -553,6 +553,6 @@ export default function Gen7 (dex: ModdedDex) {
 	modifyPokemon('zeraora')
 		.changeType('Electric', 'Fighting')
 		.ability()
-			.set1('Tough Claws');
+			.set1('Justified');
 	modifyPokemon('melmetal');
 }
