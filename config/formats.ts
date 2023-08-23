@@ -41,7 +41,7 @@ export const Formats: FormatList = [
 		 * Wildbolt Storm
 		 */
 		unbanlist: [
-			'Unobtainable',
+			'Unreleased',
 			// Unobtainable Moves
 			'Barb Barrage',
 			'Blazing Torque',
@@ -81,7 +81,7 @@ export const Formats: FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shed Tail',
 		],
 		unbanlist: [
-			'Unobtainable',
+			'Unreleased',
 			// Unobtainable Moves
 			'Barb Barrage',
 			'Blazing Torque',
