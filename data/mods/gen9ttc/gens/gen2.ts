@@ -189,6 +189,7 @@ modifyPokemon('Ledian')
 		.setSpA(15)
 		.setSpe(95)
 	.pokemon.learnset()
+		.addMove('Lunge')
 		.addMove('Sucker Punch')
 		.addMove('Fire Punch');
 

@@ -1168,6 +1168,7 @@ modifyPokemon('kabutops')
 		.setSpD(80)
 		.setSpe(85)
 	.pokemon.learnset()
+		.addMove('Stone Axe', 9)
 		.addMove('Focus Energy')
 		.addMove('Leaf Blade')
 		.addMove('Aqua Cutter', 9);

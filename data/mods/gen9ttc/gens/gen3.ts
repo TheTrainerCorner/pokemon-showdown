@@ -499,8 +499,8 @@ modifyPokemon('sharpedo')
 	.ability()
 		.set1('Reckless')
 	.pokemon.learnset()
-		.addMove('Wave Crash')
-		.addMove('Fishious Rend');
+		.addMove('Wave Crash');
+		// .addMove('Fishious Rend');
 
 modifyPokemon('sharpedomega');
 
