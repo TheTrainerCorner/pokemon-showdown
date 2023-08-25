@@ -554,7 +554,7 @@ export const commands: Chat.ChatCommands = {
 		if (!this.runBroadcast()) return;
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
-
+		else target += `, gen9ttc`
 		const {dex, format, targets} = this.splitFormat(target, true);
 
 		let buffer = '';
