@@ -105,7 +105,7 @@ export const Formats: FormatList = [
 			'LGPE',
 			'Baton Pass',
 		],
-	}
+	},
 	{
 		section: "Public Test Realm",
 	},
