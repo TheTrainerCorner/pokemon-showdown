@@ -586,7 +586,7 @@ modifyPokemon('flygon')
 		.setSpD(90)
 	.pokemon.learnset()
 		.addMove('Skitter Smack')
-		.addMove('Sandseer Storm', 9)
+		.addMove('Sandsear Storm', 9)
 		.addMove('Pounce');
 
 modifyPokemon('cacturne')

@@ -15116,7 +15116,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			chipaway: ["7L37", "6L37", "5L37"],
 			confide: ["7M", "6M"],
 			counter: ["7V", "3T"],
-			curse: ["8E", "7E", "7V", "6E", "5E", "4E", "3E"],
+			curse: ["9T", "8E", "7E", "7V", "6E", "5E", "4E", "3E"],
 			cut: ["7V", "6M", "5M", "4M", "3M"],
 			defensecurl: ["8L1", "7L9", "7V", "6L9", "5L9", "4L9", "3T", "3L12", "3S1"],
 			dig: ["8M", "8V", "6M", "5M", "4M", "3M"],
