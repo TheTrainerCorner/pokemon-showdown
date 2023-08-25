@@ -551,12 +551,11 @@ export const commands: Chat.ChatCommands = {
 	dex: 'data',
 	pokedex: 'data',
 	data(target, room, user, connection, cmd) {
+		let modGen = 'gen9ttc';
 		if (!this.runBroadcast()) return;
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
-		else target += `, gen9ttc`
 		const {dex, format, targets} = this.splitFormat(target, true);
-
 		let buffer = '';
 		target = targets.join(',');
 		const targetId = toID(target);
@@ -570,7 +569,7 @@ export const commands: Chat.ChatCommands = {
 				}
 			}
 		}
-		const newTargets = dex.dataSearch(target);
+		const newTargets = dex.mod(modGen).dataSearch(target);
 		const showDetails = (cmd.startsWith('dt') || cmd === 'details');
 		if (!newTargets || !newTargets.length) {
 			return this.errorReply(`No Pok\u00e9mon, item, move, ability or nature named '${target}' was found${Dex.gen > dex.gen ? ` in Gen ${dex.gen}` : ""}. (Check your spelling?)`);
@@ -583,16 +582,16 @@ export const commands: Chat.ChatCommands = {
 			let details: {[k: string]: string} = {};
 			switch (newTarget.searchType) {
 			case 'nature':
-				const nature = Dex.natures.get(newTarget.name);
+				const nature = Dex.mod(modGen).natures.get(newTarget.name);
 				buffer += `${nature.name} nature: `;
 				if (nature.plus) {
-					buffer += `+10% ${Dex.stats.names[nature.plus]}, -10% ${Dex.stats.names[nature.minus!]}.`;
+					buffer += `+10% ${Dex.mod(modGen).stats.names[nature.plus]}, -10% ${Dex.mod(modGen).stats.names[nature.minus!]}.`;
 				} else {
 					buffer += `No effect.`;
 				}
 				return this.sendReply(buffer);
 			case 'pokemon':
-				let pokemon = dex.species.get(newTarget.name);
+				let pokemon = dex.mod(modGen).species.get(newTarget.name);
 				if (format?.onModifySpecies) {
 					pokemon = format.onModifySpecies.call({dex, clampIntRange: Utils.clampIntRange, toID} as Battle, pokemon) || pokemon;
 				}
@@ -610,7 +609,7 @@ export const commands: Chat.ChatCommands = {
 					tierDisplay === 'National Dex tiers' ? pokemon.natDexTier :
 					tierDisplay === 'Draft tiers' ? pokemon.draftTier :
 					pokemon.num >= 0 ? String(pokemon.num) : pokemon.tier;
-				buffer += `|raw|${Chat.getDataPokemonHTML(pokemon, dex.gen, displayedTier)}\n`;
+				buffer += `|raw|${Chat.getDataPokemonHTML(pokemon, dex.mod(modGen).gen, displayedTier)}\n`;
 				if (showDetails) {
 					let weighthit = 20;
 					if (pokemon.weighthg >= 2000) {
@@ -636,7 +635,7 @@ export const commands: Chat.ChatCommands = {
 					if (pokemon.eggGroups && dex.gen >= 2) details["Egg Group(s)"] = pokemon.eggGroups.join(", ");
 					const evos: string[] = [];
 					for (const evoName of pokemon.evos) {
-						const evo = dex.species.get(evoName);
+						const evo = dex.mod(modGen).species.get(evoName);
 						if (evo.gen <= dex.gen) {
 							const condition = evo.evoCondition ? ` ${evo.evoCondition}` : ``;
 							switch (evo.evoType) {
@@ -674,7 +673,7 @@ export const commands: Chat.ChatCommands = {
 				}
 				break;
 			case 'item':
-				const item = dex.items.get(newTarget.name);
+				const item = dex.mod(modGen).items.get(newTarget.name);
 				buffer += `|raw|${Chat.getDataItemHTML(item)}\n`;
 				if (showDetails) {
 					details = {
@@ -696,17 +695,17 @@ export const commands: Chat.ChatCommands = {
 							details["Fling"] = "This item cannot be used with Fling.";
 						}
 					}
-					if (item.naturalGift && dex.gen >= 3) {
+					if (item.naturalGift && dex.mod(modGen).gen >= 3) {
 						details["Natural Gift Type"] = item.naturalGift.type;
 						details["Natural Gift Base Power"] = String(item.naturalGift.basePower);
 					}
 					if (item.isNonstandard) {
-						details[`Unobtainable in Gen ${dex.gen}`] = "";
+						details[`Unobtainable in Gen ${dex.mod(modGen).gen}`] = "";
 					}
 				}
 				break;
 			case 'move':
-				const move = dex.moves.get(newTarget.name);
+				const move = dex.mod(modGen).moves.get(newTarget.name);
 				buffer += `|raw|${Chat.getDataMoveHTML(move)}\n`;
 				if (showDetails) {
 					details = {
@@ -812,7 +811,7 @@ export const commands: Chat.ChatCommands = {
 				}
 				break;
 			case 'ability':
-				const ability = dex.abilities.get(newTarget.name);
+				const ability = dex.mod(modGen).abilities.get(newTarget.name);
 				buffer += `|raw|${Chat.getDataAbilityHTML(ability)}\n`;
 				if (showDetails) {
 					details = {
