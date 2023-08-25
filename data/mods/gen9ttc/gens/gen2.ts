@@ -378,7 +378,7 @@ modifyPokemon('mismagius')
 		.addMove('Magic Powder')
 		.addMove('Moonblast')
 		.addMove('Moonlight');
-
+modifyPokemon('wobbuffet');
 modifyPokemon('girafarig')
 	.ability()
 		.set0('Inner Focus')
@@ -467,7 +467,7 @@ modifyPokemon('heracross')
 	.pokemon.learnset()
 		.addMove('First Impression')
 		.addMove('Drain Punch');
-
+modifyPokemon('heracrossmega');
 modifyPokemon('weavile')
 	.ability()
 		.setH('Infiltrator')
