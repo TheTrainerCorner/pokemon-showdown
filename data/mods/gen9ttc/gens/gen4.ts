@@ -198,7 +198,7 @@ modifyPokemon('kricketune')
     .addMove('Leaf Blade')
     .addMove('Toxic Spikes')
     .addMove('Twineedle')
-    .addMove('Pin Missle');
+    .addMove('Pin Missile');
 
 modifyPokemon('luxray')
   .changeType('Electric', 'Dark')
