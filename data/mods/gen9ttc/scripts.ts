@@ -67,6 +67,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		changeNatDexTier('espathra', 'OU');
 		changeNatDexTier('dracovish', 'OU');
 		changeNatDexTier('fluttermane', 'OU');
+		changeNatDexTier('gengarmega', 'OU');
 		changeNatDexTier('houndstone', 'OU');
 		changeNatDexTier('ironbundle', 'OU');
 		changeNatDexTier('kangaskhanmega', 'OU');
