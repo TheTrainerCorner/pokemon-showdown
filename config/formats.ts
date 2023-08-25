@@ -71,7 +71,7 @@ export const Formats: FormatList = [
 		section: "Other Draft Leagues",
 	},
 	{
-		name: "[Gen 9] National Dex Draft",
+		name: "[Gen 9] Other National Dex Draft",
 		desc: "This version of the National Dex Draft is for other leagues to use. Since TTC NatDex Draft format is a bit more stricter, it might be flexible with other leagues.",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
