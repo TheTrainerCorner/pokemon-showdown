@@ -426,7 +426,8 @@ export default function Gen8 (dex: ModdedDex) {
 		.changeType('Ice', 'Water')
 		.baseStat()
 			.setAtk(95)
-			.setSpA(45);
+			.setSpA(45)
+			.setSpe(130);
 	modifyPokemon('indeedee')
 		.learnset()
 			.addMove('Teleport');
