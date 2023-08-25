@@ -20,7 +20,7 @@ The column value will be ignored for repeat sections.
 export const Formats: FormatList = [
 
 	{
-		section: "Draft",
+		section: "The Trainer Corner's Draft",
 	},
 	{
 		name: "[Gen 9] National Dex Draft",
@@ -67,6 +67,45 @@ export const Formats: FormatList = [
 			'Baton Pass',
 		],
 	},
+	{
+		section: "Other Draft Leagues",
+	},
+	{
+		name: "[Gen 9] National Dex Draft",
+		desc: "This version of the National Dex Draft is for other leagues to use. Since TTC NatDex Draft format is a bit more stricter, it might be flexible with other leagues.",
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
+		banlist: [
+			'ND Ubers', 'ND AG',
+			'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
+		],
+		unbanlist: [
+			'Unreleased',
+			// Unobtainable Moves
+			'Barb Barrage',
+			'Blazing Torque',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Dire Claw',
+			'Esper Wing',
+			'Infernal Parade',
+			'Magical Torque',
+			'Mountain Gale',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Shelter',
+			'Springtide Storm',
+			'Stone Axe',
+			'Triple Arrows',
+			'Victory Dance',
+			'Wicked Torque',
+			// LGPE
+			'LGPE',
+			'Baton Pass',
+		],
+	}
 	{
 		section: "Public Test Realm",
 	},
