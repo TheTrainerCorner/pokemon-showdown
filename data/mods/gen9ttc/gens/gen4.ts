@@ -43,7 +43,7 @@ export default function Gen4 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 
@@ -674,7 +674,7 @@ modifyPokemon('rotomwash')
     .setHp(75)
     .setAtk(40)
     .setDef(117)
-    .setSpA(75)
+    .setSpA(90)
     .setSpD(117)
     .setSpe(81)
   .pokemon.learnset()
@@ -764,7 +764,7 @@ modifyPokemon('azelf')
   .ability()
      .set1('Synchronize')
   .pokemon.baseStat()
-    .setSpA(105)
+    .setSpA(125)
   .pokemon.learnset()
     .addMove('ands Wrath')
     .addMove('Iron Head')
@@ -774,7 +774,7 @@ modifyPokemon('azelf')
 modifyPokemon('regigigas')
   .baseStat()
     .setHp(120)
-    .setAtk(140)
+    .setAtk(150)
   .pokemon.learnset()
     .addMove('Lands Wrath');
 

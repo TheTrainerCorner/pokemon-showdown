@@ -43,7 +43,7 @@ export default function Gen7 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 
@@ -534,8 +534,8 @@ export default function Gen7 (dex: ModdedDex) {
 		.ability()
 			.setH('Poison Point')
 		.pokemon.baseStat()
-			.setSpA(107)
-			.setSpe(101);
+			.setSpA(117)
+			.setSpe(111);
 	modifyPokemon('necrozma');
 	modifyPokemon('necrozmaduskmane');
 	modifyPokemon('necrozmadawnwings');

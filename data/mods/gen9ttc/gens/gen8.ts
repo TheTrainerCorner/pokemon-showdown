@@ -43,7 +43,7 @@ export default function Gen8 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 

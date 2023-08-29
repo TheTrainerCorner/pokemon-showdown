@@ -135,9 +135,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
 			this.debug('Versatility boost');
-			return this.chainModify([4915, 4096]);
+			return this.chainModify([5325, 4096]);
 		},
-		shortDesc: "All attacking moves used by this Pokemon are increased by 1.2x",
+		shortDesc: "All attacking moves used by this Pokemon are increased by 1.3x",
 		name: "Versatility",
 		num: -105,
 		rating: 5,

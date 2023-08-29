@@ -43,7 +43,7 @@ export default function Gen2 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 
@@ -481,8 +481,8 @@ modifyPokemon('ursaring')
 
 modifyPokemon('ursaluna')
 	.baseStat()
-		.setHp(110)
-		.setAtk(130);
+		.setHp(130)
+		.setAtk(140);
 
 modifyPokemon('magcargo')
 	.ability()
@@ -665,6 +665,7 @@ modifyPokemon('raikou')
 		.setAtk(75)
 		.setDef(85)
 	.pokemon.learnset()
+		.removeMove('Calm Mind')
 		.addMove('Fire Fang')
 		.addMove('Ice Fang')
 		.addMove('Play Rough')
@@ -681,6 +682,7 @@ modifyPokemon('entei')
 		.setSpD(80)
 		.setSpe(105)
 	.pokemon.learnset()
+		.removeMove('Calm Mind')
 		.addMove('Earthquake')
 		.addMove('Earth Power');
 

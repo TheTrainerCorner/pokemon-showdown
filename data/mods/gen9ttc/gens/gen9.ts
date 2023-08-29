@@ -43,7 +43,7 @@ export default function Gen9 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 
@@ -497,9 +497,9 @@ export default function Gen9 (dex: ModdedDex) {
 			.addMove('Toxic');
 	modifyPokemon('kingambit')
 		.baseStat()
-			.setHp(80)
-			.setAtk(130)
-			.setDef(110);
+			.setHp(100)
+			.setAtk(135)
+			.setDef(120);
 	modifyPokemon('veluza')
 		.baseStat()
 			.setHp(95)
@@ -554,8 +554,8 @@ export default function Gen9 (dex: ModdedDex) {
 		.ability()
 			.setH('Inner Solstice')
 		.pokemon.baseStat()
-			.setDef(84)
-			.setSpA(75)
+			.setDef(99)
+			.setSpA(60)
 			.setSpe(86)
 		.pokemon.learnset()
 			.addMove('Drain Punch')
@@ -576,9 +576,9 @@ export default function Gen9 (dex: ModdedDex) {
 			.setSpD(80)
 			.setSpe(116);
 	modifyPokemon('ironhands')
-		// .ability()
-		// 	.setH('Iron Fist')
-		.learnset()
+		.ability()
+			.setH('Electromorphosis')
+		.pokemon.learnset()
 			.addMove('Plasma Fists');
 	modifyPokemon('ironjugulis')
 		.ability()
@@ -602,8 +602,8 @@ export default function Gen9 (dex: ModdedDex) {
 	modifyPokemon('wochien');
 	modifyPokemon('chienpao')
 		.baseStat()
-			.setAtk(105)
-			.setSpe(120);
+			.setAtk(115)
+			.setSpe(135);
 	modifyPokemon('tinglu');
 	modifyPokemon('chiyu')
 		.baseStat()
@@ -633,6 +633,6 @@ export default function Gen9 (dex: ModdedDex) {
 		.ability()
 			.setH('Sharpness')
 		.pokemon.baseStat()
-			.setAtk(120)
-			.setSpD(98);
+			.setAtk(130)
+			.setSpD(108);
 }

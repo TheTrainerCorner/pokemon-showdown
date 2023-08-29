@@ -43,7 +43,7 @@ export default function Gen5 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +/g, '')];
 			return learnset();
 		}
 
@@ -404,7 +404,7 @@ modifyPokemon('basculegionf')
 		.addMove('Freezy Frost');
 modifyPokemon('krookodile')
 	.baseStat()
-		.setAtk(107)
+		.setAtk(117)
 	.pokemon.learnset()
 		.addMove('Wicked Blow');
 modifyPokemon('darmanitan')
@@ -489,8 +489,8 @@ modifyPokemon('archeops')
 			.set1('Emergency Exit')
 			.setH('Early Bird')
 		.pokemon.baseStat()
-			.setAtk(120)
-			.setSpe(95)
+			.setAtk(140)
+			.setSpe(110)
 modifyPokemon('garbodor')
 	.changeType('Poison', 'Ground')
 	.ability()
@@ -514,7 +514,7 @@ modifyPokemon('zoroark')
 	.pokemon.baseStat()
 		.setHp(70)
 		.setAtk(120)
-		.setSpA(105)
+		.setSpA(120)
 	.pokemon.learnset()
 		.addMove('Transform')
 		.addMove('Psycho Cut')
@@ -625,7 +625,8 @@ modifyPokemon('sawsbuckwinter')
 		.addMove('Calm Mind')
 		.addMove('Ice Shard')
 		.addMove('Freezy Frost')
-		.addMove('Icy Wind');
+		.addMove('Icy Wind')
+		.addMove('Tri Attack');
 modifyPokemon('sawsbucksummer')
 	.changeType('Fire', 'Grass')
 	.ability()
@@ -744,6 +745,9 @@ modifyPokemon('eelektross')
 		.addMove('Rising Voltage')
 		.addMove('Hydro Pump')
 		.addMove('Ice Punch');
+modifyPokemon('elgyem')
+	.learnset()
+		.removeMove('Cosmic Power');
 modifyPokemon('beheeyem')
 	.changeType('Psychic', 'Steel')
 	.ability()
@@ -755,6 +759,7 @@ modifyPokemon('beheeyem')
 		.setDef(90)
 		.setSpe(30)
 	.pokemon.learnset()
+		.removeMove('Cosmic Power')
 		.addMove('Doom Desire')
 		.addMove('Autotomize');
 modifyPokemon('chandelure')
@@ -767,7 +772,7 @@ modifyPokemon('haxorus')
 		.set1('Rough Skin')
 		.setH('Tough Claws')
 	.pokemon.baseStat()
-		.setAtk(132)
+		.setAtk(137)
 	.pokemon.learnset()
 		.addMove('Iron Head');
 modifyPokemon('beartic')
@@ -953,10 +958,10 @@ modifyPokemon('cobalion')
 		.setH('Steelworker')
 	.pokemon.baseStat()
 		.setHp(101)
-		.setAtk(80)
-		.setSpA(80)
+		.setAtk(90)
+		.setSpA(90)
 		.setSpD(112)
-		.setSpe(78)
+		.setSpe(88)
 	.pokemon.learnset()
 		.addMove('Body Press')
 		.addMove('Steel Roller')
@@ -981,9 +986,9 @@ modifyPokemon('virizion')
 		.setHp(96)
 		.setAtk(75)
 		.setDef(81)
-		.setSpA(119)
+		.setSpA(139)
 		.setSpD(119)
-		.setSpe(98)
+		.setSpe(108)
 	.pokemon.learnset()
 		.addMove('Horn Leech')
 		.addMove('Aura Sphere')
@@ -1002,7 +1007,6 @@ modifyPokemon('reshiram');
 modifyPokemon('zekrom');
 modifyPokemon('kyurem')
 	.learnset()
-		.removeMove('Dragon Dance')
 		.addMove('Ice Shard');
 modifyPokemon('kyuremwhite');
 modifyPokemon('kyuremblack')

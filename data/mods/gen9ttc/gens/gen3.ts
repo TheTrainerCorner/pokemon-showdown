@@ -44,7 +44,7 @@ export default function Gen3 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 
@@ -288,11 +288,11 @@ modifyPokemon('breloom')
 
 modifyPokemon('slaking')
 	.baseStat()
-		.setHp(140)
-		.setAtk(150)
+		.setHp(150)
+		.setAtk(160)
 		.setSpA(75)
 		.setSpD(70)
-		.setSpe(95)
+		.setSpe(100)
 	.pokemon.learnset()
 		.addMove('Knock Off');
 
@@ -348,7 +348,7 @@ modifyPokemon('delcatty')
 	.pokemon.baseStat()
 		.setHp(75)
 		.setAtk(65)
-		.setSpA(65)
+		.setSpA(75)
 		.setSpD(60)
 		.setSpe(95)
 	.pokemon.learnset()

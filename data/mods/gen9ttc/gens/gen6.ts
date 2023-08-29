@@ -43,7 +43,7 @@ export default function Gen6 (dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 
@@ -198,7 +198,7 @@ export default function Gen6 (dex: ModdedDex) {
 			.addMove('Stone Edge');
 	modifyPokemon('pangoro')
 		.baseStat()
-			.setAtk(114)
+			.setAtk(124)
 			.setDef(88)
 			.setSpD(81)
 			.setSpe(68)

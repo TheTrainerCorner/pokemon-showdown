@@ -43,7 +43,7 @@ export default function Gen1(dex: ModdedDex) {
 		}
 
 		let removeMove = (name: string) => {
-			dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')] = [];
+			delete dex.modData('Learnsets', pokemon.toLowerCase()).learnset[name.toLowerCase().replace(/ +g/, '')];
 			return learnset();
 		}
 
@@ -323,8 +323,8 @@ modifyPokemon('ninetales')
 		.addMove('Destiny Bond')
 		.addMove('Nightmare')
 		.addMove('Bitter Malice')
-		.addMove('Night Daze');
-		//.removeMove('Nasty Plot');
+		.addMove('Night Daze')
+		.removeMove('Nasty Plot');
 
 modifyPokemon('ninetalesalola')
 	.baseStat()
@@ -466,10 +466,19 @@ modifyPokemon('politoed')
 		.addMove('Flip Turn')
 		.addMove('Life Dew');
 
-modifyPokemon('alakazam');
-	// .learnset()
-	// 	.removeMove('Counter')
-	// 	.removeMove('Barrier');
+modifyPokemon('abra')
+	.learnset()
+		.removeMove('Counter')
+		.removeMove('Barrier');
+modifyPokemon('kadabra')
+	.learnset()
+		.removeMove('Counter')
+		.removeMove('Barrier');
+modifyPokemon('alakazam')
+	.learnset()
+		.removeMove('Counter')
+		.removeMove('Barrier');
+
 modifyPokemon('alakazammega')
 	.baseStat()
 		.setSpe(135);
@@ -572,7 +581,7 @@ modifyPokemon('slowbro');
 modifyPokemon('slowbromega')
 	.baseStat()
 		.setAtk(65)
-		.setDef(170)
+		.setDef(180)
 		.setSpD(90);
 
 modifyPokemon('slowbrogalar')
@@ -652,7 +661,7 @@ modifyPokemon('dodrio')
 		.addMove('Rock Slide')
 		.addMove('High Horsepower')
 		.addMove('Head Smash')
-		// .removeMove('Fly');
+		.removeMove('Fly');
 
 modifyPokemon('dewgong')
 	.ability()
@@ -783,7 +792,7 @@ modifyPokemon('exeggutor')
 		.setSpD(80)
 		.setSpe(40)
 	.pokemon.learnset()
-		// .removeMove('Power Whip')
+		.removeMove('Power Whip')
 		.addMove('Weather Ball')
 		.addMove('Earth Power');
 
