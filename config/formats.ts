@@ -75,7 +75,7 @@ export const Formats: FormatList = [
 		desc: "This version of the National Dex Draft is for other leagues to use. Since TTC NatDex Draft format is a bit more stricter, it might be flexible with other leagues.",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
-			'ND Ubers', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
 		],
 		unbanlist: [
