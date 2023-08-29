@@ -279,7 +279,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 					success = true;
 				}
 				if(pokemon.adjacentFoes()[0].side.removeSideCondition(sideCondition)) {
-					this.add('-sideend', pokemon.side, this.dex.conditions.get(sideCondition).name, '[from] ability: Clean Up', '[of] ' + pokemon);
+					this.add('-sideend', pokemon.adjacentFoes()[0].side, this.dex.conditions.get(sideCondition).name, '[from] ability: Clean Up', '[of] ' + pokemon);
 					success = true;
 				}
 			}
