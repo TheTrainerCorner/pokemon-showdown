@@ -544,12 +544,12 @@ export default function Gen9 (dex: ModdedDex) {
 		.ability()
 			.setH('Cursed Body')
 		.pokemon.baseStat()
-			.setHp(85)
-			.setAtk(85)
-			.setDef(85)
-			.setSpA(105)
-			.setSpD(105)
-			.setSpe(105);
+			.setHp(75)
+			.setAtk(75)
+			.setDef(75)
+			.setSpA(115)
+			.setSpD(115)
+			.setSpe(115);
 	modifyPokemon('slitherwing')
 		.ability()
 			.setH('Inner Solstice')
