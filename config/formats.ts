@@ -62,6 +62,7 @@ export const Formats: FormatList = [
 			'Triple Arrows',
 			'Victory Dance',
 			'Wicked Torque',
+			'Custap Berry',
 			// LGPE
 			'LGPE',
 			'Baton Pass',
@@ -100,6 +101,7 @@ export const Formats: FormatList = [
 			'Triple Arrows',
 			'Victory Dance',
 			'Wicked Torque',
+			'Custap Berry',
 			// LGPE
 			'LGPE',
 			'Baton Pass',
@@ -140,6 +142,7 @@ export const Formats: FormatList = [
 			'Triple Arrows',
 			'Victory Dance',
 			'Wicked Torque',
+			'Custap Berry',
 			// LGPE
 			'LGPE',
 			'Baton Pass',
