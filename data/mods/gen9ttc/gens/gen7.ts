@@ -296,7 +296,7 @@ export default function Gen7 (dex: ModdedDex) {
 			.addMove('Knock Off')
 			.addMove('Darkest Lariet')
 			.removeMove('Fire Fang')
-			.removeMove('Psychic Fang')
+			.removeMove('Psychic Fangs')
 			.removeMove('Thunder Fang');
 	modifyPokemon('wishiwashi')
 		.learnset()

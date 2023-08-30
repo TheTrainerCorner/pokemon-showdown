@@ -176,7 +176,7 @@ modifyPokemon('bibarel')
     .addMove('Ice Fang')
     .addMove('Thunder Fang')
     .addMove('Fire Fang')
-    .addMove('Psychic Fang')
+    .addMove('Psychic Fangs')
     .addMove('Energy Ball')
     .addMove('Stuff Cheeks');
 
