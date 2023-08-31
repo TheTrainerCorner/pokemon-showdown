@@ -41,5 +41,23 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			}
 			return problems;
 		}
+	},
+	nodragondanceforkyub: {
+		effectType: "ValidatorRule",
+		name: "No Dragon Dance for Kyurem-Black",
+		desc: "Prevents Kyurem-Black from using Dragon Dance",
+		onValidateSet(set) {
+			const problems = [];
+			let kyuremblack = this.dex.species.get('Kyurem-Black');
+
+			let dragonDance = this.dex.moves.get('Dragon Dance');
+
+			if(set.species === kyuremblack.name) {
+				if(set.moves.includes(dragonDance.name)) {
+					problems.push(`${set.name} can not have Dragon Dance due to being a nerd!`)
+				}
+				return problems;
+			}
+		},
 	}
 }
