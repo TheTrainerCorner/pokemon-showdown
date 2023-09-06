@@ -106,15 +106,17 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, hammer: 1},
-		onModifyType(move, pokemon) {
-			move.type = pokemon.teraType || 'Normal';
+		onModifyType(move, pokemon, target) {
+			if(pokemon.terastallized) {
+				move.type = pokemon.teraType;
+			}
 		},
 		secondary: null,
 		target: "normal",
 		type: "Normal",
 		contestType: "Tough",
-		desc: "Changes type based on the user's tera type.",
-		shortDesc: "Changes type based on the user's tera type."
+		desc: "If the user is Terastallized, this move changes it's type to the user's Tera Type. Else it will be a normal type.",
+		shortDesc: "If Terastallized: Type = Tera."
 	},
 	sushityphoon: {
 		num: -3,
