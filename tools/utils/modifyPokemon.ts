@@ -49,13 +49,13 @@ class ModAbility {
 	}
 
 	setAbility0(name: string) {
-		this._dex.modData('Pokedex', this._name)[0] = name;
+		this._dex.modData('Pokedex', this._name).abilities[0] = name;
 	}
 	setAbility1(name: string) {
-		this._dex.modData('Pokedex', this._name)[1] = name;
+		this._dex.modData('Pokedex', this._name).abilities[1] = name;
 	}
 	setHiddenAbility(name: string) {
-		this._dex.modData('Pokedex', this._name)['H'] = name;
+		this._dex.modData('Pokedex', this._name).abilities['H'] = name;
 	}
 }
 
