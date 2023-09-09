@@ -1,4 +1,82 @@
 import { ModdedDex } from '../../sim/dex';
+
+export class ModdedPokemon{
+	private _name: string;
+	private _dex: ModdedDex;
+	
+	constructor(name: string, dex: ModdedDex) {
+		this._name = name.includes("-") ? name.toLowerCase().replace('-', '') : name.toLowerCase();
+		this._dex = dex;
+	}
+	public get baseStats() { return new ModBaseStats(this._name, this._dex); }
+	public get ability() { return new ModAbility(this._name, this._dex); }
+	public get learnset() { return new ModLearnset(this._name, this._dex); }
+}
+
+class ModBaseStats {
+	private _name: string;
+	private _dex: ModdedDex;
+	constructor(name: string, dex: ModdedDex) {
+		this._name = name;
+		this._dex = dex;
+	}
+	public set HP(value: number) {
+		this._dex.modData('Pokedex', this._name).baseStats.hp = value;
+	}
+	public set ATK(value: number) {
+		this._dex.modData('Pokedex', this._name).baseStats.atk = value;
+	}
+	public set DEF(value: number) {
+		this._dex.modData('Pokedex', this._name).baseStats.def = value;
+	}
+	public set SPA(value: number) {
+		this._dex.modData('Pokedex', this._name).baseStats.spa = value;
+	}
+	public set SPD(value: number) {
+		this._dex.modData('Pokedex', this._name).baseStats.spd = value;
+	}
+	public set SPE(value: number) {
+		this._dex.modData('Pokedex', this._name).baseStats.spe = value;
+	}
+}
+
+class ModAbility {
+	private _name: string;
+	private _dex: ModdedDex;
+	constructor(name: string, dex: ModdedDex) {
+		this._name = name;
+		this._dex = dex;
+	}
+
+	setAbility0(name: string) {
+		this._dex.modData('Pokedex', this._name)[0] = name;
+	}
+	setAbility1(name: string) {
+		this._dex.modData('Pokedex', this._name)[1] = name;
+	}
+	setHiddenAbility(name: string) {
+		this._dex.modData('Pokedex', this._name)['H'] = name;
+	}
+}
+
+class ModLearnset {
+	private _name: string;
+	private _dex: ModdedDex;
+	constructor(name: string, dex: ModdedDex) {
+		this._name = name;
+		this._dex = dex;
+	}
+
+	add(move: string, gen: number = 8) {
+		move = move.toLowerCase().replace(' ', '');
+		this._dex.modData('Learnsets', this._name)[move] = [`${gen}M`];
+	}
+	remove(move: string) {
+		move = move.toLowerCase().replace(' ', '');
+		delete this._dex.modData('Learnsets', this._name)[move];
+	}
+}
+
 export function modifyDex(dex: ModdedDex) {
 	let modifyPokemon = (pokemon: string) => {
 		let baseStat = () => {

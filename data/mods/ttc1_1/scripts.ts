@@ -1,16 +1,13 @@
-import { modifyDex } from "../../../tools/utils/modifyPokemon";
+import { ModdedPokemon } from "../../../tools/utils/modifyPokemon";
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'ttc1_0',
 	init() {
 		//#region 1.1.1
 		// Modify Pokemon
-		modifyDex(this)
-			.modifyPokemon('Noivern')
-				.ability()
-					.setH('Rattled')
-				.pokemon.baseStat()
-					.setSpe(116)
+		let noivern = new ModdedPokemon('noivern', this);
+		noivern.ability.setHiddenAbility('Rattled');
+		noivern.baseStats.SPE = 116;
 		//#endregion
 	}
 }
