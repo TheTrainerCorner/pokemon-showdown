@@ -6,6 +6,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#region 1.1.1
 		// Modify Pokemon
 		modifyDex(this)
+			.modifyPokemon('Noivern')
+				.baseStat()
+					.setSpe(116)
 		//#endregion
 	}
 }
