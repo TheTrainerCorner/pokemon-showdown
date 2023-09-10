@@ -582,7 +582,7 @@ export default function Gen9 (dex: ModdedDex) {
 			.addMove('Plasma Fists');
 	modifyPokemon('ironjugulis')
 		.ability()
-			.setH('Dragons Maw')
+			.setH("Dragon's Maw")
 		.pokemon.learnset()
 			.addMove('Nasty Plot')
 			.addMove('Aeroblast');
