@@ -8,6 +8,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		let noivern = new ModdedPokemon('noivern', this);
 		noivern.ability.setHiddenAbility('Rattled');
 		noivern.baseStats.SPE = 116;
+		let alakazam = new ModdedPokemon('alakazam', this);
+		alakazam.learnset.remove('Nasty Plot');
 		//#endregion
 	}
 }
