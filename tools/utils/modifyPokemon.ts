@@ -69,11 +69,11 @@ class ModLearnset {
 
 	add(move: string, gen: number = 8) {
 		move = move.toLowerCase().replace(' ', '');
-		this._dex.modData('Learnsets', this._name)[move.toLowerCase().replace(/ +/g, '')] = [`${gen}M`];
+		this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')] = [`${gen}M`];
 	}
 	remove(move: string) {
 		move = move.toLowerCase().replace(' ', '');
-		delete this._dex.modData('Learnsets', this._name)[move.toLowerCase().replace(/ +/g, '')];
+		delete this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')];
 	}
 }
 
