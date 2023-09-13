@@ -87,7 +87,7 @@ class ModTier {
 	}
 	
 	changeTo(tier: string) {
-		this._dex.modData('FormatsData', this._name).tier = tier;
+		this._dex.modData('FormatsData', this._name).natDexTier = tier;
 	}
 }
 

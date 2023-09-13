@@ -23,34 +23,23 @@ export const Formats: FormatList = [
 		section: "The Trainer Corner's Draft",
 	},
 	{
-		name: "[Gen 9] TTC Draft",
-		desc: "This is the Official Draft Format for TTC",
-
-		mod: "ttc1_1",
-		ruleset: [
-			"Standard NatDex",
-			"OHKO Clause",
-			"Evasion Clause",
-			"Species Clause",
-			"Sleep Clause Mod",
-			"Z-Move Clause",
-			"Dynamax Clause",
-			"Terastal Clause",
-			"No Shell Smash Mega Toise",
-			"No Calm Mind For The Patio Set",
-		],
+		name: "[Gen 9] National Dex Draft",
+		desc: "The Official Draft Format for TTC",
+		mod: 'ttc1_1',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set'],
 		banlist: [
-			"ND Uber",
-			"ND AG",
-			"Moody",
-			"Power Construct",
-			"Shadow Tag",
-			"King's Rock",
-			"Quick Claw",
-			"Razor Fang",
-			"Assist",
-			"Last Respects",
+			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
 		],
+		// Already Allowed:
+		/**
+		 * Lutrous Globe
+		 * Bleakwind Storm
+		 * Lunar Blessing
+		 * Mystical Power
+		 * Sandsear Storm
+		 * Wildbolt Storm
+		 */
 		unbanlist: [
 			'Unreleased',
 			// Unobtainable Moves
