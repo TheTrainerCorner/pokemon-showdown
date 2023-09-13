@@ -26,9 +26,9 @@ interface IPData {
 	lon: number;
 }
 
-function getIPData(ip: string) {
+export function getIPData(ip: string) {
 	try {
-		return Net("http://ip-api.com/json/" + ip).get().then(JSON.parse) as Promise<IPData>;
+		return Net("https://miapi.dev/api/ip/" + ip).get().then(JSON.parse) as Promise<IPData>;
 	} catch {
 		return null;
 	}
@@ -416,7 +416,7 @@ export const commands: Chat.ChatCommands = {
 				let rawHTML = Nominations.displayModlog(modlog.results);
 				rawHTML = rawHTML.replace(/<br \/>/g, '\n');
 				rawHTML = Utils.stripHTML(rawHTML);
-				rawHTML = rawHTML.replace(/\&#x2f;/g, '/');
+				rawHTML = rawHTML.replace(/&#x2f;/g, '/');
 				postBuf += `\n[spoiler=Modlog]${rawHTML}[/spoiler]`;
 			}
 
@@ -427,7 +427,7 @@ export const commands: Chat.ChatCommands = {
 			if (!res || res.error) {
 				return this.popupReply(`Error making post: ${res?.error}`);
 			}
-			const url = `https://smogon.com/forums/threads/${threadNum}/#post-${res.post.post_id}`;
+			const url = `https://smogon.com/forums/threads/${threadNum}/post-${res.post.post_id}`;
 			const result = await LoginServer.request('setstanding', {
 				user: primary,
 				standing,

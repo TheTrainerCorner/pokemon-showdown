@@ -982,6 +982,7 @@ export abstract class BasicRoom {
 		if (!user) return false; // ???
 		if (this.users[user.id]) return false;
 
+		Chat.runHandlers('onBeforeRoomJoin', this, user, connection);
 		if (user.named) {
 			this.reportJoin('j', user.getIdentityWithStatus(this), user);
 		}
@@ -993,7 +994,6 @@ export abstract class BasicRoom {
 		this.userCount++;
 		this.checkAutoModchat(user);
 
-		this.minorActivity?.onConnect?.(user, connection);
 		this.game?.onJoin?.(user, connection);
 		Chat.runHandlers('onRoomJoin', this, user, connection);
 		return true;
@@ -1319,7 +1319,8 @@ export class GlobalRoomState {
 				`INSERT INTO stored_battles (roomid, input_log, players, title, rated, timer) VALUES ($1, $2, $3, $4, $5, $6)` +
 				` ON CONFLICT (roomid) DO UPDATE ` +
 				`SET input_log = EXCLUDED.input_log, players = EXCLUDED.players, title = EXCLUDED.title, rated = EXCLUDED.rated`,
-				[room.roomid, log.join('\n'), players, room.title, room.battle.rated, timerData]
+				// for some reason Battle#rated is sometimes a float which Postgres can't handle
+				[room.roomid, log.join('\n'), players, room.title, Math.floor(room.battle.rated), timerData]
 			);
 			room.battle.timer.stop();
 			count++;
@@ -1641,12 +1642,19 @@ export class GlobalRoomState {
 			}
 		}
 		if (Config.reportbattles) {
-			const reportRoom = Rooms.get(Config.reportbattles === true ? 'lobby' : Config.reportbattles);
-			if (reportRoom) {
-				const reportPlayers = players.map(p => p.getIdentity()).join('|');
-				reportRoom
-					.add(`|b|${room.roomid}|${reportPlayers}`)
-					.update();
+			if (typeof Config.reportbattles === 'string') {
+				Config.reportbattles = [Config.reportbattles];
+			} else if (Config.reportbattles === true) {
+				Config.reportbattles = ['lobby'];
+			}
+			for (const roomid of Config.reportbattles) {
+				const reportRoom = Rooms.get(roomid);
+				if (reportRoom) {
+					const reportPlayers = players.map(p => p.getIdentity()).join('|');
+					reportRoom
+						.add(`|b|${room.roomid}|${reportPlayers}`)
+						.update();
+				}
 			}
 		}
 		if (Config.logladderip && options.rated) {
@@ -2001,6 +2009,7 @@ export class GameRoom extends BasicRoom {
 		if (!user) return false; // ???
 		if (this.users[user.id]) return false;
 
+		Chat.runHandlers('onBeforeRoomJoin', this, user, connection);
 		if (user.named) {
 			this.reportJoin('j', user.getIdentityWithStatus(this), user);
 		}
