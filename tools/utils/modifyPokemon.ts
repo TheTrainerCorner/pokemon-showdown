@@ -1,93 +1,102 @@
 import { ModdedDex } from '../../sim/dex';
 
-export class ModdedPokemon{
+export class ModifyPokemon {
 	private _name: string;
 	private _dex: ModdedDex;
-	
+
 	constructor(name: string, dex: ModdedDex) {
-		this._name = name.includes("-") ? name.toLowerCase().replace('-', '') : name.toLowerCase();
+		this._name = name.includes("-") ? name.toLowerCase().replace('-' , '') : name.toLowerCase();
 		this._dex = dex;
 	}
-	public get baseStats() { return new ModBaseStats(this._name, this._dex); }
-	public get ability() { return new ModAbility(this._name, this._dex); }
-	public get learnset() { return new ModLearnset(this._name, this._dex); }
-	public get tier() { return new ModTier(this._name, this._dex); };
-}
 
-class ModBaseStats {
-	private _name: string;
-	private _dex: ModdedDex;
-	constructor(name: string, dex: ModdedDex) {
+	public get abilities() {
+		return new class ModifyAbilities {
+			private _name: string;
+			private _dex: ModdedDex;
+			private _pokemon: ModifyPokemon;
+			constructor(name: string, dex: ModdedDex, pokemon: ModifyPokemon) {
+				this._name = name;
+				this._dex = dex;
+				this._pokemon = pokemon;
+			}
+		
+			setAbility0(name: string) {
+				this._dex.modData('Pokedex', this._name).abilities[0] = name;
+				return this;
+			}
+			setAbility1(name: string) {
+				this._dex.modData('Pokedex', this._name).abilities[1] = name;
+				return this;
+			}
+			setHiddenAbility(name: string) {
+				this._dex.modData('Pokedex', this._name).abilities['H'] = name;
+				return this;
+			}
+			public get pokemon() { return this._pokemon; }
+		} (this._name, this._dex, this);
+	}
+	public get baseStats() {
+		return new class ModifyBaseStats {
+		private _name: string;
+		private _dex: ModdedDex;
+		private _pokemon: ModifyPokemon;
+	constructor(name: string, dex: ModdedDex, pokemon: ModifyPokemon) {
 		this._name = name;
 		this._dex = dex;
+		this._pokemon = pokemon;
 	}
-	public set HP(value: number) {
+	public setHP(value: number) {
 		this._dex.modData('Pokedex', this._name).baseStats.hp = value;
+		return this;
 	}
-	public set ATK(value: number) {
+	public setATK(value: number) {
 		this._dex.modData('Pokedex', this._name).baseStats.atk = value;
+		return this;
 	}
-	public set DEF(value: number) {
+	public setDEF(value: number) {
 		this._dex.modData('Pokedex', this._name).baseStats.def = value;
+		return this;
 	}
-	public set SPA(value: number) {
+	public setSPA(value: number) {
 		this._dex.modData('Pokedex', this._name).baseStats.spa = value;
+		return this;
 	}
-	public set SPD(value: number) {
+	public setSPD(value: number) {
 		this._dex.modData('Pokedex', this._name).baseStats.spd = value;
+		return this;
 	}
-	public set SPE(value: number) {
+	public setSPE(value: number) {
 		this._dex.modData('Pokedex', this._name).baseStats.spe = value;
+		return this;
 	}
-}
-
-class ModAbility {
-	private _name: string;
-	private _dex: ModdedDex;
-	constructor(name: string, dex: ModdedDex) {
-		this._name = name;
-		this._dex = dex;
+	public get pokemon () { return this._pokemon; }
+		}(this._name, this._dex, this);
 	}
-
-	setAbility0(name: string) {
-		this._dex.modData('Pokedex', this._name).abilities[0] = name;
-	}
-	setAbility1(name: string) {
-		this._dex.modData('Pokedex', this._name).abilities[1] = name;
-	}
-	setHiddenAbility(name: string) {
-		this._dex.modData('Pokedex', this._name).abilities['H'] = name;
-	}
-}
-
-class ModLearnset {
-	private _name: string;
-	private _dex: ModdedDex;
-	constructor(name: string, dex: ModdedDex) {
-		this._name = name;
-		this._dex = dex;
-	}
-
-	add(move: string, gen: number = 8) {
-		move = move.toLowerCase().replace(' ', '');
-		this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')] = [`${gen}M`];
-	}
-	remove(move: string) {
-		move = move.toLowerCase().replace(' ', '');
-		delete this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')];
-	}
-}
-
-class ModTier {
-	private _name: string;
-	private _dex: ModdedDex;
-	constructor(name: string, dex: ModdedDex) {
-		this._name = name;
-		this._dex = dex;
-	}
-	
-	changeTo(tier: string) {
-		this._dex.modData('FormatsData', this._name).natDexTier = tier;
+	public get learnset() {
+		return new class ModifyLearnset {
+			private _name: string;
+			private _dex: ModdedDex;
+			private _pokemon: ModifyPokemon
+			constructor(name: string, dex: ModdedDex, pokemon: ModifyPokemon) {
+				this._name = name;
+				this._dex = dex;
+				this._pokemon = pokemon;
+			}
+		
+			add(move: string, gen: number = 8) {
+				move = move.toLowerCase().replace(' ', '');
+				this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')] = [`${gen}M`];
+				return this;
+			}
+			remove(move: string) {
+				move = move.toLowerCase().replace(' ', '');
+				delete this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')];
+				return this;
+			}
+			public get pokemon() {
+				return this._pokemon;
+			}
+		} (this._name, this._dex, this);
 	}
 }
 

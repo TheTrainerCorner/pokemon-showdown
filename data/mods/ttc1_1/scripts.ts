@@ -1,15 +1,19 @@
-import { ModdedPokemon } from "../../../tools/utils/modifyPokemon";
+import { ModdedPokemon, ModifyPokemon } from "../../../tools/utils/modifyPokemon";
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'ttc1_0',
 	init() {
 		//#region 1.1.1
 		// Modify Pokemon
-		let noivern = new ModdedPokemon('noivern', this);
-		noivern.ability.setHiddenAbility('Rattled');
-		noivern.baseStats.SPE = 116;
-		let alakazam = new ModdedPokemon('alakazam', this);
-		alakazam.learnset.remove('Nasty Plot');
+		new ModifyPokemon('noivern', this)
+			.abilities
+				.setHiddenAbility('Rattled')
+			.pokemon.baseStats
+				.setSPE(116);
+		
+		new ModifyPokemon('alakazam', this)
+			.learnset
+				.remove('Nasty Plot');
 		//#endregion
 	}
 }

@@ -4,7 +4,6 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		//#region 1.0.1
 		// Modify Pokemon
-		modifyDex(this);
 		//#endregion
 
 	}
