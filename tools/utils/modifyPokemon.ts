@@ -11,6 +11,7 @@ export class ModdedPokemon{
 	public get baseStats() { return new ModBaseStats(this._name, this._dex); }
 	public get ability() { return new ModAbility(this._name, this._dex); }
 	public get learnset() { return new ModLearnset(this._name, this._dex); }
+	public get tier() { return new ModTier(this._name, this._dex); };
 }
 
 class ModBaseStats {
@@ -74,6 +75,19 @@ class ModLearnset {
 	remove(move: string) {
 		move = move.toLowerCase().replace(' ', '');
 		delete this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')];
+	}
+}
+
+class ModTier {
+	private _name: string;
+	private _dex: ModdedDex;
+	constructor(name: string, dex: ModdedDex) {
+		this._name = name;
+		this._dex = dex;
+	}
+	
+	changeTo(tier: string) {
+		this._dex.modData('FormatsData', this._name).tier = tier;
 	}
 }
 
