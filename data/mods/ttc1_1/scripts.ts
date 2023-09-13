@@ -10,7 +10,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		noivern.baseStats.SPE = 116;
 		let alakazam = new ModdedPokemon('alakazam', this);
 		alakazam.learnset.remove('Nasty Plot');
-		alakazam.tier.changeTo('OU');
 		//#endregion
 	}
 }
