@@ -183,11 +183,11 @@ export default function Gen9 (dex: ModdedDex) {
 			.addMove('Hyper Fang')
 			.addMove('Teeter Dance')
 			.addMove('Stuff Cheeks');
-	modifyPokemon('mausholdfour')
-		.learnset()
-			.addMove('Hyper Fang')
-			.addMove('Teeter Dance')
-			.addMove('Stuff Cheeks');
+	// modifyPokemon('mausholdfour')
+	// 	.learnset()
+	// 		.addMove('Hyper Fang')
+	// 		.addMove('Teeter Dance')
+	// 		.addMove('Stuff Cheeks');
 	modifyPokemon('dachsbun')
 		.changeType('Fairy', 'Fire')
 		.ability()
