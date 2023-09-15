@@ -551,7 +551,7 @@ export const commands: Chat.ChatCommands = {
 	dex: 'data',
 	pokedex: 'data',
 	data(target, room, user, connection, cmd) {
-		let modGen = 'gen9ttc';
+		let modGen = 'ttc_current';
 		if (!this.runBroadcast()) return;
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
@@ -878,11 +878,11 @@ export const commands: Chat.ChatCommands = {
 			isInverse = true;
 			targets.pop();
 		}
-
-		let species: {types: string[], [k: string]: any} = dex.species.get(targets[0]);
-		const type1 = dex.types.get(targets[0]);
-		const type2 = dex.types.get(targets[1]);
-		const type3 = dex.types.get(targets[2]);
+		let modGen = 'ttc_current';
+		let species: {types: string[], [k: string]: any} = dex.mod(modGen).species.get(targets[0]);
+		const type1 = dex.mod(modGen).types.get(targets[0]);
+		const type2 = dex.mod(modGen).types.get(targets[1]);
+		const type3 = dex.mod(modGen).types.get(targets[2]);
 
 		if (species.exists) {
 			target = species.name;
@@ -909,10 +909,10 @@ export const commands: Chat.ChatCommands = {
 		const resistances = [];
 		const immunities = [];
 		for (const type of dex.types.names()) {
-			const notImmune = dex.getImmunity(type, species);
+			const notImmune = dex.mod(modGen).getImmunity(type, species);
 			if (notImmune || isInverse) {
 				let typeMod = !notImmune && isInverse ? 1 : 0;
-				typeMod += (isInverse ? -1 : 1) * dex.getEffectiveness(type, species);
+				typeMod += (isInverse ? -1 : 1) * dex.mod(modGen).getEffectiveness(type, species);
 				switch (typeMod) {
 				case 1:
 					weaknesses.push(type);
@@ -950,7 +950,7 @@ export const commands: Chat.ChatCommands = {
 			trapped: "Trapping",
 		};
 		for (const status in statuses) {
-			if (!dex.getImmunity(status, species)) {
+			if (!dex.mod(modGen).getImmunity(status, species)) {
 				immunities.push(statuses[status]);
 			}
 		}
@@ -975,6 +975,8 @@ export const commands: Chat.ChatCommands = {
 	effectiveness(target, room, user) {
 		const {dex, targets} = this.splitFormat(target.split(/[,/]/));
 		if (targets.length !== 2) return this.errorReply("Attacker and defender must be separated with a comma.");
+
+		let modGen = 'ttc_current';
 
 		let searchMethods = ['types', 'moves', 'species'];
 		const sourceMethods = ['types', 'moves'];
@@ -1019,12 +1021,12 @@ export const commands: Chat.ChatCommands = {
 		if (!this.runBroadcast()) return;
 
 		let factor = 0;
-		if (dex.getImmunity(source, defender) ||
+		if (dex.mod(modGen).getImmunity(source, defender) ||
 			source.ignoreImmunity && (source.ignoreImmunity === true || source.ignoreImmunity[source.type])) {
 			let totalTypeMod = 0;
 			if (source.effectType !== 'Move' || source.category !== 'Status' && (source.basePower || source.basePowerCallback)) {
 				for (const type of defender.types) {
-					const baseMod = dex.getEffectiveness(source, type);
+					const baseMod = dex.mod(modGen).getEffectiveness(source, type);
 					const moveMod = source.onEffectiveness?.call({dex: Dex} as Battle, baseMod, null, type, source);
 					totalTypeMod += typeof moveMod === 'number' ? moveMod : baseMod;
 				}
