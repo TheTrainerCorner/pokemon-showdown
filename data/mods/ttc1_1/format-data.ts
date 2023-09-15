@@ -3,5 +3,10 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Past",
 		natDexTier: "OU",
 		tier: "OU",
+	},
+	blastoisemega: {
+		isNonstandard: "Past",
+		natDexTier: "OU",
+		tier: "OU", 
 	}
 };
