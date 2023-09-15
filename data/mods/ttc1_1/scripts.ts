@@ -15,5 +15,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.remove('Nasty Plot');
 		//#endregion
+		//#region Changing Tiers
+		this.modData('FormatsData', 'kingambit').natDexTier = 'OU';
+		this.modData('FormatsData', 'blastoisemega').natDexTier = 'OU';
+		this.modData('FormatsData', 'ursaluna').natDexTier = 'OU';
+		//#endregion
 	}
 }
