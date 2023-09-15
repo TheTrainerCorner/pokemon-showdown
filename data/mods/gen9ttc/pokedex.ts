@@ -6,6 +6,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		formeOrder: undefined,
 		evos: ['Palafin-Hero'],
 		baseForme: undefined,
+		gen: 9,
 	},
 	palafinhero: {
 		inherit: true,
@@ -15,5 +16,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoLevel: 40,
 		baseSpecies: undefined,
 		forme: undefined,
+		gen: 9,
 	},
 };
