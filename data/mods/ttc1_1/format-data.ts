@@ -1,6 +1,6 @@
 export const FormatData: {[k: string]: ModdedSpeciesFormatsData} = {
 	kingambit: {
-		inherit: true,
+		isNonstandard: "Past",
 		natDexTier: "OU",
 		tier: "OU",
 	}
