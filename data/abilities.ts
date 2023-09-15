@@ -1107,6 +1107,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspectcornerstone: {
 		onStart(pokemon) {
+			if (pokemon.species.baseSpecies !== "Ogerpon") return;
 			this.boost({def: 1}, pokemon);
 		},
 		name: "Embody Aspect (Cornerstone)",
@@ -1115,6 +1116,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspecthearthflame: {
 		onStart(pokemon) {
+			if (pokemon.species.baseSpecies !== "Ogerpon") return;
 			this.boost({atk: 1}, pokemon);
 		},
 		name: "Embody Aspect (Hearthflame)",
@@ -1123,6 +1125,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspectteal: {
 		onStart(pokemon) {
+			if (pokemon.species.baseSpecies !== "Ogerpon") return;
 			this.boost({spe: 1}, pokemon);
 		},
 		name: "Embody Aspect (Teal)",
@@ -1131,6 +1134,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	embodyaspectwellspring: {
 		onStart(pokemon) {
+			if (pokemon.species.baseSpecies !== "Ogerpon") return;
 			this.boost({spd: 1}, pokemon);
 		},
 		name: "Embody Aspect (Wellspring)",
@@ -1683,9 +1687,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 131,
 	},
 	heatproof: {
-		onSourceBasePowerPriority: 18,
-		onSourceBasePower(basePower, attacker, defender, move) {
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
+				this.debug('Heatproof Atk weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Heatproof SpA weaken');
 				return this.chainModify(0.5);
 			}
 		},
@@ -1717,9 +1729,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	hospitality: {
 		onStart(pokemon) {
 			for (const ally of pokemon.adjacentAllies()) {
-				if (this.heal(ally.baseMaxhp / 4)) {
-					this.add('-activate', ally, 'ability: Hospitality', '[of] ' + pokemon);
-				}
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
 		},
 		name: "Hospitality",
@@ -1738,7 +1748,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	hungerswitch: {
 		onResidualOrder: 29,
 		onResidual(pokemon) {
-			if (pokemon.species.baseSpecies !== 'Morpeko' || pokemon.transformed) return;
+			if (pokemon.species.baseSpecies !== 'Morpeko' || pokemon.transformed || pokemon.terastallized) return;
 			const targetForme = pokemon.species.name === 'Morpeko' ? 'Morpeko-Hangry' : 'Morpeko';
 			pokemon.formeChange(targetForme);
 		},
@@ -1886,7 +1896,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			for (let i = pokemon.side.pokemon.length - 1; i > pokemon.position; i--) {
 				const possibleTarget = pokemon.side.pokemon[i];
 				if (!possibleTarget.fainted) {
-					pokemon.illusion = possibleTarget;
+					// If Ogerpon is in the last slot while the Illusion Pokemon is Terastallized
+					// Illusion will not disguise as anything
+					if (!pokemon.terastallized || possibleTarget.species.baseSpecies !== 'Ogerpon') {
+						pokemon.illusion = possibleTarget;
+					}
 					break;
 				}
 			}
@@ -4367,6 +4381,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	supersweetsyrup: {
 		onStart(pokemon) {
+			if (pokemon.syrupTriggered) return;
+			pokemon.syrupTriggered = true;
 			this.add('-ability', pokemon, 'Supersweet Syrup');
 			let activated = false;
 			for (const target of pokemon.adjacentFoes()) {

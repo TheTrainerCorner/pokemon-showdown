@@ -9888,6 +9888,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		critRatio: 2,
 		onModifyType(move, pokemon) {
 			switch (pokemon.species.name) {
 			case 'Ogerpon-Wellspring': case 'Ogerpon-Wellspring-Tera':
@@ -11187,6 +11188,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		drain: [1, 2],
+		thawsTarget: true,
 		secondary: {
 			chance: 20,
 			status: 'brn',
