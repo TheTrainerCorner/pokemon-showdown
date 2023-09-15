@@ -8,5 +8,10 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Past",
 		natDexTier: "OU",
 		tier: "OU", 
+	},
+	ursaluna: {
+		isNonstandard: "Past",
+		natDexTier: "OU",
+		tier: "OU",
 	}
 };
