@@ -9,6 +9,27 @@ export class ModifyPokemon {
 		this._dex = dex;
 	}
 
+	public get types() {
+		return new class ModifyTypes {
+			private _name: string;
+			private _dex: ModdedDex;
+			private _pokemon: ModifyPokemon;
+			constructor(name: string, dex: ModdedDex, pokemon: ModifyPokemon) {
+				this._name = name;
+				this._dex = dex;
+				this._pokemon = pokemon;
+			}
+
+			setType(type1: string, type2?: string) {
+				this._dex.modData('Pokedex', this._name).types = type2 !== undefined ? [type1, type2] : [type1];
+				return this;
+			}
+
+			public get pokemon() { return this._pokemon; };
+			
+		} (this._name, this._dex, this);
+	}
+
 	public get abilities() {
 		return new class ModifyAbilities {
 			private _name: string;
