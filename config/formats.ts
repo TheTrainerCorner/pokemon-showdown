@@ -114,15 +114,23 @@ export const Formats: FormatList = [
 		section: "Public Test Realm",
 	},
 	{
-		name: "[Gen 9] National Dex TTC PTR",
-		desc: "This is the Official PTR for TTC.",
-		
-		mod: "ttc_current",
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
+		name: "[Gen 9] National Dex PTR",
+		desc: "The Official Draft Format for TTC",
+		mod: 'ttc_current',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set'],
 		banlist: [
-			'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
 		],
+		// Already Allowed:
+		/**
+		 * Lutrous Globe
+		 * Bleakwind Storm
+		 * Lunar Blessing
+		 * Mystical Power
+		 * Sandsear Storm
+		 * Wildbolt Storm
+		 */
 		unbanlist: [
 			'Unreleased',
 			// Unobtainable Moves
@@ -151,5 +159,5 @@ export const Formats: FormatList = [
 			'LGPE',
 			'Baton Pass',
 		],
-	}
+	},
 ];

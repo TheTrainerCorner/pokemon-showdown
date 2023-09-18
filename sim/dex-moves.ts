@@ -34,6 +34,7 @@ interface MoveFlags {
 	contact?: 1; // Makes contact.
 	dance?: 1; // When used by a Pokemon, other Pokemon with the Ability Dancer can attempt to execute the same move.
 	defrost?: 1; // Thaws the user if executed successfully while the user is frozen.
+	disable?: 1; // If the move can disable moves on another pokemon.
 	distance?: 1; // Can target a Pokemon positioned anywhere in a Triple Battle.
 	failcopycat?: 1; // Cannot be selected by Copycat.
 	failencore?: 1; // Encore fails if target used this move.
@@ -51,6 +52,7 @@ interface MoveFlags {
 	nonsky?: 1; // Prevented from being executed or selected in a Sky Battle.
 	noparentalbond?: 1; // Cannot be made to hit twice via Parental Bond.
 	nosleeptalk?: 1; // Cannot be selected by Sleep Talk.
+	peck?: 1; // Pecking Moves
 	pledgecombo?: 1; // Gems will not activate. Cannot be redirected by Storm Drain / Lightning Rod.
 	powder?: 1; // Has no effect on Pokemon which are Grass-type, have the Ability Overcoat, or hold Safety Goggles.
 	protect?: 1; // Blocked by Detect, Protect, Spiky Shield, and if not a Status move, King's Shield.
