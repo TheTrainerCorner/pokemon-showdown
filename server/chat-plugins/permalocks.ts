@@ -93,7 +93,7 @@ export const Nominations = new class {
 		}, undefined, true);
 	}
 	save() {
-		FS('config/chat-plugins/permas.json').writeUpdate(() => JSON.stringify(this.noms));
+		FS('config/chat-plugins/permas.json').writeUpdate(() => JSON.stringify({noms: this.noms, icons: this.icons}));
 	}
 	notifyStaff() {
 		const usRoom = Rooms.get('upperstaff');
@@ -515,9 +515,12 @@ export const commands: Chat.ChatCommands = {
 			if (!mon.exists) {
 				return this.errorReply(`Species ${monName} does not exist.`);
 			}
-			Nominations.icons[targetId] = mon.id;
+			Nominations.icons[targetId] = mon.name.toLowerCase();
 			Nominations.save();
-			this.sendReply(`|html|Updated ${targetId === user.id ? 'your' : `${targetId}'s`} permalock post icon to <psicon pokemon='${mon.id}' />`);
+			this.sendReply(
+				`|html|Updated ${targetId === user.id ? 'your' : `${targetId}'s`} permalock post icon to ` +
+				`<psicon pokemon='${mon.name.toLowerCase()}' />`
+			);
 		},
 		deleteicon(target, room, user) {
 			this.checkCan('rangeban');
