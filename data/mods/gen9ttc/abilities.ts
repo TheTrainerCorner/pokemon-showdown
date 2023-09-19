@@ -385,10 +385,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 				// Refreshing the forme change
 				if((['raindance', 'primordialsea'].includes(target.effectiveWeather()) && this.randomChance(1, 2)) || this.randomChance(1, 4)) {
-					const forme = source.hp <= source.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
-					source.formeChange(forme);
+					const forme = target.hp <= target.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
+					target.formeChange(forme);
 				} else {
-					source.formeChange('cramorant', move)
+					target.formeChange('cramorant', move)
 				}
 			}
 
