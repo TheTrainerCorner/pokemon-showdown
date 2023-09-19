@@ -357,7 +357,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 						} else if (req.url.startsWith('/avatars/')) {
 							req.url = req.url.substr(8);
 							server = avatarServer;
-						} else if(req.url.startsWith('/emojis/')) {
+						} else if (req.url.startsWith('/emojis/')) {
 							req.url = req.url.substr(7);
 							server = emojiServer;
 						} else if (roomidRegex.test(req.url)) {

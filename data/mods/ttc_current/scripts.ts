@@ -5,5 +5,5 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData('FormatsData', 'kingambit').natDexTier = 'OU';
 		this.modData('FormatsData', 'blastoisemega').natDexTier = 'OU';
 		this.modData('FormatsData', 'ursaluna').natDexTier = 'OU';
-	}
-}
+	},
+};

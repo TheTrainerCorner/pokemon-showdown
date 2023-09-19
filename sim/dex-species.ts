@@ -484,7 +484,7 @@ export class DexSpecies {
 			if (!species.tier) species.tier = 'Illegal';
 			if (!species.doublesTier) species.doublesTier = species.tier as any;
 			if (!species.natDexTier) species.natDexTier = species.tier;
-			if(!species.draftTier) species.draftTier = species.tier as any;
+			if (!species.draftTier) species.draftTier = species.tier as any;
 			if (species.gen > this.dex.gen) {
 				species.tier = 'Illegal';
 				species.doublesTier = 'Illegal';

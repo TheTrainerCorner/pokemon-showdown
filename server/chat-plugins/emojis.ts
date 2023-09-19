@@ -3,8 +3,8 @@
 import Axios from 'axios';
 import probe from 'probe-image-size';
 import {FS} from '../../lib';
-import { Punishment } from '../punishments';
-import { escapeHTML } from '../../lib/utils';
+import {Punishment} from '../punishments';
+import {escapeHTML} from '../../lib/utils';
 
 const EMOJI_BAN_DURATION = 7 * 24 * 60 * 60 * 1000; // 1 Week
 const MAX_REASON_LENGTH = 300;
@@ -34,7 +34,7 @@ const addOrUpdateEmoji = (name: string, filename: string) => {
 	emojis[name] = filename;
 	emojiRegex = createEmojiRegex(Object.keys(emojis));
 	saveEmojis();
-}
+};
 
 const deleteEmoji = (name: string) => {
 	delete emojis[name];
@@ -49,24 +49,24 @@ export const createEmojiHtml = (
 	filename: string,
 ) => `<img src="http://play.thetrainercorner.net/data/pokemon-showdown/config/emojis/${filename}" title=":${name}:" height="${EMOJI_SIZE}" width="${EMOJI_SIZE}">`;
 
-const downloadEmoji = async(emojiName: string, imageUrl: string) => {
+const downloadEmoji = async (emojiName: string, imageUrl: string) => {
 	const imagebuffer = (await Axios.get(imageUrl, {responseType: 'arraybuffer'})).data;
 	const probeResult = probe.sync(imagebuffer);
 
-	if(!probeResult) {
+	if (!probeResult) {
 		throw new Chat.ErrorMessage(ERROR_NO_VALID_EMOJI_IMAGE);
 	}
 
 	const {width, height, type} = probeResult;
 
-	if(!['png', 'gif'].includes(type)) {
+	if (!['png', 'gif'].includes(type)) {
 		throw new Chat.ErrorMessage(ERROR_NO_VALID_EMOJI_IMAGE);
 	}
 
 	const maxSize = Math.max(width, height);
 	const minSize = Math.min(width, height);
 
-	if(maxSize > MAX_EMOJI_SIZE || minSize < EMOJI_SIZE || (width !== height)) {
+	if (maxSize > MAX_EMOJI_SIZE || minSize < EMOJI_SIZE || (width !== height)) {
 		throw new Chat.ErrorMessage(`Specify a square image between 32x32 and 64x64. Your image is ${probeResult.width}x${probeResult.height}`);
 	}
 
@@ -88,12 +88,12 @@ export const commands: Chat.ChatCommands = {
 			this.checkCan('emoji');
 			const [rawEmojiName, emojiUrl] = target.split(',').map((part) => part.trim());
 
-			if(!rawEmojiName) {
+			if (!rawEmojiName) {
 				return this.errorReply(ERROR_NO_EMOJI_NAME);
 			}
 			const emojiName = toAlphaNumeric(rawEmojiName);
 
-			if(!emojiUrl) {
+			if (!emojiUrl) {
 				return this.errorReply(ERROR_NO_EMOJI_URL);
 			}
 
@@ -101,13 +101,13 @@ export const commands: Chat.ChatCommands = {
 
 			addOrUpdateEmoji(emojiName, filename);
 			this.addGlobalModAction(`${user.name} added emoji :${emojiName}:`);
-			return this.sendReplyBox(`Added: ${createEmojiHtml(emojiName, filename)}`)
+			return this.sendReplyBox(`Added: ${createEmojiHtml(emojiName, filename)}`);
 		},
 		remove(target, room, user) {
 			this.checkCan('emoji');
 			const emojiName = toAlphaNumeric(target);
 
-			if(!emojis[emojiName]) {
+			if (!emojis[emojiName]) {
 				return this.sendReplyBox(`No such emoji :${emojiName}: exists.`);
 			}
 
@@ -117,13 +117,13 @@ export const commands: Chat.ChatCommands = {
 			return this.sendReply(`Deleted :${emojiName}:`);
 		},
 		async ban(target, room, user) {
-			const { targetUser, targetUsername, rest: reason} = this.splitUser(target);
-			
-			if(!targetUser) return this.errorReply(`User '${targetUsername} not found.`);
-			if(reason.length > MAX_REASON_LENGTH) {
+			const {targetUser, targetUsername, rest: reason} = this.splitUser(target);
+
+			if (!targetUser) return this.errorReply(`User '${targetUsername} not found.`);
+			if (reason.length > MAX_REASON_LENGTH) {
 				return this.errorReply(`The reason is too long. It cannot exceed ${MAX_REASON_LENGTH} characters.`);
 			}
-			
+
 			this.checkCan('lock', targetUser);
 
 			await Punishments.punish(targetUser, {
@@ -162,13 +162,13 @@ export const commands: Chat.ChatCommands = {
 	},
 };
 
-	export const chatfilter: Chat.ChatFilter = (message, user) => {
-		if (!Punishments.hasPunishType(user.id, 'EMOJIBAN') && Object.keys(emojis).length > 0 && emojiRegex.test(message)) {
-			const prefix = message.startsWith('/html') ? '' : '/html ';
-			return prefix + escapeHTML(message).replace(emojiRegex, (match) => {
-				const emojiName = match.slice(1, -1);
-				return createEmojiHtml(emojiName, emojis[emojiName]);
-			});
-		}
-		return message;
-	};
+export const chatfilter: Chat.ChatFilter = (message, user) => {
+	if (!Punishments.hasPunishType(user.id, 'EMOJIBAN') && Object.keys(emojis).length > 0 && emojiRegex.test(message)) {
+		const prefix = message.startsWith('/html') ? '' : '/html ';
+		return prefix + escapeHTML(message).replace(emojiRegex, (match) => {
+			const emojiName = match.slice(1, -1);
+			return createEmojiHtml(emojiName, emojis[emojiName]);
+		});
+	}
+	return message;
+};

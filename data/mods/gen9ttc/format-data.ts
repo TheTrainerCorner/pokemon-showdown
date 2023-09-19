@@ -29,7 +29,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		natDexTier: "OU",
 		tier: "OU",
 	},
-	lilliganthisui:{
+	lilliganthisui: {
 		isNonstandard: 'Past',
 		natDexTier: "OU",
 		tier: "OU",

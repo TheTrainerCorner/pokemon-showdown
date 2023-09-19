@@ -10478,7 +10478,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		cosmeticFormes: ["Deerling-Summer", "Deerling-Autumn", "Deerling-Winter"],
 		formeOrder: ["Deerling", "Deerling-Summer", "Deerling-Autumn", "Deerling-Winter"],
 	},
-	//#region Sawsbucks' Formes
+	// #region Sawsbucks' Formes
 	sawsbuck: {
 		num: 586,
 		name: "Sawsbuck",
@@ -10540,7 +10540,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 34,
 		eggGroups: ["Field"],
 	},
-	//#endregion
+	// #endregion
 	emolga: {
 		num: 587,
 		name: "Emolga",

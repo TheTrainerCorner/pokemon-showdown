@@ -7,7 +7,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		onModifyMove(move, pokemon, target) {
 			const rand = this.random(10);
-			if(rand < 2) {
+			if (rand < 2) {
 				move.heal = [1, 4];
 				move.infiltrates = true;
 			} else if (rand < 6) {
@@ -17,11 +17,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			} else {
 				move.basePower = 150;
 			}
-		}
+		},
 	},
 	diamondstorm: {
 		inherit: true,
-		category: "Special"
+		category: "Special",
 	},
 	beakblast: {
 		inherit: true,
@@ -41,7 +41,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 30,
 		type: "Fairy",
 		pp: 20,
-		flags: { contact: 1, protect: 1, mirror: 1},
+		flags: {contact: 1, protect: 1, mirror: 1},
 		volatileStatus: 'partiallytrapped',
 		secondary: null,
 		target: "normal",
@@ -67,27 +67,27 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if(!move.flags['protect']) {
-					if(['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if(move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+				if (!move.flags['protect']) {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
 					return;
 				}
-				if(move.smartTarget) {
+				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
 					this.add('-activate', target, 'move: Shelter');
 				}
 				const lockedmove = source.getVolatile('lockedmove');
-				if(lockedmove) {
+				if (lockedmove) {
 					// Outrage counter is reset
-					if(source.volatiles['lockedmove'].duration === 2) {
+					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
 				}
 				return this.NOT_FAIL;
-			}
+			},
 		},
-		shortDesc: "Protects the user and raises Defense by 1 stage"
+		shortDesc: "Protects the user and raises Defense by 1 stage",
 	},
 	filletaway: {
 		inherit: true,
@@ -107,7 +107,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, hammer: 1},
 		onModifyType(move, pokemon, target) {
-			if(pokemon.terastallized) {
+			if (pokemon.terastallized) {
 				move.type = pokemon.teraType;
 			}
 		},
@@ -116,7 +116,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Normal",
 		contestType: "Tough",
 		desc: "If the user is Terastallized, this move changes it's type to the user's Tera Type. Else it will be a normal type.",
-		shortDesc: "If Terastallized: Type = Tera."
+		shortDesc: "If Terastallized: Type = Tera.",
 	},
 	sushityphoon: {
 		num: -3,
@@ -141,7 +141,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Water",
 		contestType: "Clever",
 		desc: "If Rain is active, will deal damage, kill self, and remove rain. If rain is not active, it will kill self and remove rain.",
-		shortDesc: "If Rain, deal damage, kill self, and remove rain; Else kill self and remove rain."
+		shortDesc: "If Rain, deal damage, kill self, and remove rain; Else kill self and remove rain.",
 	},
 	zippyzap: {
 		inherit: true,
@@ -164,6 +164,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 50,
 		priority: 1,
-		shortDesc: "Power doubles during Bounce, Fly, and Sky Drop; +1 Priority."
-	}
+		shortDesc: "Power doubles during Bounce, Fly, and Sky Drop; +1 Priority.",
+	},
 };

@@ -7,11 +7,11 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	blastoisemega: {
 		isNonstandard: "Past",
 		natDexTier: "OU",
-		tier: "OU", 
+		tier: "OU",
 	},
 	ursaluna: {
 		isNonstandard: "Past",
 		natDexTier: "OU",
 		tier: "OU",
-	}
+	},
 };

@@ -1,5 +1,5 @@
-import { ModdedDex } from '../../../sim/dex';
-import { Learnset } from '../../../sim/dex-species';
+import {ModdedDex} from '../../../sim/dex';
+import {Learnset} from '../../../sim/dex-species';
 
 // Generations Files
 import Gen1 from './gens/gen1';
@@ -15,16 +15,16 @@ import Gen9 from './gens/gen9';
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen9',
 	init() {
-		//#region Functions
+		// #region Functions
 		const changeNatDexTier = (pokemon: string, tier: string) => {
 			this.modData('FormatsData', pokemon.toLowerCase().replace(/ +/g, '').replace('-', '')).natDexTier = tier.toUpperCase();
-		}
+		};
 		const changeTier = (pokemon: string, tier: string) => {
 			this.modData('FormatsData', pokemon.toLowerCase().replace(/ +/g, '').replace('-', '')).tier = tier.toUpperCase();
-		}
-		//#endregion
-		//#region Add Kick Move Flag to moves
-		let kickMoves: string[] = [
+		};
+		// #endregion
+		// #region Add Kick Move Flag to moves
+		const kickMoves: string[] = [
 			"blazekick",
 			"doublekick",
 			"highhorsepower",
@@ -39,25 +39,25 @@ export const Scripts: ModdedBattleScriptsData = {
 			"tropkick",
 		];
 
-		for(let move of kickMoves) {
+		for (const move of kickMoves) {
 			this.modData('Moves', move).flags.kick = 1;
 		}
-		//#endregion
-		//#region Hammer Moves
-		let hammerMoves: string[] = [
+		// #endregion
+		// #region Hammer Moves
+		const hammerMoves: string[] = [
 			"hammerarm",
 			"crabhammer",
 			"dragonhammer",
 			"gigatonhammer",
 			"icehammer",
 			"woodhammer",
-			"terahammer"
+			"terahammer",
 		];
-		for(let move of hammerMoves) {
+		for (const move of hammerMoves) {
 			this.modData('Moves', move).flags.hammer = 1;
 		}
-		//#endregion
-		//#region Modifying Tiers
+		// #endregion
+		// #region Modifying Tiers
 		changeNatDexTier('alakazammega', 'OU');
 		changeNatDexTier('annihilape', 'OU');
 		changeNatDexTier('blazikenmega', 'OU');
@@ -86,9 +86,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		changeNatDexTier('urshifu', 'OU');
 		changeNatDexTier('walkingwake', 'OU');
 		changeNatDexTier('zygarde', 'OU');
-		//#endregion
+		// #endregion
 
-		//#region Modifying Pokemon
+		// #region Modifying Pokemon
 		// Generation 1
 		Gen1(this);
 		// Generation 2
@@ -107,7 +107,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		Gen8(this);
 		// Generation 9
 		Gen9(this);
-		//#endregion
-		
+		// #endregion
 	},
 };
