@@ -49,44 +49,44 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	shelter: {
 		inherit: true,
-		volatileStatus: 'protect',
-		stallingMove: true,
-		boosts: {
-			def: 1,
-		},
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
-		},
-		onHit(pokemon) {
-			pokemon.addVolatile('stall');
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add('-singleturn', target, 'Protect');
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (!move.flags['protect']) {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
-				if (move.smartTarget) {
-					move.smartTarget = false;
-				} else {
-					this.add('-activate', target, 'move: Shelter');
-				}
-				const lockedmove = source.getVolatile('lockedmove');
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles['lockedmove'].duration === 2) {
-						delete source.volatiles['lockedmove'];
-					}
-				}
-				return this.NOT_FAIL;
-			},
-		},
+		// volatileStatus: 'protect',
+		// stallingMove: true,
+		// boosts: {
+		// 	def: 1,
+		// },
+		// onPrepareHit(pokemon) {
+		// 	return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		// },
+		// onHit(pokemon) {
+		// 	pokemon.addVolatile('stall');
+		// },
+		// condition: {
+		// 	duration: 1,
+		// 	onStart(target) {
+		// 		this.add('-singleturn', target, 'Protect');
+		// 	},
+		// 	onTryHitPriority: 3,
+		// 	onTryHit(target, source, move) {
+		// 		if (!move.flags['protect']) {
+		// 			if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+		// 			if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+		// 			return;
+		// 		}
+		// 		if (move.smartTarget) {
+		// 			move.smartTarget = false;
+		// 		} else {
+		// 			this.add('-activate', target, 'move: Shelter');
+		// 		}
+		// 		const lockedmove = source.getVolatile('lockedmove');
+		// 		if (lockedmove) {
+		// 			// Outrage counter is reset
+		// 			if (source.volatiles['lockedmove'].duration === 2) {
+		// 				delete source.volatiles['lockedmove'];
+		// 			}
+		// 		}
+		// 		return this.NOT_FAIL;
+		// 	},
+		// },
 		shortDesc: "Protects the user and raises Defense by 1 stage",
 	},
 	filletaway: {
