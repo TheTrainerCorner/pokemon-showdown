@@ -1,19 +1,19 @@
 export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
-	bulbasuar: {
-		inherit: true,
-		natDexTier: "1",
+	bulbasaur: {
+		isNonstandard: "Past",
+		tier: "1",
 	},
 	ivysaur: {
-		inherit: true,
-		natDexTier: "1",
+		isNonstandard: "Past",
+		tier: "1",
 	},
 	venusaur: {
-		inherit: true,
-		natDexTier: "9",
+		isNonstandard: "Past",
+		tier: "9",
 	},
 	venusaurmega: {
-		inherit: true,
-		natDexTier: "12",
+		isNonstandard: "Past",
+		tier: "12",
 	},
 	kingambit: {
 		isNonstandard: "Past",
