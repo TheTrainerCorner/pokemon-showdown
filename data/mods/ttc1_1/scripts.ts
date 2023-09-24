@@ -14,6 +14,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('alakazam', this)
 			.learnset
 			.remove('Nasty Plot');
+		new ModifyPokemon('Girafarig', this)
+			.abilities
+				.setAbility0('Sap Sipper');
 		// #endregion
 		// #region Changing Tiers
 		this.modData('FormatsData', 'kingambit').natDexTier = 'OU';
