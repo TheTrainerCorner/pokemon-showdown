@@ -17,6 +17,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Girafarig', this)
 			.abilities
 				.setAbility0('Sap Sipper');
+		new ModifyPokemon('Morpeko-Hangry', this)
+			.baseStats
+				.setATK(115);
 		// #endregion
 		// #region Changing Tiers
 		this.modData('FormatsData', 'kingambit').natDexTier = 'OU';
