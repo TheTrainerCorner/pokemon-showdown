@@ -25,21 +25,25 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		new ModifyPokemon('Sawsbuck', this)
 			.learnset
+				.add("Swords Dance")
 				.add("Grassy Glide")
 				.add('High Horsepower');
 
 		new ModifyPokemon('Sawsbuck-Summer', this)
 			.learnset
+				.add("Swords Dance")
 				.add("Grassy Glide")
 				.add('High Horsepower');
 
 		new ModifyPokemon('Sawsbuck-Winter', this)
 			.learnset
+				.add("Swords Dance")
 				.add("Grassy Glide")
 				.add('High Horsepower');
 
 		new ModifyPokemon('Sawsbuck-Autumn', this)
 			.learnset
+				.add("Swords Dance")
 				.add("Grassy Glide")
 				.add('High Horsepower');
 
