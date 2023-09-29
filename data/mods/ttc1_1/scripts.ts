@@ -23,7 +23,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(115);
 
-		new ModifyPokemon('Sawsbuck-Spring', this)
+		new ModifyPokemon('Sawsbuck', this)
 			.learnset
 				.add("Grassy Glide")
 				.add('High Horsepower');
@@ -42,7 +42,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Grassy Glide")
 				.add('High Horsepower');
-				
+
 		// #endregion
 		// #region Changing Tiers
 		this.modData('FormatsData', 'kingambit').natDexTier = 'OU';
