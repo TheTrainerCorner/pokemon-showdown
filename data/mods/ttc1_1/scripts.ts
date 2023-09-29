@@ -14,12 +14,35 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('alakazam', this)
 			.learnset
 			.remove('Nasty Plot');
+
 		new ModifyPokemon('Girafarig', this)
 			.abilities
 				.setAbility0('Sap Sipper');
+
 		new ModifyPokemon('Morpeko-Hangry', this)
 			.baseStats
 				.setATK(115);
+
+		new ModifyPokemon('Sawsbuck-Spring', this)
+			.learnset
+				.add("Grassy Glide")
+				.add('High Horsepower');
+
+		new ModifyPokemon('Sawsbuck-Summer', this)
+			.learnset
+				.add("Grassy Glide")
+				.add('High Horsepower');
+
+		new ModifyPokemon('Sawsbuck-Winter', this)
+			.learnset
+				.add("Grassy Glide")
+				.add('High Horsepower');
+
+		new ModifyPokemon('Sawsbuck-Autumn', this)
+			.learnset
+				.add("Grassy Glide")
+				.add('High Horsepower');
+				
 		// #endregion
 		// #region Changing Tiers
 		this.modData('FormatsData', 'kingambit').natDexTier = 'OU';

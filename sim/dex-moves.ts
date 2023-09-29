@@ -46,6 +46,7 @@ interface MoveFlags {
 	hammer?: 1; // Hammer moves
 	heal?: 1; // Prevented from being executed or selected during Heal Block's effect.
 	kick?: 1; // Kick Moves
+	light?: 1; // Light Moves
 	mirror?: 1; // Can be copied by Mirror Move.
 	mustpressure?: 1; // Additional PP is deducted due to Pressure when it ordinarily would not.
 	noassist?: 1; // Cannot be selected by Assist.
@@ -63,6 +64,7 @@ interface MoveFlags {
 	slicing?: 1; // Power is multiplied by 1.5 when used by a Pokemon with the Ability Sharpness.
 	snatch?: 1; // Can be stolen from the original user and instead used by another Pokemon using Snatch.
 	sound?: 1; // Has no effect on Pokemon with the Ability Soundproof.
+	weight?: 1;
 	wind?: 1; // Activates the Wind Power and Wind Rider Abilities.
 }
 
