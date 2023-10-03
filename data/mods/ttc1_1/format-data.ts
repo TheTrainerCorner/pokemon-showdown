@@ -14,4 +14,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		natDexTier: "OU",
 		tier: "OU",
 	},
+	deoxysspeed: {
+		isNonstandard: "Past",
+		natDexTier: "OU",
+		tier: "OU",
+	},
 };
