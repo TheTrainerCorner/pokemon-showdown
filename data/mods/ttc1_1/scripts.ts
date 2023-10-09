@@ -53,5 +53,21 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData('FormatsData', 'blastoisemega').natDexTier = 'OU';
 		this.modData('FormatsData', 'ursaluna').natDexTier = 'OU';
 		// #endregion
+
+		//#region 1.1.2
+		let ballMoves = [
+			'electroball',
+			'energyball',
+			'gyroball',
+			'iceball',
+			'mistball',
+			'pyroball',
+			'shadowball',
+			'weatherball',
+		];
+		for(let move of ballMoves) {
+			this.modData('Moves', move).flags.bullet = 1;
+		}
+		//#endregion
 	},
 };
