@@ -759,7 +759,7 @@ export default function Gen4(dex: ModdedDex) {
 		.pokemon.baseStat()
 		.setSpA(125)
 		.pokemon.learnset()
-		.addMove('ands Wrath')
+		.addMove('Lands Wrath')
 		.addMove('Iron Head')
 		.addMove('Chilling Water')
 		.addMove('Natures Madness');
