@@ -167,7 +167,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 3)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -435,7 +435,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onUpdate(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
-				if (this.runEvent('TryHeal', pokemon) && pokemon.useItem()) {
+				if (this.runEvent('TryHeal', pokemon, null, this.effect, 20) && pokemon.useItem()) {
 					this.heal(20);
 				}
 			}
@@ -614,8 +614,11 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 30,
 		},
+		onStart() {
+			this.effectState.started = true;
+		},
 		onUpdate(pokemon) {
-			if (pokemon.transformed) return;
+			if (!this.effectState.started || pokemon.transformed) return;
 			if (this.queue.peek(true)?.choice === 'runSwitch') return;
 
 			if (pokemon.hasAbility('protosynthesis') && !this.field.isWeather('sunnyday') && pokemon.useItem()) {
@@ -1683,7 +1686,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
 		},
 		onEat() { },
 		num: 208,
@@ -1845,7 +1848,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 3)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -2621,7 +2624,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 3)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -3396,7 +3399,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 3)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -4027,7 +4030,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, 10)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(10);
@@ -5305,7 +5308,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 4);
@@ -7224,7 +7227,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 3)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -7343,7 +7346,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, 10)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(10);
@@ -7409,7 +7412,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon)) return false;
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, 30)) return false;
 		},
 		onEat(pokemon) {
 			this.heal(30);

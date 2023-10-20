@@ -87,6 +87,10 @@ export class PokemonSources {
 	 */
 	tradebackLimitedEggMoves?: ID[] | null;
 	/**
+	 * Tracks level up egg moves for female-only Pokemon
+	 */
+	levelUpEggMoves?: ID[] | null;
+	/**
 	 * Moves that can be learned via Pomeg glitch and does not require a
 	 * particular parent to learn
 	 */
@@ -241,6 +245,13 @@ export class PokemonSources {
 				this.tradebackLimitedEggMoves.push(...other.tradebackLimitedEggMoves);
 			}
 		}
+		if (other.levelUpEggMoves) {
+			if (!this.levelUpEggMoves) {
+				this.levelUpEggMoves = other.levelUpEggMoves;
+			} else {
+				this.levelUpEggMoves.push(...other.levelUpEggMoves);
+			}
+		}
 		if (other.pomegEggMoves) {
 			if (!this.pomegEggMoves) {
 				this.pomegEggMoves = other.pomegEggMoves;
@@ -248,7 +259,7 @@ export class PokemonSources {
 				this.pomegEggMoves.push(...other.pomegEggMoves);
 			}
 		}
-		if (this.possiblyLimitedEggMoves) {
+		if (this.possiblyLimitedEggMoves && !this.sourcesBefore) {
 			const eggSources = this.sources.filter(source => source.charAt(1) === 'E');
 			let minEggGen = parseInt(eggSources[0]);
 			for (const source of eggSources) {
@@ -1002,6 +1013,9 @@ export class TeamValidator {
 		}
 
 		if (!problems.length) {
+			if (set.gender === '' && !species.gender) {
+				set.gender = ['M', 'F'][Math.floor(Math.random() * 2)];
+			}
 			if (adjustLevel) set.level = adjustLevel;
 			return null;
 		}
@@ -1046,6 +1060,9 @@ export class TeamValidator {
 			} else if (!canBottleCap) {
 				set.ivs = TeamValidator.fillStats(dex.types.get(set.hpType).HPivs, 31);
 			}
+		}
+		if (!set.hpType && set.moves.some(m => dex.moves.get(m).id === 'hiddenpower')) {
+			set.hpType = dex.getHiddenPower(set.ivs).type;
 		}
 
 		const cantBreedNorEvolve = (species.eggGroups[0] === 'Undiscovered' && !species.prevo && !species.nfe);
@@ -1331,7 +1348,7 @@ export class TeamValidator {
 		const fathers: ID[] = [];
 		// Gen 6+ don't have egg move incompatibilities
 		// (except for certain cases with baby Pokemon not handled here)
-		if (!getAll && eggGen >= 6 && species.gender !== 'F') return true;
+		if (!getAll && eggGen >= 6 && !setSources.levelUpEggMoves) return true;
 
 		let eggMoves = setSources.limitedEggMoves;
 		if (eggGen === 3) eggMoves = eggMoves?.filter(eggMove => !setSources.pomegEggMoves?.includes(eggMove));
@@ -1341,7 +1358,8 @@ export class TeamValidator {
 			// which aren't limited and so aren't in `limitedEggMoves`
 			return getAll ? ['*'] : true;
 		}
-		if (!getAll && eggMoves.length <= 1 && species.gender !== 'F') return true;
+		if (!getAll && eggMoves.length <= 1 && !setSources.levelUpEggMoves) return true;
+		if (setSources.levelUpEggMoves && eggGen >= 6) eggMoves = setSources.levelUpEggMoves;
 
 		// gen 1 eggs come from gen 2 breeding
 		const dex = this.dex.gen === 1 ? this.dex.mod('gen2') : this.dex;
@@ -2547,6 +2565,7 @@ export class TeamValidator {
 						if (learned.slice(1) === 'Eany') {
 							if (species.gender === 'F') {
 								limitedEggMove = move.id;
+								moveSources.levelUpEggMoves = [move.id];
 							} else {
 								limitedEggMove = null;
 							}
