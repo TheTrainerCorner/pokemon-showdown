@@ -36,26 +36,4 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "If this Pokemon is Silvally; Silvally will change its form to match the type of the move it is about to use. This effect comes after all effects that change a move's type. This effect can only happen once per switch-in, and only if this Pokemon is not Terastallized.",
 		shortDesc: "If Silvally; Changes Form based on the type of the move about to use.",
 	},
-
-	// New Ability
-	// hauntedlight: {
-	// 	onModifyAtkPriority: 5,
-	// 	onModifyAtk(atk, attacker, defender, move) {
-	// 		if (move.type === 'Ghost') {
-	// 			this.debug('Haunted Light boost');
-	// 			return this.chainModify(1.5);
-	// 		}
-	// 	},
-	// 	onModifySpAPriority: 5,
-	// 	onModifySpA(atk, attacker, defender, move) {
-	// 		if (move.type === 'Ghost') {
-	// 			this.debug('Haunted Light boost');
-	// 			return this.chainModify(1.5);
-	// 		}
-	// 	},
-	// 	name: "Haunted Light",
-	// 	rating: 3.5,
-	// 	num: -200,
-	// 	shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Ghost-type attack.",
-	// },
 };
