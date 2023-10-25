@@ -203,6 +203,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'Light of Ruin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
+			console.log(move);
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['light'] = 1;
 		}
 		const weightMoves = ['Grass Knot', 'Heavy Slam'];
