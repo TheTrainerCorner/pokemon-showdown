@@ -657,5 +657,84 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.3.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.3x power. Sucker Punch is not boosted.",
-	}
+	},
+	keeneye: {
+		inherit: true,
+		onTryBoost: undefined,
+		onModifyMove(move) {
+			move.accuracy = true;
+		},
+		desc: "Any moves used by the user does not have an accuracy check.",
+		shortDesc: "Moves by this user doesn't have have an accuracy check.",
+	},
+	leafguard: {
+		inherit: true,
+		onSetStatus: undefined,
+		onTryAddVolatile: undefined,
+		onModifyDefPriority: 6,
+		onModifyDef(def, attacker, defender, move) {
+			if(['sunnyday', 'desolateland'].includes(defender.effectiveWeather())) {
+				return this.chainModify(1.3);
+			}
+		},
+		onModifySpDPriority: 6,
+		onModifySpD(def, attacker, defender, move) {
+			if(['sunnyday', 'desolateland'].includes(defender.effectiveWeather())) {
+				return this.chainModify(1.3);
+			}
+		},
+		desc: "If Sun is active, Defense and SpDefense are boosted by 1.3x",
+		shortDesc: "If Sun is active, Defense and SpDefense are boosted by 1.3x",
+	},
+	limber: {
+		inherit: true,
+		onSourceModifyDamage(damage, source, target, move) {
+			if(move.type == "Steel") {
+				return this.chainModify(2);
+			}
+			else if(this.checkMoveMakesContact(move, source, target)) {
+				return this.chainModify(0.5);
+			}
+		},
+		onUpdate: undefined,
+		onSetStatus: undefined,
+		desc: "This pokemon takes 2x more damage from steel types; Takes 1/2 from any move that makes contact.",
+		shortDesc: "Takes 2x more damage from Steel moves; Takes 1/2 from Contact moves.",
+	},
+	magmaarmor: {
+		inherit: true,
+		onUpdate: undefined,
+		onImmunity: undefined,
+		onCriticalHit: false,
+		onSourceModifyDamage(damage, source, target, move) {
+			if(['Water', 'Ice'].includes(move.type)) {
+				return this.chainModify(0.75);
+			}
+		},
+		desc: "Ice & Water Type moves do 75% less damage to the user and user is unable to be crited.",
+		shortDesc: "Ice & Water Type moves do 75% less damage to the user and can't be crited.",
+	},
+	moldbreaker: {
+		inherit: true,
+		onModifyDamage(damage, source, target, move) {
+			if(target.types.includes('Water')) {
+				return this.chainModify(1.2);
+			}
+		},
+		desc: "This Pokemon's moves and their effects ignore certain Abilities of other Pokemon. Does 1.2x more damage to Water-Type Pokemon.",
+		shortDesc: "This Pokemon's moves and their effects ignore the Abilities of other Pokemon; Does 1.2x more damage to Water-Type Pokemon.",
+	},
+	motordrive: {
+		inherit: true,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type == 'Electric') {
+				if (!this.boost({spe: 2})) {
+					this.add('-immune', target, '[from] ability: Motor Drive');
+				}
+				return null;
+			}
+		},
+		desc: "This Pokemon is immune to Electric-type moves and raises its Speed by 2 stages when hit by an Electric-type move.",
+		shortDesc: "This Pokemon's Speed is raised 2 stages if hit by an Electric move; Electric immunity;",
+	},
 };
