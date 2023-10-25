@@ -72,5 +72,5 @@ pip-log.txt
 # redis dumps
 *.rdb
 
-data/mods/ttc2_0
+
 test/sim/ttc2_0
