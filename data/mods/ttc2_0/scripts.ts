@@ -201,10 +201,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setSPE(40);
 		// Modify Moves
-		// Removed Photon Geyser to test
-		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'Light of Ruin', 'Charge Beam', 'Prismatic Laser'];
+		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
-			console.log(move);
+			console.log(move)
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['light'] = 1;
 		}
 		const weightMoves = ['Grass Knot', 'Heavy Slam'];
