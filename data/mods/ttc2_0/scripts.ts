@@ -141,7 +141,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Starmie', this)
 			.abilities
 				.setAbility0('Illuminate');
-		new ModifyPokemon('Mr Mime', this)
+		new ModifyPokemon('MrMime', this)
 			.abilities
 				.setAbility0('Screen Cleaner');
 		new ModifyPokemon('Gyarados', this)
