@@ -737,4 +737,75 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon is immune to Electric-type moves and raises its Speed by 2 stages when hit by an Electric-type move.",
 		shortDesc: "This Pokemon's Speed is raised 2 stages if hit by an Electric move; Electric immunity;",
 	},
+	mummy: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			const sourceAbility = source.getAbility();
+			if (sourceAbility.isPermanent || sourceAbility.id === 'mummy') {
+				const oldAbility = source.setAbility('mummy', target);
+				if(oldAbility) {
+					this.add('-activate', target, 'ability: Mummy', this.dex.abilities.get(oldAbility).name, '[of] ' + source);
+					target.addVolatile('partiallytrapped');
+				}
+			}
+		},
+		desc: "Contact with this Pokemon spreads this ability and applies Wrap to the Attacker.",
+		shortDesc: "Contact with this Pokemon spreads this ability and applies Wrap to the Attacker.",
+	},
+	myceliummight: {
+		inherit: true,
+		// Status condition inflicition is implemented in sim/pokemon.ts:#setStatus
+		onModifyMove (move, source, target) {
+			if (move.category === 'Status') {
+				move.accuracy = true;
+			}
+		},
+		desc: "Status moves always go last, but always hit regardless of typing or ability",
+		shortDesc: "Status moves always go last, but always hit regardless of typing or ability"
+	},
+	noguard: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			return this.boost({ atk: 1});
+		},
+		desc: "Every moves used by or against the Pokemon will always hit. If the user is hit by a move, it's Attack will raise by 1 stage.",
+		shortDesc: "Every move used by or against this Pokemon always hit. If hit, Attack is raised by 1 stage."
+	},
+	normalize: {
+		inherit: true,
+		onBasePower(basePower, pokemon, target, move) {
+			if(move.typeChangerBoosted === this.effect) return this.chainModify(1.5);
+		},
+		desc: "This Pokemon's moves are changed to be Normal type and have their power multiplied by 1.5. This effect comes before other effects that change a move's type.",
+		shortDesc: "This Pokemon's moves are changed to be Normal type and have 1.5x power.",
+	},
+	oblivious: {
+		inherit: true,
+		onUpdate: undefined,
+		onImmunity: undefined,
+		onTryHit: undefined,
+		onTryBoost: undefined,
+		onAfterMove(source, target, move) {
+			move.pp += 1;
+		},
+		desc: "This ability allow PP to not be consumed when using a move.",
+		shortDesc: "This ability allow PP to not be consumed when using a move.",
+	},
+	overcoat: {
+		inherit: true,
+		onModifyDefPriority: 5,
+		onModifyDef(def, attacker, defender, move) {
+			if(this.field.isWeather('sandstorm')) {
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpDPriority: 5,
+		onModifySpD(def, attacker, defender, move) {
+			if(this.field.isWeather('sandstorm')) {
+				return this.chainModify(1.2);
+			}
+		},
+		desc: "",
+		shortDesc: "Immune to Powder/Snow/Sand;If in Sandstorm, Def and SpD. are increased by 1.2x",
+	}
 };

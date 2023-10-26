@@ -786,6 +786,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onModifyMove(move, pokemon, target) {
 			if (pokemon.types.includes('Grass')) move.accuracy = true;
 		},
+		onTryImmunity(target) {
+			let sources = target.adjacentFoes()
+			for(let source of sources) {
+				// This is for the ability Mycelium Might
+				if(source.hasAbility('myceliummight')) {
+					return false;
+				} else return !target.hasType('Grass');
+			}
+		}
 	},
 	poisongas: {
 		inherit: true,
