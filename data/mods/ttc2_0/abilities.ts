@@ -807,5 +807,56 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		desc: "",
 		shortDesc: "Immune to Powder/Snow/Sand;If in Sandstorm, Def and SpD. are increased by 1.2x",
-	}
+	},
+	owntempo: {
+		inherit: true,
+		onUpdate: undefined,
+		onTryAddVolatile: undefined,
+		onHit: undefined,
+		onFoeModifyPriority(prior, source, target, move) {
+			move.priority = 0;
+		},
+		onModifyPriority(prior, source, target, move) {
+			move.priority = 0;
+		},
+		desc: "All priority moves used by this Pokemon or the opposing Pokemon will be placed on the 0 priority bracket.",
+		shortDesc: "All priority moves used by or against this pokemon will have 0 priority.",
+	},
+	pastelveil: {
+		inherit: true,
+		onStart: undefined,
+		onUpdate: undefined,
+		onAllySwitchIn: undefined,
+		onSetStatus: undefined,
+		onAllySetStatus: undefined,
+		onModifySpe(spe, pokemon) {
+			if(['psn', 'tox'].includes(pokemon.status)) {
+				return this.chainModify(1.5);
+			}
+		},
+		desc: "If this pokemon is poisoned, its speed is increased by 1.5x and will not receive damage from the poisoning.",
+		shortDesc: "If Poisoned, Speed increased by 1.5x; Immune to PSN and TOX Damage.",
+	},
+	pickpocket: {
+		inherit: true,
+		onFoeModifyDamage(damage, source, target, move) {
+			if(this.checkMoveMakesContact(move, target, source)) {
+				return this.chainModify(1.2);
+			}
+		},
+		onDamagingHit(damage, target, source, move) {
+			if(!this.checkMoveMakesContact(move, source, target)) return;
+			if(source.item) return;
+			const yourItem = target.takeItem(source);
+			if(!yourItem) return;
+			if(!source.setItem(yourItem)) {
+				target.item = yourItem.id // bypass setItem so we don't break choicelock or anything
+				return;
+			}
+			this.add('-item', source, yourItem, '[from] ability: Pickpocket', '[of] ' + target);
+		},
+		onAfterMoveSecondary: undefined,
+		desc: "When a Pokemon with this Ability is hit by a move that makes contact, the move will deal 1.2x more damage. The Pokemon will also steal the attacking Pokemon's item if not holding an item.",
+		shortDesc: "User takes 1.2x more damage when hit with a Contact Move; Steals the attacking Pokemon's Item if not holding one.",
+	},
 };
