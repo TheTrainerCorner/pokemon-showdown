@@ -217,6 +217,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		for (const move of disableMoves) {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['disable'] = 1;
 		}
+		const blastMoves = ['Aeroblast', 'Astral Barrage', 'Barb Barrage', 'Beak Blast', 'Chloroblast', 'Crag Blast', 'Population Bomb', 'Rock Blast', 'Seed Bomb', 'Sludge Bomb', 'Tera Blast', 'Barrage', 'Blast Burn', 'Egg Bomb', 'Magnet Bomb', 'Mud Bomb', 'Octazooka', 'Explosion', 'Self-Destruct', 'Syrup Bomb', 'Techno Blast'];
+		for (const move of blastMoves) {
+			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['blast'] = 1;
+		}
+		const pivotMoves = ['uturn', 'Flip Turn', 'Volt Turn', 'Baton Pass', 'Parting Shot'];
+		for (const move of pivotMoves) {
+			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['pivot'] = 1;
+		}
 		// #endregion
 	},
 };

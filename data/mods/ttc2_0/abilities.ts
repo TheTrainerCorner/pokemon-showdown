@@ -859,4 +859,243 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "When a Pokemon with this Ability is hit by a move that makes contact, the move will deal 1.2x more damage. The Pokemon will also steal the attacking Pokemon's item if not holding an item.",
 		shortDesc: "User takes 1.2x more damage when hit with a Contact Move; Steals the attacking Pokemon's Item if not holding one.",
 	},
+	pickup: {
+		inherit: true,
+		onResidualOrder: undefined,
+		onResidualSubOrder: undefined,
+		onResidual: undefined,
+		// Code is a modified court change
+		onStart(pokemon) {
+			const sideConditions = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
+			];
+			let success = false;
+			if(this.gameType === "freeforall") {
+				// random integer from 1-3 inclusive
+				const offset = this.random(3) + 1;
+				// the list of all sides in counterclockwise order
+				const sides = [this.sides[0], this.sides[2]!, this.sides[1], this.sides[3]!];
+				const temp: {[k: number]: typeof pokemon.side.sideConditions} = {0: {}, 1: {}, 2: {}, 3: {}};
+				for (const side of sides) {
+					for (const id in side.sideConditions) {
+						if(!sideConditions.includes(id)) continue;
+						temp[side.n][id] = side.sideConditions[id];
+						delete side.sideConditions[id];
+						const effectName = this.dex.conditions.get(id).name;
+						this.add('-sideend', side, effectName, '[silent]');
+						success = true;
+					}
+				}
+				for (let i = 0; i < 4; i++) {
+					const sourceSideConditions = temp[sides[i].n];
+					const targetSide = sides[(i + offset) % 4];
+					for (const id in sourceSideConditions) {
+						targetSide.sideConditions[id] = sourceSideConditions[id];
+						const effectName = this.dex.conditions.get(id).name;
+						let layers = sourceSideConditions[id].layers || 1;
+						for (; layers > 0; layers--) this.add('-sidestart', targetSide, effectName, '[silent]');
+					}
+				}
+			} else {
+				const sourceSideConditions = pokemon.side.sideConditions;
+				const targetSideConditions = pokemon.side.foe.sideConditions;
+				const sourceTemp: typeof sourceSideConditions = {};
+				const targetTemp: typeof targetSideConditions = {};
+				for (const id in sourceSideConditions) {
+					if (!sideConditions.includes(id)) continue;
+					sourceTemp[id] = sourceSideConditions[id];
+					delete sourceSideConditions[id];
+					success = true;
+				}
+				for (const id in targetSideConditions) {
+					if(!sideConditions.includes(id)) continue;
+					targetTemp[id] = targetSideConditions[id];
+					delete targetSideConditions[id];
+					success = true;
+				}
+				for (const id in sourceTemp) {
+					targetSideConditions[id] = sourceTemp[id];
+				}
+
+				// We will skip over adding the hazards to our side since we are only transfering them over.
+				this.add('-swapsideconditions');
+			}
+			if (!success) return false;
+			this.add('-activate', pokemon, 'ability: Pickup');
+		},
+		desc: "When switch-in, transfers any hazards on the user's side of the field to the opposing side.",
+		shortDesc: "When switch-in, transfers any hazards on the user's side to the opposing side.",
+	},
+	powerofalchemy: {
+		inherit: true,
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (["Fire", "Ice", "Electric"].includes(move.type)) {
+				return this.chainModify(1.2);
+			}
+		},
+		desc: "Powers up Fire, Ice, & Electirc type moves by 1.2x",
+		shortDesc: "Powers up Fire, Ice, & Electric type moves by 1.2x",
+	},
+	queenlymajesty: {
+		inherit: true,
+		onStart(pokemon) {
+			for (const foe of pokemon.side.foes()) {
+				foe.addVolatile('taunt');
+			}
+		},
+		desc: "Priority moves used by opposing Pokemon targeting this pokemon or its allies are prevented from having an effect. When switch-in, taunts all opposing pokemon.",
+		shortDesc: "This Pokemon taunts opposing Pokemon on switch-in, and Prevents the use of priority moves against this Pokemon.",
+	},
+	quickdraw: {
+		inherit: true,
+		onBasePowerPriority: 25,
+		onBasePower(basePower, attacker, defender, move) {
+			if(move.flags['blast']) {
+				this.debug('Quick Draw boost');
+				return this.chainModify(1.3);
+			}
+		},
+		desc: "Blast moves deal 1.3x more damage",
+		shortDesc: "Blast moves deal 1.3x more damage",
+	},
+	raindish: {
+		inherit: true,
+		onSwitchIn(pokemon) {
+			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
+				pokemon.heal(pokemon.baseMaxhp / 4);
+			}
+		},
+		desc: "If rain is activate, when the user switches out, the pokemon switching in, will heal 25% of their max hp.",
+		shortDesc: "If Rain; When switching out, the next Pokemon switching in will heal 25% of their max hp.",
+	},
+	receiver: {
+		inherit: true,
+		onAllyFaint: undefined,
+		onModifySpe(spe, pokemon) {
+			if (pokemon.hp == (pokemon.maxhp / 2)) {
+				this.chainModify(2);
+			}
+		},
+		desc: "Increases speed by 2x when the user is at 50% or less hp.",
+		shortDesc: "Speed increases by 2x when at 50% or less hp.",
+	},
+	rivalry: {
+		inherit: true,
+		onBasePowerPriority: undefined,
+		onBasePower: undefined,
+		onModifyDamage(dmg, source, target, move) {
+			for (const type of target.types) {
+				if (source.hasType(type)) {
+					return this.chainModify(1.2);
+				}
+			}
+		},
+		desc: "If the user shares a type with the Opposing Pokemon, it will deal 1.2x more damage",
+		shortDesc: "If user shares a type with the Opposing Pokemon, it will deal 1.2x more damage",
+	},
+	rockypayload: {
+		inherit: true,
+		onModifyAtkPriority: undefined,
+		onModifyAtk: undefined,
+		onModifySpAPriority: undefined,
+		onModifySpA: undefined,
+		onAnyDamage(damage, target, source, effect) {
+			if (effect && effect.name === 'Stealth Rock');
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Rock') {
+				move.accuracy = true;
+				if (!target.addVolatile('rockypayload')) {
+					this.add('-immune', target, '[from] ability: Rocky Payload');
+				}
+				return null;
+			}
+		},
+		onEnd(pokemon) {
+			pokemon.removeVolatile('rockypayload');
+		},
+		condition: {
+			noCopy: true,
+			onStart(target) {
+				this.add('-start', target, 'ability: Rocky Payload');
+			},
+			onModifyAtkPriority: 5,
+			onModifyAtk(atk, attacker, defender, move) {
+				if (move.type === 'Rock' && attacker.hasAbility('rockypayload')) {
+					this.debug('Rocky Payload boost');
+					return this.chainModify(1.5);
+				}
+			},
+			onModifySpAPriority: 5,
+			onModifySpA(atk, attacker, defender, move) {
+				if (move.type === 'Rock' && attacker.hasAbility('rockypayload')) {
+					this.debug('Rocky Payload boost');
+					return this.chainModify(1.5);
+				}
+			},
+			onEnd(target) {
+				this.add('-end', target, 'ability: Rocky Payload', '[silent]');
+			}
+		},
+		desc: "Immunity to Rock-type Moves and Stealth Rock. Powers up Rock-type moves if hit by a Rock-type move.",
+		shortDesc: "Immunity to Rock-type Moves and Stealth Rock. Powers up Rock-type moves if hit by a Rock-type move.",
+	},
+	runaway: {
+		inherit: true,
+		onModifyPriority(prioirty, pokemon, target, move) {
+			if (move?.flags['pivot']) return prioirty + 3;
+		},
+		desc: "All pivot moves have +3 priority.",
+		shortDesc: "All Pivot moves have +3 priority.",
+	},
+	sandspit: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			if(move.category === "Physical") {
+				// Set Sandstorm
+				this.field.setWeather('sandstorm');
+				// Lower Attack
+				this.boost({ atk: -1}, source);
+			}
+
+		},
+		desc: "If the user gets hit by a Physical move, a sandstorm is created, and the attacker's Attack will drop by 1 stage.",
+		shortDesc: "If hit by a Physical Move; Creates a Sandstorm; Lowers the Attacker's Attack by 1 stage.",
+	},
+	sandveil: {
+		inherit: true,
+		onImmunity: undefined,
+		onModifyAccuracy: undefined,
+		onModifyAccuracyPriority: undefined,
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if(effect.id === 'sandstorm') {
+				target.side.foe.addSideCondition('stealthrock');
+			}
+		},
+		desc: "If sandstorm is activated, Stealth Rock are placed on the opposing side.",
+		shortDesc: "If Sandstorm; Stealth Rock are placed on the opposing Side.",
+	},
+	seedsower: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			source.addVolatile('leechseed');
+		},
+		desc: "Applies Leech Seed to the Attacking Pokemon. This ability is under the rules of Leech Seed, meaning that it will fail if the Attacking Pokemon is a grass type, or already has leech seed.",
+		shortDesc: "Applies Leech Seed to the Attacking Pokemon.",
+	},
+	shedskin: {
+		inherit: true,
+		onResidual(pokemon) {
+			if(pokemon.hp && pokemon.status && this.randomChance(33, 100)) {
+				this.debug('shed skin');
+				this.add('-activate', pokemon, 'ability: Shed Skin');
+				pokemon.cureStatus();
+				this.boost({ spe: 1 }, pokemon);
+			}
+		},
+		desc: "This Pokemon has a 33% chance to have its non-volatile status condition cured at the end of each turn, and increases Speed by 1 stage.",
+		shortDesc: "This Pokemon has a 33% chance to cure its status at the end of each turn, and increase Speed by 1 stage.",
+	}
 };

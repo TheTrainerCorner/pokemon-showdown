@@ -29,6 +29,7 @@ interface MoveFlags {
 	bypasssub?: 1; // Ignores a target's substitute.
 	bite?: 1; // Power is multiplied by 1.5 when used by a Pokemon with the Ability Strong Jaw.
 	bullet?: 1; // Has no effect on Pokemon with the Ability Bulletproof.
+	blast?: 1; // Blast Moves. affected by Quick Draw.
 	cantusetwice?: 1; // The user cannot select this move after a previous successful use.
 	charge?: 1; // The user is unable to make a move between turns.
 	contact?: 1; // Makes contact.
@@ -55,6 +56,7 @@ interface MoveFlags {
 	nosleeptalk?: 1; // Cannot be selected by Sleep Talk.
 	peck?: 1; // Pecking Moves
 	pledgecombo?: 1; // Gems will not activate. Cannot be redirected by Storm Drain / Lightning Rod.
+	pivot?: 1; // Pivot moves. Affected by Run Away.
 	powder?: 1; // Has no effect on Pokemon which are Grass-type, have the Ability Overcoat, or hold Safety Goggles.
 	protect?: 1; // Blocked by Detect, Protect, Spiky Shield, and if not a Status move, King's Shield.
 	pulse?: 1; // Power is multiplied by 1.5 when used by a Pokemon with the Ability Mega Launcher.
