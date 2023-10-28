@@ -1001,7 +1001,9 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onModifySpAPriority: undefined,
 		onModifySpA: undefined,
 		onAnyDamage(damage, target, source, effect) {
-			if (effect && effect.name === 'Stealth Rock');
+			if (effect && effect.name === 'Stealth Rock') {
+				return false;
+			}
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Rock') {
@@ -1097,5 +1099,405 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		desc: "This Pokemon has a 33% chance to have its non-volatile status condition cured at the end of each turn, and increases Speed by 1 stage.",
 		shortDesc: "This Pokemon has a 33% chance to cure its status at the end of each turn, and increase Speed by 1 stage.",
-	}
+	},
+	// TODO: Need to test the different events to confirm which ones are needed.
+	shielddust: {
+		inherit: true,
+		onAnyDamage(damage, target, source, effect) {
+			const hazards = ['spikes', 'stealthrock'];
+			if (hazards.includes(effect.id)) {
+				return false;
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (['toxicspikes'].includes(effect.id)) {
+				return false;
+			}
+		},
+		desc: "Immunity to Entry Hazards; This Pokemon is not affected by the secondary effect of another Pokemon's attack.",
+		shortDesc: "Immune to Entry Hazards; This Pokemon is not affected by the secondary effect of another Pokemon's attack.",
+	},
+	snowcloak: {
+		inherit: true,
+		onModifyAccuracyPriority: undefined,
+		onModifyAccuracy: undefined,
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (['hail', 'snow'].includes(target.effectiveWeather())) {
+				target.side.addSideCondition('auroraveil');
+				this.add('-activate', target, 'ability: Snow Cloak');
+			}
+		},
+		desc: "If Snow is activate, The user will automatically set an Aurora Veil for 5 turns.",
+		shortDesc: "If Snow is active, this Pokemon will set Aurora Veil.",
+	},
+	solidrock: {
+		inherit: true,
+		onSourceModifyDamage(damage, source, target, move) {
+			if(target.getMoveHitData(move).typeMod > 0) {
+				this.debug('Solid Rock neutralize');
+				if (target.effectiveWeather() === 'sandstorm') {
+					return this.chainModify(0.50);
+				}
+				else return this.chainModify(0.75);
+			}
+		},
+		desc: "This Pokemon receives 3/4 damage from supereffective attacks. If Sand is active, the reduction becomes 1/2",
+		shortDesc: "If Sand is active, receives 1/2 damage from supereffective attacks, else 3/4 from supereffective attacks.",
+	},
+	stall: {
+		inherit: true,
+		onFractionalPriority: undefined,
+		onResidualOrder: 5,
+		onResidualSubOrder:3,
+		onAfterMove(source, target, move) {
+			if(!['Physical', 'Special'].includes(move.category)) {
+				this.effectState.canHeal = true;
+			} else this.effectState.canHeal = false;
+		},
+		onResidual(pokemon) {
+			if(pokemon.hp && this.effectState.canHeal) {
+				this.debug('stall');
+				this.add('-activate', pokemon, 'ability: Stall');
+				pokemon.heal(pokemon.maxhp / 16);
+			}
+		},
+		desc: "The user recovers 1/16th of it's Max HP at the end of the turn, if it used a Status move.",
+		shortDesc: "If used a Status move, heals 1/16th of Max HP at the end of the turn.",
+	},
+	stalwart: {
+		inherit: true,
+		onTryMove(attacker, defender, move) {
+			if (!move.flags['charge']) return;
+			this.attrLastMove('[still]');
+			this.addMove('-anim', attacker, move.name, defender);
+			return;
+		},
+		onModifyMove(move, pokemon, target) {
+			if (!move.flags['charge']) return;
+			move.pp -= 1;
+		},
+		desc: "Moves that require 2 turns to use, require 1 turn to use, but requires an extra PP.",
+		shortDesc: "Moves that require 2 turns to use, require 1 turn to use, but requires an extra PP.",
+	},
+	steadfast: {
+		inherit: true,
+		onFlinch: undefined,
+		onSwitchIn(pokemon) {
+			this.effectState.switchingIn = true;
+		},
+		onStart(pokemon) {
+			if (!this.effectState.switchingIn) return;
+			const target = pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position];
+			if (target) {
+				this.boost({ atk: target.positiveBoosts() }, pokemon);
+			}
+		},
+		desc: "Upon Switch-In, gains +1 atk boost per Positive Boost that the opposing Pokemon has.",
+		shortDesc: "Upon Switch-In, gains +1 ATK Boost per Positive Boost that the Opposing Pokemon has.",
+	},
+	stentch: {
+		inherit: true,
+		onModifyMovePriority: undefined,
+		onModifyMove: undefined,
+		onDamagingHit(damage, target, source, move) {
+			if (!this.checkMoveMakesContact(move, source, target)) return;
+			if (source && source !== target && source.hp && target.hp && move) {
+				if(!source.isActive || !this.canSwitch(source.side) || source.forceSwitchFlag || target.forceSwitchFlag) {
+					return;
+				}
+			}
+			if(this.runEvent('DragOut', source, target, move)) {
+				source.forceSwitchFlag = true;
+			}
+		},
+		desc: "If the opposing Pokemon hits the user with a Contact move, forces the Opposing Pokemon to be swapped with a random Pokemon.",
+		shortDesc: "If Hit by a Contact Move, Forces the Opposing Pokemon out.",
+	},
+	suctioncups: {
+		inherit: true,
+		onTakeItem(item, pokemon, source) {
+			if (!this.activeMove) throw new Error('Battle.activeMove is null');
+			if (!pokemon.hp || pokemon.item === 'stickybarb') return;
+			if ((source && source !== pokemon) || this.activeMove.id === 'knockoff') {
+				this.add('-activate', pokemon, 'ability: Suction Cups');
+				this.boost({spe: -1, def: 1, spd: 1}, pokemon);
+				return false;
+			}
+		},
+		onDragOut(pokemon) {
+			this.add('-activate', pokemon, 'ability: Suction Cups');
+			this.boost({spe: 1, def: 1, spd: 1}, pokemon);
+			return null;
+		},
+		desc: "This Pokemon can not lose its held item and connot be forced out. If attempted to be forced out this Pokemon will have its speed decreased by 1 stage by its defense and special defense will raise by 1 stage.",
+		shortDesc: "This Pokemon can not be Forced out or Lose its held item, if the opposing Pokemon tries, the user will loses 1 stage of Speed, but gains 1 stage of Def and SpD.",
+	},
+	swarm: {
+		inherit: true,
+		// TODO come back to this ability once I understand it more.
+	},
+	sweetveil: {
+		inherit: true,
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Sweet Veil', 'boost');
+					activated = true;
+				}
+				if(target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ evasion: -1}, target, pokemon, null, true);
+				}
+			}
+		},
+		desc: "Upon Switch-in, the opposing Pokemons' evasion will drop 1 stage. This Pokemon and It's allies cannot be put to sleep",
+		shortDesc: "Upon Switch-in, the opposing Pokemons' evasion will drop by 1 stage. The user's side can not be put to sleep.",
+	},
+	symbiosis: {
+		inherit: true,
+		onAllyAfterUseItem: undefined,
+		onAnyAfterMove(source, target, move) {
+			if (!target.hp || !source.hp) return; 
+			for (const targetMove of target.moveSlots) {
+				if (targetMove.id == move.id) {
+					this.attrLastMove('[still]');
+					this.addMove('-anim', target, move.name, source);
+					return;
+				}
+			}
+		},
+		// TODO: NEEDS TO BE HEAVILY TESTED
+		desc: "NEEDS TO BE TESTED ASAP",
+		shortDesc: "NEEDS TO BE TESTED ASAP",
+	},
+	tangledfeet: {
+		inherit: true,
+		onModifyMove(move, pokemon, target) {
+			if(!move.flags['kick']) return;
+
+			move.secondary = {
+				chance: 33,
+				status: 'par',
+			};
+		},
+		desc: "All kicking moves have a 33% chance to cause paralysis.",
+		shortDesc: "All kicking moves have a 33% chance to cause paralysis.",
+	},
+	tanglinghair: {
+		inherit: true,
+		onModifyMove(move, pokemon, target) {
+			if(!move.flags['contact']) return;
+			move.secondary = {
+				chance: 33,
+				status: 'par',
+			};
+		},
+		desc: "Contact moves has a 33% chance to paralysis.",
+		shortDesc: "Contact moves has a 33% chance to paralysis.",
+	},
+	telepathy: {
+		inherit: true,
+		// TODO: Implement move after getting clarification on the ability change.
+	},
+	teravolt: {
+		inherit: true,
+		onModifyMove(move) {
+			// Ignore Ability
+			move.ignoreAbility = true;
+
+			// Electric Immunity Removal
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Electric'] = true;
+			}
+		},
+		desc: "Ignores the ability of the opposing Pokemon; Electric-type moves can hit Ground-types.",
+		shortDesc: "Ignores the ability of the opposing Pokemon; Electric-type moves can hit Ground-types.",
+	},
+	toxicboost: {
+		inherit: true,
+		onDamage(damage, target, source, effect) {
+			if (effect.effectType === 'Move') return;
+			if (effect.effectType === 'Status' && ['psn', 'tox'].includes(effect.id)) {
+				return false;
+			}
+		},
+		desc: "While this Pokemon is poisoned, the power of its physical attacks is multiplied by 1.5; Also immune to the Poison Damage.",
+		shortDesc: "While this Pokemon is poisoned, its physical attacks have 1.5x power; Immune to poison damage.",
+	},
+	truant: {
+		inherit: true,
+		onModifyMove(move) {
+			if(move.flags['contact']) delete move.flags['protect'];
+		},
+		desc: "This Pokemon skips every other turn instead of using a move excpet for healing moves. Moves also always bypasses protection.",
+		shortDesc: "This Pokemon skips every other turn instead of using a move except for healing moves. Moves bypasses protection.",
+	},
+	turboblaze: {
+		inherit: true,
+		onModifyMove(move) {
+			// Ignore Abilities
+			move.ignoreAbility = true;
+		},
+		onBasePower(num, source, target, move) {
+			if(move.type === 'Fire') {
+				return this.chainModify(1.2);
+			}
+		},
+		desc: "Ignores the ability of Opposing Pokemon; Fire-type moves have 1.2x more power, regardless of weather.",
+		shortDesc: "Ignores the ability of Opposing Pokemon; Fire-type moves have 1.2x more power, regardless of weather.",
+	},
+	unnerve: {
+		inherit: true,
+		onPreStart: undefined,
+		onEnd: undefined,
+		onFoeTryEatItem: undefined,
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if(!activated) {
+					this.add('-ability', pokemon, 'Unnerve', 'boost');
+					activated = true;
+				}
+				if(target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ spa: -1 }, target, pokemon, null, true);
+				}
+			}
+		},
+		desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage.",
+		shortDesc: "On switch-in, this Pokemon lowers the Special Attack of opponents by 1 stage.",
+	},
+	vitalspirit: {
+		inherit: true,
+		onUpdate: undefined,
+		onSetStatus: undefined,
+		onTryAddVolatile: undefined,
+		onDamagingHit(damage, target, source, effect) {
+			this.boost({ atk: 1 });
+		},
+		desc: "This Pokemon's Attack is raised by 1 stage after it is damaged by a move.",
+		shortDesc: "This Pokemon's Special Attack is raised by 1 stage after it is damaged by a move.",
+	},
+	wanderingspirit: {
+		inherit: true,
+		onDamagingHit: undefined,
+		onStart(pokemon) {
+			this.field.addPseudoWeather('trickroom');
+		},
+		desc: "Upon switch-in, Trick Room is activated!",
+		shortDesc: "Upon switch-in, Trick Room is activated!",
+	},
+	waterveil: {
+		inherit: true,
+		onUpdate: undefined,
+		onSetStatus: undefined,
+		onModifySpD(def, target, source, move) {
+			if (!['raindance', 'primordialsea'].includes(this.field.effectiveWeather())) return;
+			return this.chainModify(1.5);
+		},
+		desc: "This Pokemon gains 1.5x Special Defense while Rain is Active.",
+		shortDesc: "This Pokemon gains 1.5x Special Defense while Rain is Active.",
+	},
+	whitesmoke: {
+		inherit: true,
+		onTryBoost: undefined,
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-activate', pokemon, 'ability: White Smoke');
+					activated = true;
+				}
+				if(target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					target.addVolatile('torment');
+				}
+			}
+		},
+		desc: "Upon Switch-in, Applies Torment to opposing Pokemon.",
+		shortDesc: "Upon Switch-in, Applies Torment to opposing Pokemon.",
+	},
+	wonderskin: {
+		inherit: true,
+		onModifyAccuracyPriority: undefined,
+		onModifyAccuracy: undefined,
+		onFoeModifyMove(move, pokemon, target) {
+			if (!(move.secondary || move.secondaries)) return;
+			if(move.secondary && move.secondary.chance) {
+				move.secondary.chance = Math.floor(move.secondary.chance / 2);
+			}
+			if(move.secondaries) {
+				for (const sec of move.secondaries) {
+					if (sec.chance) {
+						sec.chance = Math.floor(sec.chance / 2);
+					}
+				}
+			}
+		},
+		desc: "Any moves against this Pokemon will have their chance of secondary effects halved.",
+		shortDesc: "Any moves against this Pokemon will have their chance of secondary effects halved.",
+	},
+	// New Abilities
+	allergies: {
+		name: "Allergies",
+		desc: "If hit with a powder move, Special Attack is drastically boosted (3 Stages)",
+		shortDesc: "If hit with a powder move, Special Attack is drastically boosted (3 Stages)",
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (move.flags['powder'] && target !== source && this.dex.getImmunity('powder', target)) {
+				this.boost({ spa: 3});
+			}
+		},
+		rating: 2,
+		num: -2001,
+	},
+	// TODO: Implement ability after getting clarification on it.
+	coldblooded: {
+		name: "Cold-Blooded",
+		rating: 3,
+		num: -2002,
+		desc: "",
+		shortDesc: "",
+	},
+	emulate: {
+		name: "Emulate",
+		desc: "Copies the ability of the Pokemon that it's being switched in with.",
+		shortDesc: "Copies the ability of the Pokemon it's being switched in with.",
+		onAllySwitchOut(pokemon) {
+			if (!this.effectState.target.hp) return;
+			const ability = pokemon.getAbility();
+			const additionalBannedAbilities = [
+				'noability'
+			];
+			if (pokemon.getAbility().isPermanent || additionalBannedAbilities.includes(pokemon.ability)) return;
+			if (this.effectState.target.setAbility(ability)) {
+				this.add('-ability', this.effectState.target, ability, '[from] ability: Emulate', '[of] ' + pokemon);
+			}
+ 		}
+	},
+	fieldsupport: {
+		name: "Field Support",
+		desc: "Multi-turn field move last 8 turns",
+		shortDesc: "Multi-turn field move last 8 turns",
+		onModifyMove(move) {
+			if (move.pseudoWeather) {
+				if (move.condition) {
+					move.condition.duration = 8;
+				}
+			}
+			if (move.sideCondition) {
+				if(move.condition) {
+					if(move.condition.duration) {
+						move.condition.duration = 8;
+					}
+				}
+			}
+		},
+	},
 };

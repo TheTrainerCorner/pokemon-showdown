@@ -810,7 +810,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	// New Moves
 	cragblast: {
-		num: -1,
+		num: -2001,
 		accuracy: 100,
 		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
@@ -830,5 +830,69 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		maxMove: {basePower: 140},
 		desc: "Hits three times. Power increases to 40 for the second hit and 60 for the third. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit three times.",
 		shortDesc: "Hits 3 times. Each hit can miss, but power rises.",
+	},
+	glacier: {
+		num: -2002,
+		accuracy: 100,
+		basePower: 125,
+		pp: 16,
+		category: "Physical",
+		type: "Ice",
+		name: "Glacier",
+		priority: 0,
+		flags: {contact: 1, charge: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (['hail', 'snow'].includes(attacker.effectiveWeather())) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		contestType: "Cool",
+		desc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
+		shortDesc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
+	},
+	coldsnap: {
+		num: -2003,
+		accuracy: 100,
+		basePower: 120,
+		pp: 16,
+		category: "Special",
+		type: "Ice",
+		name: "Cold Snap",
+		priority: 0,
+		flags: {contact: 1, charge: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (['hail', 'snow'].includes(attacker.effectiveWeather())) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		contestType: "Cool",
+		desc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
+		shortDesc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
 	},
 };
