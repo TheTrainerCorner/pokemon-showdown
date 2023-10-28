@@ -407,7 +407,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		for (const move of blastMoves) {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['blast'] = 1;
 		}
-		const pivotMoves = ['uturn', 'Flip Turn', 'Volt Turn', 'Baton Pass', 'Parting Shot'];
+		const pivotMoves = ['uturn', 'flipturn', 'voltswitch', 'batonpass', 'partingshot'];
 		for (const move of pivotMoves) {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['pivot'] = 1;
 		}
