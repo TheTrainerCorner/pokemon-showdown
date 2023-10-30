@@ -48,5 +48,5 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3.5,
 		num: -201,
 		shortDesc: "When this Pokemon is sent out automatically activates trick or treat. Also combine tangling hair into this ability.",
-	}
+	},
 }
