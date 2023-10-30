@@ -39,4 +39,24 @@ export const Pokedex: {[speciesid: string]: ModdedSpeciesData} = {
 		evoItem: "Water Stone",
 		eggGroups: ["Amorphous"],
 	},
+	gourgeist: {
+		inherit: true,
+		otherFormes: ["Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super", "Gourgeist-Mega"],
+		formeOrder: ["Gourgeist", "Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super", "Gourgeist-Mega"],
+	},
+	gourgeistmega: {
+		num: 0,
+		name: "Gourgeist-Mega",
+		baseSpecies: "Gourgeist",
+		forme: "Mega",
+		types: ["Grass", "Ghost"],
+		gender: "N",
+		baseStats: {hp: 65, atk: 100, def: 122, spa: 133, spd: 105, spe: 54},
+		abilities: {0: "Eerie Cry"},
+		heightm: 0.9,
+		weightkg: 12.5,
+		color: "Black",
+		eggGroups: ["Undiscovered"],
+		requiredItem: "Gourgeisite",
+	}
 }
