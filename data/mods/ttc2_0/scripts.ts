@@ -1,7 +1,7 @@
 import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
 
 export const Scripts: ModdedBattleScriptsData = {
-	inherit: 'gen9ttc',
+	inherit: 'ttc1_2',
 	init() {
 		// #region 2.0.0
 		// Modify Pokemon
