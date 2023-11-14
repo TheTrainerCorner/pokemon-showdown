@@ -13,6 +13,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Venusaur-Mega', this)
 			.baseStats
 				.setHP(90);
+		new ModifyPokemon('Charizard-MegaX', this)
+			.baseStats
+				.setDEF(116);
+		new ModifyPokemon('Charizard-MegaY', this)
+			.baseStats
+				.setDEF(83);
 		new ModifyPokemon('Beedrill', this)
 			.baseStats
 				.setATK(110)
@@ -51,6 +57,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(105)
 			.pokemon.learnset
 				.add('Spin Out');
+		new ModifyPokemon('Clefable', this)
+			.abilities
+				.setAbility0('Own Tempo');
 		new ModifyPokemon('Ninetales', this)
 			.baseStats
 				.setHP(83)
@@ -61,6 +70,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add('Nasty Plot')
 				.add('Infernal Parade', 9);
+		new ModifyPokemon('Crobat', this)
+			.abilities
+				.setAbility0('Inner Focus');
+		new ModifyPokemon('Vileplume', this)
+			.abilities
+				.setAbility0('Flower Veil');
 		new ModifyPokemon('Venomoth', this)
 			.abilities
 				.setHiddenAbility('Toxic Chain')
@@ -72,6 +87,22 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Sludge Wave')
 				.add('Toxic Thread')
 				.remove('Sleep Powder');
+		new ModifyPokemon('Primeape', this)
+			.abilities
+				.setAbility1('Berserk')
+			.pokemon.baseStats
+				.setHP(75)
+				.setDEF(70)
+				.setSPD(80);
+		new ModifyPokemon('Arcanine', this)
+			.abilities
+				.setAbility1('Ball Fetch');
+		new ModifyPokemon('Alakazam', this)
+			.abilities
+				.setAbility0('Forewarn');
+		new ModifyPokemon('Tentacruel', this)
+			.abilities
+				.setAbility0('Rain Dish');
 		new ModifyPokemon('Rapidash', this)
 			.baseStats
 				.setATK(105)
@@ -83,6 +114,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(105)
 			.pokemon.learnset
 				.remove('Cosmic Power');
+		new ModifyPokemon('Dewgong', this)
+			.abilities
+				.setAbility1('Hydration');
 		new ModifyPokemon('Muk', this)
 			.baseStats
 				.setATK(105)
@@ -95,7 +129,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(60)
 				.setATK(95);
 		new ModifyPokemon('Hypno', this)
-			.baseStats
+			.abilities
+				.setAbility0('Forewarn')
+			.pokemon.baseStats
 				.setSPE(77);
 		new ModifyPokemon('Electrode', this)
 			.baseStats
@@ -105,6 +141,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setSPA(100)
 				.setSPE(150);
+		new ModifyPokemon('Marowak', this)
+			.abilities
+				.setHiddenAbility('Battle Armor');
 		new ModifyPokemon('Hitmonlee', this)
 			.baseStats
 				.setSPE(66);
@@ -150,6 +189,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('MrMime', this)
 			.abilities
 				.setAbility0('Screen Cleaner');
+		new ModifyPokemon('Jynx', this)
+			.abilities
+				.setAbility0('Snow Cloak');
+		new ModifyPokemon('Pinsir', this)
+			.abilities
+				.setAbility0('Berserk');
 		new ModifyPokemon('Gyarados', this)
 			.learnset
 				.add('Dual Chop')
@@ -158,35 +203,64 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility1('Illuminate');
 		// Gen 2
+		new ModifyPokemon('Furret', this)
+			.abilities
+				.setHiddenAbility('Run Away');
+		new ModifyPokemon('Noctowl', this)
+			.abilities
+				.setAbility0('Early Bird');
+		new ModifyPokemon('Ariados', this)
+			.abilities
+				.setAbility1('Toxic Chain');
+		new ModifyPokemon('Xatu', this)
+			.abilities
+				.setAbility0('Forewarn');
+		new ModifyPokemon('Bellossom', this)
+			.abilities
+				.setAbility1('Flower Veil');
+		new ModifyPokemon('Jumpluff', this)
+			.abilities
+				.setAbility0('Leaf Guard');
+		new ModifyPokemon('Sunflora', this)
+			.baseStats
+				.setSPA(130)
+				.setSPE(68);
+		new ModifyPokemon('Murkrow', this)
+			.abilities
+				.setAbility0('Early Bird');
 		new ModifyPokemon('Qwilfish', this)
 			.abilities
 				.setAbility1('Toxic Debris');
-		
 		new ModifyPokemon('Magcargo', this)
 			.abilities
 				.setAbility0('Magma Armor');
-
 		new ModifyPokemon('Corsola', this)
 			.learnset
 				.add('Salt Cure');
-		
 		new ModifyPokemon('Houndoom', this)
 			.abilities
 				.setAbility0('Ball Fetch');
-		
 		new ModifyPokemon('Houndoom-Mega', this)
 			.baseStats
 				.setSPE(120);
-		
+		new ModifyPokemon('Entei', this)
+			.baseStats
+				.setDEF(100)
+				.setSPA(85)
+				.setSPD(85)
+				.setSPE(100)
+			.pokemon.learnset
+				.remove('Eruption');
 		new ModifyPokemon('Suicune', this);
-
+		
+		new ModifyPokemon('Raikou', this)
+			.learnset
+				.remove('Rising Voltage');
 		// Gen 3
-
 		new ModifyPokemon('Sceptile-Mega', this)
 			.baseStats
 				.setDEF(80)
 				.setSPD(90);
-		
 		new ModifyPokemon('Blaziken-Mega', this)
 			.baseStats
 				.setATK(150)
@@ -194,15 +268,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(135)
 				.setSPD(85)
 				.setSPE(95);
-		
 		new ModifyPokemon('Mightyena', this)
 			.abilities
 				.setAbility1('Ball Fetch');
-		
+		new ModifyPokemon('Gardevoir', this)
+			.abilities
+				.setHiddenAbility('Aura Break');
 		new ModifyPokemon('Delcatty', this)
 			.abilities
-				.setAbility0('Pickup');
-		
+				.setAbility0('Normalize');
 		new ModifyPokemon('Sableye-Mega', this)
 			.baseStats
 				.setSPE(40);
@@ -219,15 +293,31 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Illumise', this)
 			.baseStats
 				.setATK(90);
+		new ModifyPokemon('Roselia', this)
+			.abilities
+				.setAbility0('Flower Veil');
+		new ModifyPokemon('Roserade', this)
+			.abilities
+				.setAbility0('Flower Veil');
 		new ModifyPokemon('Camerupt-Mega', this)
 			.baseStats
 				.setHP(90);
+		new ModifyPokemon('Cacturne', this)
+			.abilities
+				.setAbility1('Sand Veil');
 		new ModifyPokemon('Seviper', this)
 			.abilities
 				.setAbility1('Cold-Blooded');
 		new ModifyPokemon('Chimecho', this)
 			.baseStats
 				.setSPE(108);
+		new ModifyPokemon('Whiscash', this)
+			.abilities
+				.setAbility1('Anticipation')
+			.pokemon.baseStats
+				.setATK(78)
+				.setSPD(81)
+				.setSPE(75);
 		new ModifyPokemon('Absol-Mega', this)
 			.baseStats
 				.setSPA(125);
@@ -244,7 +334,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(100)
 				.setSPE(115);
 		new ModifyPokemon('Metagross', this)
-			.baseStats
+			.abilities
+				.setHiddenAbility('Full Metal Body')
+			.pokemon.baseStats
 				.setSPA(70);
 		new ModifyPokemon('Metagross-Mega', this)
 			.baseStats
@@ -265,6 +357,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(89)
 				.setDEF(80)
 				.setSPD(80);
+		new ModifyPokemon('Rampardos', this)
+			.abilities
+				.setHiddenAbility('Mold Breaker');
+		new ModifyPokemon('Ambipom', this)
+			.abilities
+				.setAbility1('Pickup');
+		new ModifyPokemon('Drifblim', this)
+			.abilities
+				.setAbility0('Rocky Payload');
 		new ModifyPokemon('Lopunny', this)
 			.abilities
 				.setHiddenAbility('Pickup');
@@ -280,6 +381,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Power of Alchemy')
 			.pokemon.baseStats
 				.setSPE(74);
+		new ModifyPokemon('Chatot', this);
+		// Implemented in pokedex.ts
 		new ModifyPokemon('Garchomp', this)
 			.baseStats
 				.setSPE(92);
@@ -287,6 +390,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(110)
 				.setSPD(90);
+		new ModifyPokemon('Lucario', this)
+			.abilities
+				.setAbility0('Aura Break');
 		new ModifyPokemon('Lucario-Mega', this)
 			.baseStats
 				.setATK(125)
@@ -296,12 +402,19 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Lumineon', this)
 			.learnset
 				.add('Recover');
+		new ModifyPokemon('Abomasnow', this)
+			.abilities
+				.setAbility1('Snow Cloak');
 		new ModifyPokemon('Abomasnow-Mega', this)
 			.baseStats
 				.setATK(142)
 				.setSPA(137)
 				.setSPD(110)
 				.setSPE(40);
+		new ModifyPokemon('Magmortar', this)
+			.abilities
+				.setAbility1('Magma Armor');
+		new ModifyPokemon('Mamoswine', this);
 		new ModifyPokemon('Gallade', this)
 			.baseStats
 				.setATK(115)
@@ -316,6 +429,43 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Rotom-Frost', this)
 			.baseStats
 				.setHP(70);
+		new ModifyPokemon('Rotom-Fan', this)
+			.learnset
+				.remove('Boomburst');
+		new ModifyPokemon('Uxie', this)
+			.abilities
+				.setHiddenAbility('Knowledge')
+			.pokemon.baseStats
+				.setHP(105)
+				.setATK(60)
+				.setSPA(100)
+				.setSPE(75)
+			.pokemon.learnset;
+		new ModifyPokemon('Mesprit', this)
+			.types
+				.setType('Psychic', 'Fairy')
+			.pokemon.abilities
+				.setHiddenAbility('Emotion')
+			.pokemon.baseStats
+				.setATK(115)
+				.setDEF(100)
+				.setSPA(115)
+				.setSPD(100)
+				.setSPE(90)
+			.pokemon.learnset;
+		new ModifyPokemon('Azelf', this)
+			.types
+				.setType('Psychic', 'Fighting')
+			.pokemon.abilities
+				.setHiddenAbility('Willpower')
+			.pokemon.baseStats
+				.setATK(130)
+				.setDEF(75)
+				.setSPA(130)
+				.setSPD(75)
+			.pokemon.learnset
+				.add('Focus Punch')
+				.add('Focus Blast');
 		// Gen 5
 		new ModifyPokemon('Garbodor', this)
 			.abilities
@@ -370,16 +520,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Delta Stream')
 			.pokemon.baseStats
 				.setSPA(97);
-		new ModifyPokemon('Melmetal', this)
-			.baseStats
-				.setHP(125)
-				.setATK(132)
-				.setDEF(133)
-				.setSPA(40)
-				.setSPD(55)
-				.setSPE(24)
-			.pokemon.learnset
-				.add('Meteor Mash');
+		new ModifyPokemon('Melmetal', this);
 		// Gen 8
 
 		// Gen 9

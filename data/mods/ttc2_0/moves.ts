@@ -895,4 +895,42 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
 		shortDesc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
 	},
+	swarm: {
+		num: 10008,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Swarm Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: 'swarmterrain',
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if(source.hasItem('terrainextender')) return 8;
+				return 5;
+			},
+			onFoeTryMove(target, source, move) {
+				const swarmHolder = this.effectState.target;
+				if((source.isAlly(swarmHolder) || move.target === 'all') && move.boosts !== undefined) {
+					this.attrLastMove('[still]');
+					this.add('cant', swarmHolder, 'ability: Swarm', move, '[of] ' + target);
+					return false;
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if(effect.effectType === 'Ability') {
+					this.add('-fieldstart', 'ability: Swarm', '[of] ' + source);
+				}
+			},
+			onFieldEnd() {
+				this.add('-fieldend', 'ability: Swarm');
+			}
+		},
+		secondary: null,
+		target: "all",
+		type: "Bug",
+		contestType: "Beautiful",
+	},
 };

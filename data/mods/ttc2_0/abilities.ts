@@ -1235,7 +1235,10 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	swarm: {
 		inherit: true,
-		// TODO come back to this ability once I understand it more.
+		onStart(pokemon) {
+			this.field.setTerrain('swarmterrain');
+		},
+		shortDesc: "Sets up a terrain the prevents the other side from using Boosting Moves.",
 	},
 	sweetveil: {
 		inherit: true,
@@ -1300,7 +1303,22 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	telepathy: {
 		inherit: true,
-		// TODO: Implement move after getting clarification on the ability change.
+		onAllyTryHitSide(target, source, move) {
+			this.add('-immune', this.effectState.target, '[from] ability: Telepathy');
+		},
+		onTryHit(target, source, move) {
+			if (target === source) return;
+			const moveList = target.moveSlots;
+
+			for (const _move of moveList) {
+				if (move.id === _move.id) {
+					this.add('-immune', target, '[from] ability: Telepathy');
+					return null;
+				}
+			}
+		},
+		desc: undefined,
+		shortDesc: "Takes No Damage From Allies; Takes no Damage if shares the move that is being used against it.",
 	},
 	teravolt: {
 		inherit: true,
@@ -1459,11 +1477,36 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	// TODO: Implement ability after getting clarification on it.
 	coldblooded: {
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Thick Fat weaken');
+				return this.chainModify(0.5);
+			}
+			else if (move.type === 'Ice') {
+				this.debug('Thick Fat strengthen');
+				return this.chainModify(1.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Thick Fat weaken');
+				return this.chainModify(0.5);
+			}
+			else if (move.type === 'Ice') {
+				this.debug('Thick Fat strengthen');
+				return this.chainModify(1.5);
+			}
+		},
+		onSourceAfterMove(source, target, move) {
+			if (move.type === "Fire") return this.boost({ spe: 1 }, target, source, move);
+			else if (move.type === "Ice") return this.boost({ spe: -1 }, target, source, move);
+		},
 		name: "Cold-Blooded",
 		rating: 3,
 		num: -2002,
-		desc: "",
-		shortDesc: "",
+		shortDesc: "Hit by Fire-type Moves=+1 Spe, Takes 1/2 damage; Hit by Ice-type Moves=-1 Spe, Takes 1.5x damage.",
 	},
 	emulate: {
 		name: "Emulate",
@@ -1500,4 +1543,64 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			}
 		},
 	},
+	gravecounter: {
+		onTryHit(target, source, move) {
+			if(!target.runImmunity(move.type)) {
+				this.damage((source.maxhp / 16), source, target);
+				return false;
+			}
+		},
+		name: "Grave Counter",
+		shortDesc: "When this Pokemon is attacked by a move it is immune to, deal 1/16th of the attacker's max Hp to the attacker.",
+		rating: 2.0,
+	},
+	hauntedlight: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === "Ghost") {
+				this.debug('Haunted Light boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === "Ghost") {
+				this.debug('Haunted Light boost');
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Haunted Light",
+		shortDesc: "Increase Atk and Sp.Atk by 1.5 when using a Ghost-type move.",
+		rating: 4,
+	},
+
+	// New Trio Abilities
+	knowledge: {
+
+		onBasePowerPriority: 21,
+		onBasePower(basePower, pokemon, target, move) {
+			// Analytic
+			let boosted = true;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (this.queue.willMove(target)) {
+					boosted = false;
+					break;
+				}
+			}
+			if (boosted) {
+				this.debug('Knowledge boost');
+				this.chainModify([5325, 4096]);
+			}
+			// Power of Alchemy
+			if (["Fire", "Ice", "Electric"].includes(move.type)) {
+				return this.chainModify(1.2);
+			}
+		},
+
+		name: "Knowledge",
+		shortDesc: "Analytic + Power of Alchemy",
+		rating: 4,
+	},
+
 };
