@@ -571,6 +571,34 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon and it's allies will have its status cured at the end of the turn.",
 		shortDesc: "This Pokemon and it's allies will have its status cured at the end of the turn.",
 	},
+	heatproof: {
+		inherit: true,
+		onSourceModifyAtkPriority: undefined,
+		onSourceModifyAtk: undefined,
+		onSourceModifySpAPriority: undefined,
+		onSourceModifySpA: undefined,
+		onDamage: undefined,
+		// Immune to Fire-type moves
+		onTryHit(target, source, move) {
+			if (!(target !== source && move.type === 'Fire')) return;
+			this.add('-immune', target, '[from] ability: Heatproof');
+			return null;
+		},
+		// Immune to Burn
+		onUpdate(pokemon) {
+			if (pokemon.status !== 'brn') return;
+			this.add('-activate', pokemon, 'ability: Heatproof');
+			pokemon.cureStatus();
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'brn') return;
+			if ((effect as Move).status) {
+				this.add('-immune', target, '[from] ability: Heatproof');
+			}
+		},
+		desc: undefined,
+		shortDesc: "Immune to Fire; Cannont be burned.",
+	},
 	heavymetal: {
 		inherit: true,
 		onModifyWeight: undefined,
@@ -583,6 +611,29 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		desc: "All weight based moves will do 1.3x damage.",
 		shortDesc: "All Weight-based Moves will do 1.3x more damage.",
+	},
+	hospitality: {
+		inherit: true,
+		onStart(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4, pokemon, pokemon);
+			for (const ally of pokemon.adjacentAllies()) {
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
+			}
+		},
+		desc: undefined,
+		shortDesc: "On Switch-in, restores allies and the user's HP by 1/4",
+	},
+	hustle: {
+		inherit: true,
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, source, target, move) {
+			if(move.accuracy !== 100) return this.modify(1.1, atk);
+			else return this.modify(1.5, atk);
+		},
+		onSourceModifyAccuracyPriority: undefined,
+		onSourceModifyAccuracy: undefined,
+		desc: undefined,
+		shortDesc: "Boost Atk by 1.1x, but moves that are not 100% accurate, boosts Atk by 1.5x.",
 	},
 	hydration: {
 		inherit: true,
