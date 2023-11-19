@@ -1063,7 +1063,7 @@ export abstract class BasicRoom {
 			if (!time || time < 5) {
 				throw new Error(`Invalid time setting for automodchat (${Utils.visualize(this.settings.autoModchat)})`);
 			}
-			if (this.modchatTimer) clearTimeout(this.modchatTimer);
+			if (this.modchatTimer) return;
 			this.modchatTimer = setTimeout(() => {
 				if (!this.settings.autoModchat) return;
 				const {rank} = this.settings.autoModchat;
@@ -1080,6 +1080,7 @@ export abstract class BasicRoom {
 				// automodchat will always exist
 				this.settings.autoModchat.active = oldSetting || true;
 				this.saveSettings();
+				this.modchatTimer = null;
 			}, time * 60 * 1000);
 		}
 	}
@@ -1489,6 +1490,8 @@ export class GlobalRoomState {
 			const ruleTable = Dex.formats.getRuleTable(format);
 			const level = ruleTable.adjustLevel || ruleTable.adjustLevelDown || ruleTable.maxLevel;
 			if (level === 50) displayCode |= 16;
+			 // 32 was previously used for Multi Battles
+			if (format.bestOfDefault) displayCode |= 64;
 			this.formatList += ',' + displayCode.toString(16);
 		}
 		return this.formatList;
