@@ -17,5 +17,24 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		eggGroups: ["Water 1", "Field"],
 		requiredItem: "Inteleonite",
+	},
+	granbull: {
+		inherit: true,
+		otherFormes: ["Granbull-Mega"],
+		formeOrder: ["Granbull", "Granbull-Mega"],
+	},
+	granbullmega: {
+		num: 210,
+		name: "Granbull-Mega",
+		baseSpecies: "Granbull",
+		forme: "Mega",
+		types: ["Fairy", "Dark"],
+		baseStats: {hp: 90, atk: 163, def: 107, spa: 47, spd: 78, spe: 106},
+		abilities: {0: "Berserk"},
+		heightm: 1.4,
+		weightkg: 48.7,
+		color: "Purple",
+		eggGroups: ["Field", "Fairy"],
+		requiredItem: "Granbulite",
 	}
 };

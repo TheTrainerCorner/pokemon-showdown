@@ -74,6 +74,50 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Nidoqueen', this)
 				.baseStats
 					.setSPA(101);
+			new ModifyPokemon('Clefable', this)
+				.abilities
+					.setAbility0('Own Tempo');
+			new ModifyPokemon('Ninetales', this)
+				.baseStats
+					.setHP(83)
+					.setATK(67)
+					.setDEF(85)
+					.setSPD(110)
+					.setSPE(109)
+				.pokemon.learnset
+					.add('Nasty Plot')
+					.add('Infernal Parade');
+			new ModifyPokemon('Crobat', this)
+				.abilities
+					.setAbility0('Unnerve')
+				.pokemon.baseStats
+					.setHP(90)
+					.setATK(121)
+					.setDEF(89)
+					.setSPA(60)
+					.setSPD(93)
+					.setSPE(148);
+			new ModifyPokemon('Vileplume', this)
+				.abilities
+					.setAbility0('Flower Veil')
+				.pokemon.baseStats
+					.setHP(85)
+					.setDEF(95)
+					.setSPD(100);
+			new ModifyPokemon('Parasect', this)
+				.abilities
+					.setAbility1('Mycelium Might');
+			new ModifyPokemon('Venomoth', this)
+				.abilities
+					.setHiddenAbility('Toxic Chain')
+				.pokemon.baseStats
+					.setDEF(70)
+					.setSPA(100)
+				.pokemon.learnset
+					.add('Pollen Puff')
+					.add('Sludge Wave')
+					.add('Toxic Thread')
+					.remove('Sleep Powder');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
