@@ -112,6 +112,7 @@ export class ModifyPokemon {
 			remove(move: string) {
 				move = move.toLowerCase().replace(' ', '');
 				delete this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')];
+				console.log(this._dex.modData('Learnsets', this._name).learnset);
 				return this;
 			}
 			public get pokemon() {

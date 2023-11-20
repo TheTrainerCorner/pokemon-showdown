@@ -96,7 +96,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setDEF(89)
 					.setSPA(60)
 					.setSPD(93)
-					.setSPE(148);
+					.setSPE(147);
 			new ModifyPokemon('Vileplume', this)
 				.abilities
 					.setAbility0('Flower Veil')
