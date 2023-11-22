@@ -118,6 +118,38 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Sludge Wave')
 					.add('Toxic Thread')
 					.remove('Sleep Powder');
+			new ModifyPokemon('Dugtrio', this)
+				.baseStats
+					.setSPE(135);
+			new ModifyPokemon('Dugtrio-Alola', this)
+				.baseStats
+					.setSPE(120);
+			new ModifyPokemon('Persian', this)
+				.abilities
+					.setHiddenAbility('Unnerve');
+			new ModifyPokemon('Primeape', this)
+				.abilities
+					.setAbility1('Berserk')
+				.pokemon.baseStats
+					.setHP(75)
+					.setDEF(70)
+					.setSPD(80);
+			new ModifyPokemon('Arcanine', this)
+				.abilities
+					.setAbility1('Ball Fetch');
+			new ModifyPokemon('Alakazam', this)
+				.abilities
+					.setAbility0('Forewarn');
+			new ModifyPokemon('Machamp', this)
+				.baseStats
+					.setHP(118)
+					.setATK(145)
+					.setDEF(100)
+					.setSPA(75)
+					.setSPE(67);
+			new ModifyPokemon('Tentacruel', this)
+				.abilities
+					.setAbility0('Rain Dish');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
