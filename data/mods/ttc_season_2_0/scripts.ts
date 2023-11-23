@@ -150,6 +150,140 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Tentacruel', this)
 				.abilities
 					.setAbility0('Rain Dish');
+			new ModifyPokemon('Rapidash', this)
+				.baseStats
+					.setATK(105)
+				.pokemon.learnset
+					.add('Blazing Torque');
+			new ModifyPokemon('Rapidash-Galar', this)
+				.baseStats
+					.setATK(60)
+					.setSPA(105)
+				.pokemon.learnset
+					.remove('Cosmic Power');
+			new ModifyPokemon('Farfetchd', this)
+				.abilities
+					.setAbility1('Stalwart')
+				.pokemon.baseStats
+					.setDEF(72);
+			new ModifyPokemon('Dodrio', this)
+				.abilities
+					.setAbility0('Tangled Feet');
+			new ModifyPokemon('Dewgong', this)
+				.abilities
+					.setAbility1('Hydration');
+			new ModifyPokemon('Muk', this)
+				.abilities
+					.setHiddenAbility('Stench')
+				.pokemon.baseStats
+					.setATK(105)
+					.setDEF(85);
+			new ModifyPokemon('Muk-Alola', this)
+				.baseStats
+					.setHP(95);
+			new ModifyPokemon('Gengar-Mega', this)
+				.baseStats
+					.setHP(60)
+					.setATK(95)
+			new ModifyPokemon('Hypno', this)
+				.abilities
+					.setAbility0('Forewarn')
+				.pokemon.baseStats
+					.setSPE(77);
+			new ModifyPokemon('Electrode', this)
+				.baseStats
+					.setHP(80)
+					.setDEF(80);
+			new ModifyPokemon('Electrode-Hisui', this)
+				.baseStats
+					.setSPA(100)
+					.setSPE(150);
+			new ModifyPokemon('Exeggutor-Alola', this)
+				.baseStats
+					.setSPE(40);
+			new ModifyPokemon('Marowak', this)
+				.abilities
+					.setHiddenAbility('Battle Armor')
+				.pokemon.baseStats
+					.setATK(90)
+					.setDEF(115)
+					.setSPE(45);
+			new ModifyPokemon('Marowak-Alola', this)
+				.baseStats
+					.setDEF(110)
+					.setSPA(50);
+			new ModifyPokemon('Hitmonlee', this)
+				.baseStats
+					.setSPE(66);
+			new ModifyPokemon('Hitmonchan', this)
+				.baseStats
+					.setSPE(77);
+			new ModifyPokemon('Rhydon', this)
+				.abilities
+					.setAbility0('Sap Sipper')
+				.pokemon.baseStats
+					.setHP(95)
+					.setATK(120)
+					.setDEF(110)
+					.setSPD(50)
+				.pokemon.learnset
+					.add('Headlong Rush')
+					.add('Head Smash');
+			new ModifyPokemon('Rhyperior', this)
+				.types
+					.setType('Ground', 'Steel')
+				.pokemon.abilities
+					.setAbility0('Overcoat')
+				.pokemon.baseStats
+					.setHP(125)
+					.setATK(150)
+					.setDEF(140)
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Crag Blast');
+			new ModifyPokemon('Kangaskhan', this)
+				.learnset
+					.add('Crush Grip')
+					.add('Close Combat');
+			new ModifyPokemon('Kangaskhan-Mega', this)
+				.abilities
+					.setAbility0('Adaptability');
+			new ModifyPokemon('Kingdra', this)
+				.learnset
+					.remove('Origin Pulse');
+			new ModifyPokemon('Seaking', this)
+				.baseStats
+					.setSPE(68);
+			new ModifyPokemon('Starmie', this)
+				.abilities
+					.setAbility0('Illuminate');
+			new ModifyPokemon('MrMime', this)
+				.abilities
+					.setAbility0('Screen Cleaner');
+			new ModifyPokemon('Jynx', this)
+				.abilities
+					.setAbility0('Snow Cloak');
+			new ModifyPokemon('Pinsir', this)
+				.abilities
+					.setAbility0('Berserk');
+			new ModifyPokemon('Gyarados', this)
+				.learnset
+					.add('Dual Chop')
+					.add('Dragon Rush');
+			new ModifyPokemon('Jolteon', this)
+				.abilities
+					.setAbility1('Illuminate');
+			new ModifyPokemon('Flareon', this)
+				.abilities
+					.setHiddenAbility('Turboblaze');
+			new ModifyPokemon('Snorlax', this)
+				.abilities
+					.setAbility0('Toxic Boost');
+			new ModifyPokemon('Dragonite', this)
+				.abilities
+					.setAbility1('Stalwart')
+				.pokemon.learnset
+					.add('Sky Attack');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
