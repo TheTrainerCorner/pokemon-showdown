@@ -214,10 +214,18 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setSPA(50);
 			new ModifyPokemon('Hitmonlee', this)
 				.baseStats
+					.setHP(80)
+					.setATK(128)
+					.setDEF(81)
 					.setSPE(66);
 			new ModifyPokemon('Hitmonchan', this)
 				.baseStats
+					.setATK(114)
 					.setSPE(77);
+			new ModifyPokemon('Hitmontop', this)
+				.baseStats
+					.setATK(107)
+					.setSPE(88);
 			new ModifyPokemon('Rhydon', this)
 				.abilities
 					.setAbility0('Sap Sipper')
@@ -279,11 +287,53 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Snorlax', this)
 				.abilities
 					.setAbility0('Toxic Boost');
+			new ModifyPokemon('Articuno', this)
+				.baseStats
+					.setATK(60)
+					.setSPD(135);
+			new ModifyPokemon('Articuno-Galar', this)
+				.baseStats
+					.setDEF(90);
+			new ModifyPokemon('Moltres', this)
+				.baseStats
+					.setATK(85)
+					.setDEF(100)
+					.setSPD(90);
+			new ModifyPokemon('Zapdos', this)
+				.baseStats
+					.setDEF(90);
 			new ModifyPokemon('Dragonite', this)
 				.abilities
 					.setAbility1('Stalwart')
 				.pokemon.learnset
 					.add('Sky Attack');
+			// Gen 2
+			new ModifyPokemon('Meganium', this)
+				.baseStats
+					.setSPA(100);
+			new ModifyPokemon('Typhlosion', this)
+				.baseStats
+					.setATK(104)
+					.setSPA(104)
+					.setSPE(107);
+			new ModifyPokemon('Furret', this)
+				.abilities
+					.setHiddenAbility('Run Away');
+			new ModifyPokemon('Noctowl', this)
+				.abilities
+					.setAbility0('Early Bird');
+			new ModifyPokemon('Ariados', this)
+				.abilities
+					.setAbility1('Toxic Chain');
+			new ModifyPokemon('Xatu', this)
+				.abilities
+					.setAbility0('Forewarn');
+			new ModifyPokemon('Bellossom', this)
+				.abilities
+					.setAbility1('Flower Veil')
+				.pokemon.baseStats
+					.setATK(60)
+					.setSPE(70);
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
