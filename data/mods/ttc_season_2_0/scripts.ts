@@ -107,6 +107,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Parasect', this)
 				.abilities
 					.setAbility1('Mycelium Might');
+			new ModifyPokemon('Venonat', this)
+				.learnset
+					.remove('Sleep Power');
 			new ModifyPokemon('Venomoth', this)
 				.abilities
 					.setHiddenAbility('Toxic Chain')
