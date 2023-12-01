@@ -334,6 +334,46 @@ export const Scripts: ModdedBattleScriptsData = {
 				.pokemon.baseStats
 					.setATK(60)
 					.setSPE(70);
+			new ModifyPokemon('Azumarill', this)
+				.baseStats
+					.setDEF(90)
+					.setSPD(90);
+			new ModifyPokemon('Jumpluff', this)
+				.abilities
+					.setAbility0('Leaf Guard');
+			new ModifyPokemon('Sunflora', this)
+				.baseStats
+					.setSPA(130)
+					.setSPE(68);
+			new ModifyPokemon('Murkrow', this)
+				.abilities
+					.setAbility0('Early Bird');
+			new ModifyPokemon('Mismagius', this)
+				.baseStats
+					.setSPE(105);
+			new ModifyPokemon('Wobbuffet', this)
+				.baseStats
+					.setDEF(70)
+					.setSPA(34)
+					.setSPD(70);
+			new ModifyPokemon('Girafarig', this)
+				.baseStats
+					.setSPE(99);
+			new ModifyPokemon('Granbull', this)
+				.baseStats
+					.setSPE(86);
+			new ModifyPokemon('Qwilfish', this)
+				.abilities
+					.setAbility1('Toxic Debris');
+			new ModifyPokemon('Magcargo', this)
+				.abilities
+					.setAbility0('Magma Armor');
+			new ModifyPokemon('Corsola', this)
+				.baseStats
+					.setHP(85)
+					.setSPE(35)
+				.pokemon.learnset
+					.add('Salt Cure');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
