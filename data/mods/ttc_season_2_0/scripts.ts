@@ -561,7 +561,173 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Deoxys-Speed', this)
 				.abilities
 					.setHiddenAbility('Steadfast');
-			// Gen 5
+			// Gen 4
+			new ModifyPokemon('Staraptor', this)
+				.baseStats
+					.setATK(123)
+					.setSPE(112);
+			new ModifyPokemon('Bibarel', this)
+				.baseStats
+					.setHP(89)
+					.setDEF(80)
+					.setSPD(80);
+			new ModifyPokemon('Kricketune', this)
+				.baseStats
+					.setATK(73)
+					.setSPA(105)
+					.setSPE(93);
+			new ModifyPokemon('Luxray', this)
+				.baseStats
+					.setHP(89)
+					.setATK(133)
+					.setDEF(94)
+					.setSPA(88)
+					.setSPD(94)
+					.setSPE(102);
+			new ModifyPokemon('Rampardos', this)
+				.abilities
+					.setHiddenAbility('Mold Breaker');
+			new ModifyPokemon('Wormadam', this)
+				.baseStats
+					.setHP(80);
+			new ModifyPokemon('Wormadam-Sandy', this)
+				.baseStats
+					.setHP(80)
+					.setSPA(54)
+					.setSPD(90);
+			new ModifyPokemon('Vespiquen', this)
+				.abilities
+					.setHiddenAbility('Swarm');
+			new ModifyPokemon('Pachirisu', this)
+				.baseStats
+					.setHP(85);
+			new ModifyPokemon('Ambipom', this)
+				.abilities
+					.setAbility1('Pickup');
+			new ModifyPokemon('Drifblim', this)
+				.abilities
+					.setAbility0('Rocky Payload');
+			new ModifyPokemon('Lopunny', this)
+				.abilities
+					.setHiddenAbility('Pickup');
+			new ModifyPokemon('Lopunny-Mega', this)
+				.baseStats
+					.setATK(136)
+					.setSPE(135);
+			new ModifyPokemon('Purugly', this)
+				.baseStats
+					.setSPE(102);
+			new ModifyPokemon('Skuntank', this)
+				.abilities
+					.setHiddenAbility('Power Of Alchemy');
+			new ModifyPokemon('Chatot', this)
+				.abilities
+					.setAbility0('Run Away')
+				.pokemon.baseStats
+					.setHP(85);
+			new ModifyPokemon('Garchomp', this)
+				.baseStats
+					.setSPE(92);
+			new ModifyPokemon('Garchomp-Mega', this)
+				.baseStats
+					.setDEF(110)
+					.setSPD(90);
+			new ModifyPokemon('Lucario', this)
+				.abilities
+					.setAbility0('Aura Break');
+			new ModifyPokemon('Lucario-Mega', this)
+				.baseStats
+					.setATK(125)
+					.setDEF(93)
+					.setSPA(135)
+					.setSPD(85)
+					.setSPE(112);
+			new ModifyPokemon('Toxicroak', this)
+				.baseStats
+					.setATK(105)
+					.setSPA(102);
+			new ModifyPokemon('Carnivine', this)
+				.baseStats
+					.setHP(94)
+					.setDEF(102)
+					.setSPD(102)
+					.setSPE(36);
+			new ModifyPokemon('Lumineon', this)
+				.learnset
+					.add('Recover');
+			new ModifyPokemon('Abomasnow', this)
+				.abilities
+					.setAbility1('Snow Cloak');
+			new ModifyPokemon('Abomasnow-Mega', this)
+				.baseStats
+					.setATK(142)
+					.setSPA(137)
+					.setSPD(110)
+					.setSPE(40);
+			new ModifyPokemon('Electivire', this)
+				.abilities
+					.setAbility1('Vital Spirit');
+			new ModifyPokemon('Magmortar', this)
+				.abilities
+					.setAbility1('Magma Armor');
+			new ModifyPokemon('Mamoswine', this); // TODO Figure out what the hell ??? means
+			new ModifyPokemon('Gallade', this)
+				.baseStats
+					.setATK(115)
+					.setSPD(95)
+					.setSPE(80);
+			new ModifyPokemon('Gallade-Mega', this)
+				.baseStats
+					.setATK(135);
+			new ModifyPokemon('Dusknoir', this)
+				.abilities
+					.setAbility0('Grave Counter');
+			new ModifyPokemon('Rotom-Heat', this)
+				.baseStats
+					.setHP(75);
+			new ModifyPokemon('Rotom-Mow', this)
+				.learnset
+					.remove('Grassy Glide');
+			new ModifyPokemon('Rotom-Frost', this)
+				.baseStats
+					.setHP(70)
+					.setSPA(105)
+					.setSPE(96);
+			new ModifyPokemon('Rotom-Fan', this)
+				.learnset
+					.remove('Boomburst');
+			new ModifyPokemon('Uxie', this)
+				.abilities
+					.setAbility0('Knowledge')
+				.pokemon.baseStats
+					.setHP(105)
+					.setATK(60)
+					.setSPA(100)
+					.setSPE(75);
+			new ModifyPokemon('Mesprit', this)
+				.types
+					.setType('Psychic', 'Fairy')
+				.pokemon.abilities
+					.setAbility0('Emotion')
+				.pokemon.baseStats
+					.setATK(115)
+					.setDEF(110)
+					.setSPA(115)
+					.setSPD(100)
+					.setSPE(90);
+			new ModifyPokemon('Azelf', this)
+				.types
+					.setType('Psychic', 'Fighting')
+				.pokemon.abilities
+					.setAbility0('Willpower')
+				.pokemon.baseStats
+					.setATK(125)
+					.setDEF(75)
+					.setSPA(130)
+					.setSPD(75)
+				.pokemon.learnset
+					.add('Focus Punch')
+					.add('Focus Blast');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {

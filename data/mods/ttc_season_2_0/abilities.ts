@@ -1649,7 +1649,6 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 
 	// New Trio Abilities
 	knowledge: {
-
 		onBasePowerPriority: 21,
 		onBasePower(basePower, pokemon, target, move) {
 			// Analytic
@@ -1673,6 +1672,58 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 
 		name: "Knowledge",
 		shortDesc: "Analytic + Power of Alchemy",
+		rating: 4,
+	},
+	emotion: {
+		// Soul Heart
+		onAnyFaintPriority: 1,
+		onAnyFaint() {
+			this.boost({spa: 1}, this.effectState.target);
+		},
+		// Victory Star
+		onAnyModifyAccuracyPriority: -1,
+		onAnyModifyAccuracy(accuracy, target, source) {
+			if (source.isAlly(this.effectState.target && typeof accuracy === 'number')) {
+				return this.chainModify([4506, 4096]);
+			}
+		},
+		name: "Emotion",
+		shortDesc: "Soul Heart + Victory Star",
+		rating: 5,
+	},
+	willpower: {
+		// Sheer Force
+		onModifyMove(move, pokemon) {
+			// Inner Focus
+			if (move.id === 'focuspunch') {
+				move.condition = {
+					duration: 1,
+					onStart(pokemon) {
+						this.add('-singleturn', pokemon, 'move: Focus Punch');
+					},
+					onTryAddVolatile(status, pokemon) {
+						if (status.id === 'flinch') return null;
+					}
+				}
+			}
+			if (move.id === 'focusblast') {
+				move.accuracy = true;
+			}
+			// Sheer Force
+			if (move.secondaries) {
+				delete move.secondaries;
+				delete move.self;
+				if (move.id === 'clangoroussoulblaze') delete move.selfBoost;
+				move.hasSheerForce = true;
+			}
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.hasSheerForce) return this.chainModify([5325, 4096]);
+		},
+
+		name: "Willpower",
+		shortDesc: "Sheer Force + Inner Focus",
 		rating: 4,
 	},
 
