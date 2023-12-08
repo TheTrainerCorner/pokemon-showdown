@@ -1168,6 +1168,28 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "Immunity to Entry Hazards; This Pokemon is not affected by the secondary effect of another Pokemon's attack.",
 		shortDesc: "Immune to Entry Hazards; This Pokemon is not affected by the secondary effect of another Pokemon's attack.",
 	},
+	silentwater: {
+		inherit: true,
+
+		//#region Removing Misty Surge from the ability
+		onStart: undefined,
+		//#endregion
+
+		//#region Damp
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				this.add('-ability', target, 'Damp');
+				if(source.getTypes().join() === 'Water' || !source.setType('Water')) {
+					this.add('-fail', source);
+					return null;
+				}
+				this.add('-start', source, 'typechange', 'Water');
+			}
+		},
+		//#endregion
+		desc: "Storm Drain + Damp",
+		shortDesc: "Storm Drain + Damp",
+	},
 	snowcloak: {
 		inherit: true,
 		onModifyAccuracyPriority: undefined,

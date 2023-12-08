@@ -1,4 +1,4 @@
-import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
+import { ModifyPokemon } from '../../../tools/utils/modifyPokemon';
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'ttc_season_1_2',
@@ -377,6 +377,191 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setSPE(35)
 				.pokemon.learnset
 					.add('Salt Cure');
+			new ModifyPokemon('Octillery', this)
+				.abilities
+					.setAbility1('Suction Cups');
+			new ModifyPokemon('Delibird', this)
+				.baseStats
+					.setSPE(101);
+			new ModifyPokemon('Houndoom', this)
+				.abilities
+					.setAbility0('Ball Fetch');
+			new ModifyPokemon('Houndoom-Mega', this)
+				.baseStats
+					.setSPE(120);
+			new ModifyPokemon('Wyrdeer', this)
+				.abilities
+					.setHiddenAbility('Fur Coat');
+			new ModifyPokemon('Smeargle', this)
+				.baseStats
+					.setHP(75)
+					.setATK(60)
+					.setDEF(65)
+					.setSPA(60)
+					.setSPD(65);
+			new ModifyPokemon('Entei', this)
+				.baseStats
+					.setDEF(100)
+					.setSPA(85)
+					.setSPD(85)
+					.setSPE(100)
+				.pokemon.learnset
+					.remove('Eruption');
+			new ModifyPokemon('Suicune', this)
+				.learnset
+					.add('Recover');
+			new ModifyPokemon('Raikou', this)
+				.learnset
+					.remove('Rising Voltage');
+			new ModifyPokemon('Tyranitar', this)
+				.abilities
+					.setAbility1('Solid Rock');
+			// Gen 3
+			new ModifyPokemon('Sceptile-Mega', this)
+				.baseStats
+					.setDEF(80)
+					.setSPD(90);
+			new ModifyPokemon('Blaziken-Mega', this)
+				.baseStats
+					.setATK(150)
+					.setDEF(85)
+					.setSPA(135)
+					.setSPD(85)
+					.setSPE(95);
+			new ModifyPokemon('Mightyena', this)
+				.abilities
+					.setAbility1('Ball Fetch');
+			new ModifyPokemon('Linoone', this)
+				.baseStats
+					.setSPA(62)
+					.setSPE(103);
+			new ModifyPokemon('Gardevoir', this)
+				.abilities
+					.setHiddenAbility('Aura Break');
+			new ModifyPokemon('Shedinja', this)
+				.baseStats
+					.setATK(117)
+					.setSPA(45)
+					.setSPE(62);
+			new ModifyPokemon('Delcatty', this)
+				.abilities
+					.setAbility0('Normalize')
+				.pokemon.baseStats
+					.setHP(86)
+					.setATK(80)
+					.setSPA(85)
+					.setSPE(104);
+			new ModifyPokemon('Sableye-Mega', this)
+				.baseStats
+					.setSPE(40);
+			new ModifyPokemon('Mawile-Mega', this)
+				.baseStats
+					.setSPA(75);
+			new ModifyPokemon('Medicham', this)
+				.baseStats
+					.setHP(80);
+			new ModifyPokemon('Medicham-Mega', this)
+				.baseStats
+					.setHP(80)
+					.setSPA(90)
+					.setSPE(105);
+			new ModifyPokemon('Manectric', this)
+				.abilities
+					.setAbility0('Teravolt')
+					.setHiddenAbility('Ball Fetch');
+			new ModifyPokemon('Plusle', this)
+				.baseStats
+					.setDEF(55)
+					.setSPA(100);
+			new ModifyPokemon('Minun', this)
+				.baseStats
+					.setATK(100)
+					.setSPD(55);
+			new ModifyPokemon('Illumise', this)
+				.baseStats
+					.setATK(90);
+			new ModifyPokemon('Roselia', this)
+				.abilities
+					.setAbility0('Flower Veil');
+			new ModifyPokemon('Roserade', this)
+				.abilities
+					.setAbility0('Flower Veil');
+			new ModifyPokemon('Swalot', this)
+				.abilities
+					.setHiddenAbility('Power of Alchemy');
+			new ModifyPokemon('Camerupt-Mega', this)
+				.baseStats
+					.setHP(90);
+			new ModifyPokemon('Cacturne', this)
+				.abilities
+					.setAbility1('Sand Veil');
+			new ModifyPokemon('Seviper', this)
+				.abilities
+					.setAbility1('Cold Blooded');
+			new ModifyPokemon('Tropius', this)
+				.baseStats
+					.setHP(109)
+					.setATK(102)
+					.setDEF(88)
+					.setSPA(58)
+					.setSPD(92)
+					.setSPE(91);
+			new ModifyPokemon('Chimecho', this)
+				.baseStats
+					.setSPE(108);
+			new ModifyPokemon('Lunatone', this)
+				.types
+					.setType('Rock', 'Psychic');
+			new ModifyPokemon('Whiscash', this)
+				.abilities
+					.setAbility1('Anticipation')
+				.pokemon.baseStats
+					.setATK(78)
+					.setSPD(81)
+					.setSPE(75);
+			new ModifyPokemon('Claydol', this)
+				.abilities
+					.setHiddenAbility('Field Support');
+			new ModifyPokemon('Absol-Mega', this)
+				.baseStats
+					.setSPA(125);
+			new ModifyPokemon('Glalie-Mega', this)
+				.baseStats
+					.setDEF(80);
+			new ModifyPokemon('Gorebyss', this)
+				.baseStats
+					.setSPD(85);
+			new ModifyPokemon('Salamence-Mega', this)
+				.baseStats
+					.setATK(110)
+					.setDEF(135)
+					.setSPD(100)
+					.setSPE(115);
+			new ModifyPokemon('Metagross', this)
+				.abilities
+					.setHiddenAbility('Full Metal Body')
+				.pokemon.baseStats
+					.setSPA(70);
+			new ModifyPokemon('Metagross-Mega', this)
+				.baseStats
+					.setATK(155)
+					.setSPA(100)
+					.setSPD(110);
+			new ModifyPokemon('Latias-Mega', this)
+				.baseStats
+					.setATK(110)
+					.setSPD(160);
+			new ModifyPokemon('Latios-Mega', this)
+				.baseStats
+					.setATK(140)
+					.setDEF(100);
+			new ModifyPokemon('Deoxys-Defense', this)
+				.abilities
+					.setHiddenAbility('Stall');
+			new ModifyPokemon('Deoxys-Speed', this)
+				.abilities
+					.setHiddenAbility('Steadfast');
+			// Gen 5
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
