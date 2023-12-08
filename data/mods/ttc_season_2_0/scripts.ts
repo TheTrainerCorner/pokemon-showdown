@@ -730,6 +730,207 @@ export const Scripts: ModdedBattleScriptsData = {
 				.pokemon.learnset
 					.add('Focus Punch')
 					.add('Focus Blast');
+			// Gen 5
+			new ModifyPokemon('Victini', this)
+				.baseStats
+					.setDEF(94)
+					.setSPD(94)
+					.setSPE(107);
+			new ModifyPokemon('Emboar', this)
+				.baseStats
+					.setSPE(40);
+			new ModifyPokemon('Samurott', this)
+				.baseStats
+					.setHP(90)
+					.setDEF(80)
+					.setSPD(65);
+			new ModifyPokemon('Diggersby', this)
+				.baseStats
+					.setATK(62)
+					.setSPE(84);
+			new ModifyPokemon('Watchog', this)
+				.baseStats
+					.setSPE(87);
+			new ModifyPokemon('Stoutland', this)
+				.abilities
+					.setAbility0('Ball Fetch')
+					.setAbility1('Guard Dog')
+				.pokemon.baseStats
+					.setHP(106)
+					.setATK(123)
+					.setDEF(104)
+					.setSPA(61)
+					.setSPD(115)
+					.setSPE(91);
+			new ModifyPokemon('Simipour', this)
+				.baseStats
+					.setHP(75)
+				.pokemon.learnset
+					.remove('Water Spout');
+			new ModifyPokemon('Simisear', this)
+				.learnset
+					.remove('Eruption');
+			new ModifyPokemon('Unfezant', this)
+				.abilities
+					.setAbility1('Big Pecks')
+				.pokemon.baseStats
+					.setSPE(113);
+			new ModifyPokemon('Zebstrika', this)
+				.abilities
+					.setHiddenAbility('Teravolt');
+			new ModifyPokemon('Swoobat', this)
+				.baseStats
+					.setHP(72)
+					.setDEF(65);
+			new ModifyPokemon('Audino', this)
+				.abilities
+					.setAbility1('Healer');
+			new ModifyPokemon('Leavanny', this)
+				.abilities
+					.setAbility1('Overcoat');
+			new ModifyPokemon('Whimsicott', this)
+				.abilities
+					.setHiddenAbility('Cloud Nine');
+			new ModifyPokemon('Lilligant', this)
+				.abilities
+					.setHiddenAbility('Flower Veil');
+			new ModifyPokemon('Garbodor', this)
+				.types
+					.setType('Poison', 'Steel')
+				.pokemon.abilities
+					.setAbility0('Toxic Debris');
+			new ModifyPokemon('Cinccino', this)
+				.abilities
+					.setAbility1('Cute Charm');
+			new ModifyPokemon('Swanna', this)
+				.baseStats
+					.setDEF(60)
+					.setSPD(60);
+			new ModifyPokemon('Sawsbuck-Winter', this)
+				.abilities
+					.setAbility0('Snow Cloak')
+				.pokemon.baseStats
+					.setHP(80)
+					.setDEF(75)
+					.setSPA(130)
+					.setSPD(75)
+					.setSPE(110);
+			new ModifyPokemon('Sawsbuck-Spring', this)
+				.abilities
+					.setAbility1('Seed Sower')
+				.pokemon.baseStats
+					.setATK(50)
+					.setDEF(85)
+					.setSPA(110)
+					.setSPD(85)
+					.setSPE(100);
+			new ModifyPokemon('Sawsbuck-Summer', this)
+				.abilities
+					.setAbility1('Heatproof')
+				.pokemon.learnset
+					.remove('V Create');
+			new ModifyPokemon('Escavalier', this)
+				.abilities
+					.setAbility0('Hustle');
+			new ModifyPokemon('Amoongus', this)
+				.abilities
+					.setAbility1('Mycelium Might');
+			new ModifyPokemon('Jellicent', this)
+				.abilities
+					.setAbility0('Damp');
+			new ModifyPokemon('Ferrothorn', this)
+				.abilities
+					.setAbility1('Mycelium Might');
+			new ModifyPokemon('Klinklang', this)
+				.abilities
+					.setAbility1('Motor Drive');
+			new ModifyPokemon('Haxorus', this)
+				.abilities
+					.setAbility0('Mold Breaker');
+			new ModifyPokemon('Beartic', this)
+				.baseStats
+					.setSPE(77);
+			new ModifyPokemon('Stunfisk', this)
+				.abilities
+					.setAbility1('Limber');
+			new ModifyPokemon('Druddigon', this)
+				.baseStats
+					.setATK(125)
+					.setDEF(105)
+					.setSPD(105)
+					.setSPE(48)
+				.pokemon.learnset
+					.add('Spikes');
+			new ModifyPokemon('Golurk', this)
+				.abilities
+					.setAbility1('Grave Counter');
+			new ModifyPokemon('Braviary', this)
+				.abilities
+					.setAbility1('Stalwart')
+				.pokemon.baseStats
+					.setHP(108)
+					.setDEF(81)
+					.setSPD(81);
+			new ModifyPokemon('Braviary-Hisui', this)
+				.baseStats
+					.setHP(108)
+					.setDEF(76)
+					.setSPD(76);
+			new ModifyPokemon('Mandibuzz', this)
+				.abilities
+					.setAbility0('Stall');
+			new ModifyPokemon('Heatmor', this)
+				.abilities
+					.setAbility0('Turoblaze')
+				.pokemon.baseStats
+					.setSPE(88);
+			new ModifyPokemon('Durant', this)
+				.abilities
+					.setAbility1('Hustle');
+			new ModifyPokemon('Cobalion', this)
+				.abilities
+					.setHiddenAbility('Inner Focus')
+				.pokemon.baseStats
+					.setHP(96)
+					.setATK(85)
+					.setDEF(124)
+					.setSPA(85)
+					.setSPD(107)
+					.setSPE(83);
+			new ModifyPokemon('Terrakion', this)
+				.abilities
+					.setHiddenAbility('Rocky Payload')
+				.pokemon.baseStats
+					.setHP(81)
+					.setATK(124)
+					.setDEF(90)
+					.setSPA(77)
+					.setSPD(90)
+				.pokemon.learnset
+					.add('Stone Axe');
+			new ModifyPokemon('Virizion', this)
+				.baseStats
+					.setHP(91)
+					.setATK(65)
+					.setSPA(131)
+					.setSPD(104);
+			new ModifyPokemon('Tornadus-Incarnate', this)
+				.abilities
+					.setAbility1('Cloud Nine');
+			new ModifyPokemon('Thundurus-Incarnate', this)
+				.abilities
+					.setAbility1('Cloud Nine');
+			new ModifyPokemon('Landorus-Incarnate', this)
+				.abilities
+					.setAbility1('Cloud Nine');
+			new ModifyPokemon('Keldeo', this)
+				.baseStats
+					.setATK(96)
+					.setSPE(114);
+			new ModifyPokemon('Keldeo-Resolute', this)
+				.baseStats
+					.setATK(96)
+					.setSPE(114);
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
