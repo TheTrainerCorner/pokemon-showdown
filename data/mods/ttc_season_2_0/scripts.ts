@@ -109,7 +109,8 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setAbility1('Mycelium Might');
 			new ModifyPokemon('Venonat', this)
 				.learnset
-					.remove('Sleep Power');
+					// Implemented in learnsets.ts
+					//.remove('Sleep Power');
 			new ModifyPokemon('Venomoth', this)
 				.abilities
 					.setHiddenAbility('Toxic Chain')
@@ -120,7 +121,8 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Pollen Puff')
 					.add('Sludge Wave')
 					.add('Toxic Thread')
-					.remove('Sleep Powder');
+					// Implemented in learnsets.ts
+					// .remove('Sleep Powder');
 			new ModifyPokemon('Dugtrio', this)
 				.baseStats
 					.setSPE(135);
