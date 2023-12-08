@@ -931,6 +931,72 @@ export const Scripts: ModdedBattleScriptsData = {
 				.baseStats
 					.setATK(96)
 					.setSPE(114);
+		// Gen 6
+		new ModifyPokemon('Florges', this)
+			.abilities
+				.setAbility1('Symbiosis');
+		new ModifyPokemon('Furfrou', this)
+			.abilities
+				.setAbility1('Receiver');
+		new ModifyPokemon('Aromatisse', this)
+			.abilities
+				.setAbility1('Aroma Veil');
+		new ModifyPokemon('Meowstic-Male', this)
+			.baseStats
+				.setSPA(79);
+		new ModifyPokemon('Meowstic-Female', this)
+			.baseStats
+				.setDEF(73)
+				.setSPA(113)
+				.setSPD(68)
+				.setSPE(119);
+		new ModifyPokemon('Malamar', this)
+			.abilities
+				.setAbility1('Suction Cups');
+		new ModifyPokemon('Barbaracle', this)
+			.abilities
+				.setAbility1('Quick Draw');
+		new ModifyPokemon('Clawitzer', this)
+			.baseStats
+				.setDEF(93)
+				.setSPD(94)
+			.pokemon.learnset
+				.remove('Origin Pulse');
+		new ModifyPokemon('Tyrantrum', this)
+			.baseStats
+				.setDEF(134)
+				.setSPE(76);
+		new ModifyPokemon('Aurorus', this)
+			.baseStats
+				.setHP(118)
+				.setSPA(104)
+				.setSPD(87);
+		new ModifyPokemon('Hawlucha', this)
+			.abilities
+				.setHiddenAbility('Costar')
+			.pokemon.baseStats
+				.setDEF(85)
+				.setSPE(108);
+		new ModifyPokemon('Noivern', this)
+			.abilities
+				.setAbility0('Frisk')
+				.setHiddenAbility('Delta Stream')
+			.pokemon.baseStats
+				.setSPE(123)
+				.setSPA(97);
+		new ModifyPokemon('Dedenne', this)
+			.abilities
+				.setAbility1('Pickup')
+			.pokemon.baseStats
+				.setSPA(105);
+		new ModifyPokemon('Carbink', this)
+			.abilities
+				.setAbility1('Field Support')
+				.setHiddenAbility('Solid Rock');
+		new ModifyPokemon('Goodra', this)
+			.abilities
+				.setAbility1('Hydration')
+				.setHiddenAbility('Corrosion');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
