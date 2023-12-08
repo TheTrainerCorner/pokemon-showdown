@@ -401,7 +401,7 @@ export class DexSpecies {
 					}
 				}
 			}
-			this.speciesCache.set(id, this.dex.deepFreeze(species));
+			this.speciesCache.set(id, species);
 			return species;
 		}
 
@@ -518,10 +518,7 @@ export class DexSpecies {
 			species.canHatch = species.canHatch ||
 				(!['Ditto', 'Undiscovered'].includes(species.eggGroups[0]) && !species.prevo && species.name !== 'Manaphy');
 			if (this.dex.gen === 1) species.bst -= species.baseStats.spd;
-			if (this.dex.gen < 5) {
-				species.abilities = this.dex.deepClone(species.abilities);
-				delete species.abilities['H'];
-			}
+			if (this.dex.gen < 5) delete species.abilities['H'];
 			if (this.dex.gen === 3 && this.dex.abilities.get(species.abilities['1']).gen === 4) delete species.abilities['1'];
 		} else {
 			species = new Species({
@@ -529,7 +526,7 @@ export class DexSpecies {
 				exists: false, tier: 'Illegal', doublesTier: 'Illegal', natDexTier: 'Illegal', draftTier: 'Illegal', isNonstandard: 'Custom',
 			});
 		}
-		if (species.exists) this.speciesCache.set(id, this.dex.deepFreeze(species));
+		if (species.exists) this.speciesCache.set(id, species);
 		return species;
 	}
 
@@ -544,7 +541,7 @@ export class DexSpecies {
 			return new Learnset({exists: false});
 		}
 		learnsetData = new Learnset(this.dex.data.Learnsets[id]);
-		this.learnsetCache.set(id, this.dex.deepFreeze(learnsetData));
+		this.learnsetCache.set(id, learnsetData);
 		return learnsetData;
 	}
 
@@ -558,7 +555,7 @@ export class DexSpecies {
 		for (const id in this.dex.data.Pokedex) {
 			species.push(this.getByID(id as ID));
 		}
-		this.allCache = Object.freeze(species);
+		this.allCache = species;
 		return this.allCache;
 	}
 }

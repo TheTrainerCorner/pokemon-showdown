@@ -122,7 +122,6 @@ export class ModdedDex {
 	textCache: TextTableData | null;
 
 	deepClone = Utils.deepClone;
-	deepFreeze = Utils.deepFreeze;
 
 	readonly formats: DexFormats;
 	readonly abilities: DexAbilities;

@@ -535,7 +535,7 @@ export class RoomBattle extends RoomGames.RoomGame<RoomBattlePlayer> {
 	ended: boolean;
 	active: boolean;
 	needsRejoin: Set<ID> | null;
-	replaySaved: boolean | 'auto';
+	replaySaved: boolean;
 	forcedSettings: {modchat?: string | null, privacy?: string | null} = {};
 	p1: RoomBattlePlayer;
 	p2: RoomBattlePlayer;
@@ -920,8 +920,7 @@ export class RoomBattle extends RoomGames.RoomGame<RoomBattlePlayer> {
 		if (this.replaySaved || Config.autosavereplays) {
 			const uploader = Users.get(winnerid || p1id);
 			if (uploader?.connections[0]) {
-				const command = Config.autosavereplays === 'private' ? '/savereplay auto' : '/savereplay silent';
-				Chat.parse(command, this.room, uploader, uploader.connections[0]);
+				Chat.parse('/savereplay silent', this.room, uploader, uploader.connections[0]);
 			}
 		}
 		const parentGame = this.room.parent && this.room.parent.game;
@@ -958,7 +957,6 @@ export class RoomBattle extends RoomGames.RoomGame<RoomBattlePlayer> {
 		}
 
 		logData.p1rating = p1rating;
-		if (this.replaySaved) logData.replaySaved = this.replaySaved;
 		logData.p2rating = p2rating;
 		if (this.playerCap > 2) {
 			logData.p3rating = p3rating;
@@ -1434,7 +1432,7 @@ export class BestOfGame extends RoomGames.RoomGame {
 		).update();
 		this.updateDisplay();
 		this.room.add(`|html|<h2>Game ${this.games.length}</h2>`);
-		this.room.add(Utils.html`|html|<a href="/${battle.roomid}">${battle.title}</a>`);
+		this.room.add(`|html|<a href="/${battle.roomid}">${battle.title}</a>`);
 		this.room.update();
 	}
 	updateDisplay() {
@@ -1554,7 +1552,7 @@ export class BestOfGame extends RoomGames.RoomGame {
 		this.games[this.games.length - 1].winner = isTie ? '' : winnerid;
 
 		this.room.add(
-			Utils.html`|html|${winnerid ? `${this.name(winnerid)} won game ${this.games.length}!` : `Game ${this.games.length} was a tie`}`
+			`|html|${winnerid ? `${this.name(winnerid)} won game ${this.games.length}!` : `Game ${this.games.length} was a tie`}`
 		).update();
 		for (const k in this.wins) {
 			if (this.wins[k as 'p1' | 'p2'] >= this.winThreshold) {
@@ -1571,12 +1569,12 @@ export class BestOfGame extends RoomGames.RoomGame {
 		for (const userid in room.battle.playerTable) {
 			const player = room.battle.playerTable[userid];
 			player.id = userid as ID; // re-link users so that we can use timer properly
+			const name = Utils.escapeHTML(this.name(userid));
 			const button = `|c|&|/uhtml prompt-${userid},<button class="button notifying" name="send" value="${cmd}">I'm ready!</button>`;
-			const prompt = `|c|&|/log Are you ready for game ${this.games.length + 1}, ${this.name(userid)}?`;
+			const prompt = `|c|&|/log Are you ready for game ${this.games.length + 1}, ${name}?`;
 			player.sendRoom(prompt);
 			player.sendRoom(button);
 			// send it to the main room as well, in case they x out of the old one
-			if (!this.playerTable[userid]) throw new Error(`Player ${userid} in ${this.roomid} doesn't exist`);
 			this.playerTable[userid].sendRoom(prompt);
 			this.playerTable[userid].sendRoom(button);
 		}
@@ -1761,7 +1759,6 @@ export const PM = new ProcessManager.StreamProcessManager(module, () => new Room
 
 if (!PM.isParentProcess) {
 	// This is a child process!
-	require('source-map-support').install();
 	global.Config = require('./config-loader').Config;
 	global.Dex = require('../sim/dex').Dex;
 	global.Monitor = {

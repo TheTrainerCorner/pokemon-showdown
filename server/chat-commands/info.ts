@@ -2145,7 +2145,7 @@ export const commands: Chat.ChatCommands = {
 			generation = 'rb';
 			genNumber = 1;
 		} else {
-			generation = 'sv';
+			generation = 'ss';
 		}
 
 		// Pokemon
