@@ -833,7 +833,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Escavalier', this)
 				.abilities
 					.setAbility0('Hustle');
-			new ModifyPokemon('Amoongus', this)
+			new ModifyPokemon('Amoonguss', this)
 				.abilities
 					.setAbility1('Mycelium Might');
 			new ModifyPokemon('Jellicent', this)
