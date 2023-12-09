@@ -1166,6 +1166,100 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Enamorus-Incarnate', this)
 			.baseStats
 				.setSPA(135);
+		// Gen 9
+		new ModifyPokemon('Spidops', this)
+			.abilities
+				.setAbility0('Stakeout')
+				.setHiddenAbility('Toxic Boost')
+			.pokemon.baseStats
+				.setATK(95);
+		new ModifyPokemon('Pawmot', this)
+			.baseStats
+				.setDEF(73)
+				.setSPE(117);
+		new ModifyPokemon('Maushold', this)
+			.abilities
+				.setAbility1('Pickup');
+		new ModifyPokemon('Armarouge', this)
+			.abilities
+				.setAbility0('Artillery')
+				.setHiddenAbility('Quick Draw')
+			.pokemon.baseStats
+				.setHP(100)
+				.setATK(70)
+				.setDEF(115)
+				.setSPA(135)
+				.setSPD(85)
+				.setSPE(95);
+		new ModifyPokemon('Ceruledge', this)
+			.abilities
+				.setAbility1('Steadfast')
+				.setHiddenAbility('Quick Draw')
+			.pokemon.baseStats
+				.setHP(89)
+				.setATK(135)
+				.setDEF(85)
+				.setSPA(70)
+				.setSPD(115)
+				.setSPE(105);
+		new ModifyPokemon('Kilowattrel', this)
+			.abilities
+				.setAbility0('Teravolt');
+		new ModifyPokemon('Wugtrio', this)
+			.abilities
+				.setHiddenAbility('Sand Veil')
+			.pokemon.baseStats
+				.setSPE(135);
+		new ModifyPokemon('Bombadier', this)
+			.baseStats
+				.setHP(87)
+				.setDEF(94)
+				.setSPD(94);
+		new ModifyPokemon('Revaroom', this)
+			.abilities
+				.setAbility1('Motor Drive');
+		new ModifyPokemon('Orthworm', this)
+			.abilities
+				.setAbility1('Sand Veil');
+		new ModifyPokemon('Houndstone', this)
+			.abilities
+				.setHiddenAbility('Receiver');
+		new ModifyPokemon('Flamigo', this)
+			.abilities
+				.setHiddenAbility('Tangled Feet');
+		new ModifyPokemon('Veluza', this)
+			.baseStats
+				.setATK(109)
+				.setSPE(110);
+		new ModifyPokemon('Flutter Mane', this)
+			.baseStats
+				.setHP(70)
+				.setATK(70)
+				.setDEF(70)
+				.setSPA(120)
+				.setSPD(120)
+				.setSPE(120);
+		new ModifyPokemon('Chi-Yu', this)
+			.baseStats
+				.setSPA(115);
+		new ModifyPokemon('Roaring Moon', this)
+			.baseStats
+				.setATK(134)
+				.setSPE(114);
+		new ModifyPokemon('Iron Valiant', this)
+			.baseStats
+				.setATK(125)
+				.setSPE(111);
+		new ModifyPokemon('Walking Wake', this)
+			.baseStats
+				.setHP(94)
+				.setSPA(120);
+		new ModifyPokemon('Ogerpon', this)
+			.abilities
+				.setHiddenAbility('Stalwart');
+		new ModifyPokemon('Ogerpon-Cornerstone', this)
+			.abilities
+				.setAbility0('Rivalry');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
