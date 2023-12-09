@@ -915,13 +915,13 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setATK(65)
 					.setSPA(131)
 					.setSPD(104);
-			new ModifyPokemon('Tornadus-Incarnate', this)
+			new ModifyPokemon('Tornadus', this)
 				.abilities
 					.setAbility1('Cloud Nine');
-			new ModifyPokemon('Thundurus-Incarnate', this)
+			new ModifyPokemon('Thundurus', this)
 				.abilities
 					.setAbility1('Cloud Nine');
-			new ModifyPokemon('Landorus-Incarnate', this)
+			new ModifyPokemon('Landorus', this)
 				.abilities
 					.setAbility1('Cloud Nine');
 			new ModifyPokemon('Keldeo', this)
@@ -1164,7 +1164,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Ursaluna', this)
 			.abilities
 				.setHiddenAbility('Vital Spirit');
-		new ModifyPokemon('Enamorus-Incarnate', this)
+		new ModifyPokemon('Enamorus', this)
 			.baseStats
 				.setSPA(135);
 		// Gen 9
