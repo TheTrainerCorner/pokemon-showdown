@@ -1126,7 +1126,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Sirfetchd', this)
 			.abilities
 				.setAbility0('Stalwart');
-		new ModifyPokemon('Mr Rime', this)
+		new ModifyPokemon('MrRime', this)
 			.abilities
 				.setAbility0('Tangled Feet');
 		new ModifyPokemon('Alcremie', this)
