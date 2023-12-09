@@ -1232,7 +1232,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(109)
 				.setSPE(110);
-		new ModifyPokemon('Flutter Mane', this)
+		new ModifyPokemon('FlutterMane', this)
 			.baseStats
 				.setHP(70)
 				.setATK(70)
@@ -1243,15 +1243,15 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Chi-Yu', this)
 			.baseStats
 				.setSPA(115);
-		new ModifyPokemon('Roaring Moon', this)
+		new ModifyPokemon('RoaringMoon', this)
 			.baseStats
 				.setATK(134)
 				.setSPE(114);
-		new ModifyPokemon('Iron Valiant', this)
+		new ModifyPokemon('IronValiant', this)
 			.baseStats
 				.setATK(125)
 				.setSPE(111);
-		new ModifyPokemon('Walking Wake', this)
+		new ModifyPokemon('WalkingWake', this)
 			.baseStats
 				.setHP(94)
 				.setSPA(120);
