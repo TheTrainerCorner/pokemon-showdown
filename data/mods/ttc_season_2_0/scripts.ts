@@ -997,6 +997,109 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility1('Hydration')
 				.setHiddenAbility('Corrosion');
+		// Gen 7
+		new ModifyPokemon('Decidueye', this)
+			.baseStats
+				.setDEF(75)
+				.setSPD(90);
+		new ModifyPokemon('Primarina', this)
+			.learnset
+				.remove('Boomburst');
+		new ModifyPokemon('Gumshoos', this)
+			.baseStats
+				.setHP(108)
+				.setATK(132)
+				.setDEF(70)
+				.setSPD(70)
+				.setSPE(45)
+			.pokemon.learnset
+				.add('Sucker Punch')
+				.add('Parting Shot');
+		new ModifyPokemon('Crabominable', this)
+			.abilities
+				.setAbility0('Berserk');
+		new ModifyPokemon('Oricorio-Baile', this)
+			.baseStats
+				.setHP(80)
+				.setSPA(108)
+				.setSPD(75)
+				.setSPE(98);
+		new ModifyPokemon('Oricorio-PomPom', this)
+			.baseStats
+				.setHP(80)
+				.setSPA(108)
+				.setSPD(75)
+				.setSPE(98);
+		new ModifyPokemon('Oricorio-Pau', this)
+			.baseStats
+				.setHP(80)
+				.setSPA(108)
+				.setSPD(75)
+				.setSPE(98);
+		new ModifyPokemon('Oricorio-Sensu', this)
+			.baseStats
+				.setHP(80)
+				.setSPA(108)
+				.setSPD(75)
+				.setSPE(98);
+		new ModifyPokemon('Lycanroc-Midday', this)
+			.baseStats
+				.setATK(117)
+				.setSPA(58)
+				.setSPE(122);
+		new ModifyPokemon('Lycanroc-Dusk', this)
+			.baseStats
+				.setDEF(75)
+				.setSPD(75);
+		new ModifyPokemon('Lycanroc-Midnight', this)
+			.baseStats
+				.setATK(117)
+				.setDEF(84)
+				.setSPA(35)
+				.setSPD(84);
+		new ModifyPokemon('Shiinotic', this)
+			.abilities
+				.setAbility0('Illuminate')
+			.pokemon.baseStats
+				.setHP(80);
+		new ModifyPokemon('Bewear', this)
+			.abilities
+				.setAbility1('Unnerve');
+		new ModifyPokemon('Tsareena', this)
+			.baseStats
+				.setDEF(108)
+				.setSPE(72);
+		new ModifyPokemon('Oranguru', this)
+			.abilities
+				.setHiddenAbility('Symbiosis');
+		new ModifyPokemon('Passimian', this)
+			.abilities
+				.setAbility1('Receiver');
+		new ModifyPokemon('Silvally', this)
+			.abilities
+				.setAbility1('Normalize');
+		new ModifyPokemon('Drampa', this)
+			.abilities
+				.setAbility0('Allergies')
+				.setAbility1('Power of Alchemy')
+			.pokemon.baseStats
+				.setHP(98)
+				.setSPD(96);
+		new ModifyPokemon('Kommoo', this)
+			.abilities
+				.setAbility0('Unnerve');
+		new ModifyPokemon('Celesteela', this)
+			.abilities
+				.setHiddenAbility('Heavy Metal');
+		new ModifyPokemon('Naganadel', this)
+			.baseStats
+				.setSPA(127)
+				.setSPE(121);
+		new ModifyPokemon('Melmetal', this)
+			.abilities
+				.setHiddenAbility('Full Metal Body')
+			.pokemon.learnset
+				.add('Meteor Mash');
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
