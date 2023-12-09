@@ -942,10 +942,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Aromatisse', this)
 			.abilities
 				.setAbility1('Aroma Veil');
-		new ModifyPokemon('Meowstic-Male', this)
+		new ModifyPokemon('Meowstic', this)
 			.baseStats
 				.setSPA(79);
-		new ModifyPokemon('Meowstic-Female', this)
+		new ModifyPokemon('Meowstic-F', this)
 			.baseStats
 				.setDEF(73)
 				.setSPA(113)
