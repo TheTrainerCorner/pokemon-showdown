@@ -773,7 +773,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			}
 		},
 		desc: "This Pokemon's moves and their effects ignore certain Abilities of other Pokemon. Does 1.2x more damage to Water-Type Pokemon.",
-		shortDesc: "This Pokemon's moves and their effects ignore the Abilities of other Pokemon; Does 1.2x more damage to Water-Type Pokemon.",
+		shortDesc: "Ignores the affects of Moves and Abilities; Does 1.2x more damage to Water-type Pokemon.",
 	},
 	motordrive: {
 		inherit: true,

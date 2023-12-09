@@ -723,7 +723,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.pokemon.abilities
 					.setAbility0('Willpower')
 				.pokemon.baseStats
-					.setATK(125)
+					.setATK(130)
 					.setDEF(75)
 					.setSPA(130)
 					.setSPD(75)

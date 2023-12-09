@@ -287,7 +287,7 @@ export default function Gen7(dex: ModdedDex) {
 		.addMove('Shadow Punch')
 		.addMove('Headlong Rush')
 		.addMove('Knock Off')
-		.addMove('Darkest Lariet')
+		.addMove('Darkest Lariat')
 		.removeMove('Fire Fang')
 		.removeMove('Psychic Fangs')
 		.removeMove('Thunder Fang');
