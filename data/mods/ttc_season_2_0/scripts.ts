@@ -1043,7 +1043,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(108)
 				.setSPD(75)
 				.setSPE(98);
-		new ModifyPokemon('Lycanroc-Midday', this)
+		new ModifyPokemon('Lycanroc', this)
 			.baseStats
 				.setATK(117)
 				.setSPA(58)
