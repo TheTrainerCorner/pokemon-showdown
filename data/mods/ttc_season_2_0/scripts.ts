@@ -1100,6 +1100,72 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Full Metal Body')
 			.pokemon.learnset
 				.add('Meteor Mash');
+		// Gen 8
+		new ModifyPokemon('Inteleon', this)
+			.learnset
+				.add('Calm Mind');
+		new ModifyPokemon('Dubwool', this)
+			.abilities
+				.setHiddenAbility('Simple');
+		new ModifyPokemon('Thievul', this)
+			.abilities
+				.setAbility1('Run Away');
+		new ModifyPokemon('Boltund', this)
+			.abilities
+				.setHiddenAbility('Ball Fetch');
+		new ModifyPokemon('Flapple', this)
+			.abilities
+				.setAbility1('Hustle')
+			.pokemon.baseStats
+				.setATK(113)
+				.setSPE(87);
+		new ModifyPokemon('Hatterene', this)
+			.abilities
+				.setAbility0('Anticipation');
+		new ModifyPokemon('Sirfetchd', this)
+			.abilities
+				.setAbility0('Stalwart');
+		new ModifyPokemon('Mr Rime', this)
+			.abilities
+				.setAbility0('Tangled Feet');
+		new ModifyPokemon('Alcremie', this)
+			.abilities
+				.setAbility1('Aroma Veil');
+		new ModifyPokemon('Falinks', this)
+			.baseStats
+				.setHP(85)
+				.setATK(100)
+				.setDEF(100)
+				.setSPE(75);
+		new ModifyPokemon('Pincurchin', this)
+			.baseStats
+				.setHP(88);
+		new ModifyPokemon('Stonjourner', this)
+			.baseStats
+				.setSPE(10);
+		new ModifyPokemon('Arctozolt', this)
+			.abilities
+				.setAbility0('Allergies');
+		new ModifyPokemon('Dracozolt', this)
+			.abilities
+				.setAbility0('Allergies')
+			.pokemon.baseStats
+				.setSPD(80);
+		new ModifyPokemon('Dracovish', this)
+			.baseStats
+				.setSPA(80);
+		new ModifyPokemon('Dragapult', this)
+			.abilities
+				.setAbility0('Unnerve');
+		new ModifyPokemon('Regieleki', this)
+			.baseStats
+				.setHP(80);
+		new ModifyPokemon('Ursaluna', this)
+			.abilities
+				.setHiddenAbility('Vital Spirit');
+		new ModifyPokemon('Enamorus-Incarnate', this)
+			.baseStats
+				.setSPA(135);
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
