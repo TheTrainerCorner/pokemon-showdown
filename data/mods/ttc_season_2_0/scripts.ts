@@ -1019,7 +1019,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Crabominable', this)
 			.abilities
 				.setAbility0('Berserk');
-		new ModifyPokemon('Oricorio-Baile', this)
+		new ModifyPokemon('Oricorio', this)
 			.baseStats
 				.setHP(80)
 				.setSPA(108)
