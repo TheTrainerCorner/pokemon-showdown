@@ -815,7 +815,8 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setSPA(130)
 					.setSPD(75)
 					.setSPE(110);
-			new ModifyPokemon('Sawsbuck-Spring', this)
+			// Sawsbuck-Spring is Sawsbuck
+			new ModifyPokemon('Sawsbuck', this)
 				.abilities
 					.setAbility1('Seed Sower')
 				.pokemon.baseStats
