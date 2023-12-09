@@ -1216,7 +1216,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(87)
 				.setDEF(94)
 				.setSPD(94);
-		new ModifyPokemon('Revaroom', this)
+		new ModifyPokemon('Revavroom', this)
 			.abilities
 				.setAbility1('Motor Drive');
 		new ModifyPokemon('Orthworm', this)
