@@ -7,6 +7,7 @@ export class ModifyPokemon {
 	constructor(name: string, dex: ModdedDex) {
 		this._name = name.includes("-") ? name.toLowerCase().replace('-' , '') : name.toLowerCase();
 		this._dex = dex;
+		console.log(this._name);
 	}
 
 	public get types() {
