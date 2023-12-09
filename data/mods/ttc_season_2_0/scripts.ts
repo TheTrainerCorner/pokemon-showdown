@@ -1211,7 +1211,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Sand Veil')
 			.pokemon.baseStats
 				.setSPE(135);
-		new ModifyPokemon('Bombadier', this)
+		new ModifyPokemon('bombirdier', this)
 			.baseStats
 				.setHP(87)
 				.setDEF(94)
