@@ -138,7 +138,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack and Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
 		shortDesc: "This Pokemon's Atk and Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
 	},
-	bigpeck: {
+	bigpecks: {
 		inherit: true,
 		onBasePowerPriority: 23,
 		onBasePower(basePower, attacker, defender, move) {
