@@ -793,11 +793,12 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onDamagingHit(damage, target, source, move) {
 			const sourceAbility = source.getAbility();
-			if (sourceAbility.isPermanent || sourceAbility.id === 'mummy') {
+			if (sourceAbility.isPermanent || sourceAbility.id === 'mummy') return;
+			if (this.checkMoveMakesContact(move, source, target, !source.isAlly(target))) {
 				const oldAbility = source.setAbility('mummy', target);
-				if(oldAbility) {
+				if (oldAbility) {
 					this.add('-activate', target, 'ability: Mummy', this.dex.abilities.get(oldAbility).name, '[of] ' + source);
-					target.addVolatile('partiallytrapped');
+					source.addVolatile('partiallytrapped');
 				}
 			}
 		},
@@ -810,6 +811,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onModifyMove (move, source, target) {
 			if (move.category === 'Status') {
 				move.accuracy = true;
+				move.ignoreImmunity = true;
 			}
 		},
 		desc: "Status moves always go last, but always hit regardless of typing or ability",
