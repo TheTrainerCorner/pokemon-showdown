@@ -1226,14 +1226,13 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onFractionalPriority: undefined,
 		onResidualOrder: 5,
-		onResidualSubOrder:3,
+		onResidualSubOrder:6,
 		onAfterMove(source, target, move) {
-			if(!['Physical', 'Special'].includes(move.category)) {
-				this.effectState.canHeal = true;
-			} else this.effectState.canHeal = false;
+			if (move.category === 'Status') this.effectState.canHeal = true;
+			else this.effectState.canHeal = false;
 		},
 		onResidual(pokemon) {
-			if(pokemon.hp && this.effectState.canHeal) {
+			if (pokemon.hp && this.effectState.canHeal) {
 				this.debug('stall');
 				this.add('-activate', pokemon, 'ability: Stall');
 				pokemon.heal(pokemon.maxhp / 16);
