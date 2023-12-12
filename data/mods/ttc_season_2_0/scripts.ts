@@ -1197,7 +1197,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility1('Steadfast')
 				.setHiddenAbility('Quick Draw')
 			.pokemon.baseStats
-				.setHP(89)
+				.setHP(90)
 				.setATK(135)
 				.setDEF(85)
 				.setSPA(70)
