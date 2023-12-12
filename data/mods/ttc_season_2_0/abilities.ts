@@ -840,8 +840,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onImmunity: undefined,
 		onTryHit: undefined,
 		onTryBoost: undefined,
-		onAfterMove(source, target, move) {
-			move.pp += 1;
+		onAfterHit(pokemon, target, move) {
+			pokemon.moveSlots.find((x) => x.id === move.id)!.pp += 1;
 		},
 		desc: "This ability allow PP to not be consumed when using a move.",
 		shortDesc: "This ability allow PP to not be consumed when using a move.",
