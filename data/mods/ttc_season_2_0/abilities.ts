@@ -1340,19 +1340,30 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		// TODO NEEDS WORK
 		inherit: true,
 		onAllyAfterUseItem: undefined,
-		onAnyAfterMove(source, target, move) {
-			if (!target.hp || !source.hp) return; 
-			for (const targetMove of target.moveSlots) {
-				if (targetMove.id == move.id) {
-					this.attrLastMove('[still]');
-					this.addMove('-anim', target, move.name, source);
-					return;
-				}
+		// onAnyAfterMove(source, target, move) {
+		// 	if (!target.hp || !source.hp) return; 
+		// 	for (const targetMove of target.moveSlots) {
+		// 		if (targetMove.id == move.id) {
+		// 			this.attrLastMove('[still]');
+		// 			this.addMove('-anim', target, move.name, source);
+		// 			return;
+		// 		}
+		// 	}
+		// },
+		onFoeBeforeMove(source, target, move) {
+			const foundMove = target.moveSlots.find(x => x.id === move.id);
+			if (!foundMove) this.effectState.canAct = false;
+			else this.effectState.canAct = true;
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (target.hp && this.effectState.canAct) {
+				this.damage(source.maxhp / 4, source, target);
+				this.add('-ability', target, 'Symbiosis');
 			}
 		},
 		// TODO: NEEDS TO BE HEAVILY TESTED
-		desc: "NEEDS TO BE TESTED ASAP",
-		shortDesc: "NEEDS TO BE TESTED ASAP",
+		desc: "If the opposing pokemon uses a move that the user shares with it, The opposing pokemon takes 1/4th of their max hp after causing damage.",
+		shortDesc: "IF the opposing pokemon shares the same move has the user; Takes 1/4th of their hp as damage.",
 	},
 	tangledfeet: {
 		inherit: true,
