@@ -682,6 +682,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifyMove(move) {
 			if(move.id == 'focuspunch') {
+				
+				move.beforeMoveCallback = undefined;
 				move.condition = {
 					duration: 1,
 					onStart(pokemon) {
