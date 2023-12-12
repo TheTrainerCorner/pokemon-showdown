@@ -818,7 +818,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		category: "Physical",
 		name: "Crag Blast",
-		pp: 16,
+		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1, bullet: 1},
 		multihit: 3,

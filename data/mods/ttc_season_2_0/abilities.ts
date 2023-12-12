@@ -678,6 +678,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "Light-based moves will have 1.3x boost in power and will not miss.",
 	},
 	innerfocus: {
+		//TODO DOESN'T WORK
 		inherit: true,
 		onModifyMove(move) {
 			if(move.id == 'focuspunch') {
@@ -831,6 +832,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon's moves are changed to be Normal type and have 1.5x power.",
 	},
 	oblivious: {
+		// TODO DOESN'T WORK
 		inherit: true,
 		onUpdate: undefined,
 		onImmunity: undefined,
@@ -1307,6 +1309,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon can not be Forced out or Lose its held item, if the opposing Pokemon tries, the user will loses 1 stage of Speed, but gains 1 stage of Def and SpD.",
 	},
 	swarm: {
+		//TODO DOESN'T WORK
 		inherit: true,
 		onStart(pokemon) {
 			this.field.setTerrain('swarmterrain');
@@ -1333,6 +1336,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "Upon Switch-in, the opposing Pokemons' evasion will drop by 1 stage. The user's side can not be put to sleep.",
 	},
 	symbiosis: {
+		// TODO NEEDS WORK
 		inherit: true,
 		onAllyAfterUseItem: undefined,
 		onAnyAfterMove(source, target, move) {
