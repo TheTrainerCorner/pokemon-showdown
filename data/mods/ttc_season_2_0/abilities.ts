@@ -682,7 +682,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifyMove(move) {
 			if(move.id == 'focuspunch') {
-				
+
 				move.beforeMoveCallback = undefined;
 				move.condition = {
 					duration: 1,
@@ -1018,7 +1018,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	raindish: {
 		inherit: true,
-		onSwitchIn(pokemon) {
+		onWeather: undefined,
+		onSwitchOut(pokemon) {
 			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
 				pokemon.heal(pokemon.baseMaxhp / 4);
 			}
@@ -1229,15 +1230,20 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onFractionalPriority: undefined,
 		onResidualOrder: 5,
 		onResidualSubOrder:6,
+		// onAfterMove(source, target, move) {
+		// 	if (move.category === 'Status') this.effectState.canHeal = true;
+		// 	else this.effectState.canHeal = false;
+		// },
+		// onResidual(pokemon) {
+		// 	if (pokemon.hp && this.effectState.canHeal) {
+		// 		this.debug('stall');
+		// 		this.add('-activate', pokemon, 'ability: Stall');
+		// 		pokemon.heal(pokemon.maxhp / 16);
+		// 	}
+		// },
 		onAfterMove(source, target, move) {
-			if (move.category === 'Status') this.effectState.canHeal = true;
-			else this.effectState.canHeal = false;
-		},
-		onResidual(pokemon) {
-			if (pokemon.hp && this.effectState.canHeal) {
-				this.debug('stall');
-				this.add('-activate', pokemon, 'ability: Stall');
-				pokemon.heal(pokemon.maxhp / 16);
+			if (move.category === 'Status') {
+				source.heal(source.maxhp / 16, source);
 			}
 		},
 		desc: "The user recovers 1/16th of it's Max HP at the end of the turn, if it used a Status move.",
@@ -1246,10 +1252,11 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	stalwart: {
 		inherit: true,
 		onTryMove(attacker, defender, move) {
-			if (!move.flags['charge']) return;
-			this.attrLastMove('[still]');
-			this.addMove('-anim', attacker, move.name, defender);
-			return;
+			if (move.flags.charge) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
 		},
 		onModifyMove(move, pokemon, target) {
 			if (!move.flags['charge']) return;
@@ -1274,7 +1281,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "Upon Switch-In, gains +1 atk boost per Positive Boost that the opposing Pokemon has.",
 		shortDesc: "Upon Switch-In, gains +1 ATK Boost per Positive Boost that the Opposing Pokemon has.",
 	},
-	stentch: {
+	stench: {
 		inherit: true,
 		onModifyMovePriority: undefined,
 		onModifyMove: undefined,
@@ -1619,20 +1626,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		name: "Field Support",
 		desc: "Multi-turn field move last 8 turns",
 		shortDesc: "Multi-turn field move last 8 turns",
-		onModifyMove(move) {
-			if (move.pseudoWeather) {
-				if (move.condition) {
-					move.condition.duration = 8;
-				}
-			}
-			if (move.sideCondition) {
-				if(move.condition) {
-					if(move.condition.duration) {
-						move.condition.duration = 8;
-					}
-				}
-			}
-		},
+		// Implemented in the moves themselves.
 	},
 	gravecounter: {
 		onTryHit(target, source, move) {
