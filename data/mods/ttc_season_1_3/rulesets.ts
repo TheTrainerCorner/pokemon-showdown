@@ -25,6 +25,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			if (weatherRocks.includes(set.item)) {
 				problems.push(`${set.name} can not hold ${set.item} due to it being Low Tiers.`);
 			}
+			return problems;
 		},
 	},
 	noweatherinlowtier: {
