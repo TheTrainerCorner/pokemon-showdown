@@ -75,10 +75,10 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Low Tier",
 		desc: "This is our Low Tier format. It has the complex bans and regulations needed.",
-		mod: "ttc_current",
+		mod: "ttc_low_tier",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Low Tier Rules', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
-			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'AG', 'Uber','Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shell Smash',
 		],
 		unbanlist: [
