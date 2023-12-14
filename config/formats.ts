@@ -78,7 +78,7 @@ export const Formats: FormatList = [
 		mod: "ttc_low_tier",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Low Tier Rules', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
-			'AG', 'Uber','Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'ND AG', 'ND Uber','Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shell Smash',
 		],
 		unbanlist: [
