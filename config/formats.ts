@@ -73,7 +73,7 @@ export const Formats: FormatList = [
 		section: "Off-Season",
 	},
 	{
-		name: "[Gen 9] Low Tier",
+		name: "[Gen 9] National Dex Low Tier",
 		desc: "This is our Low Tier format. It has the complex bans and regulations needed.",
 		mod: "ttc_low_tier",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Low Tier Rules', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
