@@ -5,7 +5,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		new ModifyPokemon('altaria', this)
 			.types
-				.setType('Dragon', 'Fairy')
+				.setType('Dragon', 'Flying')
 			.pokemon.baseStats
 				.setATK(70)
 				.setDEF(90)
