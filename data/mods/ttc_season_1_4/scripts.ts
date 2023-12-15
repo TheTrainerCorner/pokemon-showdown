@@ -11,6 +11,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(90)
 				.setSPA(70)
 				.setSPD(105)
-				.setSPE(80)
+				.setSPE(80);
+		new ModifyPokemon('Virizion', this)
+			.baseStats
+				.setSPA(129);
 	}
 };
