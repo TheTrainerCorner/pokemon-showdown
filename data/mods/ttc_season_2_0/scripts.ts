@@ -1,3 +1,4 @@
+import { Pokemon } from '../../../sim';
 import { ModifyPokemon } from '../../../tools/utils/modifyPokemon';
 
 export const Scripts: ModdedBattleScriptsData = {
@@ -5,6 +6,84 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		// #region 2.0.0
 		// Modify Pokemon
+			//#region LC Pokemon
+			new ModifyPokemon('Pidgey', this)
+				.abilities
+					.setAbility0('Frisk')
+					.setAbility1('Early Bird')
+				.pokemon.baseStats
+					.setHP(46)
+					.setATK(52);
+			new ModifyPokemon('Paras', this)
+				.abilities
+					.setAbility1('Mycelium Might')
+				.pokemon.baseStats
+					.setHP(40)
+					.setSPA(40);
+			new ModifyPokemon('Diglett', this)
+				.abilities
+					.setAbility1('Emergency Exit')
+				.pokemon.baseStats
+					.setHP(12);
+			new ModifyPokemon('Diglett-Alola', this)
+				.abilities
+					.setAbility1('Emergency Exit')
+				.pokemon.baseStats
+					.setHP(12);
+			new ModifyPokemon('Zubat', this)
+				.abilities
+					.setAbility0('Unnerve')
+					.setHiddenAbility('Vampire')
+				.pokemon.baseStats
+					.setHP(55)
+					.setATK(60)
+					.setDEF(50)
+					.setSPA(20)
+					.setSPD(50)
+					.setSPE(65)
+				.pokemon.learnset
+					.add('Fire Fang')
+					.add('Thunder Fang')
+					.add('Ice Fang')
+					.add('Toxic Spikes');
+			new ModifyPokemon('Geodude', this)
+				.abilities
+					.setHiddenAbility('Solid Rock')
+				.pokemon.learnset
+					.add('Rapid Spin')
+					.add('Body Press');
+			new ModifyPokemon('Geodude-Alola', this)
+				.learnset
+					.add('Power Gem')
+					.add('Steel Beam')
+					.add('Zap Cannon')
+					.add('Flash Cannon');
+			new ModifyPokemon('Ponyta', this)
+				.types
+					.setType('Normal', 'Fire')
+				.pokemon.abilities
+					.setAbility0('Reckless')
+				.pokemon.learnset
+					.add('Fire Lash')
+					.add('Jump Kick')
+					.add('Blaze Kick');
+			new ModifyPokemon('Ponyta-Galar', this)
+				.abilities
+					.setAbility0('Fairy Aura')
+					.setHiddenAbility('Magic Guard')
+				.pokemon.learnset
+					.add('Fire Lash')
+					.add('Moonblast')
+					.add('Psyblade');
+			new ModifyPokemon('Magnemite', this)
+				.abilities
+					.setAbility1('Levitate');
+					
+			//#endregion
+			//#region NFE Pokemon
+
+			//#endregion
+			//#region FE Pokemon
 			// Gen 1
 			new ModifyPokemon('Venusaur', this)
 				.baseStats
@@ -1261,6 +1340,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Ogerpon-Cornerstone', this)
 			.abilities
 				.setAbility0('Rivalry');
+		//#endregion
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];
 		for(const move of lightMoves) {
