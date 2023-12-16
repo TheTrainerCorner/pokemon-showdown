@@ -1270,7 +1270,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		for(const move of weightMoves) {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['weight'] = 1;
 		}
-		const peckMoves = ['Peck', 'Pluck', 'Drill Peck', 'Beak Blast'];
+		const peckMoves = ['Peck', 'Pluck', 'Drill Peck', 'Beak Blast', 'Bolt Beak'];
 		for (const move of peckMoves) {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['peck'] = 1;
 		}
