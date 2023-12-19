@@ -1183,12 +1183,8 @@ export class RandomTeams {
 		if (!isDoubles) {
 			if (species.id === 'hypno') return 'Insomnia';
 			if (species.id === 'staraptor') return 'Reckless';
-<<<<<<< HEAD
-			if (species.id === 'vespiquen') return 'Pressure';
-=======
 			if (species.id === 'arcaninehisui') return 'Rock Head';
 			if (['raikou', 'suicune', 'vespiquen'].includes(species.id)) return 'Pressure';
->>>>>>> upstream
 			if (species.id === 'enamorus' && moves.has('calmmind')) return 'Cute Charm';
 			if (species.id === 'klawf' && role === 'Setup Sweeper') return 'Anger Shell';
 			if (abilities.has('Cud Chew') && moves.has('substitute')) return 'Cud Chew';
