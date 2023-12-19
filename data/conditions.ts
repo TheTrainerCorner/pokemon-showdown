@@ -164,8 +164,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect?.id === 'lockedmove') {
 				this.add('-start', target, 'confusion', '[fatigue]');
-			} else if (sourceEffect?.effectType === 'Ability') {
-				this.add('-start', target, 'confusion', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
 			} else {
 				this.add('-start', target, 'confusion');
 			}

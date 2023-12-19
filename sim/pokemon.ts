@@ -242,7 +242,6 @@ export class Pokemon {
 	swordBoost: boolean;
 	shieldBoost: boolean;
 	syrupTriggered: boolean;
-	stellarBoostedTypes: string[];
 
 	/** Have this pokemon's Start events run yet? (Start events run every switch-in) */
 	isStarted: boolean;
@@ -454,7 +453,6 @@ export class Pokemon {
 		this.swordBoost = false;
 		this.shieldBoost = false;
 		this.syrupTriggered = false;
-		this.stellarBoostedTypes = [];
 		this.isStarted = false;
 		this.duringMove = false;
 
@@ -1199,7 +1197,7 @@ export class Pokemon {
 		const species = pokemon.species;
 		if (pokemon.fainted || this.illusion || pokemon.illusion || (pokemon.volatiles['substitute'] && this.battle.gen >= 5) ||
 			(pokemon.transformed && this.battle.gen >= 2) || (this.transformed && this.battle.gen >= 5) ||
-			species.name === 'Eternatus-Eternamax' || (['Ogerpon', 'Terapagos'].includes(species.baseSpecies) &&
+			species.name === 'Eternatus-Eternamax' || (species.baseSpecies === 'Ogerpon' &&
 			(this.terastallized || pokemon.terastallized))) {
 			return false;
 		}
@@ -1252,7 +1250,7 @@ export class Pokemon {
 			this.boosts[boostName] = pokemon.boosts[boostName];
 		}
 		if (this.battle.gen >= 6) {
-			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			const volatilesToCopy = ['focusenergy', 'gmaxchistrike', 'laserfocus'];
 			for (const volatile of volatilesToCopy) {
 				if (pokemon.volatiles[volatile]) {
 					this.addVolatile(volatile);
@@ -1297,7 +1295,6 @@ export class Pokemon {
 		// Pokemon transformed into Ogerpon cannot Terastallize
 		// restoring their ability to tera after they untransform is handled ELSEWHERE
 		if (this.species.baseSpecies === 'Ogerpon' && this.canTerastallize) this.canTerastallize = false;
-		if (this.species.baseSpecies === 'Terapagos' && this.canTerastallize) this.canTerastallize = false;
 
 		return true;
 	}
@@ -1370,7 +1367,7 @@ export class Pokemon {
 			this.battle.add('detailschange', this, details);
 			if (!source) {
 				// Tera forme
-				// Ogerpon/Terapagos text goes here
+				// Ogerpon text goes here
 			} else if (source.effectType === 'Item') {
 				this.canTerastallize = null; // National Dex behavior
 				if (source.zMove) {
@@ -2024,9 +2021,7 @@ export class Pokemon {
 	}
 
 	getTypes(excludeAdded?: boolean, preterastallized?: boolean): string[] {
-		if (!preterastallized && this.terastallized && this.terastallized !== 'Stellar') {
-			return [this.terastallized];
-		}
+		if (!preterastallized && this.terastallized) return [this.terastallized];
 		const types = this.battle.runEvent('Type', this, null, null, this.types);
 		if (!excludeAdded && this.addedType) return types.concat(this.addedType);
 		if (types.length) return types;
@@ -2067,7 +2062,7 @@ export class Pokemon {
 		return !!(
 			this.volatiles['protect'] || this.volatiles['detect'] || this.volatiles['maxguard'] ||
 			this.volatiles['kingsshield'] || this.volatiles['spikyshield'] || this.volatiles['banefulbunker'] ||
-			this.volatiles['obstruct'] || this.volatiles['silktrap'] || this.volatiles['burningbulwark']
+			this.volatiles['obstruct'] || this.volatiles['silktrap']
 		);
 	}
 
@@ -2088,7 +2083,6 @@ export class Pokemon {
 	}
 
 	runEffectiveness(move: ActiveMove) {
-		if (this.terastallized && move.type === 'Stellar') return 1;
 		let totalTypeMod = 0;
 		for (const type of this.getTypes()) {
 			let typeMod = this.battle.dex.getEffectiveness(move, type);
