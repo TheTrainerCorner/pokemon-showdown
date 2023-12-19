@@ -2132,16 +2132,6 @@ export class GameRoom extends BasicRoom {
 			return;
 		}
 
-<<<<<<< HEAD
-		// STEP 2: Tell the user to upload the replay to the login server
-
-		connection.send('|queryresponse|savereplay|' + JSON.stringify({
-			log: data,
-			id: id,
-			password: password,
-			silent: options === 'forpunishment' || options === 'silent',
-		}));
-=======
 		const fullid = result?.replayid;
 		const url = `https://${Config.routes.replays}/${fullid}`;
 		connection?.popup(
@@ -2149,7 +2139,6 @@ export class GameRoom extends BasicRoom {
 			`<a class="no-panel-intercept" href="${url}" target="_blank">${url}</a> ` +
 			`<copytext value="${url}">Copy</copytext>`
 		);
->>>>>>> upstream
 	}
 
 	getReplayData() {
