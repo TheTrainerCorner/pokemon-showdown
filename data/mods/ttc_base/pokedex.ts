@@ -21,6 +21,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	//#region Sawsbucks
 	sawsbuck: {
 		inherit: true,
+		cosmeticFormes: undefined,
 		otherFormes: ['Sawsbuck-Summer', 'Sawsbuck-Winter', 'Sawsbuck-Autumn'],
 		formeOrder: ['Sawsbuck', 'Sawsbuck-Summer', 'Sawsbuck-Winter', 'Sawsbuck-Autumn'],
 	},
