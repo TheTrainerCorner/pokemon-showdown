@@ -1,6 +1,7 @@
 import {ModdedDex} from "./../../../../sim/dex";
 export default function Gen5(dex: ModdedDex) {
 	const modifyPokemon = (pokemon: string) => {
+		console.log(pokemon);
 		const baseStat = () => ({
 			setHp,
 			setAtk,
