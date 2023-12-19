@@ -642,13 +642,8 @@ export class DexSpecies {
 		if (!this.dex.data.Learnsets.hasOwnProperty(id)) {
 			return new Learnset({exists: false}, this.get(id));
 		}
-<<<<<<< HEAD
-		learnsetData = new Learnset(this.dex.data.Learnsets[id]);
-		this.learnsetCache.set(id, learnsetData);
-=======
 		learnsetData = new Learnset(this.dex.data.Learnsets[id], this.get(id));
 		this.learnsetCache.set(id, this.dex.deepFreeze(learnsetData));
->>>>>>> upstream
 		return learnsetData;
 	}
 

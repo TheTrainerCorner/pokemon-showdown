@@ -1,8 +1,5 @@
 export const Scripts: ModdedBattleScriptsData = {
 	gen: 9,
-<<<<<<< HEAD
-	inherit: 'gen9',
-=======
 	init() {
 		for (const i in this.data.Items) {
 			if (!this.data.Items[i].megaStone) continue;
@@ -549,5 +546,4 @@ export const Scripts: ModdedBattleScriptsData = {
 			return species;
 		},
 	},
->>>>>>> upstream
 };

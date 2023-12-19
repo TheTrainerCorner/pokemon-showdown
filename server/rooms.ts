@@ -2064,29 +2064,6 @@ export class GameRoom extends BasicRoom {
 		let hideDetails = !format.id.includes('customgame');
 		if (format.team && battle.ended) hideDetails = false;
 
-<<<<<<< HEAD
-		const data = this.getLog(hideDetails ? 0 : -1);
-		const datahash = crypto.createHash('md5').update(data.replace(/[^(\x20-\x7F)]+/g, '')).digest('hex');
-		let rating = 0;
-		if (battle.ended && this.rated) rating = this.rated;
-		const {id, password} = this.getReplayData();
-
-		// STEP 1: Directly tell the login server that a replay is coming
-		// (also include all the data, including a hash of the replay itself,
-		// so it can't be spoofed.)
-
-		battle.replaySaved = true;
-		const [success] = await LoginServer.request('prepreplay', {
-			id: id,
-			loghash: datahash,
-			p1: battle.p1.name,
-			p2: battle.p2.name,
-			format: format.id,
-			rating,
-			hidden: options === 'forpunishment' || (this as any).unlistReplay ?
-				'2' : this.settings.isPrivate || this.hideReplay ? '1' : '',
-			inputlog: battle.inputLog?.join('\n') || null,
-=======
 		const log = this.getLog(hideDetails ? 0 : -1);
 		let rating: number | undefined;
 		if (battle.ended && this.rated) rating = this.rated;
@@ -2149,7 +2126,6 @@ export class GameRoom extends BasicRoom {
 			hidden,
 			inputlog: battle.inputLog?.join('\n') || undefined,
 			password,
->>>>>>> upstream
 		});
 		if (result?.errorip) {
 			connection?.popup(`This server's request IP ${result.errorip} is not a registered server.`);
