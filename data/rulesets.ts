@@ -480,6 +480,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 			) {
 				throw new Error(`Invalid type "${type.name}" in Generation ${this.dex.gen}`);
 			}
+			if (type.name === 'Stellar') {
+				throw new Error(`There are no Stellar-type Pok\u00e9mon.`);
+			}
 		},
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
@@ -1749,7 +1752,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', 'Event Moves Clause: Event-only moves are banned');
 		},
 		onValidateSet(set) {
+			if (!set.moves) return;
+			const moveSources: NonNullable<Learnset['learnset']> = Object.fromEntries(
+				set.moves.map(move => [this.toID(move), []])
+			);
+
 			const species = this.dex.species.get(set.species);
+<<<<<<< HEAD
 			const learnsetData = {...(this.dex.data.Learnsets[species.id]?.learnset || {})};
 			let prevo = species.prevo;
 			while (prevo) {
@@ -1770,6 +1779,17 @@ export const Rulesets: {[k: string]: FormatData} = {
 					if (learnsetData[this.toID(move)] && !learnsetData[this.toID(move)].filter(v => !v.includes('S')).length) {
 						problems.push(`${species.name}'s move ${move} is obtainable only through events.`);
 					}
+=======
+			for (const {learnset} of this.dex.species.getFullLearnset(species.id)) {
+				for (const moveid in moveSources) {
+					moveSources[moveid].push(...(learnset[moveid] || []));
+				}
+			}
+			const problems = [];
+			for (const move of set.moves) {
+				if (moveSources[this.toID(move)]?.every(learned => learned.includes('S'))) {
+					problems.push(`${species.name}'s move ${move} is obtainable only through events.`);
+>>>>>>> upstream
 				}
 			}
 			if (problems.length) problems.push(`(Event-only moves are banned.)`);
@@ -2675,5 +2695,10 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', "Illusion Level Mod: Illusion disguises the Pok\u00e9mon's true level");
 		},
 		// Implemented in Pokemon#getDetails
+	},
+	uselessmovesclause: {
+		effectType: 'ValidatorRule',
+		name: 'Useless Moves Clause',
+		// implemented in /mods/moderngen1/rulesets.ts
 	},
 };
