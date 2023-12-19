@@ -26,6 +26,7 @@ export default function Gen5(dex: ModdedDex) {
 		});
 
 		const changeType = (type1: string, type2?: string) => {
+			console.log(`${pokemon.toLowerCase()}`);
 			dex.modData('Pokedex', pokemon.toLowerCase()).types = type2 ? [type1, type2] : [type1];
 			return modifyPokemon(pokemon);
 		};
