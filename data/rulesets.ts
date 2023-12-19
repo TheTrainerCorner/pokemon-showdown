@@ -1750,17 +1750,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 		},
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
-<<<<<<< HEAD
-			for (const {learnset} of this.dex.species.getFullLearnset(species.id)) {
-				for (const moveid in moveSources) {
-					moveSources[moveid].push(...(learnset[moveid] || []));
-				}
-			}
-			const problems = [];
-			for (const move of set.moves) {
-				if (moveSources[this.toID(move)]?.every(learned => learned.includes('S'))) {
-					problems.push(`${species.name}'s move ${move} is obtainable only through events.`);
-=======
 			const learnsetData = {...(this.dex.data.Learnsets[species.id]?.learnset || {})};
 			let prevo = species.prevo;
 			while (prevo) {
@@ -1781,7 +1770,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 					if (learnsetData[this.toID(move)] && !learnsetData[this.toID(move)].filter(v => !v.includes('S')).length) {
 						problems.push(`${species.name}'s move ${move} is obtainable only through events.`);
 					}
->>>>>>> parent of 66254dd79 (Including DLC2 For SV)
 				}
 			}
 			if (problems.length) problems.push(`(Event-only moves are banned.)`);

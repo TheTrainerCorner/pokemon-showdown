@@ -1138,12 +1138,7 @@ export class RandomTeams {
 		if (!isDoubles) {
 			if (species.id === 'hypno') return 'Insomnia';
 			if (species.id === 'staraptor') return 'Reckless';
-<<<<<<< HEAD
-			if (species.id === 'arcaninehisui') return 'Rock Head';
-			if (['raikou', 'suicune', 'vespiquen'].includes(species.id)) return 'Pressure';
-=======
 			if (species.id === 'vespiquen') return 'Pressure';
->>>>>>> parent of 66254dd79 (Including DLC2 For SV)
 			if (species.id === 'enamorus' && moves.has('calmmind')) return 'Cute Charm';
 			if (species.id === 'klawf' && role === 'Setup Sweeper') return 'Anger Shell';
 			if (abilities.has('Cud Chew') && moves.has('substitute')) return 'Cud Chew';
