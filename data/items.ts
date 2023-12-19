@@ -3596,12 +3596,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
-	metalalloy: {
-		name: "Metal Alloy",
-		spritenum: 761,
-		num: 2482,
-		gen: 9,
-	},
 	metalcoat: {
 		name: "Metal Coat",
 		spritenum: 286,

@@ -1,4 +1,4 @@
-import {RandomTeams} from './../../random-teams';
+import {RandomTeams} from '../../random-teams';
 import {toID} from '../../../sim/dex';
 
 const mnmItems = [
