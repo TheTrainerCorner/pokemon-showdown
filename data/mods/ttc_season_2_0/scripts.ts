@@ -332,7 +332,9 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setAbility1('Big Pecks');
 			new ModifyPokemon('Timburr', this)
 				.types
-					.setType('Fighting', 'Grass');
+					.setType('Fighting', 'Grass')
+				.pokemon.learnset
+					.add('Wood Hammer');
 			new ModifyPokemon('Tirtouga', this)
 				.abilities
 					.setAbility0('Strong Jaw')
