@@ -465,8 +465,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Surf')
 					.add('Aqua Jet')
 					.add('Waterfall')
-					.add('Hydro Pump')
-					.add('Ice Punch');
+					.add('Hydro Pump');
 			new ModifyPokemon('Helioptile', this)
 				.types
 					.setType('Ground', 'Electric')
@@ -621,7 +620,30 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Toxic');
 			//#endregion
 			//#region NFE Pokemon
-
+			new ModifyPokemon('Ivysaur', this)
+				.baseStats
+					.setHP(75)
+					.setDEF(68)
+					.setSPD(85)
+				.pokemon.learnset
+					.add('Sludge Wave')
+					.add('Acid Spray')
+					.add('Gastro Acid');
+			new ModifyPokemon('Charmeleon', this)
+				.baseStats
+					.setATK(79)
+					.setSPA(90)
+				.pokemon.learnset
+					.add('Fire Lash')
+					.add('Burn Up');
+			new ModifyPokemon('Wartortle', this)
+				.baseStats
+					.setHP(69)
+					.setSPA(80)
+				.pokemon.abilities
+					.setAbility1('Shell Armor')
+				.pokemon.learnset
+					.add('Hydro Stream');
 			//#endregion
 			//#region FE Pokemon
 			// Gen 1
