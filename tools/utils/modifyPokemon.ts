@@ -5,6 +5,7 @@ export class ModifyPokemon {
 	private _dex: ModdedDex;
 
 	constructor(name: string, dex: ModdedDex) {
+		console.log(name);
 		this._name = name.includes("-") ? name.toLowerCase().replace('-' , '') : name.toLowerCase();
 		this._dex = dex;
 		// console.log(this._name);
@@ -106,6 +107,7 @@ export class ModifyPokemon {
 			}
 		
 			add(move: string, gen: number = 8) {
+				console.log(move);
 				move = move.toLowerCase().replace(' ', '');
 				this._dex.modData('Learnsets', this._name).learnset[move.toLowerCase().replace(/ +/g, '')] = [`${gen}M`];
 				return this;
