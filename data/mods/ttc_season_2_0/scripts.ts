@@ -78,7 +78,545 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Magnemite', this)
 				.abilities
 					.setAbility1('Levitate');
-					
+			new ModifyPokemon('Doduo', this)
+				.types
+					.setType('Ground', 'Flying')
+				.pokemon.abilities
+					.setAbility0('Tangled Feet')
+					.setHiddenAbility('Wind Rider');
+			new ModifyPokemon('Seel', this)
+				.abilities
+					.setHiddenAbility('Slush Rush')
+				.pokemon.baseStats
+					.setSPA(60)
+				.pokemon.learnset
+					.add('Scald')
+					.add('Megahorn')
+					.add('Flip Turn')
+					.add('Hydro Pump')
+					.add('Freeze Dry')
+					.add('Chilling Water');
+			new ModifyPokemon('Grimer', this)
+				.abilities
+					.setAbility0('Regenerator')
+					.setAbility1('Gooey')
+					.setHiddenAbility('Stench');
+			new ModifyPokemon('Grimer-Alola', this)
+				.abilities
+					.setHiddenAbility('Corrosion')
+				.pokemon.learnset
+					.add('Parting Shot');
+			new ModifyPokemon('Voltorb', this)
+				.types
+					.setType('Electric', 'Steel')
+				.pokemon.abilities
+					.setAbility1('Baller')
+				.pokemon.learnset
+					.add('Weather Ball')
+					.add('Flash Cannon')
+					.add('Focus Blast')
+					.add('Shadow Ball')
+					.add('Aura Sphere')
+					.add('Magnet Bomb');
+			new ModifyPokemon('Voltorb-Hisui', this)
+				.abilities
+					.setAbility1('Baller')
+				.pokemon.learnset
+					.add('Weather Ball')
+					.add('Energy Ball')
+					.add('Sappy Seed')
+					.add('Giga Drain')
+					.add('Mist Ball');
+			new ModifyPokemon('Exeggutor', this)
+				.abilities
+					.setAbility1('Sap Sipper')
+				.pokemon.learnset
+					.add('Earth Power');
+			new ModifyPokemon('Cubone', this)
+				.abilities
+					.setAbility1('Technician')
+				.pokemon.learnset
+					.add('Head Smash')
+					.add('Headlong Rush');
+			new ModifyPokemon('Porygon', this)
+				.types
+					.setType('Noraml', 'Electric');
+			new ModifyPokemon('Hoothoot', this)
+				.types
+					.setType('Psychic', 'Flying')
+				.pokemon.abilities
+					.setAbility0('Early Bird')
+				.pokemon.learnset
+					.add('Moongeist Beam')
+					.add('Psyshock');
+			new ModifyPokemon('Ledyba', this)
+				.types
+					.setType('Bug', 'Fighting')
+				.pokemon.baseStats
+					.setHP(50)
+					.setATK(50)
+					.setSPA(10)
+					.setSPE(68);
+			new ModifyPokemon('Natu', this)
+				.abilities
+					.setAbility0('Forewarn')
+					.setAbility1('Tinted Lens');
+			new ModifyPokemon('Mareep', this)
+				.abilities
+					.setAbility1('Lightning Rod')
+					.setHiddenAbility('Cotton Down');
+			new ModifyPokemon('Yanma', this)
+				.types
+					.setType('Bug', 'Dragon')
+				.pokemon.abilities
+					.setAbility1('Tinted Lens')
+					.setHiddenAbility('Compound Eyes')
+				.pokemon.learnset
+					.add('Outrage')
+					.add('Dragon Pulse')
+					.add('Dragon Claw')
+					.add('Dragon Rush');
+			new ModifyPokemon('Swinub', this)
+				.abilities
+					.setAbility1('Thick Fat')
+					.setHiddenAbility('Gluttony');
+			new ModifyPokemon('Phanpy', this)
+				.abilities
+					.setAbility1('Technician')
+					.setHiddenAbility('Sand Rush')
+				.pokemon.baseStats
+					.setSPD(60);
+			new ModifyPokemon('Taillow', this)
+				.abilities
+					.setAbility1('Scrappy')
+					.setHiddenAbility('Aerilate')
+				.pokemon.learnset
+					.add('Tidy Up')
+					.add('Extreme Speed');
+			new ModifyPokemon('Skitty', this)
+				.types
+					.setType('Normal', 'Fairy')
+				.pokemon.abilities
+					.setAbility0('Normalize')
+					.setAbility1('Pixilate')
+					.setHiddenAbility('Versatility');
+			new ModifyPokemon('Gulpin', this)
+				.abilities
+					.setAbility1('Gluttony')
+					.setHiddenAbility('Regenerator')
+				.pokemon.baseStats
+					.setATK(53)
+					.setSPA(53);
+			new ModifyPokemon('Barboach', this)
+				.abilities
+					.setAbility1('Unaware')
+					.setHiddenAbility('Water Bubble')
+				.pokemon.baseStats
+					.setHP(55)
+					.setATK(43)
+					.setDEF(49)
+					.setSPA(40);
+			new ModifyPokemon('Baltoy', this)
+				.learnset
+					.add('Shore Up');
+			new ModifyPokemon('Shuppet', this)
+				.abilities
+					.setAbility0('Cursed Body')
+					.setHiddenAbility('Prankster')
+				.pokemon.baseStats
+					.setDEF(40)
+					.setSPD(38);
+			new ModifyPokemon('Bidoof', this)
+				.types
+					.setType('Normal', 'Water')
+				.pokemon.abilities
+					.setHiddenAbility('Water Compaction')
+				.pokemon.baseStats
+					.setSPA(45)
+					.setSPE(38);
+			new ModifyPokemon('Shinx', this)
+				.baseStats
+					.setHP(52)
+					.setATK(68)
+					.setDEF(42)
+					.setSPD(42)
+					.setSPE(56);
+			new ModifyPokemon('Cranidos', this)
+				.abilities
+					.setAbility0('Rock Head')
+					.setAbility1('Sand Rush')
+					.setHiddenAbility('Mold Breaker');
+			new ModifyPokemon('Shieldon', this)
+				.types
+					.setType('Ground', 'Steel')
+				.pokemon.abilities
+					.setAbility0('Dauntless Shield')
+					.setAbility1('Heavy Metal');
+			new ModifyPokemon('Combee', this)
+				.baseStats
+					.setHP(45)
+					.setATK(40)
+					.setSPA(40)
+					.setSPE(80)
+				.pokemon.learnset
+					.add('Wish')
+					.add('Leech Life');
+			new ModifyPokemon('Croagunk', this)
+				.baseStats
+					.setDEF(46)
+					.setSPD(46);
+			new ModifyPokemon('Lillipup', this)
+				.types
+					.setType('Normal', 'Ground')
+				.pokemon.abilities
+					.setAbility0('Ball Fetch')
+					.setHiddenAbility('Guard Dog')
+				.pokemon.baseStats
+					.setHP(58)
+					.setATK(72)
+					.setDEF(50)
+					.setSPA(15)
+					.setSPD(50);
+			new ModifyPokemon('Pansage', this)
+				.abilities
+					.setAbility0('Overgrow')
+					.setHiddenAbility('Grassy Surge')
+				.pokemon.baseStats
+					.setATK(68)
+					.setSPA(38)
+				.pokemon.learnset
+					.add('U Turn')
+					.add('Grassy Glide')
+					.add('Pursuit')
+					.add('Trick');
+			new ModifyPokemon('Pansear', this)
+				.abilities
+					.setAbility0('Blaze')
+					.setHiddenAbility('Drought')
+				.pokemon.baseStats
+					.setATK(58)
+					.setDEF(58)
+					.setSPA(58)
+					.setSPD(43)
+				.pokemon.learnset
+					.add('U Turn')
+					.add('Scorching Sands')
+					.add('Pursuit')
+					.add('Trick');
+			new ModifyPokemon('Panpour', this)
+				.abilities
+					.setAbility0('Torrent')
+					.setHiddenAbility('Drizzle')
+				.pokemon.baseStats
+					.setATK(38)
+					.setSPA(68)
+				.pokemon.learnset
+					.add('Flip Turn')
+					.add('Pursuit')
+					.add('Trick')
+					.add('Glare');
+			new ModifyPokemon('Munna', this)
+				.abilities
+					.setAbility0('Unaware')
+					.setAbility1('Levitate')
+					.setHiddenAbility('Misty Surge')
+				.pokemon.learnset
+					.add('Slack Off')
+					.add('Haze')
+					.add('Draining Kiss');
+			new ModifyPokemon('Pidove', this)
+				.types
+					.setType('Flying')
+				.pokemon.abilities
+					.setAbility0('Rivalry')
+					.setAbility1('Big Pecks');
+			new ModifyPokemon('Timburr', this)
+				.types
+					.setType('Fighting', 'Grass');
+			new ModifyPokemon('Tirtouga', this)
+				.abilities
+					.setAbility0('Strong Jaw')
+					.setHiddenAbility('Analytic');
+			new ModifyPokemon('Archen', this)
+				.abilities
+					.setAbility1('Emergency Exit')
+					.setHiddenAbility('Early Bird');
+			new ModifyPokemon('Zorua', this)
+				.types
+					.setType('Dark', 'Psychic')
+				.pokemon.abilities
+					.setHiddenAbility('Dark Aura');
+			new ModifyPokemon('Minccino', this)
+				.types
+					.setType('Normal', 'Fairy')
+				.pokemon.abilities
+					.setAbility0('Clean Up')
+				.pokemon.learnset
+					.add('Tailwind')
+					.add('Dragon Tail');
+			new ModifyPokemon('Gothita', this)
+				.types
+					.setType('Psychic', 'Dark')
+				.pokemon.abilities
+					.setHiddenAbility('Shadow Shield')
+				.pokemon.learnset
+					.add('Baddy Bad')
+					.add('Glitzy Glow')
+					.add('Sparkly Swirl');
+			new ModifyPokemon('Solosis', this)
+				.types
+					.setType('Psychic', 'Poison')
+				.pokemon.learnset
+					.add('Sludge Wave')
+					.add('Sludge Bomb')
+					.add('WilloWisp');
+			new ModifyPokemon('Deerling-Winter', this)
+				.types
+					.setType('Grass', 'Ice')
+				.pokemon.abilities
+					.setAbility0('Snow Cloak')
+					.setAbility1('Refrigerate')
+				.pokemon.baseStats
+					.setATK(35)
+					.setSPA(65)
+					.setSPE(80)
+				.pokemon.learnset
+					.add('Ice Beam')
+					.add('Blizzard')
+					.add('Bitter Malice')
+					.add('Snowscape')
+					.add('Chilly Reception')
+					.add('Calm Mind')
+					.add('Frost Breath')
+					.add('Icy Wind');
+			// Deerling-Spring
+			new ModifyPokemon('Deerling', this)
+				.types
+					.setType('Grass', 'Fairy')
+				.pokemon.abilities
+					.setAbility0('Misty Surge')
+					.setAbility1('Seed Sower')
+				.pokemon.baseStats
+					.setHP(70)
+					.setATK(35)
+					.setDEF(55)
+					.setSPA(60)
+					.setSPD(55)
+					.setSPE(70)
+				.pokemon.learnset
+					.add('Dazzling Gleam')
+					.add('Draining Kiss')
+					.add('Calm Mind');
+			new ModifyPokemon('Deerling-Summer', this)
+				.types
+					.setType('Grass', 'Fire')
+				.pokemon.abilities
+					.setAbility1('Heatproof')
+				.pokemon.baseStats
+					.setATK(75)
+					.setDEF(55)
+					.setSPA(20)
+					.setSPD(55)
+					.setSPE(80)
+				.pokemon.learnset
+					.add('Flame Charge')
+					.add('Blaze Kick')
+					.add('Leaf Blade')
+					.add('Trop Kick')
+					.add('Tri-Attack');
+			new ModifyPokemon('Deerling-Autumn', this)
+				.types
+					.setType('Grass', 'Fighting')
+				.pokemon.abilities
+					.setAbility1('Guts')
+				.pokemon.baseStats
+					.setHP(70)
+					.setDEF(60)
+					.setSPA(25)
+					.setSPD(60)
+					.setSPE(70)
+				.pokemon.learnset
+					.add('Bulk Up')
+					.add('HighJumpKick')
+					.add('Leaf Blade')
+					.add('Trop Kick');
+			new ModifyPokemon('Klink', this)
+				.types
+					.setType('Steel', 'Electric')
+				.pokemon.abilities
+					.setAbility0('Levitate')
+					.setAbility1('Motor Drive')
+					.setHiddenAbility('Steelworker')
+				.pokemon.baseStats
+					.setHP(35)
+					.setDEF(65)
+					.setSPA(55);
+			new ModifyPokemon('Tynamo', this)
+				.types
+					.setType('Electric', 'Water')
+				.pokemon.abilities
+					.setAbility1('Volt Absorb')
+					.setHiddenAbility('Swift Swim')
+				.pokemon.learnset
+					.add('Scald')
+					.add('Flip Turn')
+					.add('Surf')
+					.add('Aqua Jet')
+					.add('Waterfall')
+					.add('Hydro Pump')
+					.add('Ice Punch');
+			new ModifyPokemon('Helioptile', this)
+				.types
+					.setType('Ground', 'Electric')
+				.pokemon.learnset
+					.add('Scorching Sands');
+			new ModifyPokemon('Goomy', this)
+				.types
+					.setType('Dragon', 'Poison')
+				.pokemon.abilities
+					.setAbility0('Gooey')
+					.setHiddenAbility('Corrosion')
+			new ModifyPokemon('Pikipek', this)
+				.types
+					.setType('Flying')
+				.pokemon.abilities
+					.setAbility0('Oblivious');
+			new ModifyPokemon('Flabebe', this)
+				.types
+					.setType('Fairy', 'Grass')
+				.pokemon.abilities
+					.setAbility1('Symbiosis')
+					.setHiddenAbility('Grassy Surge')
+				.pokemon.learnset
+					.add('Draining Kiss')
+					.add('Pollen Puff');
+			new ModifyPokemon('Cutiefly', this)
+				.abilities
+					.setAbility0('Sweet Veil')
+					.setAbility1('Compound Eyes')
+					.setHiddenAbility('Honey Gather')
+				.pokemon.learnset
+					.add('Leech Seed')
+					.add('Earth Power');
+			new ModifyPokemon('Grubbin', this)
+				.types
+					.setType('Bug', 'Electric')
+				.pokemon.abilities
+					.setAbility1('Motor Drive')
+					.setHiddenAbility('Electromorphosis');
+			new ModifyPokemon('Fomantis', this)
+				.types
+					.setType('Grass', 'Bug')
+				.pokemon.abilities
+					.setAbility1('Chlorophyll');
+			new ModifyPokemon('Morelull', this)
+				.abilities
+					.setAbility1('Poison Point')
+					.setHiddenAbility('Poison Heal')
+				.pokemon.learnset
+					.add('Synthesis')
+					.add('Clear Smog')
+					.add('Misty Terrain')
+					.remove('Drain Punch');
+			new ModifyPokemon('Skwovet', this)
+				.abilities
+					.setAbility1('Harvest')
+				.pokemon.baseStats
+					.setSPA(25)
+					.setSPD(45)
+				.pokemon.learnset
+					.add('Recycle')
+					.add('Toxic')
+					.add('Hyper Fang');
+			new ModifyPokemon('Nickit', this)
+				.abilities
+					.setAbility0('Emergency Exit')
+					.setAbility1('Run Away')
+				.pokemon.baseStats
+					.setDEF(41)
+					.setSPA(59)
+					.setSPE(70);
+			new ModifyPokemon('Wooloo', this)
+				.abilities
+					.setAbility1('Cotton Down')
+					.setHiddenAbility('Simple')
+				.pokemon.baseStats
+					.setHP(52)
+				.pokemon.learnset
+					.add('Head Smash')
+					.add('Head Charge')
+					.add('Iron Head')
+					.add('Milk Drink')
+					.add('False Surrender')
+					.add('Knock Off')
+					.add('Superpower')
+					.add('Stomping Tantrum')
+					.add('High Horsepower')
+					.add('Bulldoze');
+			new ModifyPokemon('Silicobra', this)
+				.abilities
+					.setHiddenAbility('Intimidate')
+				.pokemon.learnset
+					.add('Toxic')
+					.add('Body Slam');
+			new ModifyPokemon('Clobbopus', this)
+				.types
+					.setType('Water', 'Fighting')
+				.pokemon.learnset
+					.add('Arm Thrust')
+					.add('Low Sweep')
+					.add('Mach Punch')
+					.add('Flip Turn');
+			new ModifyPokemon('Hatenna', this)
+				.baseStats
+					.setHP(52)
+					.setATK(53)
+					.setSPA(73)
+				.pokemon.learnset
+					.add('Teleport')
+					.add('Moonblast')
+					.add('Toxic')
+					.add('Eerie Spell');
+			new ModifyPokemon('Milcery', this)
+				.abilities
+					.setAbility0('Triage')
+					.setAbility1('Aroma Veil')
+					.setHiddenAbility('Fairy Aura');
+			new ModifyPokemon('Lechonk', this)
+				.abilities
+					.setAbility0('Pig Out')
+				.pokemon.baseStats
+					.setHP(64)
+					.setSPE(41);
+			new ModifyPokemon('Charcadet', this)
+				.abilities
+					.setAbility1('Quick Draw')
+				.pokemon.baseStats
+					.setATK(65)
+					.setSPA(65)
+					.setSPE(50);
+			new ModifyPokemon('Bramblin', this)
+				.abilities
+					.setAbility1('Sand Rush')
+				.pokemon.baseStats
+					.setSPD(50);
+			new ModifyPokemon('Rellor', this)
+				.abilities
+					.setAbility1('Psychic Surge')
+					.setHiddenAbility('Levitate')
+				.pokemon.baseStats
+					.setSPA(46);
+			new ModifyPokemon('Wiglett', this)
+				.types
+					.setType('Water', 'Rock')
+				.pokemon.abilities
+					.setAbility1('Skill Link')
+					.setHiddenAbility('Technician')
+				.pokemon.learnset
+					.add('Rock Slide')
+					.add('Smack Down')
+					.add('Rock Slide')
+					.add('Toxic');
 			//#endregion
 			//#region NFE Pokemon
 
