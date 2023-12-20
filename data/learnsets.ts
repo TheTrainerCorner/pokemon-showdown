@@ -61874,7 +61874,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			{generation: 5, level: 30, gender: "F", isHidden: true, moves: ["feintattack", "takedown", "jumpkick", "aromatherapy"]},
 		],
 	},
-	deerlingsummer: {
+	deerlingwinter: {
 		learnset: {
 			agility: ["9M", "9E", "7E", "6E", "5E"],
 			aromatherapy: ["7L28", "6L28", "5L28", "5S0"],
