@@ -18,5 +18,32 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(85)
 			.pokemon.learnset
 				.add('Thunderbolt');
+		// Ainka - $50 donation
+		new ModifyPokemon('Minior', this)
+			.baseStats
+				.setATK(110)
+				.setDEF(50)
+				.setSPA(110)
+				.setSPD(50)
+			.pokemon.learnset
+				.remove('Shell Smash')
+				.add('Wish')
+				.add('Lunar Blessing')
+				.add('Memento')
+				.add('Moonlight')
+				.add('Work Up')
+				.add('Flare Blitz')
+				.add('Flame Charge')
+				.add('Burn Up')
+				.add('Parting Shot')
+				.add('Diamond Storm')
+				.add('Spikes')
+				.add('Encore')
+				.add('Stored Power');
+		new ModifyPokemon('Minior-Meteor', this)
+			.baseStats
+				.setDEF(120)
+				.setSPD(120)
+				.setSPE(80);
 	},
 };
