@@ -1,19 +1,7 @@
 import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
 
 export const Scripts: ModdedBattleScriptsData = {
-	inherit: 'ttc_season_1_winners',
+	inherit: 'ttc_season_1_thanksgiving',
 	init() {
-		new ModifyPokemon('altaria', this)
-			.types
-				.setType('Dragon', 'Flying')
-			.pokemon.baseStats
-				.setATK(70)
-				.setDEF(90)
-				.setSPA(70)
-				.setSPD(105)
-				.setSPE(80);
-		new ModifyPokemon('Virizion', this)
-			.baseStats
-				.setSPA(129);
 	}
 };

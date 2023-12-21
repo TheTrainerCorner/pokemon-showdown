@@ -1140,7 +1140,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setAbility1('Sand Veil');
 			new ModifyPokemon('Seviper', this)
 				.abilities
-					.setAbility1('Cold Blooded');
+					.setAbility1('Cold-Blooded');
 			new ModifyPokemon('Tropius', this)
 				.baseStats
 					.setHP(109)

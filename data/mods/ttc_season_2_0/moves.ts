@@ -1524,7 +1524,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
 		shortDesc: "Charges Turn 1. Hits Turn 2. No Charge in Snowstorm.",
 	},
-	swarm: {
+	swarmterrain: {
 		num: 10008,
 		accuracy: true,
 		basePower: 0,

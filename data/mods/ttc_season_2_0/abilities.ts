@@ -678,21 +678,22 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "Light-based moves will have 1.3x boost in power and will not miss.",
 	},
 	innerfocus: {
-		//TODO DOESN'T WORK
 		inherit: true,
 		onModifyMove(move) {
 			if(move.id == 'focuspunch') {
 
 				move.beforeMoveCallback = undefined;
-				move.condition = {
-					duration: 1,
-					onStart(pokemon) {
-						this.add('-singleturn', pokemon, 'move: Focus Punch');
-					},
-					onTryAddVolatile(status, pokemon) {
-						if(status.id === 'flinch') return null;
-					}
-				}
+				move.priorityChargeCallback = undefined;
+				move.condition = undefined;
+				// move.condition = {
+				// 	duration: 1,
+				// 	onStart(pokemon) {
+				// 		this.add('-singleturn', pokemon, 'move: Focus Punch');
+				// 	},
+				// 	onTryAddVolatile(status, pokemon) {
+				// 		if(status.id === 'flinch') return null;
+				// 	}
+				// }
 			}
 			if(move.id === 'focusblast') {
 				move.accuracy = true;
@@ -762,7 +763,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onCriticalHit: false,
 		onSourceModifyDamage(damage, source, target, move) {
 			if(['Water', 'Ice'].includes(move.type)) {
-				return this.chainModify(0.75);
+				return this.chainModify(0.25);
 			}
 		},
 		desc: "Ice & Water Type moves do 75% less damage to the user and user is unable to be crited.",
@@ -836,14 +837,12 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon's moves are changed to be Normal type and have 1.5x power.",
 	},
 	oblivious: {
-		// TODO DOESN'T WORK
 		inherit: true,
 		onUpdate: undefined,
 		onImmunity: undefined,
-		onTryHit: undefined,
 		onTryBoost: undefined,
-		onAfterHit(pokemon, target, move) {
-			pokemon.moveSlots.find((x) => x.id === move.id)!.pp += 1;
+		onModifyMove(move) {
+			move.pp += 1;
 		},
 		desc: "This ability allow PP to not be consumed when using a move.",
 		shortDesc: "This ability allow PP to not be consumed when using a move.",
@@ -1019,9 +1018,10 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	raindish: {
 		inherit: true,
 		onWeather: undefined,
-		onSwitchOut(pokemon) {
-			if (['raindance', 'primordialsea'].includes(pokemon.effectiveWeather())) {
-				pokemon.heal(pokemon.baseMaxhp / 4);
+		onSwitchIn(pokemon) {
+			this.debug(`Pokemon ${pokemon} was switched in`);
+			if (pokemon.effectiveWeather() === 'raindance') {
+				pokemon.heal(pokemon.maxhp / 4);
 			}
 		},
 		desc: "If rain is activate, when the user switches out, the pokemon switching in, will heal 25% of their max hp.",
@@ -1241,9 +1241,20 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		// 		pokemon.heal(pokemon.maxhp / 16);
 		// 	}
 		// },
-		onAfterMove(source, target, move) {
+		onTryHit(pokemon, target, move) {
 			if (move.category === 'Status') {
-				source.heal(source.maxhp / 16, source);
+				pokemon.addVolatile('stall');
+			}
+		},
+		condition: {
+			noCopy: true,
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'ability: Stall');
+			},
+			onEnd(pokemon) {
+				pokemon.heal(pokemon.maxhp / 16);
+				this.add('-end', pokemon, 'ability: Stall', '[silent]')
 			}
 		},
 		desc: "The user recovers 1/16th of it's Max HP at the end of the turn, if it used a Status move.",
@@ -1251,16 +1262,16 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	stalwart: {
 		inherit: true,
+		onModifyMovePriority: undefined,
 		onTryMove(attacker, defender, move) {
-			if (move.flags.charge) {
+			 if (move.flags.charge) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
 				return;
-			}
+			 }
 		},
-		onModifyMove(move, pokemon, target) {
-			if (!move.flags['charge']) return;
-			move.pp -= 1;
+		onModifyMove(move) {
+			move.pp -= 1;	
 		},
 		desc: "Moves that require 2 turns to use, require 1 turn to use, but requires an extra PP.",
 		shortDesc: "Moves that require 2 turns to use, require 1 turn to use, but requires an extra PP.",
@@ -1319,11 +1330,11 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon can not be Forced out or Lose its held item, if the opposing Pokemon tries, the user will loses 1 stage of Speed, but gains 1 stage of Def and SpD.",
 	},
 	swarm: {
-		//TODO DOESN'T WORK
 		inherit: true,
 		onStart(pokemon) {
 			this.field.setTerrain('swarmterrain');
 		},
+		
 		shortDesc: "Sets up a terrain the prevents the other side from using Boosting Moves.",
 	},
 	sweetveil: {
@@ -1573,7 +1584,6 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: -2001,
 	},
-	// TODO: Implement ability after getting clarification on it.
 	coldblooded: {
 		onSourceModifyAtkPriority: 6,
 		onSourceModifyAtk(atk, attacker, defender, move) {
@@ -1604,6 +1614,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		name: "Cold-Blooded",
 		rating: 3,
 		num: -2002,
+		isNonstandard: "Past",
 		shortDesc: "Hit by Fire-type Moves=+1 Spe, Takes 1/2 damage; Hit by Ice-type Moves=-1 Spe, Takes 1.5x damage.",
 	},
 	emulate: {
