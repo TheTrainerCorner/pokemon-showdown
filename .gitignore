@@ -1,4 +1,5 @@
 /config/*
+!/config/colors.json
 !/config/formats.ts
 /logs/*
 /test/modlogs
