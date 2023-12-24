@@ -82,6 +82,7 @@ export const Formats: FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shell Smash',
 		],
 		unbanlist: [
+			'all items',
 			'Unreleased',
 			// Unobtainable Moves
 			'Barb Barrage',
