@@ -41,7 +41,6 @@ export const Formats: FormatList = [
 		 * Wildbolt Storm
 		 */
 		unbanlist: [
-			'Past',
 			'Unreleased',
 			// Unobtainable Moves
 			'Barb Barrage',
@@ -83,7 +82,6 @@ export const Formats: FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shell Smash',
 		],
 		unbanlist: [
-			'Past',
 			'Unreleased',
 			// Unobtainable Moves
 			'Barb Barrage',
@@ -125,7 +123,6 @@ export const Formats: FormatList = [
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
 		],
 		unbanlist: [
-			'Past',
 			'Unreleased',
 			// Unobtainable Moves
 			'Barb Barrage',
@@ -176,7 +173,6 @@ export const Formats: FormatList = [
 		 * Wildbolt Storm
 		 */
 		unbanlist: [
-			'Past',
 			'Unreleased',
 			// Unobtainable Moves
 			'Barb Barrage',
