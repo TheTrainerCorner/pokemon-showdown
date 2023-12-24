@@ -29,4 +29,24 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 		natDexTier: "OU",
 	},
+	farfetchdmega: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	poisonus: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	poisonustherian: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	volcaronafaerie: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
 }
