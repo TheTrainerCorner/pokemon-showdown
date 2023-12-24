@@ -120,6 +120,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			// Any item that was legal in Gen 7 (Normal Gem for example) should be usable
 			if (!set.item) return;
 			let item = this.dex.items.get(set.item);
+			if (item.megaStone) return;
 			let gen = this.dex.gen;
 			while (item.isNonstandard && gen >= 7) {
 				item = this.dex.forGen(gen).items.get(item.id);
