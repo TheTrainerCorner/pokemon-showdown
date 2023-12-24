@@ -45,5 +45,52 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(120)
 				.setSPD(120)
 				.setSPE(80);
+
+		// Apollo Chaoz
+		//#region Sychronoise
+		const addToPokemon = [
+			'mew',
+			'jirachi',
+			'meloetta',
+			'mesprit',
+			'uxie',
+			'azelf',
+			'calyrex',
+			'zoroark',
+			'espeon',
+			'lucario',
+			'ralts',
+			'kirlia',
+			'gardevoir',
+			'gallade',
+			'girafarig',
+			'psyduck',
+			'golduck',
+			'hoothoot',
+			'noctowl',
+			'whismur',
+			'loudred',
+			'exploud',
+			'natu',
+			'xatu',
+			'kecleon',
+			'chimecho',
+			'chatot',
+			'munna',
+			'musharna',
+			'sigilyph',
+			'woobat',
+			'swoobat',
+			'elgyem',
+			'beheeyem',
+			'gothita',
+			'gothitelle',
+			'gothorita',
+		];
+
+		for (const pokemon of addToPokemon) {
+			this.modData('Learnsets', pokemon).learnset['synchronise'] = ['9M'];
+		}
+		//#endregion
 	},
 };

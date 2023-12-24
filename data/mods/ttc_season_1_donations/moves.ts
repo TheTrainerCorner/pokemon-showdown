@@ -91,4 +91,48 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Doubles in power in rain",
 		desc: "Doubles in power in rain",
 	},
+	synchronoise: {
+		num: -2005,
+		name: "Synchronoise",
+		basePower: 85,
+		accuracy: 100,
+		pp: 4,
+		priority: 0,
+		type: "Psychic",
+		category: "Special",
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 10,
+			volatileStatus: 'confusion',
+		},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Psychic') return 1;
+		},
+		target: "normal",
+		contestType: "Cool",
+		shortDesc: "10% chance to confuse. Super effective on Psychic types.",
+		desc: "10% chance to confuse. Super effective on Psychic types.",
+	},
+	leeklunge: {
+		num: -2006,
+		name: "Leek Lunge",
+		basePower: 60,
+		accuracy: 100,
+		pp: 10,
+		priority: 0,
+		type: "Flying",
+		category: "Physical",
+		flags: {slicing: 1, protect: 1, contact: 1},
+		critRatio: 2,
+		secondary: {
+			chance: 50,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		contestType: "Cool",
+		shortDesc: "Has a high chance to critically hit; 50% chance of lowering Defense",
+		desc: "This move has an increased chance to critically hit. Additionally, it has a 50% chance to lower the opponent's Defense"
+	},
 };

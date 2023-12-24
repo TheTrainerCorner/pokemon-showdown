@@ -19,4 +19,49 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		shortDesc: "If Minior, at 1/2 max hp, changes to Core and is immune to priority moves; else Meteor forme",
 	},
+	colorchange: {
+		inherit: true,
+		onAfterMoveSecondary: undefined,
+		onFoeBeforeMove(source, target, move) {
+			if (!target.hp) return;
+			const type = move.type
+			if (target.isActive && move.effectType === 'Move' && move.category !== 'Status' && type !== '???') {
+				let _type = this.dex.types.get(type);
+			
+				let types = this.dex.types.allCache;
+				// 2 = Resistance.
+				let resultType = types?.find(x => _type.damageTaken[x.id] === 2);
+
+				if (!target.hasType(resultType!.name)) return false;
+				this.add('-start', target, 'typechange', type, '[from] ability: Color Change');
+
+				if (target.side.active.length === 2 && target.position === 1) {
+					const action = this.queue.willMove(target);
+					if (action && action.move.id === 'curse') {
+						action.targetLoc = -1;
+					}
+				}
+			}
+		},
+		desc: "The user's type changes to resist the oncoming move from the opposing pokemon.",
+		shortDesc: "Changes type based on the oncoming move to resist it.",
+	},
+	sharpenedleek: {
+		num: -1501,
+		name: "Sharpened Leek",
+		// Sharpness
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['slicing']) {
+				this.debug('Sharpened Leek boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon, target, move) {
+			return this.chainModify(1.2);
+		},
+		desc: "Sharpness + Attack increased by 1.2x",
+		shortDesc: "Sharpness + Attack increased by 1.2x",
+	}
 };
