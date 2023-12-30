@@ -791,7 +791,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setSPA(45)
 					.setSPD(90)
 					.setSPE(75);
-			new ModifyPokemon('Tranquil', this)
+			new ModifyPokemon('Tranquill', this)
 				.types
 					.setType('Flying')
 				.pokemon.abilities

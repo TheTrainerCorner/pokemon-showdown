@@ -22,7 +22,6 @@ export class ModifyPokemon {
 			}
 
 			setType(type1: string, type2?: string) {
-				console.log(this._name);
 				let tempTypes = [];
 				if (type1) tempTypes.push(type1);
 				if (type2) tempTypes.push(type2);
