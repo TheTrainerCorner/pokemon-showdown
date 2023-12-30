@@ -22,7 +22,10 @@ export class ModifyPokemon {
 			}
 
 			setType(type1: string, type2?: string) {
-				this._dex.modData('Pokedex', this._name).types = type2 !== undefined ? [type1, type2] : [type1];
+				let tempTypes = [];
+				if (type1) tempTypes.push(type1);
+				if (type2) tempTypes.push(type2);
+				this._dex.modData('Pokedex', this._name).types = tempTypes;
 				return this;
 			}
 
