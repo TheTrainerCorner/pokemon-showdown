@@ -1876,9 +1876,9 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setAbility1('Cloud Nine')
 				.pokemon.learnset
 					.add('Electro Shot');
-			new ModifyPokemon('ThundurusTherian', this)
-				.learnset
-					.add('Electro Shot');
+			// new ModifyPokemon('ThundurusTherian', this)
+			// 	.learnset
+			// 		.add('Electro Shot');
 			new ModifyPokemon('Landorus', this)
 				.abilities
 					.setAbility1('Cloud Nine');
