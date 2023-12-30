@@ -620,6 +620,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Toxic');
 			//#endregion
 			//#region NFE Pokemon
+			// Gen 1
 			new ModifyPokemon('Ivysaur', this)
 				.baseStats
 					.setHP(75)
@@ -644,6 +645,250 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setAbility1('Shell Armor')
 				.pokemon.learnset
 					.add('Hydro Stream');
+			new ModifyPokemon('Pidgeotto', this)
+				.abilities
+					.setAbility0('Frisk')
+					.setAbility1('Early Bird')
+					.setHiddenAbility('Defiant')
+				.pokemon.baseStats
+					.setHP(68)
+					.setATK(70)
+					.setDEF(65)
+					.setSPA(70)
+					.setSPE(76)
+			// Gen 2
+			new ModifyPokemon('Bayleef', this)
+				.abilities
+					.setAbility1('Regenrator')
+				.pokemon.baseStats
+					.setDEF(90)
+					.setSPA(85)
+					.setSPD(90);
+			new ModifyPokemon('Quilava', this)
+				.abilities
+					.setAbility1('Anger Point')
+				.pokemon.baseStats
+					.setATK(84)
+					.setSPE(85);
+			new ModifyPokemon('Croconaw', this)
+				.baseStats
+					.setHP(75)
+					.setATK(90)
+					.setDEF(85);
+			new ModifyPokemon('Togetic', this)
+				.baseStats
+					.setHP(70)
+					.setSPA(95);
+			new ModifyPokemon('Flaaffy', this)
+				.abilities
+					.setAbility1('Lightning Rod')
+					.setHiddenAbility('Cotton Down')
+				.pokemon.baseStats
+					.setHP(75)
+					.setDEF(65)
+					.setSPA(95)
+					.setSPD(75)
+				.pokemon.learnset
+					.add('Parabolic Charge')
+					.add('Dazzling Gleam');
+			// Gen 3
+			// Gen 4
+			new ModifyPokemon('Grotle', this)
+				.types
+					.setType('Grass', 'Ground')
+				.pokemon.abilities
+					.setAbility1('Thick Fat')
+				.pokemon.baseStats
+					.setHP(85)
+					.setDEF(90)
+					.setSPD(70)
+					.setSPE(41)
+				.pokemon.learnset
+					.add('Rapid Spin')
+					.add('Earthquake');
+			new ModifyPokemon('Monferno', this)
+				.abilities
+					.setAbility1('Steadfast')
+				.pokemon.baseStats
+					.setHP(69)
+					.setATK(83)
+					.setDEF(57)
+					.setSPA(83)
+					.setSPD(57)
+				.pokemon.learnset
+					.add('Sucker Punch')
+					.add('Ice Punch');
+			new ModifyPokemon('Prinplup', this)
+				.abilities
+					.setAbility1('Pressure')
+				.pokemon.baseStats
+					.setHP(74)
+					.setDEF(73)
+					.setSPD(81)
+					.setSPE(55)
+				.pokemon.learnset
+					.add('Dual Wingbeat')
+					.add('Ice Shard')
+					.add('Icicle Crash');
+			new ModifyPokemon('Staravia', this)
+				.abilities
+					.setAbility1('Guts')
+				.pokemon.baseStats
+					.setATK(85)
+					.setSPD(50)
+					.setSPE(90);
+			new ModifyPokemon('Luxio', this)
+				.types
+					.setType('Electric', 'Dark')
+				.pokemon.abilities
+					.setAbility0('Strong Jaw')
+				.pokemon.baseStats
+					.setHP(75)
+					.setATK(100)
+					.setDEF(74)
+					.setSPA(70)
+					.setSPD(74)
+					.setSPE(77);
+			new ModifyPokemon('Gabite', this)
+				.baseStats
+					.setHP(78)
+					.setATK(105)
+					.setDEF(75)
+					.setSPD(60);
+			// Gen 5
+			new ModifyPokemon('Servine', this)
+				.abilities
+					.setAbility1('Chlorophyll')
+				.pokemon.baseStats
+					.setHP(67)
+					.setSPA(70);
+			new ModifyPokemon('Pignite', this)
+				.abilities
+					.setAbility1('Thick Fat')
+					.setHiddenAbility('Reckless')
+				.pokemon.baseStats
+					.setATK(95)
+					.setDEF(60)
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Submission');
+			new ModifyPokemon('Dewott', this)
+				.abilities
+					.setAbility1('Lightning Rod')
+				.pokemon.baseStats
+					.setHP(80)
+					.setATK(82)
+					.setSPE(65)
+				.pokemon.learnset
+					.add('Psycho Cut');
+			new ModifyPokemon('Herdier', this)
+				.types
+					.setType('Normal', 'Ground')
+				.pokemon.baseStats
+					.setHP(85)
+					.setATK(95)
+					.setDEF(80)
+					.setSPA(45)
+					.setSPD(90)
+					.setSPE(75);
+			new ModifyPokemon('Trangquil', this)
+				.types
+					.setType('Flying')
+				.pokemon.abilities
+					.setAbility0('Rivalry')
+					.setAbility1('Big Pecks')
+					.setHiddenAbility('Gale Wings')
+				.pokemon.baseStats
+					.setHP(67)
+					.setSPA(77)
+					.setSPE(72)
+				.pokemon.learnset
+					.add('Flame Charge')
+					.add('Superpower')
+					.add('Oblivion Wing');
+			new ModifyPokemon('Boldore', this)
+				.baseStats
+					.setSPD(70)
+				.pokemon.learnset
+					.add('Knock Off');
+			new ModifyPokemon('Gurdurr', this)
+				.types
+					.setType('Fighting', 'Steel')
+				.pokemon.baseStats
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Hard Press');
+			new ModifyPokemon('Palpitoad', this)
+				.baseStats
+					.setHP(90)
+					.setDEF(65)
+					.setSPD(65)
+				.pokemon.learnset
+					.add('Thunder Wave')
+					.add('Liquidation');
+			new ModifyPokemon('Krokorok', this)
+				.baseStats
+					.setATK(97)
+					.setDEF(55)
+					.setSPD(55)
+					.setSPE(79);
+			new ModifyPokemon('Gothorita', this)
+				.types
+					.setType('Psychic', 'Dark')
+				.pokemon.abilities
+					.setHiddenAbility('Shadow Shield')
+				.pokemon.baseStats
+					.setHP(75)
+					.setDEF(75)
+					.setSPA(85)
+					.setSPD(90)
+				.pokemon.learnset
+					.add('Baddy Bad')
+					.add('Glitzy Glow')
+					.add('Sparkly Swirl');
+			new ModifyPokemon('Duosion', this)
+				.types
+					.setType('Psychic', 'Poison')
+				.pokemon.baseStats
+					.setHP(85)
+					.setDEF(65)
+					.setSPD(75)
+				.pokemon.learnset
+					.add('Sludge Wave')
+					.add('Sludge Bomb')
+					.add('WilloWisp');
+			new ModifyPokemon('Vanillish', this)
+				.baseStats
+					.setHP(61)
+					.setDEF(75)
+					.setSPA(95)
+					.setSPD(85)
+				.pokemon.learnset
+					.add('Freezy Frost')
+					.add('Sparkly Swirl')
+					.add('Salt Cure');
+			new ModifyPokemon('Klang', this)
+				.types
+					.setType('Steel', 'Electric')
+				.pokemon.abilities
+					.setAbility0('Levitate')
+					.setAbility1('Motor Drive')
+					.setHiddenAbility('Steelworker');
+			new ModifyPokemon('Eelektrik', this)
+				.types
+					.setType('Electric', 'Water')
+				.pokemon.abilities
+					.setAbility1('Volt Absorb')
+					.setHiddenAbility('Swift Swim')
+				.pokemon.learnset
+					.add('Scald')
+					.add('Flip Turn')
+					.add('Surf')
+					.add('Aqua Jet')
+					.add('Waterfall')
+					.add('Rising Voltage')
+					.add('Hydro Pump');
+
 			//#endregion
 			//#region FE Pokemon
 			// Gen 1
