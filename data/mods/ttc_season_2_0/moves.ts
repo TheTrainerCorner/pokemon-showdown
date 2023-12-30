@@ -1562,4 +1562,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Bug",
 		contestType: "Beautiful",
 	},
+	// Fixed Moves
+	filletaway: {
+		inherit: true,
+		onTry(source) {
+			if (source.hp <= source.maxhp / 4 || source.maxhp === 1) return false;
+		},
+		onHit(pokemon) {
+			this.directDamage(pokemon.maxhp / 4);
+		},
+	},
 };
