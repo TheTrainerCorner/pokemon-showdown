@@ -655,7 +655,131 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setATK(70)
 					.setDEF(65)
 					.setSPA(70)
-					.setSPE(76)
+					.setSPE(76);
+			new ModifyPokemon('Nidorina', this)
+				.abilities
+					.setHiddenAbility('Sheer Force')
+				.pokemon.baseStats
+					.setHP(80)
+					.setDEF(72)
+					.setSPA(75)
+					.setSPD(65);
+			new ModifyPokemon('Nidorino', this)
+				.baseStats
+					.setHP(66)
+					.setATK(92)
+					.setDEF(62)
+					.setSPD(60)
+					.setSPE(70);
+			new ModifyPokemon('Clefairy', this)
+				.baseStats
+					.setHP(75)
+					.setDEF(58)
+					.setSPA(65)
+					.setSPD(75);
+			new ModifyPokemon('Jigglypuff', this)
+				.abilities
+					.setAbility0('Fluffy')
+				.pokemon.baseStats
+					.setDEF(40)
+					.setSPA(65)
+					.setSPD(45)
+				.pokemon.learnset
+					.add('Moonblast');
+			new ModifyPokemon('Golbat', this)
+				.baseStats
+					.setHP(85)
+					.setATK(85)
+					.setDEF(80)
+					.setSPA(40)
+					.setSPD(80);
+			new ModifyPokemon('Gloom', this)
+				.abilities
+					.setAbility1('Neutralizing Gas')
+				.pokemon.baseStats
+					.setHP(70)
+					.setDEF(75)
+					.setSPA(95)
+					.setSPD(80)
+				.pokemon.learnset
+					.add('Acid Spray')
+					.add('Trailblaze');
+			new ModifyPokemon('Poliwhirl', this)
+				.baseStats
+					.setHP(75)
+					.setSPA(60)
+					.setSPD(70)
+				.pokemon.learnset
+					.add('Flip Turn');
+			new ModifyPokemon('Machoke', this)
+				.baseStats
+					.setHP(90)
+					.setATK(110)
+					.setDEF(80)
+					.setSPD(75)
+					.setSPE(55);
+			new ModifyPokemon('Weepinbell', this)
+				.abilities
+					.setAbility0('Liquid Ooze')
+					.setHiddenAbility('Fly Trap')
+				.pokemon.baseStats
+					.setHP(70)
+					.setDEF(60)
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Solar Blade');
+			new ModifyPokemon('Graveler', this)
+				.abilities
+					.setHiddenAbility('Solid Rock')
+				.pokemon.baseStats
+					.setHP(70)
+					.setATK(100)
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Body Press');
+			new ModifyPokemon('Graveler-Alola', this)
+				.baseStats
+					.setHP(70)
+					.setATK(100)
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Body Press');
+			new ModifyPokemon('Haunter', this)
+				.baseStats
+					.setHP(50)
+					.setSPA(118)
+					.setSPE(97);
+			new ModifyPokemon('Seadra', this)
+				.types
+					.setType('Water', 'Dragon')
+				.pokemon.abilities
+					.setAbility0('Water Veil')
+				.pokemon.baseStats
+					.setHP(65)
+					.setSPD(65)
+			new ModifyPokemon('Electabuzz', this)
+				.abilities
+					.setHiddenAbility('Iron Fist')
+				.pokemon.baseStats
+					.setATK(93)
+				.pokemon.learnset
+					.add('Mach Punch');
+			new ModifyPokemon('Magmar', this)
+				.baseStats
+					.setSPA(105)
+				.pokemon.learnset
+					.add('Scald')
+					.add('Dark Pulse')
+					.add('Magma Storm')
+					.add('Burning Bulwark');
+			new ModifyPokemon('Dragonair', this)
+				.abilities
+					.setHiddenAbility('Power of Alchemy')
+				.pokemon.baseStats
+					.setHP(76)
+					.setDEF(70)
+					.setSPD(75)
+					.setSPA(85);
 			// Gen 2
 			new ModifyPokemon('Bayleef', this)
 				.abilities
