@@ -815,7 +815,183 @@ export const Scripts: ModdedBattleScriptsData = {
 				.pokemon.learnset
 					.add('Parabolic Charge')
 					.add('Dazzling Gleam');
+			new ModifyPokemon('Aipom', this)
+				.abilities
+					.setAbility1('Armor Tail')
+				.pokemon.baseStats
+					.setHP(65)
+					.setATK(85)
+					.setSPE(90)
+				.pokemon.learnset
+					.add('Sucker Punch')
+					.add('Mach Punch')
+					.add('Quick Attack');
+			new ModifyPokemon('Murkrow', this)
+				.abilities
+					.setAbility0('Early Bird')
+				.pokemon.baseStats
+					.setHP(70)
+					.setDEF(52)
+					.setSPD(52)
+				.pokemon.learnset
+					.add('Parting Shot');
+			new ModifyPokemon('Misdreavus', this)
+				.types
+					.setType('Ghost', 'Fairy')
+				.pokemon.abilities
+					.setHiddenAbility('Magic Guard')
+				.pokemon.learnset
+					.add('Moonlight')
+					.add('Magic Powder')
+					.add('Psyshock');
+			new ModifyPokemon('Gligar', this)
+				.baseStats
+					.setATK(80)
+					.setDEF(110);
+			new ModifyPokemon('Sneasel', this)
+				.baseStats
+					.setATK(105)
+					.setDEF(65);
+			new ModifyPokemon('Sneasel-Hisui', this)
+				.baseStats
+					.setATK(105)
+					.setDEF(65);
+			new ModifyPokemon('Piloswine', this)
+				.baseStats
+					.setATK(110);
+			new ModifyPokemon('Pupitar', this)
+				.abilities
+					.setAbility0('Solid Rock')
+					.setHiddenAbility('Sand Stream')
+				.pokemon.baseStats
+					.setHP(75)
+					.setATK(89)
+					.setDEF(90)
+					.setSPD(90);
 			// Gen 3
+			new ModifyPokemon('Grovyle', this)
+				.baseStats
+					.setHP(55)
+					.setATK(80)
+					.setDEF(50)
+				.pokemon.learnset
+					.add('Trailblaze');
+			new ModifyPokemon('Combusken', this)
+				.baseStats
+					.setHP(65)
+					.setATK(95)
+					.setSPA(95);
+			new ModifyPokemon('Marshtomp', this)
+				.baseStats
+					.setHP(80)
+					.setDEF(75)
+					.setSPD(80)
+				.pokemon.learnset
+					.add('Chilling Water')
+					.add('Triple Dive');
+			new ModifyPokemon('Lombre', this)
+				.abilities
+					.setHiddenAbility('Dancer')
+				.pokemon.baseStats
+					.setHP(70)
+					.setSPA(70)
+					.setSPE(60)
+				.pokemon.learnset
+					.add('Teeter Dance')
+					.add('Quiver Dance');
+			new ModifyPokemon('Nuzleaf', this)
+				.abilities
+					.setAbility1('Wind Rider')
+				.pokemon.baseStats
+					.setATK(90)
+					.setSPA(80)
+					.setSPE(70)
+				.pokemon.learnset
+					.add('Parting Shot');
+			new ModifyPokemon('Kirlia', this)
+				.abilities
+					.setHiddenAbility('Dancer')
+				.pokemon.baseStats
+					.setHP(53)
+					.setDEF(50)
+					.setSPA(95)
+					.setSPD(85)
+					.setSPE(70)
+				.pokemon.learnset
+					.add('Recover');
+			new ModifyPokemon('Vigoroth', this)
+				.abilities
+					.setAbility0('Berserk')
+				.pokemon.baseStats
+					.setSPD(65)
+				.pokemon.learnset
+					.add('Knock Off');
+			new ModifyPokemon('Loudred', this)
+				.abilities
+					.setAbility1('Punk Rock')
+				.pokemon.baseStats
+					.setSPA(76)
+					.setSPD(58)
+					.setSPE(53)
+				.pokemon.learnset
+					.add('Overdrive');
+			new ModifyPokemon('Lairon', this)
+				.types
+					.setType('Steel')
+				.pokemon.abilities
+					.setHiddenAbility('Filter')
+				.pokemon.baseStats
+					.setHP(65)
+					.setATK(100)
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Work Up');
+			new ModifyPokemon('Roselia', this)
+				.abilities
+					.setHiddenAbility('Technician')
+				.pokemon.baseStats
+					.setDEF(55)
+					.setSPA(105)
+					.setSPD(95)
+					.setSPE(75)
+				.pokemon.learnset
+					.add('Sludge Wave')
+					.add('Draining Kiss');
+			new ModifyPokemon('Vibrava', this)
+				.types
+					.setType('Bug', 'Dragon')
+				.pokemon.abilities
+					.setHiddenAbility('Tinted Lens')
+				.pokemon.baseStats
+					.setHP(70)
+					.setDEF(60)
+					.setSPA(75)
+					.setSPD(60)
+					.setSPE(80)
+				.pokemon.learnset
+					.add('Pounce')
+					.add('Skitter Smack');
+			new ModifyPokemon('Sealeo', this)
+				.abilities
+					.setHiddenAbility('Ball Fetch')
+				.pokemon.learnset
+					.add('Scald')
+					.add('Flip Turn')
+					.add('Slack Off');
+			new ModifyPokemon('Shelgon', this)
+				.abilities
+					.setAbility0('Weak Armor')
+				.pokemon.baseStats
+					.setHP(80)
+					.setATK(100)
+					.setSPA(70)
+					.setSPD(60);
+			new ModifyPokemon('Metang', this)
+				.baseStats
+					.setHP(70)
+					.setATK(90)
+					.setSPA(65)
+					.setSPD(85);
 			// Gen 4
 			new ModifyPokemon('Grotle', this)
 				.types
@@ -1012,7 +1188,255 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Waterfall')
 					.add('Rising Voltage')
 					.add('Hydro Pump');
-
+			new ModifyPokemon('Lampent', this)
+				.baseStats
+					.setHP(65)
+					.setSPA(100)
+					.setSPD(70)
+					.setSPE(75);
+			new ModifyPokemon('Fraxure', this)
+				.abilities
+					.setAbility0('Mold Breaker')
+					.setAbility1('Rough Skin')
+					.setHiddenAbility('Tough Claws');
+			new ModifyPokemon('Zweilous', this)
+				.baseStats
+					.setHP(82)
+					.setATK(100)
+					.setSPE(73);
+			// Gen 6
+			new ModifyPokemon('Quilladin', this)
+				.abilities
+					.setAbility1('Rough Skin')
+					.setHiddenAbility('Leaf Guard')
+				.pokemon.baseStats
+					.setHP(66)
+					.setSPD(78)
+				.pokemon.learnset
+					.add('Stealth Rock')
+					.add('Horn Leech')
+					.add('Rapid Spin');
+			new ModifyPokemon('Braxien', this)
+				.types
+					.setType('Fire', 'Psychic')
+				.pokemon.abilities
+					.setAbility1('Magician')
+					.setHiddenAbility('Magic Guard')
+				.pokemon.baseStats
+					.setHP(64)
+					.setDEF(63)
+					.setSPA(96)
+					.setSPE(78)
+				.pokemon.learnset
+					.add('Magic Powder')
+					.add('Moonblast');
+			new ModifyPokemon('Frogadier', this)
+				.types
+					.setType('Water', 'Dark')
+				.pokemon.baseStats
+					.setHP(59)
+					.setATK(78)
+					.setDEF(57);
+			new ModifyPokemon('Fletchinder', this)
+				.abilities
+					.setAbility1('Libero')
+				.pokemon.baseStats
+					.setHP(77)
+					.setATK(81)
+					.setSPE(91);
+			new ModifyPokemon('Floette', this)
+				.types
+					.setType('Fairy', 'Grass')
+				.pokemon.abilities
+					.setAbility1('Symbiosis')
+					.setHiddenAbility('Grassy Surge')
+				.pokemon.baseStats
+					.setHP(78)
+					.setDEF(68)
+					.setSPA(89)
+					.setSPD(118)
+					.setSPE(62);
+			new ModifyPokemon('Sliggoo', this)
+				.types
+					.setType('Dragon', 'Poison')
+				.pokemon.baseStats
+					.setDEF(61);
+			new ModifyPokemon('Sliggoo-Hisui', this)
+				.baseStats
+					.setHP(66);
+			// Gen 7
+			new ModifyPokemon('Dartrix', this)
+				.abilities
+					.setAbility1('Keen Eye')
+				.pokemon.baseStats
+					.setSPE(62);
+			new ModifyPokemon('Torracat', this)
+				.abilities
+					.setAbility1('Defiant')
+				.pokemon.baseStats
+					.setHP(70)
+					.setATK(90);
+			new ModifyPokemon('Brionne', this)
+				.types
+					.setType('Water', 'Fairy')
+				.pokemon.abilities
+					.setAbility1('Thick Fat')
+				.pokemon.baseStats
+					.setDEF(74)
+					.setSPE(55)
+				.pokemon.learnset
+					.add('Eerie Spell');
+			new ModifyPokemon('Trumbeak', this)
+				.types
+					.setType('Flying')
+				.pokemon.baseStats
+					.setHP(65)
+					.setATK(95)
+					.setDEF(65)
+					.setSPD(65);
+			new ModifyPokemon('Charjabug', this)
+				.abilities
+					.setHiddenAbility('Electromorphosis')
+				.pokemon.baseStats
+					.setHP(77)
+					.setDEF(105)
+					.setSPA(75)
+					.setSPD(85);
+			new ModifyPokemon('Steenee', this)
+				.types
+					.setType('Grass', 'Fighting')
+				.pokemon.abilities
+					.setHiddenAbility('Leg Day')
+				.pokemon.baseStats
+					.setHP(62)
+					.setATK(80)
+					.setDEF(63)
+					.setSPD(63)
+					.setSPE(72)
+				.pokemon.learnset
+					.add('Triple Kick');
+			new ModifyPokemon('Hakamo O', this)
+				.baseStats
+					.setATK(85)
+					.setSPA(80)
+					.setSPE(80);
+			// Gen 8
+			new ModifyPokemon('Thwackey', this)
+				.baseStats
+					.setHP(75)
+					.setSPD(65)
+				.pokemon.learnset
+					.add('Jungle Healing');
+			new ModifyPokemon('Raboot', this)
+				.baseStats
+					.setHP(70)
+					.setATK(91);
+			new ModifyPokemon('Drizzile', this)
+				.abilities
+					.setAbility1('Quick Draw')
+				.pokemon.baseStats
+					.setDEF(60)
+					.setSPD(60)
+				.pokemon.learnset
+					.add('Flip Turn');
+			new ModifyPokemon('Corvisquire', this)
+				.baseStats
+					.setHP(78)
+					.setATK(72)
+					.setDEF(60)
+					.setSPD(60)
+					.setSPE(87);
+			new ModifyPokemon('Carkoal', this)
+				.baseStats
+					.setATK(65)
+					.setSPA(65);
+			new ModifyPokemon('Hattrem', this)
+				.baseStats
+					.setHP(72)
+					.setATK(70)
+					.setDEF(85)
+					.setSPA(101)
+					.setSPD(83);
+			new ModifyPokemon('Morgrem', this)
+				.baseStats
+					.setHP(75)
+					.setATK(75)
+					.setDEF(55)
+					.setSPD(65);
+			new ModifyPokemon('Drakloak', this)
+				.baseStats
+					.setATK(95)
+					.setSPA(95);
+			new ModifyPokemon('Floragato', this)
+				.abilities
+					.setAbility1('Magician')
+				.pokemon.baseStats
+					.setHP(66)
+					.setATK(85)
+					.setDEF(68)
+					.setSPD(68)
+				.pokemon.learnset
+					.add('Grassy Glide');
+			new ModifyPokemon('Crocalor', this)
+				.abilities
+					.setAbility1('Punk Rock')
+				.pokemon.baseStats
+					.setHP(86)
+					.setATK(59)
+					.setSPD(63)
+					.setSPE(54)
+				.pokemon.learnset
+					.add('Dragon Pulse');
+			new ModifyPokemon('Quaxwell', this)
+				.types
+					.setType('Water', 'Fighting')
+				.pokemon.abilities
+					.setAbility1('Dancer')
+				.pokemon.baseStats
+					.setHP(75)
+					.setDEF(70)
+					.setSPA(70)
+					.setSPD(65);
+			new ModifyPokemon('Pawmo', this)
+				.baseStats
+					.setHP(70)
+					.setATK(85)
+					.setDEF(55)
+					.setSPD(55)
+				.pokemon.learnset
+					.add('Plasma Fists')
+					.add('Volt Tackle');
+			new ModifyPokemon('Dolliv', this)
+				.abilities
+					.setAbility0('Seed Sower')
+				.pokemon.baseStats
+					.setHP(68)
+					.setDEF(75)
+					.setSPA(93)
+					.setSPD(83)
+				.pokemon.learnset
+					.add('Draining Kiss');
+			new ModifyPokemon('Naclstack', this)
+				.baseStats
+					.setHP(75)
+					.setATK(80)
+					.setSPD(75);
+			new ModifyPokemon('Tinkatuff', this)
+				.abilities
+					.setHiddenAbility('Hammer Down')
+				.pokemon.baseStats
+					.setHP(70)
+					.setATK(65)
+					.setDEF(65)
+				.pokemon.learnset
+					.add('Wood Hammer')
+					.add('Crab Hammer');
+			new ModifyPokemon('Arctibax', this)
+				.baseStats
+					.setATK(105)
+					.setDEF(78)
+					.setSPD(75)
+					.setSPE(67);
 			//#endregion
 			//#region FE Pokemon
 			// Gen 1
