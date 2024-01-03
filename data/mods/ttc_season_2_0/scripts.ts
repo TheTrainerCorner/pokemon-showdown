@@ -1216,7 +1216,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Stealth Rock')
 					.add('Horn Leech')
 					.add('Rapid Spin');
-			new ModifyPokemon('Braxien', this)
+			new ModifyPokemon('Braixen', this)
 				.types
 					.setType('Fire', 'Psychic')
 				.pokemon.abilities
