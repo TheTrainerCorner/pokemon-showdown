@@ -1346,7 +1346,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setDEF(60)
 					.setSPD(60)
 					.setSPE(87);
-			new ModifyPokemon('Carkoal', this)
+			new ModifyPokemon('Carkol', this)
 				.baseStats
 					.setATK(65)
 					.setSPA(65);
