@@ -1315,7 +1315,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setSPE(72)
 				.pokemon.learnset
 					.add('Triple Kick');
-			new ModifyPokemon('Hakamo O', this)
+			new ModifyPokemon('Hakamoo', this)
 				.baseStats
 					.setATK(85)
 					.setSPA(80)
