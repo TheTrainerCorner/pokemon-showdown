@@ -740,7 +740,7 @@ export const Learnsets: {[species: string]: ModdedLearnsetData} = {
 			gunkshot: ["9M"],
 			stringshot: ["9M"],
 			stickyweb: ["9M"],
-			stealthrocks: ["9M"],
+			stealthrock: ["9M"],
 			sandstorm: ["9M"],
 			rockpolish: ["9M"],
 			curse: ["9M"],

@@ -201,7 +201,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		forme: "Olympios",
 		types: ["Ground", "Fairy"],
 		baseStats: {hp: 68, atk: 65, def: 65, spa: 125, spd: 115, spe: 80},
-		abilities: {0: "Competitve", 1: "Petrifying Gaze", H: "Queenly Majesty"},
+		abilities: {0: "Competitive", 1: "Petrifying Gaze", H: "Queenly Majesty"},
 		heightm: 1.6,
 		weightkg: 48.4,
 		color: "Dark Grey",
