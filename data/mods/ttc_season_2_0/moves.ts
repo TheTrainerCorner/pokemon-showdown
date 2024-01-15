@@ -1300,6 +1300,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	focusblast: {
 		inherit: true,
 		accuracy: 80,
+		secondary: {
+			chance: 10,
+			boosts: {
+				spd: -1,
+			}
+		},
 	},
 	belch: {
 		inherit: true,

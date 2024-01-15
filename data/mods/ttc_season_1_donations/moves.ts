@@ -135,4 +135,74 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Has a high chance to critically hit; 50% chance of lowering Defense",
 		desc: "This move has an increased chance to critically hit. Additionally, it has a 50% chance to lower the opponent's Defense"
 	},
+	horrifyingshield: {
+		num: -2007,
+		name: "Horrifying Shield",
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		pp: 10,
+		priority: 4,
+		flags: {noassist: 1, failcopycat: 1},
+		stallingMove: true,
+		volatileStatus: 'horrifyingshield',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'move: Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (!move.flags['protect']) {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if (move.smartTarget) move.smartTarget = false;
+				else this.add('-activate', target, 'move: Protect');
+				const lockedmove = source.getVolatile('lockedmove');
+				if (lockedmove) {
+					// Outrage counter is reset
+					if (source.volatiles['lockedmove'].duration === 2) delete source.volatiles['lockedmove']; 
+				}
+				if (this.checkMoveMakesContact(move, source, target)) {
+					source.trySetStatus('par', target);
+				}
+				return this.NOT_FAIL;
+			},
+			onHit(target, source, move) {
+				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
+					source.trySetStatus('par', target);
+				}
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Fairy",
+		zMove: {boost: {def: 1}},
+		contestType: "Tough",
+
+	},
+	sonicboom: {
+		inherit: true,
+		basePower: 60,
+		damage: undefined,
+		accuracy: 100,
+		flags: {protect: 1, mirror: 1, sound: 1},
+		priority: 1,
+		onTryHit(pokemon) {
+			// will shatter screens through sub before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('auroraveil');
+		},
+		desc: "+1 Priority & Breaks Screens",
+		shortDesc: "+1 Priority & Breaks Screens",
+	}
 };

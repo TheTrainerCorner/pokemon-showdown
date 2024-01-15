@@ -47,7 +47,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "Changes type based on the oncoming move to resist it.",
 	},
 	sharpenedleek: {
-		num: -1501,
+		num: -2001,
 		name: "Sharpened Leek",
 		// Sharpness
 		onBasePowerPriority: 19,
@@ -63,5 +63,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		desc: "Sharpness + Attack increased by 1.2x",
 		shortDesc: "Sharpness + Attack increased by 1.2x",
-	}
+	},
+	petrifyinggaze: {
+		num: -2002,
+		name: "Petrifying Gaze",
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Petrifying Gaze', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) this.add('-immune', target);
+				else this.boost({spe: -1}, target, pokemon, null, true);
+			}
+		},
+		desc: "Lowers the opponent's speed stat by 1 stage on Switch-In",
+		shortDesc: "On Switch-In; Lowers opposing side's Speed by 1 stage.",
+		rating: 3.5,
+	},
+
 };

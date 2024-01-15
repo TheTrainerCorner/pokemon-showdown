@@ -92,5 +92,29 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Learnsets', pokemon).learnset['synchronise'] = ['9M'];
 		}
 		//#endregion
+		new ModifyPokemon('Shaymin', this)
+			.types
+				.setType('Grass', 'Fairy')
+			.pokemon.abilities
+				.setAbility1('Sap Sipper')
+				.setHiddenAbility('Misty Surge')
+			.pokemon.baseStats
+				.setHP(120)
+				.setATK(80)
+				.setDEF(105)
+				.setSPA(90)
+				.setSPD(115)
+				.setSPE(90)
+			.pokemon.learnset
+				.add('Spikes')
+				.add('Sappy Seed')
+				.add('Moonblast')
+				.add('Draining Kiss')
+				.add('Charm')
+				.add('Floral Healing')
+				.add('Misty Terrain')
+				.add('Spiky Shield')
+				.add('Wish')
+				.add('Encore');
 	},
 };

@@ -1084,6 +1084,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Herdier', this)
 				.types
 					.setType('Normal', 'Ground')
+				.pokemon.abilities
+					.setAbility0('Ball Fetch')
+					.setHiddenAbility('Guard Dog')
 				.pokemon.baseStats
 					.setHP(85)
 					.setATK(95)
@@ -1259,10 +1262,17 @@ export const Scripts: ModdedBattleScriptsData = {
 			new ModifyPokemon('Sliggoo', this)
 				.types
 					.setType('Dragon', 'Poison')
+				.pokemon.abilities
+					.setAbility0('Gooey')
+					.setHiddenAbility('Corrsion')
 				.pokemon.baseStats
 					.setDEF(61);
 			new ModifyPokemon('Sliggoo-Hisui', this)
-				.baseStats
+				.abilities
+					.setAbility0('Water Absorb')
+					.setAbility1('Gooey')
+					.setHiddenAbility('Mirror Armor')
+				.pokemon.baseStats
 					.setHP(66);
 			// Gen 7
 			new ModifyPokemon('Dartrix', this)

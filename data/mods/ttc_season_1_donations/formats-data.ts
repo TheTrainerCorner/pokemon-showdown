@@ -49,4 +49,29 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 		natDexTier: "OU",
 	},
+	raltsolympios: {
+		isNonstandard: "Past",
+		tier: "LC",
+		natDexTier: "LC",
+	},
+	kirliaolympios: {
+		isNonstandard: "Past",
+		tier: "NFE",
+		natDexTier: "NFE",
+	},
+	gardevoirolympios: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	galladeolympios: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	gigachelonian: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
 }
