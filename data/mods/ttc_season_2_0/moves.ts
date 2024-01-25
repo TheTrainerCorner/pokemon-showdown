@@ -1568,6 +1568,27 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Bug",
 		contestType: "Beautiful",
 	},
+	healingaura: {
+		num: 100009,
+		name: "Healing Aura",
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		pp: 10,
+		priority: 0,
+		flags: {mirror: 1, bypasssub: 1},
+		pseudoWeather: 'healingaura',
+		condition: {
+			onSwap(pokemon) {
+				pokemon.heal(pokemon.maxhp / 4);
+				this.add('-activate', pokemon, 'ability: Rain Dish');
+			}
+		},
+		secondary: null,
+		target: "self",
+		contestType: "Cool",
+		type: "Water",
+	},
 	// Fixed Moves
 	filletaway: {
 		inherit: true,

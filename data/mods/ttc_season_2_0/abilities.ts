@@ -677,23 +677,15 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "Light-based moves will have 1.3x boost in power and will be perfectly accurate.",
 		shortDesc: "Light-based moves will have 1.3x boost in power and will not miss.",
 	},
+	// TODO: Test ability
 	innerfocus: {
 		inherit: true,
 		onModifyMove(move) {
 			if(move.id == 'focuspunch') {
-
+				move.flags = {contact: 1, protect: 1, punch: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failinstruct: 1};
 				move.beforeMoveCallback = undefined;
 				move.priorityChargeCallback = undefined;
 				move.condition = undefined;
-				// move.condition = {
-				// 	duration: 1,
-				// 	onStart(pokemon) {
-				// 		this.add('-singleturn', pokemon, 'move: Focus Punch');
-				// 	},
-				// 	onTryAddVolatile(status, pokemon) {
-				// 		if(status.id === 'flinch') return null;
-				// 	}
-				// }
 			}
 			if(move.id === 'focusblast') {
 				move.accuracy = true;
@@ -756,6 +748,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "This pokemon takes 2x more damage from steel types; Takes 1/2 from any move that makes contact.",
 		shortDesc: "Takes 2x more damage from Steel moves; Takes 1/2 from Contact moves.",
 	},
+	// TODO: Test ability
 	magmaarmor: {
 		inherit: true,
 		onUpdate: undefined,
@@ -763,7 +756,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onCriticalHit: false,
 		onSourceModifyDamage(damage, source, target, move) {
 			if(['Water', 'Ice'].includes(move.type)) {
-				return this.chainModify(0.25);
+				return this.chainModify(0.75);
 			}
 		},
 		desc: "Ice & Water Type moves do 75% less damage to the user and user is unable to be crited.",
@@ -808,6 +801,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "Contact with this Pokemon spreads this ability and applies Wrap to the Attacker.",
 		shortDesc: "Contact with this Pokemon spreads this ability and applies Wrap to the Attacker.",
 	},
+	// TODO: Test ability
 	myceliummight: {
 		inherit: true,
 		// Status condition inflicition is implemented in sim/pokemon.ts:#setStatus
@@ -841,11 +835,15 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onUpdate: undefined,
 		onImmunity: undefined,
 		onTryBoost: undefined,
-		onModifyMove(move) {
-			move.pp += 1;
+		onSetStatus(status, target, source, effect) {
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Oblivious');
+			}
+			return false;
 		},
-		desc: "This ability allow PP to not be consumed when using a move.",
-		shortDesc: "This ability allow PP to not be consumed when using a move.",
+		isPermanent: true,
+		desc: "This Pokemon can not be inflicted by a status condition.",
+		shortDesc: "This Pokemon can not be inflicted by a status condition.",
 	},
 	overcoat: {
 		inherit: true,
@@ -1015,14 +1013,13 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "Blast moves deal 1.3x more damage",
 		shortDesc: "Blast moves deal 1.3x more damage",
 	},
+	//TODO: Test ability
 	raindish: {
 		inherit: true,
 		onWeather: undefined,
-		onSwitchIn(pokemon) {
-			this.debug(`Pokemon ${pokemon} was switched in`);
-			if (pokemon.effectiveWeather() === 'raindance') {
-				pokemon.heal(pokemon.maxhp / 4);
-			}
+		onSwitchOut(pokemon) {
+			if (pokemon.effectiveWeather() === 'raindance')
+				this.field.addPseudoWeather('healingaura');
 		},
 		desc: "If rain is activate, when the user switches out, the pokemon switching in, will heal 25% of their max hp.",
 		shortDesc: "If Rain; When switching out, the next Pokemon switching in will heal 25% of their max hp.",
@@ -1248,7 +1245,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		condition: {
 			noCopy: true,
-			duration: 1,
+			duration: 2,
 			onStart(pokemon) {
 				this.add('-start', pokemon, 'ability: Stall');
 			},
@@ -1357,19 +1354,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "Upon Switch-in, the opposing Pokemons' evasion will drop by 1 stage. The user's side can not be put to sleep.",
 	},
 	symbiosis: {
-		// TODO NEEDS WORK
 		inherit: true,
 		onAllyAfterUseItem: undefined,
-		// onAnyAfterMove(source, target, move) {
-		// 	if (!target.hp || !source.hp) return; 
-		// 	for (const targetMove of target.moveSlots) {
-		// 		if (targetMove.id == move.id) {
-		// 			this.attrLastMove('[still]');
-		// 			this.addMove('-anim', target, move.name, source);
-		// 			return;
-		// 		}
-		// 	}
-		// },
 		onFoeBeforeMove(source, target, move) {
 			const foundMove = target.moveSlots.find(x => x.id === move.id);
 			if (!foundMove) this.effectState.canAct = false;
@@ -1381,7 +1367,6 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				this.add('-ability', target, 'Symbiosis');
 			}
 		},
-		// TODO: NEEDS TO BE HEAVILY TESTED
 		desc: "If the opposing pokemon uses a move that the user shares with it, The opposing pokemon takes 1/4th of their max hp after causing damage.",
 		shortDesc: "IF the opposing pokemon shares the same move has the user; Takes 1/4th of their hp as damage.",
 	},
