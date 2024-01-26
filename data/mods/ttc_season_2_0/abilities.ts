@@ -1016,10 +1016,11 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	//TODO: Test ability
 	raindish: {
 		inherit: true,
-		onWeather: undefined,
-		onSwitchOut(pokemon) {
-			if (pokemon.effectiveWeather() === 'raindance')
+		onWeather(target, source, weather) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (weather.id === 'raindance') {
 				this.field.addPseudoWeather('healingaura');
+			}
 		},
 		desc: "If rain is activate, when the user switches out, the pokemon switching in, will heal 25% of their max hp.",
 		shortDesc: "If Rain; When switching out, the next Pokemon switching in will heal 25% of their max hp.",

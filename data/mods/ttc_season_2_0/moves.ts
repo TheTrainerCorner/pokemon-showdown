@@ -1581,7 +1581,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			onSwap(pokemon) {
 				pokemon.heal(pokemon.maxhp / 4);
-				this.add('-activate', pokemon, 'ability: Rain Dish');
 			}
 		},
 		secondary: null,
