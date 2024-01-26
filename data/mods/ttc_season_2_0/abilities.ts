@@ -1599,7 +1599,6 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		name: "Cold-Blooded",
 		rating: 3,
 		num: -2002,
-		isNonstandard: "Past",
 		shortDesc: "Hit by Fire-type Moves=+1 Spe, Takes 1/2 damage; Hit by Ice-type Moves=-1 Spe, Takes 1.5x damage.",
 	},
 	emulate: {
