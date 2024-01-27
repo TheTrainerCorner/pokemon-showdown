@@ -41,7 +41,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Metadraco",
 		types: ["Steel", "Dragon"],
 		abilities: {0: "Full Metal Body", 1: "Reckless", H: "Moxie"},
-		baseStats: {hp: 105, atk: 145, def: 92, spa: 75, spd: 86, spe: 87},
+		baseStats: {hp: 100, atk: 130, def: 94, spa: 90, spd: 89, spe: 87},
 		heightm: 2.1,
 		weightkg: 292.7,
 		color: "Gray",

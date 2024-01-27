@@ -920,6 +920,10 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onResidual: undefined,
 		// Code is a modified court change
 		onStart(pokemon) {
+			this.effectState.pickupTriggered = false;
+		},
+		onBeforeTurn(pokemon) {
+			if (this.effectState.pickupTriggered === true) return;
 			const sideConditions = [
 				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
 			];
@@ -976,9 +980,10 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			}
 			if (!success) return false;
 			this.add('-activate', pokemon, 'ability: Pickup');
+			this.effectState.pickupTrigged = true;
 		},
-		desc: "When switch-in, transfers any hazards on the user's side of the field to the opposing side.",
-		shortDesc: "When switch-in, transfers any hazards on the user's side to the opposing side.",
+		desc: "Before turn, transfers any hazards on the user's side of the field to the opposing side.",
+		shortDesc: "Before turn, transfers any hazards on the user's side to the opposing side.",
 	},
 	powerofalchemy: {
 		inherit: true,
@@ -1016,14 +1021,18 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	//TODO: Test ability
 	raindish: {
 		inherit: true,
-		onWeather(target, source, weather) {
-			if (target.hasItem('utilityumbrella')) return;
-			if (weather.id === 'raindance') {
-				this.field.addPseudoWeather('healingaura');
+		onModifyAtk(atk, pokemon, target, move) {
+			if (['raindance', 'priomdialsea'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.3);
 			}
 		},
-		desc: "If rain is activate, when the user switches out, the pokemon switching in, will heal 25% of their max hp.",
-		shortDesc: "If Rain; When switching out, the next Pokemon switching in will heal 25% of their max hp.",
+		onModifySpA(atk, pokemon, target, move) {
+			if (['raindance', 'priomdialsea'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.3);
+			}
+		},
+		desc: "If rain is activate, gains a 1.3x boost to Atk and SpA.",
+		shortDesc: "If Rain; Gains 1.3x boost to Atk and SpA.",
 	},
 	receiver: {
 		inherit: true,
@@ -1239,40 +1248,30 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		// 		pokemon.heal(pokemon.maxhp / 16);
 		// 	}
 		// },
+		onModifyMove(move, pokemon, target) {
+			if (move.category === "Status") {
+				move.priority = -1;
+			}
+		},
 		onTryHit(pokemon, target, move) {
 			if (move.category === 'Status') {
-				pokemon.addVolatile('stall');
+				pokemon.heal(pokemon.maxhp / 8, pokemon, move);
 			}
 		},
-		condition: {
-			noCopy: true,
-			duration: 2,
-			onStart(pokemon) {
-				this.add('-start', pokemon, 'ability: Stall');
-			},
-			onEnd(pokemon) {
-				pokemon.heal(pokemon.maxhp / 16);
-				this.add('-end', pokemon, 'ability: Stall', '[silent]')
-			}
-		},
-		desc: "The user recovers 1/16th of it's Max HP at the end of the turn, if it used a Status move.",
-		shortDesc: "If used a Status move, heals 1/16th of Max HP at the end of the turn.",
+		desc: "The user heals 1/8 of their max hp when using a status move, however that move will have -1 priority.",
+		shortDesc: "If used a Status move, -1 priority; heals 1/8th of max hp.",
 	},
 	stalwart: {
 		inherit: true,
 		onModifyMovePriority: undefined,
-		onTryMove(attacker, defender, move) {
-			 if (move.flags.charge) {
-				this.attrLastMove('[still]');
-				this.addMove('-anim', attacker, move.name, defender);
-				return;
-			 }
+		onChargeMove(pokemon, target, move) {
+			this.debug('stalwart - remove charge turn for ' + move.id);
+			this.attrLastMove('[still]');
+			this.addMove('-anim', pokemon, move.name, target);
+			return false; // skip charge turn
 		},
-		onModifyMove(move) {
-			move.pp -= 1;	
-		},
-		desc: "Moves that require 2 turns to use, require 1 turn to use, but requires an extra PP.",
-		shortDesc: "Moves that require 2 turns to use, require 1 turn to use, but requires an extra PP.",
+		desc: "Moves that require 2 turns to use, require 1 turn to use.",
+		shortDesc: "Moves that require 2 turns to use, require 1 turn to use.",
 	},
 	steadfast: {
 		inherit: true,

@@ -341,6 +341,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+	magnetrise: {
+		inherit: true,
+		condition: {
+			duration: 5,
+			durationCallback(target, source, effect) {
+				if (source.hasAbility('fieldsupport')) return 8;
+				return 5;
+			},
+		},
+	},
 	mistyterrain: {
 		inherit: true,
 		condition: {
@@ -523,6 +533,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+
 	tailwind: {
 		inherit: true,
 		condition: {
@@ -551,6 +562,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onSideResidualSubOrder: 5,
 			onSideEnd(side) {
 				this.add('-sideend', side, 'move: Tailwind');
+			},
+		},
+	},
+	telekinesis: {
+		inherit: true,
+		condition: {
+			duration: 3,
+			durationCallback(target, source, effect) {
+				if (source.hasAbility('fieldsupport')) return 6;
+				return 3;
 			},
 		},
 	},
@@ -1546,13 +1567,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				if(source.hasItem('terrainextender')) return 8;
 				return 5;
 			},
-			onFoeTryMove(target, source, move) {
-				const swarmHolder = this.effectState.target;
-				if((source.isAlly(swarmHolder) || move.target === 'all') && move.boosts !== undefined) {
-					this.attrLastMove('[still]');
-					this.add('cant', swarmHolder, 'ability: Swarm', move, '[of] ' + target);
-					return false;
+			onTryHitPriority: 4,
+			onFoeTryHit(target, source, effect) {
+			if (effect && (effect.priority <= 0.1 || effect.target === 'self')) return;
+
+			if (target.isSemiInvulnerable() || target.isAlly(source)) return;
+			if (!target.isGrounded()) {
+				const baseMove = this.dex.moves.get(effect.id);
+				if (baseMove.priority > 0) {
+					this.hint("Swarm Terrain doesn't affect Pokemon immune to Ground.");
 				}
+				return;
+			}
+			this.add('-activate', target, 'move: Psychic Terrain');
+			return null;
 			},
 			onFieldStart(field, source, effect) {
 				if(effect.effectType === 'Ability') {

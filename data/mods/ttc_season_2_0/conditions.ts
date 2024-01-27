@@ -22,6 +22,11 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 	// Weather
 	raindance: {
 		inherit: true,
+		duration: 5,
+		durationCallback(source, effect) {
+			if (source.hasItem('damprock') || source.hasAbility('fieldsupport')) return 8;
+			return 5;
+		},
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (defender.hasItem('utilityumbrella')) return;
 			if (move.type === 'Water') {
@@ -34,4 +39,28 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			}
 		},
 	},
+	sunnday: {
+		inherit: true,
+		duration: 5,
+		durationCallback(source, effect) {
+			if (source.hasItem('heatrock') || source.hasAbility('fieldsupport')) return 8;
+			return 5;
+		},
+	},
+	sandstorm: {
+		inherit: true,
+		duration: 5,
+		durationCallback(source, effect) {
+			if (source.hasItem('smoothrock') || source.hasAbility('fieldsupport')) return 8;
+			return 5;
+		},
+	},
+	snow: {
+		inherit: true,
+		duration: 5,
+		durationCallback(source, effect) {
+			if (source.hasItem('icyrock') || source.hasAbility('fieldsupport')) return 8;
+			return 5;
+		}
+	}
 };
