@@ -2694,7 +2694,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(120)
 				.setATK(145)
 				.setSPD(90)
-				.setSPE(10);
+				.setSPE(10)
+			.pokemon.learnset
+				.add('Spikes')
+				.add('Play Rough')
+				.add('Axe Kick')
+				.add('Triple Axel');
 		new ModifyPokemon('Arctozolt', this)
 			.abilities
 				.setAbility0('Allergies');

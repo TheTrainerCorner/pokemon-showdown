@@ -996,6 +996,28 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		desc: "Powers up Fire, Ice, & Electirc type moves by 1.2x",
 		shortDesc: "Powers up Fire, Ice, & Electric type moves by 1.2x",
 	},
+	powerspot: {
+		inherit: true,
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker !== this.effectState.target && ['Psychic', 'Fairy'].includes(move.type)) {
+				this.debug('Power Spot boost');
+				return this.chainModify(1.5);
+			} else if (attacker !== this.effectState.target) {
+				this.debug('Power Spot boost');
+				return this.chainModify(1.3);
+			}
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.clearStatus()) {
+				this.add('-activate', pokemon, 'ability: Power Spot');
+			}
+		},
+		desc: " This Pokemon's moves have 1.3x power and it has its status cured at the end of the turn. Psychic and Fairy moves do an additional 1.2x damage.",
+		shortDesc: " This Pokemon's moves have 1.3x power and it has its status cured at the end of the turn. Psychic and Fairy moves do an additional 1.2x damage.",
+	},
 	queenlymajesty: {
 		inherit: true,
 		onStart(pokemon) {
