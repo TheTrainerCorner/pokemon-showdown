@@ -1702,7 +1702,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Head Smash');
 			new ModifyPokemon('Rhyperior', this)
 				.types
-					.setType('Ground', 'Steel')
+					.setType('Rock', 'Steel')
 				.pokemon.abilities
 					.setAbility0('Overcoat')
 				.pokemon.baseStats
