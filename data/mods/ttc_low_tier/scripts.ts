@@ -1,5 +1,5 @@
 import {ModifyPokemon} from "../../../tools/utils/modifyPokemon";
 
 export const Scripts: ModdedBattleScriptsData = {
-	inherit: 'ttc_current',
+	inherit: 'ttc_season_1_4',
 };
