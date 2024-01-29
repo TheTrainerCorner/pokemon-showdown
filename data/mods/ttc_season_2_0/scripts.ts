@@ -127,11 +127,10 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Sappy Seed')
 					.add('Giga Drain')
 					.add('Mist Ball');
-			new ModifyPokemon('Exeggutor', this)
+			new ModifyPokemon('Exeggcute', this)
 				.abilities
-					.setAbility1('Sap Sipper')
-				.pokemon.learnset
-					.add('Earth Power');
+					.setAbility1('Sap Sipper');
+			new ModifyPokemon('Exeggutor', this);
 			new ModifyPokemon('Cubone', this)
 				.abilities
 					.setAbility1('Technician')
@@ -140,7 +139,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Headlong Rush');
 			new ModifyPokemon('Porygon', this)
 				.types
-					.setType('Noraml', 'Electric');
+					.setType('Normal', 'Electric');
 			new ModifyPokemon('Hoothoot', this)
 				.types
 					.setType('Psychic', 'Flying')
