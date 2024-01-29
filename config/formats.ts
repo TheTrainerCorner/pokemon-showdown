@@ -23,7 +23,7 @@ export const Formats: FormatList = [
 		section: "The Trainer Corner's Draft",
 	},
 	{
-		name: "[Gen 9] National Dex Draft",
+		name: "[Gen 9 TTC Only] Draft",
 		desc: "The Official Draft Format for TTC",
 		mod: 'ttc_current',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set'],
@@ -73,7 +73,7 @@ export const Formats: FormatList = [
 		section: "Off-Season",
 	},
 	{
-		name: "[Gen 9] National Dex Low Tier",
+		name: "[Gen 9 TTC Low Tier Only] Low Tier",
 		desc: "This is our Low Tier format. It has the complex bans and regulations needed.",
 		mod: "ttc_low_tier",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Low Tier Rules', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
@@ -114,7 +114,7 @@ export const Formats: FormatList = [
 		section: "Other Draft Leagues",
 	},
 	{
-		name: "[Gen 9] Other National Dex Draft",
+		name: "[Gen 9 TTC Only] Other Draft",
 		desc: "This version of the National Dex Draft is for other leagues to use. Since TTC NatDex Draft format is a bit more stricter, it might be flexible with other leagues.",
 		mod: "ttc_current",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
@@ -155,7 +155,7 @@ export const Formats: FormatList = [
 		section: "Public Test Realm",
 	},
 	{
-		name: "[Gen 9] National Dex PTR",
+		name: "[Gen 9 TTC Only] PTR",
 		desc: "The Official Draft Format for TTC",
 		mod: 'ttc_current',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set'],
