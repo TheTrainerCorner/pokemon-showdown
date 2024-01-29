@@ -1882,7 +1882,8 @@ export const Scripts: ModdedBattleScriptsData = {
 					.remove('Eruption');
 			new ModifyPokemon('Suicune', this)
 				.learnset
-					.add('Recover');
+					.add('Recover')
+					.remove('Calm Mind');
 			new ModifyPokemon('Raikou', this)
 				.learnset
 					.add('Thunderclap')
