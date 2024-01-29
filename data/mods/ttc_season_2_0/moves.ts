@@ -1567,20 +1567,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				if(source.hasItem('terrainextender')) return 8;
 				return 5;
 			},
-			onTryHitPriority: 4,
-			onFoeTryHit(target, source, effect) {
-			if (effect && (effect.priority <= 0.1 || effect.target === 'self')) return;
-
-			if (target.isSemiInvulnerable() || target.isAlly(source)) return;
-			if (!target.isGrounded()) {
-				const baseMove = this.dex.moves.get(effect.id);
-				if (baseMove.priority > 0) {
-					this.hint("Swarm Terrain doesn't affect Pokemon immune to Ground.");
+			onFoeDisableMove(pokemon) {
+				for (const moveSlot of pokemon.moveSlots) {
+					const move = this.dex.moves.get(moveSlot.id);
+					if (move.selfBoost) {
+						pokemon.disableMove(moveSlot.id);
+					}
 				}
-				return;
-			}
-			this.add('-activate', target, 'move: Psychic Terrain');
-			return null;
 			},
 			onFieldStart(field, source, effect) {
 				if(effect.effectType === 'Ability') {
@@ -1589,6 +1582,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onFieldEnd() {
 				this.add('-fieldend', 'ability: Swarm');
+			},
+			onFoeBeforeMovePriority: 5,
+			onFoeBeforeMove(attacker, defender, move) {
+				if (!move.isZ && !move.isMax && move.selfBoost) {
+					this.add('cant', attacker, 'ability: Swarm', move);
+					return false;
+				}
 			}
 		},
 		secondary: null,
