@@ -1626,7 +1626,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.abilities
 					.setAbility1('Stalwart')
 				.pokemon.baseStats
-					.setDEF(72);
+					.setDEF(72)
+				.pokemon.learnset
+					.add('Leek Lunge');
 			new ModifyPokemon('Dodrio', this)
 				.abilities
 					.setAbility0('Tangled Feet');

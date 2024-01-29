@@ -138,6 +138,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	horrifyingshield: {
 		num: -2007,
 		name: "Horrifying Shield",
+		desc: "Protects the user from damage. Paralyzes the opponet on Non-Contact.",
+		shortDesc: "Protects the user from damage; Paralyzes the opponent on Non-Contact.",
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
@@ -171,13 +173,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					// Outrage counter is reset
 					if (source.volatiles['lockedmove'].duration === 2) delete source.volatiles['lockedmove']; 
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
+				if (move.category !== "Status" && !this.checkMoveMakesContact(move, source, target)) {
 					source.trySetStatus('par', target);
 				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
-				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
+				if (move.isZOrMaxPowered&& move.category !== "Status" && !this.checkMoveMakesContact(move, source, target)) {
 					source.trySetStatus('par', target);
 				}
 			},
