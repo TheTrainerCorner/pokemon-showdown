@@ -780,6 +780,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setDEF(70)
 					.setSPD(75)
 					.setSPA(85);
+			new ModifyPokemon('Mew', this);
 			// Gen 2
 			new ModifyPokemon('Bayleef', this)
 				.abilities
@@ -2824,6 +2825,29 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Ogerpon-Cornerstone', this)
 			.abilities
 				.setAbility0('Rivalry');
+		// Fakemons
+		new ModifyPokemon('Gourgeist-Mega', this)
+			.baseStats
+				.setHP(90)
+				.setATK(100)
+				.setDEF(117)
+				.setSPA(133)
+				.setSPD(100)
+				.setSPE(54);
+		//#endregion
+		
+
+		//#region Adding moves to pokemon when I am lazy
+		const synchronoiseList = [
+			'Mew', 'Jirachi', 'Meloetta', 'Mesprit', 'Uxie', 'Azelf', 'Calyrex', 'Zoroark', 'Espeon', 'Lucario',
+			'Ralts', 'Kirlia', 'Gardevoir', 'Gallade', 'Girafarig', 'Psyduck', 'Golduck', 'Hoothoot', 'Noctowl',
+			'Whismur', 'Loudred', 'Exploud', 'Natu', 'Xatu', 'Kecleon', 'Chimecho', 'Chatot', 'Munna', 'Musharna',
+			'Sigilyph', 'Woobat', 'Swoobat', 'Elgyem', 'Beheeyem', 'Gothita', 'Gothitelle', 'Gothorita'
+		];
+		for (const pokemon of synchronoiseList) {
+			let learnset = this.modData('Learnsets', pokemon.toLowerCase()).learnset;
+			if (!learnset['synchronoise']) learnset['synchronoise'] = ['9M'];
+		}
 		//#endregion
 		// Modify Moves
 		const lightMoves = ['Dazzling Gleam', 'Freezing Glare', 'LightofRuin', 'Photon Geyser', 'Charge Beam', 'Prismatic Laser'];

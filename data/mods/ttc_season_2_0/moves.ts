@@ -1304,15 +1304,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	hydropump: {
 		inherit: true,
-		accuracy: 90,
-		secondary: {
-			chance: 10,
-			boosts: {
-				spd: -1,
-			},
-		},
-		desc: "Has a 10% chance to lower the target's Sp.Def by 1 stage.",
-		shortDesc: "10% chance to lower the target's SpD by 1 stage.",
+		accuracy: 85,
 	},
 	thunder: {
 		inherit: true,
