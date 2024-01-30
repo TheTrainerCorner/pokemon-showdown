@@ -1,5 +1,9 @@
 import { incrementLosses } from '../../../server/chat-plugins/cg-teams-leveling';
 export const Rulesets: {[k: string]: ModdedFormatData} = {
+	evasionabilitiesclause: {
+		inherit: true,
+		banlist: undefined,
+	},
 	nodragondanceforthepatioset: {
 		effectType: "ValidatorRule",
 		name: 'No Dragon Dance For The Patio Set',

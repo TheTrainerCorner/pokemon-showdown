@@ -59,7 +59,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, pokemon, target, move) {
-			return this.chainModify(1.2);
+			return this.chainModify([4915, 4096]);
 		},
 		desc: "Sharpness + Attack increased by 1.2x",
 		shortDesc: "Sharpness + Attack increased by 1.2x",
