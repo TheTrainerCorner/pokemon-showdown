@@ -12,7 +12,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return;
 			}
 			const shieldsDownHolder = this.effectState.target;
-			if (target.species.fullname !== 'Minior-Meteor' && move.priority > 0.1) {
+			if (target.species.baseSpecies === 'Minior' && target.species.forme !== 'Meteor' && move.priority > 0.1) {
 				this.attrLastMove('[still]');
 				this.add('cant', shieldsDownHolder, 'ability: Shields Down', move, '[of] ' + target);
 			}
