@@ -65,7 +65,8 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 			desc: "On switch-in, this Pokemon is alerted if any opposing Pokemon has an attack that is super effective against this Pokemon, or an OHKO move that this Pokemon is not immune to and if its level is less than or equal to the opposing Pokemon's level. This effect does not consider Counter, Dragon Rage, Metal Burst, Mirror Coat, Night Shade, Psywave, or Seismic Toss as attacking moves, and Hidden Power, Judgment, Natural Gift, and Weather Ball are considered Normal-type moves. This effect considers any changes to the effectiveness of attacks against this Pokemon due to the effects of Gravity or the Normalize or Scrappy Abilities.",
 		},
 
-		activate: "  [POKEMON] shuddered!",
+		// activate: "  [POKEMON] shuddered!",
+		activate: "	[POKEMON] shudders! [TARGET] has [MOVE]!",
 	},
 	arenatrap: {
 		name: "Arena Trap",
