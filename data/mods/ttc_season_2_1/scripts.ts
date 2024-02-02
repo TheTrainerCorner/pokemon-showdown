@@ -12,7 +12,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Flash Cannon')
 				.add('Autotomize')
 				.add('Doom Desire')
-				.add('Smart Strike');
+				.add('Smart Strike')
+				.add('Ice Beam')
+				.add('Icy Wind');
 		new ModifyPokemon('Mesprit', this)
 			.learnset
 				.add('Moonblast')
