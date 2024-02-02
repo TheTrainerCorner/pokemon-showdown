@@ -6,6 +6,19 @@ export const Scripts: ModdedBattleScriptsData = {
 		// Version 2.1.0
 		new ModifyPokemon('Uxie', this)
 			.types
-				.setType('Steel');
+				.setType('Psychic', 'Steel')
+			.pokemon.learnset
+				.add('Iron Head')
+				.add('Flash Cannon')
+				.add('Autotomize')
+				.add('Doom Desire')
+				.add('Smart Strike');
+		new ModifyPokemon('Mesprit', this)
+			.learnset
+				.add('Moonblast')
+				.add('Alluring Voice')
+				.add('Moonlight')
+				.add('Play Rough')
+				.add('Misty Explosion');
 	},
 }
