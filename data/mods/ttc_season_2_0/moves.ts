@@ -1559,6 +1559,21 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				if(source.hasItem('terrainextender')) return 8;
 				return 5;
 			},
+
+			onFieldStart(field, source, effect) {
+				if(effect.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Swarm Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Swarm Terrain');
+				}
+			},
+			onFoeBeforeMovePriority: 5,
+			onFoeBeforeMove(attacker, defender, move) {
+				if (!move.isZ && !move.isMax && move.selfBoost) {
+					this.add('cant', attacker, 'ability: Swarm', move);
+					return false;
+				}
+			},
 			onFoeDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
 					const move = this.dex.moves.get(moveSlot.id);
@@ -1567,21 +1582,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					}
 				}
 			},
-			onFieldStart(field, source, effect) {
-				if(effect.effectType === 'Ability') {
-					this.add('-fieldstart', 'ability: Swarm', '[of] ' + source);
-				}
-			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
 			onFieldEnd() {
-				this.add('-fieldend', 'ability: Swarm');
+				this.add('-fieldend', 'move: Swarm Terrain');
 			},
-			onFoeBeforeMovePriority: 5,
-			onFoeBeforeMove(attacker, defender, move) {
-				if (!move.isZ && !move.isMax && move.selfBoost) {
-					this.add('cant', attacker, 'ability: Swarm', move);
-					return false;
-				}
-			}
 		},
 		secondary: null,
 		target: "all",
