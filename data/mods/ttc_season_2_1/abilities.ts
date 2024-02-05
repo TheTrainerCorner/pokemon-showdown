@@ -54,33 +54,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				'oranberry',
 				'ovalstone',
 			];
-			if (pokemon.getVolatile('ballfetch') || !ballItems.includes(pokemon.item)) return;
-			pokemon.addVolatile('ballfetch');
+			if (!ballItems.includes(pokemon.item) && pokemon.volatiles['ballfetch'])
+				pokemon.removeVolatile('ballfetch');
+			else if (!ballItems.includes(pokemon.item) && !pokemon.volatiles['ballfetch'])
+				return;
+			else pokemon.addVolatile('ballfetch');
 		},
 		onEnd(pokemon) {
 			pokemon.removeVolatile('ballfetch');
 		},
 		condition: {
+			onModifySpePriority: 6,
 			onModifySpe(spe, pokemon) {
-				const ballItems = [
-					'lifeorb',
-					'wikiberry',
-					'adrenalineorb',
-					'flameorb',
-					'liechiberry',
-					'snowball',
-					'toxicorb',
-					'yacheberry',
-					'aspearberry',
-					'destinyknot',
-					'ironball',
-					'oranberry',
-					'ovalstone',
-				];
-				if (!ballItems.includes(pokemon.item) && !pokemon.ignoringAbility()) {
-					return this.chainModify(1.5);
-				}
-			}
+				return this.chainModify(1.5);
+			},
 		},
 	},
 	sandveil: {
@@ -143,5 +130,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 			}
 		},
-	}
+	},
+	grasspelt: {
+		inherit: true,
+		onModifySpDPriority: 5,
+	},
 };
