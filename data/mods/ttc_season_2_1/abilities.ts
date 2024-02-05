@@ -135,4 +135,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifySpDPriority: 5,
 	},
+	swarm: {
+		inherit: true,
+		shortDesc: "Sets up a terrain that prevents either side from using Self Boosting Moves.",
+	}
 };
