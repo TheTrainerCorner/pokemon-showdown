@@ -36,4 +36,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+	synchronoise: {
+		inherit: true,
+		pp: 5,
+	},
 };
