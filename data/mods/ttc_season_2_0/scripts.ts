@@ -2,7 +2,7 @@ import { Pokemon } from '../../../sim';
 import { ModifyPokemon } from '../../../tools/utils/modifyPokemon';
 
 export const Scripts: ModdedBattleScriptsData = {
-	inherit: 'ttc_season_1_winners',
+	inherit: 'ttc_season_1_winter',
 	init() {
 		// #region 2.0.0
 		// Modify Pokemon
