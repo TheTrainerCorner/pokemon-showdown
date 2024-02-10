@@ -1156,7 +1156,10 @@ export class Pokemon {
 		}
 		return delta;
 	}
-
+	/**
+	 * Clears all boots on pokemon.
+	 * Includes Negative and Positive.
+	 */
 	clearBoosts() {
 		let boostName: BoostID;
 		for (boostName in this.boosts) {
@@ -1168,6 +1171,16 @@ export class Pokemon {
 		let boostName: BoostID;
 		for (boostName in boosts) {
 			this.boosts[boostName] = boosts[boostName]!;
+		}
+	}
+	/**
+	 * Clears Positive Boosts on a pokemon
+	 * Created by: Koreanpanda
+	 */
+	clearPositiveBoosts() {
+		let boostName: BoostID;
+		for (boostName in this.boosts) {
+			if (this.boosts[boostName] > 0) this.boosts[boostName] = 0;
 		}
 	}
 

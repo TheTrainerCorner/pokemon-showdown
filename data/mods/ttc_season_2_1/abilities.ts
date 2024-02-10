@@ -3,17 +3,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onAfterMove(source, target, move) {
 			if (move.category !== 'Status') {
-				// Check if each stat is in positive, then we are going to lower
-				if (source.boosts['atk'] > 0) source.boosts['atk'] = 0;
-				if (source.boosts['def'] > 0) source.boosts['def'] = 0;
-				if (source.boosts['spa'] > 0) source.boosts['spa'] = 0;
-				if (source.boosts['spd'] > 0) source.boosts['spd'] = 0;
-				if (source.boosts['spe'] > 0) source.boosts['spe'] = 0;
-				// Added these in just in case
-				if (source.boosts['accuracy'] > 0) source.boosts['accuracy'] = 0;
-				if (source.boosts['evasion'] > 0) source.boosts['evasion'] = 0;
+				source.clearPositiveBoosts()
 				this.add('-clearboost', source, '[from] ability: Artillery');
-			} else this.boost({spa: 1});
+			}
 		}
 	},
 	ballfetch: {
