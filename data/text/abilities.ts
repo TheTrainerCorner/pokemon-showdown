@@ -66,7 +66,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		},
 
 		// activate: "  [POKEMON] shuddered!",
-		activate: "	[POKEMON] shudders! [TARGET] has [MOVE]!",
+		activate: "	[POKEMON] shudders from [TARGET]!",
 	},
 	arenatrap: {
 		name: "Arena Trap",

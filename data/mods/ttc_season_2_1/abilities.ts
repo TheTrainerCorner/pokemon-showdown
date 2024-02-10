@@ -179,4 +179,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		}
 	},
+	cottondown: {
+		inherit: true,
+		onFoeBeforeMove: undefined,
+		onFoeAfterMove: undefined,
+		condition: {
+			duration: 1,
+			onStart(source, target, move) {
+				this.add('-start', source, 'Cotton Down');
+			},
+			onModifyMove(move, pokemon, target) {
+				move.priority = -6;
+			},
+			onEnd(source) {
+				this.add('-end', source, 'Cotton Down');
+			}
+		}
+	}
 };
