@@ -130,5 +130,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	swarm: {
 		inherit: true,
 		shortDesc: "Sets up a terrain that prevents either side from using Self Boosting Moves.",
-	}
+	},
+	defeatist: {
+		inherit: true,
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.hp <= (pokemon.maxhp / 4)) {
+				return this.chainModify(0.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, pokemon) {
+			if (pokemon.hp <= (pokemon.maxhp / 4)) {
+				return this.chainModify(0.5);
+			}
+		}
+	},
 };
