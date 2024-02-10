@@ -22,7 +22,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Moonlight')
 				.add('Play Rough')
 				.add('Misty Explosion');
-		new ModifyPokemon('Iron Valiant', this)
+		new ModifyPokemon('IronValiant', this)
 			.baseStats
 				.setSPE(114);
 	},
