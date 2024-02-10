@@ -146,4 +146,37 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		}
 	},
+	galewings: {
+		inherit: true,
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.type === 'Flying' && pokemon.hp >= (pokemon.maxhp / 2)) return priority + 1;
+		},
+	},
+	aurabreak: {
+		inherit: true,
+		onSourceModifyDamage: undefined,
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (['Dark', 'Psychic', 'Fairy'].includes(move.type) && defender.getMoveHitData(move).typeMod > 0) {
+				this.debug('Aura Break weaken');
+				return this.chainModify(0.7);
+			}
+		},
+		onSourceModifySpAPriority: 6,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (['Dark', 'Psychic', 'Fairy'].includes(move.type) && defender.getMoveHitData(move).typeMod > 0) {
+				this.debug('Aura Break weaken');
+				return this.chainModify(0.7);
+			}
+		}
+	},
+	vampire: {
+		inherit: true,
+		onModifyMove: undefined,
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags.bite) {
+				this.heal((damage / 8), source, target, "drain");
+			}
+		}
+	},
 };
