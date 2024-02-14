@@ -25,5 +25,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('IronValiant', this)
 			.baseStats
 				.setSPE(114);
+		new ModifyPokemon('Entei', this)
+			.baseStats
+				.setHP(120)
+				.setATK(95)
+				.setDEF(90)
+				.setSPA(95)
 	},
 }
