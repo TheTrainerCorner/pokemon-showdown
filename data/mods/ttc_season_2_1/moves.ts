@@ -40,4 +40,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		pp: 5,
 	},
+	leechlife: {
+		inherit: true,
+		flags: {bite: 1, contact: 1, mirror: 1, heal: 1},
+	},
 };
