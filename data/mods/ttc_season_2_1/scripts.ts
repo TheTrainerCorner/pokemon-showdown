@@ -31,5 +31,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(95)
 				.setDEF(90)
 				.setSPA(95)
+		new ModifyPokemon('Naganadel', this)
+			.baseStats
+				.setHP(80)
+				.setDEF(77)
+				.setSPA(120)
+				.setSPE(117);
 	},
 }
