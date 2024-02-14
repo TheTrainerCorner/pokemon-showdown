@@ -195,5 +195,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-end', source, 'Cotton Down');
 			}
 		}
-	}
+	},
+	hustle: {
+		inherit: true,
+		onModifyAtk(atk, source, target, move) {
+			if (move.accuracy !== 100) return this.chainModify([4506, 4096]);
+			else return this.chainModify(1.5);
+		},
+	},
 };
