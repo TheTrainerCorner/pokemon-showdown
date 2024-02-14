@@ -203,4 +203,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			else return this.chainModify(1.5);
 		},
 	},
+	shellarmor: {
+		inherit: true,
+		onModifyDefPriority: 6,
+		onModifyDef(def, target, source, move) {
+			return this.chainModify([4916, 4096]);
+		},
+		onModifySpDPriority: 6,
+		onModifySpD(def, target, source, move) {
+			return this.chainModify([4916, 4096]);
+		},
+		desc: "This ability allows the user to not be striked by critical hits! The user is gains a 1.2x Def & SpD buff!",
+		shortDesc: "Can not be striked by Critical Hits. User also gets 1.2x Def & SpD buff.",
+	},
 };
