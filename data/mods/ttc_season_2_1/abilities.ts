@@ -199,7 +199,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	hustle: {
 		inherit: true,
 		onModifyAtk(atk, source, target, move) {
-			if (move.accuracy !== 100) return this.chainModify([4506, 4096]);
+			if (move.accuracy === 100 || move.accuracy === true) return this.chainModify([4506, 4096]);
 			else return this.chainModify(1.5);
 		},
 	},
