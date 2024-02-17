@@ -2396,7 +2396,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setAbility0('Stall');
 			new ModifyPokemon('Heatmor', this)
 				.abilities
-					.setAbility0('Turoblaze')
+					.setAbility0('Turboblaze')
 				.pokemon.baseStats
 					.setSPE(88);
 			new ModifyPokemon('Durant', this)
