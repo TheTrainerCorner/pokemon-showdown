@@ -44,4 +44,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		flags: {bite: 1, contact: 1, mirror: 1, heal: 1},
 	},
+	glacier: {
+		inherit: true,
+		pp: 15,
+	}
 };
