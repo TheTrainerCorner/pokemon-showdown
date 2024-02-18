@@ -47,5 +47,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	glacier: {
 		inherit: true,
 		pp: 15,
+	},
+	coldsnap: {
+		inherit: true,
+		pp: 15,
 	}
 };
