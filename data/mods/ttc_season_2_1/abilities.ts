@@ -216,4 +216,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This ability allows the user to not be striked by critical hits! The user is gains a 1.2x Def & SpD buff!",
 		shortDesc: "Can not be striked by Critical Hits. User also gets 1.2x Def & SpD buff.",
 	},
+	earlybird: {
+		inherit: true,
+		condition: {
+			noCopy: true,
+			onStart(target) {
+				this.add('-start', target, 'ability: Early Bird');
+			},
+			onModifyPriority(priority, source, pokemon, move) {
+				this.debug('Early Bird boost');
+				pokemon.removeVolatile('earlybird');
+				return priority + 1;
+			},
+			onEnd(target) {
+				this.add('-end', target, 'ability: Early Bird');
+			},
+		},
+	}
 };
