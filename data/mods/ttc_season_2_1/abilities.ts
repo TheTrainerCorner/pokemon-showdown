@@ -232,5 +232,26 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-end', target, 'ability: Early Bird');
 			},
 		},
-	}
+	},
+	innerfocus: {
+		inherit: true,
+		onModifyMovePriority: 1,
+		onModifyMove(move) {
+			if (move.id === 'focusblast') {
+				move.accuracy = true;
+			}
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, source, target, move) {
+			return this.chainModify([2048, 4096]);
+		},
+		onModifyPriorityPriority: 21,
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.id === "focuspunch") {
+				return priority + 6;
+			}
+		},
+		desc: "Focus Blast can't miss; Focus Punch is changed to have a +3 priority and has a bp of 75. Still has Focus",
+		shortDesc: "Focus Blast can't miss; Focus Punch = +3 Priority and 75 Base Power.",
+	},
 };
