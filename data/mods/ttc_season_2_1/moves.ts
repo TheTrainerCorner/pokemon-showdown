@@ -51,5 +51,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	coldsnap: {
 		inherit: true,
 		pp: 15,
+	},
+	guidingblessing: {
+		inherit: true,
+		condition: {
+			duration: 2,
+			onStart(pokemon, source) {
+				this.add('-singleturn', pokemon, 'Guiding Blessing', '[of]' + source);
+				this.effectState.hp = source.maxhp / Math.floor(3/4);
+			},
+			onResidualOrder: 4,
+			onEnd(target) {
+				if (target && !target.fainted) {
+					const damage = this.heal(this.effectState.hp, target, target);
+					if (damage) {
+						this.add('-heal', target, target.getHealth, '[from] move: Guiding Blessing', '[blesser]' + this.effectState.source.name);
+					}
+				}
+			}
+		},
+		desc: "When the move is used, its effects take place at the end of the next turn (like wish). It heals the recipient for 75% of their hp.",
+		shortDesc: "Next Turn; Heal 3/4 of max hp",
 	}
 };
