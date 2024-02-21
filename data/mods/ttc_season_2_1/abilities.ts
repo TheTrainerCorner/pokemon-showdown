@@ -243,15 +243,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onBasePowerPriority: 21,
 		onBasePower(basePower, source, target, move) {
-			return this.chainModify([2048, 4096]);
+			return this.chainModify([3523, 4096]);
 		},
 		onModifyPriorityPriority: 21,
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.id === "focuspunch") {
-				return priority + 6;
+				// + 3 should put it at Neutral since it being added to a -3 priority
+				return priority + 3;
 			}
 		},
-		desc: "Focus Blast can't miss; Focus Punch is changed to have a +3 priority and has a bp of 75. Still has Focus",
-		shortDesc: "Focus Blast can't miss; Focus Punch = +3 Priority and 75 Base Power.",
+		desc: "Focus Blast can't miss; Focus Punch is changed to have a neutral priority and has a bp of 130. Still has Focus",
+		shortDesc: "Focus Blast can't miss; Focus Punch = Neutral Priority and 130 Base Power.",
 	},
 };
