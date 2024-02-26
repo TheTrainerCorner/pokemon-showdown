@@ -551,7 +551,7 @@ export const commands: Chat.ChatCommands = {
 	dex: 'data',
 	pokedex: 'data',
 	data(target, room, user, connection, cmd) {
-		const modGen = 'ttc_current';
+		const modGen = 'gen9ttc';
 		if (!this.runBroadcast()) return;
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
@@ -881,7 +881,7 @@ export const commands: Chat.ChatCommands = {
 			isInverse = true;
 			targets.pop();
 		}
-		const modGen = 'ttc_current';
+		const modGen = 'gen9ttc';
 		let species: {types: string[], [k: string]: any} = dex.mod(modGen).species.get(targets[0]);
 		const type1 = dex.mod(modGen).types.get(targets[0]);
 		const type2 = dex.mod(modGen).types.get(targets[1]);
@@ -979,7 +979,7 @@ export const commands: Chat.ChatCommands = {
 		const {dex, targets} = this.splitFormat(target.split(/[,/]/));
 		if (targets.length !== 2) return this.errorReply("Attacker and defender must be separated with a comma.");
 
-		const modGen = 'ttc_current';
+		const modGen = 'gen9ttc';
 
 		let searchMethods = ['types', 'moves', 'species'];
 		const sourceMethods = ['types', 'moves'];
