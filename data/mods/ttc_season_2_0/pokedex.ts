@@ -15,6 +15,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 3,
 		weightkg: 0,
 		color: "Blue",
+		tags: ["Fakemon"],
 		eggGroups: ["Water 1", "Field"],
 		requiredItem: "Inteleonite",
 	},
@@ -34,6 +35,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 1.4,
 		weightkg: 48.7,
 		color: "Purple",
+		tags: ["Fakemon"],
 		eggGroups: ["Field", "Fairy"],
 		requiredItem: "Granbulite",
 	}

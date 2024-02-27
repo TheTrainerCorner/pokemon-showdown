@@ -9,6 +9,7 @@ export const Pokedex: {[speciesid: string]: ModdedSpeciesData} = {
 		weightkg: 3.1,
 		color: "White",
 		evos: ["Lampoct"],
+		tags: ["Fakemon"],
 		eggGroups: ["Amorphous"],
 	},
 	lampoct: {
@@ -23,6 +24,7 @@ export const Pokedex: {[speciesid: string]: ModdedSpeciesData} = {
 		prevo: "Bulbick",
 		evoLevel: 41,
 		evos: ["Octolure"],
+		tags: ["Fakemon"],
 		eggGroups: ["Amorphous"],
 	},
 	octolure: {
@@ -37,6 +39,7 @@ export const Pokedex: {[speciesid: string]: ModdedSpeciesData} = {
 		prevo: "Lampoct",
 		evoType: "useItem",
 		evoItem: "Water Stone",
+		tags: ["Fakemon"],
 		eggGroups: ["Amorphous"],
 	},
 	gourgeist: {
@@ -56,6 +59,7 @@ export const Pokedex: {[speciesid: string]: ModdedSpeciesData} = {
 		heightm: 0.9,
 		weightkg: 12.5,
 		color: "Black",
+		tags: ["Fakemon"],
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Gourgeisite",
 	}

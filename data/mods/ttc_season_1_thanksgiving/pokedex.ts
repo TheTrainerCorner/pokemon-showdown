@@ -17,6 +17,7 @@ export const Pokedex: {[speciesid: string]: ModdedSpeciesData} = {
 		color: "Orange",
 		prevo: 'Phantump',
 		evoType: "trade",
+		tags: ["Fakemon"],
 		eggGroups: ["Grass", "Amorphous"],
 	}
 }

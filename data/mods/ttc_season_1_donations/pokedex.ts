@@ -8,6 +8,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 3.7,
 		weightkg: 55,
 		color: "White",
+		tags: ["Fakemon"],
 		eggGroups: ["Field", "Dragon"],
 	},
 	tindraco: {
@@ -20,6 +21,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 33.6,
 		color: "White",
 		evos: ["Devdraco"],
+		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
 	},
 	devdraco: {
@@ -34,6 +36,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Tindraco",
 		evoLevel: 30,
 		evos: ["Metadraco", "Acudraco", "Thundraco"],
+		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
 	},
 	metadraco: {
@@ -48,6 +51,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Devdraco",
 		evoType: "other",
 		evoCondition: "Take the War Path of the Dragon",
+		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
 	},
 	acudraco: {
@@ -62,6 +66,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Devdraco",
 		evoType: "other",
 		evoCondition: "Take the Knowledge Path of the Dragon",
+		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
 	},
 	thundraco: {
@@ -75,6 +80,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Yellow",
 		evoType: "other",
 		evoCondition: "Obtain the blessing of Zeus",
+		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
 	},
 	farfetchd: {
@@ -93,6 +99,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 0.8,
 		weightkg: 15,
 		color: "Brown",
+		tags: ["Fakemon"],
 		eggGroups: ['Flying', 'Field'],
 		requiredItem: "Stick",
 		requiredMove: "Leek Lunge",
@@ -116,6 +123,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Larvesta",
 		evoType: "other",
 		evoCondition: "You must be one with the fariy",
+		tags: ["Fakemon"],
 		eggGroups: ["Bug"],
 	},
 	poisonus: {
@@ -129,7 +137,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 1.5,
 		weightkg: 100,
 		color: "Purple",
-		tags: ["Sub-Legendary"],
+		tags: ["Sub-Legendary", "Fakemon"],
 		eggGroups: ["Undiscovered"],
 		otherFormes: ["Poisonus-Therian"],
 		formeOrder: ["Poisonus", "Poisonus-Therian"],
@@ -146,6 +154,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 2.3,
 		weightkg: 120,
 		color: "Gray",
+		tags: ["Sub-Legendary", "Fakemon"],
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Poisonus",
 	},
@@ -166,6 +175,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 6.6,
 		color: "Dark Grey",
 		evos: ["Kirlia-Olympios"],
+		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
 	},
 	kirlia: {
@@ -187,6 +197,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Ralts-Olympios",
 		evoLevel: 20,
 		evos: ["Gardevoir-Olympios", "Gallade-Olympios"],
+		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
 	},
 	gardevoir: {
@@ -206,6 +217,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 48.4,
 		color: "Dark Grey",
 		prevo: "Kirlia-Olympios",
+		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
 	},
 	gallade: {
@@ -227,6 +239,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Kirla-Olympios",
 		evoType: "useItem",
 		evoItem: "Dawn Stone",
+		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
 	},
 	shuckle: {
@@ -242,6 +255,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 1.0,
 		weightkg: 50.5,
 		color: "Yellow",
+		tags: ["Fakemon"],
 		eggGroups: ["Bug"],
 	},
 };

@@ -16,7 +16,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 0.3,
 		weightkg: 1.1,
 		color: "Blue",
-		tags: ["Mythical"],
+		tags: ["Mythical", "Fakemon"],
 		eggGroups: ["Undiscovered"],
 	},
 	meloetta: {
@@ -37,7 +37,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 6.5,
 		color: "White",
 		eggGroups: ["Undiscovered"],
-		tags: ["Mythical"],
+		tags: ["Mythical", "Fakemon"],
 	},
 	meloettaaurora: {
 		num: 648,
@@ -51,6 +51,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 0.6,
 		weightkg: 6.5,
 		color: "White",
+		tags: ["Fakemon"],
 		eggGroups: ["Undiscovered"],
 		requiredMove: "Snowtime Song",
 		battleOnly: "Meloetta-Caroler",
