@@ -1,4 +1,5 @@
 /config/*
+!/config/avatars
 !/config/colors.json
 !/config/formats.ts
 /logs/*
