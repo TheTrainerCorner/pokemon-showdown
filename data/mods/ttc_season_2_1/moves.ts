@@ -72,5 +72,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		desc: "When the move is used, its effects take place at the end of the next turn (like wish). It heals the recipient for 75% of their hp.",
 		shortDesc: "Next Turn; Heal 3/4 of max hp",
-	}
+	},
+	doubleironbash: {
+		inherit: true,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Has a 10% chance to make the target flinch.",
+		shortDesc: "Hits twice. 10% chance to make the target flinch."
+	},
 };
