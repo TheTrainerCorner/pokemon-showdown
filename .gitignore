@@ -1,4 +1,5 @@
 /config/*
+/replays/*
 !/config/avatars
 !/config/colors.json
 !/config/formats.ts
