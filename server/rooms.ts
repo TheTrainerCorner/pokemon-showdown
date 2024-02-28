@@ -2117,7 +2117,7 @@ export class GameRoom extends BasicRoom {
 		// // directly.
 		await axios.post('https://replay.thetrainercorner.net/replay', {
 				id: id,
-				log,
+				log: log.replace(/\//g, '\\/'),
 				players: battle.players.map(p => p.name),
 				format: format.name,
 				rating: rating || "null",
