@@ -2116,7 +2116,6 @@ export class GameRoom extends BasicRoom {
 		// // If we have a direct connetion to a Replays database, just upload the replay
 		// // directly.
 		await axios.post('https://replay.thetrainercorner.net/replay', {
-			body: {
 				id: id,
 				log,
 				players: battle.players.map(p => p.name),
@@ -2126,7 +2125,6 @@ export class GameRoom extends BasicRoom {
 				password: "",
 				inputlog: battle.inputLog?.join('\n') || "null",
 				uploadtime: Math.trunc(Date.now() / 1000),
-			}
 		});
 		const url = `https://replay.thetrainercorner.net/${id}`;
 		connection.popup(`|html|<p>Your replay has been uploaded!</p><button href="${url}">Replay</button>`);
