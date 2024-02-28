@@ -2093,14 +2093,14 @@ export class GameRoom extends BasicRoom {
 		buf += '</div>\n';
 		buf += '</div>\n';
 		buf += '<script>\n';
-		buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="http://play.pokeathlon.com/js/replay-embed.js?version'+daily+'"></'+'script>');\n`;
+		buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="http://play.thetrainercorner.net/js/replay-embed.js?version'+daily+'"></'+'script>');\n`;
 		buf += '</script>\n';
 
 		FS(`replays/${replayName}.html`).writeSync(buf);
 
 		FS('replays/replays.csv').appendSync(`${toID(user.name)},${toID(battle.p1.name)},${toID(battle.p2.name)},${battle.p3 ? toID(battle.p3.name) : ''},${battle.p4 ? toID(battle.p4.name) : ''},${Date.now()},${format.id},${replayName}\n`);
 
-		user.popup(`Replay was saved successfully! You can view it at http://play.pokeathlon.com:8000/replays/${replayName}.html`);
+		user.popup(`Replay was saved successfully! You can view it at http://server.thetrainercorner.net/replays/${replayName}.html`);
 
 
 		// if (isPrivate && hidden === 10) {
