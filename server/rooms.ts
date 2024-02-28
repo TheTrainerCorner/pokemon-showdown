@@ -2127,7 +2127,7 @@ export class GameRoom extends BasicRoom {
 				uploadtime: Math.trunc(Date.now() / 1000),
 		});
 		const url = `https://replay.thetrainercorner.net/${id}`;
-		connection.popup(`|html|<p>Your replay has been uploaded!</p><button href="${url}">Replay</button>`);
+		connection.popup(`Your replay has been saved. You can find it at ${url}`);
 		// if (Replays.db) {
 		// 	const idWithServer = Config.serverid === 'showdown' ? id : `${Config.serverid}-${id}`;
 		// 	try {
