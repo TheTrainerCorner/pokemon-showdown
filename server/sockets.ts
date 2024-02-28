@@ -338,6 +338,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 			const StaticServer: typeof import('node-static').Server = require('node-static').Server;
 			const roomidRegex = /^\/(?:[A-Za-z0-9][A-Za-z0-9-]*)\/?$/;
 			const cssServer = new StaticServer('./config');
+			const replayServer = new StaticServer('./replays');
 			const avatarServer = new StaticServer('./config/avatars');
 			const staticServer = new StaticServer('./server/static');
 			const emojiServer = new StaticServer('./config/emojis');
@@ -357,6 +358,9 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 						} else if (req.url.startsWith('/avatars/')) {
 							req.url = req.url.substr(8);
 							server = avatarServer;
+						} else if (req.url.startsWith("/replays/")) {
+							req.url = req.url.substr(8);
+							server = replayServer;
 						} else if (req.url.startsWith('/emojis/')) {
 							req.url = req.url.substr(7);
 							server = emojiServer;
