@@ -37,5 +37,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(77)
 				.setSPA(120)
 				.setSPE(117);
+		new ModifyPokemon('Gigachelonian', this)
+			.abilities
+				.setAbility1('Poison Heal')
+			.pokemon.baseStats
+				.setHP(69)
+				.setATK(70)
+				.setDEF(180)
+				.setSPA(60)
+				.setSPD(170)
+				.setSPE(10);
 	},
 }
