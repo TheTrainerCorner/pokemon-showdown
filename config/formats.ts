@@ -70,16 +70,98 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-		section: "Off-Season",
+		section: "TTC Cherish Ball Division",
 	},
 	{
-		name: "[Gen 9] National Dex Low Tier",
-		desc: "This is our Low Tier format. It has the complex bans and regulations needed.",
-		mod: "ttc_low_tier",
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Low Tier Rules', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
+		name: "[Gen 9] National Dex Cherish Ball",
+		desc: "This format is for Cherish Ball Division.",
+		mod: "ttc_current",
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
-			'ND AG', 'ND Uber','Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects', 'Shell Smash',
+			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
+		],
+		unbanlist: [
+			'Unreleased',
+			// Unobtainable Moves
+			'Barb Barrage',
+			'Blazing Torque',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Dire Claw',
+			"Dragon's Maw",
+			'Esper Wing',
+			'Infernal Parade',
+			'Magical Torque',
+			'Mountain Gale',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Shelter',
+			'Springtide Storm',
+			'Stone Axe',
+			'Triple Arrows',
+			'Victory Dance',
+			'Wicked Torque',
+			'Custap Berry',
+			// LGPE
+			'LGPE',
+			'Baton Pass',
+		],
+	},
+	{
+		section: "TTC Luxury Ball Division",
+	},
+	{
+		name: "[Gen 9] National Dex Luxury Ball",
+		desc: "This format is for Luxury Ball Division.",
+		mod: "ttc_current",
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
+		],
+		unbanlist: [
+			'Unreleased',
+			// Unobtainable Moves
+			'Barb Barrage',
+			'Blazing Torque',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Dire Claw',
+			"Dragon's Maw",
+			'Esper Wing',
+			'Infernal Parade',
+			'Magical Torque',
+			'Mountain Gale',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Shelter',
+			'Springtide Storm',
+			'Stone Axe',
+			'Triple Arrows',
+			'Victory Dance',
+			'Wicked Torque',
+			'Custap Berry',
+			// LGPE
+			'LGPE',
+			'Baton Pass',
+		],
+	},
+	{
+		section: "TTC Speed Tour",
+	},
+	{
+		name: "[Gen 9] National Dex Speed Tour",
+		desc: "This format is for Speed TOur.",
+		mod: "ttc_current",
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
 		],
 		unbanlist: [
 			'Unreleased',
@@ -122,56 +204,6 @@ export const Formats: FormatList = [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
 			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
 		],
-		unbanlist: [
-			'Unreleased',
-			// Unobtainable Moves
-			'Barb Barrage',
-			'Blazing Torque',
-			'Ceaseless Edge',
-			'Chloroblast',
-			'Combat Torque',
-			'Dire Claw',
-			"Dragon's Maw",
-			'Esper Wing',
-			'Infernal Parade',
-			'Magical Torque',
-			'Mountain Gale',
-			'Noxious Torque',
-			'Psyshield Bash',
-			'Raging Fury',
-			'Shelter',
-			'Springtide Storm',
-			'Stone Axe',
-			'Triple Arrows',
-			'Victory Dance',
-			'Wicked Torque',
-			'Custap Berry',
-			// LGPE
-			'LGPE',
-			'Baton Pass',
-		],
-	},
-	{
-		section: "Public Test Realm",
-	},
-	{
-		name: "[Gen 9] National Dex PTR",
-		desc: "The Official Draft Format for TTC",
-		mod: 'ttc_current',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set'],
-		banlist: [
-			'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
-			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
-		],
-		// Already Allowed:
-		/**
-		 * Lutrous Globe
-		 * Bleakwind Storm
-		 * Lunar Blessing
-		 * Mystical Power
-		 * Sandsear Storm
-		 * Wildbolt Storm
-		 */
 		unbanlist: [
 			'Unreleased',
 			// Unobtainable Moves
