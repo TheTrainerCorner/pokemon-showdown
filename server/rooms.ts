@@ -2117,7 +2117,7 @@ export class GameRoom extends BasicRoom {
 		// // directly.
 		const url = `https://replay.thetrainercorner.net/${id}`;
 		connection.popup(`Your replay has been saved. You can find it at ${url}`);
-		await axios.post('https://replay.thetrainercorner.net/replay', {
+		await axios.post('https://replay.thetrainercorner.net/', {
 				id: id,
 				log: log.replace(/\//g, '\\/'),
 				players: battle.players.map(p => p.name),
