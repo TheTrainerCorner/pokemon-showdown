@@ -57,6 +57,7 @@ try {
 			}
 		}
 	}
+	console.log(customAvatars);
 	FS(AVATARS_FILE).writeSync(JSON.stringify(customAvatars));
 }
 if ((Config.customavatars && Object.keys(Config.customavatars).length) || Config.allowedavatars) {
