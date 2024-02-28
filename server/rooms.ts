@@ -2068,6 +2068,13 @@ export class GameRoom extends BasicRoom {
 		let rating: number | undefined;
 		if (battle.ended && this.rated) rating = this.rated;
 		let {id, password} = this.getReplayData();
+		const silent = options === 'forpunishment' || options === 'silent' || options === 'auto';
+		if (silent) connection = undefined;
+		const isPrivate = this.settings.isPrivate || this.hideReplay;
+		const hidden = options === 'forpunishment' || options === 'auto' ? 10 :
+			(this as any).unlistReplay ? 2 :
+			isPrivate ? 1 :
+			0;
 		const replayName = `${toID(battle.p1.name)}-${toID(battle.p2.name)}-${Date.now()}`;
 		if (battle.replaySaved) {
 			connection.popup(`Replay has already been saved. you can view it at  You can view it at http://play.thetrainercorner.net/replays/${replayName}.html`);
@@ -2094,13 +2101,7 @@ export class GameRoom extends BasicRoom {
 		FS('replays/replays.csv').appendSync(`${toID(user.name)},${toID(battle.p1.name)},${toID(battle.p2.name)},${battle.p3 ? toID(battle.p3.name) : ''},${battle.p4 ? toID(battle.p4.name) : ''},${Date.now()},${format.id},${replayName}\n`);
 
 		user.popup(`Replay was saved successfully! You can view it at http://play.pokeathlon.com:8000/replays/${replayName}.html`);
-		// const silent = options === 'forpunishment' || options === 'silent' || options === 'auto';
-		// if (silent) connection = undefined;
-		// const isPrivate = this.settings.isPrivate || this.hideReplay;
-		// const hidden = options === 'forpunishment' || options === 'auto' ? 10 :
-		// 	(this as any).unlistReplay ? 2 :
-		// 	isPrivate ? 1 :
-		// 	0;
+
 
 		// if (isPrivate && hidden === 10) {
 		// 	password = Replays.generatePassword();
