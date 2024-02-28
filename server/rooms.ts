@@ -2089,7 +2089,7 @@ export class GameRoom extends BasicRoom {
 		buf += '<div class="wrapper replay-wrapper" style="max-width:1180px;margin:0 auto">\n';
 		buf += '<div class="battle"></div><div class="battle-log"></div><div class="replay-controls"></div><div class="replay-controls-2"></div>\n';
 		buf += `<h1 style="font-weight:normal;text-align:center"><strong>${Utils.escapeHTML(format.name)}</strong><br /><a href="https://pokemonshowdown.com/users/${toID(battle.p1.name)}" class="subtle" target="_blank">${Utils.escapeHTML(battle.p1.name)}</a> vs. <a href="https://pokemonshowdown.com/users/${toID(battle.p2.name)}" class="subtle" target="_blank">${Utils.escapeHTML(battle.p2.name)}</a></h1>\n`;
-		buf += '<script type="text/plain" class="battle-log-data">' + battle.inputLog?.join("\n").replace(/\//g, '\\/') + '</script>\n';
+		buf += '<script type="text/plain" class="battle-log-data">' + log.replace(/\//g, '\\/') + '</script>\n';
 		buf += '</div>\n';
 		buf += '</div>\n';
 		buf += '<script>\n';
