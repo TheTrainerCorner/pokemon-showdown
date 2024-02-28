@@ -2115,7 +2115,8 @@ export class GameRoom extends BasicRoom {
 
 		// // If we have a direct connetion to a Replays database, just upload the replay
 		// // directly.
-		
+		const url = `https://replay.thetrainercorner.net/${id}`;
+		connection.popup(`Your replay has been saved. You can find it at ${url}`);
 		await axios.post('https://replay.thetrainercorner.net/replay', {
 				id: id,
 				log: log.replace(/\//g, '\\/'),
@@ -2126,11 +2127,8 @@ export class GameRoom extends BasicRoom {
 				password: "",
 				inputlog: battle.inputLog?.join('\n') || "null",
 				uploadtime: Math.trunc(Date.now() / 1000),
-		}).then(() => {
-			const url = `https://replay.thetrainercorner.net/${id}`;
-			connection.popup(`Your replay has been saved. You can find it at ${url}`);
 		});
-		
+
 		// if (Replays.db) {
 		// 	const idWithServer = Config.serverid === 'showdown' ? id : `${Config.serverid}-${id}`;
 		// 	try {
