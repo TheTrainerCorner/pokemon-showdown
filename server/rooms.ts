@@ -2128,7 +2128,6 @@ export class GameRoom extends BasicRoom {
 				password: "",
 				inputlog: battle.inputLog?.join('\n') || "null",
 				uploadtime: Math.trunc(Date.now() / 1000),
-				server_url: Config.server_url
 		});
 
 		// if (Replays.db) {
