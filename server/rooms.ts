@@ -2075,7 +2075,7 @@ export class GameRoom extends BasicRoom {
 			(this as any).unlistReplay ? 2 :
 			isPrivate ? 1 :
 			0;
-		const replayName = `${toID(battle.p1.name)}-${toID(battle.p2.name)}-${Date.now()}`;
+		
 		if (battle.replaySaved) {
 			connection.popup(`Replay has already been saved. you can view it at  You can view it at http://play.thetrainercorner.net/replays/${replayName}.html`);
 			return;
@@ -2093,14 +2093,14 @@ export class GameRoom extends BasicRoom {
 		buf += '</div>\n';
 		buf += '</div>\n';
 		buf += '<script>\n';
-		buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="http://play.thetrainercorner.net/js/replay-embed.js?version'+daily+'"></'+'script>');\n`;
+		buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="https://play.thetrainercorner.net/js/replay-embed.js?version'+daily+'"></'+'script>');\n`;
 		buf += '</script>\n';
-
+		const replayName = `${toID(battle.p1.name)}-${toID(battle.p2.name)}-${Date.now()}`;
 		FS(`replays/${replayName}.html`).writeSync(buf);
 
 		FS('replays/replays.csv').appendSync(`${toID(user.name)},${toID(battle.p1.name)},${toID(battle.p2.name)},${battle.p3 ? toID(battle.p3.name) : ''},${battle.p4 ? toID(battle.p4.name) : ''},${Date.now()},${format.id},${replayName}\n`);
 
-		user.popup(`Replay was saved successfully! You can view it at http://server.thetrainercorner.net/replays/${replayName}.html`);
+		user.popup(`Replay was saved successfully! You can view it at https://server.thetrainercorner.net/replays/${replayName}.html`);
 
 
 		// if (isPrivate && hidden === 10) {
@@ -2154,18 +2154,18 @@ export class GameRoom extends BasicRoom {
 			inputlog: battle.inputLog?.join('\n') || undefined,
 			password,
 		});
-		if (result?.errorip) {
-			connection?.popup(`This server's request IP ${result.errorip} is not a registered server.`);
-			return;
-		}
+		// if (result?.errorip) {
+		// 	connection?.popup(`This server's request IP ${result.errorip} is not a registered server.`);
+		// 	return;
+		// }
 
-		const fullid = result?.replayid;
-		const url = `https://${Config.routes.replays}/${fullid}`;
-		connection?.popup(
-			`|html|<p>Your replay has been uploaded! It's available at:</p><p> ` +
-			`<a class="no-panel-intercept" href="${url}" target="_blank">${url}</a> ` +
-			`<copytext value="${url}">Copy</copytext>`
-		);
+		// const fullid = result?.replayid;
+		// const url = `https://${Config.routes.replays}/${fullid}`;
+		// connection?.popup(
+		// 	`|html|<p>Your replay has been uploaded! It's available at:</p><p> ` +
+		// 	`<a class="no-panel-intercept" href="${url}" target="_blank">${url}</a> ` +
+		// 	`<copytext value="${url}">Copy</copytext>`
+		// );
 	}
 
 	getReplayData() {
