@@ -2077,7 +2077,7 @@ export class GameRoom extends BasicRoom {
 			0;
 		
 		if (battle.replaySaved) {
-			connection.popup(`Replay has already been saved. you can view it at  You can view it at http://play.thetrainercorner.net/replays/${replayName}.html`);
+			connection.popup(`Replay has already been saved!`);
 			return;
 		}
 		battle.replaySaved = true;
@@ -2100,7 +2100,7 @@ export class GameRoom extends BasicRoom {
 
 		FS('replays/replays.csv').appendSync(`${toID(user.name)},${toID(battle.p1.name)},${toID(battle.p2.name)},${battle.p3 ? toID(battle.p3.name) : ''},${battle.p4 ? toID(battle.p4.name) : ''},${Date.now()},${format.id},${replayName}\n`);
 
-		user.popup(`Replay was saved successfully! You can view it at https://server.thetrainercorner.net/replays/${replayName}.html`);
+		connection.popup(`Replay was saved successfully! You can view it at https://sim.thetrainercorner.net/replays/${replayName}.html`);
 
 
 		// if (isPrivate && hidden === 10) {
