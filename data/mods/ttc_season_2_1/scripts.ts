@@ -41,7 +41,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility1('Poison Heal')
 			.pokemon.baseStats
-				.setHP(69)
+				.setHP(60)
 				.setATK(70)
 				.setDEF(180)
 				.setSPA(60)
