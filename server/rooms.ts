@@ -150,6 +150,7 @@ import type {AutoResponder} from './chat-plugins/responder';
 import type {RoomEvent, RoomEventAlias, RoomEventCategory} from './chat-plugins/room-events';
 import type {Tournament, TournamentRoomSettings} from './tournaments/index';
 import axios from 'axios';
+import { Config } from './config-loader';
 
 export abstract class BasicRoom {
 	/** to rename use room.rename */
@@ -2127,6 +2128,7 @@ export class GameRoom extends BasicRoom {
 				password: "",
 				inputlog: battle.inputLog?.join('\n') || "null",
 				uploadtime: Math.trunc(Date.now() / 1000),
+				server_url: Config.server_url
 		});
 
 		// if (Replays.db) {
