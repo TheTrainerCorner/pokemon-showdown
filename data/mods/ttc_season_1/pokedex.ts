@@ -1,4 +1,75 @@
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+	//#region Version 1.1
+	silvallybug: {
+		inherit: true,
+		requiredItem: undefined
+	},
+	silvallydark: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallydragon: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyelectric: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyfairy: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyfighting: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyfire: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyflying: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyghost: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallygrass: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyground: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyice: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallypoison: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallypsychic: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallyrock: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallysteel: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	silvallywater: {
+		inherit: true,
+		requiredItem: undefined,
+	},
+	//#endregion
+	//#region Season 1 Donations
 	sotanaht: {
 		num: -2001,
 		name: "Sotanaht",
@@ -258,4 +329,154 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Fakemon"],
 		eggGroups: ["Bug"],
 	},
+	//#endregion
+	//#region Season 1 Halloween
+	bulbick: {
+		num: -1031,
+		name: "Bulbick",
+		types: ["Water", "Electric"],
+		abilities: {0: "Dazzling", 1: "Illuminate", H: "Haunted Light"},
+		baseStats: {hp: 60, atk: 25, def: 40, spa: 75, spd: 65, spe: 10},
+		heightm: 0.3,
+		weightkg: 3.1,
+		color: "White",
+		evos: ["Lampoct"],
+		tags: ["Fakemon"],
+		eggGroups: ["Amorphous"],
+	},
+	lampoct: {
+		num: -1032,
+		name: "Lampoct",
+		types: ["Water", "Electric"],
+		abilities: {0: "Dazzling", 1: "Illuminate", H: "Haunted Light"},
+		baseStats: {hp: 70, atk: 40, def: 50, spa: 85, spd: 70, spe: 55},
+		heightm: 0.6,
+		weightkg: 13,
+		color: "White",
+		prevo: "Bulbick",
+		evoLevel: 41,
+		evos: ["Octolure"],
+		tags: ["Fakemon"],
+		eggGroups: ["Amorphous"],
+	},
+	octolure: {
+		num: -1033,
+		name: "Octolure",
+		types: ["Water", "Electric"],
+		abilities: {0: "Dazzling", 1: "Illuminate", H: "Haunted Light"},
+		baseStats: {hp: 82, atk: 50, def: 62, spa: 150, spd: 84, spe: 92},
+		heightm: 1,
+		weightkg: 34.3,
+		color: "White",
+		prevo: "Lampoct",
+		evoType: "useItem",
+		evoItem: "Water Stone",
+		tags: ["Fakemon"],
+		eggGroups: ["Amorphous"],
+	},
+	gourgeist: {
+		inherit: true,
+		otherFormes: ["Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super", "Gourgeist-Mega"],
+		formeOrder: ["Gourgeist", "Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super", "Gourgeist-Mega"],
+	},
+	gourgeistmega: {
+		num: 0,
+		name: "Gourgeist-Mega",
+		baseSpecies: "Gourgeist",
+		forme: "Mega",
+		types: ["Grass", "Ghost"],
+		gender: "N",
+		baseStats: {hp: 65, atk: 100, def: 122, spa: 133, spd: 105, spe: 54},
+		abilities: {0: "Eerie Cry"},
+		heightm: 0.9,
+		weightkg: 12.5,
+		color: "Black",
+		tags: ["Fakemon"],
+		eggGroups: ["Undiscovered"],
+		requiredItem: "Gourgeisite",
+	},
+	//#endregion
+	//#region Season 1 Thanksgiving
+	trevenant: {
+		inherit: true,
+		otherFormes: ["Trevenant-Autumn"],
+		formeOrder: ["Trevenant", "Trevenant-Autumn"],
+	},
+	trevenantautumn: {
+		num: 709,
+		name: "Trevenant-Autumn",
+		baseSpecies: "Trevenant",
+		forme: 'Autumn',
+		types: ["Grass", "Ghost"],
+		baseStats: {hp: 91, atk: 125, def: 83, spa: 65, spd: 82, spe: 56},
+		abilities: {0: "Wandering Spirit", 1: "Harvest", H: "Justified"},
+		heightm: 1.5,
+		weightkg: 71,
+		color: "Orange",
+		prevo: 'Phantump',
+		evoType: "trade",
+		tags: ["Fakemon"],
+		eggGroups: ["Grass", "Amorphous"],
+	},
+	//#endregion
+	//#region Season 1 Winter
+	jirachi: {
+		inherit: true,
+		otherFormes: ["Jirachi-NorthStar"],
+		formeOrder: ["Jirachi", "Jirachi-NorthStar"],
+	},
+	jirachinorthstar: {
+		num: 385,
+		name: "Jirachi-NorthStar",
+		baseSpecies: "Jirachi",
+		forme: "NorthStar",
+		types: ["Ice", "Fairy"],
+		gender: "N",
+		baseStats: {hp: 100, atk: 100, def: 110, spa: 100, spd: 110, spe: 80},
+		abilities: {0: "Illuminate"},
+		heightm: 0.3,
+		weightkg: 1.1,
+		color: "Blue",
+		tags: ["Mythical", "Fakemon"],
+		eggGroups: ["Undiscovered"],
+	},
+	meloetta: {
+		inherit: true,
+		otherFormes: ["Meloetta-Pirouette", "Meloetta-Caroler", "Meloetta-Aurora"],
+		formeOrder: ["Meloetta", "Meloetta-Pirouette", "Meloetta-Caroler", "Meloetta-Aurora"],
+	},
+	meloettacaroler: {
+		num: 648,
+		name: "Meloetta-Caroler",
+		baseSpecies: "Meloetta",
+		forme: "Caroler",
+		types: ["Ice", "Normal"],
+		gender: "N",
+		baseStats: {hp: 100, atk: 77, def: 77, spa: 128, spd: 128, spe: 90},
+		abilities: {0: "Frigid Inspiration"},
+		heightm: 0.6,
+		weightkg: 6.5,
+		color: "White",
+		eggGroups: ["Undiscovered"],
+		tags: ["Mythical", "Fakemon"],
+	},
+	meloettaaurora: {
+		num: 648,
+		name: "Meloetta-Aurora",
+		baseSpecies: "Meloetta",
+		forme: "Aurora",
+		types: ["Ice", "Fairy"],
+		gender: "N",
+		baseStats: {hp: 100, atk: 128, def: 90, spa: 77, spd: 77, spe: 128},
+		abilities: {0: "Frigid Inspiration"},
+		heightm: 0.6,
+		weightkg: 6.5,
+		color: "White",
+		tags: ["Fakemon"],
+		eggGroups: ["Undiscovered"],
+		requiredMove: "Snowtime Song",
+		battleOnly: "Meloetta-Caroler",
+	},
+	//#endregion
+	
 };
