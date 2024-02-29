@@ -475,6 +475,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Fakemon"],
 		eggGroups: ["Undiscovered"],
 		requiredMove: "Snowtime Song",
+		tier: "Illegal",
 		battleOnly: "Meloetta-Caroler",
 	},
 	//#endregion
