@@ -140,8 +140,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	},
 	meloettaaurora: {
 		isNonstandard: "Past",
-		tier: "OU",
-		natDexTier: "OU",
 	},
 	//#endregion
 	
