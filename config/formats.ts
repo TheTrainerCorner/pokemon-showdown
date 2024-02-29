@@ -67,6 +67,8 @@ export const Formats: FormatList = [
 			// LGPE
 			'LGPE',
 			'Baton Pass',
+			// Items
+			'Thick Club'
 		],
 	},
 	{
@@ -108,6 +110,8 @@ export const Formats: FormatList = [
 			// LGPE
 			'LGPE',
 			'Baton Pass',
+			// Items
+			'Thick Club'
 		],
 	},
 	{
@@ -149,6 +153,8 @@ export const Formats: FormatList = [
 			// LGPE
 			'LGPE',
 			'Baton Pass',
+			// Items
+			'Thick Club'
 		],
 	},
 	{
@@ -190,6 +196,8 @@ export const Formats: FormatList = [
 			// LGPE
 			'LGPE',
 			'Baton Pass',
+			// Items
+			'Thick Club'
 		],
 	},
 	{
@@ -231,6 +239,8 @@ export const Formats: FormatList = [
 			// LGPE
 			'LGPE',
 			'Baton Pass',
+			// Items
+			'Thick Club'
 		],
 	},
 	{
@@ -272,6 +282,8 @@ export const Formats: FormatList = [
 			// LGPE
 			'LGPE',
 			'Baton Pass',
+			// Items
+			'Thick Club'
 		],
 	},
 ];
