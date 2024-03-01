@@ -10,6 +10,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 			if (item.megaStone === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
+		onModifyCritRatio(crit, source, target, move) {
+			if (source.species.name === "Farfetch\u2019d-Mega") {
+				return crit + 2;
+			}
+		},
 		num: 674,
 		gen: 8,
 		isNonstandard: "Past",
