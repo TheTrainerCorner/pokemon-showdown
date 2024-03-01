@@ -108,19 +108,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
 		},
-		// onStart(pokemon) {
-		// 	for (const target of pokemon.foes()) {
-		// 		target.clearBoosts();
-		// 		this.debug('Curious medicine debuff');
-		// 	}
-		// 	for (const ally of pokemon.allies()) {
-		// 		ally.clearBoosts();
-		// 		this.debug('Curious medicine debuff');
-		// 		ally.heal(ally.baseMaxhp / 4);
-		// 		this.debug('Curious medicine heal');
-		// 	}
-		// 	this.add('-activate', pokemon, 'ability: Curious Medicine');
-		// },
 	},
 	anticipation: {
 		inherit: true,
@@ -209,17 +196,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onFoeBeforeMove: undefined,
 		onFoeAfterMove: undefined,
+		onDamagingHit(damage, target, source, move) {
+			if (target !== source && this.checkMoveMakesContact(move, source, target)) {
+				target.addVolatile('cottondown');
+				return null;
+			}
+		},
 		condition: {
 			duration: 1,
 			onStart(source, target, move) {
-				this.add('-start', source, 'Cotton Down');
+				this.add('-start', source, 'ability: Cotton Down');
 			},
-			onModifyMove(move, pokemon, target) {
-				move.priority = -6;
+			onModifyPriority(priority, source, target, move) {
+				return -6;
 			},
 			onEnd(source) {
-				this.add('-end', source, 'Cotton Down');
-			}
+				this.add('-end', source, 'ability: Cotton Down');
+			},
 		}
 	},
 	hustle: {
