@@ -14,45 +14,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifySpe: undefined,
 		onStart(pokemon) {
-			const ballItems = [
-				'lifeorb',
-				'wikiberry',
-				'adrenalineorb',
-				'flameorb',
-				'liechiberry',
-				'snowball',
-				'toxicorb',
-				'yacheberry',
-				'aspearberry',
-				'destinyknot',
-				'ironball',
-				'oranberry',
-				'ovalstone',
-			];
-			if (!ballItems.includes(pokemon.item)) return;
-			pokemon.addVolatile('ballfetch');
+			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			if(item.tags?.includes("Ball") || item.isPokeball) {
+				pokemon.addVolatile('ballfetch');
+			}
 		},
 		onUpdate(pokemon) {
-			const ballItems = [
-				'lifeorb',
-				'wikiberry',
-				'adrenalineorb',
-				'flameorb',
-				'liechiberry',
-				'snowball',
-				'toxicorb',
-				'yacheberry',
-				'aspearberry',
-				'destinyknot',
-				'ironball',
-				'oranberry',
-				'ovalstone',
-			];
-			if (!ballItems.includes(pokemon.item) && pokemon.volatiles['ballfetch'])
+			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			if (!(item.tags?.includes("Ball") || item.isPokeball) && pokemon.volatiles['ballfetch']) {
 				pokemon.removeVolatile('ballfetch');
-			else if (!ballItems.includes(pokemon.item) && !pokemon.volatiles['ballfetch'])
-				return;
-			else pokemon.addVolatile('ballfetch');
+			}
+			else if ((item.tags?.includes("Ball") || item.isPokeball) && !pokemon.volatiles['ballfetch']) {
+				pokemon.addVolatile('ballfetch');
+			}
 		},
 		onEnd(pokemon) {
 			pokemon.removeVolatile('ballfetch');

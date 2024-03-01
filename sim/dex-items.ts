@@ -17,6 +17,8 @@ export type ModdedItemData = ItemData | Partial<Omit<ItemData, 'name'>> & {
 	onCustap?: (this: Battle, pokemon: Pokemon) => void,
 };
 
+
+
 export class Item extends BasicEffect implements Readonly<BasicEffect> {
 	declare readonly effectType: 'Item';
 
@@ -88,6 +90,7 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 	readonly isGem: boolean;
 	/** Is this item a Pokeball? */
 	readonly isPokeball: boolean;
+	readonly tags?: "Ball" [];
 
 	declare readonly condition?: ConditionData;
 	declare readonly forcedForme?: string;
