@@ -270,14 +270,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	frisk: {
 		inherit: true,
 		onStart(pokemon) {
-			if (pokemon.item) return;
 			for (const target of pokemon.foes()) {
 				if (target.item) {
 					this.add('-item', target, target.getItem().name, '[from] ability: Frisk', '[of] ' + pokemon, '[identify]');
 				}
 				const item = target.getItem();
-				if (pokemon.hp && item.isBerry && pokemon.takeItem(target)) {
-					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] Frisk', '[of] ' + pokemon);
+				if (pokemon.hp && item.isBerry && target.takeItem(pokemon)) {
+					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] Frisk', '[of] ' + pokemon, '[identify]');
 					if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
 						this.runEvent('EatItem', pokemon, null, null, item);
 						if (item.id === 'leppaberry') target.staleness = 'external';
@@ -286,5 +285,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 			}
 		},
+		desc: "Identifies the opposing Pokemon's item upon switch-in. If the item is a berry, then the user will eat the berry.",
+		shortDesc: "Identifies the opposing Pokemon's item upon switch-in; If item is berry, then user eats the berry.",
 	}
 };
