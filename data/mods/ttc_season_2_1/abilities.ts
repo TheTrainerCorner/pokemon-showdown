@@ -248,4 +248,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Focus Blast can't miss; Focus Punch is changed to have a neutral priority and has a bp of 130. Still has Focus",
 		shortDesc: "Focus Blast can't miss; Focus Punch = Neutral Priority and 130 Base Power.",
 	},
+	colorchange: {
+		inherit: true,
+		onFoeBeforeMove: undefined,
+		onFoePrepareHit(source, target, move) {
+				if (!target.hp) return;
+				if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+				const type = move.type;
+				if (type && type !== '???') {
+					let types = this.dex.mod('ttc_current').types.all();
+					let _type = this.dex.mod('ttc_current').types.get(type);
+					// 2 = Resistance
+					let resistType = types.find(x => _type.damageTaken[x.id] === 2);
+					if (target.getTypes().join() !== resistType?.name) {
+						if (!target.setType(resistType!.name)) return;
+						this.add('-start', source, 'typechange', type, '[from] ability: Color Change');
+					}
+				}
+		},
+	}
 };
