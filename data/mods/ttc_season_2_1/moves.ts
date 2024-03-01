@@ -82,4 +82,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Has a 10% chance to make the target flinch.",
 		shortDesc: "Hits twice. 10% chance to make the target flinch."
 	},
+	octazooka: {
+		inherit: true,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Special';
+		},
+		ignoreAbility: true,
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Cool",
+		self: undefined,
+		desc: "This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes. This move and its effects ignore the Abilities of other Pokemon.",
+		shortDesc: "Physical if user's Atk > Sp. Atk. Ignores Abilities.",
+	}
 };

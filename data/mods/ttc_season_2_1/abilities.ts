@@ -1,12 +1,17 @@
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	artillery: {
 		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			this.effectState.hitLanded = true;
+		},
 		onAfterMove(source, target, move) {
-			if (move.category !== 'Status') {
-				source.clearPositiveBoosts()
-				this.add('-clearboost', source, '[from] ability: Artillery');
+			if (this.effectState.hitLanded) {
+				this.add('-activate', source, 'ability: Artillery');
+				this.damage(target.baseMaxhp / 8, target, source);
 			}
-		}
+		},
+		desc: "After using a Damaging hit, does 1/8 of the target's max hp to the target.",
+		shortDesc: "After using a Damaging hit, does 1/8 of the target's max hp to the target.",
 	},
 	ballfetch: {
 		inherit: true,

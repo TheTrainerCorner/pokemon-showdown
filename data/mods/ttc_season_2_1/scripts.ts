@@ -51,5 +51,18 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(110)
 				.setSPE(71);
+		new ModifyPokemon('Octillery', this)
+			.baseStats
+				.setHP(76)
+				.setATK(127)
+				.setDEF(88)
+				.setSPA(127)
+				.setSPD(82)
+			.pokemon.learnset
+				.remove('Aeroblast')
+				.remove('Origin Pulse');
+		new ModifyPokemon('Camerupt-Mega', this)
+			.baseStats
+				.setATK(110);
 	},
 }
