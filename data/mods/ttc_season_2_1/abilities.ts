@@ -3,7 +3,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onDamagingHitOrder: 1,
 		onSourceDamagingHit(damage, target, source, move) {
-			target.damage(target.maxhp / 8, source);
+			source.damage(source.maxhp / 8, target);
 		},
 		onAfterMove: undefined,
 		desc: "After using a Damaging hit, does 1/8 of the target's max hp to the target.",
