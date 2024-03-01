@@ -266,5 +266,25 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 					}
 				}
 		},
+	},
+	frisk: {
+		inherit: true,
+		onStart(pokemon) {
+			if (pokemon.item) return;
+			for (const target of pokemon.foes()) {
+				if (target.item) {
+					this.add('-item', target, target.getItem().name, '[from] ability: Frisk', '[of] ' + pokemon, '[identify]');
+				}
+				const item = target.getItem();
+				if (pokemon.hp && item.isBerry && pokemon.takeItem(target)) {
+					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] Frisk', '[of] ' + pokemon);
+					if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
+						this.runEvent('EatItem', pokemon, null, null, item);
+						if (item.id === 'leppaberry') target.staleness = 'external';
+					}
+					if (item.onEat) pokemon.ateBerry = true;
+				}
+			}
+		},
 	}
 };
