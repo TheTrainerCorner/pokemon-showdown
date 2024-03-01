@@ -1,8 +1,9 @@
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	artillery: {
 		inherit: true,
-		onDamagingHit(damage, target, source, move) {
-			this.add('-activate', source, 'ability: Artillery');
+		onDamagingHitOrder: 1,
+		onSourceDamagingHit(damage, target, source, move) {
+			this.add('-activate', target, 'ability: Artillery');
 			this.damage(target.maxhp / 8, target, source);
 		},
 		onAfterMove: undefined,
