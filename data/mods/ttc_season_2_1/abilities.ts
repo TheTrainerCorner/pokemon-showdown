@@ -85,18 +85,42 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	curiousmedicine: {
 		inherit: true,
 		onStart(pokemon) {
+			let activated = false;
 			for (const target of pokemon.foes()) {
-				target.clearBoosts();
-				this.debug('Curious medicine debuff');
+				// Modified Intimidate
+				if (!activated) {
+					this.add('-ability', pokemon, 'Curious Medicine', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					target.clearBoosts();
+					this.add('-clearboost', target, '[from] ability: Curious Medicine', '[of] ' + pokemon);
+					this.debug('Curious medicine debuff');
+				}
 			}
-			for (const ally of pokemon.allies()) {
+
+			// Hospitality
+			for (const ally of pokemon.adjacentAllies()) {
 				ally.clearBoosts();
-				this.debug('Curious medicine debuff');
-				ally.heal(ally.baseMaxhp / 4);
-				this.debug('Curious medicine heal');
+				this.add('-clearboost', ally, '[from] ability: Curious Medicine', '[of] ' + pokemon);
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
-			this.add('-activate', pokemon, 'ability: Curious Medicine');
 		},
+		// onStart(pokemon) {
+		// 	for (const target of pokemon.foes()) {
+		// 		target.clearBoosts();
+		// 		this.debug('Curious medicine debuff');
+		// 	}
+		// 	for (const ally of pokemon.allies()) {
+		// 		ally.clearBoosts();
+		// 		this.debug('Curious medicine debuff');
+		// 		ally.heal(ally.baseMaxhp / 4);
+		// 		this.debug('Curious medicine heal');
+		// 	}
+		// 	this.add('-activate', pokemon, 'ability: Curious Medicine');
+		// },
 	},
 	anticipation: {
 		inherit: true,
