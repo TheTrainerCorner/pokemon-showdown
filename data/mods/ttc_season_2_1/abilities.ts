@@ -4,7 +4,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHitOrder: 1,
 		onSourceDamagingHit(damage, target, source, move) {
 			if (!target.hp) return;
-			this.add('-activate', source, 'ability: Artillery');
 			this.damage(target.maxhp / 8, target, source);
 		},
 		onAfterMove: undefined,
