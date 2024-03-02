@@ -86,17 +86,32 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	anticipation: {
 		inherit: true,
 		onStart(pokemon) {
+			let totalatk = 0;
+			let totalspa = 0;
 			for (const target of pokemon.foes()) {
+				totalatk += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
 				for (const moveSlot of target.moveSlots) {
 					const move = this.dex.moves.get(moveSlot.move);
+					if (move.category === 'Status') continue;
 					const moveType = move.id === 'hiddenpower' ? target.hpType : move.type;
-					if (move.basePower >= 100 && this.dex.getImmunity(moveType, pokemon)) {
+					if (
+						this.dex.getImmunity(moveType, pokemon) && this.dex.getEffectiveness(moveType, pokemon) > 0 ||
+						move.ohko
+					) {
 						this.add('-ability', pokemon, 'Anticipation');
-						this.add('-activate', pokemon, 'ability: Anticipation', target, 'Move: ' + move);
+						if (totalatk && totalspa >= totalspa) {
+							this.boost({def: 1});
+						} else if (totalspa) {
+							this.boost({spd:1});
+						}
+						return;
 					}
 				}
 			}
 		},
+		desc: "On switch-in, this Pokemon shudders if any foe has a move that is Super Effective against the user, then the user's Defense or Special Defense will be increased based on the opposing pokemon's offensive stat.",
+		shortDesc: "On switch-in;If shudders, Opposing Pokemon's Atk Higher = +1 Def, else +1 SpD."
 	},
 	cutecharm: {
 		inherit: true,
@@ -146,14 +161,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onSourceModifyAtk(atk, attacker, defender, move) {
 			if (['Dark', 'Psychic', 'Fairy'].includes(move.type) && defender.getMoveHitData(move).typeMod > 0) {
 				this.debug('Aura Break weaken');
-				return this.chainModify(0.7);
+				return this.chainModify([2867, 4096]);
 			}
 		},
 		onSourceModifySpAPriority: 6,
 		onSourceModifySpA(atk, attacker, defender, move) {
 			if (['Dark', 'Psychic', 'Fairy'].includes(move.type) && defender.getMoveHitData(move).typeMod > 0) {
 				this.debug('Aura Break weaken');
-				return this.chainModify(0.7);
+				return this.chainModify([2867, 4096]);
 			}
 		}
 	},
