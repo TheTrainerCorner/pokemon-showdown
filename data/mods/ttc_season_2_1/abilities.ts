@@ -262,7 +262,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 					let resistType = types.find(x => x.damageTaken[_type.name] === 2);
 					if (target.getTypes().join() !== resistType?.name) {
 						if (!target.setType(resistType!.name)) return;
-						this.add('-start', target, 'typechange', type, '[from] ability: Color Change');
+						this.add('-start', target, 'typechange', resistType?.name, '[from] ability: Color Change');
 					}
 				}
 		},
