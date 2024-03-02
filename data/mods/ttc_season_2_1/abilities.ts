@@ -158,19 +158,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onSourceModifyDamage: undefined,
 		onSourceModifyAtkPriority: 6,
+		// 2867/4096
 		onSourceModifyAtk(atk, attacker, defender, move) {
-			if (['Dark', 'Psychic', 'Fairy'].includes(move.type) && defender.getMoveHitData(move).typeMod > 0) {
-				this.debug('Aura Break weaken');
+			if (['Dark', 'Psychic', 'Fairy'].includes(move.type)) {
+				this.debug('Aura Break atk weaken');
 				return this.chainModify([2867, 4096]);
 			}
 		},
 		onSourceModifySpAPriority: 6,
 		onSourceModifySpA(atk, attacker, defender, move) {
-			if (['Dark', 'Psychic', 'Fairy'].includes(move.type) && defender.getMoveHitData(move).typeMod > 0) {
-				this.debug('Aura Break weaken');
+			if (['Dark', 'Psychic', 'Fairy'].includes(move.type)) {
+				this.debug('Aura Break spa weaken');
 				return this.chainModify([2867, 4096]);
 			}
-		}
+		},
 	},
 	vampire: {
 		inherit: true,
