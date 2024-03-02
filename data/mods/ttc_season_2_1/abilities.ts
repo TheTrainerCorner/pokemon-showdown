@@ -172,12 +172,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onFoeAfterMove: undefined,
 		onDamagingHit(damage, target, source, move) {
 			if (target !== source && this.checkMoveMakesContact(move, source, target)) {
-				target.addVolatile('cottondown');
+				source.addVolatile('cottondown');
 				return null;
 			}
 		},
 		condition: {
-			duration: 1,
+			duration: 2,
 			onStart(source, target, move) {
 				this.add('-start', source, 'ability: Cotton Down');
 			},
