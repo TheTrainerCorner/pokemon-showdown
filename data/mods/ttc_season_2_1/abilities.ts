@@ -259,7 +259,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 					let types = this.dex.mod('ttc_current').types.all();
 					let _type = this.dex.mod('ttc_current').types.get(type);
 					// 2 = Resistance
-					let resistType = types.find(x => _type.damageTaken[x.id] === 2);
+					let resistType = types.find(x => _type.damageTaken[x.name] === 2);
 					if (target.getTypes().join() !== resistType?.name) {
 						if (!target.setType(resistType!.name)) return;
 						this.add('-start', source, 'typechange', type, '[from] ability: Color Change');
