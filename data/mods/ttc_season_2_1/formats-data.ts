@@ -4,7 +4,6 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		natDexTier: "OU",
 	},
 	octolure: {
-		isNonstandard: "Past",
 		tier: "OU",
 		natDexTier: "OU",
 	}
