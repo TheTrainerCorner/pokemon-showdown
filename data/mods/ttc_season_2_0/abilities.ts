@@ -1515,7 +1515,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			this.boost({ atk: 1 });
 		},
 		desc: "This Pokemon's Attack is raised by 1 stage after it is damaged by a move.",
-		shortDesc: "This Pokemon's Special Attack is raised by 1 stage after it is damaged by a move.",
+		shortDesc: "This Pokemon's Attack is raised by 1 stage after it is damaged by a move.",
 	},
 	wanderingspirit: {
 		inherit: true,
