@@ -11,6 +11,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "White",
 		tags: ["Fakemon"],
 		eggGroups: ["Field", "Dragon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	tindraco: {
 		num: -2002,
@@ -24,6 +27,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Devdraco"],
 		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
+		tier: "LC",
+		natDexTier: "LC",
+		doublesTier: "LC",
 	},
 	devdraco: {
 		num: -2003,
@@ -39,6 +45,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Metadraco", "Acudraco", "Thundraco"],
 		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
+		tier: "NFE",
+		natDexTier: "NFE",
+		doublesTier: "NFE",
 	},
 	metadraco: {
 		num: -2004,
@@ -54,6 +63,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoCondition: "Take the War Path of the Dragon",
 		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	acudraco: {
 		num: -2005,
@@ -69,6 +81,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoCondition: "Take the Knowledge Path of the Dragon",
 		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	thundraco: {
 		num: -2006,
@@ -83,6 +98,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoCondition: "Obtain the blessing of Zeus",
 		tags: ["Fakemon"],
 		eggGroups: ["Dragon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	farfetchd: {
 		inherit: true,
@@ -104,6 +122,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ['Flying', 'Field'],
 		requiredItem: "Stick",
 		requiredMove: "Leek Lunge",
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	volcarona: {
 		inherit: true,
@@ -126,6 +147,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoCondition: "You must be one with the fariy",
 		tags: ["Fakemon"],
 		eggGroups: ["Bug"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	poisonus: {
 		num: -2009,
@@ -142,6 +166,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		otherFormes: ["Poisonus-Therian"],
 		formeOrder: ["Poisonus", "Poisonus-Therian"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	poisonustherian: {
 		num: -2009,
@@ -158,6 +185,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Sub-Legendary", "Fakemon"],
 		eggGroups: ["Undiscovered"],
 		changesFrom: "Poisonus",
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	ralts: {
 		inherit: true,
@@ -178,6 +208,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Kirlia-Olympios"],
 		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
+		tier: "LC",
+		natDexTier: "LC",
+		doublesTier: "LC",
 	},
 	kirlia: {
 		inherit: true,
@@ -200,6 +233,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Gardevoir-Olympios", "Gallade-Olympios"],
 		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
+		tier: "NFE",
+		natDexTier: "NFE",
+		doublesTier: "NFE",
 	},
 	gardevoir: {
 		inherit: true,
@@ -220,6 +256,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Kirlia-Olympios",
 		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	gallade: {
 		inherit: true,
@@ -242,6 +281,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Dawn Stone",
 		tags: ["Fakemon"],
 		eggGroups: ["Human-Like", "Amorphous"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	shuckle: {
 		inherit: true,
@@ -258,6 +300,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Yellow",
 		tags: ["Fakemon"],
 		eggGroups: ["Bug"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	//#endregion
 	//#region Season 1 Halloween
@@ -273,6 +318,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Lampoct"],
 		tags: ["Fakemon"],
 		eggGroups: ["Amorphous"],
+		tier: "LC",
+		natDexTier: "LC",
+		doublesTier: "LC",
 	},
 	lampoct: {
 		num: -1032,
@@ -288,6 +336,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evos: ["Octolure"],
 		tags: ["Fakemon"],
 		eggGroups: ["Amorphous"],
+		tier: "NFE",
+		natDexTier: "NFE",
+		doublesTier: "NFE",
 	},
 	octolure: {
 		num: -1033,
@@ -303,6 +354,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoItem: "Water Stone",
 		tags: ["Fakemon"],
 		eggGroups: ["Amorphous"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	gourgeist: {
 		inherit: true,
@@ -324,6 +378,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Fakemon"],
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Gourgeisite",
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	//#endregion
 	//#region Season 1 Thanksgiving
@@ -347,6 +404,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoType: "trade",
 		tags: ["Fakemon"],
 		eggGroups: ["Grass", "Amorphous"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	//#endregion
 	//#region Season 1 Winter
@@ -369,6 +429,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue",
 		tags: ["Mythical", "Fakemon"],
 		eggGroups: ["Undiscovered"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	meloetta: {
 		inherit: true,
@@ -389,6 +452,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "White",
 		eggGroups: ["Undiscovered"],
 		tags: ["Mythical", "Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	meloettaaurora: {
 		num: 648,
