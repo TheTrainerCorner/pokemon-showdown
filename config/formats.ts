@@ -158,6 +158,49 @@ export const Formats: FormatList = [
 		],
 	},
 	{
+		section: "TTC Pokeball Division",
+	},
+	{
+		name: "[Gen 9] National Dex Pokeball",
+		desc: "This format is for Pokeball Division.",
+		mod: "ttc_current",
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
+		],
+		unbanlist: [
+			'Unreleased',
+			// Unobtainable Moves
+			'Barb Barrage',
+			'Blazing Torque',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Dire Claw',
+			"Dragon's Maw",
+			'Esper Wing',
+			'Infernal Parade',
+			'Magical Torque',
+			'Mountain Gale',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Shelter',
+			'Springtide Storm',
+			'Stone Axe',
+			'Triple Arrows',
+			'Victory Dance',
+			'Wicked Torque',
+			'Custap Berry',
+			// LGPE
+			'LGPE',
+			'Baton Pass',
+			// Items
+			'Thick Club'
+		],
+	},
+	{
 		section: "TTC Speed Tour",
 	},
 	{
