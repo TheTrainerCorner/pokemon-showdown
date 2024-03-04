@@ -25,7 +25,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Draft",
 		desc: "The Official Draft Format for TTC",
-		mod: 'ttc_current',
+		mod: 'gen9ttc',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -77,7 +77,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Cherish Ball",
 		desc: "This format is for Cherish Ball Division.",
-		mod: "ttc_current",
+		mod: "gen9ttc",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -120,7 +120,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Luxury Ball",
 		desc: "This format is for Luxury Ball Division.",
-		mod: "ttc_current",
+		mod: "gen9ttc",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -163,7 +163,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Pokeball",
 		desc: "This format is for Pokeball Division.",
-		mod: "ttc_current",
+		mod: "gen9ttc",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -206,7 +206,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Speed Tour",
 		desc: "This format is for Speed TOur.",
-		mod: "ttc_current",
+		mod: "gen9ttc",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -249,7 +249,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex DoT",
 		desc: "This format is for Department of Testing.",
-		mod: "ttc_current",
+		mod: "gen9ttc",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
@@ -292,7 +292,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Other National Dex Draft",
 		desc: "This version of the National Dex Draft is for other leagues to use. Since TTC NatDex Draft format is a bit more stricter, it might be flexible with other leagues.",
-		mod: "ttc_current",
+		mod: "gen9ttc",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause'],
 		banlist: [
 			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
