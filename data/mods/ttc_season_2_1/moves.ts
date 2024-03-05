@@ -122,7 +122,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	focusblast: {
 		inherit: true,
 		secondary: null,
-		desc: "Inflict damage and has no secondary.",
 		shortDesc: "No additional effect.",
 	},
 	willowisp: {
