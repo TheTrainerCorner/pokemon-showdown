@@ -545,6 +545,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 				else if (source?.hasAbility('fieldsupport')) {
 					this.add('-activate', source, 'ability: Field Support', '[move] Tailwind');
+					return 8;
 				}
 				return 4;
 			},
