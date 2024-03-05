@@ -101,5 +101,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		self: undefined,
 		desc: "This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes. This move and its effects ignore the Abilities of other Pokemon.",
 		shortDesc: "Physical if user's Atk > Sp. Atk. Ignores Abilities.",
-	}
+	},
+	smitepath: {
+		inherit: true,
+		shortDesc: "20% chance to paralyze. Deals 2x more damage if the target is paralyzed.",
+		desc: "20% chance to paraylze, doubles in damage if paralyzed.",
+	},
+	muddywater: {
+		inherit: true,
+		desc: "Has a 30% chance of lowering each target's speed by one stage. Targets all adjacent opponents.",
+		shortDesc: "30% chance to lower the foe(s) speed by 1.",
+	},
+	focusblast: {
+		inherit: true,
+		secondary: null,
+		desc: "Inflict damage and has no secondary.",
+		shortDesc: "No additional effect.",
+	},
+	willowisp: {
+		inherit: true,
+		desc: "Inflicts a burn on the target if used by a fire type. 85% accuracy if another type",
+		shortDesc: "Burns the target. Can't miss if fire type.",
+	},
 };
