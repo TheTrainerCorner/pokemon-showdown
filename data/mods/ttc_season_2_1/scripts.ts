@@ -64,5 +64,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Camerupt-Mega', this)
 			.baseStats
 				.setATK(110);
+		new ModifyPokemon('Thundraco', this)
+			.abilities
+				.setHiddenAbility('Teravolt');
 	},
 }
