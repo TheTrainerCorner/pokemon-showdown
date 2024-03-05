@@ -6,13 +6,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (!target.hp) return;
 			this.effectState.didHit = true;
 		},
-		onSourceAfterMove(source, target, move) {
+		onAfterMove(source, target, move) {
 			if (this.effectState.didHit) {
 				this.damage(target.maxhp / 8, target, source);
 				this.effectState.didHit = false;
 			}
 		},
-		onAfterMove: undefined,
 		desc: "After hitting the target with a Damaging move, does 1/8 of the target's max hp to the target.",
 		shortDesc: "After using a Damaging move, does 1/8 of the target's max hp.",
 	},
