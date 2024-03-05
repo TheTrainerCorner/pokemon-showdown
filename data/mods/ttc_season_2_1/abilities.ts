@@ -9,8 +9,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		onAfterMove: undefined,
-		desc: "After using a Damaging hit, does 1/8 of the target's max hp to the target.",
-		shortDesc: "After using a Damaging hit, does 1/8 of the target's max hp to the target.",
+		desc: "After hitting the target with a Damaging move, does 1/8 of the target's max hp to the target.",
+		shortDesc: "After using a Damaging move, does 1/8 of the target's max hp.",
 	},
 	ballfetch: {
 		inherit: true,
