@@ -123,4 +123,44 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Inflicts a burn on the target if used by a fire type. 85% accuracy if another type",
 		shortDesc: "Burns the target. Can't miss if fire type.",
 	},
+	slam: {
+		inherit: true,
+		secondaries: [
+				{
+						chance: 10,
+						status: 'par',
+				},
+				{
+						chance: 10,
+						volatileStatus: 'flinch',
+				},
+		],
+		
+		desc: "Has a 10% chance to make the target paralyzed and flinch.",
+		shortDesc: "10% chance to paralyze. 10% chance to flinch."
+	},
+	signalbeam: {
+		inherit:true,
+		secondary: {
+				chance: 30,
+				volatileStatus:'confusion',
+		},
+		desc: "Has a 30% chance to make the target confused.",
+		shortDesc: "30% chance to confuse the target."
+	},
+	leechseed: {
+		inherit: true,
+		desc:"Plants a seed on the target if used by a grass type. 85% accuracy if another type",
+		shortDesc:"1/8 of target's HP is restored to user every turn. Can't miss if grass type"
+	},
+	thunderwave: {
+		inherit: true,
+		desc:"Paralyzes the target if used by an electric type. 85% accuracy if another type",
+		shortDesc:"Paralyzes the target. Can't miss if electric type"
+	},
+	rockclimb: {
+		inherit: true,
+		desc: "Has a 20% chance to confuse the target and a 10% to make it flinch",
+		shortDesc: "20% chance to confuse the target. 10% chance to flinch.",
+	},
 };
