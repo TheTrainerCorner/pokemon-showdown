@@ -56,9 +56,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
-			if (!['hail', 'snow'].includes(effect.id)) return; 
-			this.add('-activate', target, 'ability: Snow Cloak');
-			target.side.addSideCondition('auroraveil', target);
+			if (effect.id === 'hail' || effect.id === 'snow') {
+				target.side.addSideCondition('auroraviel', target);
+			}
 		},
 	},
 	curiousmedicine: {
