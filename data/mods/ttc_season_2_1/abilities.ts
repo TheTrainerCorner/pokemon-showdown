@@ -57,7 +57,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'hail' || effect.id === 'snow') {
-				target.side.addSideCondition('auroraviel', target);
+				target.side.addSideCondition('auroraveil', target);
 			}
 		},
 	},
