@@ -4,8 +4,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHitOrder: 1,
 		onSourceDamagingHit(damage, target, source, move) {
 			if (!target.hp) return;
-			if (!move.multihit || move.lastHit) {
+			this.effectState.didHit = true;
+		},
+		onSourceAfterMove(source, target, move) {
+			if (this.effectState.didHit) {
 				this.damage(target.maxhp / 8, target, source);
+				this.effectState.didHit = false;
 			}
 		},
 		onAfterMove: undefined,
