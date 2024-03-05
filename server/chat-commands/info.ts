@@ -881,7 +881,7 @@ export const commands: Chat.ChatCommands = {
 			isInverse = true;
 			targets.pop();
 		}
-		const modGen = 'gen9ttc';
+		const modGen = 'ttc_current';
 		let species: {types: string[], [k: string]: any} = dex.mod(modGen).species.get(targets[0]);
 		const type1 = dex.mod(modGen).types.get(targets[0]);
 		const type2 = dex.mod(modGen).types.get(targets[1]);
@@ -979,7 +979,7 @@ export const commands: Chat.ChatCommands = {
 		const {dex, targets} = this.splitFormat(target.split(/[,/]/));
 		if (targets.length !== 2) return this.errorReply("Attacker and defender must be separated with a comma.");
 
-		const modGen = 'gen9ttc';
+		const modGen = 'ttc_current';
 
 		let searchMethods = ['types', 'moves', 'species'];
 		const sourceMethods = ['types', 'moves'];
@@ -1051,7 +1051,7 @@ export const commands: Chat.ChatCommands = {
 	coverage(target, room, user) {
 		if (!this.runBroadcast()) return;
 		if (!target) return this.parse("/help coverage");
-
+		const modGen = 'ttc_current';
 		const {dex, targets} = this.splitFormat(target.split(/[,+/]/));
 		const sources: (string | Move)[] = [];
 		let dispTable = false;
@@ -1079,18 +1079,18 @@ export const commands: Chat.ChatCommands = {
 			// arg is a type?
 			const argType = arg.charAt(0).toUpperCase() + arg.slice(1);
 			let eff;
-			if (dex.types.isName(argType)) {
+			if (dex.mod(modGen).types.isName(argType)) {
 				sources.push(argType);
 				for (const type in bestCoverage) {
-					if (!dex.getImmunity(argType, type)) continue;
-					eff = dex.getEffectiveness(argType, type);
+					if (!dex.mod(modGen).getImmunity(argType, type)) continue;
+					eff = dex.mod(modGen).getEffectiveness(argType, type);
 					if (eff > bestCoverage[type]) bestCoverage[type] = eff;
 				}
 				continue;
 			}
 
 			// arg is a move?
-			const move = dex.moves.get(arg);
+			const move = dex.mod(modGen).moves.get(arg);
 			if (!move.exists) {
 				return this.errorReply(`Type or move '${arg}' not found.`);
 			} else if (move.gen > dex.gen) {
@@ -1104,8 +1104,8 @@ export const commands: Chat.ChatCommands = {
 				if (move.id === "struggle") {
 					eff = 0;
 				} else {
-					if (!dex.getImmunity(move.type, type) && !move.ignoreImmunity) continue;
-					const baseMod = dex.getEffectiveness(move, type);
+					if (!dex.mod(modGen).getImmunity(move.type, type) && !move.ignoreImmunity) continue;
+					const baseMod = dex.mod(modGen).getEffectiveness(move, type);
 					const moveMod = move.onEffectiveness?.call({dex} as Battle, baseMod, null, type, move as ActiveMove);
 					eff = typeof moveMod === 'number' ? moveMod : baseMod;
 				}
@@ -1182,21 +1182,21 @@ export const commands: Chat.ChatCommands = {
 						for (const move of sources) {
 							let curEff = 0;
 							if (typeof move === 'string') {
-								if (!dex.getImmunity(move, type1) || !dex.getImmunity(move, type2)) {
+								if (!dex.mod(modGen).getImmunity(move, type1) || !dex.mod(modGen).getImmunity(move, type2)) {
 									continue;
 								}
-								let baseMod = dex.getEffectiveness(move, type1);
+								let baseMod = dex.mod(modGen).getEffectiveness(move, type1);
 								curEff += baseMod;
-								baseMod = dex.getEffectiveness(move, type2);
+								baseMod = dex.mod(modGen).getEffectiveness(move, type2);
 								curEff += baseMod;
 							} else {
-								if ((!dex.getImmunity(move.type, type1) || !dex.getImmunity(move.type, type2)) && !move.ignoreImmunity) {
+								if ((!dex.mod(modGen).getImmunity(move.type, type1) || !dex.mod(modGen).getImmunity(move.type, type2)) && !move.ignoreImmunity) {
 									continue;
 								}
-								let baseMod = dex.getEffectiveness(move.type, type1);
+								let baseMod = dex.mod(modGen).getEffectiveness(move.type, type1);
 								let moveMod = move.onEffectiveness?.call({dex} as Battle, baseMod, null, type1, move as ActiveMove);
 								curEff += typeof moveMod === 'number' ? moveMod : baseMod;
-								baseMod = dex.getEffectiveness(move.type, type2);
+								baseMod = dex.mod(modGen).getEffectiveness(move.type, type2);
 								moveMod = move.onEffectiveness?.call({dex} as Battle, baseMod, null, type2, move as ActiveMove);
 								curEff += typeof moveMod === 'number' ? moveMod : baseMod;
 							}
@@ -1337,9 +1337,9 @@ export const commands: Chat.ChatCommands = {
 					continue;
 				}
 			}
-
+			const modGen = 'ttc_current'
 			if (!pokemon) {
-				const testPoke = Dex.species.get(arg);
+				const testPoke = Dex.mod(modGen).species.get(arg);
 				if (testPoke.exists) {
 					pokemon = testPoke.baseStats;
 					baseSet = true;
