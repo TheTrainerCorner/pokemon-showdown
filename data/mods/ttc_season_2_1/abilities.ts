@@ -303,5 +303,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		desc: "Identifies the opposing Pokemon's item upon switch-in. If the item is a berry, then the user will eat the berry.",
 		shortDesc: "Identifies the opposing Pokemon's item upon switch-in; If item is berry, then user eats the berry.",
+	},
+	frigidinspiration: {
+		inherit: true,
+		desc: "Meloetta Only! When in Caroler Form, all Physical Moves are increased by 30%; When in Aurora Form, all Special Moves are increased by 30%.",
+		shortDesc: "Physical moves gain 1.3x more damage whe in Caroler Form; Special moves gain 1.3x more damage in Aurora Form.",
 	}
 };
