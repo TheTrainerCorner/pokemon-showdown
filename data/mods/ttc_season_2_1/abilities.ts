@@ -4,11 +4,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHitOrder: 1,
 		onSourceDamagingHit(damage, target, source, move) {
 			if (!target.hp) return;
-			if (!move.multihit || move.lastHit) {
+			this.effectState.didHit = true;
+		},
+		onAfterMove(source, target, move) {
+			if (this.effectState.didHit) {
 				this.damage(target.maxhp / 8, target, source);
+				this.effectState.didHit = false;
 			}
 		},
-		onAfterMove: undefined,
 		desc: "After hitting the target with a Damaging move, does 1/8 of the target's max hp to the target.",
 		shortDesc: "After using a Damaging move, does 1/8 of the target's max hp.",
 	},
@@ -53,9 +56,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
-			if (!['hail', 'snow'].includes(effect.id)) return; 
-			this.add('-activate', target, 'ability: Snow Cloak');
-			target.side.addSideCondition('auroraveil', target);
+			if (effect.id === 'hail' || effect.id === 'snow') {
+				target.side.addSideCondition('auroraveil', target);
+			}
 		},
 	},
 	curiousmedicine: {
