@@ -252,7 +252,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onBasePowerPriority: 21,
 		onBasePower(basePower, source, target, move) {
-			return this.chainModify([3523, 4096]);
+			if (move.id === 'focuspunch') {
+				return this.chainModify([3523, 4096]);
+			}
 		},
 		onModifyPriorityPriority: 21,
 		onModifyPriority(priority, pokemon, target, move) {
@@ -308,5 +310,37 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		desc: "Meloetta Only! When in Caroler Form, all Physical Moves are increased by 30%; When in Aurora Form, all Special Moves are increased by 30%.",
 		shortDesc: "Physical moves gain 1.3x more damage whe in Caroler Form; Special moves gain 1.3x more damage in Aurora Form.",
-	}
+	},
+	willpower: {
+		inherit: true,
+		onModifyMove(move, pokemon) {
+			// Sheer Force
+			if (move.secondaries) {
+				delete move.secondaries;
+				delete move.self;
+				if (move.id === 'clangoroussoulblaze') delete move.selfBoost;
+				move.hasSheerForce = true;
+			}
+			// Inner Focus
+			if (move.id === 'focusblast') {
+				move.accuracy = true;
+			}
+		},
+		onModifyPriorityPriority: 21,
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.id === 'focuspunch') {
+				// + 3 should put it at neutral since it being added to a -3 priority.
+				return priority + 3;
+			}
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, pokemon, target, move) {
+			// Inner Focus
+			// 3523/4096 causes the bp of 150 to be roughly 130.
+			if (move.id === 'focuspunch') return this.chainModify([3523, 4096]);
+			// Sheer Force
+			else if (move.hasSheerForce) return this.chainModify([5325, 4096]);
+
+		}
+	},
 };
