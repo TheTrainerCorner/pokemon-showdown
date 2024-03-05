@@ -104,6 +104,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	smitepath: {
 		inherit: true,
+		onBasePower(basePower, pokemon, target) {
+			if (target.status === 'par') return this.chainModify(2);
+		},
+		secondary: {
+			chance: 20,
+			status: 'par',
+		},
 		shortDesc: "20% chance to paralyze. Deals 2x more damage if the target is paralyzed.",
 		desc: "20% chance to paraylze, doubles in damage if paralyzed.",
 	},
