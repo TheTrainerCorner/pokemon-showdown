@@ -6,5 +6,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	octolure: {
 		tier: "OU",
 		natDexTier: "OU",
+	},
+	shedinja: {
+		tier: "OU",
+		natDexTier:"OU"
 	}
 }
