@@ -361,11 +361,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		// },
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
-		onResidual(target, source, effect) {
-			if (!target.hp) return;
-			if (!source.hp) return;
-			if (source.status) {
-				this.heal(target.baseMaxhp / 16, target, target);
+		onResidual(pokemon) {
+			if (!pokemon.hp) return;
+			for (const target of pokemon.foes()) {
+				if (target.status) {
+					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
+				}
 			}
 		},
 		desc: "Heals 1/16 of max hp when the opposing pokemon takes damage from a status condition",
