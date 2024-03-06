@@ -1894,8 +1894,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	shedinja: {
 		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "AG",
+		tier: "OU",
+		natDexTier: "OU",
 	},
 	whismur: {
 		isNonstandard: "Past",
