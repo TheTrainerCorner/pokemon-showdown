@@ -5478,6 +5478,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Nincada",
 		evoLevel: 20,
 		eggGroups: ["Mineral"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	whismur: {
 		num: 293,
