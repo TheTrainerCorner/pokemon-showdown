@@ -1631,11 +1631,8 @@ export class Pokemon {
 		// If NOT ignoreImmunities AND status.id Exist AND NOT source has Ability
 		// Result: NOT
 		// Else Throw 
-		let hasAbilityThatMatchesCondition = (source.hasAbility('corrsion') && ['tox', 'psn'].includes(status.id)) || (source.hasAbility('myceliummight'));
-		if (!ignoreImmunities && status.id &&! hasAbilityThatMatchesCondition) {
-		// if (!ignoreImmunities && status.id &&
-		// 	(!(source.hasAbility('corrsion') && ['tox', 'psn'].includes(status.id)) ||
-		// 	!(source.hasAbility('myceliummight')))) {
+		if (!ignoreImmunities && status.id &&
+			!(source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
 				this.battle.debug('immune to status');

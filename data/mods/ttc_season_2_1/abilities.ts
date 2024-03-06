@@ -348,4 +348,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 
 		}
 	},
+	myceliummight: {
+		inherit: true,
+		onFractionalPriority: undefined,
+		onFractionalPriorityPriority: undefined,
+		onModifyMove(move) {
+			if (move.category === 'Status') {
+				move.ignoreAbility = true;
+			}
+		},
+	},
 };
