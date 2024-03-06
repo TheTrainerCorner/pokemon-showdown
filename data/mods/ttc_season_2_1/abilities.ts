@@ -350,15 +350,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	myceliummight: {
 		inherit: true,
-		onFractionalPriority: undefined,
-		onFractionalPriorityPriority: undefined,
-		onModifyMove: undefined,
-		// onFoeDamage(damage, target, source, effect) {
-		// 	if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn') {
-		// 		source.heal(source.baseMaxhp / 16, source);
-		// 		return true;
-		// 	}
-		// },
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
@@ -369,7 +360,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 			}
 		},
-		desc: "Heals 1/16 of max hp when the opposing pokemon takes damage from a status condition",
-		shortDesc: "Heals 1/16 of max hp when the opposing pokemon takes damage from status.",
+		desc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition",
+		shortDesc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition.",
 	},
 };
