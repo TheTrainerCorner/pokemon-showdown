@@ -236,5 +236,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('uturn')
 				.add('workup')
 				.add('zenheadbutt')
+				.add('Play Rough')
 	},
 }
