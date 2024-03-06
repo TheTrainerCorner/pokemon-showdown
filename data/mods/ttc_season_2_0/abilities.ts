@@ -810,6 +810,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				move.accuracy = true;
 			}
 		},
+		onModifyPriorityPriority: 21,
 		onModifyPriority(priority, source, target, move) {
 			if (move.category === 'Status') {
 				return 6;
