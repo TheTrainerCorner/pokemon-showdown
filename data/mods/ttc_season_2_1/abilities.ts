@@ -352,10 +352,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onFractionalPriority: undefined,
 		onFractionalPriorityPriority: undefined,
-		onModifyMove(move) {
-			if (move.category === 'Status') {
-				move.ignoreAbility = true;
-			}
+		onModifyMove: undefined,
+		// onFoeDamage(damage, target, source, effect) {
+		// 	if (effect.id === 'psn' || effect.id === 'tox' || effect.id === 'brn') {
+		// 		source.heal(source.baseMaxhp / 16, source);
+		// 		return true;
+		// 	}
+		// },
+		onFoeResidual(target, source, effect) {
+				if (target.volatiles) {
+					source.heal(source.baseMaxhp / 16, source);
+				}
 		},
+		desc: "Heals 1/16 of max hp when the opposing pokemon takes damage from a status condition",
+		shortDesc: "Heals 1/16 of max hp when the opposing pokemon takes damage from status.",
 	},
 };
