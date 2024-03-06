@@ -808,7 +808,12 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onModifyMove (move, source, target) {
 			if (move.category === 'Status') {
 				move.accuracy = true;
-				move.ignoreImmunity = true;
+			}
+		},
+		onModifyPriorityPriority: 21,
+		onModifyPriority(priority, source, target, move) {
+			if (move.category === 'Status') {
+				return 6;
 			}
 		},
 		desc: "Status moves always go last, but always hit regardless of typing or ability",
