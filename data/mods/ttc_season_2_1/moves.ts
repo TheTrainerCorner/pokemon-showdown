@@ -171,7 +171,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	knowledgepath: {
 		inherit: true,
-		pp: 5,
+		pp: 0.625,
 		condition: {
 			noCopy: true,
 			duration: 3,
