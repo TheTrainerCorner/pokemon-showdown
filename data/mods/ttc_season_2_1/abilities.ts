@@ -352,20 +352,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifyPriorityPriority: undefined,
 		onModifyPriority: undefined,
-		onBeforeTurn(pokemon) {
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
 			if (!pokemon.hp) return;
 			for (const target of pokemon.foes()) {
 				if (target.status) {
-					pokemon.addVolatile('myceliummight');
+					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
 				}
-			}
-		},
-		condition: {
-			noCopy: true,
-			duration: 1,
-			onEnd(pokemon) {
-				if (!pokemon.hp) return;
-				this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
 			}
 		},
 		desc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition",
