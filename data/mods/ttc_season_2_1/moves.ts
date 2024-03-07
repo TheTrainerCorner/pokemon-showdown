@@ -173,11 +173,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		pp: 5,
 		condition: {
+			noCopy: true,
 			duration: 3,
 			durationCallback(target, source, effect) {
 				return 3;
 			},
 			onStart(target, source, effect) {
+				this.add('-start', target, 'move: Knowledge Path', '[silent]');
 				this.boost({
 					atk: 2,
 					def: 2,
@@ -188,6 +190,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onEnd(pokemon) {
 				pokemon.clearBoosts();
+				this.add('-clearboost', pokemon);
+				this.add('-end', pokemon, 'move: Knowledge Path', '[silent]');
 			}
 		}
 	}
