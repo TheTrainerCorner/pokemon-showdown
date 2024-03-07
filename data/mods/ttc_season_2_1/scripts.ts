@@ -263,7 +263,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("ember")
 				.add("airslash")
 				.add("weatherball")	
-		new ModifyPokemon('kiriliaolympios',this)	
+		new ModifyPokemon('kirliaolympios',this)	
 			.learnset
 				.add("return")
 				.add("frustration")
