@@ -530,7 +530,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			sweetkiss: ["9M"],
 		},
 	},
-	kirliaoplympios: {
+	kirliaolympios: {
 		learnset: {
 			spiritbreak: ["9M"],
 			moonblast: ["9M"],
