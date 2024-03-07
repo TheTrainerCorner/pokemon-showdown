@@ -363,16 +363,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.ignoreAbility = true;
 			}
 		},
-		onResidualOrder: 28,
-		onResidualSubOrder: 2,
-		onResidual(pokemon) {
-			if (!pokemon.hp) return;
-			for (const target of pokemon.foes()) {
-				if (target.status) {
-					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
-				}
+		onFoeDamage(damage, target, pokemon, effect) {
+			if (target.status === effect.id) {
+				this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
 			}
 		},
+		// onResidualOrder: 28,
+		// onResidualSubOrder: 2,
+		// onResidual(pokemon) {
+		// 	if (!pokemon.hp) return;
+		// 	for (const target of pokemon.foes()) {
+		// 		if (target.status) {
+		// 			this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
+		// 		}
+		// 	}
+		// },
 		desc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition",
 		shortDesc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition.",
 	},
