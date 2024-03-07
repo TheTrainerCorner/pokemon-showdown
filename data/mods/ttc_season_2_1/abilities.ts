@@ -352,17 +352,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifyPriorityPriority: undefined,
 		onModifyPriority: undefined,
-		onFractionalPriorityPriority: -1,
-		onFractionalPriority(priority, pokemon, target, move) {
-			if (move.category === 'Status') {
-				return -0.1;
-			}
-		},
-		onModifyMove(move) {
-			if (move.category === 'Status') {
-				move.ignoreAbility = true;
-			}
-		},
 		onBeforeTurn(pokemon) {
 			if (!pokemon.hp) return;
 			for (const target of pokemon.foes()) {
