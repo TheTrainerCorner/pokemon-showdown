@@ -263,5 +263,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("ember")
 				.add("airslash")
 				.add("weatherball")
+		new ModifyPokemon('kiriliaolympios', this)
+				.learnset
+					.remove('Aeroblast')
+					.remove('Origin Pulse');		
 	},
 }

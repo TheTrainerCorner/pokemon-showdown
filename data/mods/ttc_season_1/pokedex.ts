@@ -191,14 +191,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ralts: {
 		inherit: true,
-		otherFormes: ["Ralts-Olympios"],
-		formeOrder: ["Ralts", "Ralts-Olympios"],
 	},
 	raltsolympios: {
 		num: 280,
 		name: "Ralts-Olympios",
-		baseSpecies: "Ralts",
-		forme: "Olympios",
 		types: ["Ground", "Fairy"],
 		baseStats: {hp: 28, atk: 25, def: 25, spa: 45, spd: 35, spe: 40},
 		abilities: {0: "Competitive", 1: "Cute Charm", H: "Tangling Hair"},
@@ -214,14 +210,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	kirlia: {
 		inherit: true,
-		otherFormes: ["Kirlia-Olympios"],
-		formeOrder: ["Kirlia", "Kirlia-Olympios"],
 	},
 	kirliaolympios: {
 		num: 281,
 		name: "Kirlia-Olympios",
-		baseSpecies: "Kirlia",
-		forme: "Olympios",
 		types: ["Ground", "Fairy"],
 		baseStats: {hp: 38, atk: 35, def: 35, spa: 65, spd: 55, spe: 50},
 		abilities: {0: "Competitive", 1: "Cute Charm", H: "Tangling Hair"},
@@ -239,14 +231,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gardevoir: {
 		inherit: true,
-		otherFormes: ["Gardevoir-Mega","Gardevoir-Olympios"],
-		formeOrder: ["Gardevoir", "Gardevoir-Mega", "Gardevoir-Olympios"],
+		otherFormes: ["Gardevoir-Mega"],
+		formeOrder: ["Gardevoir", "Gardevoir-Mega"],
 	},
 	gardevoirolympios: {
 		num: 282,
 		name: "Gardevoir-Olympios",
-		baseSpecies: "Gardevoir",
-		forme: "Olympios",
 		types: ["Ground", "Fairy"],
 		baseStats: {hp: 68, atk: 65, def: 65, spa: 125, spd: 115, spe: 80},
 		abilities: {0: "Competitive", 1: "Petrifying Gaze", H: "Queenly Majesty"},
@@ -262,14 +252,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gallade: {
 		inherit: true,
-		otherFormes: ["Gallade-Mega", "Gallade-Olympios"],
-		formeOrder: ["Gallade", "Gallade-Mega", "Gallade-Olympios"],
+		otherFormes: ["Gallade-Mega"],
+		formeOrder: ["Gallade", "Gallade-Mega"]
 	},
 	galladeolympios: {
 		num: 475,
 		name: "Gallade-Olympios",
-		baseSpecies: "Gallade",
-		forme: "Olympios",
 		types: ["Ground", "Fighting"],
 		baseStats: {hp: 68, atk: 125, def: 65, spa: 65, spd: 115, spe: 80},
 		abilities: {0: "Sharpness", 1: "Mold Breaker", H: "Aura Break"},
