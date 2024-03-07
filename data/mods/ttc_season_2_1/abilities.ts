@@ -350,6 +350,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	myceliummight: {
 		inherit: true,
+		onModifyPriorityPriority: undefined,
+		onModifyPriority: undefined,
+		onFractionalPriorityPriority: -1,
+		onFractionalPriority(priority, pokemon, target, move) {
+			if (move.category === 'Status') {
+				return -0.1;
+			}
+		},
+		onModifyMove(move) {
+			if (move.category === 'Status') {
+				move.ignoreAbility = true;
+			}
+		},
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
