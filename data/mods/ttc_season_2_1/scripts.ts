@@ -263,5 +263,17 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("ember")
 				.add("airslash")
 				.add("weatherball")	
+		new ModifyPokemon('kiriliaolympios',this)	
+			.learnset
+				.add("return")
+				.add("frustration")
+				.add("protect")
+				.add("rest")
+				.add("sleeptalk")
+				.add("terablast")
+				.add("gigadrain")
+				.add("ember")
+				.add("airslash")
+				.add("weatherball")			
 	},
 }
