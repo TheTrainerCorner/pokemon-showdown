@@ -169,4 +169,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 20% chance to confuse the target and a 10% to make it flinch",
 		shortDesc: "20% chance to confuse the target. 10% chance to flinch.",
 	},
+	knowledgepath: {
+		inherit: true,
+		pp: 5,
+		condition: {
+			duration: 3,
+			durationCallback(target, source, effect) {
+				return 3;
+			},
+			onStart(target, source, effect) {
+				this.boost({
+					atk: 2,
+					def: 2,
+					spa: 2,
+					spd: 2,
+					spe: 2,
+				}, target);
+			},
+			onEnd(pokemon) {
+				pokemon.clearBoosts();
+			}
+		}
+	}
 };
