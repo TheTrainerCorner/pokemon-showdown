@@ -64,7 +64,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		name: "Knowledge Path",
 		basePower: 0,
 		accuracy: true,
-		pp: 10,
+		pp: 1,
 		priority: 0,
 		type: "Psychic",
 		category: "Status",
