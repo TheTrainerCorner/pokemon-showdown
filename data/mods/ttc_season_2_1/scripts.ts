@@ -274,6 +274,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("gigadrain")
 				.add("ember")
 				.add("airslash")
-				.add("weatherball")			
+				.add("weatherball")		
+		new ModifyPokemon('volcaronafaerie', this)		
+			.learnset
+				.add("moonblast")	
+				.add("drainingkiss")
 	},
 }
