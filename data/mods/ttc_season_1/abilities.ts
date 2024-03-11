@@ -31,7 +31,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			if(source.baseSpecies.name !== 'Silvally') return;
 			if(this.effectState.rkssystem) return;
 			if(move.hasBounced || move.flags['futuremove'] || move.sourceEffect !== 'snatch') return;
-			const type = move.type;
+				const type = move.type;
 			if(type && type !== '???' && source.getTypes().join() !== type) {
 				if(!source.formeChange(`Silvally-${type}`, this.effect, true)) return;
 				this.effectState.rkssystem = true;
