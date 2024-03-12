@@ -31,7 +31,12 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			if(source.baseSpecies.name !== 'Silvally') return;
 			if(this.effectState.rkssystem) return;
 			if(move.hasBounced || move.flags['futuremove'] || move.sourceEffect !== 'snatch') return;
-				const type = move.type;
+      // Indention does not matter in Typescript.
+      // This is actually correct if we are talking about code style of typescript.
+      // Since the above if statement is consider to be a single line if statement,
+      // then by the code style, there should not be a indentation
+      // Due to the if statement not creating a new scope. 
+			const type = move.type;
 			if(type && type !== '???' && source.getTypes().join() !== type) {
 				if(!source.formeChange(`Silvally-${type}`, this.effect, true)) return;
 				this.effectState.rkssystem = true;
