@@ -91,7 +91,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onBasePowerPriority: 43,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.flags['kick']) {
-				this.debug('Leg Day Boost');
+				this.debug('Leg Day boost');
 				return this.chainModify([5325, 4096]);
 			}
 		},
@@ -256,7 +256,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onSourceModifyAccuracy(accuracy, target, source, move) {
 			if (!source.types.includes(move.type)) return;
 			if (typeof accuracy !== 'number') return;
-			this.debug('elemental - enhancing accuracy');
+				this.debug('elemental - enhancing accuracy');
 			return this.chainModify([4915, 4096]);
 		},
 		onSourceModifyAccuracyPriority: -1,
