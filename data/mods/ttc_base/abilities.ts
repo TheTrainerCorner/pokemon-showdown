@@ -253,13 +253,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 5,
 	},
 	elemental: {
+		onSourceModifyAccuracyPriority: -1,
 		onSourceModifyAccuracy(accuracy, target, source, move) {
 			if (!source.types.includes(move.type)) return;
 			if (typeof accuracy !== 'number') return;
-				this.debug('elemental - enhancing accuracy');
+				this.debug('Elemental - enhancing accuracy');
 			return this.chainModify([4915, 4096]);
 		},
-		onSourceModifyAccuracyPriority: -1,
 		name: "Elemental",
 		shortDesc: "STAB moves accuracy are boosted by 1.2x",
 		rating: 3,
@@ -430,8 +430,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 
 				switch (rand) {
 				case 1:
-					// Strius Berry
-					this.debug('Consume Strius Berry');
+					// Sitrus Berry
+					this.debug('Consume Sitrus Berry');
 					if (!(this.runEvent('TryHeal', pokemon))) return false;
 					this.heal(pokemon.baseMaxhp / 4);
 					break;
