@@ -257,7 +257,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onSourceModifyAccuracy(accuracy, target, source, move) {
 			if (!source.types.includes(move.type)) return;
 			if (typeof accuracy !== 'number') return;
-				this.debug('Elemental - enhancing accuracy');
+			// As mentioned on RKS, in terms of code style,
+			// To indent the below line in the scope would
+			// make it harder to read.
+			this.debug('Elemental - enhancing accuracy');
 			return this.chainModify([4915, 4096]);
 		},
 		name: "Elemental",
