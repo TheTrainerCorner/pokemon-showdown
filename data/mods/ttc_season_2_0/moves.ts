@@ -1451,7 +1451,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	// New Moves
 	cragblast: {
 		num: -2001,
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
 			return 20 * move.hit;
