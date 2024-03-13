@@ -2858,7 +2858,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		for(const move of lightMoves) {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['light'] = 1;
 		}
-		const weightMoves = ['Grass Knot', 'Heavy Slam'];
+		const weightMoves = ['Grass Knot', 'Heavy Slam', 'Heat Crash', 'Low Kick', 'Sky Drop'];
 		for(const move of weightMoves) {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['weight'] = 1;
 		}

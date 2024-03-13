@@ -96,7 +96,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 				return [`${set.name || set.species} does not exist in the National Dex.`];
 			}
 			const requireObtainable = this.ruleTable.has('obtainable');
-			if (requireObtainable) {
+			//if (requireObtainable) {
 				// if (species.natDexTier === "Unreleased") {
 				// 	const basePokemon = this.toID(species.baseSpecies);
 				// 	if (this.ruleTable.has(`+pokemon:${species.id}`) || this.ruleTable.has(`+basepokemon:${basePokemon}`)) {
@@ -104,19 +104,19 @@ export const Rulesets: {[k: string]: FormatData} = {
 				// 	}
 				// 	return [`${set.name || set.species} does not exist in the National Dex.`];
 				// }
-				for (const moveid of set.moves) {
-					const move = this.dex.moves.get(moveid);
-					if (move.isNonstandard === 'Unobtainable' && move.gen === this.dex.gen || move.id === 'lightofruin') {
-						if (this.ruleTable.has(`+move:${move.id}`)) continue;
-						const problem = `${set.name}'s move ${move.name} does not exist in the National Dex.`;
-						if (this.ruleTable.has('omunobtainablemoves')) {
-							const outOfBattleSpecies = this.getValidationSpecies(set)[0];
-							if (!this.omCheckCanLearn(move, outOfBattleSpecies, this.allSources(outOfBattleSpecies), set, problem)) continue;
-						}
-						return [problem];
-					}
-				}
-			}
+				//for (const moveid of set.moves) {
+					//const move = this.dex.moves.get(moveid);
+					//if (move.isNonstandard === 'Unobtainable' && move.gen === this.dex.gen || move.id === 'lightofruin') {
+						//if (this.ruleTable.has(`+move:${move.id}`)) continue;
+						//const problem = `${set.name}'s move ${move.name} does not exist in the National Dex.`;
+						//if (this.ruleTable.has('omunobtainablemoves')) {
+							//const outOfBattleSpecies = this.getValidationSpecies(set)[0];
+							//if (!this.omCheckCanLearn(move, outOfBattleSpecies, this.allSources(outOfBattleSpecies), set, problem)) continue;
+						//}
+						//return [problem];
+					//}
+				//}
+			//}
 			// Any item that was legal in Gen 7 (Normal Gem for example) should be usable
 			if (!set.item) return;
 			let item = this.dex.items.get(set.item);
