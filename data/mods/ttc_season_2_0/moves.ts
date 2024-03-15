@@ -539,22 +539,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			duration: 4,
 			durationCallback(target, source, effect) {
-				if (source?.hasAbility('persistent')) {
-					this.add('-activate', source, 'ability: Persistent', '[move] Tailwind');
-					return 6;
-				}
-				else if (source?.hasAbility('fieldsupport')) {
+				if (source?.hasAbility('fieldsupport')) {
 					this.add('-activate', source, 'ability: Field Support', '[move] Tailwind');
 					return 8;
 				}
 				return 4;
-			},
-			onSideStart(side, source) {
-				if (source?.hasAbility('persistent')) {
-					this.add('-sidestart', side, 'move: Tailwind', '[persistent]');
-				} else {
-					this.add('-sidestart', side, 'move: Tailwind');
-				}
 			},
 			onModifySpe(spe, pokemon) {
 				return this.chainModify(2);
