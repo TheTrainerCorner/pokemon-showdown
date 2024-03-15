@@ -365,4 +365,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition",
 		shortDesc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition.",
 	},
+	pickup: {
+		inherit: true,
+		onBeforeTurn: undefined,
+		onStart(pokemon) {
+			const sideConditions = [
+				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
+			];
+			for (const condition of sideConditions) {
+				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+					this.add('-swapsideconditions', pokemon.side, this.dex.conditions.get(condition).name, '[from ability: Pickup', '[of] ' + pokemon);
+				}
+			}
+		},
+		desc: "On switch-in, transfers any hazards on the user's side of the field to the opposing side.",
+		shortDesc: "On switch-in, transfers any hazards on the user's side tot he opposing side.",
+	}
 };
