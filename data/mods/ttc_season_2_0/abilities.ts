@@ -932,6 +932,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			const sideConditions = [
 				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
 			];
+			
 			let success = false;
 			if(this.gameType === "freeforall") {
 				// random integer from 1-3 inclusive
@@ -960,25 +961,25 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 					}
 				}
 			} else {
-				const sourceSideConditions = pokemon.side.sideConditions;
-				const targetSideConditions = pokemon.side.foe.sideConditions;
-				const sourceTemp: typeof sourceSideConditions = {};
-				const targetTemp: typeof targetSideConditions = {};
-				for (const id in sourceSideConditions) {
-					if (!sideConditions.includes(id)) continue;
-					sourceTemp[id] = sourceSideConditions[id];
-					delete sourceSideConditions[id];
-					success = true;
-				}
-				for (const id in targetSideConditions) {
-					if(!sideConditions.includes(id)) continue;
-					targetTemp[id] = targetSideConditions[id];
-					delete targetSideConditions[id];
-					success = true;
-				}
-				for (const id in sourceTemp) {
-					targetSideConditions[id] = sourceTemp[id];
-				}
+				//const sourceSideConditions = pokemon.side.sideConditions;
+				//const targetSideConditions = pokemon.side.foe.sideConditions;
+				//const sourceTemp: typeof sourceSideConditions = {};
+				//const targetTemp: typeof targetSideConditions = {};
+				//for (const id in sourceSideConditions) {
+					//if (!sideConditions.includes(id)) continue;
+					//sourceTemp[id] = sourceSideConditions[id];
+					//delete sourceSideConditions[id];
+					//success = true;
+				//}
+				//for (const id in targetSideConditions) {
+					//if(!sideConditions.includes(id)) continue;
+					//targetTemp[id] = targetSideConditions[id];
+					//delete targetSideConditions[id];
+					//success = true;
+				//}
+				//for (const id in sourceTemp) {
+					//targetSideConditions[id] = sourceTemp[id];
+				//}
 
 				// We will skip over adding the hazards to our side since we are only transfering them over.
 				this.add('-swapsideconditions');
