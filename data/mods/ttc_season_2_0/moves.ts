@@ -545,6 +545,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 				return 4;
 			},
+			onSideStart(side, source) {
+				if (source?.hasAbility('persistent')) {
+					this.add('-sidestart', side, 'move: Tailwind', '[persistent]');
+				} else {
+					this.add('-sidestart', side, 'move: Tailwind');
+				}
+			},
 			onModifySpe(spe, pokemon) {
 				return this.chainModify(2);
 			},
