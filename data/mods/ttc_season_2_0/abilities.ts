@@ -982,8 +982,12 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				//}
 
 				// We will skip over adding the hazards to our side since we are only transfering them over.
-				this.add('-swapsideconditions');
+				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+				for (const condition of sideConditions) {
+				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+				this.add('-swapsideconditions', pokemon.side, this.dex.conditions.get(condition).name, '[from] ability: Pickup', '[of] ' + pokemon);
 			}
+		}}
 			if (!success) return false;
 			this.add('-activate', pokemon, 'ability: Pickup');
 			this.effectState.pickupTrigged = true;
