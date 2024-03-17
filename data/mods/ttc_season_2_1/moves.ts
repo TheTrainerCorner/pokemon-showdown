@@ -27,6 +27,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					if (move.selfBoost) {
 						pokemon.disableMove(moveSlot.id);
 					}
+					if(move.boosts){
+						pokemon.disableMove(moveSlot.id)
+					}
 				}
 			},
 			onFieldResidualOrder: 27,
