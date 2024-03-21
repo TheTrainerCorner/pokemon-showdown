@@ -2079,46 +2079,16 @@ export class GameRoom extends BasicRoom {
 			0;
 		
 		if (battle.replaySaved) {
-			connection.popup(`Replay has already been saved!`);
+			connection.popup(`Replay has already been saved! Replay is at https://replay.thetrainercorner.net/ttc/${id}`);
 			return;
 		}
 		battle.replaySaved = true;
 
-		// let buf = '<!DOCTYPE html>\n';
-		// buf += '<meta charset="utf-8" />\n';
-		// buf += '<!-- version 1 -->\n';
-		// buf += `<title>${Utils.escapeHTML(format.name)} replay: ${Utils.escapeHTML(battle.p1.name)} vs. ${Utils.escapeHTML(battle.p2.name)}</title>\n`;
-		// buf += '<div class="wrapper replay-wrapper" style="max-width:1180px;margin:0 auto">\n';
-		// buf += '<div class="battle"></div><div class="battle-log"></div><div class="replay-controls"></div><div class="replay-controls-2"></div>\n';
-		// buf += `<h1 style="font-weight:normal;text-align:center"><strong>${Utils.escapeHTML(format.name)}</strong><br /><a href="https://pokemonshowdown.com/users/${toID(battle.p1.name)}" class="subtle" target="_blank">${Utils.escapeHTML(battle.p1.name)}</a> vs. <a href="https://pokemonshowdown.com/users/${toID(battle.p2.name)}" class="subtle" target="_blank">${Utils.escapeHTML(battle.p2.name)}</a></h1>\n`;
-		// buf += '<script type="text/plain" class="battle-log-data">' + log.replace(/\//g, '\\/') + '</script>\n';
-		// buf += '</div>\n';
-		// buf += '</div>\n';
-		// buf += '<script>\n';
-		// buf += `let daily = Math.floor(Date.now()/1000/60/60/24);document.write('<script src="https://play.thetrainercorner.net/js/replay-embed.js?version'+daily+'"></'+'script>');\n`;
-		// buf += '</script>\n';
-		// const replayName = `${toID(battle.p1.name)}-${toID(battle.p2.name)}-${Date.now()}`;
-		// FS(`replays/${replayName}.html`).writeSync(buf);
-
-		// FS('replays/replays.csv').appendSync(`${toID(user.name)},${toID(battle.p1.name)},${toID(battle.p2.name)},${battle.p3 ? toID(battle.p3.name) : ''},${battle.p4 ? toID(battle.p4.name) : ''},${Date.now()},${format.id},${replayName}\n`);
-
-		// connection.popup(`Replay was saved successfully! You can view it at\nMain Server: https://sim.thetrainercorner.net/replays/${replayName}.html\nTest Server: https://server.thetrainercorner.net/replays/${replayName}.html`);
-
-
-		// if (isPrivate && hidden === 10) {
-		// 	password = Replays.generatePassword();
-		// }
-		// if (battle.replaySaved !== true && hidden === 10) {
-		// 	battle.replaySaved = 'auto';
-		// } else {
-		// 	battle.replaySaved = true;
-		// }
-
 		// // If we have a direct connetion to a Replays database, just upload the replay
 		// // directly.
-		const url = `https://replay.thetrainercorner.net/${id}`;
+		const url = `https://replay.thetrainercorner.net/ttc/${id}`;
 		connection.popup(`Your replay has been saved. You can find it at ${url}`);
-		await axios.post('https://replay.thetrainercorner.net/', {
+		await axios.post('https://replay.thetrainercorner.net/ttc', {
 				id: id,
 				log: log.replace(/\//g, '\\/'),
 				players: battle.players.map(p => p.name),
@@ -2129,33 +2099,6 @@ export class GameRoom extends BasicRoom {
 				inputlog: battle.inputLog?.join('\n') || "null",
 				uploadtime: Math.trunc(Date.now() / 1000),
 		});
-
-		// if (Replays.db) {
-		// 	const idWithServer = Config.serverid === 'showdown' ? id : `${Config.serverid}-${id}`;
-		// 	try {
-		// 		const fullid = await Replays.add({
-		// 			id: idWithServer,
-		// 			log,
-		// 			players: battle.players.map(p => p.name),
-		// 			format: format.name,
-		// 			rating: rating || null,
-		// 			private: hidden,
-		// 			password,
-		// 			inputlog: battle.inputLog?.join('\n') || null,
-		// 			uploadtime: Math.trunc(Date.now() / 1000),
-		// 		});
-		// 		const url = `https://${Config.routes.replays}/${fullid}`;
-		// 		connection?.popup(
-		// 			`|html|<p>Your replay has been uploaded! It's available at:</p><p> ` +
-		// 			`<a class="no-panel-intercept" href="${url}" target="_blank">${url}</a> ` +
-		// 			`<copytext value="${url}">Copy</copytext>`
-		// 		);
-		// 	} catch (e) {
-		// 		connection?.popup(`Your replay could not be saved: ${e}`);
-		// 		throw e;
-		// 	}
-		// 	return;
-		// }
 
 		// Otherwise, (we're probably a side server), upload the replay through LoginServer
 
@@ -2169,18 +2112,6 @@ export class GameRoom extends BasicRoom {
 			inputlog: battle.inputLog?.join('\n') || undefined,
 			password,
 		});
-		// if (result?.errorip) {
-		// 	connection?.popup(`This server's request IP ${result.errorip} is not a registered server.`);
-		// 	return;
-		// }
-
-		// const fullid = result?.replayid;
-		// const url = `https://${Config.routes.replays}/${fullid}`;
-		// connection?.popup(
-		// 	`|html|<p>Your replay has been uploaded! It's available at:</p><p> ` +
-		// 	`<a class="no-panel-intercept" href="${url}" target="_blank">${url}</a> ` +
-		// 	`<copytext value="${url}">Copy</copytext>`
-		// );
 	}
 
 	getReplayData() {
