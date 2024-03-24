@@ -1290,7 +1290,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		onSourceAfterMove(source, target, move) {
             if (move.category === 'Status') {
-                this.heal(target.baseMaxhp / 8);
+                this.heal(source.baseMaxhp / 8);
             }
         },
 		desc: "The user heals 1/8 of their max hp when using a status move, however that move will have -1 priority.",
