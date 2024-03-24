@@ -1285,7 +1285,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				move.priority = -1;
 			}
 		},
-		onTryHit(pokemon, target, move) {
+		onTryMove(pokemon, target, move) {
 			if (move.category === 'Status') {
 				pokemon.heal(pokemon.maxhp / 8, pokemon, move);
 			}
