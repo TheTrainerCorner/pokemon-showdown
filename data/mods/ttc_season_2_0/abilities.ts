@@ -455,8 +455,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				}
 				return 5;
 			},
-			onAnyModifyDamage(damage, source, target, move) {
-				if(target !== source && this.effectState.hasAlly(target)) {
+			onSourceModifyDamage(damage, source, target, move) {
+				if(target !== source) {
 					if((target.side.getSideCondition('reflect') && this.getCategory(move) === 'Physical') ||
 						(target.side.getSideCondition('lightscreen') && this.getCategory(move) === 'Special')) {
 							return;
