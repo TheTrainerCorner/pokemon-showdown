@@ -1269,7 +1269,6 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	stall: {
 		inherit: true,
-		onFractionalPriority: undefined,
 		onResidualOrder: 5,
 		onResidualSubOrder:6,
 		// onAfterMove(source, target, move) {
@@ -1283,9 +1282,10 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		// 		pokemon.heal(pokemon.maxhp / 16);
 		// 	}
 		// },
-		onModifyMove(move, pokemon, target) {
-			if (move.category === "Status") {
-				move.priority = -1;
+		onFractionalPriorityPriority: -1,
+		onFractionalPriority(priority, pokemon, target, move) {
+			if (move.category === 'Status') {
+				return -1;
 			}
 		},
 		onAfterMove(target, source, move) {
