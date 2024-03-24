@@ -1285,9 +1285,9 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				move.priority = -1;
 			}
 		},
-		onTryHit(pokemon, target, move) {
+		onSourceTryHit(pokemon, target, move) {
 			if (move.category === 'Status') {
-				pokemon.heal(pokemon.maxhp / 8);
+				this.heal(pokemon.maxhp / 8);
 			}
 		},
 		desc: "The user heals 1/8 of their max hp when using a status move, however that move will have -1 priority.",
