@@ -455,8 +455,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				}
 				return 5;
 			},
-			onSourceModifyDamage(damage, source, target, move) {
-				if(target !== source) {
+			onAnyModifyDamage(damage, source, target, move) {
+				if(target !== source && this.effectState.hasAlly(target)) {
 					if((target.side.getSideCondition('reflect') && this.getCategory(move) === 'Physical') ||
 						(target.side.getSideCondition('lightscreen') && this.getCategory(move) === 'Special')) {
 							return;
@@ -1285,9 +1285,9 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				move.priority = -1;
 			}
 		},
-		onSourceAfterMove(pokemon, target, move) {
+		onTryHit(pokemon, target, move) {
 			if (move.category === 'Status') {
-				pokemon.heal(pokemon.maxhp / 8, pokemon, move);
+				pokemon.heal(pokemon.maxhp / 8);
 			}
 		},
 		desc: "The user heals 1/8 of their max hp when using a status move, however that move will have -1 priority.",
