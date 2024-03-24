@@ -276,6 +276,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onFoeBeforeMove: undefined,
 		onFoePrepareHit(source, target, move) {
 				if (!target.hp) return;
+				if (move.category === 'Status') return;
 				if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
 				const type = move.type;
 				if (type && type !== '???') {
