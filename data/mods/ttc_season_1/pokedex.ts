@@ -466,71 +466,88 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	//#region Version 1.1
 	silvallybug: {
 		inherit: true,
-		requiredItem: undefined
+		requiredItem: undefined,
+		forceTeraType: "Bug"
 	},
 	silvallydark: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Dark"
 	},
 	silvallydragon: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Dragon"
 	},
 	silvallyelectric: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Electric"
 	},
 	silvallyfairy: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Fairy"
 	},
 	silvallyfighting: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Fighting"
 	},
 	silvallyfire: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Fire"
 	},
 	silvallyflying: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Flying"
 	},
 	silvallyghost: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Ghost"
 	},
 	silvallygrass: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Grass"
 	},
 	silvallyground: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Ground"
 	},
 	silvallyice: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Ice"
 	},
 	silvallypoison: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Poison"
 	},
 	silvallypsychic: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Psychic"
 	},
 	silvallyrock: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Rock"
 	},
 	silvallysteel: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Steel"
 	},
 	silvallywater: {
 		inherit: true,
 		requiredItem: undefined,
+		forceTeraType: "Water"
 	},
 	//#endregion
 };
