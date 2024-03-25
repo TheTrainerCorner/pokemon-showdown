@@ -524,6 +524,11 @@ export class BattleActions {
 			!move.negateSecondary &&
 			!(move.hasSheerForce && pokemon.hasAbility('sheerforce')) &&
 			!move.flags['futuremove']
+		)
+		if (
+			!move.negateSecondary &&
+			!(move.hasSheerForce && pokemon.hasAbility('willpower')) &&
+			!move.flags['futuremove']
 		) {
 			const originalHp = pokemon.hp;
 			this.battle.singleEvent('AfterMoveSecondarySelf', move, null, pokemon, target, move);
@@ -537,6 +542,7 @@ export class BattleActions {
 
 		return true;
 	}
+	
 	/** NOTE: includes single-target moves */
 	trySpreadMoveHit(targets: Pokemon[], pokemon: Pokemon, move: ActiveMove, notActive?: boolean) {
 		if (targets.length > 1 && !move.smartTarget) move.spreadHit = true;
@@ -794,6 +800,10 @@ export class BattleActions {
 			this.battle.singleEvent('AfterMoveSecondary', move, null, targets[0], pokemon, move);
 			this.battle.runEvent('AfterMoveSecondary', targets, pokemon, move);
 		}
+		if (!move.negateSecondary && !(move.hasSheerForce && pokemon.hasAbility('willpower'))) {
+			this.battle.singleEvent('AfterMoveSecondary', move, null, targets[0], pokemon, move);
+			this.battle.runEvent('AfterMoveSecondary', targets, pokemon, move);
+		}
 		return undefined;
 	}
 	/** NOTE: used only for moves that target sides/fields rather than pokemon */
@@ -1005,6 +1015,19 @@ export class BattleActions {
 		this.afterMoveSecondaryEvent(targetsCopy.filter(val => !!val) as Pokemon[], pokemon, move);
 
 		if (!move.negateSecondary && !(move.hasSheerForce && pokemon.hasAbility('sheerforce'))) {
+			for (const [i, d] of damage.entries()) {
+				// There are no multihit spread moves, so it's safe to use move.totalDamage for multihit moves
+				// The previous check was for `move.multihit`, but that fails for Dragon Darts
+				const curDamage = targets.length === 1 ? move.totalDamage : d;
+				if (typeof curDamage === 'number' && targets[i].hp) {
+					const targetHPBeforeDamage = (targets[i].hurtThisTurn || 0) + curDamage;
+					if (targets[i].hp <= targets[i].maxhp / 2 && targetHPBeforeDamage > targets[i].maxhp / 2) {
+						this.battle.runEvent('EmergencyExit', targets[i], pokemon);
+					}
+				}
+			}
+		}
+		if (!move.negateSecondary && !(move.hasSheerForce && pokemon.hasAbility('willpower'))) {
 			for (const [i, d] of damage.entries()) {
 				// There are no multihit spread moves, so it's safe to use move.totalDamage for multihit moves
 				// The previous check was for `move.multihit`, but that fails for Dragon Darts
