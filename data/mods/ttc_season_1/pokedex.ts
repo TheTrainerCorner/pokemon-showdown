@@ -464,6 +464,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	//#endregion
 	//#region Version 1.1
+	silvally: {
+		inherit: true,
+		forceTeraType: "Normal"
+	},
 	silvallybug: {
 		inherit: true,
 		requiredItem: undefined,
