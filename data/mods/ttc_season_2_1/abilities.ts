@@ -276,6 +276,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onFoeBeforeMove: undefined,
 		onFoePrepareHit(source, target, move) {
 				if (!target.hp) return;
+				if (move.category === 'Status') return;
 				if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
 				const type = move.type;
 				if (type && type !== '???') {
@@ -344,7 +345,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			// 3523/4096 causes the bp of 150 to be roughly 130.
 			if (move.id === 'focuspunch') return this.chainModify([3523, 4096]);
 			// Sheer Force
-			else if (move.hasSheerForce) return this.chainModify([5325, 4096]);
+			if (move.hasSheerForce) return this.chainModify([5325, 4096]);
 
 		}
 	},

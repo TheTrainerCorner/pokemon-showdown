@@ -1,3 +1,6 @@
+import { Pokemon } from "../../../sim";
+import { Ability } from "../../../sim/dex-abilities";
+
 export const Abilities: { [k: string]: ModdedAbilityData} = {
 	anticipation: {
 		inherit: true,
@@ -1266,7 +1269,6 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	stall: {
 		inherit: true,
-		onFractionalPriority: undefined,
 		onResidualOrder: 5,
 		onResidualSubOrder:6,
 		// onAfterMove(source, target, move) {
@@ -1280,16 +1282,17 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		// 		pokemon.heal(pokemon.maxhp / 16);
 		// 	}
 		// },
-		onModifyMove(move, pokemon, target) {
-			if (move.category === "Status") {
-				move.priority = -1;
-			}
-		},
-		onTryHit(pokemon, target, move) {
+		onFractionalPriorityPriority: -1,
+		onFractionalPriority(priority, pokemon, target, move) {
 			if (move.category === 'Status') {
-				pokemon.heal(pokemon.maxhp / 8, pokemon, move);
+				return -1;
 			}
 		},
+		onAfterMove(target, source, move) {
+            if (move.category === 'Status') {
+                this.heal(target.baseMaxhp / 8);
+            }
+        },
 		desc: "The user heals 1/8 of their max hp when using a status move, however that move will have -1 priority.",
 		shortDesc: "If used a Status move, -1 priority; heals 1/8th of max hp.",
 	},
