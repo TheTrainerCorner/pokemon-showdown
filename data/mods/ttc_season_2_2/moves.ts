@@ -4,6 +4,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onModifyType(move, pokemon, target) {
 			move.type = pokemon.teraType;
 		},
+		desc: "This move's type depends on the silvally's form.",
+		shortDesc: "Type varies based on silvally's form.",
 	},
 	auroraveil: {
 		inherit: true,
