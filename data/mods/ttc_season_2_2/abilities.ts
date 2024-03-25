@@ -10,5 +10,17 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				}
 			}
 		}
-	}
+	},
+	rkssystem: {
+		inherit: true,
+		onPrepareHit(source, target, move) {
+			if (source.baseSpecies.name !== 'Silvally') return;
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect !== 'snatch') return;
+			const type = move.type;
+			if (type && type !== '???' && source.species.name === `Silvally-${type}`) {
+				source.formeChange(`Silvally-${type}`);
+			}
+		}
+	},
+
 };

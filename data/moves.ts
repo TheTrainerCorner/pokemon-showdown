@@ -12888,7 +12888,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onModifyType(move, pokemon, target) {
-			move.type = pokemon.teraType
+			if (pokemon.ignoringItem()) return;
+			move.type = this.runEvent('Memory', pokemon, null, move, 'Normal');
 		},
 		secondary: null,
 		target: "normal",
