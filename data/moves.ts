@@ -12887,8 +12887,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		onModifyType(move, pokemon) {
-			move.type === pokemon.teraType
+		onModifyType(move, pokemon, target) {
+			move.type = pokemon.teraType
 		},
 		secondary: null,
 		target: "normal",
