@@ -22,5 +22,33 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			}
 		}
 	},
+	ballfetch: {
+		inherit: true,
+		onModifySpe: undefined,
+		onStart(pokemon) {
+			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			if(item.tags?.includes("Ball") || item.isPokeball) {
+				pokemon.addVolatile('ballfetch');
+			}
+		},
+		onUpdate(pokemon) {
+			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			if (!(item.tags?.includes("Ball") || item.isPokeball || item.megaStone) && pokemon.volatiles['ballfetch']) {
+				pokemon.removeVolatile('ballfetch');
+			}
+			else if ((item.tags?.includes("Ball") || item.isPokeball || item.megaStone) && !pokemon.volatiles['ballfetch']) {
+				pokemon.addVolatile('ballfetch');
+			}
+		},
+		onEnd(pokemon) {
+			pokemon.removeVolatile('ballfetch');
+		},
+		condition: {
+			onModifySpePriority: 6,
+			onModifySpe(spe, pokemon) {
+				return this.chainModify(1.5);
+			},
+		},
+	},
 
 };
