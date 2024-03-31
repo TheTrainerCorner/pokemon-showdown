@@ -783,7 +783,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			// Gen 2
 			new ModifyPokemon('Bayleef', this)
 				.abilities
-					.setAbility1('Regenrator')
+					.setAbility1('Regenerator')
 				.pokemon.baseStats
 					.setDEF(90)
 					.setSPA(85)
