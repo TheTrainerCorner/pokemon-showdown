@@ -722,8 +722,4 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		pp: 0.625,
 	},
-	Shedtail: {
-		inherit: true,
-		pp: 0.625,
-	},
 };
