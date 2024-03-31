@@ -278,6 +278,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('volcaronafaerie', this)		
 			.learnset
 				.add("moonblast")	
-				.add("drainingkiss")
+				.add("drainingkiss");
+
+		// Fixing Banette's Event Learnset issue
+		this.modData('Learnsets', 'banette').eventData = undefined;
 	},
 }
