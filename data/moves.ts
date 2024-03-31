@@ -16745,7 +16745,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Status",
 		name: "Shed Tail",
-		pp: 1,
+		pp: 10,
 		priority: 0,
 		flags: {},
 		volatileStatus: 'substitute',
