@@ -1,8 +1,4 @@
 export const Moves: {[k: string]: ModdedMoveData} = {
-	shedtail: {
-		inherit: true,
-		pp: 1,
-	},
 	present: {
 		inherit: true,
 		onModifyMove(move, pokemon, target) {
