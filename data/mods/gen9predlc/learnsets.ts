@@ -41479,7 +41479,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			chargebeam: ["9M", "7M", "6M", "5M", "4M"],
 			confide: ["7M", "6M"],
 			confuseray: ["9M"],
-			cottonguard: ["5S1"],
+			cottonguard: ["5T"],
 			curse: ["9L26", "7L26", "6L1", "5L1", "4L1", "3L1", "3S0"],
 			darkpulse: ["9M", "7M", "6M", "5T", "4M"],
 			dazzlinggleam: ["9M", "7M", "6M"],
