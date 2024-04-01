@@ -5,6 +5,9 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		new ModifyPokemon('Regidrago', this)
 			.baseStats
-				.setSPE(95);
+				.setSPE(95)
+			.pokemon.learnset
+				.add('Flamethrower')
+				.add('Core Enforcer');	
 	},
 };
