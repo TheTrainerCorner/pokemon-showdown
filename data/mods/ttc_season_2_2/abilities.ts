@@ -60,5 +60,5 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name, '[from] abilty: Pickup', '[of] ' + pokemon);
 			}
 	}}
-	 	
+
 }}
