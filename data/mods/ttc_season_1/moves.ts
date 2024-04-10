@@ -296,16 +296,17 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			} else move.category = "Special";
 		},
 		onHit(target, pokemon, move) {
-			if (pokemon.baseSpecies.baseSpecies === 'Meloetta' && pokemon.species.forme === "Caroler" && !pokemon.transformed) {
+			if (pokemon.baseSpecies.baseSpecies === 'Meloetta' && !pokemon.transformed) {
 				move.willChangeForme = true;
 			}
 		},
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (move.willChangeForme) {
-				const meloettaFrome = pokemon.species.id === "meloettaaurora" ? '-Caroler' : '-Aurora';
+				const meloettaFrome = pokemon.species.id === "meloettaaurora" ? '' : '-Aurora';
 				pokemon.formeChange('Meloetta' + meloettaFrome, this.effect, false, '[msg]');
 			}
 		},
+		
 		target: "allAdjacentFoes",
 		type: "Ice",
 		contestType: "Beautiful",

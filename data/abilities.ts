@@ -3841,7 +3841,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		isPermanent: true,
 		name: "Schooling",
-		rating: 3,
+		rating: 3,	
 		num: 208,
 	},
 	scrappy: {
