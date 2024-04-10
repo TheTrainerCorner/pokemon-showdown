@@ -302,7 +302,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (move.willChangeForme) {
-				const meloettaFrome = pokemon.species.id === "meloettaaurora" ? '' : '-Aurora';
+				const meloettaFrome = pokemon.species.id === "meloettaaurora" ? '-Caroler' : '-Aurora';
 				pokemon.formeChange('Meloetta' + meloettaFrome, this.effect, false, '[msg]');
 			}
 		},
