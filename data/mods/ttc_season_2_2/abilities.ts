@@ -50,5 +50,15 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			},
 		},
 	},
-
-};
+	pickup: {
+		inherit: true,
+		onBeforeTurn: undefined,
+		onStart(pokemon) { 
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			for (const condition of sideConditions) {
+				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name, '[from] abilty: Pickup', '[of] ' + pokemon);
+			}
+	}}
+	 	
+}}
