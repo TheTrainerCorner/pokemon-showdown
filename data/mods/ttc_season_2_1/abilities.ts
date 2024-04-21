@@ -378,6 +378,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		desc: "On switch-in, transfers any hazards on the user's side of the field to the opposing side.",
-		shortDesc: "On switch-in, transfers any hazards on the user's side tot he opposing side.",
+		shortDesc: "On switch-in, transfers any hazards on the user's side to the opposing side.",
 	}
 };
