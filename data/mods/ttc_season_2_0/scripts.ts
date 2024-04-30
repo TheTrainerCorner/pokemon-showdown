@@ -2819,6 +2819,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(125)
 				.setSPE(111);
+		new ModifyPokemon('IronCrown', this)
+			.abilities
+				.setHiddenAbility('Emulate');
 		new ModifyPokemon('WalkingWake', this)
 			.baseStats
 				.setHP(94)
