@@ -31,6 +31,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				
 				source.removeVolatile('payday');
 			}
-		}
+		},
+		desc: "When Meowth-Mega uses any move that isn't payday, they will gain either 1-5 coins up to a max of 20 coins. When Meowth-Mega uses payday, for each coin, the opponent will take 4 damage (5% of the base power of payday).",
+		shortDesc: "Move Not Payday; Gains 1-5 Coins (Max of 20); When using Payday, each coin does 5% of Payday!",
 	}
 };
