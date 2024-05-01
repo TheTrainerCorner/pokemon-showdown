@@ -46,7 +46,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-start', pokemon, `hailthecoinx${deductAmount}`, '[silent]');
 			}
 
-			this.add('-end', pokemon, `hailthecoinx0`);
+			this.add('-end', pokemon, `hailthecoinx0`, '[silent]');
 			this.effectState.paydayTriggered = false;
 		},
 		num: -3001,
@@ -67,7 +67,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onResidualSubOrder: 2,
 		onResidual(pokemon) {
 			if (this.effectState.gamblersluck) {
-				this.add('-end', pokemon, `gamblersluck${this.effectState.gamblersluck.toLowerCase()}`);
+				this.add('-end', pokemon, `gamblersluck${this.effectState.gamblersluck.toLowerCase()}`, '[silent]');
 			}
 			const types = this.dex.types.names();
 			const randomIndex = Math.floor(Math.random() * types.length);
