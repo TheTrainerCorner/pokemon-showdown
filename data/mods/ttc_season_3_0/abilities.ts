@@ -38,13 +38,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 
 			let deductAmount = this.effectState.paydayAmount;
 			for (let i = 0; i < this.effectState.paydayAmount; i++) {
-				this.damage(80 * 0.05, target, source);
-				this.add('-end', source, `hailthecoinx${deductAmount}`);
+				this.damage(80 * 0.05, source, target);
+				this.add('-end', target, `hailthecoinx${deductAmount}`);
 				deductAmount--;
-				this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
+				this.add('-start', target, `hailthecoinx${deductAmount}`, '[silent]');
 			}
 
-			this.add('-end', source, `hailthecoinx0`);
+			this.add('-end', target, `hailthecoinx0`);
 			this.effectState.paydayTriggered = false;
 		},
 		num: -3001,
