@@ -33,18 +33,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			this.add('-start', source, `hailthecoinx${this.effectState.paydayAmount}`, '[silent]');
 			this.effectState.paydayTriggered = true;
 		},
-		onResidual(target, source, effect) {
+		onResidual(pokemon) {
 			if (!this.effectState.paydayTriggered) return;
 
 			let deductAmount = this.effectState.paydayAmount;
 			for (let i = 0; i < this.effectState.paydayAmount; i++) {
-				this.damage(80 * 0.05, source, target);
-				this.add('-end', target, `hailthecoinx${deductAmount}`);
+				for (const target of pokemon.foes()) {
+					this.damage(80 * 0.05, target, pokemon);
+				}
+				this.add('-end', pokemon, `hailthecoinx${deductAmount}`);
 				deductAmount--;
-				this.add('-start', target, `hailthecoinx${deductAmount}`, '[silent]');
+				this.add('-start', pokemon, `hailthecoinx${deductAmount}`, '[silent]');
 			}
 
-			this.add('-end', target, `hailthecoinx0`);
+			this.add('-end', pokemon, `hailthecoinx0`);
 			this.effectState.paydayTriggered = false;
 		},
 		num: -3001,
