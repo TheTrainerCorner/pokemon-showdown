@@ -1,6 +1,6 @@
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	//#region Season 1 Donations
-	sotanaht: {
+	sotanaht: { // Ainka
 		num: -2001,
 		name: "Sotanaht",
 		types: ["Ghost", "Fire"],
@@ -15,7 +15,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
-	tindraco: {
+	tindraco: { // Snail
 		num: -2002,
 		name: "Tindraco",
 		types: ["Normal", "Dragon"],
@@ -31,7 +31,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "LC",
 		doublesTier: "LC",
 	},
-	devdraco: {
+	devdraco: { // Snail
 		num: -2003,
 		name: "Devdraco",
 		types: ["Normal", "Dragon"],
@@ -49,7 +49,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "NFE",
 		doublesTier: "NFE",
 	},
-	metadraco: {
+	metadraco: { // Snail
 		num: -2004,
 		name: "Metadraco",
 		types: ["Steel", "Dragon"],
@@ -67,7 +67,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
-	acudraco: {
+	acudraco: { // Snail
 		num: -2005,
 		name: "Acudraco",
 		types: ["Psychic", "Dragon"],
@@ -85,7 +85,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
-	thundraco: {
+	thundraco: { // Snail
 		num: -2006,
 		name: "Thundraco",
 		types: ["Electric", "Dragon"],
@@ -107,7 +107,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ['Farfetch\u2019d-Mega', 'Farfetch\u2019d-Galar'],
 		formeOrder: ['Farfetch\u2019d', 'Farfetch\u2019d-Mega', 'Farfetch\u2019d-Galar'],
 	},
-	farfetchdmega: {
+	farfetchdmega: { // Amstan
 		num: -2007,
 		name: 'Farfetch\u2019d-Mega',
 		types: ['Dark', 'Flying'],
@@ -131,7 +131,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ["Volcarona-Faerie"],
 		formeOrder: ["Volcarona", 'Volcarona-Faerie'],
 	},
-	volcaronafaerie: {
+	volcaronafaerie: { // Merry
 		num: -2008,
 		name: 'Volcarona-Faerie',
 		baseSpecies: 'Volcarona',
@@ -151,7 +151,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
-	poisonus: {
+	poisonus: { // Samu
 		num: -2009,
 		name: "Poisonus",
 		baseForme: "Incarnate",
@@ -170,7 +170,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
-	poisonustherian: {
+	poisonustherian: { // Samu
 		num: -2009,
 		name: "Poisonus-Therian",
 		baseSpecies: "Poisonus",
@@ -192,7 +192,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	ralts: {
 		inherit: true,
 	},
-	raltsolympios: {
+	raltsolympios: { // Shaw
 		num: 280,
 		name: "Ralts-Olympios",
 		types: ["Ground", "Fairy"],
@@ -211,7 +211,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	kirlia: {
 		inherit: true,
 	},
-	kirliaolympios: {
+	kirliaolympios: { // Shaw
 		num: 281,
 		name: "Kirlia-Olympios",
 		types: ["Ground", "Fairy"],
@@ -234,7 +234,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ["Gardevoir-Mega"],
 		formeOrder: ["Gardevoir", "Gardevoir-Mega"],
 	},
-	gardevoirolympios: {
+	gardevoirolympios: {// Shaw
 		num: 282,
 		name: "Gardevoir-Olympios",
 		types: ["Ground", "Fairy"],
@@ -255,7 +255,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ["Gallade-Mega"],
 		formeOrder: ["Gallade", "Gallade-Mega"]
 	},
-	galladeolympios: {
+	galladeolympios: {// Shaw
 		num: 475,
 		name: "Gallade-Olympios",
 		types: ["Ground", "Fighting"],
@@ -277,7 +277,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		evos: ["Gigachelonian"],
 	},
-	gigachelonian: {
+	gigachelonian: { // Shaw
 		num: -2010,
 		name: "Gigachelonian",
 		types: ["Bug", "Rock"],
@@ -294,7 +294,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	//#endregion
 	//#region Season 1 Halloween
-	bulbick: {
+	bulbick: { // Andy
 		num: -1031,
 		name: "Bulbick",
 		types: ["Water", "Electric"],
@@ -310,7 +310,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "LC",
 		doublesTier: "LC",
 	},
-	lampoct: {
+	lampoct: { // Andy
 		num: -1032,
 		name: "Lampoct",
 		types: ["Water", "Electric"],
@@ -328,7 +328,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "NFE",
 		doublesTier: "NFE",
 	},
-	octolure: {
+	octolure: { // Andy
 		num: -1033,
 		name: "Octolure",
 		types: ["Water", "Electric"],
@@ -351,7 +351,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ["Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super", "Gourgeist-Mega"],
 		formeOrder: ["Gourgeist", "Gourgeist-Small", "Gourgeist-Large", "Gourgeist-Super", "Gourgeist-Mega"],
 	},
-	gourgeistmega: {
+	gourgeistmega: { // Shaw
 		num: 0,
 		name: "Gourgeist-Mega",
 		baseSpecies: "Gourgeist",
@@ -377,7 +377,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ["Trevenant-Autumn"],
 		formeOrder: ["Trevenant", "Trevenant-Autumn"],
 	},
-	trevenantautumn: {
+	trevenantautumn: { // Shaw
 		num: 709,
 		name: "Trevenant-Autumn",
 		baseSpecies: "Trevenant",
@@ -403,7 +403,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ["Jirachi-NorthStar"],
 		formeOrder: ["Jirachi", "Jirachi-NorthStar"],
 	},
-	jirachinorthstar: {
+	jirachinorthstar: { // Galaxy
 		num: 385,
 		name: "Jirachi-NorthStar",
 		baseSpecies: "Jirachi",
@@ -426,7 +426,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		otherFormes: ["Meloetta-Pirouette", "Meloetta-Caroler", "Meloetta-Aurora"],
 		formeOrder: ["Meloetta", "Meloetta-Pirouette", "Meloetta-Caroler", "Meloetta-Aurora"],
 	},
-	meloettacaroler: {
+	meloettacaroler: { // CanuckChum
 		num: 648,
 		name: "Meloetta-Caroler",
 		baseSpecies: "Meloetta",
@@ -444,7 +444,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
-	meloettaaurora: {
+	meloettaaurora: { // CanuckChum
 		num: 648,
 		name: "Meloetta-Aurora",
 		baseSpecies: "Meloetta",

@@ -1,6 +1,23 @@
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#region Modify Abilities
-
+	wanderingspirit: { // [NERFED]
+		inherit: true,
+		onStart(pokemon) {
+			if (pokemon.abilityState.wanderingSpiritTriggered) return;
+			this.field.addPseudoWeather('trickroom');
+			pokemon.abilityState.wanderingSpiritTriggered = true;
+		},
+		desc: "Upon switch-in, Trick Room is activated! Can only be used once per battle!",
+		shortDesc: "Upon switch-in, Trick Room is activated! Can only be used once per battle!",
+	},
+	sharpenedleek: { // [NERFED]
+		inherit: true,
+		onModifyAtk(atk, pokemon, target, move) {
+			return this.chainModify([4506, 4096]);
+		},
+		desc: "Sharpness + Attack increased by 1.1x",
+		shortDesc: "Sharpness + Attack increased by 1.1x",
+	},
 	//#endregion
 
 	//#region New Abilities
@@ -87,6 +104,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon, at the beginning of each turn, will randomize a type to give a 1.2x damage buff.",
 		shortDesc: 'At the start of each turn, this pokemon will gain a 1.2x damage buff to a specific type.',
 	},
+
+	//#region Firework Event
+
+	lavasurfer: { // PT333
+		name: "Lava Surfer",
+		onTryHit(target, source, move) {
+			if (target !== source && (move.secondaries?.find(x => x.status === "brn") || move.secondary?.status === "brn")) {
+				if (!this.boost({spe: 1})) this.add('-immune', target, '[from] ability: Lava Surfer');
+				return null;
+			}
+		},
+		desc: "Moves with a chance to burn, deal no damage to this Pokemon and raise it's speed by 1 stage.",
+		shortDesc: "Immune to moves that have a chance to burn, and gains +1 Spe.",
+		rating: 3,
+		num: -3003,
+	},
+
+	//#endregion
 
 	//#endregion
 };
