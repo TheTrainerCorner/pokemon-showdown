@@ -49,6 +49,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 					this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
 				}
 				this.add('-end', source, 'hailthecoinx0');
+				source.removeVolatile('hailthecoin');
 			},
 		},
 		num: -3001,
@@ -65,18 +66,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			this.effectState.gamblersluck = type;
 			this.add('-start', pokemon, `gamblersluck${type.toLowerCase()}`, '[silent]');
 		},
-		// onBeforeTurn(pokemon) {
-		// 	if (this.effectState.gamblersluck) {
-		// 		this.add('-end', pokemon, `gamblersluck${this.effectState.gamblersluck.toLowerCase()}`);
-		// 	}
-		// 	const types = this.dex.types.names();
-		// 	const randomIndex = Math.floor(Math.random() * types.length);
-		// 	let type = types[randomIndex];
-		// 	if (type === '???') type = 'Normal';
-		// 	this.effectState.gamblersluck = type;
-		// 	this.add('-start', pokemon, `gamblersluck${type.toLowerCase()}`, '[silent]');
-		// },
-		onSourceAfterMove(pokemon, target, move) {
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
 			if (this.effectState.gamblersluck) {
 				this.add('-end', pokemon, `gamblersluck${this.effectState.gamblersluck.toLowerCase()}`);
 			}
