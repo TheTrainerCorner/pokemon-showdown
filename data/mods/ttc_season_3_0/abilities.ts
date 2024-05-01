@@ -1,6 +1,31 @@
 export const Abilities: {[k: string]: ModdedAbilityData} = {
+	//#region Modify Abilities
+
+	//#endregion
+
+	//#region New Abilities
 	hailthecoin: {
 		name: "Hail The Coin",
+		// Mind's Eye
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.accuracy && boost.accuracy < 0) {
+				delete boost.accuracy;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add('-fail', target, 'unboost', 'accuracy', '[from] ability: Hail The Coin', `[of] ${target}`);
+				}
+			}
+		},
+		onModifyMovePriority: -5,
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Fighting'] = true;
+				move.ignoreImmunity['Normal'] = true;
+			}
+		},
+		// Hail The Coin Actual Implementation
 		onSourceAfterMove(source, target, move) {
 			if (move.id === "payday") return;
 			if(source !== target) {
@@ -10,29 +35,24 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
 			onStart(target) {
-				let rand = Math.floor(Math.random() * 5);
+				let rand = Math.floor(Math.random() * 10);
 				this.effectState.amount = rand || 1;
-			},
-			onRestart(target) {
-				let rand = Math.floor(Math.random() * 5);
-				if (this.effectState.amount === 20) return false;
-				this.effectState.amount += rand || 1;
-				if (this.effectState.amount > 20) this.effectState.amount = 20;
+				this.add('-start', target, `hailthecoinx${this.effectState.amount}`, '[silent]');
 			},
 			onSourceAfterMove(source, target, move) {
 				if (move.id !== "payday") return;
-				// This is assuming the move is payday!
-				// If the amount is 0 or under 0, then we don't want anything to happen.
-				if (this.effectState.amount <= 0) return;
-
+				let deductAmount = this.effectState.amount;
 				for (let i = 0; i < this.effectState.amount; i++) {
+					deductAmount--;
 					this.damage(move.basePower * 0.05, target, source);
+					this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
 				}
-				
-				source.removeVolatile('payday');
-			}
+				source.removeVolatile('hailthecoin');
+			},
 		},
-		desc: "When Meowth-Mega uses any move that isn't payday, they will gain either 1-5 coins up to a max of 20 coins. When Meowth-Mega uses payday, for each coin, the opponent will take 4 damage (5% of the base power of payday).",
+		desc: "When Meowth uses Payday, it shoots up between 1 to 10 coins in the air. Each coin impacts the opponent with 5% (4 damage) of Payday’s damage. Also has Mind's Eye implemented in this ability.",
 		shortDesc: "Move Not Payday; Gains 1-5 Coins (Max of 20); When using Payday, each coin does 5% of Payday!",
 	}
+
+	//#endregion
 };
