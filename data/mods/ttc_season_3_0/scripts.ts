@@ -4,8 +4,8 @@ export const Scripts: ModdedBattleScriptsData = {
 	inherit: "ttc_season_2_2",
 	init() {
 		// Adjusting Meowth's data to include Meowth-Mega
-		this.modData("Pokedex", "Meowth").otherFormes = ["Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
-		this.modData("Pokedex", "Meowth").formeOrder = ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
+		this.modData("Pokedex", "meowth").otherFormes = ["Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
+		this.modData("Pokedex", "meowth").formeOrder = ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
 
 		//#region Gen 1
 
