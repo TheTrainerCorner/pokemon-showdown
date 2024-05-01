@@ -41,7 +41,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				for (const target of pokemon.foes()) {
 					this.damage(80 * 0.05, target, pokemon);
 				}
-				this.add('-end', pokemon, `hailthecoinx${deductAmount}`);
+				this.add('-end', pokemon, `hailthecoinx${deductAmount}`, '[silent]');
 				deductAmount--;
 				this.add('-start', pokemon, `hailthecoinx${deductAmount}`, '[silent]');
 			}
