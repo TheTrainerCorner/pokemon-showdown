@@ -27,10 +27,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		// Hail The Coin Actual Implementation
 		onSourceAfterMove(source, target, move) {
-			if (move.id === "payday") return;
-			if(source !== target) {
-				source.addVolatile('hailthecoin');
-			}
+			if (move.id === "payday") source.addVolatile('hailthecoin');
 		},
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
@@ -39,17 +36,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.effectState.amount = rand || 1;
 				this.add('-start', source, `hailthecoinx${this.effectState.amount}`, '[silent]');
 			},
-			onSourceAfterMove(source, target, move) {
+			onResidualOrder: 28,
+			onResidualSubOrder: 2,
+			onResidual(source, target, move) {
 				if (move.id !== "payday") return;
 				let deductAmount = this.effectState.amount;
 				for (let i = 0; i < this.effectState.amount; i++) {
-					this.damage(move.basePower * 0.05, target, source);
+					this.damage(80 * 0.05, target, source);
 					this.add('-end', source, `hailthecoinx${deductAmount}`);
 					deductAmount--;
 					this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
 				}
-				this.add('-end', source, 'hailthecoinx0');
 				source.removeVolatile('hailthecoin');
+			},
+			onEnd(source) {
+				this.add('-end', source, 'hailthecoinx0');
 			},
 		},
 		num: -3001,
