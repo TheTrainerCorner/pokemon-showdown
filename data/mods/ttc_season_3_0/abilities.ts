@@ -27,15 +27,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		// Hail The Coin Actual Implementation
 		onSourceAfterMove(source, target, move) {
-			if (move.id !== "payday") return; 
+			if (move.name !== "Pay Day") return; 
 			
 			this.effectState.paydayTriggered = true;
 			let rand = Math.floor(Math.random() * 9);
 			this.effectState.paydayAmount = rand + 1 || 1;
 			this.add('-start', source, `hailthecoinx${this.effectState.paydayAmount}`, '[silent]');
 		},
-		onResidualOrder: 28,
-		onResidualSubOrder: 2,
 		onResidual(target, source, effect) {
 			if (!this.effectState.paydayTriggered) return;
 
