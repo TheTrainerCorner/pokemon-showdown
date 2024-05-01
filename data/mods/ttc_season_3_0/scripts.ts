@@ -6,7 +6,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		// Adjusting Meowth's data to include Meowth-Mega
 		this.modData("Pokedex", "meowth").otherFormes = ["Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
 		this.modData("Pokedex", "meowth").formeOrder = ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
-
+		// Adjusting Eevee-Starter's data to include Eevee-Mega
+		this.modData("Pokedex", "eeveestarter").otherFormes = ["Eevee-Mega"];
+		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
 		//#region Gen 1
 
 		new ModifyPokemon("Meowth", this)

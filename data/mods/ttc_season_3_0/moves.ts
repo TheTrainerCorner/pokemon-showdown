@@ -3,6 +3,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	payday: {
 		inherit: true,
 		basePower: 80,
-	}
+	},
 	//#endregion
 }

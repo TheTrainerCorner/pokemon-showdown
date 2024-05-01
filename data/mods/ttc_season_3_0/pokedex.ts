@@ -12,4 +12,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field"],
 		requiredItem: "Meowthite",
 	},
+	eeveemega: {
+		num: -3002,
+		name: "Eevee-Mega",
+		baseSpecies: "Eevee-Starter",
+		forme: "Mega",
+		types: ["Normal"],
+		genderRatio: {M: 0.875, F: 0.125},
+		baseStats: {hp: 55, atk: 108, def: 105, spa: 108, spd: 110, spe: 99},
+		abilities: {0: "Gambler's Luck"},
+		heightm: 0.3,
+		weightkg: 6.5,
+		eggGroups: ["Undiscovered"],
+		requiredItem: "Eeveeite",
+	},
 };
