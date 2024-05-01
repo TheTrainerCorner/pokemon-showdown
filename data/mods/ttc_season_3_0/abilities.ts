@@ -43,11 +43,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				if (move.id !== "payday") return;
 				let deductAmount = this.effectState.amount;
 				for (let i = 0; i < this.effectState.amount; i++) {
-					deductAmount--;
 					this.damage(move.basePower * 0.05, target, source);
+					this.add('-end', source, `hailthecoinx${deductAmount}`);
+					deductAmount--;
 					this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
 				}
-				source.removeVolatile('hailthecoin');
+				this.add('-end', source, 'hailthecoinx0');
 			},
 		},
 		num: -3001,
@@ -75,9 +76,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		// 	this.effectState.gamblersluck = type;
 		// 	this.add('-start', pokemon, `gamblersluck${type.toLowerCase()}`, '[silent]');
 		// },
-		onResidualOrder: 5,
-		onResidualSubOrder: 23,
-		onResidual(target, pokemon, effect) {
+		onSourceAfterMove(pokemon, target, move) {
 			if (this.effectState.gamblersluck) {
 				this.add('-end', pokemon, `gamblersluck${this.effectState.gamblersluck.toLowerCase()}`);
 			}
