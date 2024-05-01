@@ -7,6 +7,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Pokedex", "meowth").otherFormes = ["Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
 		this.modData("Pokedex", "meowth").formeOrder = ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
 		// Adjusting Eevee-Starter's data to include Eevee-Mega
+		this.modData("Pokedex", "eevee").otherFormes = undefined;
+		this.modData("Pokedex", "eevee").formeOrder = undefined;
+		this.modData("Pokedex", "eeveestarter").baseSpecies = undefined;
+		this.modData("Pokedex", "eeveestarter").forme = undefined;
 		this.modData("Pokedex", "eeveestarter").otherFormes = ["Eevee-Mega"];
 		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
 		//#region Gen 1
