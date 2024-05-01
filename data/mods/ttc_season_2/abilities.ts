@@ -5,20 +5,32 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	anticipation: {
 		inherit: true,
 		onStart(pokemon) {
+			let totalatk = 0;
+			let totalspa = 0;
 			for (const target of pokemon.foes()) {
+				totalatk += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
 				for (const moveSlot of target.moveSlots) {
 					const move = this.dex.moves.get(moveSlot.move);
+					if (move.category === 'Status') continue;
 					const moveType = move.id === 'hiddenpower' ? target.hpType : move.type;
-					if (move.basePower >= 100 && this.dex.getImmunity(moveType, pokemon)) {
+					if (
+						this.dex.getImmunity(moveType, pokemon) && this.dex.getEffectiveness(moveType, pokemon) > 0 ||
+						move.ohko
+					) {
 						this.add('-ability', pokemon, 'Anticipation');
-						this.add('-activate', pokemon, 'ability: Anticipation', target, 'Move: ' + move);
+						if (totalatk && totalspa >= totalspa) {
+							this.boost({def: 1});
+						} else if (totalspa) {
+							this.boost({spd:1});
+						}
 						return;
 					}
 				}
 			}
 		},
-		shortDesc: `On switch-in, this Pokemon shudders if any foe has a move that has 100 BP.`,
-		desc: `On switch-in, this Pokemon is alerted if any opposing Pokemon has a move that is 100 Base Power or more.`,
+		desc: "On switch-in, this Pokemon shudders if any foe has a move that is Super Effective against the user, then the user's Defense or Special Defense will be increased based on the opposing pokemon's offensive stat.",
+		shortDesc: "On switch-in;If shudders, Opposing Pokemon's Atk Higher = +1 Def, else +1 SpD."
 	},
 	aromaveil: {
 		inherit: true,
@@ -40,29 +52,36 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	artillery: {
 		inherit: true,
-		onAfterMove(source, target, move) {
-			if (move.category !== 'Status') {
-				source.clearBoosts();
-				this.add('-clearboost', source, '[from] ability: Artillery');
-			} else {
-				this.boost({spa: 1});
-			}
-
-			this.damage(target.baseMaxhp / 8, target, source);
+		onDamagingHitOrder: 1,
+		onSourceDamagingHit(damage, target, source, move) {
+			if (!target.hp) return;
+			this.effectState.didHit = true;
 		},
-		shortDesc: 'Not Using a Damaging Move = +1 SpA; Using Damaging Move = Deals 1/8 of target\'s hp to the target as additional damage.',
-		desc: 'Not Using a Damaging Move = +1 SpA; Using Damaging Move = Deals 1/8 of target\'s hp to the target as additional damage.',
+		onAfterMove(source, target, move) {
+			if (this.effectState.didHit) {
+				this.damage(target.maxhp / 8, target, source);
+				this.effectState.didHit = false;
+			}
+		},
+		desc: "After hitting the target with a Damaging move, does 1/8 of the target's max hp to the target.",
+		shortDesc: "After using a Damaging move, does 1/8 of the target's max hp.",
 	},
 	aurabreak: {
 		inherit: true,
-		onSourceModifyDamage(damage, source, target, move) {
-			if (['Dark', 'Psychic', 'Fairy'].includes(move.type) && target.getMoveHitData(move).typeMod > 0) {
-				const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
-				if (hitSub) return;
-
-				this.debug('-70% reduction');
-				this.add('-ability', target, 'Aura Break');
-				return this.chainModify(0.2);
+		onSourceModifyDamage: undefined,
+		onSourceModifyAtkPriority: 6,
+		// 2867/4096
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (['Dark', 'Psychic', 'Fairy'].includes(move.type)) {
+				this.debug('Aura Break atk weaken');
+				return this.chainModify([2867, 4096]);
+			}
+		},
+		onSourceModifySpAPriority: 6,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (['Dark', 'Psychic', 'Fairy'].includes(move.type)) {
+				this.debug('Aura Break spa weaken');
+				return this.chainModify([2867, 4096]);
 			}
 		},
 		shortDesc: 'Reduces the damage received from Dark, Psychic and Fairy Moves by 70%.',
@@ -83,27 +102,30 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	ballfetch: {
 		inherit: true,
-		onModifySpe(spe, pokemon) {
-			const ballItems = [
-				'lifeorb',
-				'wikiberry',
-				'adrenalineorb',
-				'flameorb',
-				'liechiberry',
-				'snowball',
-				'toxicorb',
-				'yacheberry',
-				'aspearberry',
-				'destinyknot',
-				'ironball',
-				'oranberry',
-				'ovalstone',
-			];
-			for (const item of ballItems) {
-				if (pokemon.hasItem(item)) {
-					return this.chainModify(1.5);
-				}
+		onModifySpe: undefined,
+		onStart(pokemon) {
+			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			if(item.tags?.includes("Ball") || item.isPokeball) {
+				pokemon.addVolatile('ballfetch');
 			}
+		},
+		onUpdate(pokemon) {
+			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			if (!(item.tags?.includes("Ball") || item.isPokeball || item.megaStone) && pokemon.volatiles['ballfetch']) {
+				pokemon.removeVolatile('ballfetch');
+			}
+			else if ((item.tags?.includes("Ball") || item.isPokeball || item.megaStone) && !pokemon.volatiles['ballfetch']) {
+				pokemon.addVolatile('ballfetch');
+			}
+		},
+		onEnd(pokemon) {
+			pokemon.removeVolatile('ballfetch');
+		},
+		condition: {
+			onModifySpePriority: 6,
+			onModifySpe(spe, pokemon) {
+				return this.chainModify(1.5);
+			},
 		},
 		shortDesc: "Speed is 1.5x if the Pokemon is holding a ball shaped item!",
 		desc: "Speed is 1.5x if the Pokemon is holding a ball shaped item!",
@@ -242,6 +264,26 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		rating: 1.5,
 		num: 13,
 	},
+	colorchange: {
+		inherit: true,
+		onFoeBeforeMove: undefined,
+		onFoePrepareHit(source, target, move) {
+				if (!target.hp) return;
+				if (move.category === 'Status') return;
+				if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
+				const type = move.type;
+				if (type && type !== '???') {
+					let types = this.dex.mod('ttc_current').types.all();
+					let _type = this.dex.mod('ttc_current').types.get(type);
+					// 2 = Resistance
+					let resistType = types.find(x => x.damageTaken[_type.name] === 2);
+					if (target.getTypes().join() !== resistType?.name) {
+						if (!target.setType(resistType!.name)) return;
+						this.add('-start', target, 'typechange', resistType?.name, '[from] ability: Color Change');
+					}
+				}
+		},
+	},
 	costar: {
 		inherit: true,
 		onStart(pokemon) {
@@ -271,22 +313,25 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	// TODO: Test Cotton Down
 	cottondown: {
 		inherit: true,
+		onFoeBeforeMove: undefined,
+		onFoeAfterMove: undefined,
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target)) {
-				this.add('-start', target, 'Cotton Down');
+			if (target !== source && this.checkMoveMakesContact(move, source, target)) {
 				source.addVolatile('cottondown');
+				return null;
 			}
 		},
-		onFoeBeforeMove(source, target, move) {
-			if (source.volatiles['cottondown']) {
-				move.priority = -6;
-			}
-		},
-		onFoeAfterMove(source, target, move) {
-			if (source.volatiles['cottondown']) {
-				this.add('-end', source, 'Cotton Down');
-				source.removeVolatile('cottondown');
-			}
+		condition: {
+			duration: 2,
+			onStart(source, target, move) {
+				this.add('-start', source, 'ability: Cotton Down');
+			},
+			onModifyPriority(priority, source, target, move) {
+				return -6;
+			},
+			onEnd(source) {
+				this.add('-end', source, 'ability: Cotton Down');
+			},
 		},
 		desc: "If an opposing pokemon hits the user with a contact move, their next move will have a priority of -6.",
 		shortDesc: "If hit by a contact move, opposing pokemon's next move will have a priority of -6.",
@@ -294,12 +339,27 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	curiousmedicine: {
 		inherit: true,
 		onStart(pokemon) {
+			let activated = false;
 			for (const target of pokemon.foes()) {
-				target.clearBoosts();
+				// Modified Intimidate
+				if (!activated) {
+					this.add('-ability', pokemon, 'Curious Medicine', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					target.clearBoosts();
+					this.add('-clearboost', target, '[from] ability: Curious Medicine', '[of] ' + pokemon);
+					this.debug('Curious medicine debuff');
+				}
 			}
 
-			for (const ally of pokemon.allies()) {
-				ally.heal(pokemon.baseMaxhp / 4);
+			// Hospitality
+			for (const ally of pokemon.adjacentAllies()) {
+				ally.clearBoosts();
+				this.add('-clearboost', ally, '[from] ability: Curious Medicine', '[of] ' + pokemon);
+				this.heal(ally.baseMaxhp / 4, ally, pokemon);
 			}
 		},
 		desc: "On switch-in, all stat changes will be set to 0, all ally Pokemon will gain 1/4 max HP.",
@@ -327,15 +387,11 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	cutecharm: {
 		inherit: true,
 		onDamagingHit(damage, target, source, move) {
-			if(this.checkMoveMakesContact(move, source, target)){
-				for(const opp of target.adjacentFoes()) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				for (const opp of target.adjacentFoes()) {
 					this.add('-ability', target, 'Cute Charm', 'boost');
-
-					if(opp.volatiles['substitute']) {
-						this.add('-immune', opp);
-					} else {
-						this.boost({atk: -1}, target, opp, null, true);
-					}
+					if (opp.volatiles['substitute']) this.add('-immune', opp);
+					else this.boost({atk: -1}, opp, target, null, true)
 				}
 			}
 		},
@@ -382,13 +438,15 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	defeatist: {
 		inherit: true,
+		onModifyAtkPriority: 5,
 		onModifyAtk(atk, pokemon) {
-			if(pokemon.hp <= pokemon.maxhp / 4) {
+			if (pokemon.hp <= (pokemon.maxhp / 4)) {
 				return this.chainModify(0.5);
 			}
 		},
+		onModifySpAPriority: 5,
 		onModifySpA(atk, pokemon) {
-			if(pokemon.hp <= pokemon.maxhp  / 4) {
+			if (pokemon.hp <= (pokemon.maxhp / 4)) {
 				return this.chainModify(0.5);
 			}
 		},
@@ -403,17 +461,17 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		condition: {
 			noCopy: true,
+			duration: 2,
 			onStart(target) {
 				this.add('-start', target, 'ability: Early Bird');
 			},
-			onModifyMove(move, pokemon, target) {
-				move.priority = 1;
+			onModifyPriority(priority, source, pokemon, move) {
 				this.debug('Early Bird boost');
-				pokemon.removeVolatile('earlybird');
+				return priority + 1;
 			},
 			onEnd(target) {
 				this.add('-end', target, 'ability: Early Bird');
-			}
+			},
 		},
 		desc: "Upon switch-in, the first move used will have +1 priority.",
 		shortDesc: "First move upon switch-in has +1 prioirty.",
@@ -524,23 +582,28 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	frisk: {
 		inherit: true,
 		onStart(pokemon) {
-			for(const target of pokemon.foes()) {
-				if(target.item) {
+			for (const target of pokemon.foes()) {
+				if (target.item) {
 					this.add('-item', target, target.getItem().name, '[from] ability: Frisk', '[of] ' + pokemon, '[identify]');
 				}
 				const item = target.getItem();
-				if(pokemon.hp && item.isBerry && pokemon.takeItem(target)) {
-					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] Frisk', '[of] ' + pokemon);
-					if(this.singleEvent('Eat', item, null, pokemon, null, null)) {
+				if (pokemon.hp && item.isBerry && target.takeItem(pokemon)) {
+					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] Frisk', '[of] ' + pokemon, '[identify]');
+					if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
 						this.runEvent('EatItem', pokemon, null, null, item);
-						if(item.id === 'leppaberry') target.staleness = 'external';
+						if (item.id === 'leppaberry') target.staleness = 'external';
 					}
-					if(item.onEat) pokemon.ateBerry = true;
+					if (item.onEat) pokemon.ateBerry = true;
 				}
 			}
 		},
-		desc: "On switch-in this Pokemon identifies the held item of opposing Pokemon, If the held item is a Berry, it will steal the item and immediately eat it.",
-		shortDesc: "Switch-in, identifies held items of opposing pokemon; Consumes any berries on those pokemon.",
+		desc: "Identifies the opposing Pokemon's item upon switch-in. If the item is a berry, then the user will eat the berry.",
+		shortDesc: "Identifies the opposing Pokemon's item upon switch-in; If item is berry, then user eats the berry.",
+	},
+	frigidinspiration: {
+		inherit: true,
+		desc: "Meloetta Only! When in Caroler Form, all Physical Moves are increased by 30%; When in Aurora Form, all Special Moves are increased by 30%.",
+		shortDesc: "Physical moves gain 1.3x more damage whe in Caroler Form; Special moves gain 1.3x more damage in Aurora Form.",
 	},
 	fullmetalbody: {
 		inherit: true,
@@ -556,10 +619,14 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	galewings: {
 		inherit: true,
 		onModifyPriority(priority, pokemon, target, move) {
-			if(move?.type === 'Flying' && pokemon.hp === (pokemon.maxhp / 2)) return priority + 1;
+			if (move.type === 'Flying' && pokemon.hp >= (pokemon.maxhp / 2)) return priority + 1;
 		},
 		shortDesc: "If Hp is above 50% = Flying move have +1 priority.",
 		desc: "As long as the Pokemon's HP is above 50%, all flying moves will be given +1 priority.",
+	},
+	grasspelt: {
+		inherit: true,
+		onModifySpDPriority: 5,
 	},
 	healer: {
 		inherit: true,
@@ -630,8 +697,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, source, target, move) {
-			if(move.accuracy !== 100) return this.modify(1.1, atk);
-			else return this.modify(1.5, atk);
+			if (move.accuracy === 100 || move.accuracy === true) return this.chainModify([4506, 4096]);
+			else return this.chainModify(1.5);
 		},
 		onSourceModifyAccuracyPriority: undefined,
 		onSourceModifyAccuracy: undefined,
@@ -683,19 +750,27 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	// TODO: Test ability
 	innerfocus: {
 		inherit: true,
+		onModifyMovePriority: 1,
 		onModifyMove(move) {
-			if(move.id == 'focuspunch') {
-				move.flags = {contact: 1, protect: 1, punch: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failinstruct: 1};
-				move.beforeMoveCallback = undefined;
-				move.priorityChargeCallback = undefined;
-				move.condition = undefined;
-			}
-			if(move.id === 'focusblast') {
+			if (move.id === 'focusblast') {
 				move.accuracy = true;
 			}
 		},
-		desc: "This Pokemon cannot be made to flinch. Focus Punch can not be broken, nor can Focus blast miss.",
-		shortDesc: "This Pokemon can not be made to flinch; Focus Punch can't be broken;Focus Blast can't miss.",
+		onBasePowerPriority: 21,
+		onBasePower(basePower, source, target, move) {
+			if (move.id === 'focuspunch') {
+				return this.chainModify([3523, 4096]);
+			}
+		},
+		onModifyPriorityPriority: 21,
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.id === "focuspunch") {
+				// + 3 should put it at Neutral since it being added to a -3 priority
+				return priority + 3;
+			}
+		},
+		desc: "Focus Blast can't miss; Focus Punch is changed to have a neutral priority and has a bp of 130. Still has Focus",
+		shortDesc: "Focus Blast can't miss; Focus Punch = Neutral Priority and 130 Base Power.",
 	},
 	ironfist: {
 		inherit: true,
@@ -807,20 +882,20 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	// TODO: Test ability
 	myceliummight: {
 		inherit: true,
-		// Status condition inflicition is implemented in sim/pokemon.ts:#setStatus
-		onModifyMove (move, source, target) {
-			if (move.category === 'Status') {
-				move.accuracy = true;
+		onModifyPriorityPriority: undefined,
+		onModifyPriority: undefined,
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (!pokemon.hp) return;
+			for (const target of pokemon.foes()) {
+				if (target.status) {
+					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
+				}
 			}
 		},
-		onModifyPriorityPriority: 21,
-		onModifyPriority(priority, source, target, move) {
-			if (move.category === 'Status') {
-				return 6;
-			}
-		},
-		desc: "Status moves always go last, but always hit regardless of typing or ability",
-		shortDesc: "Status moves always go last, but always hit regardless of typing or ability"
+		desc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition",
+		shortDesc: "Heals 1/16 of max hp when the opposing pokemon is inflicted with a status condition.",
 	},
 	noguard: {
 		inherit: true,
@@ -927,73 +1002,15 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onResidualSubOrder: undefined,
 		onResidual: undefined,
 		// Code is a modified court change
-		onStart(pokemon) {
-			this.effectState.pickupTriggered = false;
-		},
-		onBeforeTurn(pokemon) {
-			if (this.effectState.pickupTriggered === true) return;
-			const sideConditions = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge', 'gmaxcannonade', 'gmaxvinelash', 'gmaxwildfire',
-			];
-			
-			let success = false;
-			if(this.gameType === "freeforall") {
-				// random integer from 1-3 inclusive
-				const offset = this.random(3) + 1;
-				// the list of all sides in counterclockwise order
-				const sides = [this.sides[0], this.sides[2]!, this.sides[1], this.sides[3]!];
-				const temp: {[k: number]: typeof pokemon.side.sideConditions} = {0: {}, 1: {}, 2: {}, 3: {}};
-				for (const side of sides) {
-					for (const id in side.sideConditions) {
-						if(!sideConditions.includes(id)) continue;
-						temp[side.n][id] = side.sideConditions[id];
-						delete side.sideConditions[id];
-						const effectName = this.dex.conditions.get(id).name;
-						this.add('-sideend', side, effectName, '[silent]');
-						success = true;
-					}
-				}
-				for (let i = 0; i < 4; i++) {
-					const sourceSideConditions = temp[sides[i].n];
-					const targetSide = sides[(i + offset) % 4];
-					for (const id in sourceSideConditions) {
-						targetSide.sideConditions[id] = sourceSideConditions[id];
-						const effectName = this.dex.conditions.get(id).name;
-						let layers = sourceSideConditions[id].layers || 1;
-						for (; layers > 0; layers--) this.add('-sidestart', targetSide, effectName, '[silent]');
-					}
-				}
-			} else {
-				//const sourceSideConditions = pokemon.side.sideConditions;
-				//const targetSideConditions = pokemon.side.foe.sideConditions;
-				//const sourceTemp: typeof sourceSideConditions = {};
-				//const targetTemp: typeof targetSideConditions = {};
-				//for (const id in sourceSideConditions) {
-					//if (!sideConditions.includes(id)) continue;
-					//sourceTemp[id] = sourceSideConditions[id];
-					//delete sourceSideConditions[id];
-					//success = true;
-				//}
-				//for (const id in targetSideConditions) {
-					//if(!sideConditions.includes(id)) continue;
-					//targetTemp[id] = targetSideConditions[id];
-					//delete targetSideConditions[id];
-					//success = true;
-				//}
-				//for (const id in sourceTemp) {
-					//targetSideConditions[id] = sourceTemp[id];
-				//}
-
-				// We will skip over adding the hazards to our side since we are only transfering them over.
-				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
-				for (const condition of sideConditions) {
+		onBeforeTurn: undefined,
+		onStart(pokemon) { 
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			for (const condition of sideConditions) {
 				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
-				this.add('-swapsideconditions', pokemon.side, this.dex.conditions.get(condition).name, '[from] ability: Pickup', '[of] ' + pokemon);
+					this.sides[1]?.addSideCondition(condition)// side 3 is nobody and side 2 is as well
+					this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name, '[from] abilty: Pickup', '[of] ' + pokemon);
+				}
 			}
-		}}
-			if (!success) return false;
-			this.add('-activate', pokemon, 'ability: Pickup');
-			this.effectState.pickupTrigged = true;
 		},
 		desc: "Before turn, transfers any hazards on the user's side of the field to the opposing side.",
 		shortDesc: "Before turn, transfers any hazards on the user's side to the opposing side.",
@@ -1085,14 +1102,27 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onBasePowerPriority: undefined,
 		onBasePower: undefined,
 		onModifyDamage(dmg, source, target, move) {
+			if (source === target) return;
 			for (const type of target.types) {
 				if (source.hasType(type)) {
-					return this.chainModify(1.2);
+					// The chain modify was probably not using 1.2 correct, so we will have to be more precise with the math.
+					return this.chainModify([4916, 4096]); // 4916/4096 = ~1.2
 				}
 			}
 		},
 		desc: "If the user shares a type with the Opposing Pokemon, it will deal 1.2x more damage",
 		shortDesc: "If user shares a type with the Opposing Pokemon, it will deal 1.2x more damage",
+	},
+	rkssystem: {
+		inherit: true,
+		onPrepareHit(source, target, move) {
+			if (source.baseSpecies.name !== 'Silvally') return;
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect !== 'snatch') return;
+			const type = move.type;
+			if (type && type !== '???' && source.species.name === `Silvally-${type}`) {
+				source.formeChange(`Silvally-${type}`);
+			}
+		}
 	},
 	rockypayload: {
 		inherit: true,
@@ -1170,11 +1200,11 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onImmunity: undefined,
 		onModifyAccuracy: undefined,
 		onModifyAccuracyPriority: undefined,
-		onWeather(target, source, effect) {
+		onWeather(target, _, effect) {
 			if (target.hasItem('utilityumbrella')) return;
-			if(effect.id === 'sandstorm') {
-				target.side.foe.addSideCondition('stealthrock');
-			}
+			if (effect.id !== 'sandstorm') return;
+			target.side.foe.addSideCondition('stealthrock');
+			this.add('-activate', target, 'ability: Sand Veil');
 		},
 		desc: "If sandstorm is activated, Stealth Rock are placed on the opposing side.",
 		shortDesc: "If Sandstorm; Stealth Rock are placed on the opposing Side.",
@@ -1199,6 +1229,19 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		desc: "This Pokemon has a 33% chance to have its non-volatile status condition cured at the end of each turn, and increases Speed by 1 stage.",
 		shortDesc: "This Pokemon has a 33% chance to cure its status at the end of each turn, and increase Speed by 1 stage.",
+	},
+	shellarmor: {
+		inherit: true,
+		onModifyDefPriority: 6,
+		onModifyDef(def, target, source, move) {
+			return this.chainModify([4916, 4096]);
+		},
+		onModifySpDPriority: 6,
+		onModifySpD(def, target, source, move) {
+			return this.chainModify([4916, 4096]);
+		},
+		desc: "This ability allows the user to not be striked by critical hits! The user is gains a 1.2x Def & SpD buff!",
+		shortDesc: "Can not be striked by Critical Hits. User also gets 1.2x Def & SpD buff.",
 	},
 	// TODO: Need to test the different events to confirm which ones are needed.
 	shielddust: {
@@ -1245,9 +1288,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onModifyAccuracy: undefined,
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
-			if (['hail', 'snow'].includes(target.effectiveWeather())) {
-				target.side.addSideCondition('auroraveil');
-				this.add('-activate', target, 'ability: Snow Cloak');
+			if (effect.id === 'hail' || effect.id === 'snow') {
+				target.side.addSideCondition('auroraveil', target);
 			}
 		},
 		desc: "If Snow is activate, The user will automatically set an Aurora Veil for 5 turns.",
@@ -1367,7 +1409,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			this.field.setTerrain('swarmterrain');
 		},
 		
-		shortDesc: "Sets up a terrain the prevents the other side from using Boosting Moves.",
+		shortDesc: "Sets up a terrain that prevents either side from using Self Boosting Moves.",
 	},
 	sweetveil: {
 		inherit: true,
@@ -1518,6 +1560,15 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		desc: "On switch-in, this Pokemon lowers the Special Attack of opposing Pokemon by 1 stage.",
 		shortDesc: "On switch-in, this Pokemon lowers the Special Attack of opponents by 1 stage.",
+	},
+	vampire: {
+		inherit: true,
+		onModifyMove: undefined,
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags.bite) {
+				this.heal((damage / 8), source, target, "drain");
+			}
+		}
 	},
 	vitalspirit: {
 		inherit: true,
@@ -1734,23 +1785,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		rating: 5,
 	},
 	willpower: {
-		// Sheer Force
 		onModifyMove(move, pokemon) {
-			// Inner Focus
-			if (move.id === 'focuspunch') {
-				move.condition = {
-					duration: 1,
-					onStart(pokemon) {
-						this.add('-singleturn', pokemon, 'move: Focus Punch');
-					},
-					onTryAddVolatile(status, pokemon) {
-						if (status.id === 'flinch') return null;
-					}
-				}
-			}
-			if (move.id === 'focusblast') {
-				move.accuracy = true;
-			}
 			// Sheer Force
 			if (move.secondaries) {
 				delete move.secondaries;
@@ -1758,12 +1793,27 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				if (move.id === 'clangoroussoulblaze') delete move.selfBoost;
 				move.hasSheerForce = true;
 			}
+			// Inner Focus
+			if (move.id === 'focusblast') {
+				move.accuracy = true;
+			}
+		},
+		onModifyPriorityPriority: 21,
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.id === 'focuspunch') {
+				// + 3 should put it at neutral since it being added to a -3 priority.
+				return priority + 3;
+			}
 		},
 		onBasePowerPriority: 21,
 		onBasePower(basePower, pokemon, target, move) {
+			// Inner Focus
+			// 3523/4096 causes the bp of 150 to be roughly 130.
+			if (move.id === 'focuspunch') return this.chainModify([3523, 4096]);
+			// Sheer Force
 			if (move.hasSheerForce) return this.chainModify([5325, 4096]);
-		},
 
+		},
 		name: "Willpower",
 		shortDesc: "Sheer Force + Inner Focus",
 		rating: 4,

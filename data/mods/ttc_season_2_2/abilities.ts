@@ -59,6 +59,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
 					this.sides[1]?.addSideCondition(condition)// side 3 is nobody and side 2 is as well
 					this.add('-sideend', pokemon.side, this.dex.conditions.get(condition).name, '[from] abilty: Pickup', '[of] ' + pokemon);
+				}
 			}
-	}}
-}}
+		}
+	}
+}

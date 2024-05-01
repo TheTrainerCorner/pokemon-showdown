@@ -1,5 +1,133 @@
 export const Moves: {[k: string]: ModdedMoveData} = {
-	// Adjusting Field Support moves
+	synchronoise: {
+		inherit: true,
+		pp: 5,
+	},
+	leechlife: {
+		inherit: true,
+		flags: {bite: 1, contact: 1, mirror: 1, heal: 1},
+	},
+	guidingblessing: {
+		inherit: true,
+		condition: {
+			duration: 2,
+			onStart(pokemon, source) {
+				this.add('-singleturn', pokemon, 'Guiding Blessing', '[of]' + source);
+				this.effectState.hp = source.maxhp / Math.floor(3/4);
+			},
+			onResidualOrder: 4,
+			onEnd(target) {
+				if (target && !target.fainted) {
+					const damage = this.heal(this.effectState.hp, target, target);
+					if (damage) {
+						this.add('-heal', target, target.getHealth, '[from] move: Guiding Blessing', '[blesser]' + this.effectState.source.name);
+					}
+				}
+			}
+		},
+		desc: "When the move is used, its effects take place at the end of the next turn (like wish). It heals the recipient for 75% of their hp.",
+		shortDesc: "Next Turn; Heal 3/4 of max hp",
+	},
+	doubleironbash: {
+		inherit: true,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
+		desc: "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit. Has a 10% chance to make the target flinch.",
+		shortDesc: "Hits twice. 10% chance to make the target flinch."
+	},
+	octazooka: {
+		inherit: true,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
+		ignoreAbility: true,
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Cool",
+		self: undefined,
+		desc: "This move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes. This move and its effects ignore the Abilities of other Pokemon.",
+		shortDesc: "Physical if user's Atk > Sp. Atk. Ignores Abilities.",
+	},
+	smitepath: {
+		inherit: true,
+		onBasePower(basePower, pokemon, target) {
+			if (target.status === 'par') return this.chainModify(2);
+		},
+		secondary: {
+			chance: 20,
+			status: 'par',
+		},
+		shortDesc: "20% chance to paralyze. Deals 2x more damage if the target is paralyzed.",
+		desc: "20% chance to paraylze, doubles in damage if paralyzed.",
+	},
+	slam: {
+		inherit: true,
+		secondaries: [
+				{
+						chance: 10,
+						status: 'par',
+				},
+				{
+						chance: 10,
+						volatileStatus: 'flinch',
+				},
+		],
+		
+		desc: "Has a 10% chance to make the target paralyzed and flinch.",
+		shortDesc: "10% chance to paralyze. 10% chance to flinch."
+	},
+	signalbeam: {
+		inherit:true,
+		secondary: {
+				chance: 30,
+				volatileStatus:'confusion',
+		},
+		desc: "Has a 30% chance to make the target confused.",
+		shortDesc: "30% chance to confuse the target."
+	},
+	knowledgepath: {
+		inherit: true,
+		pp: 0.625,
+		condition: {
+			noCopy: true,
+			duration: 3,
+			durationCallback(target, source, effect) {
+				return 3;
+			},
+			onStart(target, source, effect) {
+				this.add('-start', target, 'move: Knowledge Path', '[silent]');
+				this.boost({
+					atk: 2,
+					def: 2,
+					spa: 2,
+					spd: 2,
+					spe: 2,
+				}, target);
+			},
+			onEnd(pokemon) {
+				pokemon.clearBoosts();
+				this.add('-clearboost', pokemon);
+				this.add('-end', pokemon, 'move: Knowledge Path', '[silent]');
+			}
+		}
+	},
+	multiattack: {
+		inherit: true,
+		onModifyType(move, pokemon, target) {
+			move.type = pokemon.teraType;
+		},
+		desc: "This move's type depends on the silvally's form.",
+		shortDesc: "Type varies based on silvally's form.",
+	},
 	auroraveil: {
 		inherit: true,
 		condition: {
@@ -27,8 +155,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					}
 				}
 			},
-			onSideStart(side) {
-				this.add('-sidestart', side, 'move: Aurora Veil');
+			onSideStart(side, source) {
+				if (source.hasAbility('fieldsupport')) {
+					this.add('-sidestart', 'side', 'move: Aurora Veil', '[fieldsupport]');
+				}
+				else this.add('-sidestart', side, 'move: Aurora Veil');
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 10,
@@ -74,7 +205,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 			onFieldStart(field, source, effect) {
-				if (effect?.effectType === 'Ability') {
+				if (source.hasAbility('fieldsupport')) {
+					this.add('-fieldstart', 'move: Electric', '[fieldsupport]');
+				} else if (effect?.effectType === 'Ability') {
 					this.add('-fieldstart', 'move: Electric Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
 				} else {
 					this.add('-fieldstart', 'move: Electric Terrain');
@@ -114,7 +247,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 			onFieldStart(field, source, effect) {
-				if (effect?.effectType === 'Ability') {
+				if (source.hasAbility('fieldsupport')) {
+					this.add('-fieldstart', 'move: Grassy Terrain', '[fieldsupport]');
+				} else if (effect?.effectType === 'Ability') {
 					this.add('-fieldstart', 'move: Grassy Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
 				} else {
 					this.add('-fieldstart', 'move: Grassy Terrain');
@@ -295,8 +430,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					}
 				}
 			},
-			onSideStart(side) {
-				this.add('-sidestart', side, 'move: Light Screen');
+			onSideStart(side, source) {
+				if (source.hasAbility('fieldsupport')) {
+					this.add('-sidestart', side, 'move: Light Screen', '[fieldsupport]');
+				}
+				else this.add('-sidestart', side, 'move: Light Screen');
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 2,
@@ -323,7 +461,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onFieldStart(target, source) {
 				if (source?.hasAbility('persistent')) {
 					this.add('-fieldstart', 'move: Magic Room', '[of] ' + source, '[persistent]');
-				} else {
+				} else if (source.hasAbility('fieldsupport')) {
+					this.add('-fieldstart', 'move: Magic Room', '[of] ' + source, '[fieldsupport]');
+				}else {
 					this.add('-fieldstart', 'move: Magic Room', '[of] ' + source);
 				}
 				for (const mon of this.getAllActive()) {
@@ -348,6 +488,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			durationCallback(target, source, effect) {
 				if (source.hasAbility('fieldsupport')) return 8;
 				return 5;
+			},
+			onStart(target) {
+				this.add('-start', target, 'Magnet Rise');
+			},
+			onImmunity(type) {
+				if (type === 'Ground') return false;
+			},
+			onResidualOrder: 18,
+			onEnd(target) {
+				this.add('-end', target, 'Magnet Rise');
 			},
 		},
 	},
@@ -387,7 +537,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 			onFieldStart(field, source, effect) {
-				if (effect?.effectType === 'Ability') {
+				if (source.hasAbility('fieldsupport')) {
+					this.add('-fieldstart', 'move: Misty Terrain', '[fieldsupport]');
+				} else if (effect?.effectType === 'Ability') {
 					this.add('-fieldstart', 'move: Misty Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
 				} else {
 					this.add('-fieldstart', 'move: Misty Terrain');
@@ -438,7 +590,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 			onFieldStart(field, source, effect) {
-				if (effect?.effectType === 'Ability') {
+				if (source.hasAbility('fieldsupport')) {
+					this.add('-fieldstart', 'move: Psychic Terrain', '[fieldsupport]');
+				} else if (effect?.effectType === 'Ability') {
 					this.add('-fieldstart', 'move: Psychic Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
 				} else {
 					this.add('-fieldstart', 'move: Psychic Terrain');
@@ -474,8 +628,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					}
 				}
 			},
-			onSideStart(side) {
-				this.add('-sidestart', side, 'Reflect');
+			onSideStart(side, source) {
+				if (source.hasAbility('fieldsupport')) {
+					this.add('-sidestart', side, 'Reflect', '[fieldsupport]');
+				} else this.add('-sidestart', side, 'Reflect');
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 1,
@@ -522,6 +678,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onSideStart(side, source) {
 				if (source?.hasAbility('persistent')) {
 					this.add('-sidestart', side, 'Safeguard', '[persistent]');
+				} else if (source.hasAbility('fieldsupport')) {
+					this.add('-sidestart', side, 'Safeguard', '[fieldsupport');
 				} else {
 					this.add('-sidestart', side, 'Safeguard');
 				}
@@ -533,7 +691,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
-
 	tailwind: {
 		inherit: true,
 		condition: {
@@ -552,6 +709,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onSideStart(side, source) {
 				if (source?.hasAbility('persistent')) {
 					this.add('-sidestart', side, 'move: Tailwind', '[persistent]');
+				} else if (source.hasAbility('fieldsupport')) {
+					this.add('-sidestart', side, 'move: Tailwind', '[fieldsupport]');
 				} else {
 					this.add('-sidestart', side, 'move: Tailwind');
 				}
@@ -574,6 +733,32 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				if (source.hasAbility('fieldsupport')) return 6;
 				return 3;
 			},
+			onStart(target) {
+				if (['Diglett', 'Dugtrio', 'Palossand', 'Sandygast'].includes(target.baseSpecies.baseSpecies) ||
+						target.baseSpecies.name === 'Gengar-Mega') {
+					this.add('-immune', target);
+					return null;
+				}
+				if (target.volatiles['smackdown'] || target.volatiles['ingrain']) return false;
+				this.add('-start', target, 'Telekinesis');
+			},
+			onAccuracyPriority: -1,
+			onAccuracy(accuracy, target, source, move) {
+				if (move && !move.ohko) return true;
+			},
+			onImmunity(type) {
+				if (type === 'Ground') return false;
+			},
+			onUpdate(pokemon) {
+				if (pokemon.baseSpecies.name === 'Gengar-Mega') {
+					delete pokemon.volatiles['telekinesis'];
+					this.add('-end', pokemon, 'Telekinesis', '[silent]');
+				}
+			},
+			onResidualOrder: 19,
+			onEnd(target) {
+				this.add('-end', target, 'Telekinesis');
+			},
 		},
 	},
 	trickroom: {
@@ -594,6 +779,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onFieldStart(target, source) {
 				if (source?.hasAbility('persistent')) {
 					this.add('-fieldstart', 'move: Trick Room', '[of] ' + source, '[persistent]');
+				} else if (source.hasAbility('fieldsupport')) {
+					this.add('-fieldstart', 'move: Trick Room', '[of] ' + source, '[fieldsupport]');
 				} else {
 					this.add('-fieldstart', 'move: Trick Room', '[of] ' + source);
 				}
@@ -635,6 +822,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onFieldStart(field, source) {
 				if (source?.hasAbility('persistent')) {
 					this.add('-fieldstart', 'move: Wonder Room', '[of] ' + source, '[persistent]');
+				} else if (source.hasAbility('fieldsupport')) {
+					this.add('-fieldstart', 'move: Wonder Room', '[of] ' + source, '[fieldsupport]');
 				} else {
 					this.add('-fieldstart', 'move: Wonder Room', '[of] ' + source);
 				}
@@ -649,6 +838,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				this.add('-fieldend', 'move: Wonder Room');
 			},
 		},
+	},
+
+	shedtail: {
+		inherit: true,
+		pp: 0.625,
 	},
 	// Physical Moves
 	armthrust: {
@@ -902,20 +1096,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 20% chance to increase Attack.",
 		shortDesc: "20% chance to increase Atk by 1 stage.",
 	},
-	slam: {
-		inherit: true,
-		accuracy: 100,
-		secondaries: [
-			{
-				chance: 10,
-				volatileStatus: 'flinch',
-			},
-			{
-				chance: 10,
-				status: 'par',
-			},
-		],
-	},
 	submission: {
 		inherit: true,
 		basePower: 130,
@@ -980,6 +1160,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				volatileStatus: 'flinch',
 			},
 		],
+		desc: "Has a 20% chance to confuse the target and a 10% to make it flinch",
+		shortDesc: "20% chance to confuse the target. 10% chance to flinch.",
 	},
 	highhorsepower: {
 		inherit: true,
@@ -1216,14 +1398,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 20% chance to lower the target's Speed by 1 stage.",
 		shortDesc: "20% chance to lower Spe by 1 stage.",
 	},
-	octazooka: {
-		inherit: true,
-		basePower: 150,
-		accuracy: 100,
-		self: {
-			volatileStatus: 'mustrecharge',
-		},
-	},
 	paraboliccharge: {
 		inherit: true,
 		basePower: 75,
@@ -1231,13 +1405,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	airslash: {
 		inherit: true,
 		accuracy: 100,
-	},
-	signalbeam: {
-		inherit: true,
-		secondary: {
-			chance: 30,
-			volatileStatus: 'confusion',
-		},
 	},
 	aurasphere: {
 		inherit: true,
@@ -1278,8 +1445,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				spe: -1,
 			},
 		},
-		desc: "Has a 30% chance to lower the target's Speed by 1 stage.",
-		shortDesc: "30% chance to lower the target's Spe by 1 stage.",
+		desc: "Has a 30% chance of lowering each target's speed by one stage. Targets all adjacent opponents.",
+		shortDesc: "30% chance to lower the foe(s) speed by 1.",
 	},
 	heatwave: {
 		inherit: true,
@@ -1314,12 +1481,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	focusblast: {
 		inherit: true,
 		accuracy: 80,
-		secondary: {
-			chance: 10,
-			boosts: {
-				spd: -1,
-			}
-		},
+		secondary: null,
+		shortDesc: "No additional effect.",
 	},
 	belch: {
 		inherit: true,
@@ -1423,18 +1586,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onModifyMove(move, pokemon, target) {
 			if (pokemon.types.includes('Fire')) move.accuracy = true;
 		},
+		desc: "Inflicts a burn on the target if used by a fire type. 85% accuracy if another type",
+		shortDesc: "Burns the target. Can't miss if fire type.",
 	},
 	thunderwave: {
 		inherit: true,
 		onModifyMove(move, pokemon, target) {
 			if (pokemon.types.includes('Electric')) move.accuracy = true;
 		},
+		desc:"Paralyzes the target if used by an electric type. 85% accuracy if another type",
+		shortDesc:"Paralyzes the target. Can't miss if electric type"
 	},
 	leechseed: {
 		inherit: true,
 		onModifyMove(move, pokemon, target) {
 			if (pokemon.types.includes('Grass')) move.accuracy = true;
 		},
+		desc:"Plants a seed on the target if used by a grass type. 85% accuracy if another type",
+		shortDesc:"1/8 of target's HP is restored to user every turn. Can't miss if grass type"
 	},
 	poisongas: {
 		inherit: true,
@@ -1475,7 +1644,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		num: -2002,
 		accuracy: 100,
 		basePower: 125,
-		pp: 16,
+		pp: 15,
 		category: "Physical",
 		type: "Ice",
 		name: "Glacier",
@@ -1507,7 +1676,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		num: -2003,
 		accuracy: 100,
 		basePower: 120,
-		pp: 16,
+		pp: 15,
 		category: "Special",
 		type: "Ice",
 		name: "Cold Snap",
@@ -1548,29 +1717,31 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if(source.hasItem('terrainextender')) return 8;
+				if (source.hasItem('terrainextender')) return 8;
 				return 5;
 			},
-
 			onFieldStart(field, source, effect) {
-				if(effect.effectType === 'Ability') {
+				if (effect.effectType === 'Ability') {
 					this.add('-fieldstart', 'move: Swarm Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
 				} else {
 					this.add('-fieldstart', 'move: Swarm Terrain');
 				}
 			},
-			onFoeBeforeMovePriority: 5,
-			onFoeBeforeMove(attacker, defender, move) {
+			onBeforeMovePriority: 5,
+			onBeforeMove(attacker, defender, move) {
 				if (!move.isZ && !move.isMax && move.selfBoost) {
-					this.add('cant', attacker, 'ability: Swarm', move);
+					this.add('cant', attacker, 'move: Swarm Terrain', move);
 					return false;
 				}
 			},
-			onFoeDisableMove(pokemon) {
+			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
 					const move = this.dex.moves.get(moveSlot.id);
 					if (move.selfBoost) {
 						pokemon.disableMove(moveSlot.id);
+					}
+					if(move.boosts){
+						pokemon.disableMove(moveSlot.id)
 					}
 				}
 			},
