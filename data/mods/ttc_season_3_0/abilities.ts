@@ -27,32 +27,56 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		// Hail The Coin Actual Implementation
 		onSourceAfterMove(source, target, move) {
-			if (move.id === "payday") source.addVolatile('hailthecoin');
+			if (move.id !== "payday") return; 
+			
+			this.effectState.paydayTriggered = true;
+			let rand = Math.floor(Math.random() * 9);
+			this.effectState.paydayAmount = rand + 1 || 1;
+			this.add('-start', source, `hailthecoinx${this.effectState.paydayAmount}`, '[silent]');
 		},
-		condition: {
-			noCopy: true, // doesn't get copied by Baton Pass
-			onStart(target, source) {
-				let rand = Math.floor(Math.random() * 10);
-				this.effectState.amount = rand || 1;
-				this.add('-start', source, `hailthecoinx${this.effectState.amount}`, '[silent]');
-			},
-			onResidualOrder: 28,
-			onResidualSubOrder: 2,
-			onResidual(source, target, move) {
-				if (move.id !== "payday") return;
-				let deductAmount = this.effectState.amount;
-				for (let i = 0; i < this.effectState.amount; i++) {
-					this.damage(80 * 0.05, target, source);
-					this.add('-end', source, `hailthecoinx${deductAmount}`);
-					deductAmount--;
-					this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
-				}
-				source.removeVolatile('hailthecoin');
-			},
-			onEnd(source) {
-				this.add('-end', source, 'hailthecoinx0');
-			},
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(target, source, effect) {
+			if (!this.effectState.paydayTriggered) return;
+
+			let deductAmount = this.effectState.paydayAmount;
+			for (let i = 0; i < this.effectState.paydayAmount; i++) {
+				this.damage(80 * 0.05, target, source);
+				this.add('-end', source, `hailthecoinx${deductAmount}`);
+				deductAmount--;
+				this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
+			}
+
+			this.add('-end', source, `hailthecoinx0`);
+			this.effectState.paydayTriggered = false;
 		},
+		// onSourceAfterMove(source, target, move) {
+		// 	if (move.id === "payday") source.addVolatile('hailthecoin');
+		// },
+		// condition: {
+		// 	noCopy: true, // doesn't get copied by Baton Pass
+		// 	onStart(target, source) {
+		// 		let rand = Math.floor(Math.random() * 10);
+		// 		this.effectState.amount = rand || 1;
+		// 		this.add('-start', source, `hailthecoinx${this.effectState.amount}`, '[silent]');
+		// 	},
+		// 	onResidualOrder: 28,
+		// 	onResidualSubOrder: 2,
+		// 	onResidual(source, target, move) {
+		// 		if (move.id !== "payday") return;
+		// 		let deductAmount = this.effectState.amount;
+		// 		for (let i = 0; i < this.effectState.amount; i++) {
+		// 			this.damage(80 * 0.05, target, source);
+		// 			this.add('-end', source, `hailthecoinx${deductAmount}`);
+		// 			deductAmount--;
+		// 			this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
+		// 		}
+		// 		source.removeVolatile('hailthecoin');
+		// 	},
+		// 	onEnd(source) {
+		// 		this.add('-end', source, 'hailthecoinx0');
+		// 	},
+		// },
 		num: -3001,
 		desc: "When Meowth uses Payday, it shoots up between 1 to 10 coins in the air. Each coin impacts the opponent with 5% (4 damage) of Payday’s damage. Also has Mind's Eye implemented in this ability.",
 		shortDesc: "Move Not Payday; Gains 1-5 Coins (Max of 20); When using Payday, each coin does 5% of Payday!",
