@@ -34,10 +34,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
-			onStart(target) {
+			onStart(target, source) {
 				let rand = Math.floor(Math.random() * 10);
 				this.effectState.amount = rand || 1;
-				this.add('-start', target, `hailthecoinx${this.effectState.amount}`, '[silent]');
+				this.add('-start', source, `hailthecoinx${this.effectState.amount}`, '[silent]');
 			},
 			onSourceAfterMove(source, target, move) {
 				if (move.id !== "payday") return;
@@ -56,7 +56,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	gamblersluck: {
 		name: "Gambler's Luck",
+		onStart(pokemon) {
+			const types = this.dex.types.names();
+			const randomIndex = Math.floor(Math.random() * types.length);
+			let type = types[randomIndex];
+			if (type === '???') type = 'Normal';
+			this.effectState.gamblersluck = type;
+			this.add('-start', pokemon, `gamblersluck${type.toLowerCase()}`, '[silent]');
+		},
 		onBeforeTurn(pokemon) {
+			if (this.effectState.gamblersluck) {
+				this.add('-end', pokemon, `gamblersluck${this.effectState.gamblersluck.toLowerCase()}`);
+			}
 			const types = this.dex.types.names();
 			const randomIndex = Math.floor(Math.random() * types.length);
 			let type = types[randomIndex];
