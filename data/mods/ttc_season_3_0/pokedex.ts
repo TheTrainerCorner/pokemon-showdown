@@ -15,7 +15,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	eeveemega: {
 		num: -3002,
 		name: "Eevee-Mega",
-		baseSpecies: "Eevee-Starter",
+		baseSpecies: "Eevee",
 		forme: "Mega",
 		types: ["Normal"],
 		genderRatio: {M: 0.875, F: 0.125},
