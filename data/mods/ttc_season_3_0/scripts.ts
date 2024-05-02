@@ -33,10 +33,10 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#endregion
 		//testdummy
-		new ModifyPokemon('Eternatus', this)
-			.abilities
-				.setAbility0('Absolute Zero')
-				.setAbility1('Granite Storm')
-				.setHiddenAbility('Iron Technician');
+		//new ModifyPokemon('Eternatus', this)
+		//	.abilities
+		//		.setAbility0('Absolute Zero')
+		//		.setAbility1('Granite Storm')
+		//		.setHiddenAbility('Iron Technician');
 	},
 };
