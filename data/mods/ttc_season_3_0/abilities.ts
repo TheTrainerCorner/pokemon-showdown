@@ -104,7 +104,52 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon, at the beginning of each turn, will randomize a type to give a 1.2x damage buff.",
 		shortDesc: 'At the start of each turn, this pokemon will gain a 1.2x damage buff to a specific type.',
 	},
-
+	absolutezero: {
+		name: "Absolute Zero",
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				this.boost({spa: length}, source);
+				this.field.setWeather('snow');
+				target.side.addSideCondition('auroraveil', target);
+			}
+		},
+		desc: "This Pokemon's Special Attack is raised by 1 stage, sets Aurora Veil and Snow, if it attacks and knocks out another Pokemon.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 1 stage and sets Aurora viel and Snow, if it attacks and KOes another Pokemon.",
+	},
+	granitestorm: {
+		name: "Granite Storm",
+		onDamagingHit(damage, target, source, move) {
+			if(move.category === "Physical") {
+				this.field.setWeather('sandstorm');
+				this.boost({ atk: -1}, source);
+				target.side.foe.addSideCondition('stealthrock');
+				this.add('-activate', target, 'ability: Granite Storm');
+			}
+		},
+		desc: "If the user gets hit by a Physical move, a sandstorm is created, the attacker's Attack will drop by 1 stage, and stealth rocks will be added to it's side",
+		shortDesc: "If hit by a Physical Move; Creates a Sandstorm; Lowers the Attacker's Attack by 1 stage;sets rocks.",
+	},
+	irontechnician: {
+		name: "Iron Technician",
+		onBasePowerPriority: 30,
+		onBasePower(basePower, attacker, defender, move) {
+			const basePowerAfterMultiplier = this.modify(basePower, this.event.modifier);
+			this.debug('Base Power: ' + basePowerAfterMultiplier);
+			if (basePowerAfterMultiplier <= 60) {
+				this.debug('Iron Technician boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onStart(pokemon) {
+			for (const foe of pokemon.side.foes()) {
+				foe.side.addSideCondition('gmaxsteelsurge');
+				this.add('-activate', pokemon, 'ability: Iron Technician');
+			}
+		},
+		desc: "On switch-in, this Pokemon adds the steelsurge hazard on the opponent's side. This Pokemon also has a 1.5x damage boost to moves with less than 60 base power.",
+		shortDesc: "Steelsurge spikes are placed on the opposing Side; This Pokemon's moves of 60 power or less have 1.5x power, including Struggle.",
+	},
+	
 	//#region Firework Event
 
 	lavasurfer: { // PT333
