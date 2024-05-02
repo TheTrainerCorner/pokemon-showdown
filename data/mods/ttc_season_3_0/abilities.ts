@@ -110,7 +110,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({spa: length}, source);
 				this.field.setWeather('snow');
-				target.side.addSideCondition('auroraveil', target);
+				target.side.addSideCondition('auroraveil', source);
 			}
 		},
 		desc: "This Pokemon's Special Attack is raised by 1 stage, sets Aurora Veil and Snow, if it attacks and knocks out another Pokemon.",
