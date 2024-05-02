@@ -114,7 +114,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		desc: "This Pokemon's Special Attack is raised by 1 stage, sets Aurora Veil and Snow, if it attacks and knocks out another Pokemon.",
-		shortDesc: "This Pokemon's Sp. Atk is raised by 1 stage and sets Aurora viel and Snow, if it attacks and KOes another Pokemon.",
+		shortDesc: "This Pokemon's Sp. Atk is raised by 1 stage and sets Aurora veil and Snow, if it attacks and KOes another Pokemon.",
 	},
 	granitestorm: {
 		name: "Granite Storm",
