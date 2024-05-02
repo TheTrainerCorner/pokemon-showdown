@@ -32,5 +32,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Force Palm");
 
 		//#endregion
+		//testdummy
+		new ModifyPokemon('Eternatus', this)
+			.abilities
+				.setAbility0('Absolute Zero')
+				.setAbility1('Granite Storm')
+				.setHiddenAbility('Iron Technician');
 	},
 };
