@@ -237,7 +237,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Custom Test",
 
-		mod: 'gen9',
+		mod: "ttc_current",
 		searchShow: false,
 		debug: true,
 		battle: {trunc: Math.trunc},
