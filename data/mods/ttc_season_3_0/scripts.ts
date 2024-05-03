@@ -390,6 +390,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Skeledirge", this)
 			.learnset
 				.add("Infernal Parade")
+		new ModifyPokemon("SlitherWing", this)
+			.baseStats
+				.setDEF(109)
 		new ModifyPokemon("WoChien", this)
 			.learnset
 				.add("Spore")
