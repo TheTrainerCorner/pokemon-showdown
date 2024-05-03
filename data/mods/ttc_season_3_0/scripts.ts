@@ -403,18 +403,18 @@ export const Scripts: ModdedBattleScriptsData = {
 				'p3': '',
 				'p4': '',
 			};
-			this.battle.effectState.lastSwitch[pokemon.side.id] = pokemon;
 			this.battle.runEvent('Swap', pokemon);
 
 			if (this.battle.gen >= 5) {
 				this.battle.runEvent('SwitchIn', pokemon);
-
+				this.battle.effectState.lastSwitch[pokemon.side.id] = pokemon;
 			}
 	
 			this.battle.runEvent('EntryHazard', pokemon);
 	
 			if (this.battle.gen <= 4) {
 				this.battle.runEvent('SwitchIn', pokemon);
+				this.battle.effectState.lastSwitch[pokemon.side.id] = pokemon;
 			}
 	
 			if (this.battle.gen <= 2) {
@@ -422,6 +422,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				for (const poke of this.battle.getAllActive()) poke.lastMove = null;
 				if (!pokemon.side.faintedThisTurn && pokemon.draggedIn !== this.battle.turn) {
 					this.battle.runEvent('AfterSwitchInSelf', pokemon);
+					this.battle.effectState.lastSwitch[pokemon.side.id] = pokemon;
 				}
 			}
 			if (!pokemon.hp) return false;
