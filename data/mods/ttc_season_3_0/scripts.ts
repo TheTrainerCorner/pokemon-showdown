@@ -121,6 +121,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility0("Absolute Zero")
 				.setHiddenAbility("Filter")
+		new ModifyPokemon("Regirock", this)
+			.abilities
+				.setAbility0("Granite Storm")
+				.setHiddenAbility("Filter")
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
