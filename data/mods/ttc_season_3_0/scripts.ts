@@ -150,6 +150,11 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Ivy Cudgel")
 		//#endregion
+
+		//#region Gen 5
+		new ModifyPokemon("Genesect", this)
+			.learnset
+				.remove('Shift Gear');
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
