@@ -250,5 +250,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Kilowattrel", this)
 			.learnset
 				.add("Defog")
+		new ModifyPokemon("Klawf", this)
+			.learnset
+				.add("Shore Up")
 	},	
 };
