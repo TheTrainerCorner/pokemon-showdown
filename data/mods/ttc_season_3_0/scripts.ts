@@ -210,18 +210,18 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(125)
 				.setSPA(60)
-		new ModifyPokemon("Flutter Mane", this)
+		new ModifyPokemon("FlutterMane", this)
 			.learnset
 				.add("Earth Power")
-		new ModifyPokemon("Goughing fire", this)
+		new ModifyPokemon("Goughingfire", this)
 			.abilities
 				.setHiddenAbility("Turboblaze")
-		new ModifyPokemon("Iron Boulder", this)
+		new ModifyPokemon("IronBoulder", this)
 			.abilities
 				.setHiddenAbility("Reckless")
 			.pokemon.learnset
 				.add("Head Smash")
-		new ModifyPokemon("Iron Bundle", this)
+		new ModifyPokemon("IronBundle", this)
 			.baseStats
 				.setHP(66)
 				.setSPA(124)
@@ -234,14 +234,14 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Emulate')
 			.pokemon.learnset
 				.add("Twin Beam")
-		new ModifyPokemon("Iron Jugulis", this)
+		new ModifyPokemon("IronJugulis", this)
 			.learnset
 				.add("Fickle Beam")
-		new ModifyPokemon("Iron Thorns", this)
+		new ModifyPokemon("IronThorns", this)
 			.baseStats
 				.setSPA(50)
 				.setSPD(104)
-		new ModifyPokemon("Iron Valiant", this)
+		new ModifyPokemon("IronValiant", this)
 			.baseStats
 				.setHP(70)
 				.setATK(120)
@@ -266,7 +266,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Skeledirge", this)
 			.learnset
 				.add("Infernal Parade")
-		new ModifyPokemon("Wo-Chien", this)
+		new ModifyPokemon("WoChien", this)
 			.learnset
 				.add("Spore")
 		//#endregion
