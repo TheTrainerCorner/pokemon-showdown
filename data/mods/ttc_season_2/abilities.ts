@@ -19,9 +19,9 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 						move.ohko
 					) {
 						this.add('-ability', pokemon, 'Anticipation');
-						if (totalatk && totalspa >= totalspa) {
+						if (totalatk >= totalspa) {
 							this.boost({def: 1});
-						} else if (totalspa) {
+						} else if (totalspa >= totalatk) {
 							this.boost({spd:1});
 						}
 						return;
