@@ -234,5 +234,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Emulate')
 			.pokemon.learnset
 				.add("Twin Beam")
-	},
+		new ModifyPokemon("Iron Jugulis", this)
+			.learnset
+				.add("Fickle Beam")
+	},	
 };
