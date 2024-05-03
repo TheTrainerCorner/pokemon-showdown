@@ -178,6 +178,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Muk-Alola", this)
 			.learnset
 				.add("Dire Claw")
+		new ModifyPokemon("Kommoo", this)
+			.baseStats
+				.setHP(70)
+				.setATK(105)
+				.setDEF(115)
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
