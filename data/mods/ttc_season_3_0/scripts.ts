@@ -120,10 +120,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Regice", this)
 			.abilities
 				.setAbility0("Absolute Zero")
+				.setAbility1("undefined")
 				.setHiddenAbility("Filter")
 		new ModifyPokemon("Regirock", this)
 			.abilities
 				.setAbility0("Granite Storm")
+				.setAbility1("undefined")
 				.setHiddenAbility("Filter")
 		new ModifyPokemon("Registeel", this)
 			.baseStats
