@@ -155,6 +155,15 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Genesect", this)
 			.learnset
 				.remove('Shift Gear');
+		new ModifyPokemon("Hydreigon", this)
+			.baseStats
+				.setHP(82)
+				.setATK(110)
+				.setDEF(85)
+				.setSPA(120)
+				.setSPD(85)
+			.pokemon.learnset
+				.add("Fickle Beam")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
