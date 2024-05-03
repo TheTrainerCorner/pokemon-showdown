@@ -287,6 +287,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Lilligant-Hisui", this)
 			.learnset
 				.add("Thunderous Kick");
+		new ModifyPokemon("Mr Mime-Galar", this)
+			.baseStats
+				.setSPE(120);
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
