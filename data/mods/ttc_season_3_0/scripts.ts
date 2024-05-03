@@ -183,6 +183,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(70)
 				.setATK(105)
 				.setDEF(115)
+		new ModifyPokemon("Marshadow", this)
+			.learnset
+				.remove("Poltergeist")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
