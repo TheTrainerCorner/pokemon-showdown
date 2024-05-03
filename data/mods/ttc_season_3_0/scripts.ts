@@ -131,7 +131,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(50)
 			.pokemon.abilities
 				.setAbility0("Iron Technician")
-				.setHiddenAbility("Filter")				
+				.setHiddenAbility("Filter")	
+		new ModifyPokemon("Salamence", this)
+			.baseStats
+				.setATK(100)
+				.setDEF(75)
+				.setSPD(75)			
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
