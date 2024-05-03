@@ -107,7 +107,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Exploud", this)
 			.learnset
 				.add("Alluring Voice");
-		
+		new ModifyPokemon("Glalie", this)
+			.learnset
+				.add("Extreme Speed")
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
