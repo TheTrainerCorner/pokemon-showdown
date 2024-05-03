@@ -79,11 +79,14 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Force Palm");
 
 		//#endregion
-		//testdummy
+		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
 		//		.setAbility0('Absolute Zero')
 		//		.setAbility1('Granite Storm')
 		//		.setHiddenAbility('Iron Technician');
+		new ModifyPokemon('IronCrown', this)
+			.abilities
+				.setHiddenAbility('Emulate');
 	},
 };
