@@ -15,6 +15,53 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
 		//#region Gen 1
 
+		new ModifyPokemon("Dragonite", this)
+			.baseStats
+				.setHP(101)
+				.setSPA(80)
+				.setSPD(95)
+				.setSPE(75);
+
+		new ModifyPokemon("Eevee-Starter", this)
+			.learnset
+				// Coverage Moves For this FRICKIN POKEMON WTF AM I LOOKING AT
+				// Bug
+				.add("U Turn")
+				// Dark
+				.add("Brutal Swing").add("Crunch").add("Snarl").add("Foul Play")
+				.add("Knock Off").add("Lash Out").add("Pursuit").add("Thief")
+				// Dragon
+				.add("Dragon Claw").add("Dragon Tail")
+				// Electric
+				.add("Nuzzle").add("Thunder Fang").add("Wild Charge").add("Zing Zap")
+				// Fairy
+				.add("Play Rough").add("Draining Kiss")
+				// Fighting
+				.add("Aura Sphere").add("Body Press").add("Flying Press").add("Focus Blast")
+				// Fire
+				.add("Fire Fang").add("Blaze Kick").add("Fire Lash").add("Flame Charge").add("Temper Flare")
+				// Flying
+				.add("Bounce").add("Acrobatics")
+				// Ghost
+				.add("Shadow Claw").add("Shadow Punch").add("Lick")
+				// Grass
+				.add("Cut").add("Power Whip").add("Bullet Seed").add("Grass Knot").add("Grassy Glide").add("Trop Kick")
+				// Ground
+				.add("Mud Bomb").add("Bulldoze").add("Stomping Tantrum").add("High Horsepower")
+				// Ice
+				.add("Ice Fang").add("Ice Ball").add("Ice Beam").add("Avalanche").add("Icy Wind")
+				// Normal
+				.add("Tail Slap").add("Crush Claw").add("Encore").add("Fake Out").add("Play Nice")
+				.add("Slash").add("Super Fang").add("Thrash").add("Dire Claw")
+				// Psychic
+				.add("Zen Headbutt").add("Extrasensory").add("Psychic Fangs").add("Mirror Coat").add("Magic Coat")
+				// Rock
+				.add("Rollout").add("Rock Slide").add("Rock Tomb").add("Smack Down").add("Tar Shot").add("Ancient Power")
+				// Steel
+				.add("Hard Press").add("Iron Head").add("Metal Claw").add("Smart Strike").add("Spin Out")
+				// Water
+				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water");
+
 		new ModifyPokemon("Meowth", this)
 			.learnset
 				.add("Synchronoise")
