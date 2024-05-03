@@ -210,6 +210,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(125)
 				.setSPA(60)
+		new ModifyPokemon("Flutter Mane", this)
+			.learnset
+				.add("Earth Power")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
