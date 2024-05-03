@@ -141,6 +141,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(100)
 				.setDEF(125)
+		new ModifyPokemon("Seviper", this)
+			.learnset
+				.add("Shed Tail")
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
