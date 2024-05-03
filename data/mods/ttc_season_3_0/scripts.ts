@@ -103,7 +103,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Chimecho", this)
 			.learnset
 				.add("Boomburst")
-				.add("Buzzy Buzz")
+				.add("Buzzy Buzz");
+		new ModifyPokemon("Exploud", this)
+			.learnset
+				.add("Alluring Voice");
+		
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
