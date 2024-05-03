@@ -97,6 +97,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(80)
 				.setSPA(100)
 				.setSPD(80);
+		new ModifyPokemon("Lanturn", this)
+			.learnset
+				.add("Thunderclap");
 		//#endregion
 		//#region Gen 3
 		new ModifyPokemon("Altaria", this)
