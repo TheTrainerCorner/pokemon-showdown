@@ -36,14 +36,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	emulate: {
 		inherit:true,
-		onBeforeSwitchIn(target) {
-			if (!this.effectState.target.hp) return;
-			const ability = target.getAbility();
-			if (this.effectState.target.setAbility(ability)) {
-				this.add('-ability', this.effectState.target, ability, '[from] ability: Emulate', '[of] ' + target);
-			}
+		// We will get the ability before the switch in happens.
+		onBeforeSwitchIn(pokemon) {
+			// Assuming that this happens before the current pokemon switches out
+			const currentPokemon = pokemon.side.active[0];
+			// There is a chance of a pokemon not being active like the first turn.
+			if (!currentPokemon) return;
+			// We will inject the ability of the assumed current pokemon into effectState to be used in a different event.
+			this.effectState.emulateAbility = currentPokemon.ability;
 		},
-		
+		// This should trigger upon switching in.
+		onSwitchIn(pokemon) {
+			// This is added so we don't hurt ourselves on turn 1.
+			if (!this.effectState.emulateAbility) return;
+			if (pokemon.setAbility(this.effectState.emulateAbility)) {
+				this.add('-ability', pokemon, this.effectState.emulateAbility, '[from] ability: Emulate', `[of] ${pokemon}`);
+			}
+		}
 	},
 	//#endregion
 
