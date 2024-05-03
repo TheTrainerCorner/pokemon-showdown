@@ -274,6 +274,13 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(70)
 				.setSPA(105)
 				.setSPD(70);
+		new ModifyPokemon("Hatterene", this)
+			.baseStats
+				.setATK(100)
+				.setDEF(95)
+				.setSPE(44)
+			.pokemon.learnset
+				.add("Alluring Voice");
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
