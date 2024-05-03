@@ -247,5 +247,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(120)
 				.setSPA(118)
 				.setSPE(112)
+		new ModifyPokemon("Kilowattrel", this)
+			.learnset
+				.add("Defog")
 	},	
 };
