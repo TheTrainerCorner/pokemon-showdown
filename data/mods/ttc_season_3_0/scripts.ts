@@ -263,6 +263,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Alcremie", this)
 			.learnset
 				.add("Syrup Bomb");
+		new ModifyPokemon("Coalossal", this)
+			.baseStats
+				.setATK(90)
+				.setSPA(90);
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
