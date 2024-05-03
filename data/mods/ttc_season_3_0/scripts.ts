@@ -1,7 +1,7 @@
 import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
 
 export const Scripts: ModdedBattleScriptsData = {
-	inherit: "ttc_season_2_2",
+	inherit: "ttc_season_2",
 	init() {
 		// Adjusting Meowth's data to include Meowth-Mega
 		this.modData("Pokedex", "meowth").otherFormes = ["Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
