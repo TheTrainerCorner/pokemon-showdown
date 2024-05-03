@@ -237,5 +237,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Iron Jugulis", this)
 			.learnset
 				.add("Fickle Beam")
+		new ModifyPokemon("Iron Thorns", this)
+			.baseStats
+				.setSPA(50)
+				.setSPD(104)
+
 	},	
 };
