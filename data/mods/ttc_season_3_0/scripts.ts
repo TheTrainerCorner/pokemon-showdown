@@ -189,6 +189,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Toucannon", this)
 			.learnset
 				.add("Floaty Fall")
+		new ModifyPokemon("Vikavolt", this)
+			.baseStats
+				.setATK(65)
+				.setSPA(165)
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
