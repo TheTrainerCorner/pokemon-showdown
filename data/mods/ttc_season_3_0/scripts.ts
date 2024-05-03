@@ -306,6 +306,15 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add("Psystrike")
 				.add("Mystical Power");
+		new ModifyPokemon("Runerigus", this)
+			.baseStats
+				.setHP(88)
+			.pokemon.learnset
+				.add("Chilly Reception")
+				.add("Haze")
+				.add("Memento")
+				.add("Taunt")
+				.add("Topsy-Turvy")
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
