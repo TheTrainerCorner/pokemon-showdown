@@ -241,6 +241,11 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setSPA(50)
 				.setSPD(104)
-
+		new ModifyPokemon("Iron Valiant", this)
+			.baseStats
+				.setHP(70)
+				.setATK(120)
+				.setSPA(118)
+				.setSPE(112)
 	},	
 };
