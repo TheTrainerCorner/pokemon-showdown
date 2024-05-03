@@ -114,6 +114,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(145)
 				.setSPA(65);
+		new ModifyPokemon("Metagross-Mega", this)
+				.baseStats
+					.setSPA(95);				
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
