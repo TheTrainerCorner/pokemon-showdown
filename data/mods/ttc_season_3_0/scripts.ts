@@ -84,7 +84,14 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Force Palm");
 
 		//#endregion
-
+		//#region Gen 2
+		new ModifyPokemon("Crobat", this)
+			.baseStats
+				.setHP(80)
+				.setATK(119)
+				.setDEF(84)
+				.setSPE(144);
+		//#endregion
 		//#region Gen 3
 		new ModifyPokemon("Altaria", this)
 			.baseStats
