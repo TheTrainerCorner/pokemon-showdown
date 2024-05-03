@@ -314,7 +314,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Haze")
 				.add("Memento")
 				.add("Taunt")
-				.add("Topsy-Turvy")
+				.add("Topsy-Turvy");
+		new ModifyPokemon("Zapdos-Galar", this)
+			.learnset
+				.remove("Wild Charge")
+				.add("Bolt Beak");
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
