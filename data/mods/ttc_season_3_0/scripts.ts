@@ -267,6 +267,13 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(90)
 				.setSPA(90);
+		new ModifyPokemon("Dragapult", this)
+			.baseStats
+				.setHP(85)
+				.setATK(108)
+				.setDEF(70)
+				.setSPA(105)
+				.setSPD(70);
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
