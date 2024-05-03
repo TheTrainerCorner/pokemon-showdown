@@ -144,6 +144,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Seviper", this)
 			.learnset
 				.add("Shed Tail")
+		new ModifyPokemon("Shiftry", this)
+			.learnset
+				.add("Ivy Cudgel")
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
