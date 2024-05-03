@@ -174,7 +174,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Floaty Fall")
 		//#endregion
-		
+
+		new ModifyPokemon("Muk-Alola", this)
+			.learnset
+				.add("Dire Claw")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
