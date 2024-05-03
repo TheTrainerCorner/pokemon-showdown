@@ -222,7 +222,13 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Floaty Fall")
 		//#endregion
-
+		//#region Gen 6
+		new ModifyPokemon("Florges", this)
+			.baseStats
+				.setATK(73)
+				.setSPE(70);
+		
+		//#endregion
 		//#region Gen 7
 		new ModifyPokemon("Muk-Alola", this)
 			.learnset
