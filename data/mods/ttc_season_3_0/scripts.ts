@@ -384,7 +384,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("RagingBolt", this)
 			.abilities
 				.setHiddenAbility("Rivalry")
-		new ModifyPokemon("Revaroom", this)
+		new ModifyPokemon("Revavroom", this)
 			.learnset
 				.add("Blazing Torque")
 		new ModifyPokemon("Skeledirge", this)
