@@ -18,6 +18,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Sharpness + Attack increased by 1.1x",
 		shortDesc: "Sharpness + Attack increased by 1.1x",
 	},
+	noguard: {
+		inherit: true,
+		onAnyInvulnerabilityPriority: undefined,
+		onAnyInvulnerability: undefined,
+		onAnyAccuracy: undefined,
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) {
+			if (target === source) return;
+
+			if(!target.hp) return; // Adding this as we don't want anything to happened if the target is dead!
+
+			this.boost({atk: 1, def: -1}, target);
+		},
+		desc: "If hit, Attack raises by 1 stage, Defense lowers by 1 stage.",
+		shortDesc: "If Hit, +1 Attack & -1 Defense",
+	},
 	//#endregion
 
 	//#region New Abilities
@@ -113,6 +129,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				target.side.addSideCondition('auroraveil', source);
 			}
 		},
+		num: -3003,
 		desc: "This Pokemon's Special Attack is raised by 1 stage, sets Aurora Veil and Snow, if it attacks and knocks out another Pokemon.",
 		shortDesc: "This Pokemon's Sp. Atk is raised by 1 stage and sets Aurora veil and Snow, if it attacks and KOes another Pokemon.",
 	},
@@ -126,6 +143,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-activate', target, 'ability: Granite Storm');
 			}
 		},
+		num: -3004,
 		desc: "If the user gets hit by a Physical move, a sandstorm is created, the attacker's Attack will drop by 1 stage, and stealth rocks will be added to it's side",
 		shortDesc: "If hit by a Physical Move; Creates a Sandstorm; Lowers the Attacker's Attack by 1 stage;sets rocks.",
 	},
@@ -146,6 +164,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-activate', pokemon, 'ability: Iron Technician');
 			}
 		},
+		num: -3005,
 		desc: "On switch-in, this Pokemon adds the steelsurge hazard on the opponent's side. This Pokemon also has a 1.5x damage boost to moves with less than 60 base power.",
 		shortDesc: "Steelsurge spikes are placed on the opposing Side; This Pokemon's moves of 60 power or less have 1.5x power, including Struggle.",
 	},
@@ -163,7 +182,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Moves with a chance to burn, deal no damage to this Pokemon and raise it's speed by 1 stage.",
 		shortDesc: "Immune to moves that have a chance to burn, and gains +1 Spe.",
 		rating: 3,
-		num: -3003,
+		num: -3006,
 	},
 
 	//#endregion
