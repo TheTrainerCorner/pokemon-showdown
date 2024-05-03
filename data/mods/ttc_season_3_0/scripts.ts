@@ -137,6 +137,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(100)
 				.setDEF(75)
 				.setSPD(75)			
+		new ModifyPokemon("Salamence-Mega", this)
+			.baseStats
+				.setATK(100)
+				.setDEF(125)
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
