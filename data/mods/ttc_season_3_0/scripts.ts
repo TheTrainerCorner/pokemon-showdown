@@ -117,7 +117,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Metagross-Mega", this)
 			.baseStats
 				.setSPA(95);	
-	
+		new ModifyPokemon("Regice", this)
+			.abilities
+				.setAbility0("Absolute Zero")
+				.setHiddenAbility("Filter")
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
