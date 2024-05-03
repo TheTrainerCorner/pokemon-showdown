@@ -63,7 +63,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water");
 		new ModifyPokemon("Machamp", this)
 			.baseStats
-					.setSPA(55);
+				.setSPA(55);
 		new ModifyPokemon("Marowak", this)
 			.baseStats
 				.setATK(85);
