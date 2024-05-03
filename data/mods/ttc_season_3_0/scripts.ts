@@ -179,6 +179,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(89)
 				.setSPA(78)
 				.setSPD(89);
+		new ModifyPokemon("Garchomp", this)
+			.baseStats
+				.setSPA(65)
+				.setSPE(97);
 		//#endregion
 		//#region Gen 5
 		new ModifyPokemon("Genesect", this)
