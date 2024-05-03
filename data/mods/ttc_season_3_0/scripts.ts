@@ -231,6 +231,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Bouncy Bubble")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
-				.setHiddenAbility('Emulate');
+				.setHiddenAbility('Emulate')
+			.pokemon.learnset
+				.add("Twin Beam")
 	},
 };
