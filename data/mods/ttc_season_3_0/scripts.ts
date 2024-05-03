@@ -216,6 +216,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Goughing fire", this)
 			.abilities
 				.setHiddenAbility("Turboblaze")
+		new ModifyPokemon("Iron Boulder", this)
+			.abilities
+				.setHiddenAbility("Reckless")
+			.pokemon.learnset
+				.add("Head Smash")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
