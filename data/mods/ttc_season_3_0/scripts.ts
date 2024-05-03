@@ -290,6 +290,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Mr Mime-Galar", this)
 			.baseStats
 				.setSPE(120);
+		new ModifyPokemon("Mr Rime", this)
+			.baseStats
+				.setHP(100)
+				.setDEF(85)
+				.setSPA(120)
+				.setSPE(80)
+			.pokemon.learnset
+				.add("Chilly Reception");
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
