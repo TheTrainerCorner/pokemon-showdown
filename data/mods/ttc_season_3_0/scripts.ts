@@ -170,6 +170,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(118)
 				.setSPA(51)
 				.setSPE(76)
+		new ModifyPokemon("Unfezant", this)
+			.learnset
+				.add("Floaty Fall")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
