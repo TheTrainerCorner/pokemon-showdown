@@ -263,5 +263,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Revaroom", this)
 			.learnset
 				.add("Blazing Torque")
+		new ModifyPokemon("Skeledirge", this)
+			.learnset
+				.add("Infernal Parade")
 	},	
 };
