@@ -206,6 +206,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(82)
 				.setSPA(65)	
+		new ModifyPokemon("Ceruledge", this)
+			.baseStats
+				.setATK(125)
+				.setSPA(60)
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
