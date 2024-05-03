@@ -266,5 +266,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Skeledirge", this)
 			.learnset
 				.add("Infernal Parade")
+		new ModifyPokemon("Wo-Chien", this)
+			.learnset
+				.add("Spore")
 	},	
 };
