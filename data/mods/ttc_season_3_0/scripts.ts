@@ -257,5 +257,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Bitter Malice")
 				.add("Baneful Bunker")
+		new ModifyPokemon("Raging Bolt", this)
+			.abilities
+				.setHiddenAbility("Rivalry")
 	},	
 };
