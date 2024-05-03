@@ -202,6 +202,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(90)
 				.setATK(50)
 				.setSPE(105)
+		new ModifyPokemon("Baxcalibur", this)
+			.baseStats
+				.setDEF(82)
+				.setSPA(65)	
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
