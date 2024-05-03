@@ -169,7 +169,13 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Ivy Cudgel")
 		//#endregion
-
+		//#region Gen 4
+		new ModifyPokemon("Azelf", this)
+			.baseStats
+				.setATK(120)
+				.setSPA(120);
+				
+		//#endregion
 		//#region Gen 5
 		new ModifyPokemon("Genesect", this)
 			.learnset
