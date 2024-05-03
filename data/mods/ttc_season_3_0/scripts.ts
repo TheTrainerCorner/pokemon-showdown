@@ -287,10 +287,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Lilligant-Hisui", this)
 			.learnset
 				.add("Thunderous Kick");
-		new ModifyPokemon("Mr Mime-Galar", this)
+		new ModifyPokemon("MrMime-Galar", this)
 			.baseStats
 				.setSPE(120);
-		new ModifyPokemon("Mr Rime", this)
+		new ModifyPokemon("MrRime", this)
 			.baseStats
 				.setHP(100)
 				.setDEF(85)
