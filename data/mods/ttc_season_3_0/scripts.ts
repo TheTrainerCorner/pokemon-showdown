@@ -269,5 +269,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Wo-Chien", this)
 			.learnset
 				.add("Spore")
+		//#endregion
 	},	
 };
