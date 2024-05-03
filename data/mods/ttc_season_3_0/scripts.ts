@@ -175,6 +175,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Floaty Fall")
 		//#endregion
 
+		//#region Gen 7
 		new ModifyPokemon("Muk-Alola", this)
 			.learnset
 				.add("Dire Claw")
@@ -193,8 +194,14 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(65)
 				.setSPA(165)
-		//#endregion	
-			
+		//#endregion
+		
+		//#region Gen 9
+		new ModifyPokemon("Armarouge", this)
+			.baseStats
+				.setHP(90)
+				.setATK(50)
+				.setSPE(105)
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
