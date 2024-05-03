@@ -233,6 +233,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(100)
 				.setDEF(85)
 				.setSPE(75);
+		new ModifyPokemon("Goodra-Hisui", this)
+			.baseStats
+				.setHP(75)
+				.setDEF(95)
+				.setSPE(50);
 		//#endregion
 		//#region Gen 7
 		new ModifyPokemon("Muk-Alola", this)
