@@ -84,6 +84,14 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Force Palm");
 
 		//#endregion
+
+		//#region Gen 3
+		new ModifyPokemon("Altaria", this)
+			.baseStats
+				.setDEF(85)
+				.setSPD(110)
+				.setSPE(75);
+
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
