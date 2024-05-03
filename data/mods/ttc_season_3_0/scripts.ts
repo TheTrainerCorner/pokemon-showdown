@@ -94,7 +94,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Altaria-Mega", this)
 			.baseStats
 				.setATK(110);	
-
+		new ModifyPokemon("Blaziken-Mega", this)
+			.baseStats
+				.setATK(145)
+				.setDEF(83)	
+				.setSPD(83)
+				.setSPE(104);
 		//testregion
 		//new ModifyPokemon('Eternatus', this)
 		//	.abilities
