@@ -186,6 +186,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Marshadow", this)
 			.learnset
 				.remove("Poltergeist")
+		new ModifyPokemon("Toucannon", this)
+			.learnset
+				.add("Floaty Fall")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
