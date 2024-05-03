@@ -213,7 +213,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("FlutterMane", this)
 			.learnset
 				.add("Earth Power")
-		new ModifyPokemon("GoughingFire", this)
+		new ModifyPokemon("GougingFire", this)
 			.abilities
 				.setHiddenAbility("Turboblaze")
 		new ModifyPokemon("IronBoulder", this)
