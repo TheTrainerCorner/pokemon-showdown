@@ -284,6 +284,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Inteleon", this)
 			.learnset
 				.add("Hydro Steam");
+		new ModifyPokemon("Lilligant-Hisui", this)
+			.learnset
+				.add("Thunderous Kick");
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
