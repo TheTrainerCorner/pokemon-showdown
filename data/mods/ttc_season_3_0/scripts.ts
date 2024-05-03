@@ -221,6 +221,14 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility("Reckless")
 			.pokemon.learnset
 				.add("Head Smash")
+		new ModifyPokemon("Iron Bundle", this)
+			.baseStats
+				.setHP(66)
+				.setSPA(124)
+				.setSPD(70)
+				.setSPE(124)
+			.pokemon.learnset
+				.add("Bouncy Bubble")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
