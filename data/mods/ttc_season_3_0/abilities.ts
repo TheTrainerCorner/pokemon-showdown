@@ -36,7 +36,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	emulate: {
 		inherit:true,
-		onAllySwitchOut(pokemon) {
+		onAllyBeforeSwitchIn(pokemon) {
 			if (!this.effectState.target.hp) return;
 			const ability = pokemon.getAbility();
 			const additionalBannedAbilities = [
