@@ -64,6 +64,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Machamp", this)
 			.baseStats
 					.setSPA(55);
+		new ModifyPokemon("Marowak", this)
+				.baseStats
+					.setATK(85);
 		new ModifyPokemon("Meowth", this)
 			.learnset
 				.add("Synchronoise")
