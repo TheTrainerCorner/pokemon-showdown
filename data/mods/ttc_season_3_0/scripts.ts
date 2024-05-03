@@ -91,6 +91,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(119)
 				.setDEF(84)
 				.setSPE(144);
+		new ModifyPokemon("Entei", this)
+			.baseStats
+				.setATK(100)
+				.setDEF(80)
+				.setSPA(100)
+				.setSPD(80);
 		//#endregion
 		//#region Gen 3
 		new ModifyPokemon("Altaria", this)
