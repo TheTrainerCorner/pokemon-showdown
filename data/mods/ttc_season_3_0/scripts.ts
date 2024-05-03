@@ -193,6 +193,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(65)
 				.setSPA(165)
+		//#endregion	
+			
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
