@@ -34,6 +34,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If hit, Attack raises by 1 stage, Defense lowers by 1 stage.",
 		shortDesc: "If Hit, +1 Attack & -1 Defense",
 	},
+	emulate: {
+		inherit:true,
+		onStart(pokemon) {
+			if (!this.effectState.target.hp) return;
+			const ability = pokemon.getAbility();
+			const additionalBannedAbilities = [
+				'noability'
+			];
+			if (pokemon.getAbility().isPermanent || additionalBannedAbilities.includes(pokemon.ability)) return;
+			if (this.effectState.target.setAbility(ability)) {
+				this.add('-ability', this.effectState.target, ability, '[from] ability: Emulate', '[of] ' + pokemon);
+			}
+ 		}
+	},
 	//#endregion
 
 	//#region New Abilities
