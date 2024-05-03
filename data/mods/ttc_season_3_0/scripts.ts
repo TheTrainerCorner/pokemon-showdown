@@ -187,6 +187,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setSPA(105)
 				.setSPE(97);
+		new ModifyPokemon("Mesprit", this)
+			.baseStats
+				.setATK(105)
+				.setDEF(95)
+				.setSPA(110)
+				.setSPD(95);
 		//#endregion
 		//#region Gen 5
 		new ModifyPokemon("Genesect", this)
