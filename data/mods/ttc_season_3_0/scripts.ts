@@ -298,6 +298,14 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(80)
 			.pokemon.learnset
 				.add("Chilly Reception");
+		new ModifyPokemon("Orbeetle", this)
+			.abilities
+				.setAbility0("Super Luck")
+			.pokemon.baseStats
+				.setHP(95)
+			.pokemon.learnset
+				.add("Psystrike")
+				.add("Mystical Power");
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
