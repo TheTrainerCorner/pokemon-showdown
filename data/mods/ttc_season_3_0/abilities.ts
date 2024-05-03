@@ -36,13 +36,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	emulate: {
 		inherit:true,
-		onAllyAfterSwitchInSelf(target) {
+		onAllyAfterSwitchInSelf(self) {
 			if (!this.effectState.target.hp) return;
-			const ability = target.getAbility();
-			if (this.effectState.target.setAbility(ability)) {
-				this.add('-ability', this.effectState.target, ability, '[from] ability: Emulate', '[of] ' + target);
+			const ability = self.getAbility();
+			if (this.effectState.self.setAbility(ability)) {
+				this.add('-ability', this.effectState.self, ability, '[from] ability: Emulate', '[of] ' + self);
 			}
 		},
+		
 	},
 	//#endregion
 
