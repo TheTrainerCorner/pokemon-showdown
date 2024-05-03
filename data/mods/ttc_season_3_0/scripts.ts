@@ -164,6 +164,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(85)
 			.pokemon.learnset
 				.add("Fickle Beam")
+		new ModifyPokemon("Stoutland", this)
+			.baseStats
+				.setHP(116)
+				.setATK(118)
+				.setSPA(51)
+				.setSPE(76)
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Emulate');
