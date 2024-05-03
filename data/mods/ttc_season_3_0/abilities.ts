@@ -31,8 +31,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 
 			this.boost({atk: 1, def: -1}, target);
 		},
-		desc: "If hit, Attack raises by 1 stage, Defense lowers by 1 stage.",
-		shortDesc: "If Hit, +1 Attack & -1 Defense",
+		desc: "Every move used by or against this Pokemon always hit.If hit, Attack raises by 1 stage, Defense lowers by 1 stage.",
+		shortDesc: "Every move used by or against this Pokemon always hit. If Hit, +1 Attack & -1 Defense",
 	},
 	emulate: {
 		inherit:true,
