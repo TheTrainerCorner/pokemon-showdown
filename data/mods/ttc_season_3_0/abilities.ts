@@ -36,7 +36,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	emulate: {
 		inherit:true,
-		onStart(pokemon) {
+		onAllyAfterSwitchInSelf(pokemon) {
+			if (!this.effectState.target.hp) return;
 			const ability = pokemon.getAbility();
 			const additionalBannedAbilities = [
 				'noability'
@@ -45,7 +46,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (this.effectState.target.setAbility(ability)) {
 				this.add('-ability', this.effectState.target, ability, '[from] ability: Emulate', '[of] ' + pokemon);
 			}
- 		}
+		},
 	},
 	//#endregion
 
