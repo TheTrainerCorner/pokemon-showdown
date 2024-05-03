@@ -21,7 +21,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(80)
 				.setSPD(95)
 				.setSPE(75);
-
+		
 		new ModifyPokemon("Eevee-Starter", this)
 			.learnset
 				// Coverage Moves For this FRICKIN POKEMON WTF AM I LOOKING AT
@@ -61,7 +61,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Hard Press").add("Iron Head").add("Metal Claw").add("Smart Strike").add("Spin Out")
 				// Water
 				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water");
-
+		new ModifyPokemon("Machamp", this)
+			.baseStats
+					.setSPA(55);
 		new ModifyPokemon("Meowth", this)
 			.learnset
 				.add("Synchronoise")
