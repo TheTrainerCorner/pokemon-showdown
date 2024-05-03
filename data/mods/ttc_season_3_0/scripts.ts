@@ -193,6 +193,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(95)
 				.setSPA(110)
 				.setSPD(95);
+		new ModifyPokemon("Shaymin", this)
+			.baseStats
+				.setSPA(100)
+				.setSPD(105)
 		new ModifyPokemon("Uxie", this)
 			.baseStats
 				.setATK(50)
