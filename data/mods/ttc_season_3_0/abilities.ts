@@ -39,7 +39,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		// We will get the ability before the switch in happens.
 		onBeforeSwitchIn(pokemon) {
 			// Assuming that this happens before the current pokemon switches out
-			const currentPokemon = pokemon.side.active[0];
+			const currentPokemon = this.effectState.lastSwitch[pokemon.side.id];
 			// There is a chance of a pokemon not being active like the first turn.
 			if (!currentPokemon) return;
 			// We will inject the ability of the assumed current pokemon into effectState to be used in a different event.
