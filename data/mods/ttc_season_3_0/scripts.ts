@@ -260,5 +260,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Raging Bolt", this)
 			.abilities
 				.setHiddenAbility("Rivalry")
+		new ModifyPokemon("Revaroom", this)
+			.learnset
+				.add("Blazing Torque")
 	},	
 };
