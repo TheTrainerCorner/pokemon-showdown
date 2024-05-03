@@ -281,6 +281,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(44)
 			.pokemon.learnset
 				.add("Alluring Voice");
+		new ModifyPokemon("Inteleon", this)
+			.learnset
+				.add("Hydro Steam");
 		//#endregion
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
