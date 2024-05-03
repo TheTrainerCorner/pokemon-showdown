@@ -253,5 +253,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Klawf", this)
 			.learnset
 				.add("Shore Up")
+		new ModifyPokemon("Pecharunt", this)
+			.learnset
+				.add("Bitter Malice")
+				.add("Baneful Bunker")
 	},	
 };
