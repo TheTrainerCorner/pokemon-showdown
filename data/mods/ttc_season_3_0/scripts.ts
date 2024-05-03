@@ -397,7 +397,12 @@ export const Scripts: ModdedBattleScriptsData = {
 	},
 	actions: {
 		runSwitch(pokemon) {
-			
+			if (!this.battle.effectState.lastSwitch) this.battle.effectState.lastSwitch = {
+				'p1': '',
+				'p2': '',
+				'p3': '',
+				'p4': '',
+			};
 			this.battle.runEvent('Swap', pokemon);
 
 			if (this.battle.gen >= 5) {
