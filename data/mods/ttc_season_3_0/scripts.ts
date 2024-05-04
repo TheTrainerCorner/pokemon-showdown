@@ -108,7 +108,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Altaria", this)
 			.baseStats
 				.setDEF(85)
-				.setSPD(110)
+				.setSPD(100)
 				.setSPE(75);
 		new ModifyPokemon("Altaria-Mega", this)
 			.baseStats
