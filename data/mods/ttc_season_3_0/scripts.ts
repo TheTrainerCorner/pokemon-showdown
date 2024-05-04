@@ -16,8 +16,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#region Gen 1
 		new ModifyPokemon("Alakazam-Mega", this)
 			.baseStats
-				.setATK(60)
-				.setDEF(50)
+				.setDEF(62)
+				.setSPD(113)
 		new ModifyPokemon("Dragonite", this)
 			.baseStats
 				.setHP(101)
