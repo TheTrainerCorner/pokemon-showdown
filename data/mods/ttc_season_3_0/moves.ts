@@ -22,6 +22,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 80,
 	},
+	spectralthief: {
+		inherit:true,
+		basePower: 70,
+	},
 	//#endregion
 	//#region Special Moves
 
