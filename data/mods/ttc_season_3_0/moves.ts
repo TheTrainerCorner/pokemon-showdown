@@ -34,6 +34,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Super effective on Psychic types.",
 		desc: "Super effective on Psychic types.",
 	},
+	Psystrike: {
+		inherit:true,
+		critRatio: 2,
+		desc: "Deals damage to the target based on its Defense instead of Special Defense. Has a higher chance for a critical hit",
+		shortDesc: "Damages target based on Defense, not Sp. Def. High critical hit ratio",
+	},
 	//#endregion
 	//#region Other Moves
 
