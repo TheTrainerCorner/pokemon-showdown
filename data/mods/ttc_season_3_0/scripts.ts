@@ -420,6 +420,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("ScreamTail", this)
 			.learnset
 				.add("Teleport")
+		new ModifyPokemon("Sinistcha", this)
+			.learnset
+				.add("WillOWisp")
 		new ModifyPokemon("Skeledirge", this)
 			.learnset
 				.add("Infernal Parade")
