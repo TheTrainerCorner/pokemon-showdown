@@ -188,6 +188,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Aqua Cutter")
 				.add("Trailblaze")
 				.add("Grassy glide")
+		new ModifyPokemon("Chatot", this)
+			.learnset
+				.add("Alluring Voice")
 		new ModifyPokemon("Luxray", this)
 			.baseStats
 				.setDEF(89)
