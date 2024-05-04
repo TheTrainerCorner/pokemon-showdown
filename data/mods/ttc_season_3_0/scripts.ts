@@ -24,7 +24,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(80)
 				.setSPD(95)
 				.setSPE(75);
-		
 		new ModifyPokemon("Eevee-Starter", this)
 			.learnset
 				// Coverage Moves For this FRICKIN POKEMON WTF AM I LOOKING AT
@@ -86,7 +85,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Wake Up Slap")
 				.add("Force Palm");
 
-		//#endregion
+		//#endregion	
 		//#region Gen 2
 		new ModifyPokemon("Crobat", this)
 			.baseStats
@@ -166,6 +165,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.abilities
 				.setAbility0("Iron Technician")
 				.setHiddenAbility("Filter")	
+		new ModifyPokemon("Sableye", this)
+			.baseStats
+				.setSPA(75)
+				.setSPD(75)
 		new ModifyPokemon("Salamence", this)
 			.baseStats
 				.setATK(100)
