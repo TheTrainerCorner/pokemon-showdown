@@ -23,19 +23,19 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 80,
 	},
 	spectralthief: {
-		inherit:true,
+		inherit: true,
 		basePower: 70,
 	},
 	//#endregion
 	//#region Special Moves
-	Synchronoise: {
-		inherit:true,
-		secondary:null,
+	synchronoise: {
+		inherit: true,
+		secondary: null,
 		shortDesc: "Super effective on Psychic types.",
 		desc: "Super effective on Psychic types.",
 	},
-	Psystrike: {
-		inherit:true,
+	psystrike: {
+		inherit: true,
 		critRatio: 2,
 		desc: "Deals damage to the target based on its Defense instead of Special Defense. Has a higher chance for a critical hit",
 		shortDesc: "Damages target based on Defense, not Sp. Def. High critical hit ratio",
