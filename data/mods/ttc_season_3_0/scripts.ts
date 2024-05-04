@@ -417,6 +417,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Revavroom", this)
 			.learnset
 				.add("Blazing Torque")
+		new ModifyPokemon("ScreamTail", this)
+			.learnset
+				.add("Teleport")
 		new ModifyPokemon("Skeledirge", this)
 			.learnset
 				.add("Infernal Parade")
