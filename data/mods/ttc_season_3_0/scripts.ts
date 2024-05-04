@@ -122,6 +122,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(83)	
 				.setSPD(83)
 				.setSPE(104);
+		new ModifyPokemon("Camerupt-Mega", this)
+			.baseStats
+				.setATK(105)
+				.setSPD(115)
 		new ModifyPokemon("Chimecho", this)
 			.learnset
 				.add("Boomburst")
