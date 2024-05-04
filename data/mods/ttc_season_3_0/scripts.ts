@@ -14,7 +14,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Pokedex", "eeveestarter").otherFormes = ["Eevee-Mega"];
 		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
 		//#region Gen 1
-		new ModifyPokemon("Alakazam", this)
+		new ModifyPokemon("Alakazam-Mega", this)
 			.baseStats
 				.setATK(60)
 				.setDEF(50)
