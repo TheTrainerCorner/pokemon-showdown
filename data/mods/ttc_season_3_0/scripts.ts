@@ -465,6 +465,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(117)
 		new ModifyPokemon("Thundraco", this)
 			.baseStats
-				.setSPA(124)			
+				.setSPA(124)
+		new ModifyPokemon("Metadraco", this)
+			.baseStats
+				.setATK(120)			
 	},
 };
