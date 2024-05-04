@@ -1,5 +1,23 @@
 export const Moves: {[k: string]: ModdedMoveData} = {
 	//#region Physical Moves
+	direclaw:{
+		inherit:true,
+		secondary:{
+			chance: 20,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus('psn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else {
+					target.trySetStatus('slp', source);
+				}
+			},
+		},
+		desc: "Has a 20% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
+		shortDesc: "20% chance to sleep, poison, or paralyze target.",
+	},
 	payday: {
 		inherit: true,
 		basePower: 80,
