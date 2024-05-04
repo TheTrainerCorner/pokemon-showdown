@@ -204,6 +204,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Chatot", this)
 			.learnset
 				.add("Alluring Voice")
+		new ModifyPokemon("Lucario-Mega", this)
+			.baseStats
+				.setDEF(92)
+				.setSPD(91)
 		new ModifyPokemon("Luxray", this)
 			.baseStats
 				.setDEF(89)
