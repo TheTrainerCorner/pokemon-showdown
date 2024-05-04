@@ -177,6 +177,17 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(120)
 				.setSPA(120);
+		new ModifyPokemon("Bibarel", this)
+			.baseStats
+				.setHP(99)
+				.setATK(92)
+				.setDEF(87)
+				.setSPD(87)
+			.pokemon.learnset
+				.add("Flip Turn")
+				.add("Aqua Cutter")
+				.add("Trailblaze")
+				.add("Grassy glide")
 		new ModifyPokemon("Luxray", this)
 			.baseStats
 				.setDEF(89)
