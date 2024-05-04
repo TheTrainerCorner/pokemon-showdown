@@ -404,6 +404,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Klawf", this)
 			.learnset
 				.add("Shore Up")
+		new ModifyPokemon("Okidogi", this)
+			.learnset
+				.add("Mach Punch")
 		new ModifyPokemon("Pecharunt", this)
 			.learnset
 				.add("Bitter Malice")
