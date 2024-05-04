@@ -452,5 +452,11 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Spore")
 		//#endregion
+
+		//#region Fakemon
+		new ModifyPokemon("Acudraco", this)
+			.baseStats
+				.setDEF(95)
+				.setSPD(95)
 	},
 };
