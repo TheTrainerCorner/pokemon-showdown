@@ -458,5 +458,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(95)
 				.setSPD(95)
+		new ModifyPokemon("Farfetchd-Mega", this)
+			.baseStats
+				.setATK(118)
+				.setSPA(81)
+				.setSPE(117)		
 	},
 };
