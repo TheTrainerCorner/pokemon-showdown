@@ -261,6 +261,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(50);
 		//#endregion
 		//#region Gen 7
+		new ModifyPokemon("Exeggutor-Alola", this)
+			.learnset
+				.add("Fickle Beam")
 		new ModifyPokemon("Muk-Alola", this)
 			.learnset
 				.add("Dire Claw")
