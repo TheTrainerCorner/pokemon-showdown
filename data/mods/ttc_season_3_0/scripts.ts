@@ -468,6 +468,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(124)
 		new ModifyPokemon("Metadraco", this)
 			.baseStats
-				.setATK(120)			
+				.setATK(120)	
+		//#endregion		
 	},
 };
