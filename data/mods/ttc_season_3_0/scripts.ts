@@ -112,7 +112,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(75);
 		new ModifyPokemon("Altaria-Mega", this)
 			.baseStats
-				.setATK(110);	
+				.setATK(70);	
 		new ModifyPokemon("Blaziken-Mega", this)
 			.baseStats
 				.setATK(145)
