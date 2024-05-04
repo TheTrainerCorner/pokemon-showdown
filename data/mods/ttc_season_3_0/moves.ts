@@ -28,7 +28,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	//#endregion
 	//#region Special Moves
-
+	Synchronoise: {
+		inherit:true,
+		secondary:null,
+		shortDesc: "Super effective on Psychic types.",
+		desc: "Super effective on Psychic types.",
+	},
 	//#endregion
 	//#region Other Moves
 
