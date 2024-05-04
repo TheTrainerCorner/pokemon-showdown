@@ -123,6 +123,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Boomburst")
 				.add("Buzzy Buzz");
+		new ModifyPokemon("Delcatty", this)
+			.learnset
+				.add("Alluring Voice")
 		new ModifyPokemon("Exploud", this)
 			.learnset
 				.add("Alluring Voice");
