@@ -429,6 +429,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("SlitherWing", this)
 			.baseStats
 				.setDEF(109)
+			.pokemon.learnset
+				.add("Heat Crash")
 		new ModifyPokemon("WoChien", this)
 			.learnset
 				.add("Spore")
