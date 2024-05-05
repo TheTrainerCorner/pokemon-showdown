@@ -262,6 +262,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Floaty Fall")
 		//#endregion
 		//#region Gen 6
+		new ModifyPokemon("Clawitzer", this)
+			.baseStats
+				.setDEF(95)
+				.setSPE(80)
 		new ModifyPokemon("Florges", this)
 			.baseStats
 				.setATK(73)
