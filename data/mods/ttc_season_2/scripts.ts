@@ -2840,7 +2840,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(54);
 		//#endregion
 		
-		// Version 2.1.0
 		 new ModifyPokemon('Uxie', this)
 			.types
 				.setType('Psychic', 'Steel')
