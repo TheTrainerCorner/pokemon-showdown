@@ -3119,8 +3119,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		// Fixing Banette's Event Learnset issue
 		this.modData('Learnsets', 'banette').eventData = undefined;
-	{
-}
+
 
 		//#region Adding moves to pokemon when I am lazy
 		const synchronoiseList = [
