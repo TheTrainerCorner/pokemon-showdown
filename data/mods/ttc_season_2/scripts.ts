@@ -2841,7 +2841,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 		
 		// Version 2.1.0
-		new ModifyPokemon('Uxie', this)
+		 new ModifyPokemon('Uxie', this)
 			.types
 				.setType('Psychic', 'Steel')
 			.pokemon.learnset
@@ -3119,7 +3119,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		// Fixing Banette's Event Learnset issue
 		this.modData('Learnsets', 'banette').eventData = undefined;
-	},
+	{
 }
 
 		//#region Adding moves to pokemon when I am lazy
