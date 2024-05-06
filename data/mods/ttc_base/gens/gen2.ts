@@ -634,7 +634,6 @@ export default function Gen2(dex: ModdedDex) {
 	modifyPokemon('smeargle')
 		.ability()
 		.set1('Inner Focus')
-		.setH('Color Change')
 		.pokemon.baseStat()
 		.setAtk(50)
 		.setDef(55)
