@@ -25,5 +25,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	penquill: {
 		tier: "OU",
 		natDexTier: "OU",
+	},
+	crustocean: {
+		tier: "OU",
+		natDexTier: "OU",
 	}
 }
