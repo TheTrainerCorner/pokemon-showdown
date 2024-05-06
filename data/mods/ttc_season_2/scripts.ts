@@ -2840,7 +2840,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(54);
 		//#endregion
 		
-		 new ModifyPokemon('Uxie', this)
+		new ModifyPokemon('Uxie', this)
 			.types
 				.setType('Psychic', 'Steel')
 			.pokemon.learnset
