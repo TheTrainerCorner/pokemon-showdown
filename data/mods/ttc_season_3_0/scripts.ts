@@ -109,6 +109,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Tyranitar-Mega", this)
 			.baseStats
 				.setSPA(75)
+		new ModifyPokemon("Smeargle", this)
+			.abilities
+				.setHiddenAbility("Trace")
 		//#endregion
 		//#region Gen 3
 		new ModifyPokemon("Altaria", this)
