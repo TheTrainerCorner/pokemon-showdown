@@ -58,6 +58,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		tags: ["Fakemon"]
 	},
+	penquill: {
+		num: -3005,
+		name: "Penquill",
+		types: ["Ground", "Water"],
+		genderRatio: {M: 0.5, F: 0.5},
+		baseStats: {hp: 85, atk: 125, def: 85, spa: 35, spd: 85, spe: 115}, 
+		abilities: {0: "Reckless", 1: "Quick Feet", H: " Infiltrator"}, 
+		heightm: 0.8, 
+		weightkg: 12, 
+		color: "Black", 
+		eggGroups: ["Field", "Water1"], 
+		tags: ["Fakemon"],
+	},
 
 	//#endregion
 };

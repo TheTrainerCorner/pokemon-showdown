@@ -86,6 +86,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		contestType: "Tough",
 	},
 	//#endregion
+	//#region Beach Fakemon
+	quillrush: {
+		num: -3002,
+		name: 'Quillrush',
+		basePower: 120,
+		accuracy: 100,
+		pp: 10,
+		priority: 0,
+		type: "Ground",
+		category: "Physical",
+		flags: {contact: 1, protect: 1},
+		recoil: [33, 100],
+		secondary: null,
+		target: "normal",
+		contestType: "Cool",
+		shortDesc: "Has 33% recoil.",
+		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+	},
 
 
 	//#endregion
