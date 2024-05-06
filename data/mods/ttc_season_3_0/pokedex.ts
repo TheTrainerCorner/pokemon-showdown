@@ -71,6 +71,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field", "Water1"], 
 		tags: ["Fakemon"],
 	},
+	crustocean: {
+		num: -3006,
+		name: "Crustocean",
+		types: ["Water", "Grass"],
+		genderRatio:{M: 0.5, F: 0.5},
+		baseStats: {hp: 125, atk: 105, def: 85, spa: 45, spd: 95, spe: 70}, 
+		abilities: {0: "No Guard", 1: "Water Veil", H: " Clear Body"}, 
+		heightm: 0.8, 
+		weightkg: 20, 
+		color: "Blue", 
+		eggGroups: ["Water1"], 
+		tags: ["Fakemon"],
+	}
 
 	//#endregion
 };
