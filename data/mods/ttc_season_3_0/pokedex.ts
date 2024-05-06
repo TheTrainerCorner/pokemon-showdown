@@ -1,4 +1,5 @@
 export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+	//#region Megas
 	meowthmega: { // TTC Staff
 		num: -3001,
 		name: "Meowth-Mega",
@@ -12,6 +13,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field"],
 		requiredItem: "Meowthite",
 		tags: ["Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	eeveemega: { // TTC Staff
 		num: -3002,
@@ -27,7 +31,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredItem: "Eeveeite",
 		tags: ["Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
+	//#endregion
 
 	//#region Firework Event
 
@@ -43,6 +51,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		evos: ["Slugoliath"],
 		tags: ["Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	slugoliath: { // PT333
 		num: -3004,
@@ -56,9 +67,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Goopli",
 		evoLevel: 34,
 		eggGroups: ["Undiscovered"],
-		tags: ["Fakemon"]
+		tags: ["Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
-	penquill: {
+	//#endregion
+
+	//#region Beach Fakemon
+	penquill: { // Skipprthepenguin
 		num: -3005,
 		name: "Penquill",
 		types: ["Ground", "Water"],
@@ -70,8 +87,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Black", 
 		eggGroups: ["Field", "Water1"], 
 		tags: ["Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
-	crustocean: {
+	crustocean: { // Andy
 		num: -3006,
 		name: "Crustocean",
 		types: ["Water", "Grass"],
@@ -83,6 +103,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Blue", 
 		eggGroups: ["Water1"], 
 		tags: ["Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	}
 
 	//#endregion
