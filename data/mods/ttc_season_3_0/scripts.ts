@@ -63,7 +63,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				// Steel
 				.add("Hard Press").add("Iron Head").add("Metal Claw").add("Smart Strike").add("Spin Out")
 				// Water
-				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water");
+				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water")
+				// Eevee Starter moves removal
+				.remove("Baddy Bad").remove("Bouncy Bubble").remove("Buzzy Buzz").remove("Freezy Frost").remove("Glitzy Glow")
+				.remove("Sappy Seed").remove("Sizzly Slide").remove("Sparkly Swirl").remove("Veevee Volley");
 		new ModifyPokemon("Machamp", this)
 			.baseStats
 				.setSPA(55);
