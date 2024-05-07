@@ -329,9 +329,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Dragon Cheer")
 		//#endregion
 		//#region Gen 7
-		//new ModifyPokemon("Drampa", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Drampa", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Exeggutor-Alola", this)
 			.learnset
 				.add("Fickle Beam")
@@ -346,12 +346,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Muk-Alola", this)
 			.learnset
 				.add("Dire Claw")
-		//new ModifyPokemon("Naganadel", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
-		//new ModifyPokemon("Salazzle", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Naganadel", this)
+			.learnset
+				.add("Dragon Cheer")
+		new ModifyPokemon("Salazzle", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Toucannon", this)
 			.learnset
 				.add("Floaty Fall")
@@ -361,12 +361,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(165)
 		//#endregion
 		//#region Gen 8
-		new ModifyPokemon("Appletun", this)
-			.learnset
-				.add("Dragon Cheer")
-		new ModifyPokemon("Arctozolt", this)
-			.learnset
-				.add("Dragon Cheer")
+		//new ModifyPokemon("Appletun", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
+		//new ModifyPokemon("Arctozolt", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
 		new ModifyPokemon("Alcremie", this)
 			.learnset
 				.add("Syrup Bomb");
@@ -374,12 +374,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(90)
 				.setSPA(90);
-		new ModifyPokemon("Dracozolt", this)
-			.learnset
-				.add("Dragon Cheer")
-		new ModifyPokemon("Dracovish", this)
-			.learnset
-				.add("Dragon Cheer")
+		//new ModifyPokemon("Dracozolt", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
+		//new ModifyPokemon("Dracovish", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
 		new ModifyPokemon("Dragapult", this)
 			.baseStats
 				.setHP(85)
