@@ -495,6 +495,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Emulate')
 			.pokemon.learnset
 				.add("Twin Beam")
+		new ModifyPokemon("IronHands", this)	
+			.learnset
+				.remove("Wild Charge")
 		new ModifyPokemon("IronJugulis", this)
 			.learnset
 				.add("Fickle Beam")
