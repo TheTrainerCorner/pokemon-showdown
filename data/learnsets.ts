@@ -84315,6 +84315,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			chargebeam: ["9M"],
 			charm: ["9M"],
 			discharge: ["9L36", "8L36"],
+			dragoncheer: ["9M"],
 			drainpunch: ["9M", "8M"],
 			eerieimpulse: ["9M", "8M", "8L1"],
 			electricterrain: ["9M"],
