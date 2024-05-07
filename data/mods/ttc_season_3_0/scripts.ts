@@ -116,7 +116,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setSPA(75)
 			.pokemon.learnset
-				.add("Dragon Cheer")
+				.add("Dragon Cheer");
 		new ModifyPokemon("Tyranitar-Mega", this)
 			.baseStats
 				.setSPA(75)
