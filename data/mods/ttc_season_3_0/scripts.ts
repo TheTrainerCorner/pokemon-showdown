@@ -264,9 +264,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(125);
 		//#endregion
 		//#region Gen 5
-		//new ModifyPokemon("Druddigon", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Druddigon", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Genesect", this)
 			.learnset
 				.remove('Shift Gear');
@@ -279,9 +279,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(85)
 			.pokemon.learnset
 				.add("Fickle Beam")
-		//new ModifyPokemon("Serperior", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Serperior", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Stoutland", this)
 			.baseStats
 				.setHP(116)
@@ -293,16 +293,16 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Floaty Fall")
 		//#endregion
 		//#region Gen 6
-		new ModifyPokemon("Aurorus", this)
-			.learnset
-				.add("Dragon Cheer")
+		//new ModifyPokemon("Aurorus", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
 		new ModifyPokemon("Clawitzer", this)
 			.baseStats
 				.setDEF(95)
 				.setSPE(80)
-		new ModifyPokemon("Dragalge", this)
-			.learnset
-				.add("Dragon Cheer")
+		//new ModifyPokemon("Dragalge", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
 		new ModifyPokemon("Florges", this)
 			.baseStats
 				.setATK(73)
