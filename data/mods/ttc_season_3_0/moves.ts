@@ -42,7 +42,23 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	//#endregion
 	//#region Other Moves
-
+	dragoncheer: {
+		inherit: true,
+		condition: {
+			onStart(target, source, effect) {
+				if (target.volatiles['focusenergy']) return false;
+				if (effect && (['costar', 'imposter', 'psychup', 'transform'].includes(effect.id))) {
+					this.add('-start', target, 'move: Dragon Cheer', '[silent]');
+				} else {
+					this.add('-start', target, 'move: Dragon Cheer');
+				}
+			},
+			onModifyCritRatio(critRatio, source) {
+				return critRatio + 1;
+			},
+		},
+		target: "allies",
+	},
 	//#endregion
 
 	//#region Fakemon Moves
