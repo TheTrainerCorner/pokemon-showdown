@@ -40,6 +40,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Deals damage to the target based on its Defense instead of Special Defense. Has a higher chance for a critical hit",
 		shortDesc: "Damages target based on Defense, not Sp. Def. High critical hit ratio",
 	},
+	mistyexplosion: {
+		inherit: true,
+		basePower: 150,
+	},
 	//#endregion
 	//#region Other Moves
 	dragoncheer: {
@@ -58,6 +62,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 		target: "allies",
+		desc: "Raises the allies chance for a critical hit by 1 stage.Fails if the target already has a crit rate boosting effect. Baton Pass can be used to transfer this effect to an ally.",
+		shortDesc: "User and allies: Crit ratio +1.",
 	},
 	burningjealousy:{
 		inherit: true,
@@ -73,6 +79,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	lifedew: {
 		inherit: true,
 		heal: [1, 3],
+		desc: "Each Pokemon on the user's side restores 1/3 of its maximum HP, rounded half up.",
+		shortDesc: "Heals the user and its allies by 1/3 their max HP.",
 	},
 	coaching: {
 		inherit: true,
@@ -95,6 +103,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			def: 1,
 		},
 		target: "allies",
+		desc: "Raises the allies defense by 1 stage and the chance for a critical hit by 1 stage.Fails if the target already has a crit rate boosting effect. Baton Pass can be used to transfer this effect to an ally.",
+		shortDesc: "User and allies: Defense +1 Crit ratio +1.",
 	},
 	//#endregion
 
