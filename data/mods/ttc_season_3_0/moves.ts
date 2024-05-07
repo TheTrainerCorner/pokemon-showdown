@@ -70,6 +70,31 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			}
 		},
 	},
+	lifedew: {
+		inherit: true,
+		heal: [1, 3],
+	},
+	coaching: {
+		inherit: true,
+		condition: {
+			onStart(target, source, effect) {
+				if (target.volatiles['focusenergy']) return false;
+				if (target.volatiles['dragoncheer']) return false;
+				if (effect && (['costar', 'imposter', 'psychup', 'transform'].includes(effect.id))) {
+					this.add('-start', target, 'move: Dragon Cheer', '[silent]');
+				} else {
+					this.add('-start', target, 'move: Dragon Cheer');
+				}
+			},
+			onModifyCritRatio(critRatio, source) {
+				return critRatio + 1;
+			},
+		},
+		boosts: {
+			def: 1,
+		},
+		target: "allies",
+	}
 	//#endregion
 
 	//#region Fakemon Moves
