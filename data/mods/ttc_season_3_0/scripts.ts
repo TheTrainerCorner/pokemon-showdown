@@ -293,16 +293,16 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Floaty Fall")
 		//#endregion
 		//#region Gen 6
-		//new ModifyPokemon("Aurorus", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Aurorus", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Clawitzer", this)
 			.baseStats
 				.setDEF(95)
 				.setSPE(80)
-		//new ModifyPokemon("Dragalge", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Dragalge", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Florges", this)
 			.baseStats
 				.setATK(73)
@@ -318,15 +318,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(75)
 				.setDEF(95)
 				.setSPE(50);
-		new ModifyPokemon("Heliolisk", this)
-			.learnset
-				.add("Dragon Cheer")
-		new ModifyPokemon("Tyrantrum", this)
-			.learnset
-				.add("Dragon Cheer")
-		new ModifyPokemon("Zygarde", this)
-			.learnset
-				.add("Dragon Cheer")
+		//new ModifyPokemon("Heliolisk", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
+		//new ModifyPokemon("Tyrantrum", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
+		//new ModifyPokemon("Zygarde", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
 		//#endregion
 		//#region Gen 7
 		new ModifyPokemon("Drampa", this)
