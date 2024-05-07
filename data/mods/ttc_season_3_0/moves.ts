@@ -26,6 +26,18 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 70,
 	},
+	supercellslam:{
+		inherit: true,
+		basePower: 105,
+	},
+	wildcharge: {
+		inherit: true,
+		accuracy: 100,
+		basePower: 25,
+		category: "Physical",
+		multihit: [2, 5],
+		recoil: [0,0],
+	},
 	//#endregion
 	//#region Special Moves
 	synchronoise: {
@@ -167,7 +179,5 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		shortDesc: "Has 33% recoil.",
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 	},
-
-
 	//#endregion
 }
