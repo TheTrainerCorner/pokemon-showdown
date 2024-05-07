@@ -115,8 +115,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Tyranitar", this)
 			.baseStats
 				.setSPA(75)
-			//.pokemon.learnset
-			//	.add("Dragon Cheer");
+			.pokemon.learnset
+				.add("Dragon Cheer");
 		new ModifyPokemon("Tyranitar-Mega", this)
 			.baseStats
 				.setSPA(75)
@@ -156,12 +156,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Glalie", this)
 			.learnset
 				.add("Extreme Speed");
-		new ModifyPokemon("Huntail", this)
-			.learnset
-				.add("Dragon Cheer")
-		new ModifyPokemon("Kecleon", this)
-			.learnset
-				.add("Dragon Cheer")
+		//new ModifyPokemon("Huntail", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
+		//new ModifyPokemon("Kecleon", this)
+		//	.learnset
+		//		.add("Dragon Cheer")
 		new ModifyPokemon("Metagross", this)
 			.baseStats
 				.setATK(145)
