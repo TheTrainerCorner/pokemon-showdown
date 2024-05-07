@@ -81,9 +81,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				if (target.volatiles['focusenergy']) return false;
 				if (target.volatiles['dragoncheer']) return false;
 				if (effect && (['costar', 'imposter', 'psychup', 'transform'].includes(effect.id))) {
-					this.add('-start', target, 'move: Dragon Cheer', '[silent]');
+					this.add('-start', target, 'move: Coaching', '[silent]');
 				} else {
-					this.add('-start', target, 'move: Dragon Cheer');
+					this.add('-start', target, 'move: Coaching');
 				}
 			},
 			onModifyCritRatio(critRatio, source) {
