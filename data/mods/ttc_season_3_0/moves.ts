@@ -37,6 +37,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		category: "Physical",
 		multihit: [2, 5],
 		recoil: [0,0],
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+		shortDesc: "Hits 2-5 times in one turn.",
 	},
 	//#endregion
 	//#region Special Moves
