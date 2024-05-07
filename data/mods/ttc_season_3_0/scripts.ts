@@ -576,6 +576,18 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Sotanaht", this)
 			.learnset
 				.add("Dragon Cheer")
-		//#endregion		
+		//#endregion	
+		
+		//#region NFE
+		new ModifyPokemon("Luxio", this)
+			.learnset
+				.remove("Wild Charge")
+		//#endregion	
+
+		//#region LC
+		new ModifyPokemon("Shinx", this)
+			.learnset
+				.remove("Wild Charge")
+		//#endregion	
 	},
 };
