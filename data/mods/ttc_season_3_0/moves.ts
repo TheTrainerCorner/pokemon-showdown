@@ -94,7 +94,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			def: 1,
 		},
 		target: "allies",
-	}
+	},
 	//#endregion
 
 	//#region Fakemon Moves
