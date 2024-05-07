@@ -125,6 +125,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility("Trace")
 		//#endregion
 		//#region Gen 3
+		new ModifyPokemon("Aggron", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Altaria", this)
 			.baseStats
 				.setDEF(85)
@@ -238,7 +241,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(89)
 				.setSPA(78)
-				.setSPD(89);
+				.setSPD(89)
+			.pokemon.learnset
+				.remove("Wild Charge")
 		new ModifyPokemon("Garchomp", this)
 			.baseStats
 				.setSPA(65)
