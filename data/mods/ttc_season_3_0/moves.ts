@@ -76,6 +76,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	coaching: {
 		inherit: true,
+		volatileStatus: 'coaching',
 		condition: {
 			onStart(target, source, effect) {
 				if (target.volatiles['focusenergy']) return false;
