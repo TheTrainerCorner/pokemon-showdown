@@ -357,6 +357,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Salazzle", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("TapuKoko", this)
+			.learnset
+				.add("Supercell Slam")
+				.remove("Wild Charge")
 		new ModifyPokemon("Toucannon", this)
 			.learnset
 				.add("Floaty Fall")
@@ -439,9 +443,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Toxtricity", this)
 			.learnset
 				.add("Dragon Cheer")
-		//new ModifyPokemon("Toxtricity-Low-Key", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("ToxtricityLowKey", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Zapdos-Galar", this)
 			.learnset
 				.remove("Wild Charge")
