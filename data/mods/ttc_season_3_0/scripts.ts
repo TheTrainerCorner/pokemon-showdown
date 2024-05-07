@@ -106,9 +106,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(80)
 				.setSPA(100)
 				.setSPD(80);
-		new ModifyPokemon("Kingdra", this)
-			.learnset
-				.add("Dragon Cheer")
+		//new ModifyPokemon("Kingdra", this)
+			//.learnset
+				//.add("Dragon Cheer")
 		new ModifyPokemon("Lanturn", this)
 			.learnset
 				.add("Thunderclap");
