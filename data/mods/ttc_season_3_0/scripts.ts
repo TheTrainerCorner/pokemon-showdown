@@ -387,9 +387,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(70)
 				.setSPA(105)
 				.setSPD(70);
-		//new ModifyPokemon("Flapple", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Flapple", this)
+			.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Hatterene", this)
 			.baseStats
 				.setATK(100)
@@ -431,9 +431,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Memento")
 				.add("Taunt")
 				.add("Topsy-Turvy");
-		//new ModifyPokemon("Toxtricity", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Toxtricity", this)
+			.learnset
+				.add("Dragon Cheer")
 		//new ModifyPokemon("Toxtricity-Low-Key", this)
 		//	.learnset
 		//		.add("Dragon Cheer")
