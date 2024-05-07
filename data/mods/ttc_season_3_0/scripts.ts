@@ -202,14 +202,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Seviper", this)
 			.learnset
 				.add("Shed Tail")
-			//.pokemon.learnset
-			//	.add("Dragon Cheer")
+			.pokemon.learnset
+				.add("Dragon Cheer")
 		new ModifyPokemon("Shiftry", this)
 			.learnset
 				.add("Ivy Cudgel")
-		//new ModifyPokemon("Tropius", this)
-		//	.learnset
-		//		.add("Dragon Cheer")
+		new ModifyPokemon("Tropius", this)
+			.learnset
+				.add("Dragon Cheer")
 		//#endregion
 		//#region Gen 4
 		new ModifyPokemon("Azelf", this)
