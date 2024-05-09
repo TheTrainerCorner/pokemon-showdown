@@ -653,10 +653,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(124)
 			.pokemon.learnset
 				.add("Dragon Cheer")
-		new ModifyPokemon("Meloetta-Aurora", this)
+		new ModifyPokemon("MeloettaAurora", this)
 			.learnset
 				.remove("Celebrate")
-		new ModifyPokemon("Meloetta-Caroler", this)
+		new ModifyPokemon("MeloettaCaroler", this)
 			.learnset
 				.remove("Celebrate")
 		new ModifyPokemon("Metadraco", this)
