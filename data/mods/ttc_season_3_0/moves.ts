@@ -92,6 +92,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	celebrate: {
 		inherit: true,
 		category: "Status",
+		pp: 10,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, failencore: 1},
 		volatileStatus: 'encore',
