@@ -152,7 +152,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		zMove: {boost: {spe: 1}},
 		contestType: "Cute",
 		desc: "For its next 3 turns, the target is forced to repeat its last move used. If the affected move runs out of PP, the effect ends. Fails if the target is already under this effect, if it has not made a move, if the move has 0 PP, or if the move is Assist, Blazing Torque, Combat Torque, Copycat, Dynamax Cannon, Encore, Magical Torque, Me First, Metronome, Mimic, Mirror Move, Nature Power, Noxious Torque, Sketch, Sleep Talk, Struggle, Transform, or Wicked Torque.Lowers the target's Defense and Special Defense by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Defense and Special Defense stat stages were both unchanged, or if there are no unfainted party members.",
-		shortDesc: "Target repeats move for 3 turns. Lowers target's Def, Sp. Def by 1. User switches.",
+		shortDesc: "Lowers target's Def, Sp. Def by 1 and encores.User switches.",
 	},
 	dragoncheer: {
 		inherit: true,
