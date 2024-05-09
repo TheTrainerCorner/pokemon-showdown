@@ -642,13 +642,28 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove("Celebrate")	
 		new ModifyPokemon("Murkrow", this)
 			.learnset
-				.remove("Celebrate")	
+				.add("elebrate")	
 		new ModifyPokemon("Luxio", this)
 			.learnset
 				.remove("Wild Charge")
 		//#endregion	
 
 		//#region LC
+		new ModifyPokemon("Bulbasaur", this)
+			.learnset
+				.remove("Celebrate")
+		new ModifyPokemon("Charcadet", this)
+			.learnset
+				.remove("Celebrate")
+		new ModifyPokemon("Charmander", this)
+			.learnset
+				.remove("Celebrate")
+		new ModifyPokemon("Magikarp", this)
+			.learnset
+				.remove("Celebrate")
+		new ModifyPokemon("Milcery", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Munchlax", this)
 			.learnset
 				.remove("Celebrate")	
@@ -658,6 +673,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Shinx", this)
 			.learnset
 				.remove("Wild Charge")
+		new ModifyPokemon
+		new ModifyPokemon("Vulpix_Alola", this)
+			.learnset
+				.remove("Celebrate")
 		//#endregion	
 	},
 };
