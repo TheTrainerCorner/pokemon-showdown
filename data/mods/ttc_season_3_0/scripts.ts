@@ -454,7 +454,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Alcremie", this)
 			.learnset
 				.add("Syrup Bomb")
-				.add("Matcha Gatcha")
+				.add("Matcha Gotcha")
 			.pokemon.learnset
 				.remove("celebrate")
 		new ModifyPokemon("Coalossal", this)

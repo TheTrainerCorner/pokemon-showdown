@@ -378,7 +378,7 @@ export default function Gen6(dex: ModdedDex) {
 		.setH('Mirror Armor')
 		.pokemon.learnset()
 		.addMove('Shell Smash')
-		.addMove('Draco Hammer')
+		.addMove('Dragon Hammer')
 		.addMove('Scald');
 	modifyPokemon('klefki')
 		.learnset()

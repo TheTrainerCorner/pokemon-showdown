@@ -43,7 +43,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			belch: ["9M"],
 			bodyslam: ["9M"],
 			bulldoze: ["9M"],
-			burningjealosy: ["9M"],
+			burningjealousy: ["9M"],
 			clearsmog: ["9M"],
 			curse: ["9M"],
 			dig: ["9M"],
