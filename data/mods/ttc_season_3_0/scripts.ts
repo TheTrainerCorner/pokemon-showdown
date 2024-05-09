@@ -656,6 +656,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Meloetta-Aurora", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Meloetta-Caroler", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Metadraco", this)
 			.baseStats
 				.setATK(120)	
