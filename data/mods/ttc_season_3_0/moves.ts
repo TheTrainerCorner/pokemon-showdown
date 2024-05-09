@@ -18,6 +18,29 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 20% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
 		shortDesc: "20% chance to sleep, poison, or paralyze target.",
 	},
+	hardpress:{
+		inherit: true,
+		basePower: 0,
+		basePowerCallback(pokemon, target) {
+			const ratio = Math.max(Math.floor(pokemon.hp * 48 / pokemon.maxhp), 1);
+			let bp;
+			if (ratio < 2) {
+				bp = 130;
+			} else if (ratio < 5) {
+				bp = 110;
+			} else if (ratio < 10) {
+				bp = 88;
+			} else if (ratio < 17) {
+				bp = 66;
+			} else if (ratio < 33) {
+				bp = 44;
+			} else {
+				bp = 22;
+			}
+			this.debug('BP: ' + bp);
+			return bp;
+		},
+	},
 	payday: {
 		inherit: true,
 		basePower: 80,
