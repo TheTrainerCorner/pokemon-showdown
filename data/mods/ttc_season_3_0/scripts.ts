@@ -673,7 +673,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Shinx", this)
 			.learnset
 				.remove("Wild Charge")
-		new ModifyPokemon("Vulpix_Alola", this)
+		new ModifyPokemon("Vulpix-Alola", this)
 			.learnset
 				.remove("Celebrate")
 		//#endregion	
