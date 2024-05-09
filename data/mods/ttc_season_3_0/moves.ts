@@ -60,6 +60,69 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	//#endregion
 	//#region Other Moves
+	celebrate: {
+		inherit: true,
+		category: "Status",
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1, failencore: 1},
+		volatileStatus: 'encore',
+		condition: {
+			duration: 3,
+			noCopy: true, // doesn't get copied by Z-Baton Pass
+			onStart(target) {
+				let move: Move | ActiveMove | null = target.lastMove;
+				if (!move || target.volatiles['dynamax']) return false;
+
+				if (move.isMax && move.baseMove) move = this.dex.moves.get(move.baseMove);
+				const moveIndex = target.moves.indexOf(move.id);
+				if (move.isZ || move.flags['failencore'] || !target.moveSlots[moveIndex] || target.moveSlots[moveIndex].pp <= 0) {
+					// it failed
+					return false;
+				}
+				this.effectState.move = move.id;
+				this.add('-start', target, 'Encore');
+				if (!this.queue.willMove(target)) {
+					this.effectState.duration++;
+				}
+			},
+			onOverrideAction(pokemon, target, move) {
+				if (move.id !== this.effectState.move) return this.effectState.move;
+			},
+			onResidualOrder: 16,
+			onResidual(target) {
+				if (!target.moves.includes(this.effectState.move) ||
+					target.moveSlots[target.moves.indexOf(this.effectState.move)].pp <= 0) {
+					// early termination if you run out of PP
+					target.removeVolatile('encore');
+				}
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Encore');
+			},
+			onDisableMove(pokemon) {
+				if (!this.effectState.move || !pokemon.hasMove(this.effectState.move)) {
+					return;
+				}
+				for (const moveSlot of pokemon.moveSlots) {
+					if (moveSlot.id !== this.effectState.move) {
+						pokemon.disableMove(moveSlot.id);
+					}
+				}
+			},
+		},
+		onHit(target, source, move) {
+			const success = this.boost({def: -1, spd: -1}, target, source);
+			if (!success && !target.hasAbility('mirrorarmor')) {
+				delete move.selfSwitch;
+			}
+		},
+		selfSwitch: true,
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {boost: {spe: 1}},
+		contestType: "Cute",
+	},
 	dragoncheer: {
 		inherit: true,
 		condition: {

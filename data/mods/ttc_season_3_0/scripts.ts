@@ -14,6 +14,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Pokedex", "eeveestarter").otherFormes = ["Eevee-Mega"];
 		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
 		//#region Gen 1
+		new ModifyPokemon("Aerodactyl", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Arbok", this)
 			.learnset
 				.add("Dragon Cheer")
@@ -22,12 +25,24 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(60)
 				.setDEF(62)
 				.setSPD(113)
+		new ModifyPokemon("Blastoise", this)
+			.learnset
+				.remove("Celebrate")
+		new ModifyPokemon("Charizard", this)
+			.learnset
+				.remove("Celebrate")
+		new ModifyPokemon("Chansey", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Dragonite", this)
 			.baseStats
 				.setHP(101)
 				.setSPA(80)
 				.setSPD(95)
 				.setSPE(75);
+		new ModifyPokemon("Eevee", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Eevee-Starter", this)
 			.learnset
 				// Coverage Moves For this FRICKIN POKEMON WTF AM I LOOKING AT
@@ -70,6 +85,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				// Eevee Starter moves removal
 				.remove("Baddy Bad").remove("Bouncy Bubble").remove("Buzzy Buzz").remove("Freezy Frost").remove("Glitzy Glow")
 				.remove("Sappy Seed").remove("Sizzly Slide").remove("Sparkly Swirl").remove("Veevee Volley");
+		new ModifyPokemon("Gyarados", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Machamp", this)
 			.baseStats
 				.setSPA(55);
@@ -91,7 +109,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Aura Sphere")
 				.add("Wake Up Slap")
 				.add("Force Palm");
-
+		new ModifyPokemon("Venusaur", this)
+			.learnset
+				.remove("Celebrate")
 		//#endregion	
 		//#region Gen 2
 		new ModifyPokemon("Crobat", this)
@@ -135,7 +155,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(75);
 		new ModifyPokemon("Altaria-Mega", this)
 			.baseStats
-				.setATK(70);	
+				.setATK(70);
+		new ModifyPokemon("Banette", this)
+			.learnset
+				.add("Celebrate")	
 		new ModifyPokemon("Blaziken-Mega", this)
 			.baseStats
 				.setATK(145)
@@ -161,7 +184,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Extreme Speed");
 		new ModifyPokemon("Huntail", this)
 			.learnset
-				.add("Dragon Cheer")
+				.add("Dragon Cheer")	
+		new ModifyPokemon("Illumise", this)
+			.learnset
+				.add("Celebrate")
 		new ModifyPokemon("Kecleon", this)
 			.learnset
 				.add("Dragon Cheer")
@@ -213,6 +239,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Tropius", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Volbeat", this)
+			.learnset
+				.add("Celebrate")
 		//#endregion
 		//#region Gen 4
 		new ModifyPokemon("Azelf", this)
@@ -258,10 +287,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(95)
 				.setSPA(110)
 				.setSPD(95);
+		new ModifyPokemon("Pachirisu", this)
+			.learnset
+				.add("Celebrate")
 		new ModifyPokemon("Shaymin", this)
 			.baseStats
 				.setSPA(100)
 				.setSPD(105)
+			.pokemon.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Uxie", this)
 			.baseStats
 				.setATK(50)
@@ -284,6 +318,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(85)
 			.pokemon.learnset
 				.add("Fickle Beam")
+		new ModifyPokemon("Meloetta", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Serperior", this)
 			.learnset
 				.add("Dragon Cheer")
@@ -296,6 +333,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Unfezant", this)
 			.learnset
 				.add("Floaty Fall")
+		new ModifyPokemon("Victini", this)
+			.learnset
+				.remove("Celebrate")
 		//#endregion
 		//#region Gen 6
 		new ModifyPokemon("Aurorus", this)
@@ -334,12 +374,17 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Dragon Cheer")
 		//#endregion
 		//#region Gen 7
+		new ModifyPokemon("Comfey", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Drampa", this)
 			.learnset
 				.add("Dragon Cheer")
 		new ModifyPokemon("Exeggutor-Alola", this)
 			.learnset
 				.add("Fickle Beam")
+			.pokemon.learnset
+			.remove("Celebrate")
 		new ModifyPokemon("Kommoo", this)
 			.baseStats
 				.setHP(70)
@@ -354,6 +399,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Naganadel", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Ninetales-Alola", this)
+			.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Salazzle", this)
 			.learnset
 				.add("Dragon Cheer")
@@ -378,7 +426,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Dragon Cheer")
 		new ModifyPokemon("Alcremie", this)
 			.learnset
-				.add("Syrup Bomb");
+				.add("Syrup Bomb")
+				.add("Matcha Gatcha")
+			.pokemon.learnset
+				.remove("celebrate")
 		new ModifyPokemon("Coalossal", this)
 			.baseStats
 				.setATK(90)
@@ -457,6 +508,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(90)
 				.setATK(50)
 				.setSPE(105)
+			.pokemon.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Baxcalibur", this)
 			.baseStats
 				.setDEF(82)
@@ -465,12 +518,17 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(125)
 				.setSPA(60)
+			.pokemon.learnset
+				.remove("Celebrate")
 		new ModifyPokemon("Dudunsparce", this)
 			.learnset
 				.add("Dragon Cheer")
 		new ModifyPokemon("FlutterMane", this)
 			.learnset
 				.add("Earth Power")
+		new ModifyPokemon("Grafaiai", this)
+			.learnset
+				.add("Celebrate")
 		new ModifyPokemon("GreatTusk", this)
 			.learnset
 				.add("Roar")
@@ -579,12 +637,24 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion	
 		
 		//#region NFE
+		new ModifyPokemon("Pikachu", this)
+			.learnset
+				.remove("Celebrate")	
+		new ModifyPokemon("Murkrow", this)
+			.learnset
+				.remove("Celebrate")	
 		new ModifyPokemon("Luxio", this)
 			.learnset
 				.remove("Wild Charge")
 		//#endregion	
 
 		//#region LC
+		new ModifyPokemon("Munchlax", this)
+			.learnset
+				.remove("Celebrate")	
+		new ModifyPokemon("Pawmi", this)
+			.learnset
+				.remove("Celebrate")	
 		new ModifyPokemon("Shinx", this)
 			.learnset
 				.remove("Wild Charge")
