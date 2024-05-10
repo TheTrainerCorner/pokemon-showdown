@@ -37,6 +37,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			"tripleaxel",
 			"triplekick",
 			"tropkick",
+			"lowkick",
 		];
 
 		for (const move of kickMoves) {
