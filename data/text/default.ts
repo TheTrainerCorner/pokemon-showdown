@@ -176,6 +176,14 @@ export const DefaultText: {[k: string]: DefaultText} = {
 		endFromItem: "  [POKEMON]'s [ITEM] healed its burn!",
 		damage: "  [POKEMON] was hurt by its burn!",
 	},
+	frb: {
+		start: "  [POKEMON] was frostbited!",
+		startFromItem: "  [POKEMON] was frostbited by the [ITEM]!",
+		alreadyStarted: "  [POKEMON] is already frostbited!",
+		end: "  [POKEMON]'s frostbite was healed!",
+		endFromItem: "  [POKEMON]'s [ITEM] healed it's frostbite!",
+		damage: "  [POKEMON] was hurt by its frostbite!",
+	},
 	frz: {
 		start: "  [POKEMON] was frozen solid!",
 		alreadyStarted: "  [POKEMON] is already frozen solid!",
