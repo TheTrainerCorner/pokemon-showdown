@@ -177,13 +177,30 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	burningjealousy:{
 		inherit: true,
 		priority: 1,
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === 'move' ? action.move : null;
-			if (!move || (move.category === 'Status' && move.id !== 'mefirst') || target.volatiles['mustrecharge']) {
-				return false;
-			}
+		secondary: {
+			chance: 100,
+			volatileStatus: 'burningjealousy',
 		},
+		condition: {
+			onStart(target, source, effect) {
+				this.add('-start', target, 'move: Burning Jealousy');
+			},
+			onAfterBoost(boost, target, source, effect) {
+				let i: BoostID
+				for(i in boost) {
+					if (boost[i]! > 0) {
+						target.trySetStatus('brn', source);
+						target.removeVolatile('burningjealousy');
+						return;
+					}
+				}
+			},
+			onEnd(target) {
+				this.add('-end', target, 'move: Burning Jealousy', '[silent]');
+			},
+		},
+		desc: "Marks the opponent; When the opponent gains a stat buff, they are burned and removes the mark.",
+		shortDesc: "Marks the opponent; When the opponet gains a stat buff, they are burned!",
 	},
 	lifedew: {
 		inherit: true,
