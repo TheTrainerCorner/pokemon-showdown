@@ -362,6 +362,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove("Celebrate")
 		//#endregion
 		//#region Gen 6
+		new ModifyPokemon("Aegislash", this)
+			.learnset
+				.add("Bitter Blade")
 		new ModifyPokemon("Aurorus", this)
 			.learnset
 				.add("Dragon Cheer")
