@@ -17,6 +17,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Pokedex", "eeveestarter").forme = undefined;
 		this.modData("Pokedex", "eeveestarter").otherFormes = ["Eevee-Mega"];
 		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
+		
 		//#region Gen 1
 		new ModifyPokemon("Aerodactyl", this)
 			.learnset
@@ -720,5 +721,57 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.remove("Celebrate")
 		//#endregion	
+
+		//#region Modifying Moves
+
+		//#region Adding Frostbite to moves
+		// Ice Fang
+		this.modData("Moves", "icefang").secondaries = [
+			{
+				chance: 10,
+				status: 'frb',
+			},
+			{
+				chance: 10,
+				volatileStatus: 'flinch',
+			},
+		];
+		// Aurora Beam
+		this.modData("Moves", "aurorabeam").secondary = undefined;
+		this.modData("Moves", "aurorabeam").secondaries = [
+			{
+				chance: 10,
+				status: 'frb',
+			},
+			{
+				chance: 10,
+				boosts: {
+					atk: -1,
+				},
+			},
+		];
+		// Icy Wind
+		this.modData("Moves", "icywind").secondary = undefined;
+		this.modData("Moves", "icywind").secondaries = [
+			{
+				chance: 10,
+				status: 'frb',
+			},
+			{
+				chance: 100,
+				boosts: {
+					spe: -1,
+				},
+			},
+		];
+		// Ice Punch
+		this.modData("Moves", "icepunch").secondary = { chance: 10, status: 'frb' };
+		// Powder Snow
+		this.modData("Moves", "powdersnow").secondary = { chance: 10, status: 'frb' };
+
+		//#endregion
+
+
+		//#endregion
 	},
 };

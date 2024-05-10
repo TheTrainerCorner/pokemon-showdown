@@ -1350,6 +1350,7 @@ export class Pokemon {
 			// Gen 1: Re-Apply burn and para drops.
 			if (this.status === 'par') this.modifyStat!('spe', 0.25);
 			if (this.status === 'brn') this.modifyStat!('atk', 0.5);
+			if (this.status === 'frb') this.modifyStat!('spa', 0.5);
 		}
 		this.speed = this.storedStats.spe;
 		return species;
