@@ -3,6 +3,10 @@ import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: "ttc_season_2",
 	init() {
+
+		// Giving Tindraco and Devdraco the tag to use their back sprite
+		this.modData("Pokedex", "tindraco").tags = ["Fakemon", "Has Back Sprite"];
+		this.modData("Pokedex", "devdraco").tags = ["Fakemon", "Has Back Sprite"];
 		// Adjusting Meowth's data to include Meowth-Mega
 		this.modData("Pokedex", "meowth").otherFormes = ["Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
 		this.modData("Pokedex", "meowth").formeOrder = ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
