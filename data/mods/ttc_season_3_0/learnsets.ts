@@ -104,7 +104,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 
 	// Adjusting Eevee-Starter's learnset to match base eevee
-	eeeveestarter: {
+	eeveestarter: {
 		learnset: {
 			alluringvoice: ["9M"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "5S2", "4M", "4S0", "3M"],
@@ -183,18 +183,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			workup: ["8M", "7M", "5M"],
 			yawn: ["9E", "8E", "7E", "6E", "5E", "4E"],
 		},
-		eventData: [
-			{generation: 4, level: 10, gender: "F", nature: "Lonely", abilities: ["adaptability"], moves: ["covet", "bite", "helpinghand", "attract"], pokeball: "cherishball"},
-			{generation: 4, level: 50, shiny: true, gender: "M", nature: "Hardy", abilities: ["adaptability"], moves: ["irontail", "trumpcard", "flail", "quickattack"], pokeball: "cherishball"},
-			{generation: 5, level: 50, gender: "F", nature: "Hardy", abilities: ["adaptability"], moves: ["sing", "return", "echoedvoice", "attract"], pokeball: "cherishball"},
-			{generation: 6, level: 10, moves: ["celebrate", "sandattack", "babydolleyes", "swift"], pokeball: "cherishball"},
-			{generation: 6, level: 15, shiny: true, isHidden: true, moves: ["swift", "quickattack", "babydolleyes", "helpinghand"], pokeball: "cherishball"},
-			{generation: 7, level: 10, nature: "Jolly", moves: ["celebrate", "sandattack", "babydolleyes"], pokeball: "cherishball"},
-			{generation: 8, level: 5, gender: "M", nature: "Docile", abilities: ["runaway"], moves: ["celebrate", "covet", "helpinghand", "tackle"], pokeball: "cherishball"},
-		],
-		encounters: [
-			{generation: 1, level: 25},
-		],
 	},
 	penquill: {
 		learnset: {
