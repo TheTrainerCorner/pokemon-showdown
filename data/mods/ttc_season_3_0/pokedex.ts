@@ -51,9 +51,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		evos: ["Slugoliath"],
 		tags: ["Fakemon"],
-		tier: "OU",
-		natDexTier: "OU",
-		doublesTier: "DOU",
+		tier: "LC",
+		natDexTier: "LC",
+		doublesTier: "(DUU)",
 	},
 	slugoliath: { // PT333
 		num: -3004,
