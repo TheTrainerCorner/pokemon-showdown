@@ -728,7 +728,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		// Ice Fang
 		this.modData("Moves", "icefang").secondaries = [
 			{
-				chance: 10,
+				chance: 100,
 				status: 'frb',
 			},
 			{
