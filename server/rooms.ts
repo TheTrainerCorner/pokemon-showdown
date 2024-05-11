@@ -2079,16 +2079,16 @@ export class GameRoom extends BasicRoom {
 			0;
 		
 		if (battle.replaySaved) {
-			connection.popup(`Replay has already been saved! Replay is at https://replay.thetrainercorner.net/ttc/${id}`);
+			connection.popup(`Replay has already been saved! Replay is at https://replay.thetrainercorner.net/replays/ttc/${id}`);
 			return;
 		}
 		battle.replaySaved = true;
 
 		// // If we have a direct connetion to a Replays database, just upload the replay
 		// // directly.
-		const url = `https://replay.thetrainercorner.net/ttc/${id}`;
+		const url = `https://replay.thetrainercorner.net/replays/ttc/${id}`;
 		connection.popup(`Your replay has been saved. You can find it at ${url}`);
-		await axios.post('https://replay.thetrainercorner.net/ttc', {
+		await axios.post('https://replay.thetrainercorner.net/replays/ttc', {
 				id: id,
 				log: log.replace(/\//g, '\\/'),
 				players: battle.players.map(p => p.name),
