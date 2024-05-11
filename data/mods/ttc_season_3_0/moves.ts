@@ -43,6 +43,16 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "The power of this move is 22 if X is 33 to 48, 44 if X is 17 to 32, 88 if X is 10 to 16, 110 if X is 5 to 9, 130 if X is 2 to 4, where X is equal to (user's current HP * 48 / user's maximum HP), rounded down.",
 		shortDesc: "More power the less HP the user has left.",
 	},
+	icefang:{
+		inherit:true,
+		desc: "Has a 10% chance to frostbite the target and a 10% chance to make it flinch.",
+		shortDesc: "10% chance to frostbite. 10% chance to flinch.",
+	},
+	icepunch:{
+		inherit:true,
+		desc: "Has a 10% chance to frostbite the target.",
+		shortDesc: "10% chance to frostbite.",
+	},
 	payday: {
 		inherit: true,
 		basePower: 80,
@@ -71,11 +81,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	//#endregion
 	//#region Special Moves
+	aurorabeam:{
+		inherit:true,
+		desc: "Has a 10% chance to frostbite the target.",
+		shortDesc: "10% chance to frostbite.",
+	},
+	icywind:{
+		inherit: true,
+		desc: "Has a 100% chance to lower the target's Speed by 1 stage. Has a 10% chance to frostbite the target.",
+		shortDesc: "100% chance to lower the foe(s) Speed by 1. 10% chance to frostbite",
+	},
 	synchronoise: {
 		inherit: true,
 		secondary: null,
 		shortDesc: "Super effective on Psychic types.",
 		desc: "Super effective on Psychic types.",
+	},
+	powdersnow:{
+		inherit:true,
+		desc: "Has a 10% chance to frostbite the target.",
+		shortDesc: "10% chance to frostbite.",
 	},
 	psystrike: {
 		inherit: true,

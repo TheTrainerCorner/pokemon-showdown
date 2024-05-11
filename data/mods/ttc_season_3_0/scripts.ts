@@ -736,6 +736,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				volatileStatus: 'flinch',
 			},
 		];
+	
 		// Aurora Beam
 		this.modData("Moves", "aurorabeam").secondary = undefined;
 		this.modData("Moves", "aurorabeam").secondaries = [
