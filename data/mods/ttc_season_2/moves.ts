@@ -1649,7 +1649,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Ice",
 		name: "Glacier",
 		priority: 0,
-		flags: {contact: 1, charge: 1},
+		flags: {contact: 1, charge: 1, protect:1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -1681,7 +1681,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Ice",
 		name: "Cold Snap",
 		priority: 0,
-		flags: {contact: 1, charge: 1},
+		flags: {contact: 1, charge: 1,protect:1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
