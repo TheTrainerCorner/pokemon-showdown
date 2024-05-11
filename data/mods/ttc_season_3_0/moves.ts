@@ -86,6 +86,34 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 10% chance to frostbite the target.",
 		shortDesc: "10% chance to frostbite.",
 	},
+	burningjealousy:{
+		inherit: true,
+		basePower:75,
+		secondary: {
+			chance: 100,
+			volatileStatus: 'burningjealousy',
+		},
+		condition: {
+			onStart(target, source, effect) {
+				this.add('-start', target, 'move: Burning Jealousy');
+			},
+			onAfterBoost(boost, target, source, effect) {
+				let i: BoostID
+				for(i in boost) {
+					if (boost[i]! > 0) {
+						target.trySetStatus('brn', source);
+						target.removeVolatile('burningjealousy');
+						return;
+					}
+				}
+			},
+			onEnd(target) {
+				this.add('-end', target, 'move: Burning Jealousy', '[silent]');
+			},
+		},
+		desc: "Marks the opponent; When the opponent gains a stat buff, they are burned and removes the mark.",
+		shortDesc: "Marks the opponent; When the opponet gains a stat buff, they are burned!",
+	},
 	icywind:{
 		inherit: true,
 		desc: "Has a 100% chance to lower the target's Speed by 1 stage. Has a 10% chance to frostbite the target.",
@@ -198,34 +226,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "allies",
 		desc: "Raises the allies chance for a critical hit by 1 stage.Fails if the target already has a crit rate boosting effect. Baton Pass can be used to transfer this effect to an ally.",
 		shortDesc: "User and allies: Crit ratio +1.",
-	},
-	burningjealousy:{
-		inherit: true,
-		priority: 1,
-		secondary: {
-			chance: 100,
-			volatileStatus: 'burningjealousy',
-		},
-		condition: {
-			onStart(target, source, effect) {
-				this.add('-start', target, 'move: Burning Jealousy');
-			},
-			onAfterBoost(boost, target, source, effect) {
-				let i: BoostID
-				for(i in boost) {
-					if (boost[i]! > 0) {
-						target.trySetStatus('brn', source);
-						target.removeVolatile('burningjealousy');
-						return;
-					}
-				}
-			},
-			onEnd(target) {
-				this.add('-end', target, 'move: Burning Jealousy', '[silent]');
-			},
-		},
-		desc: "Marks the opponent; When the opponent gains a stat buff, they are burned and removes the mark.",
-		shortDesc: "Marks the opponent; When the opponet gains a stat buff, they are burned!",
 	},
 	lifedew: {
 		inherit: true,
