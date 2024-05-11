@@ -17,6 +17,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Pokedex", "eeveestarter").forme = undefined;
 		this.modData("Pokedex", "eeveestarter").otherFormes = ["Eevee-Mega"];
 		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
+		this.modData("Pokedex", "eeveestarter").tags = ["Fakemon", "Has Back Sprite"];
 		
 		//#region Gen 1
 		new ModifyPokemon("Aerodactyl", this)
