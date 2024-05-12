@@ -306,7 +306,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				pokemon.formeChange('Meloetta' + meloettaFrome, this.effect, false, '[msg]');
 			}
 		},
-		
+		desc: "If this move is successful on at least one target and the user is a Meloetta, it changes to Aurora Forme if it is currently in Caroler Forme, or changes to Caroler Forme if it is currently in Aurora Forme. This forme change does not happen if the Meloetta has the Sheer Force Ability. The Aurora Forme reverts to Caroler Forme when Meloetta is not active.",
+		shortDesc: "Meloetta transforms.",
 		target: "allAdjacentFoes",
 		type: "Ice",
 		contestType: "Beautiful",
