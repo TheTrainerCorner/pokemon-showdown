@@ -25,6 +25,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		// #endregion
 		// #region Add Kick Move Flag to moves
 		const kickMoves: string[] = [
+			"axekick",
 			"blazekick",
 			"doublekick",
 			"highhorsepower",
@@ -34,6 +35,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			"megakick",
 			"rollingkick",
 			"stomp",
+			"thunderouskick",
+			"triplearrows",
 			"tripleaxel",
 			"triplekick",
 			"tropkick",

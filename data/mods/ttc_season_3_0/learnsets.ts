@@ -237,6 +237,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			tailwind: ["9M"],
 			Taunt: ["9M"],
 			terablast: ["9M"],
+			Tripleaxel: ["9M"],
 			waterfall: ["9M"],
 		  },
 		},
