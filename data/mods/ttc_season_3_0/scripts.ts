@@ -395,7 +395,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setHP(75)
 				.setDEF(95)
-				.setSPE(50);
+				.setSPE(50)
+			.pokemon.learnset
+				.remove("Shell Smash")
 		new ModifyPokemon("Heliolisk", this)
 			.learnset
 				.add("Dragon Cheer")
