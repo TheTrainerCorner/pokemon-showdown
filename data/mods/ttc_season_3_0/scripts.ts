@@ -642,9 +642,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Klawf", this)
 			.learnset
 				.add("Shore Up")
+		new ModifyPokemon("Munkidori", this)
+			.abilities
+				.setAbility1("Gorilla Tactics")
+			.pokemon.baseStats
+				.setATK(80)
+				.setSPA(125)
 		new ModifyPokemon("Okidogi", this)
 			.learnset
 				.add("Mach Punch")
+			
 		new ModifyPokemon("Pecharunt", this)
 			.learnset
 				.add("Bitter Malice")
