@@ -349,6 +349,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Genesect", this)
 			.learnset
 				.remove('Shift Gear');
+		new ModifyPokemon("Gothitelle", this)
+			.baseStats
+				.setHP(85)
+				.setDEF(105)
+			.pokemon.learnset
+				.add("Alluring Voice")
 		new ModifyPokemon("Hydreigon", this)
 			.baseStats
 				.setHP(82)
