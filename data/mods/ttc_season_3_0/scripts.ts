@@ -23,9 +23,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Aerodactyl", this)
 			.learnset
 				.remove("Celebrate")
+			.pokemon.baseStats
+				.setSPA(50)
 		new ModifyPokemon("Arbok", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Aerodactyl-Mega", this)
+			.baseStats
+				.setHP(80)
 		new ModifyPokemon("Alakazam-Mega", this)
 			.baseStats
 				.setATK(60)
