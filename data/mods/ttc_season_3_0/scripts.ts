@@ -172,6 +172,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Smeargle", this)
 			.abilities
 				.setHiddenAbility("Trace")
+		new ModifyPokemon("Suicune", this)
+			.learnset
+				.add("Calm Mind")
+				.add("Chilly Reception")
+				.add("Teleport")
 		//#endregion
 		//#region Gen 3
 		new ModifyPokemon("Aggron", this)
