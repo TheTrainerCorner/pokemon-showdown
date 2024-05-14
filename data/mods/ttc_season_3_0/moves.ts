@@ -155,6 +155,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onEnd(target) {
 				if (target && !target.fainted) {
 					this.boost({atk: 1, spa: 1}, target, target);
+					this.add('-boost', target, '[from] move: Celebrate', '[Celebrator] ' + this.effectState.source.name);
 				}
 			},
 		},
