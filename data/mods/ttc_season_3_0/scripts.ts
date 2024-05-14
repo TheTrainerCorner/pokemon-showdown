@@ -577,6 +577,17 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Dudunsparce", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Fezandipti", this)
+			.abilities
+				.setAbility1("Corrosion")
+			.pokemon.baseStats
+				.setHP(85)
+				.setATK(87)
+				.setDEF(79)
+				.setSPA(80)
+			.pokemon.learnset
+				.add("Aura Sphere")
+				.add("Malignant Chain")
 		new ModifyPokemon("FlutterMane", this)
 			.learnset
 				.add("Earth Power")
