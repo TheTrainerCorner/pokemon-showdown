@@ -577,7 +577,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Dudunsparce", this)
 			.learnset
 				.add("Dragon Cheer")
-		new ModifyPokemon("Fezandipti", this)
+		new ModifyPokemon("Fezandipiti", this)
 			.abilities
 				.setAbility1("Corrosion")
 			.pokemon.baseStats
