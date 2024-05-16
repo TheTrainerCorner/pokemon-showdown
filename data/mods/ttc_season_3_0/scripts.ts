@@ -711,8 +711,19 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add("Dragon Cheer")
 		new ModifyPokemon("Sotanaht", this)
-			.learnset
+			.abilities
+				.setHiddenAbility('Shed Skin')
+			.pokemon.baseStats
+				.setATK(106)
+				.setSPE(96)
+			.pokemon.learnset
 				.add("Dragon Cheer")
+				.add("Super Fang")
+				.add("Flame Charge")
+				.add("Poison Fang")
+				.add("Tail Glow")
+				.add("Fire Spin")
+				.add("Shadow Sneak");
 		//#endregion	
 		
 		//#region NFE

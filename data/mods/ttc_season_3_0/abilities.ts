@@ -18,7 +18,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Sharpness + Attack increased by 1.1x",
 		shortDesc: "Sharpness + Attack increased by 1.1x",
 	},
-	noguard: {
+	vampire: { // [BUFFED] + [CHANGE]
+		inherit: true,
+		onBasePowerPriority: 5,
+		onBasePower(basePower, source, target, move) {
+			if (move.flags.bite) return this.chainModify([5120, 4096]);
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.flags.bite) {
+				this.heal((damage / 5), source, target, "drain");
+			}
+		},
+		desc: "[BUFFED] Bite moves have 1.25 more damage and user heals 1/5 of the damage dealt by bite moves.",
+		shortDesc: "Bite moves; 1.25x Damage + 1/5 Healing",
+	},
+	noguard: { // [NERFED]
 		inherit: true,
 		onAnyInvulnerabilityPriority: undefined,
 		onAnyInvulnerability: undefined,
