@@ -232,6 +232,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If Meloetta-Caroler, move will be a special move, and sets snow; If Meloetta-Aurora, move will be physical and sets aurora veil.",
 		shortDesc: "Meloetta-Caroler = Special + Snow; Meloetta-Aurora = Physical + Aurora Veil",
 	},
+	soulfang: {
+		inherit: true,
+		accuracy: 95,
+	},
 	//#endregion
 
 	//#region New Moves
