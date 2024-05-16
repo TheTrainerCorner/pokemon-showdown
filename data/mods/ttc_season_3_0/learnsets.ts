@@ -281,7 +281,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 				solarbeam: ["9M"],
 				solarblade: ["9M"],
 				spikyshield: ["9M"],
-				stealthrocks: ["9M"],
+				stealthrock: ["9M"],
 				strength: ["9M"],
 				substitute: ["9M"],
 				superpower: ["9M"],
