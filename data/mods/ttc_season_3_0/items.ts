@@ -15,12 +15,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	eeveeite: {
 		name: "Eeveeite",
-		spritenum: 575,
+		spritenum: -100,
 		megaStone: "Eevee-Mega",
 		megaEvolves: "Eevee-Starter",
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
-		}
+		},
 	}
 }
