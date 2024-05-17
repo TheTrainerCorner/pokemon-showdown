@@ -90,7 +90,7 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 	readonly isGem: boolean;
 	/** Is this item a Pokeball? */
 	readonly isPokeball: boolean;
-	readonly tags?: "Ball" [];
+	readonly tags?: "Ball" | "Custom" [];
 
 	declare readonly condition?: ConditionData;
 	declare readonly forcedForme?: string;
