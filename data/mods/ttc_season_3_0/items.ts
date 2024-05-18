@@ -107,24 +107,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 	fullincense: {
 		inherit: true,
 		onFractionalPriority: undefined,
-		onTryHeal(damage, target, source, effect) {
-			this.debug(`Event: TryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
+		// Source doesn't actually exist when it comes to Foe Healing
+		// Target is the foe
+		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
+			if (!this.heal(Math.floor(healing/4))) // Should heal the user
+				return this.chainModify([3072, 4096]); // Should reduce the healing
 		},
-		onAnyTryHeal(damage, target, source, effect) {
-			this.debug(`Event: AnyTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
-		},
-		onSourceTryHeal(damage, target, source, effect) {
-			this.debug(`Event: SourceTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
-		},
-		onFoeTryHeal(damage, target, source, effect) {
-			this.debug(`Event: FoeTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
-		},
-		onAllyTryHeal(damage, target, source, effect) {	
-			this.debug(`Event: AllyTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
-		},
-		// onFoeTryHeal(healing: number, target: Pokemon, source: Pokemon, effect: Effect) {
-		// 	if (!this.runEvent('TryHeal', source, null, this.effect, Math.floor((healing/4))))
-		// 		return this.chainModify([3072, 4096]);
-		// },
 	},
 }
