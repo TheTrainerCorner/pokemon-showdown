@@ -119,8 +119,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		// Source doesn't actually exist when it comes to Foe Healing
 		// Target is the foe
 		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
-			if (!this.effectState.triggered && healing > 0) {
-				this.debug(`healing -> ${healing}`);
+			if (!this.effectState.triggered && target !== this.effectState.user) {
 				this.heal(this.effectState.user.maxhp * 0.25); // + 25%
 				this.effectState.triggered = true;
 				return healing * 0.75; // + 75% 
