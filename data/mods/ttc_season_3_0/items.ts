@@ -110,8 +110,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 		// Source doesn't actually exist when it comes to Foe Healing
 		// Target is the foe
 		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
-			if (!this.heal(Math.floor(healing/4))) // Should heal the user
-				return this.chainModify([3072, 4096]); // Should reduce the healing
+				this.heal(healing/4);
+				return healing*0.75; // Should reduce the healing
 		},
 	},
 }
