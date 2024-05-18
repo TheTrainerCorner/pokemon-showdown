@@ -46,12 +46,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target)) {
-			if (target.status || !target.runStatusImmunity('slp')) {
+			if (source.status || !source.runStatusImmunity('slp')) {
 				return false;
 			}
 			else{
 				source.addVolatile('yawn')
-				source.useItem();
+				target.useItem();
 			}
 			}
 		},
