@@ -284,4 +284,25 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 	},
 	//#endregion
+
+	//#region Staff Addition
+	resentfulscreech: {
+		num: -3003,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Resentful Screech",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.species.id === 'wishiwashiresentful') return 120;
+			return 60;
+		},
+		target: "normal",
+		type: "Ghost",
+		desc: "If the pokemon is Wishiwashi-Resentful; the base power is double. Else it is default to 60.",
+		shortDesc: "If the pokemon is Wishiwashi-Resentful, the base power is double.",
+	},
+	//#endregion
 }

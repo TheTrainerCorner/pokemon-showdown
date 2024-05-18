@@ -220,4 +220,31 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#endregion
 
 	//#endregion
+
+	//#region Staff Addition
+	vengefuldesire: {
+		name: "Vengeful Desire",
+		onTryHit(pokemon, target, move) {
+			if (move.ohko) {
+				this.add('-immune', pokemon, '[from] ability: Vengeful Desire');
+				return null;
+			}
+		},
+		onDamagePriority: -30,
+		onDamage(damage, target, source, effect) {
+			if (target.species.id === 'wishiwashisoulless' && target.hp && damage >= target.hp && effect) {
+				this.effectState.triggered = true;
+				return target.hp - 1;
+			}
+		},
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.species.id !== 'wishiwashisoulless') return;
+			if (!this.effectState.triggered) return;
+			this.add('-activate', pokemon, 'ability: Vengeful Desire');
+			pokemon.formeChange('Wishiwashi-Resentful', this.effect, true);
+			this.heal(pokemon.maxhp / 2);
+		},
+	},
+	//#endregion
 };

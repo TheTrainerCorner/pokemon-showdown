@@ -104,7 +104,47 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tier: "OU",
 		natDexTier: "OU",
 		doublesTier: "DOU",
-	}
+	},
 
+	//#endregion
+
+	//#region Staff Additions
+	wishiwashisoulless: {
+		num: -3007,
+		name: "Wishwashi-Soulless",
+		types: ["Ghost", "Dark"],
+		genderRatio: {M: 0.5, F: 0.5},
+		baseStats: {hp: 45, atk: 15, def: 15, spa: 25, spd: 15, spe: 60},
+		abilities: {0: "Vengeful Desire"},
+		heightm: 0.2,
+		weightkg: 0.3,
+		color: "Gray",
+		eggGroups: ["Water 2"],
+		otherFormes: ["Wishiwashi-Resentful"],
+		formeOrder: ["Wishiwashi-Soulless", "Wishiwashi-Resentful"],
+		tags: ["Fakemon"],
+		tier: "LC",
+		natDexTier: "LC",
+		doublesTier: "LC",
+	},
+	wishiwashiresentful: {
+		num: -3007,
+		name: "Wishiwashi-Resentful",
+		baseSpecies: "Wishiwashi-Soulless",
+		forme: "Resentful",
+		types: ["Ghost", "Dark"],
+		baseStats: {hp: 85, atk: 110, def: 100, spa: 130, spd: 120, spe: 75},
+		abilities: {0: "Vengeful Desire"},
+		heightm: 8.2,
+		weightkg: 78.6,
+		color: "Gray",
+		eggGroups: ["Water 2"],
+		requiredAbility: "Vengeful Desire",
+		battleOnly: "Wishiwashi-Soulless",
+		tags: ["Fakemon"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
+	},
 	//#endregion
 };
