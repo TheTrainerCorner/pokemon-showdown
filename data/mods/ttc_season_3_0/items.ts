@@ -117,7 +117,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			this.effectState.triggered = false;
 		},
 		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
-			if (this.effectState.triggered) {
+			if (!this.effectState.triggered) {
 				this.effectState.triggered = true;
 				this.heal(this.effectState.target.maxHp / 4, this.effectState.target);
 				return healing * 0.75;
