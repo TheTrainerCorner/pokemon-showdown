@@ -146,5 +146,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
+	empoleonmega: {
+		num: 395,
+		name: "Empoleon-Mega",
+		baseSpecies: "Empoleon",
+		forme: "Mega",
+		types: ["Water", "Steel"],
+		genderRatio: {M: 0.875, F: 0.125},
+		baseStats: {hp: 84, atk: 101, def: 104, spa: 141, spd: 121, spe: 94},
+		abilities: {0: "Emperor's Command"},
+		heightm: 1.8,
+		weightkg: 90.5,
+		color: "Blue",
+		eggGroups: ["Water 1", "Field"],
+		requiredItem: "Empoleonite",
+	},
 	//#endregion
 };

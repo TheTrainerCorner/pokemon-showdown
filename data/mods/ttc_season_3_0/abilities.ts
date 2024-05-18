@@ -246,5 +246,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			this.heal(pokemon.maxhp / 2);
 		},
 	},
+	emperorscommand: {
+		name: "Emperor's Command",
+		// The user's +10% atk for moves
+		onModifyAtk(atk, source, target, move) {
+			return this.chainModify([4506, 4096]);
+		},
+		// The user's +10% spa for moves
+		onModifySpA(atk, source, target, move) {
+			return this.chainModify([4506, 4096]);
+		},
+		// The damage reduction on foes by -10%
+		onFoeBasePower(basePower, source, target, move) {
+			return this.chainModify([3687, 4096]);
+		}
+	},
 	//#endregion
 };
