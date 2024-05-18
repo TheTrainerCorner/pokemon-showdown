@@ -109,9 +109,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onFractionalPriority: undefined,
 		// Source doesn't actually exist when it comes to Foe Healing
 		// Target is the foe
+		onStart(target) {
+			this.effectState.target = target;
+		},
+		// Trying to see if i can make it to be a once per turn item if that will work.
+		onBeforeTurn(pokemon) {
+			this.effectState.triggered = false;
+		},
 		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
-				this.heal(healing/4);
-				return healing*0.75; // Should reduce the healing
+			if (this.effectState.triggered) {
+				this.effectState.triggered = true;
+				this.heal(this.effectState.target.maxHp / 4, this.effectState.target);
+				return healing * 0.75;
+			}	
 		},
 	},
 }
