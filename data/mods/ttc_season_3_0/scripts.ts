@@ -126,6 +126,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Aura Sphere")
 				.add("Wake Up Slap")
 				.add("Force Palm");
+		new ModifyPokemon("Muk", this)
+			.learnset
+				.add("Dire Claw")
 		new ModifyPokemon("Snorlax", this)
 			.learnset
 				.remove("Celebrate")
