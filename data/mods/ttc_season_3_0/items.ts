@@ -107,11 +107,21 @@ export const Items: {[k: string]: ModdedItemData} = {
 	fullincense: {
 		inherit: true,
 		onFractionalPriority: undefined,
+		onTryHeal(damage, target, source, effect) {
+			this.debug(`Event: TryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
+		},
+		onAnyTryHeal(damage, target, source, effect) {
+			this.debug(`Event: AnyTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
+		},
 		onSourceTryHeal(damage, target, source, effect) {
-			this.debug("Heal is occurring: " + target + " <- " + source + " :: " + effect.id);
-			this.heal(Math.floor(damage / 4), target, source);
-			return this.chainModify([3072, 4096]);
-		}
+			this.debug(`Event: SourceTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
+		},
+		onFoeTryHeal(damage, target, source, effect) {
+			this.debug(`Event: FoeTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
+		},
+		onAllyTryHeal(damage, target, source, effect) {	
+			this.debug(`Event: AllyTryHeal | Target: ${target} | source: ${source} | Effect: ${effect}`);
+		},
 		// onFoeTryHeal(healing: number, target: Pokemon, source: Pokemon, effect: Effect) {
 		// 	if (!this.runEvent('TryHeal', source, null, this.effect, Math.floor((healing/4))))
 		// 		return this.chainModify([3072, 4096]);
