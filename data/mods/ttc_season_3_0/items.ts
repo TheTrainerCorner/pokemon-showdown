@@ -41,4 +41,59 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return true;
 		}
 	},
+	laxincense: {
+		inherit: true,
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+			if (target.status || !target.runStatusImmunity('slp')) {
+				return false;
+			}
+				target.addVolatile('yawn')
+			}
+		},
+	},
+	oddincense: {
+		inherit: true,
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) {
+			if(move.category== "Special")
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+	},
+	rockincense: {
+		inherit: true,
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) {
+			if(move.type== "Rock")
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('stealthrock');
+				}
+		}
+	},
+	roseincense: {
+		inherit: true,
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) {
+			for (const side of source.side.foeSidesWithConditions()) {
+				side.addSideCondition('spikes');
+			}
+		}
+	},
+	seaincense: {
+		inherit: true,
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) {
+			if(move.type== "Water")
+				this.heal(target.baseMaxhp / 4);
+		}
+	},
+	waveincense: {
+		inherit: true,
+		onDamagingHitOrder: 2,
+		onDamagingHit(damage, target, source, move) {
+			if(move.category== "Special")
+				source.addVolatile('partiallytrapped')
+		}
+	}
 }
