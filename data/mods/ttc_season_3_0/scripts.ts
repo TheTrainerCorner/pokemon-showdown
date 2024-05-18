@@ -129,6 +129,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Muk", this)
 			.learnset
 				.add("Dire Claw")
+		new ModifyPokemon("Nidoking", this)
+			.abilities
+				.setHiddenAbility("Hustle")
+			.pokemon.learnset
+				.add("Dire Claw")
+				.remove("Precipice Blades")
 		new ModifyPokemon("Snorlax", this)
 			.learnset
 				.remove("Celebrate")
