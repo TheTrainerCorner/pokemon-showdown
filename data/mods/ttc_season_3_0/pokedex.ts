@@ -159,6 +159,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 90.5,
 		color: "Blue",
 		eggGroups: ["Water 1", "Field"],
+		tags: ["Fakemon"],
 		requiredItem: "Empoleonite",
 	},
 	//#endregion
