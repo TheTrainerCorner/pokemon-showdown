@@ -111,7 +111,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	//#region Staff Additions
 	wishiwashisoulless: {
 		num: -3007,
-		name: "Wishwashi-Soulless",
+		name: "Wishiwashi-Soulless",
 		types: ["Ghost", "Dark"],
 		genderRatio: {M: 0.5, F: 0.5},
 		baseStats: {hp: 45, atk: 15, def: 15, spa: 25, spd: 15, spe: 60},
