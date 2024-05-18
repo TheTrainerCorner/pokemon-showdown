@@ -109,8 +109,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onFractionalPriority: undefined,
 		onSourceTryHeal(damage, target, source, effect) {
 			this.debug("Heal is occurring: " + target + " <- " + source + " :: " + effect.id);
-			if (this.runEvent("TryHeal", target, source, this.effect, damage / 4))
-				return Math.floor(damage * 0.75);
+			this.heal(Math.floor(damage / 4), target, source);
+			return this.chainModify([3072, 4096]);
 		}
 		// onFoeTryHeal(healing: number, target: Pokemon, source: Pokemon, effect: Effect) {
 		// 	if (!this.runEvent('TryHeal', source, null, this.effect, Math.floor((healing/4))))
