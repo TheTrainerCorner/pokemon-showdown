@@ -107,9 +107,14 @@ export const Items: {[k: string]: ModdedItemData} = {
 	fullincense: {
 		inherit: true,
 		onFractionalPriority: undefined,
-		onFoeTryHeal(healing: number, target: Pokemon, source: Pokemon, effect: Effect) {
-			if (!this.runEvent('TryHeal', source, null, this.effect, Math.floor((healing/4))))
-				return this.chainModify([3072, 4096]);
-		},
+		onSourceTryHeal(damage, target, source, effect) {
+			this.debug("Heal is occurring: " + target + " <- " + source + " :: " + effect.id);
+			if (this.runEvent("TryHeal", target, source, this.effect, damage / 4))
+				return Math.floor(damage * 0.75);
+		}
+		// onFoeTryHeal(healing: number, target: Pokemon, source: Pokemon, effect: Effect) {
+		// 	if (!this.runEvent('TryHeal', source, null, this.effect, Math.floor((healing/4))))
+		// 		return this.chainModify([3072, 4096]);
+		// },
 	},
 }
