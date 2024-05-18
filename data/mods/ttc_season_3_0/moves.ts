@@ -140,6 +140,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		basePower: 150,
 	},
+	originpulse: {
+		inherit: true,
+		basePower: 120,
+		accuracy: 90,
+	},
 	//#endregion
 	//#region Other Moves
 	celebrate: {
