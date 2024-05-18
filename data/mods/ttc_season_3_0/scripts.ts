@@ -305,6 +305,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Chatot", this)
 			.learnset
 				.add("Alluring Voice")
+		new ModifyPokemon("Drapion", this)
+			.learnset
+				.add("Dire Claw")
 		new ModifyPokemon("Glaceon", this)
 			.learnset
 				.remove("Celebrate")
