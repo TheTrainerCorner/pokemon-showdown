@@ -108,10 +108,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		onFractionalPriority: undefined,
 		onFoeTryHeal(healing: number, target: Pokemon, source: Pokemon, effect: Effect) {
-			if ((healing) >= (target.maxhp / 0.75)) {
-				if (!this.runEvent('TryHeal', source, null, this.effect, Math.floor((healing/4))))
-					return this.chainModify([3072, 4096]);
-			}
+			if (!this.runEvent('TryHeal', source, null, this.effect, Math.floor((healing/4))))
+				return this.chainModify([3072, 4096]);
 		},
 	},
 }
