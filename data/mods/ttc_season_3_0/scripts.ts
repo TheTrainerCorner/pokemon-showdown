@@ -742,6 +742,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion	
 		
 		//#region NFE
+		new ModifyPokemon("Nidorino", this)
+			.baseStats
+				.setDEF(67)
 		new ModifyPokemon("Pikachu", this)
 			.learnset
 				.remove("Celebrate")	
@@ -771,7 +774,13 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove("Celebrate")
 		new ModifyPokemon("Munchlax", this)
 			.learnset
-				.remove("Celebrate")	
+				.remove("Celebrate")
+		new ModifyPokemon("Nidoran-F", this)	
+			.abilities
+				.setHiddenAbility("Sheer Force")
+		new ModifyPokemon("Nidoran-M", this)
+			.baseStats
+				.setDEF(42)
 		new ModifyPokemon("Pawmi", this)
 			.learnset
 				.remove("Celebrate")	
