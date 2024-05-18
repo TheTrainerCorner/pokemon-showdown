@@ -115,13 +115,14 @@ export const Items: {[k: string]: ModdedItemData} = {
 		// Target is the foe
 		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
 			this.effectState.triggered = true;
+			this.effectState.healing = healing;
 			return healing * 0.75;
 		},
 		onResidualOrder: 23,
 		onResidualSubOrder: 2,
 		onResidual(target, source, effect) {
 			if (this.effectState.triggered) {
-				this.heal(target.maxhp / 4);
+				this.heal(this.effectState.healing * 0.25);
 				this.effectState.triggered = false;
 			}
 		}
