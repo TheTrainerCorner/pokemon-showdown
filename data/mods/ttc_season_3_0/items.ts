@@ -49,7 +49,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 			if (target.status || !target.runStatusImmunity('slp')) {
 				return false;
 			}
-				target.addVolatile('yawn')
+			else{
+				source.addVolatile('yawn')
+				source.useItem();
+			}
 			}
 		},
 	},
@@ -65,18 +68,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
-			if(move.type== "Rock")
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('stealthrock');
-				}
+			if(move.type== "Rock"){
+				source.side.addSideCondition('stealthrock');
+				target.useItem();
+			}
 		}
 	},
 	roseincense: {
 		inherit: true,
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
-			for (const side of source.side.foeSidesWithConditions()) {
-				side.addSideCondition('spikes');
+			for (const side of target.side.foeSidesWithConditions()) {
+				source.side.addSideCondition('spikes');
+				target.useItem();
 			}
 		}
 	},
@@ -84,16 +88,20 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
-			if(move.type== "Water")
+			if(move.type== "Water"){
 				this.heal(target.baseMaxhp / 4);
+				target.useItem();
+			}
 		}
 	},
 	waveincense: {
 		inherit: true,
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
-			if(move.category== "Special")
+			if(move.category== "Special"){
 				source.addVolatile('partiallytrapped')
+				target.useItem();
+			}
 		}
 	}
 }
