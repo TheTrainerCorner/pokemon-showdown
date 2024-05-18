@@ -111,6 +111,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		// Target is the foe
 		onStart(target) {
 			this.effectState.target = target;
+			this.effectState.triggered = false;
 		},
 		// Trying to see if i can make it to be a once per turn item if that will work.
 		onBeforeTurn(pokemon) {
