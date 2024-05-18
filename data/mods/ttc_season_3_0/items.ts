@@ -110,13 +110,18 @@ export const Items: {[k: string]: ModdedItemData} = {
 		// Need to set up a few variables in effectState beforehand.
 		onStart(target) {
 			this.effectState.triggered = false;
+			this.effectState.user = target;
 		},
 		// Source doesn't actually exist when it comes to Foe Healing
 		// Target is the foe
 		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
-			this.effectState.triggered = true;
-			this.effectState.healing = healing;
-			return healing * 0.75;
+			if (!this.effectState.triggered) {
+				this.effectState.triggered = true;
+				this.effectState.healing = healing;
+				this.add('-activate', this.effectState.user, 'item: Full Incense');
+				return healing * 0.75;
+			}
+			return healing;
 		},
 		onResidualOrder: 23,
 		onResidualSubOrder: 2,
