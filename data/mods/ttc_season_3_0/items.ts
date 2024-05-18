@@ -107,21 +107,22 @@ export const Items: {[k: string]: ModdedItemData} = {
 	fullincense: {
 		inherit: true,
 		onFractionalPriority: undefined,
-		// Source doesn't actually exist when it comes to Foe Healing
-		// Target is the foe
+		// Need to set up a few variables in effectState beforehand.
 		onStart(target) {
-			this.effectState.target = target;
+			this.effectState.user = target;
 			this.effectState.triggered = false;
 		},
 		// Trying to see if i can make it to be a once per turn item if that will work.
 		onBeforeTurn(pokemon) {
 			this.effectState.triggered = false;
 		},
+		// Source doesn't actually exist when it comes to Foe Healing
+		// Target is the foe
 		onFoeTryHeal(healing: number, target: Pokemon, _: Pokemon, effect: Effect) {
 			if (!this.effectState.triggered) {
+				this.heal(this.effectState.user.maxHp * 0.25); // + 25%
 				this.effectState.triggered = true;
-				this.heal(this.effectState.target.maxHp / 4, this.effectState.target);
-				return healing * 0.75;
+				return healing * 0.75; // + 75% 
 			}	
 		},
 	},
