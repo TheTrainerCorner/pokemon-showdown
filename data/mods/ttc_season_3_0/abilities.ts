@@ -256,6 +256,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		//		this.heal(source.maxhp / 2);
 		//	}
 		//}
+		desc: "If Soulless Wishiwashi were to be knocked out, the fatal damage is negated, it heals 3/4 HP and transforms into Resentful Wishiwashi.",
+		shortDesc: "If wishiwashi,on knockout, negate damage and transforms into Resentful form",
+
 	},
 	emperorscommand: {
 		name: "Emperor's Command",
@@ -270,7 +273,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		// The damage reduction on foes by -10%
 		onFoeBasePower(basePower, source, target, move) {
 			return this.chainModify([3687, 4096]);
-		}
+		},
+		desc: "Reduces the damage that allied Pokémon receive from attacks (from any Pokémon) by 10%. This pokemon deals 10% more damage with it's attacks.",
+		shortDesc: "Reduces the damage allies take by 1/10, Ups damage by 1/10"
 	},
 	//#endregion
 };
