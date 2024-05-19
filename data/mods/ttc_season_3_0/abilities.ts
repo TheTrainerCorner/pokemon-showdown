@@ -257,7 +257,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		//	}
 		//}
 		desc: "If Soulless Wishiwashi were to be knocked out, the fatal damage is negated, it heals 3/4 HP and transforms into Resentful Wishiwashi.",
-		shortDesc: "If wishiwashi,on knockout, negate damage and transforms into Resentful form",
+		shortDesc: "If wishiwashi. On knockout, negate damage and transforms into Resentful form",
 
 	},
 	emperorscommand: {
