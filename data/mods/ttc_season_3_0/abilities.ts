@@ -239,12 +239,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onTryMovePriority: 29,
 		onTryMove(source, target, move) {
-			if(this.effectState.triggered = true)
-				if (source.species.id !== 'wishiwashisoulless') return;
+			if (source.species.id !== 'wishiwashisoulless') return;
 			if (!this.effectState.triggered) return;
-			this.add('-activate', source, 'ability: Vengeful Desire');
-			source.formeChange('Wishiwashi-Resentful', this.effect, true);
-			this.heal(source.maxhp / 2);
+			if(this.effectState.triggered = true){
+				this.add('-activate', source, 'ability: Vengeful Desire');
+				source.formeChange('Wishiwashi-Resentful', this.effect, true);
+				this.heal(source.maxhp / 2);
+			}
 		},
 	},
 	emperorscommand: {
