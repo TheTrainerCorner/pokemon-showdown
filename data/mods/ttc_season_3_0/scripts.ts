@@ -191,6 +191,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Umbreon", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Politoed", this)
+			.baseStats
+				.setHP(125)
+				.setSPA(115)
 		new ModifyPokemon("Smeargle", this)
 			.abilities
 				.setHiddenAbility("Trace")
