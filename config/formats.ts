@@ -23,7 +23,7 @@ export const Formats: FormatList = [
 		section: "TTC Cherish Ball Division",
 	},
 	{
-		name: "[Gen 9] National Dex Cherish Ball",
+		name: "[Gen 9] Cherish Ball",
 		desc: "This format is for Cherish Ball Division.",
 		mod: "ttc_current",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set', 'No Dragon Dance For The Patio Set'],
@@ -293,7 +293,7 @@ export const Formats: FormatList = [
 		section: 'TTC Season 2',
 	},
 	{
-		name: "[Gen 9] National Dex Season 2 Cherish Ball",
+		name: "[Gen 9] Season 2 Cherish Ball",
 		desc: "This format is for Cherish Ball Division.",
 		mod: "ttc_season_2",
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set', 'No Dragon Dance For The Patio Set'],
