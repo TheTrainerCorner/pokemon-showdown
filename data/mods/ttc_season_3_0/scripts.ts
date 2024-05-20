@@ -548,6 +548,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Matcha Gotcha")
 			.pokemon.learnset
 				.remove("celebrate")
+		new ModifyPokemon("Basculegion-F", this)
+			.learnset
+				.remove("Origin Pulse")
 		new ModifyPokemon("Coalossal", this)
 			.baseStats
 				.setATK(90)
