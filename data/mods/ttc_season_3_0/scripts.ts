@@ -139,6 +139,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add("Dire Claw")
 				.remove("Precipice Blades")
+		new ModifyPokemon("Poliwrath", this)
+			.baseStats
+				.setHP(110)
+				.setATK(95)
+				.setSPD(95)
+				.setSPE(75)
 		new ModifyPokemon("Snorlax", this)
 			.learnset
 				.remove("Celebrate")
