@@ -367,7 +367,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(97);
 		new ModifyPokemon("Magmortar", this)
 			.learnset	
-				.remove("Steam Erutption")
+				.remove("Steam Eruption")
 		new ModifyPokemon("Mesprit", this)
 			.baseStats
 				.setATK(105)
@@ -503,6 +503,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Fickle Beam")
 			.pokemon.learnset
 			.remove("Celebrate")
+		new ModifyPokemon("Golem-Alola", this)
+			.learnset
+				.remove("Thousand Arrows")
 		new ModifyPokemon("Kommoo", this)
 			.baseStats
 				.setHP(70)
