@@ -365,6 +365,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setSPA(105)
 				.setSPE(97);
+		new ModifyPokemon("Magmortar", this)
+			.learnset	
+				.remove("Steam Erutption")
 		new ModifyPokemon("Mesprit", this)
 			.baseStats
 				.setATK(105)
