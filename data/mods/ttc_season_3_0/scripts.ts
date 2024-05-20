@@ -377,6 +377,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Pachirisu", this)
 			.learnset
 				.add("Celebrate")
+		new ModifyPokemon("Rotom-Fan", this)
+			.learnset	
+				.remove("Aeroblast")
+				.remove("Bleakwind Storm")
+				.remove("Wildbolt Storm")
 		new ModifyPokemon("Shaymin", this)
 			.baseStats
 				.setSPA(100)
