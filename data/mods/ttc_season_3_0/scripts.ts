@@ -308,6 +308,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Shiftry", this)
 			.learnset
 				.add("Ivy Cudgel")
+			.pokemon.baseStats	
+				.setHP(105)
+				.setATK(120)
 		new ModifyPokemon("Tropius", this)
 			.learnset
 				.add("Dragon Cheer")
