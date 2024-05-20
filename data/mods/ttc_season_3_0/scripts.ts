@@ -251,6 +251,15 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Kecleon", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Latias", this)
+			.learnset
+				.add("Recover")
+				.add("Roost")
+				.remove("Lumina Crash")
+		new ModifyPokemon("Latios" , this)
+			.learnset
+				.add("Recover")
+				.add("Roost")
 		new ModifyPokemon("Metagross", this)
 			.baseStats
 				.setATK(145)
