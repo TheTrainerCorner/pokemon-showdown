@@ -451,6 +451,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Aurorus", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Carbink", this)
+			.learnset	
+				.add("Diamond Storm")
 		new ModifyPokemon("Clawitzer", this)
 			.baseStats
 				.setDEF(95)
