@@ -279,7 +279,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	pallesthesia: {
 		name: "Pallesthesia",
-		onModifyDamage(damage, target, source, effect) {
+		onSourceModifyDamage(damage, target, source, effect) {
 			const action = this.queue.willMove(source);
 			const move = action?.choice === 'move' ? action.move : null;
 			if (!move || (move.category === 'Status')) return damage;
