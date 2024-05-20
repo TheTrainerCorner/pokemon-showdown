@@ -440,6 +440,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Victini", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Zebstrika", this)
+			.baseStats
+				.setSPA(100)
 		//#endregion
 		//#region Gen 6
 		new ModifyPokemon("Aegislash", this)
