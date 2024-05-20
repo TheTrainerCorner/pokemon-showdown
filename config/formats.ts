@@ -286,4 +286,50 @@ export const Formats: FormatList = [
 			'Thick Club'
 		],
 	},
+	{
+		section: 'TTC Season 1',
+	},
+	{
+		section: 'TTC Season 2',
+	},
+	{
+		name: "[Gen 9] National Dex Season 2 Cherish Ball",
+		desc: "This format is for Cherish Ball Division.",
+		mod: "ttc_season_2",
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Clause', 'Species Clause', 'Sleep Clause Mod', 'No Shell Smash Mega Toise', 'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause', 'No Calm Mind For The Patio Set', 'No Dragon Dance For The Patio Set'],
+		banlist: [
+			'ND Uber', 'ND AG', 'Moody', 'Power Construct', 'Shadow Tag', 'King\'s Rock',
+			'Quick Claw', 'Razor Fang', 'Assist', 'Last Respects',
+		],
+		unbanlist: [
+			'Unreleased',
+			// Unobtainable Moves
+			'Barb Barrage',
+			'Blazing Torque',
+			'Ceaseless Edge',
+			'Chloroblast',
+			'Combat Torque',
+			'Dire Claw',
+			"Dragon's Maw",
+			'Esper Wing',
+			'Infernal Parade',
+			'Magical Torque',
+			'Mountain Gale',
+			'Noxious Torque',
+			'Psyshield Bash',
+			'Raging Fury',
+			'Shelter',
+			'Springtide Storm',
+			'Stone Axe',
+			'Triple Arrows',
+			'Victory Dance',
+			'Wicked Torque',
+			'Custap Berry',
+			// LGPE
+			'LGPE',
+			'Baton Pass',
+			// Items
+			'Thick Club'
+		],
+	},
 ];
