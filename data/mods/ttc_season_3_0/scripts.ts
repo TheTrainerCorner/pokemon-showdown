@@ -19,6 +19,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("Pokedex", "eeveestarter").formeOrder = ["Eevee-Starter", "Eevee-Mega"];
 		this.modData("Pokedex", "eeveestarter").tags = ["Fakemon", "Has Back Sprite"];
 		this.modData("Pokedex", "eeveestarter").natDexTier = "OU";
+		// Adjusting Empoleon's data to include Empoleon-Mega
+		this.modData("Pokedex", "empoleon").otherFormes = ["Empoleon-Mega"];
+		this.modData("Pokedex", "empoleon").formeOrder = ["Empoleon", "Empoleon-Mega"];
 		//#region Gen 1
 		new ModifyPokemon("Aerodactyl", this)
 			.learnset

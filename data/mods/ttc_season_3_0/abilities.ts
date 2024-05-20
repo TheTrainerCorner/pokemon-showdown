@@ -277,5 +277,29 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Reduces the damage that allied Pokémon receive from attacks (from any Pokémon) by 10%. This pokemon deals 10% more damage with it's attacks.",
 		shortDesc: "Reduces the damage allies take by 1/10, Ups damage by 1/10"
 	},
+	pallesthesia: {
+		name: "Pallesthesia",
+		onModifyDamage(damage, target, source, effect) {
+			const action = this.queue.willMove(target);
+			const move = action?.choice === 'move' ? action.move : null;
+			if (!move || (move.category === 'Status')) return damage;
+			// Assuming that the move does exist and is either a special or physical move, which is a damaging move.
+			return this.chainModify([2868, 4096]);
+		},
+		onModifyAtk(atk, source, target, move) {
+			const action = this.queue.willMove(target);
+			const _move = action?.choice === 'move' ? action.move : null;
+			if (!_move || (_move.category === 'Physical' || _move.category === 'Special')) return;
+			return this.chainModify([5325, 4096]);
+		},
+		onModifySpA(atk, source, target, move) {
+			const action = this.queue.willMove(target);
+			const _move = action?.choice === 'move' ? action.move : null;
+			if (!_move || (_move.category === 'Physical' || _move.category === 'Special')) return;
+			return this.chainModify([5325, 4096]);
+		},
+		desc: "If the target is using a non-damaging move, then the user does 30% more damage; if the target is using a damaging move, then the user will take 30% less damage. The user can also hit Ghost types with Normal and Fighting type moves.",
+		shortDesc: "Target: Non-Damaging Move; User does 30% more damage, else takes 30% less damage. Scrappy included.",
+	},
 	//#endregion
 };

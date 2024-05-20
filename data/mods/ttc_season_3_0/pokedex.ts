@@ -162,5 +162,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Fakemon"],
 		requiredItem: "Empoleonite",
 	},
+	pangoromega: {
+		num: 675,
+		name: "Pangoro-Mega",
+		baseSpecies: "Pangoro",
+		forme: "Mega",
+		types: ["Dark", "Fighting"],
+		baseStats: {hp: 95, atk: 154, def: 118, spa: 99, spd: 111, spe: 58},
+		abilities: {0: "Pallesthesia"},
+		heightm: 2.1,
+		weightkg: 167,
+		color: "White",
+		eggGroups: ["Field", "Human-Like"],
+		tags: ["Fakemon"],
+		requiredItem: "Pangoroite",
+	}
 	//#endregion
 };

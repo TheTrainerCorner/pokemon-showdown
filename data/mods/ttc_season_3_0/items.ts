@@ -41,6 +41,16 @@ export const Items: {[k: string]: ModdedItemData} = {
 			return true;
 		}
 	},
+	pangoroite: {
+		name: "Pangoroite",
+		spritenum: -100,
+		megaStone: "Pangoro-Mega",
+		megaEvolves: "Pangoro",
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		}
+	},
 	laxincense: {
 		inherit: true,
 		onDamagingHitOrder: 2,
