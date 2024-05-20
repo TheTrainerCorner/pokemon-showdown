@@ -39,6 +39,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Blastoise", this)
 			.learnset
 				.remove("Celebrate")
+				.remove("Steam Eruption")
 		new ModifyPokemon("Charizard", this)
 			.learnset
 				.remove("Celebrate")
@@ -105,6 +106,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Jolteon", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Jynx", this)
+			.learnset
+				.remove("Psycho Boost")
 		new ModifyPokemon("Machamp", this)
 			.baseStats
 				.setSPA(55);
