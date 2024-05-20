@@ -260,6 +260,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Recover")
 				.add("Roost")
+		new ModifyPokemon("Manectric", this)
+			.learnset	
+				.remove("Wildbolt Storm")
 		new ModifyPokemon("Metagross", this)
 			.baseStats
 				.setATK(145)
