@@ -177,6 +177,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Lanturn", this)
 			.learnset
 				.add("Thunderclap");
+		new ModifyPokemon("Magcargo", this)
+			.learnset	
+				.remove("Magma Storm")
 		new ModifyPokemon("Tyranitar", this)
 			.baseStats
 				.setSPA(75)
