@@ -16891,7 +16891,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	//				}
 	//			}
 	//		},
-		},
+	//	},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Fire",
