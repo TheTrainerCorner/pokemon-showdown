@@ -69,7 +69,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		];
 
 		for (const move of explosionMoves) {
-			this.modData('Moves', move).flags.explosion= 1;
+			this.modData('Moves', move).flags.explosion = 1;
 		}
 		// #endregion
 		// #region Hammer Moves
