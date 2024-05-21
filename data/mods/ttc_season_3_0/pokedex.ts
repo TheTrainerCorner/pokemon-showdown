@@ -161,6 +161,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Water 1", "Field"],
 		tags: ["Fakemon"],
 		requiredItem: "Empoleonite",
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	},
 	pangoromega: {
 		num: 675,
@@ -176,6 +179,9 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field", "Human-Like"],
 		tags: ["Fakemon"],
 		requiredItem: "Pangoroite",
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
 	}
 	//#endregion
 };

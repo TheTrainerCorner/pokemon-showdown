@@ -304,5 +304,44 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If the pokemon is Wishiwashi-Resentful; the base power is double. Else it is default to 60.",
 		shortDesc: "If the pokemon is Wishiwashi-Resentful, the base power is double.",
 	},
+	roaringbellow:{
+		num: -3004,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Roaring Bellow",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 100,
+			boosts: {
+				atk: -1,
+			},
+		},
+		target: "normal",
+		type: "Normal",
+		desc: "Has a 100% chance to lower the target's Attack by 1 stage.",
+		shortDesc: "100% chance to lower the target's Attack by 1.",
+	},
+	shelltrap: {
+		inherit: true,
+		basePower: 100,
+		pp: 10,
+		priority: -4,
+		flags: {protect: 1, mirror: 1},
+		basePowerCallback(pokemon, target, move) {
+			const damagedByTarget = pokemon.attackedBy.some(
+				p => p.source === target && p.damage > 0 && p.thisTurn
+			);
+			if (damagedByTarget) {
+				this.debug('BP doubled for getting hit by ' + target);
+				return move.basePower * 1.5;
+			}
+			return move.basePower;
+		},
+		desc: "Power doubles if the user was hit by the target this turn.",
+		shortDesc: "Power doubles if user is damaged by the target.",
+	}
 	//#endregion
 }

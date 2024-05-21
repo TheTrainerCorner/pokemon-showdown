@@ -501,6 +501,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Drampa", this)
 			.learnset
 				.add("Dragon Cheer")
+				.add("Alluring Voice")
+				.add("Temper Flare")
+				.add("Roaring Bellow")
+				.remove("Roar")
+				.remove("Dragon Tail")
+			.pokemon.baseStats
+				.setHP(118)
+			.pokemon.abilities
+				.setAbility1("Berserk")
+				.setHiddenAbility("Comatose")
 		new ModifyPokemon("Exeggutor-Alola", this)
 			.learnset
 				.add("Fickle Beam")
@@ -536,6 +546,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Toucannon", this)
 			.learnset
 				.add("Floaty Fall")
+		new ModifyPokemon("Turtonator", this)
+			.baseStats
+				.setHP(85)
+				.setDEF(124)
+				.setSPD(96)
+			.pokemon.learnset
+				.add("Burning Bulwark")
+				.add("Dragon Cheer")
+				.add("Morning Sun")
+				.add("Shelter")
 		new ModifyPokemon("Vikavolt", this)
 			.baseStats
 				.setATK(65)
