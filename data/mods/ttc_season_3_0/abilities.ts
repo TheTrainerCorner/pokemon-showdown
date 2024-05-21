@@ -312,6 +312,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.boost({atk: -1}, source, target)
 			}
 		},
+		desc: "If a pokemon makes contact with Akumu, Their Attack is dropped by 1 stage.",
+		shortDesc: "If a pokemon makes contact with Akumu, Their Attack is dropped by 1 stage.",
+	},
+	combustion: {
+		name: "Combustion",
+		onBasePowerPriority: 43,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['Explosion']) {
+				this.debug('Combustion boost');
+				return this.chainModify(1.5);
+			}
+		},
+		shortDesc: "Explosive moves used by this pokemon are 1.5x stronger.",
 	}
 	//#endregion
 };

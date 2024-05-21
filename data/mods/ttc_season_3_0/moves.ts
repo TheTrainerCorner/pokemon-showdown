@@ -342,6 +342,25 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		desc: "Power boosted by 1.5 if the user was hit by the target this turn.",
 		shortDesc: "Power boosted by 1.5 if user is damaged by the target.",
-	}
+	},
+	steelspikes: {
+		num: -3005,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Steel Spikes",
+		condition: {
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Steel Spikes');
+			},
+		},
+		pp: 20,
+		priority: 0,
+		flags: {reflectable: 1, mustpressure: 1},
+		sideCondition: 'gmaxsteelsurge',
+		secondary: null,
+		target: "foeSide",
+		type: "Steel",
+	},
 	//#endregion
 }
