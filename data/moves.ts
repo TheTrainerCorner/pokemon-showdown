@@ -16867,30 +16867,30 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: -3,
 		flags: {protect: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failinstruct: 1},
-		priorityChargeCallback(pokemon) {
-			pokemon.addVolatile('shelltrap');
-		},
-		onTryMove(pokemon) {
-			if (!pokemon.volatiles['shelltrap']?.gotHit) {
-				this.attrLastMove('[still]');
-				this.add('cant', pokemon, 'Shell Trap', 'Shell Trap');
-				return null;
-			}
-		},
-		condition: {
-			duration: 1,
-			onStart(pokemon) {
-				this.add('-singleturn', pokemon, 'move: Shell Trap');
-			},
-			onHit(pokemon, source, move) {
-				if (!pokemon.isAlly(source) && move.category === 'Physical') {
-					this.effectState.gotHit = true;
-					const action = this.queue.willMove(pokemon);
-					if (action) {
-						this.queue.prioritizeAction(action);
-					}
-				}
-			},
+	//	priorityChargeCallback(pokemon) {
+	//		pokemon.addVolatile('shelltrap');
+	//	},
+	//	onTryMove(pokemon) {
+	//		if (!pokemon.volatiles['shelltrap']?.gotHit) {
+	//			this.attrLastMove('[still]');
+	//			this.add('cant', pokemon, 'Shell Trap', 'Shell Trap');
+	//			return null;
+	//		}
+	//	},
+	//	condition: {
+	//		duration: 1,
+	//		onStart(pokemon) {
+	//			this.add('-singleturn', pokemon, 'move: Shell Trap');
+	//		},
+	//		onHit(pokemon, source, move) {
+	//			if (!pokemon.isAlly(source) && move.category === 'Physical') {
+	//				this.effectState.gotHit = true;
+	//				const action = this.queue.willMove(pokemon);
+	//				if (action) {
+	//					this.queue.prioritizeAction(action);
+	//				}
+	//			}
+	//		},
 		},
 		secondary: null,
 		target: "allAdjacentFoes",

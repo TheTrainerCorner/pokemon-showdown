@@ -941,6 +941,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			"mudbomb",
 			"metalburst",
 			"syrupbomb",
+			"chloroblast",
+			"cragblast",
 		];
 
 		for (const move of explosionMoves) {
