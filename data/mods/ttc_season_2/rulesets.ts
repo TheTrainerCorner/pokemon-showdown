@@ -8,7 +8,8 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		name: "Offseason Complex Bans",
 		desc: "Complex Bans for Season 2 Offseason (Monotype)!",
 		ruleset: [
-			'Offseason Complex Ban Acudraco'
+			'Offseason Complex Ban Acudraco',
+			'Weather Rocks and Extender Ban',
 		],	
 	},
 	seasoncomplexbans: {
@@ -92,6 +93,27 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'Deerling', 'Floette-Eternal', 'Goomy',
 			'Lucario-Mega', 'Reshiram', 'Zekrom'
 		],
+	},
+	weatherrocksandextenderban: {
+		name: "Weather Rocks and Extender Ban",
+		desc: "Bans weather rocks and terrain extender",
+		validateSet(set) {
+			const itemList = [];
+			const problems = [];
+			// Weather Rocks
+			itemList.push('Heat Rock');
+			itemList.push('Icy Rock');
+			itemList.push('Damp Rock');
+			itemList.push('Smooth Rock');
+
+			// Extender
+			itemList.push('Terrain Extender');
+
+			if (itemList.includes(set.item)) {
+				problems.push(`${set.item} is banned from Season 2 Offseason (Monotype)!`);
+			}
+			return problems;
+		}
 	},
 	nodragondanceforthepatioset: {
 		effectType: "ValidatorRule",
