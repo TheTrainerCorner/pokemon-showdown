@@ -340,8 +340,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			}
 			return move.basePower;
 		},
-		desc: "Power doubles if the user was hit by the target this turn.",
-		shortDesc: "Power doubles if user is damaged by the target.",
+		desc: "Power boosted by 1.5 if the user was hit by the target this turn.",
+		shortDesc: "Power boosted by 1.5 if user is damaged by the target.",
 	}
 	//#endregion
 }
