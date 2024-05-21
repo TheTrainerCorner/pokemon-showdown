@@ -632,9 +632,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#region Gen 9
 		new ModifyPokemon("Armarouge", this)
 			.baseStats
-				.setHP(90)
-				.setATK(50)
-				.setSPE(105)
+				.setHP(100)
+				.setATK(90)
+				.setSPE(75)
 			.pokemon.learnset
 				.remove("Celebrate")
 		new ModifyPokemon("Baxcalibur", this)
