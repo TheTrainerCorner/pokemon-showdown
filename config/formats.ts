@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 		ruleset: [
 			'Standard Natdex', 'Same Type Clause', 'Terastal Clause',
 			'Species Clause', 'OHKO Clause', 'Evasion Clause',
-			'Sleep Clause Mod', 'Season Unbanlist',
+			'Sleep Clause Mod',
 
 			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist',
 			'Offseason Complex Bans', 'Offseason Banlist',
