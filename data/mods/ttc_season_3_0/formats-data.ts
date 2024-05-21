@@ -29,5 +29,21 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	crustocean: {
 		tier: "OU",
 		natDexTier: "OU",
-	}
+	},
+	wishiwashisoulless: {
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	wishiwashiresentful: {
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	empoleonmega: {
+		tier: "OU",
+		natDexTier: "OU",
+	},
+	pangoromega: {
+		tier: "OU",
+		natDexTier: "OU",
+	},
 }
