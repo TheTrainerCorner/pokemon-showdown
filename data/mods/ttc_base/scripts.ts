@@ -47,6 +47,31 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.kick = 1;
 		}
 		// #endregion
+		// #region Add Explosion Move Flag to moves
+		const explosionMoves: string[] = [
+			"explosion",
+			"mindblown",
+			"selfdestruct",
+			"mistyexplosion",
+			"shelltrap",
+			"eruption",
+			"eggbomb",
+			"magnetbomb",
+			"sludgebomb",
+			"seedbomb",
+			"steameruption",
+			"rockblast",
+			"mudbomb",
+			"metalburst",
+			"syrupbomb",
+			"chloroblast",
+			"cragblast",
+		];
+
+		for (const move of explosionMoves) {
+			this.modData('Moves', move).flags.explosion= 1;
+		}
+		// #endregion
 		// #region Hammer Moves
 		const hammerMoves: string[] = [
 			"hammerarm",
