@@ -309,7 +309,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.boost({atk: -1}, source, target)
+				this.boost({atk: -1}, target, target)
 			}
 		},
 	}
