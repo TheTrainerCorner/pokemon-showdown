@@ -319,7 +319,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Combustion",
 		onBasePowerPriority: 43,
 		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['Explosion']) {
+			if (move.flags['explosion']) {
 				this.debug('Combustion boost');
 				return this.chainModify(1.5);
 			}
