@@ -182,6 +182,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tier: "OU",
 		natDexTier: "OU",
 		doublesTier: "DOU",
-	}
+	},
+	akumu: {
+		num: 676,
+		name: "Akumu",
+		types: ["Normal", "Ghost"],
+		baseStats: {hp: 105, atk: 115, def: 75, spa: 75, spd: 100, spe: 130}, 
+		abilities: {0: "Prankster", 1: "Cursed Body", H: "Cloak Of Nightmares"}, 
+		heightm: 0.8, 
+		weightkg: 12,  
+		tags: ["Mythical", 'Fakemon'],
+		eggGroups: ["Undiscovered"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
+	},
 	//#endregion
 };

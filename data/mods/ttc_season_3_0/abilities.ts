@@ -304,5 +304,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If the target is using a non-damaging move, then the user does 30% more damage; if the target is using a damaging move, then the user will take 30% less damage. The user can also hit Ghost types with Normal and Fighting type moves.",
 		shortDesc: "Target: Non-Damaging Move; User does 30% more damage, else takes 30% less damage. Scrappy included.",
 	},
+	cloakofnightmares: {
+		name: "Cloak Of Nightmares",
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(source.boosts['def'] = -1, source, target);
+			}
+		},
+	}
 	//#endregion
 };
