@@ -37,6 +37,7 @@ interface MoveFlags {
 	defrost?: 1; // Thaws the user if executed successfully while the user is frozen.
 	disable?: 1; // If the move can disable moves on another pokemon.
 	distance?: 1; // Can target a Pokemon positioned anywhere in a Triple Battle.
+	explosion?: 1; // Explosion moves
 	failcopycat?: 1; // Cannot be selected by Copycat.
 	failencore?: 1; // Encore fails if target used this move.
 	failinstruct?: 1; // Cannot be repeated by Instruct.
