@@ -61,7 +61,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Devdraco",
 		evoType: "other",
 		evoCondition: "Take the War Path of the Dragon",
-		tags: ["Fakemon"],
+		tags: ["Fakemon", "Has Back Sprite"],
 		eggGroups: ["Dragon"],
 		tier: "OU",
 		natDexTier: "OU",
