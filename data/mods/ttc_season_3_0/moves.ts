@@ -386,6 +386,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Cool",
+		desc: "Deals the respective damage & type based on Dawn of Lunacy; Takes highest offensive stat otherwise",
+		shortDesc: "Swaps based on Dawn of Lunacy; Takes highest offensive stat otherwise"
 	}
 	//#endregion
 }
