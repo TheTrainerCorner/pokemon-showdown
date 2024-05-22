@@ -371,10 +371,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 110,
 		category: "Physical",
 		priority: 0,
-		pp: 12,
+		pp: 10,
 		flags: {protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
-			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true) && pokemon.ability!="Dawn Of Lunacy") move.category = 'Special';
 		},
 		onTry(source) {
 			if (source.species.baseSpecies === 'Cerinyx') {
@@ -387,12 +387,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onAfterMove(source, target, move) {
 			if (source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Dark") {
-				this.lastMove.type="Psychic"
-				this.lastMove.category="Special"
+				this.effectState.type="Psychic"
+				this.effectState.category="Special"
 			}
 			else if(source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Psychic") {
 				this.effectState.type="Dark"
-				move.category="Physical"
+				this.effectState.category="Physical"
 			}
 			else
 				return;
