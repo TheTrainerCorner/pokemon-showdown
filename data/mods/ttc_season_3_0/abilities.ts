@@ -329,9 +329,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	dawnoflunacy: {
 		name: "Dawn Of Lunacy",
 		onResidualOrder: 29,
-		onResidual(pokemon) {
-			if (pokemon.species.baseSpecies !== 'Cerinyx') return;
-		},
+		onAfterMove(move,pokemon){
+			if(move.name=='eclipticpunishment')
+				move.setType('Psychic')
+		}
 	}
 	//#endregion
 };
