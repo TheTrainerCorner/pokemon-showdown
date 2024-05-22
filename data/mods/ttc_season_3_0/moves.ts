@@ -377,7 +377,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true) && pokemon.ability!='dawnoflunacy') move.category = 'Special';
 		},
 		onModifyType(Move, pokemon){
-			if(pokemon.ability=== 'dawnoflunacy'){
+			if(pokemon.ability=== 'dawnoflunacy' && Move.hasBounced){
 				Move.type = 'Psychic';
 				Move.category = 'Special';
 			}
