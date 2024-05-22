@@ -325,6 +325,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		shortDesc: "Explosive moves used by this pokemon are 1.5x stronger.",
+	},
+	dawnoflunacy: {
+		name: "Dawn Of Lunacy",
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.species.baseSpecies !== 'Cerinyx') return;
+		},
 	}
 	//#endregion
 };

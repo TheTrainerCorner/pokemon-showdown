@@ -536,6 +536,13 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Ninetales-Alola", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Oranguru", this)
+			.abilities
+				.setAbility0("Unaware")
+				.setHiddenAbility("Oblivious")
+			.pokemon.learnset
+				.add("Teleport")
+				.add("Slack Off")
 		new ModifyPokemon("Salazzle", this)
 			.learnset
 				.add("Dragon Cheer")
@@ -629,6 +636,24 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add("Psystrike")
 				.add("Mystical Power");
+		new ModifyPokemon("Perrserker", this)
+			.baseStats
+				.setHP(77)
+				.setATK(121)
+				.setDEF(91)
+				.setSPA(30)
+				.setSPD(102)
+				.setSPE(19)
+			.pokemon.abilities
+				.setAbility0("Intimidate")
+				.setAbility1("Vital Spirit")
+			.pokemon.learnset
+				.add("Bulk Up")
+				.add("Parting Shot")
+				.add("Psychic Fangs")
+				.add("Spikes")
+				.remove("Stealth rock")
+				.remove("Swords Dance")
 		new ModifyPokemon("Runerigus", this)
 			.baseStats
 				.setHP(88)

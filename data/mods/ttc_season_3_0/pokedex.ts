@@ -239,5 +239,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",
 	},
+	cerinyx: {
+		num: 679,
+		name: "Cerinyx",
+		types: ["Psychic", "Dark"],
+		baseStats: {hp: 89, atk: 141, def: 86, spa: 141, spd: 81, spe: 122}, 
+		abilities: {0: "Dawn Of Lunacy", H: "Neuroforce"}, 
+		heightm: 2.18, 
+		weightkg: 699.5755,  
+		tags: ['Fakemon'],
+		eggGroups: ["Undiscovered"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",
+	},
 	//#endregion
 };

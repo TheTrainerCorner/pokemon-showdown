@@ -364,5 +364,43 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Sets up a hazard on the opposing side of the field, damaging each opposing Pokemon that switches in. Fails if the effect is already active on the opposing side. Foes lose 1/32, 1/16, 1/8, 1/4, or 1/2 of their maximum HP, rounded down, based on their weakness to the Steel type; 0.25x, 0.5x, neutral, 2x, or 4x, respectively. Can be removed from the opposing side if any opposing Pokemon uses Mortal Spin, Rapid Spin, or Defog successfully, or is hit by Defog.",
 		shortDesc: "Hurts foes on switch-in. Factors Steel weakness.",
 	},
+	eclipticpunishment: {
+		num: -3006,
+		name: "Ecliptic Punishment",
+		accuracy: 100,
+		basePower: 110,
+		category: "Physical",
+		priority: 0,
+		pp: 12,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+		},
+		onTry(source) {
+			if (source.species.baseSpecies === 'Cerinyx') {
+				return;
+			}
+			this.attrLastMove('[still]');
+			this.add('-fail', source, 'move: Ecliptic Punishment');
+			this.hint("Only Cerinyx can use this move.");
+			return null;
+		},
+		onAfterMove(source, target, move) {
+			if (source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Dark") {
+				move.type="Psychic"
+				move.category="Special"
+			}
+			else if(source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Psychic") {
+				move.type="Dark"
+				move.category="Physical"
+			}
+			else
+				return;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Cool",
+	}
 	//#endregion
 }
