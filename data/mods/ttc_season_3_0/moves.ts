@@ -376,21 +376,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onModifyMove(move, pokemon) {
 			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true) && pokemon.ability!="Dawn Of Lunacy") move.category = 'Special';
 		},
-		onTry(source) {
-			if (source.species.baseSpecies === 'Cerinyx') {
-				return;
-			}
-			this.attrLastMove('[still]');
-			this.add('-fail', source, 'move: Ecliptic Punishment');
-			this.hint("Only Cerinyx can use this move.");
-			return null;
-		},
-		onAfterMove(source, target, move) {
-			if (source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Dark") {
-				return this.effectState.type="Psychic",this.effectState.category="Special";
-			}
-			else if(source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Psychic") {
-				return this.effectState.type="Dark", this.effectState.category="Physical";
+		onModifyType(move, pokemon) {
+			if (pokemon.species.name === 'Cerinyx' && pokemon.ability === "Dawn Of Lunacy" && move.hit) {
+				if(move.type= 'Psychic'){
+					move.type = 'Dark'
+				}
+				else {
+					move.type = 'Psychic';
+				}
 			}
 		},
 		secondary: null,
