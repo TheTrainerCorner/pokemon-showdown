@@ -387,15 +387,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onAfterMove(source, target, move) {
 			if (source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Dark") {
-				this.effectState.type="Psychic"
-				this.effectState.category="Special"
+				return this.effectState.type="Psychic",this.effectState.category="Special";
 			}
 			else if(source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Psychic") {
-				this.effectState.type="Dark"
-				this.effectState.category="Physical"
+				return this.effectState.type="Dark", this.effectState.category="Physical";
 			}
-			else
-				return;
 		},
 		secondary: null,
 		target: "normal",
