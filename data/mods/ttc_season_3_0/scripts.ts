@@ -872,6 +872,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Magikarp", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Meowth-Galar", this)
+			.learnset
+				.remove("Swords Dance")
+				.remove("Stealth Rock")
 		new ModifyPokemon("Milcery", this)
 			.learnset
 				.remove("Celebrate")

@@ -387,11 +387,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onAfterMove(source, target, move) {
 			if (source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Dark") {
-				move.type="Psychic"
-				move.category="Special"
+				this.lastMove.type="Psychic"
+				this.lastMove.category="Special"
 			}
 			else if(source.species.baseSpecies === 'Cerinyx' && source.ability === "Dawn Of Lunacy" && move.type === "Psychic") {
-				move.type="Dark"
+				this.effectState.type="Dark"
 				move.category="Physical"
 			}
 			else
