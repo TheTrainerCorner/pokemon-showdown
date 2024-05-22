@@ -367,7 +367,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	eclipticpunishment: {
 		num: -3006,
 		name: "Ecliptic Punishment",
-		accuracy: 100,
+		accuracy: 90,
 		basePower: 110,
 		category: "Physical",
 		priority: 0,
@@ -376,14 +376,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onModifyMove(move, pokemon) {
 			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true) && pokemon.ability!="Dawn Of Lunacy") move.category = 'Special';
 		},
-		onModifyType(move, pokemon) {
-			if (pokemon.species.name === 'Cerinyx' && pokemon.ability === "Dawn Of Lunacy") {
-				if(move.type= 'Psychic'){
-					move.type = 'Dark'
-				}
-				else {
-					move.type = 'Psychic';
-				}
+		onModifyType(Move, pokemon){
+			if(pokemon.ability=== "Dawn Of Lunacy" && Move.hasBounced){
+				Move.type = 'Psychic';
+				Move.category = 'Special';
 			}
 		},
 		secondary: null,
