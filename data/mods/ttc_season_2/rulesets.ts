@@ -90,8 +90,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'Terrain Extender',
 
 			// Pokemon
-			'Deerling', 'Floette-Eternal', 'Goomy',
-			'Lucario-Mega', 'Reshiram', 'Zekrom'
+			'Floette-Eternal', 'Reshiram', 'Zekrom'
 		],
 	},
 	weatherrocksandextenderban: {

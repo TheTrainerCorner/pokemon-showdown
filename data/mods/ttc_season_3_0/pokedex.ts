@@ -247,7 +247,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Dawn Of Lunacy", H: "Neuroforce"}, 
 		heightm: 2.18, 
 		weightkg: 699.5755,  
-		tags: ['Fakemon'],
+		tags: ['Fakemon', 'Has Back Sprite'],
 		eggGroups: ["Undiscovered"],
 		tier: "OU",
 		natDexTier: "OU",
