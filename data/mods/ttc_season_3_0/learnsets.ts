@@ -401,7 +401,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 				workup: ["9M"],
 				sunnyday: ["9M"],
 				wrap: ["9M"],
-				tailwrap: ["9M"],
+				tailwhip: ["9M"],
 				ember: ["9M"],
 				doublehit: ["9M"],
 				spikecannon: ["9M"],
