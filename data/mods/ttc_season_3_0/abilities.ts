@@ -333,7 +333,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (pokemon.species.baseSpecies !== 'Cerinyx') return;
 		},
 		desc: "Switches its signature move between Dark & Attack or Psychic and Special Attack each turn its on the field;",
-		shortDesc: "Switches its signature move between Dark & Attack or Psychic and Special Attack each turn its on the field;",
+		shortDesc: "Affects sig. move; Dark/Physical or Psychic/Special each turn",
 	}
 	//#endregion
 };
