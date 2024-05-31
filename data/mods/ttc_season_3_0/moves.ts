@@ -388,6 +388,37 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		contestType: "Cool",
 		desc: "Deals the respective damage & type based on Dawn of Lunacy; Takes highest offensive stat otherwise",
 		shortDesc: "Not sig. ability = uses highest offensive stat"
-	}
+	},
+	peekaboo: {
+		num: -3007,
+		name: "Peek-a-Boo",
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		priority: 0,
+		pp: 10,
+		flags: {failencore: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failinstruct: 1, failmimic: 1},
+		onTryHit(pokemon) {
+			return pokemon.status === 'slp' || pokemon.hasAbility('comatose');
+		},
+		onHit(pokemon) {
+			if (pokemon.status === 'slp') {
+				pokemon.cureStatus();
+			}
+		},
+		boosts: {
+			atk: -1,
+			def: -1,
+			spa: -1,
+			spd: -1,
+			spe: -1,
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Scary",
+		desc: "If the target is sleeping, then the move will cause the target to lose 1 stage to all stats. Target will wake up from it's sleep.",
+		shortDesc: "If the target is asleep; -1 Stage to all stats. Cause target to wake up.",
+	},
 	//#endregion
-}
+};
