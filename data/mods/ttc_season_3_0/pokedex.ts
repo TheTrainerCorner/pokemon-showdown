@@ -177,7 +177,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 167,
 		color: "White",
 		eggGroups: ["Field", "Human-Like"],
-		tags: ["Fakemon"],
+		tags: ["Fakemon", "Has Back Sprite"],
 		requiredItem: "Pangoroite",
 		tier: "OU",
 		natDexTier: "OU",
