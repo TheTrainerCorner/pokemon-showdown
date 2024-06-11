@@ -9,7 +9,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		desc: "Complex Bans for Season 2 Offseason (Monotype)!",
 		ruleset: [
 			'Offseason Complex Ban Acudraco',
-			'Offseason Complex Ban Kyuremblack',
+			'Offseason Complex Ban Teravolt',
 			'Weather Rocks and Extender Ban',
 		],	
 	},
@@ -81,13 +81,13 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		}
 
 	},
-	offseasoncomplexbankyuremblack: {
+	offseasoncomplexbanteravolt: {
 		effectType: "ValidatorRule",
 		name: "Offseason Complex Ban Fusionbolt",
 		desc: "Fusionbolt is banned on Kyurem-Black",
 		onValidateSet(set) {
 			const problems = [];
-			const kyuremblack = this.dex.species.get('Kyurem-Black');	
+			const kyuremblack = this.dex.species.get('kyuremblack');	
 			const fusionbolt = this.dex.moves.get('fusionbolt');
 			if ([kyuremblack.name].includes(set.species)) {
 				if (set.moves.includes(fusionbolt.name)) {
