@@ -87,7 +87,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		desc: "Fusionbolt is banned on Kyurem-Black",
 		onValidateSet(set) {
 			const problems = [];
-			const kyuremblack = this.dex.species.get('Kyurem-Black');	
+			const kyuremblack = this.dex.species.get('kyuremb');	
 			const fusionbolt = this.dex.moves.get('Fusion Bolt');
 			if ([kyuremblack.name].includes(set.species)) {
 				if (set.moves.includes(fusionbolt.name)) {
