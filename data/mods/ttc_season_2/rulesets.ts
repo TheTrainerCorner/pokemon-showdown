@@ -9,6 +9,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		desc: "Complex Bans for Season 2 Offseason (Monotype)!",
 		ruleset: [
 			'Offseason Complex Ban Acudraco',
+			'Offseason Complex Ban Kyuremblack',
 			'Weather Rocks and Extender Ban',
 		],	
 	},
@@ -70,12 +71,27 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		onValidateSet(set) {
 			const problems = [];
 			const acudraco = this.dex.species.get('acudraco');
-
 			const aurabreak = this.dex.abilities.get('aurabreak');
-
 			if ([acudraco.name].includes(set.species)) {
 				if ([aurabreak.name].includes(set.ability)) {
 					problems.push(`Aura Break is banned on ${set.name} for Season 2 Offseason (Monotype)!`);
+				}
+			}
+			return problems;
+		}
+
+	},
+	offseasoncomplexbankyuremblack: {
+		effectType: "ValidatorRule",
+		name: "Offseason Complex Ban Fusionbolt",
+		desc: "Fusionbolt is banned on Kyurem-Black",
+		onValidateSet(set) {
+			const problems = [];
+			const kyuremblack = this.dex.species.get('Kyurem-Black');	
+			const fusionbolt = this.dex.moves.get('fusionbolt');
+			if ([kyuremblack.name].includes(set.species)) {
+				if (set.moves.includes(fusionbolt.name)) {
+					problems.push(`${set.name} can not have Fusionbolt due to having teravolt!`);
 				}
 			}
 			return problems;
@@ -90,7 +106,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'Terrain Extender',
 
 			// Pokemon
-			'Floette-Eternal', 'Reshiram', 'Zekrom'
+			'Floette-Eternal', 'Reshiram', 'Zekrom', 'Arceus','Cosmog', 'Cosmoem', 'Darkrai', 'Poipole', 'Silvally', 'Zamazenta',
 		],
 	},
 	weatherrocksandextenderban: {
