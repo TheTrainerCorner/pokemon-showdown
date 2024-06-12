@@ -126,4 +126,12 @@ export const Formats: FormatList = [
 			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'
 		],
 	},
+	{
+		name: "[Gen 9] Custom Battle",
+		mod: "ttc_current",
+		searchShow: false,
+		debug: true,
+		battle: {trunc: Math.trunc},
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
+	},
 ];
