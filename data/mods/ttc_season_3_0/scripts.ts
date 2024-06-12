@@ -317,6 +317,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(100)
 				.setDEF(125)
+		new ModifyPokemon("Sceptile", this)
+			.learnset
+				.add("Pin Missle")
 		new ModifyPokemon("Seviper", this)
 			.learnset
 				.add("Shed Tail")
