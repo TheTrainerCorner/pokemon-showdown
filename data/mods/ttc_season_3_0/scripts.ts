@@ -99,7 +99,13 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water")
 				// Eevee Starter moves removal
 				.remove("Baddy Bad").remove("Bouncy Bubble").remove("Buzzy Buzz").remove("Freezy Frost").remove("Glitzy Glow")
-				.remove("Sappy Seed").remove("Sizzly Slide").remove("Sparkly Swirl").remove("Veevee Volley");
+				.remove("Sappy Seed").remove("Sizzly Slide").remove("Sparkly Swirl").remove("Veevee Volley")
+			.pokemon.baseStats
+				.setATK(65)
+				.setDEF(65)
+				.setSPA(45)
+				.setSPD(75)
+				.setSPE(70)
 		new ModifyPokemon("Flareon", this)
 			.learnset
 				.remove("Celebrate")

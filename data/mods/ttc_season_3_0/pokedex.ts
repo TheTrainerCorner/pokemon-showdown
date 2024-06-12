@@ -24,7 +24,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		forme: "Mega",
 		types: ["Normal"],
 		genderRatio: {M: 0.875, F: 0.125},
-		baseStats: {hp: 55, atk: 108, def: 105, spa: 108, spd: 110, spe: 99},
+		baseStats: {hp: 65, atk: 118, def: 115, spa: 118, spd: 120, spe: 99},
 		abilities: {0: "Gambler's Luck"},
 		heightm: 0.3,
 		weightkg: 6.5,
