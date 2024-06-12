@@ -163,6 +163,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Venusaur", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Wigglytuff", this)
+			.abilities
+				.setAbility1("Field Support")
+			.pokemon.baseStats
+				.setHP(148)
+				.setDEF(60)
+				.setSPA(90)
+				.setSPD(65)
 		//#endregion	
 		//#region Gen 2
 		new ModifyPokemon("Crobat", this)
