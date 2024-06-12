@@ -544,6 +544,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Marshadow", this)
 			.learnset
 				.remove("Poltergeist")
+		new ModifyPokemon("Mimikyu", this)
+			.baseStats
+				.setHP(65)
+				.setATK(95)
+				.setDEF(83)
+			.pokemon.learnset
+				.add("Foul Play")
+				.add("Night Slash")
+				.add("Torment")
+				.add("Spirit Break")
 		new ModifyPokemon("Muk-Alola", this)
 			.learnset
 				.add("Dire Claw")
