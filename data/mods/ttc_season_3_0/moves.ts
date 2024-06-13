@@ -420,5 +420,28 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If the target is sleeping, then the move will cause the target to lose 1 stage to all stats. Target will wake up from it's sleep.",
 		shortDesc: "If the target is asleep; -1 Stage to all stats. Cause target to wake up.",
 	},
+	shellstorm: {
+		num: -3008,
+		name: "Shell Storm",
+		accuracy: 70,
+		basePower: 90,
+		category: "Special",
+		priority: 0,
+		pp: 10,
+		flags: {protect: 1, mirror: 1, distance: 1, wind: 1},
+		critRatio: 2,
+		onModifyMove(move, pokemon, target) {
+			switch (target?.effectiveWeather()) {
+			case 'raindance':
+			case 'primordialsea':
+				move.accuracy = true;
+				break;
+			}
+		},
+		target: "any",
+		type: "Rock",
+		desc: "High crit chance. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
+		shortDesc: "High crit chance. Can't miss in rain.",
+	},
 	//#endregion
 };

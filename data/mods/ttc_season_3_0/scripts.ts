@@ -793,9 +793,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.baseStats
 				.setATK(80)
 				.setSPA(125)
+			.pokemon.learnset
+				.add("Malignant Chain")
 		new ModifyPokemon("Okidogi", this)
 			.learnset
 				.add("Mach Punch")
+				.add("Malignant Chain")
 			.pokemon.abilities
 				.setAbility1("Unnerve")
 		new ModifyPokemon("Pecharunt", this)
