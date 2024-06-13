@@ -164,11 +164,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-<<<<<<< HEAD
-                "movepool": ["Dazzling Gleam", "Fire Blast", "Light Screen", "Protect", "Reflect", "Stealth Rock", "Thunder Wave", "Wish"],
-=======
                 "movepool": ["Alluring Voice", "Fire Blast", "Knock Off", "Protect", "Stealth Rock", "Thunder Wave", "Wish"],
->>>>>>> upstream
                 "teraTypes": ["Poison", "Steel"]
             }
         ]
@@ -488,11 +484,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-<<<<<<< HEAD
-                "movepool": ["Encore", "Knock Off", "Light Screen", "Psychic", "Reflect", "Thunder Wave", "Toxic"],
-=======
                 "movepool": ["Encore", "Knock Off", "Psychic Noise", "Thunder Wave", "Toxic"],
->>>>>>> upstream
                 "teraTypes": ["Dark", "Steel"]
             },
             {
@@ -1667,10 +1659,6 @@
         "sets": [
             {
                 "role": "Bulky Setup",
-<<<<<<< HEAD
-                "movepool": ["Body Slam", "Bulk Up", "Earthquake", "Knock Off", "Slack Off"],
-                "teraTypes": ["Ghost", "Ground", "Poison"]
-=======
                 "movepool": ["Body Slam", "Bulk Up", "Knock Off", "Slack Off"],
                 "teraTypes": ["Ghost"]
             },
@@ -1678,7 +1666,6 @@
                 "role": "Bulky Attacker",
                 "movepool": ["Body Slam", "Bulk Up", "Earthquake", "Slack Off"],
                 "teraTypes": ["Ground"]
->>>>>>> upstream
             }
         ]
     },
@@ -2407,10 +2394,6 @@
         "sets": [
             {
                 "role": "Bulky Support",
-<<<<<<< HEAD
-                "movepool": ["Earthquake", "Hypnosis", "Iron Head", "Light Screen", "Psychic", "Reflect", "Stealth Rock"],
-                "teraTypes": ["Electric", "Water"]
-=======
                 "movepool": ["Earthquake", "Hypnosis", "Iron Head", "Psychic Noise", "Stealth Rock"],
                 "teraTypes": ["Electric", "Water"]
             },
@@ -2418,7 +2401,6 @@
                 "role": "Bulky Setup",
                 "movepool": ["Body Press", "Iron Defense", "Iron Head", "Psychic Noise", "Rest"],
                 "teraTypes": ["Fighting"]
->>>>>>> upstream
             }
         ]
     },
@@ -2517,11 +2499,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-<<<<<<< HEAD
-                "movepool": ["Ice Shard", "Ice Spinner", "Knock Off", "Low Kick", "Swords Dance"],
-=======
                 "movepool": ["Ice Shard", "Knock Off", "Low Kick", "Swords Dance", "Triple Axel"],
->>>>>>> upstream
                 "teraTypes": ["Dark", "Fighting", "Ice"]
             }
         ]
@@ -6256,11 +6234,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-<<<<<<< HEAD
-                "movepool": ["Crunch", "Ice Shard", "Ice Spinner", "Sacred Sword", "Sucker Punch", "Swords Dance"],
-=======
                 "movepool": ["Ice Shard", "Icicle Crash", "Sacred Sword", "Sucker Punch", "Swords Dance", "Throat Chop"],
->>>>>>> upstream
                 "teraTypes": ["Dark", "Fighting", "Ice"]
             }
         ]
