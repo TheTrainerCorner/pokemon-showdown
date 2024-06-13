@@ -58,6 +58,7 @@ class TestTools {
 		const customRulesID = customRules.length ? `@@@${customRules.join(',')}` : ``;
 
 		let basicFormat = this.currentMod === 'base' && gameType === 'singles' ? 'Anything Goes' : 'Custom Game';
+		basicFormat = `Custom Battle`
 		let modPrefix = this.modPrefix;
 		if (this.currentMod === 'gen1stadium') basicFormat = 'OU';
 		if (gameType === 'multi') {
@@ -150,4 +151,4 @@ class TestTools {
 
 const common = exports = module.exports = new TestTools();
 cache.set('base', common);
-cache.set('gen9', common);
+cache.set('ttc_current', common);

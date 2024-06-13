@@ -1,5 +1,20 @@
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#region Modify Abilities
+	snowcloak: {
+		inherit: true,
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'hail' || effect.id === 'snow') {
+				if (target.side.sideConditions['auroraveil']) return;
+				else target.side.addSideCondition('auroraveil');
+			}
+		},
+		onStart(target) {
+			if (this.field.isWeather('snow') && !target.side.sideConditions['auroraveil']) {
+				target.side.addSideCondition('auroraveil');
+			}
+		},
+	},
 	wanderingspirit: { // [NERFED]
 		inherit: true,
 		onStart(pokemon) {
@@ -158,7 +173,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (effect && effect.effectType === 'Move') {
 				this.boost({spa: length}, source);
 				this.field.setWeather('snow');
-				target.side.addSideCondition('auroraveil', source);
+				source.side.addSideCondition('auroraveil');
 			}
 		},
 		num: -3003,
