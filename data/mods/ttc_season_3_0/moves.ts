@@ -450,7 +450,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 25,
 		category: "Special",
 		priority: 0,
-		pp: 16,
+		pp: 10,
 		flags: {protect: 1, mirror: 1, bullet: 1},
 		multihit: [2, 5],
 		secondary: {
