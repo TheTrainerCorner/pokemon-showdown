@@ -151,6 +151,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 		name: "Wanted Poster",
 		spritenum: -100,
 		desc: "NOT YET IMPLEMENTED",
+		onStart(pokemon) {
+			pokemon.foes()[0].speciesState.wanted = true;
+		},
+		onModifyAtk(atk, source, target, move) {
+			if (target.speciesState.wanted) {
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		onModifySpA(atk, source, target, move) {
+			if (target.speciesState.wanted) {
+				return this.chainModify([5325, 4096]);
+			}
+		}
 	},
 	bubbleddome: {
 		name: "Bubbled Dome",
