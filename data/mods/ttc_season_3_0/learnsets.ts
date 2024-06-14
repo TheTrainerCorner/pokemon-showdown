@@ -706,7 +706,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			explosion: ["9M"],
 			destinybond: ["9M"],
 			belch: ["9M"],
-			amensia: ["9M"],
+			amnesia: ["9M"],
 			acidspray: ["9M"],
 			infestation: ["9M"],
 			stockpile: ["9M"],
