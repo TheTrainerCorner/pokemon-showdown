@@ -142,4 +142,19 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		}
 	},
+	pokepen: {
+		name: "PokePen",
+		spritenum: -100,
+		desc: "NOT YET IMPLEMENTED",
+	},
+	wantedposter: {
+		name: "Wanted Poster",
+		spritenum: -100,
+		desc: "NOT YET IMPLEMENTED",
+	},
+	bubbleddome: {
+		name: "Bubbled Dome",
+		spritenum: -100,
+		desc: "NOT YET IMPLEMENTED",
+	}
 }
