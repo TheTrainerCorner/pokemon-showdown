@@ -248,6 +248,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isBreakable: true,
 		rating: 3.5,
 		num: -3010,
+		desc: "This Pokemon is immune to Fairy-type moves and restores 1/4 of its maximum HP, rounded down, when hit by an Fairy-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Fairy moves; Fairy immunity.",
 	},
 	//#endregion
 
