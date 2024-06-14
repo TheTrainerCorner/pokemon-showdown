@@ -108,6 +108,22 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 
 	//#endregion
 
+	//#region Champion Fakemon
+	tyrannicalglutton: {
+		num: -3013,
+		name: "Tyrannical Glutton",
+		types: ["Dark", "Fairy"],
+		gender: "N",
+		baseStats: {hp: 143, atk: 83, def: 101, spa: 102, spd: 101, spe: 50},
+		abilities: {0: "Protosynthesis", 1: "Gluttony", H: "Sweet Tooth"},
+		heightm: 1.2,
+		weightkg: 100,
+		color: "Pink",
+		tags: ["Fakemon", "Paradox"],
+		eggGroups: ["Undiscovered"],
+	},
+	//#endregion
+
 	//#region Staff Additions
 	wishiwashisoulless: {
 		num: -3007,
@@ -184,7 +200,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		doublesTier: "DOU",
 	},
 	akumu: {
-		num: 676,
+		num: -3008,
 		name: "Akumu",
 		types: ["Normal", "Ghost"],
 		baseStats: {hp: 105, atk: 115, def: 75, spa: 75, spd: 100, spe: 130}, 
@@ -198,7 +214,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		doublesTier: "DOU",
 	},
 	nyomb: {
-		num: 677,
+		num: -3009,
 		name: "Nyomb",
 		types: ["Steel"],
 		baseStats: {hp: 45, atk: 30, def: 35, spa: 30, spd: 35, spe: 40}, 
@@ -213,7 +229,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		doublesTier: "(DUU)",
 	},
 	gyrmeow: {
-		num: 678,
+		num: -3010,
 		name: "Gyrmeow",
 		types: ["Steel"],
 		baseStats: {hp: 70, atk: 70, def: 60, spa: 70, spd: 55, spe: 65}, 
@@ -229,7 +245,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		doublesTier: "(DUU)",
 	},
 	catinator: {
-		num: 678,
+		num: -3011,
 		name: "Catinator",
 		types: ["Steel", "Fire"],
 		baseStats: {hp: 110, atk: 105, def: 90, spa: 105, spd: 80, spe: 50}, 
@@ -244,7 +260,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		doublesTier: "DOU",
 	},
 	cerinyx: {
-		num: 679,
+		num: -3012,
 		name: "Cerinyx",
 		types: ["Psychic", "Dark"],
 		baseStats: {hp: 89, atk: 121, def: 86, spa: 121, spd: 81, spe: 122}, 
@@ -256,6 +272,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tier: "OU",
 		natDexTier: "OU",
 		doublesTier: "DOU",
+	},
+	magcoral: {
+		num: -3013,
+		name: "Magcoral",
+		types: ["Water", "Rock"],
+		baseStats: {hp: 80, atk: 50, def: 100, spa: 115, spd: 120, spe: 60},
+		abilities: {0: "Sturdy", 1: "Water Absorb", H: "Primordial Sea"},
+		heightm: 1,
+		weightkg: 300,
+		tags: ["Fakemon"],
+		eggGroups: ["Water"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",		
 	},
 	//#endregion
 };

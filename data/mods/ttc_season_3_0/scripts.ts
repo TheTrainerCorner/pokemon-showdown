@@ -534,7 +534,21 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 			.remove("Celebrate")
 		new ModifyPokemon("Golem-Alola", this)
-			.learnset
+			.abilities
+				.setAbility0('Magnet Pull')
+				.setAbility1('Teravolt')
+				.setHiddenAbility('Baller')
+			.pokemon.baseStats
+				.setATK(50)
+				.setSPD(80)
+				.setSPE(50)
+			.pokemon.learnset
+				.add('Thunder Clap')
+				.add('Aura Sphere')
+				.add('Weather Ball')
+				.add('Energy Ball')
+				.add('Shadow Ball')
+				.add('Geodude Gatling')
 				.remove("Thousand Arrows")
 		new ModifyPokemon("Kommoo", this)
 			.baseStats

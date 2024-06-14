@@ -443,5 +443,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "High crit chance. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
 		shortDesc: "High crit chance. Can't miss in rain.",
 	},
+	geodudegatling: {
+		num: -3009,
+		name: "Geodude Gatling",
+		accuracy: 90,
+		basePower: 25,
+		category: "Special",
+		priority: 0,
+		pp: 16,
+		flags: {protect: 1, mirror: 1, bullet: 1},
+		multihit: [2, 5],
+		secondary: {
+			chance: 10,
+			status: 'brn',
+		},
+		target: 'normal',
+		type: 'Rock',
+		desc: "Hits 2-5 times; 10% chance to burn on each hit",
+		shortDesc: "Hits 2-5 times; 10% chance to burn on each hit",
+	},
 	//#endregion
 };

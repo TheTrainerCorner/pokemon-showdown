@@ -234,6 +234,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 
 	//#endregion
 
+	//#region Champion Fakemons
+	sweettooth: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Fairy') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Sweet Tooth');
+				}
+				return null;
+			}
+		},
+		name: "Sweet Tooth",
+		isBreakable: true,
+		rating: 3.5,
+		num: -3010,
+	},
+	//#endregion
+
 	//#endregion
 
 	//#region Staff Addition
