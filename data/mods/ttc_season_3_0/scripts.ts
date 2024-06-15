@@ -1043,7 +1043,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData('Pokedex', 'ragingbolt').tags.push('Use Gen 5');
 		this.modData('Pokedex', 'gougingfire').tags.push('Use Gen 5');
 		this.modData('Pokedex', 'terapagos').tags.push('Use Gen 5');
-		this.modData('Pokedex', 'terapogosstellar').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'terapagosstellar').tags.push('Use Gen 5');
 		this.modData('Pokedex', 'terapagosterastal').tags.push('Use Gen 5');
 		//#endregion
 	},
