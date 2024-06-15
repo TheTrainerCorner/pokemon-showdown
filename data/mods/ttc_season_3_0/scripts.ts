@@ -837,17 +837,17 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("WoChien", this)
 			.learnset
 				.add("Spore")
-				new ModifyPokemon('Walking Wake', this)
+				new ModifyPokemon('WalkingWake', this)
 				.baseStats
 					.setATK(87)
 					.setDEF(95)
 					.setSPD(85);
-			new ModifyPokemon('Iron Bundle', this)
+			new ModifyPokemon('IronBundle', this)
 				.baseStats
 					.setATK(74)
 					.setDEF(112)
 					.setSPA(122);
-			new ModifyPokemon('Slither Wing', this)
+			new ModifyPokemon('SlitherWing', this)
 				.baseStats
 					.setHP(81)
 					.setATK(133)
