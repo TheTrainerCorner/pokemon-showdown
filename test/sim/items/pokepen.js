@@ -5,16 +5,14 @@ const common = require('./../../common');
 
 let battle;
 
-describe('Wanted Poster', () => {
+describe('PokePen', () => {
 	beforeEach(() => {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [
-			{species: 'Cinccino', item: 'wantedposter', moves: ['sleeptalk']},
-			{species: 'Lopunny', item: 'leftovers', moves: ['sleeptalk']},
+			{species: 'Cinccino', item: 'pokepen', moves: ['hypervoice']},
 		]});
 		battle.setPlayer('p2', {team: [
-			{species: 'Meowth', moves: ['sleeptalk']},
-			{species: 'Pikachu', moves: ['sleeptalk']},
+			{species: 'Kecleon', ability: 'colorchange', moves: ['sleeptalk']}
 		]});
 	});
 	afterEach(() => {

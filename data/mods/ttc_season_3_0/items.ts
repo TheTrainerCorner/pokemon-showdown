@@ -146,24 +146,15 @@ export const Items: {[k: string]: ModdedItemData} = {
 		name: "PokePen",
 		spritenum: -100,
 		desc: "NOT YET IMPLEMENTED",
+		onModifyMove(move, pokemon, target) {
+			if (move.category === 'Physical') move.category = "Special";
+			if (move.category === 'Special') move.category = "Physical";
+		},
 	},
 	wantedposter: {
 		name: "Wanted Poster",
 		spritenum: -100,
 		desc: "NOT YET IMPLEMENTED",
-		onStart(pokemon) {
-			pokemon.foes()[0].speciesState.wanted = true;
-		},
-		onModifyAtk(atk, source, target, move) {
-			if (target.speciesState.wanted) {
-				return this.chainModify([5325, 4096]);
-			}
-		},
-		onModifySpA(atk, source, target, move) {
-			if (target.speciesState.wanted) {
-				return this.chainModify([5325, 4096]);
-			}
-		}
 	},
 	bubbleddome: {
 		name: "Bubbled Dome",
