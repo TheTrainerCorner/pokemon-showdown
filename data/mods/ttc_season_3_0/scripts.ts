@@ -834,14 +834,27 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Skeledirge", this)
 			.learnset
 				.add("Infernal Parade")
-		new ModifyPokemon("SlitherWing", this)
-			.baseStats
-				.setDEF(109)
-			.pokemon.learnset
-				.add("Heat Crash")
 		new ModifyPokemon("WoChien", this)
 			.learnset
 				.add("Spore")
+				new ModifyPokemon('Walking Wake', this)
+				.baseStats
+					.setATK(87)
+					.setDEF(95)
+					.setSPD(85);
+			new ModifyPokemon('Iron Bundle', this)
+				.baseStats
+					.setATK(74)
+					.setDEF(112)
+					.setSPA(122);
+			new ModifyPokemon('Slither Wing', this)
+				.baseStats
+					.setHP(81)
+					.setATK(133)
+					.setDEF(109)
+					.setSPD(101)
+				.pokemon.learnset
+					.add('Heat Crash');
 		//#endregion
 
 		//#region Fakemon
@@ -886,21 +899,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Tail Glow")
 				.add("Fire Spin")
 				.add("Shadow Sneak");
-		new ModifyPokemon('Walking Wake', this)
-			.baseStats
-				.setATK(87)
-				.setDEF(95)
-				.setSPD(85);
-		new ModifyPokemon('Iron Bundle', this)
-			.baseStats
-				.setATK(74)
-				.setDEF(112)
-				.setSPA(122);
-		new ModifyPokemon('Slither Wing', this)
-			.baseStats
-				.setHP(81)
-				.setATK(133)
-				.setSPD(101);
+
 		//#endregion	
 		
 		//#region NFE
