@@ -886,6 +886,21 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Tail Glow")
 				.add("Fire Spin")
 				.add("Shadow Sneak");
+		new ModifyPokemon('Walking Wake', this)
+			.baseStats
+				.setATK(87)
+				.setDEF(95)
+				.setSPD(85);
+		new ModifyPokemon('Iron Bundle', this)
+			.baseStats
+				.setATK(74)
+				.setDEF(112)
+				.setSPA(122);
+		new ModifyPokemon('Slither Wing', this)
+			.baseStats
+				.setHP(81)
+				.setATK(133)
+				.setSPD(101);
 		//#endregion	
 		
 		//#region NFE
@@ -1022,5 +1037,15 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move).flags.explosion= 1;
 		}
 		// #endregion
+
+		//#region Give Paradox Formes without dex sprite to use gen 5 sprite
+		this.modData('Pokedex', 'ironboulder').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'ironcrown').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'ragingbolt').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'gougingfire').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'terapagos').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'terapogosstellar').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'terapagosterastal').tags.push('Use Gen 5');
+		//#endregion
 	},
 };
