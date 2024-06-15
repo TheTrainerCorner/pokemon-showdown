@@ -1264,7 +1264,7 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setType('Dragon', 'Poison')
 				.pokemon.abilities
 					.setAbility0('Gooey')
-					.setHiddenAbility('Corrsion')
+					.setHiddenAbility('Corrosion')
 				.pokemon.baseStats
 					.setDEF(61);
 			new ModifyPokemon('Sliggoo-Hisui', this)
