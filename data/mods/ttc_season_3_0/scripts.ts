@@ -319,7 +319,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(125)
 		new ModifyPokemon("Sceptile", this)
 			.learnset
-				.add("Pin Missle")
+				.add("Pin Missile")
 		new ModifyPokemon("Seviper", this)
 			.learnset
 				.add("Shed Tail")
