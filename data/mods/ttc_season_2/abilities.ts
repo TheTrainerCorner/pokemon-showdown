@@ -1289,7 +1289,13 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'hail' || effect.id === 'snow') {
-				target.side.addSideCondition('auroraveil', target);
+				if (target.side.sideConditions['auroraveil']) return;
+				else target.side.addSideCondition('auroraveil');
+			}
+		},
+		onStart(target) {
+			if (this.field.isWeather('snow') && !target.side.sideConditions['auroraveil']) {
+				target.side.addSideCondition('auroraveil');
 			}
 		},
 		desc: "If Snow is activate, The user will automatically set an Aurora Veil for 5 turns.",
