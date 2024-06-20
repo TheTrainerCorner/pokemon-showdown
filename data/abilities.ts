@@ -378,16 +378,35 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 224,
 	},
 	berserk: {
+		onDamage(damage, target, source, effect) {
+			if (
+				effect.effectType === "Move" &&
+				!effect.multihit &&
+				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
+			) {
+				this.effectState.checkedBerserk = false;
+			} else {
+				this.effectState.checkedBerserk = true;
+			}
+		},
+		onTryEatItem(item) {
+			const healingItems = [
+				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
+			];
+			if (healingItems.includes(item.id)) {
+				return this.effectState.checkedBerserk;
+			}
+			return true;
+		},
 		onAfterMoveSecondary(target, source, move) {
 			this.effectState.checkedBerserk = true;
 			if (!source || source === target || !target.hp || !move.totalDamage) return;
 			const lastAttackedBy = target.getLastAttackedBy();
 			if (!lastAttackedBy) return;
-			const damage = move.multihit && !move.smartTarget ? move.totalDamage : lastAttackedBy.damage;
+			const damage = move.multihit ? move.totalDamage : lastAttackedBy.damage;
 			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
 				this.boost({spa: 1}, target, target);
 			}
-			if(this.effectState.checkedBerserk = true) return;
 		},
 		name: "Berserk",
 		rating: 2,
