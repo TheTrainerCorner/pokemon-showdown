@@ -148,6 +148,41 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: 'Protects the user from Critical Hits & Priorty Moves',
 		desc: 'Protects the user from Critical Hits & Priority Moves',
 	},
+	berserk: {
+		inherit: true,
+		onDamage(damage, target, source, effect) {
+			if (
+				effect.effectType === "Move" &&
+				!effect.multihit &&
+				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
+			) {
+				this.effectState.checkedBerserk = false;
+			} else {
+				this.effectState.checkedBerserk = true;
+			}
+		},
+		onTryEatItem(item) {
+			const healingItems = [
+				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
+			];
+			if (healingItems.includes(item.id)) {
+				return this.effectState.checkedBerserk;
+			}
+			return true;
+		},
+		onAfterMoveSecondary(target, source, move) {
+			this.effectState.checkedBerserk = true;
+			if (!source || source === target || !target.hp || !move.totalDamage) return;
+			const lastAttackedBy = target.getLastAttackedBy();
+			if (!lastAttackedBy) return;
+			const damage = move.multihit ? move.totalDamage : lastAttackedBy.damage;
+			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
+				this.boost({atk: 1, spa: 1}, target, target);
+			}
+		},
+		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack and Special Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move. This effect is prevented if the move had a secondary effect removed by the Sheer Force Ability.",
+		shortDesc: "This Pokemon's Atk and Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
+	},
 	bigpecks: {
 		inherit: true,
 		onBasePowerPriority: 23,
