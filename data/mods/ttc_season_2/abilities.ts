@@ -151,6 +151,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	berserk: {
 		inherit: true,
 		onAfterMoveSecondary(target, source, move) {
+			// We must check to see if berserk already procced or not.
+			if (this.effectState.checkedBerserk) return;
 			this.effectState.checkedBerserk = true;
 			if (!source || source === target || !target.hp || !move.totalDamage) return;
 			const lastAttackedBy = target.getLastAttackedBy();
