@@ -9,7 +9,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			//#region Retyping some Megas
 			new ModifyPokemon('Absol-Mega', this)
 				.types
-					.setType('Dark', 'Fairy');
+					.setType('Fairy', 'Dark');
 			new ModifyPokemon('Charizard-MegaX', this)
 				.types
 					.setType('Fire', 'Dragon');
