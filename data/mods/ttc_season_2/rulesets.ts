@@ -17,7 +17,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 					species = this.dex.species.get(item.megaStone);
 					typeTable = typeTable.filter(type => species.types.includes(type));
 					// adding to see what the type of absol is.
-					return [`Your team must share a type. ${species} | ${typeTable}`];
+					return [`Your team must share a type. ${species} | ${species.types}`];
 				}
 				if (item.id === "ultranecroziumz" && species.baseSpecies === "Necrozma") {
 					species = this.dex.species.get("Necrozma-Ultra");
