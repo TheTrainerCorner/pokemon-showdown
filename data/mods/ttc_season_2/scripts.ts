@@ -6,6 +6,14 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		// #region 2.0.0
 		// Modify Pokemon
+			//#region Retyping some Megas
+			new ModifyPokemon('Absol-Mega', this)
+				.types
+					.setType('Dark', 'Fairy');
+			new ModifyPokemon('Charizard-MegaX', this)
+				.types
+					.setType('Fire', 'Dragon');
+			//#endregion
 			//#region LC Pokemon
 			new ModifyPokemon('Pidgey', this)
 				.abilities

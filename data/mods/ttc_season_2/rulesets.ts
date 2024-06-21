@@ -1,4 +1,3 @@
-import { types } from 'pg';
 import { incrementLosses } from '../../../server/chat-plugins/cg-teams-leveling';
 export const Rulesets: {[k: string]: ModdedFormatData} = {
 	sametypeclause: {
@@ -14,14 +13,9 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 					typeTable = typeTable.filter(type => species.types.includes(type));
 				}
 				const item = this.dex.items.get(set.item);
-				let typeListForSomeMegas: {[k: string]: string[]} = {
-					'Absol-Mega': ['Dark', 'Fairy'],
-					'Charizard-MegaX': ['Fire', 'Dragon'],
-					'Charizard-MegaY': ['Fire', 'Flying']
-				};
 				if (item.megaStone && species.baseSpecies === item.megaEvolves) {
 					species = this.dex.species.get(item.megaStone);
-					typeTable = typeTable.filter(type => species.types.includes(type) || typeListForSomeMegas[species.name].includes(type));
+					typeTable = typeTable.filter(type => species.types.includes(type));
 				}
 				if (item.id === "ultranecroziumz" && species.baseSpecies === "Necrozma") {
 					species = this.dex.species.get("Necrozma-Ultra");
