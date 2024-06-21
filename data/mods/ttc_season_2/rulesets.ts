@@ -1,25 +1,30 @@
+import { types } from 'pg';
 import { incrementLosses } from '../../../server/chat-plugins/cg-teams-leveling';
 export const Rulesets: {[k: string]: ModdedFormatData} = {
 	sametypeclause: {
 		inherit: true,
 		onValidateTeam(team) {
-			let dex = this.dex.mod('ttc_current');
 			let typeTable: string[] = [];
 			for (const [i, set] of team.entries()) {
-				let species = dex.species.get(set.species);
+				let species = this.dex.species.get(set.species);
 				if (!species.types) return [`Invalid pokemon ${set.name || set.species}`];
 				if (i === 0) {
 					typeTable = species.types;
 				} else {
 					typeTable = typeTable.filter(type => species.types.includes(type));
 				}
-				const item = dex.items.get(set.item);
+				const item = this.dex.items.get(set.item);
+				let typeListForSomeMegas: {[k: string]: string[]} = {
+					'Absol-Mega': ['Dark', 'Fairy'],
+					'Charizard-MegaX': ['Fire', 'Dragon'],
+					'Charizard-MegaY': ['Fire', 'Flying']
+				};
 				if (item.megaStone && species.baseSpecies === item.megaEvolves) {
-					species = dex.species.get(item.megaStone);
-					typeTable = typeTable.filter(type => species.types.includes(type));
+					species = this.dex.species.get(item.megaStone);
+					typeTable = typeTable.filter(type => species.types.includes(type) || typeListForSomeMegas[species.name].includes(type));
 				}
 				if (item.id === "ultranecroziumz" && species.baseSpecies === "Necrozma") {
-					species = dex.species.get("Necrozma-Ultra");
+					species = this.dex.species.get("Necrozma-Ultra");
 					typeTable = typeTable.filter(type => species.types.includes(type));
 				}
 				if (!typeTable.length) return [`Your team must share a type.`];
