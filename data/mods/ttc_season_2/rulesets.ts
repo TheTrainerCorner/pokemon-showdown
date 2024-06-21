@@ -1,5 +1,37 @@
 import { incrementLosses } from '../../../server/chat-plugins/cg-teams-leveling';
 export const Rulesets: {[k: string]: ModdedFormatData} = {
+	sametypeclause: {
+		inherit: true,
+	
+		onValidateTeam(team) {
+			let typeTable: string[] = [];
+			for (const [i, set] of team.entries()) {
+				let species = this.dex.species.get(set.species);
+				if (!species.types) return [`Invalid pokemon ${set.name || set.species}`];
+				if (i === 0) {
+					typeTable = species.types;
+				} else {
+					typeTable = typeTable.filter(type => species.types.includes(type));
+				}
+				const item = this.dex.items.get(set.item);
+				if (item.megaStone && species.baseSpecies === item.megaEvolves) {
+					species = this.dex.species.get(item.megaStone);
+					typeTable = typeTable.filter(type => species.types.includes(type));
+				}
+				if (item.id === "ultranecroziumz" && species.baseSpecies === "Necrozma") {
+					species = this.dex.species.get("Necrozma-Ultra");
+					typeTable = typeTable.filter(type => species.types.includes(type));
+				}
+				if (!typeTable.length) return [`Your team must share a type.`];
+			}
+			for (const set of team) {
+				if (this.gen === 9 && set.teraType &&
+						!typeTable.includes(set.teraType) && this.ruleTable.has(`enforcesameteratype`)) {
+					return [`${set.species}'s Tera Type must match the team's type.`];
+				}
+			}
+		},
+	},
 	evasionabilitiesclause: {
 		inherit: true,
 		banlist: undefined,
