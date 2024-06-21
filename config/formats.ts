@@ -25,7 +25,7 @@ export const Formats: FormatList = [
 		name: "[Gen 9] National Dex Monotype",
 		mod: "ttc_current",
 		ruleset: [
-			'Standard Natdex', 'Same Type Clause', 'Terastal Clause',
+			'Standard Natdex', 'Terastal Clause',
 			'Species Clause', 'OHKO Clause', 'Evasion Clause',
 			'Sleep Clause Mod',
 

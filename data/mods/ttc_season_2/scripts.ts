@@ -6,14 +6,6 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		// #region 2.0.0
 		// Modify Pokemon
-			//#region Retyping some Megas
-			new ModifyPokemon('Absol-Mega', this)
-				.types
-					.setType('Fairy', 'Dark');
-			new ModifyPokemon('Charizard-MegaX', this)
-				.types
-					.setType('Fire', 'Dragon');
-			//#endregion
 			//#region LC Pokemon
 			new ModifyPokemon('Pidgey', this)
 				.abilities
@@ -2026,7 +2018,8 @@ export const Scripts: ModdedBattleScriptsData = {
 					.add('Mighty Cleave');
 			new ModifyPokemon('Absol-Mega', this)
 				.baseStats
-					.setSPA(125);
+					.setSPA(125)
+					.setSPE(125);
 			new ModifyPokemon('Glalie', this)
 				.learnset
 					.add('Glacier')
