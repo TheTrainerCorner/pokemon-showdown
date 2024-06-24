@@ -9,7 +9,7 @@ describe('Wanted Poster', () => {
 	beforeEach(() => {
 		battle = common.createBattle();
 		battle.setPlayer('p1', {team: [
-			{species: 'Cinccino', item: 'wantedposter', moves: ['sleeptalk']},
+			{species: 'Cinccino', item: 'wantedposter', moves: ['tailslap', 'sleeptalk']},
 			{species: 'Lopunny', item: 'leftovers', moves: ['sleeptalk']},
 		]});
 		battle.setPlayer('p2', {team: [
@@ -19,5 +19,16 @@ describe('Wanted Poster', () => {
 	});
 	afterEach(() => {
 		battle.destroy();
+	});
+
+	it("should proc and deal damage to the meowth", () => {
+		battle.makeChoices('move tailslap', 'switch 2');
+		assert.fullHP(battle.p1.active[0]);
+		assert.fullHP(battle.p2.active[0]);
+		battle.makeChoices('move sleeptalk', 'switch 2');
+		assert.fullHP(battle.p1.active[0]);
+		assert.fullHP(battle.p2.active[0]);
+		battle.makeChoices('move sleeptalk', 'switch 2');
+		assert.fullHP(battle.p2.active[0]);
 	});
 });
