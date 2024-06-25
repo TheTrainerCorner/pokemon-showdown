@@ -1,6 +1,12 @@
 'use strict';
 
 /**
+ * The Current TTC Season
+ * TTC Specific Config
+ */
+exports.ttcseason = 'ttc_season_3_0';
+
+/**
  * The server port - the port to run Pokemon Showdown under
  *
  * @type {number}
