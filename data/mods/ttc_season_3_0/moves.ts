@@ -546,7 +546,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		num: -3010,
 		name: "Fantasy Tongue",
 		accuracy: 100,
-		basePower: 95,
+		basePower: 85,
 		type: "Fairy",
 		pp: 10,
 		category: "Physical",
