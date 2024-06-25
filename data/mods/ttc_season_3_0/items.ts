@@ -244,4 +244,40 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		num: -273,
 	},
+	armorplate: {
+		name: "Armor Plate",
+		desc: "1.3x boost to both defenses for 3 turns. Multi-hit moves are affected.",
+		onStart(pokemon) {
+			if (pokemon.itemState.armorPlateHits) return;
+			pokemon.itemState.armorPlateHits = 3;
+			this.add('-start', pokemon, `armorplatex3`);
+		},
+		onFoeAfterMove(source, target, move) {
+			if (this.effectState.didHit) {
+				this.add('-end', target, `armorplatex${target.itemState.armorPlateHits}`);
+				target.itemState.armorPlateHits -= 1;
+				if (target.itemState.armorPlateHits <= 0) {
+					this.add('-start', target, `armorplatexend`);
+					target.useItem();
+					this.add('-end', target, `armorplatexend`, '[silent]');
+				} else {
+					this.add('-start', target, `armorplatex${target.itemState.armorPlateHits}`);
+				}
+			}
+		},
+		onDamagingHit(damage, target, source, move) {
+			if(!target.hp) return;
+			this.effectState.didHit = true;
+		},
+		onModifyDef(def, pokemon) {
+			if (pokemon.itemState.armorPlateHits > 0) {
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		onModifySpD(def, pokemon) {
+			if (pokemon.itemState.armorPlateHits > 0) {
+				return this.chainModify([5325, 4096]);
+			}
+		},
+	},
 }
