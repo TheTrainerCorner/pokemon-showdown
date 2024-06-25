@@ -228,5 +228,20 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		num: -640,
 		gen: 9,
-	}
+	},
+	frostorb: {
+		name: "Frost Orb",
+		desc: "Inflicts the user with Frostbite",
+		spritenum: -100,
+		fling: {
+			basePower: 30,
+			status: 'frb',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('frb', pokemon);
+		},
+		num: -273,
+	},
 }
