@@ -145,11 +145,15 @@ export const Items: {[k: string]: ModdedItemData} = {
 	pokepen: {
 		name: "PokePen",
 		spritenum: -100,
-		desc: "NOT YET IMPLEMENTED",
-		onModifyMove(move, pokemon, target) {
-			if (move.category === 'Physical') move.category = "Special";
-			if (move.category === 'Special') move.category = "Physical";
-		},
+		desc: "Consumable one time use. When holding this item, your next status move will have +1 priority.",
+		onModifyPriority(priority, pokemon, target, move) {
+			if (move.category === 'Status') {
+				move.pranksterBoosted = true;
+				this.add('-activate', pokemon, 'item: PokePen');
+				pokemon.useItem();
+				return priority + 1;
+			}
+		}
 	},
 	wantedposter: {
 		name: "Wanted Poster",
