@@ -968,12 +968,21 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Cetoddle", this)
 			.learnset
 				.add("Sheer Cold")
+		new ModifyPokemon("Cubchoo", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Charcadet", this)
 			.learnset
 				.remove("Celebrate")
 		new ModifyPokemon("Charmander", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Gastly", this)
+			.learnset
+				.add("Sheer Cold")
+		new ModifyPokemon("Greavard", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Magikarp", this)
 			.learnset
 				.remove("Celebrate")
@@ -984,6 +993,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Milcery", this)
 			.learnset
 				.remove("Celebrate")
+				.add("Sheer Cold")
 		new ModifyPokemon("Munchlax", this)
 			.learnset
 				.remove("Celebrate")
@@ -993,12 +1003,21 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Nidoran-M", this)
 			.baseStats
 				.setDEF(42)
+		new ModifyPokemon("Oshawott", this)
+			.learnset	
+				.add("Sheer Cold")
 		new ModifyPokemon("Pawmi", this)
 			.learnset
-				.remove("Celebrate")	
+				.remove("Celebrate")
+		new ModifyPokemon("Piplup", this)
+			.learnset
+				.add("Sheer Cold")	
 		new ModifyPokemon("Shinx", this)
 			.learnset
 				.remove("Wild Charge")
+		new ModifyPokemon("Snom", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Snorunt", this)
 			.learnset
 				.add("Sheer Cold")
