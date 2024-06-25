@@ -482,6 +482,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	snipeshot: {
 		inherit: true,
 		basePower: 40,
+		critRatio: 2,
+		tracksTarget: true,
 		basePowerCallback(pokemon, target, move) {
 			// You can't get here unless the pursuit succeeds
 			if (target.beingCalledBack || target.switchFlag) {
