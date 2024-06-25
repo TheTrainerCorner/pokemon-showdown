@@ -241,6 +241,54 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		accuracy: 95,
 	},
+	swarmterrain: {
+		inherit: true,
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source.hasItem('terrainextender')) return 8;
+				return 5;
+			},
+			onTryBoost(boost, target, source, effect) {
+				if(source && target === source) {
+					let showMsg = false;
+					let i: BoostID;
+					for(i in boost) {
+						if (boost[i]! > 0) {
+							delete boost[i];
+							showMsg = true;
+						}
+					}
+					if (showMsg && !(effect as ActiveMove).boosts) {
+						this.add("-fail", target, 'boost', "[from] move: Swarm Terrain", "[of] " + target);
+					}
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Swarm Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Swarm Terrain');
+				}
+			},
+			onDisableMove(pokemon) {
+				for (const moveSlot of pokemon.moveSlots) {
+					const move = this.dex.moves.get(moveSlot.id);
+					if (move.selfBoost) {
+						pokemon.disableMove(moveSlot.id);
+					}
+					if(move.boosts){
+						pokemon.disableMove(moveSlot.id)
+					}
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Swarm Terrain');
+			},
+		},
+	},
 	//#endregion
 
 	//#region New Moves
