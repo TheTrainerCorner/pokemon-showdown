@@ -295,7 +295,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		num: -3012,
 		name: "Cerinyx",
 		types: ["Psychic", "Dark"],
-		baseStats: {hp: 89, atk: 121, def: 86, spa: 121, spd: 81, spe: 122}, 
+		baseStats: {hp: 86, atk: 131, def: 81, spa: 131, spd: 76, spe: 122}, 
 		abilities: {0: "Dawn Of Lunacy", H: "Neuroforce"}, 
 		heightm: 2.18, 
 		weightkg: 699.5755,  
