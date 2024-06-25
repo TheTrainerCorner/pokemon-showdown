@@ -1,4 +1,5 @@
 import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
+import { formatOrder } from '../../../lib/utils';
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: "ttc_season_2",
@@ -22,6 +23,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		// Adjusting Empoleon's data to include Empoleon-Mega
 		this.modData("Pokedex", "empoleon").otherFormes = ["Empoleon-Mega"];
 		this.modData("Pokedex", "empoleon").formeOrder = ["Empoleon", "Empoleon-Mega"];
+		// Adjusting Pangoro's data to include Pangoro-Mega
+		this.modData("Pokedex", "pangoro").otherFormes = ["Pangoro-Mega"];
+		this.modData('Pokedex', "pangoro").formeOrder = ["Pangoro", "Pangoro-Mega"];
+		// Adjusting Lickitung's data to include Lickitung-Hisui
+		this.modData("Pokedex", "lickitung").otherFormes = ["Lickitung-Hisui"];
+		this.modData("Pokedex", "lickitung").formeOrder = ["Lickitung", "Lickitung-Hisui"];
 		//#region Gen 1
 		new ModifyPokemon("Aerodactyl", this)
 			.learnset

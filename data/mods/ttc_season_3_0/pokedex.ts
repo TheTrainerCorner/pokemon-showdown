@@ -108,6 +108,38 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 
 	//#endregion
 
+	//#region Healthy Fakemons
+	lickitunghisui: {
+		num: -3014,
+		name: "Lickitung-Hisui",
+		forme: "Hisui",
+		baseSpecies: "Lickitung",
+		types: ["Dragon"],
+		baseStats: {hp: 70, atk: 70, def: 65, spa: 45, spd: 65, spe: 70},
+		abilities: {0: "Intimidate", 1: "Thick Fat", H: "Moxie"},
+		heightm: 1.3,
+		weightkg: 114,
+		color: "Purple",
+		evos: ["Lickitale"],
+		eggGroups: ["Monster"],
+	},
+	lickitale: {
+		num: -3015,
+		name: "Lickitale",
+		types: ["Dragon", "Fairy"],
+		baseStats: {hp: 90, atk: 117, def: 80, spa: 55, spd: 80, spe: 93},
+		abilities: {0: "Intimidate", 1: "Thick Fat", H: "Moxie"},
+		heightm: 1.8,
+		weightkg: 165,
+		color: "Purple",
+		prevo: "Lickitung-Hisui",
+		evoType: "levelMove",
+		evoMove: "Dragon Rage",
+		eggGroups: ["Monster"],
+	},
+
+	//#endregion
+
 	//#region Champion Fakemon
 	tyrannicalglutton: {
 		num: -3013,

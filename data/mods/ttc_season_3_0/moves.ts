@@ -284,6 +284,35 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
 	},
 	//#endregion
+	//#region Healthy Fakemon
+	fantasytongue: {
+		num: -3011,
+		name: "Fantasy Tongue",
+		accuracy: 100,
+		basePower: 85,
+		category: "Physical",
+		pp: 10,
+		flags: {bite: 1, contact: 1},
+		priority: 0,
+		type: "Fairy",
+		target: 'any',
+		onHit(target, source) {
+			let success = false;
+			if (target.isAlly(source)) {
+				success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
+			} else {
+				target.addVolatile('taunt');
+				success = true;
+			}
+			if (!success) {
+				this.add('-fail', target, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
+		},
+		desc: "Taunts the target; Heals 50% if used on allies",
+	},
+	//#endregion
 
 	//#region Staff Addition
 	resentfulscreech: {
@@ -540,22 +569,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			desc: "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
 			shortDesc: "If a foe is switching out, hits it at 2x power.",
-		},
-	},
-	fantasytongue: {
-		num: -3010,
-		name: "Fantasy Tongue",
-		accuracy: 100,
-		basePower: 85,
-		type: "Fairy",
-		pp: 10,
-		category: "Physical",
-		target: "normal",
-		priority: 0,
-		flags: {protect: 1, bite: 1, contact: 1},
-		secondary: {
-			chance: 100,
-			volatileStatus: 'taunt',
 		},
 	},
 	//#endregion
