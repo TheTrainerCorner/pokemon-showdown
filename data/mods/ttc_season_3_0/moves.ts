@@ -496,8 +496,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		beforeTurnCallback(pokemon) {
 			for (const side of this.sides) {
 				if (side.hasAlly(pokemon)) continue;
-				side.addSideCondition('pursuit', pokemon);
-				const data = side.getSideConditionData('pursuit');
+				side.addSideCondition('snipeshot', pokemon);
+				const data = side.getSideConditionData('snipeshot');
 				if (!data.sources) {
 					data.sources = [];
 				}
@@ -508,7 +508,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
 		},
 		onTryHit(target, pokemon) {
-			target.side.removeSideCondition('pursuit');
+			target.side.removeSideCondition('snipeshot');
 		},
 		condition: {
 			duration: 1,
