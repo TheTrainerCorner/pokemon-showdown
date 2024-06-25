@@ -157,54 +157,52 @@ export const Items: {[k: string]: ModdedItemData} = {
 		desc: "Consumable one time use. If an opposing Pokemon were to switch out prior to using a damaging move, they will be attacked before switching.",
 		shortDesc: "If the opposing pokemon switches out",
 		onBeforeTurn(pokemon) {
-			for (const side of this.sides) {
-				if (side.hasAlly(pokemon)) continue;
-				side.addSideCondition('pursuit', pokemon);
-				const data = side.getSideConditionData('pursuit');
-				if (!data.sources) {
-					data.sources = [];
-				}
-				data.sources.push(pokemon);
+			pokemon.itemState.wantedPosterActive = false;
+			let action = this.queue.willMove(pokemon);
+			if (action?.choice !== 'move') {
+				pokemon.itemState.wantedPosterActive = false;
+				return;
 			}
-		},
-		onModifyMove(move, source, target) {
-			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
-		},
-		onTryHit(target, pokemon) {
-			target.side.removeSideCondition('pursuit');
-		},
-		condition: {
-			duration: 1,
-			onBeforeSwitchOut(pokemon) {
-				this.debug('Wanted Poster start');
-				let alreadyAdded = false;
-				pokemon.removeVolatile('destinybond');
-				for(const source of this.effectState.sources) {
-					if (!source.isAdjacent(pokemon) || !this.queue.cancelMove(source) || !source.hp) continue;
-					if (!source.hasItem('wantedposter')) continue;
-					if (!alreadyAdded) {
-						this.add('-activate', pokemon, 'item: Wanted Poster');
-						alreadyAdded = true;
-					}
-					if (source.canMegaEvo || source.canUltraBurst) {
-						for(const [actionIndex, action] of this.queue.entries()) {
-							if (action.pokemon === source && action.choice === 'megaEvo') {
-								this.actions.runMegaEvo(source);
-								this.queue.list.splice(actionIndex, 1);
-								break;
-							}
-						}
-					}
+			let move = action.move;
 
-					let action = this.queue.willMove(source);
-					if (action?.choice !== 'move') continue;
-					let move = action.move;
-					if (move.category === 'Status') continue;
-					if (source.useItem())
-						this.actions.runMove(move, source, source.getLocOf(pokemon));
-				}
+			if (!move) {
+				pokemon.itemState.wantedPosterActive = false;
 			}
-		}
+			pokemon.itemState.wantedPosterActive = true;
+			pokemon.itemState.wantedPosterMove = move;
+		},
+		onFoeBeforeSwitchOut(target) {
+			let activated = false;
+			for (const source of target.foes()) {
+				// Check if source has Wanted Poster First
+				if (!source.hasItem('wantedposter')) continue;
+				// Check to see if the item already procced
+				if (activated) continue;
+				
+				// Check to see if the source is using a move
+				if (!source.itemState.wantedPosterActive) continue;
+				// Check to see if the move exist
+				if (!source.itemState.wantedPosterMove) continue;
+
+				// Typecast the move from itemState
+				let move = source.itemState.wantedPosterMove as Move;
+				// Check to see if the move is the category of Status or not.
+				if (move.category === "Status") continue;
+				this.add('-activate', source, 'item: Wanted Poster');
+				// Assuming everything is not the above, we can proc the move
+				this.actions.runMove(move, source, source.getLocOf(target));
+				for (const [actionIndex, action] of this.queue.entries()) {
+					if (action.pokemon === source && action.choice === "move"){
+						this.queue.list.splice(actionIndex, 1);
+						break;
+					}
+				}
+				// Use the item afterwards
+				source.useItem();
+				// change activated prop to true to say that the item already procced
+				activated = true;
+			}
+		},
 	},
 	bubbleddome: {
 		name: "Bubbled Dome",

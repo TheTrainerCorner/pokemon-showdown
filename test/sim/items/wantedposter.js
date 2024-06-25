@@ -22,12 +22,14 @@ describe('Wanted Poster', () => {
 	});
 
 	it("should proc and deal damage to the meowth", () => {
+		assert(battle.p1.active[0].hasItem('wantedposter'));
 		battle.makeChoices('move tailslap', 'switch 2');
 		assert.fullHP(battle.p1.active[0]);
 		assert.fullHP(battle.p2.active[0]);
+		assert.false(battle.p1.active[0].hasItem('wantedposter'));
 		battle.makeChoices('move sleeptalk', 'switch 2');
 		assert.fullHP(battle.p1.active[0]);
-		assert.fullHP(battle.p2.active[0]);
+		assert.false.fullHP(battle.p2.active[0]);
 		battle.makeChoices('move sleeptalk', 'switch 2');
 		assert.fullHP(battle.p2.active[0]);
 	});
