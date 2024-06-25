@@ -118,6 +118,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Jynx", this)
 			.learnset
 				.remove("Psycho Boost")
+				.add("Sheer Cold")
 		new ModifyPokemon("Machamp", this)
 			.baseStats
 				.setSPA(55);
@@ -139,6 +140,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Aura Sphere")
 				.add("Wake Up Slap")
 				.add("Force Palm");
+		new ModifyPokemon("Mew", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Muk", this)
 			.learnset
 				.add("Dire Claw")
@@ -160,6 +164,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Vaporeon", this)
 			.learnset
 				.remove("Celebrate")
+				.add("Sheer Cold")
 		new ModifyPokemon("Venusaur", this)
 			.learnset
 				.remove("Celebrate")
@@ -179,6 +184,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(119)
 				.setDEF(84)
 				.setSPE(144);
+		new ModifyPokemon("Delibird", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Entei", this)
 			.baseStats
 				.setATK(100)
@@ -205,6 +213,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Tyranitar-Mega", this)
 			.baseStats
 				.setSPA(75)
+		new ModifyPokemon("Piloswine", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Umbreon", this)
 			.learnset
 				.remove("Celebrate")
@@ -212,6 +223,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setHP(125)
 				.setSPA(115)
+		new ModifyPokemon("Sneasel", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Smeargle", this)
 			.abilities
 				.setHiddenAbility("Trace")
@@ -258,7 +272,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Alluring Voice");
 		new ModifyPokemon("Glalie", this)
 			.learnset
-				.add("Extreme Speed");
+				.add("Extreme Speed")
+			.pokemon.abilities
+				.setAbility0("Levitate")
 		new ModifyPokemon("Huntail", this)
 			.learnset
 				.add("Dragon Cheer")	
@@ -292,6 +308,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility0("Absolute Zero")
 				.setAbility1("undefined")
 				.setHiddenAbility("Filter")
+			.pokemon.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Regirock", this)
 			.abilities
 				.setAbility0("Granite Storm")
@@ -363,6 +381,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Glaceon", this)
 			.learnset
 				.remove("Celebrate")
+				.add("Sheer Cold")
 		new ModifyPokemon("Leafeon", this)
 			.learnset
 				.remove("Celebrate")
@@ -402,12 +421,18 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove("Aeroblast")
 				.remove("Bleakwind Storm")
 				.remove("Wildbolt Storm")
+		new ModifyPokemon("Rotom-Frost", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Shaymin", this)
 			.baseStats
 				.setSPA(100)
 				.setSPD(105)
 			.pokemon.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Spiritomb", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Uxie", this)
 			.baseStats
 				.setATK(50)
@@ -427,6 +452,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(105)
 			.pokemon.learnset
 				.add("Alluring Voice")
+				.add("Sheer Cold")
 		new ModifyPokemon("Hydreigon", this)
 			.baseStats
 				.setHP(82)
@@ -445,6 +471,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Musharna", this)
 			.learnset
 				.remove("Lumina Crash")
+		new ModifyPokemon("Sawsbuck-Winter", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Serperior", this)
 			.learnset
 				.add("Dragon Cheer")
@@ -463,6 +492,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Zebstrika", this)
 			.baseStats
 				.setSPA(100)
+		new ModifyPokemon("Zoroark", this)
+			.learnset
+				.add("Sheer Cold")
 		//#endregion
 		//#region Gen 6
 		new ModifyPokemon("Aegislash", this)
@@ -471,6 +503,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Aurorus", this)
 			.learnset
 				.add("Dragon Cheer")
+				.add("Sheer Cold")
 		new ModifyPokemon("Carbink", this)
 			.learnset	
 				.add("Diamond Storm")
@@ -616,6 +649,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Arctozolt", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Articuno-Galar", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Alcremie", this)
 			.learnset
 				.add("Syrup Bomb")
@@ -642,6 +678,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(70)
 				.setSPA(105)
 				.setSPD(70);
+		new ModifyPokemon("Eiscue", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Flapple", this)
 			.learnset
 				.add("Dragon Cheer")
@@ -651,7 +690,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(95)
 				.setSPE(44)
 			.pokemon.learnset
-				.add("Alluring Voice");
+				.add("Alluring Voice")
+				.add("Sheer Cold")
 		new ModifyPokemon("Inteleon", this)
 			.learnset
 				.add("Hydro Steam");
@@ -660,7 +700,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Thunderous Kick");
 		new ModifyPokemon("MrMime-Galar", this)
 			.baseStats
-				.setSPE(120);
+				.setSPE(120)
+			.pokemon.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("MrRime", this)
 			.baseStats
 				.setHP(100)
@@ -772,6 +814,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(124)
 			.pokemon.learnset
 				.add("Bouncy Bubble")
+				.add("Sheer Cold")
 		new ModifyPokemon('IronCrown', this)
 			.abilities
 				.setHiddenAbility('Anticipation')
@@ -867,6 +910,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("MeloettaCaroler", this)
 			.learnset
 				.remove("Celebrate")
+				.add("Sheer Cold")
 		new ModifyPokemon("Metadraco", this)
 			.baseStats
 				.setATK(120)	
@@ -899,15 +943,24 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Murkrow", this)
 			.learnset
 				.add("Celebrate")	
+		new ModifyPokemon("Morgrem", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Luxio", this)
 			.learnset
 				.remove("Wild Charge")
 		//#endregion	
 
 		//#region LC
+		new ModifyPokemon("Bergmite", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Bulbasaur", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Cetoddle", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Charcadet", this)
 			.learnset
 				.remove("Celebrate")
@@ -939,6 +992,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Shinx", this)
 			.learnset
 				.remove("Wild Charge")
+		new ModifyPokemon("Snorunt", this)
+			.learnset
+				.add("Sheer Cold")
 		new ModifyPokemon("Squirtle", this)
 			.learnset
 				.remove("Celebrate")

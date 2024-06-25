@@ -16787,7 +16787,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		secondary: null,
-		ohko: 'Ice',
+		//ohko: 'Ice',
 		target: "normal",
 		type: "Ice",
 		zMove: {basePower: 180},

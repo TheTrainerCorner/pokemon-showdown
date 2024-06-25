@@ -209,7 +209,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	bubbleddome: {
 		name: "Bubbled Dome",
 		spritenum: -100,
-		desc: "Holder's Def is 1.5x, but it can only select damaginge moves.",
+		desc: "Holder's Def is 1.5x, but it can only select damaging moves.",
 		fling: {
 			basePower: 80,
 		},
