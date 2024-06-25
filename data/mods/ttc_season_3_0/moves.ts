@@ -485,7 +485,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePowerCallback(pokemon, target, move) {
 			// You can't get here unless the pursuit succeeds
 			if (target.beingCalledBack || target.switchFlag) {
-				this.debug('Pursuit damage boost');
+				this.debug('Snipe Shot damage boost');
 				return move.basePower * 2;
 			}
 			return move.basePower;
@@ -513,13 +513,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			duration: 1,
 			onBeforeSwitchOut(pokemon) {
-				this.debug('Pursuit start');
+				this.debug('Snipe Shot start');
 				let alreadyAdded = false;
 				pokemon.removeVolatile('destinybond');
 				for (const source of this.effectState.sources) {
 					if (!source.isAdjacent(pokemon) || !this.queue.cancelMove(source) || !source.hp) continue;
 					if (!alreadyAdded) {
-						this.add('-activate', pokemon, 'move: Pursuit');
+						this.add('-activate', pokemon, 'move: Snipe Shot');
 						alreadyAdded = true;
 					}
 					// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
@@ -533,9 +533,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 							}
 						}
 					}
-					this.actions.runMove('pursuit', source, source.getLocOf(pokemon));
+					this.actions.runMove('Snipe Shot', source, source.getLocOf(pokemon));
 				}
 			},
+			desc: "If an opposing Pokemon switches out this turn, this move hits that Pokemon before it leaves the field, even if it was not the original target. If the user moves after an opponent using Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch, but not Baton Pass, it will hit that opponent before it leaves the field. Power doubles and no accuracy check is done if the user hits an opponent switching out, and the user's turn is over; if an opponent faints from this, the replacement Pokemon does not become active until the end of the turn.",
+			shortDesc: "If a foe is switching out, hits it at 2x power.",
 		},
 	}
 	//#endregion

@@ -326,7 +326,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				target = targets[targets.length - 1]; // in case of redirection
 			}
 
-			if (!sourceEffect || sourceEffect.id === 'pursuit' || sourceEffect.id === 'thehuntison') {
+			if (!sourceEffect || sourceEffect.id === 'pursuit' || sourceEffect.id === 'thehuntison' || sourceEffect.id === 'snipeshot') {
 				let extraPP = 0;
 				for (const source of pressureTargets) {
 					const ppDrop = this.battle.runEvent('DeductPP', source, pokemon, move);
