@@ -155,7 +155,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		name: "Wanted Poster",
 		spritenum: -100,
 		desc: "Consumable one time use. If an opposing Pokemon were to switch out prior to using a damaging move, they will be attacked before switching.",
-		shortDesc: "If the opposing pokemon switches out",
+		shortDesc: "If the opposing pokemon switches out, your move will hit them before switching out. One time use",
 		onBeforeTurn(pokemon) {
 			pokemon.itemState.wantedPosterActive = false;
 			let action = this.queue.willMove(pokemon);
