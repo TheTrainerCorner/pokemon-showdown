@@ -151,8 +151,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move?.category === 'Status') {
+				move.pranksterBoosted = true;
 				this.add('-activate', pokemon, 'item: PokePen');
 				pokemon.useItem();
+				// Doesn't catch the move
 				return priority + 1;
 			}
 		}
