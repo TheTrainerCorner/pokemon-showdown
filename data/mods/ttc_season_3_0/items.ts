@@ -146,6 +146,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		name: "PokePen",
 		spritenum: -100,
 		desc: "Consumable one time use. When holding this item, your next status move will have +1 priority.",
+		onModifyPriorityPriority: -2,
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.category === 'Status') {
 				move.pranksterBoosted = true;
