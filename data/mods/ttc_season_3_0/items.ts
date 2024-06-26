@@ -253,7 +253,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	armorplate: {
 		name: "Armor Plate",
-		desc: "Gives holder 1.3x boost to both defenses for 3 hits. Multi-hit moves are affected.",
+		desc: "Gives holder 1.2x boost to both defenses for 3 hits. Multi-hit moves are affected.",
 		fling: {
 			basePower: 80,
 		},
