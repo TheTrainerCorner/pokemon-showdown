@@ -281,12 +281,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onModifyDef(def, pokemon) {
 			if (pokemon.itemState.armorPlateHits > 0) {
-				return this.chainModify([5325, 4096]);
+				return this.chainModify([4915, 4096]);
 			}
 		},
 		onModifySpD(def, pokemon) {
 			if (pokemon.itemState.armorPlateHits > 0) {
-				return this.chainModify([5325, 4096]);
+				return this.chainModify([4915, 4096]);
 			}
 		},
 	},
