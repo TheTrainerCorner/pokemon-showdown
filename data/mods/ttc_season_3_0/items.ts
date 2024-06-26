@@ -150,11 +150,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 10,
 		},
 		onModifyMovePriority: -1,
-		onModifyMove(move, pokemon) {
+		onModifyMove(move) {
+			const pokemon = this.effectState.source;
 			if (move.category === "Status") {
 				move.pranksterBoosted = true;
-				this.add('-activate', pokemon, 'item: PokePen');
-				pokemon.useItem();
+				this.add('-activate', this.activePokemon, 'item: PokePen');
+				pokemon.useItem(pokemon);
 				return move.priority + 1;
 			}
 		}
