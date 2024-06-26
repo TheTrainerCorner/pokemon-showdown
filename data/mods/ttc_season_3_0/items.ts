@@ -145,22 +145,28 @@ export const Items: {[k: string]: ModdedItemData} = {
 	pokepen: {
 		name: "PokePen",
 		spritenum: -100,
-		desc: "Consumable one time use. When holding this item, your next status move will have +1 priority.",
+		desc: "Holder's next status move will have +1 priority. Single use",
+		fling: {
+			basePower: 10,
+		},
 		onModifyPriorityPriority: -2,
 		onModifyPriority(priority, pokemon, target, move) {
 			if (move.category === 'Status') {
 				move.pranksterBoosted = true;
 				this.add('-activate', pokemon, 'item: PokePen');
 				pokemon.useItem();
-				return priority + 1;
+				return move.priority + 1;
 			}
 		}
 	},
 	wantedposter: {
 		name: "Wanted Poster",
 		spritenum: -100,
-		desc: "Consumable one time use. If an opposing Pokemon were to switch out prior to using a damaging move, they will be attacked before switching.",
-		shortDesc: "If the opposing pokemon switches out, your move will hit them before switching out. One time use",
+		desc: "If an opposing Pokemon were to switch out prior to using a damaging move, they will be attacked before switching.",
+		shortDesc: "If a foe is switching out, hits it using a damaging move before. Single use",
+		fling: {
+			basePower: 10,
+		},
 		onBeforeTurn(pokemon) {
 			pokemon.itemState.wantedPosterActive = false;
 			let action = this.queue.willMove(pokemon);
@@ -232,7 +238,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	frostorb: {
 		name: "Frost Orb",
-		desc: "Inflicts the user with Frostbite",
+		desc: "At the end of every turn, this item attempts to frosbite the holder.",
 		spritenum: -100,
 		fling: {
 			basePower: 30,
@@ -247,7 +253,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 	},
 	armorplate: {
 		name: "Armor Plate",
-		desc: "1.3x boost to both defenses for 3 turns. Multi-hit moves are affected.",
+		desc: "Gives holder 1.3x boost to both defenses for 3 hits. Multi-hit moves are affected.",
+		fling: {
+			basePower: 80,
+		},
 		onStart(pokemon) {
 			if (pokemon.itemState.armorPlateHits) return;
 			pokemon.itemState.armorPlateHits = 3;
