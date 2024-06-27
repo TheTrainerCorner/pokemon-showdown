@@ -553,6 +553,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			covet: ["7T"],
 			curse: ["9M", "9E", "9S3", "8E", "7E"],
 			darkpulse: ["9M", "8M", "7M"],
+			direclaw: ["9M"],
 			dazzlinggleam: ["9M", "8M", "7M"],
 			destinybond: ["9E", "9S3", "8E", "7E", "7S2"],
 			doubleteam: ["9L12", "8L12", "7M", "7L5"],
@@ -572,6 +573,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			hiddenpower: ["7M"],
 			honeclaws: ["9L30", "8L30", "7L41"],
 			hyperbeam: ["9M", "8M", "7M"],
+			hypnosis: ["9M"],
 			infestation: ["7M"],
 			lastresort: ["7T"],
 			leechlife: ["9M", "8M", "7M"],
@@ -626,6 +628,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			woodhammer: ["9L1", "8L1", "7L1"],
 			workup: ["8M", "7M"],
 			xscissor: ["9M", "8M", "7M"],
+			yawn: ["9M"],
 		},
 	},
 	magcoral: {
