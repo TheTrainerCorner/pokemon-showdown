@@ -146,7 +146,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Tyrannical Glutton",
 		types: ["Dark", "Poison"],
 		gender: "N",
-		baseStats: {hp: 143, atk: 83, def: 101, spa: 102, spd: 101, spe: 51},
+		baseStats: {hp: 143, atk: 83, def: 101, spa: 101, spd: 101, spe: 51},
 		abilities: {0: "Protosynthesis", H: "Sweet Tooth"},
 		heightm: 1.2,
 		weightkg: 100,
