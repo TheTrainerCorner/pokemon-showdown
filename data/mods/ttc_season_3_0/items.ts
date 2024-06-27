@@ -145,18 +145,26 @@ export const Items: {[k: string]: ModdedItemData} = {
 	pokepen: {
 		name: "PokePen",
 		spritenum: -100,
-		desc: "Holder's next status move will have +1 priority. Single use",
+		desc: "Holder's first status move will go first in the priority bracket. Fails against dark types. Single Use",
 		fling: {
 			basePower: 10,
 		},
-		onModifyPriority(priority, pokemon, target, move) {
-			if (move?.category === 'Status' && !target.types.includes('Dark')) {
-				move.pranksterBoosted = true;
-				this.add('-activate', pokemon, 'item: PokePen');
-				pokemon.useItem();
-				// Doesn't catch the move
-				return priority + 1;
+		onFractionalPriorityPriority: -2,
+		onFractionalPriority(priority, pokemon, _, move) {
+			if(move.category !== 'Status') return;
+			let canProc = true;
+			for(let target of pokemon.foes()) {
+				if (target.hasType('Dark')) canProc = false;
 			}
+
+			if (!canProc) {
+				this.add('-fail', pokemon, 'item: PokePen')
+				return;
+			}
+			this.add('-activate', pokemon, 'item: PokePen');
+			pokemon.useItem();
+			return 0.1;
+
 		}
 	},
 	wantedposter: {
