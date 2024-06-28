@@ -653,6 +653,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			type: "Psychic",
 			zMove: {effect: 'clearnegativeboost'},
 			contestType: "Cute",
+			shortDesc: "Puts user to sleep for a turn, +1 to every stat (excluding evasion and accuracy)"
 		},
 	//#endregion
 };
