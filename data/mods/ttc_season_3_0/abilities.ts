@@ -353,6 +353,31 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		desc: "Switches its signature move between Dark & Attack or Psychic and Special Attack each turn its on the field;",
 		shortDesc: "Affects sig. move; Dark/Physical or Psychic/Special each turn",
+	},
+	allseeing: {
+		name: "All Seeing",
+		onStart(pokemon) {
+			for (const target of pokemon.foes()) {
+				if (target.item) {
+					this.add('-item', target, target.getItem().name, '[from] ability: Frisk', '[of] ' + pokemon, '[identify]');
+				}
+				const item = target.getItem();
+				if (pokemon.hp && item.isBerry && target.takeItem(pokemon)) {
+					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] Frisk', '[of] ' + pokemon, '[identify]');
+					if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
+						this.runEvent('EatItem', pokemon, null, null, item);
+						if (item.id === 'leppaberry') target.staleness = 'external';
+					}
+					if (item.onEat) pokemon.ateBerry = true;
+				}
+			}
+		},
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true && move.type === 'Psychic') {
+				move.ignoreImmunity['Dark'] = true;
+			}
+		},
 	}
 	//#endregion
 };

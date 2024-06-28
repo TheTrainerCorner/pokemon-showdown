@@ -319,5 +319,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		natDexTier: "OU",
 		doublesTier: "DOU",		
 	},
+	jaguaptic: {
+		num: -3014,
+		name: "Jaguaptic",
+		types: ["Psychic", "Electric"],
+		baseStats: {hp: 51, atk: 100, def: 60, spa: 120, spd: 65, spe: 124},
+		abilities: {0: "All Seeing", 1: "Volt Absorb", H: "Quick Feet"},
+		heightm: 0.75,
+		weightkg: 60,
+		tags: ["Fakemon"],
+		eggGroups: ["Field"],
+		tier: "OU",
+		natDexTier: "OU",
+		doublesTier: "DOU",		
+	}
 	//#endregion
 };
