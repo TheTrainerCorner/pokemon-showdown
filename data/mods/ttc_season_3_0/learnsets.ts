@@ -895,6 +895,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			freezingglare: ["9M"],
 			miracleeye: ["9M"],
 			babydolleyes: ["9M"],
+			blink: ["9M"],
 		}
 	},
 };

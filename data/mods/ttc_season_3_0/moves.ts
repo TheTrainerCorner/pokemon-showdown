@@ -619,5 +619,45 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			shortDesc: "If a foe is switching out, hits it at 2x power.",
 		},
 	},
+	blink: {
+			num: -3010,
+			accuracy: true,
+			basePower: 0,
+			category: "Status",
+			name: "Blink",
+			pp: 1,
+			priority: 0,
+			flags: {snatch: 1, heal: 1},
+			onTry(source) {
+				if (source.status === 'slp' || source.hasAbility('comatose')) return false;
+	
+				if (source.hp === source.maxhp) {
+					this.add('-fail', source, 'heal');
+					return null;
+				}
+				if (source.hasAbility(['insomnia', 'vitalspirit'])) {
+					this.add('-fail', source, '[from] ability: ' + source.getAbility().name, '[of] ' + source);
+					return null;
+				}
+			},
+			onHit(target, source, move) {
+				const result = target.setStatus('slp', source, move);
+				if (!result) return result;
+				target.statusState.time = 2;
+				target.statusState.startTime = 2; 
+			},
+			boosts: {
+				atk: -1,
+				def: -1,
+				spa: -1,
+				spd: -1,
+				spe: -1,
+			},
+			secondary: null,
+			target: "self",
+			type: "Psychic",
+			zMove: {effect: 'clearnegativeboost'},
+			contestType: "Cute",
+		},
 	//#endregion
 };
