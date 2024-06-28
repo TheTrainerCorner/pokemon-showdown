@@ -359,11 +359,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onStart(pokemon) {
 			for (const target of pokemon.foes()) {
 				if (target.item) {
-					this.add('-item', target, target.getItem().name, '[from] ability: Frisk', '[of] ' + pokemon, '[identify]');
+					this.add('-item', target, target.getItem().name, '[from] ability: All Seeing', '[of] ' + pokemon, '[identify]');
 				}
 				const item = target.getItem();
 				if (pokemon.hp && item.isBerry && target.takeItem(pokemon)) {
-					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] Frisk', '[of] ' + pokemon, '[identify]');
+					this.add('-enditem', target, item.name, '[from] stealeat', '[ability] All Seeing', '[of] ' + pokemon, '[identify]');
 					if (this.singleEvent('Eat', item, null, pokemon, null, null)) {
 						this.runEvent('EatItem', pokemon, null, null, item);
 						if (item.id === 'leppaberry') target.staleness = 'external';
@@ -378,6 +378,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				move.ignoreImmunity['Psychic'] = true;
 			}
 		},
+		shortDesc: "Psychic-type moves can hit Dark-types. Also Frisks on Switch-In",
 	}
 	//#endregion
 };
