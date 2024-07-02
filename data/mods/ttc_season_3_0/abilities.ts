@@ -156,9 +156,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Absolute Zero",
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
+				// We will add some logic to make sure that the ability doesn't break on us.
+				if (['hail', 'snow'].includes(source.effectiveWeather())) {
+					source.side.addSideCondition('auroraveil');
+				} else {
+					this.field.setWeather('snow');
+				}
 				this.boost({spa: length}, source);
-				this.field.setWeather('snow');
-				source.side.addSideCondition('auroraveil');
 			}
 		},
 		num: -3003,
