@@ -1633,7 +1633,7 @@ export class Pokemon {
 		// Result: NOT
 		// Else Throw 
 		if (!ignoreImmunities && status.id &&
-			!(source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id)))  {
+			!((source?.hasAbility('corrosion') || (sourceEffect as Move).name === "Toxic Thread") && ['tox', 'psn'].includes(status.id)))  {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
 				this.battle.debug('immune to status');

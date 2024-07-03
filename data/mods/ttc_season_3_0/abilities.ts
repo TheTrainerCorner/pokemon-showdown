@@ -383,6 +383,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		shortDesc: "Psychic-type moves can hit Dark-types. Also Frisks on Switch-In",
-	}
+	},
+	//#endregion
+
+	//#region Donations
+	venomhielaman: {
+		name: "Venom Hielaman",
+		desc: "This pokemon takes half damage from poisoned foes",
+		onSourceModifyDamage(damage, source, target, move) {
+			if (['tox', 'psn'].includes(source.status)) {
+				this.debug('Venom Hielaman neutralize');
+				return this.chainModify(0.50);
+			}
+		}
+	},
+
 	//#endregion
 };
