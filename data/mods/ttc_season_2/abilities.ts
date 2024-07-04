@@ -499,47 +499,21 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "If user is Cherrim and Sunny Day is active, it and allies' Attack, Sp. Atk and Speed are 1.5x.",
 	},
 	flowerveil: {
-		onStart(pokemon) {
-			this.singleEvent('WeatherChange', this.effect, this.effectState, pokemon);
-		},
-		onWeatherChange(pokemon) {
-			if(!pokemon.isActive) return;
-			if(!pokemon.hp) return;
-			if(['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
-				// Create a new Condition
-				pokemon.side.addSideCondition('flowerveil', pokemon); 
-			}
-		},
-		condition: {
-			duration: 5,
-			durationCallback(target, source, effect) {
-				if(source?.hasItem('lightclay')) {
-					return 8;
-				}
-				return 5;
-			},
-			onSourceModifyDamage(damage, source, target, move) {
-				if(target !== source) {
-					if((target.side.getSideCondition('reflect') && this.getCategory(move) === 'Physical') ||
-						(target.side.getSideCondition('lightscreen') && this.getCategory(move) === 'Special')) {
-							return;
-						}
-					if(!target.getMoveHitData(move).crit && !move.infiltrates) {
-						this.debug('Flower Veil weaken');
-						if(this.activePerHalf > 1) return this.chainModify([2732, 4096]);
-						return this.chainModify(0.5);
-					}
+			inherit: true,
+			onModifyAccuracyPriority: undefined,
+			onModifyAccuracy: undefined,
+			onWeather(target, source, effect) {
+				if (target.hasItem('utilityumbrella')) return;
+				if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+					if (target.side.sideConditions['auroraveil']) return;
+					else target.side.addSideCondition('auroraveil');
 				}
 			},
-			onSideStart(side) {
-				this.add('-sidestart', side, 'ability: Flower Veil');
+			onStart(target) {
+				if (this.field.isWeather('sunnyday') && !target.side.sideConditions['auroraveil']) {
+					target.side.addSideCondition('auroraveil');
+				}
 			},
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 10,
-			onSideEnd(side) {
-				this.add('-sideend', side, 'ability: Flower Veil');
-			}
-		},
 		name: "Flower Veil",
 		isBreakable: true,
 		rating: 0,
