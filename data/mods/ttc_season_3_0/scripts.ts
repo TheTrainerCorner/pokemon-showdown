@@ -1028,7 +1028,22 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.remove("Celebrate")
 		//#endregion	
-
+		//#region Donation Mod
+		new ModifyPokemon("Ariados", this)
+			.abilities
+				.setAbility0("Venom Hielaman")
+				.setAbility1("Hustle")
+				.setHiddenAbility("Sniper")
+			.pokemon.baseStats
+				.setHP(95)
+				.setDEF(75)
+				.setSPA(50)
+				.setSPD(75)
+				.setSPE(80)
+			.pokemon.learnset
+				.add("Baneful Bunker")
+				.add("Poison Fang");
+		//#endregion
 		//#region Modifying Moves
 
 		//#region Adding Frostbite to moves
