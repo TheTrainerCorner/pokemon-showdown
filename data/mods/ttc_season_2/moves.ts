@@ -168,6 +168,55 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 	},
+	flowerveil: {
+		num: 694,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Flower Veil",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1},
+		sideCondition: 'flowerveil',
+		onTry() {
+			return this.field.isWeather(['sunnyday']);
+		},
+		condition: {
+			duration: 5,
+			durationCallback(target, source, effect) {
+				if (source?.hasItem('lightclay')) {
+					return 8;
+				}
+				return 5;
+			},
+			onAnyModifyDamage(damage, source, target, move) {
+				if (target !== source && this.effectState.target.hasAlly(target)) {
+					if ((target.side.getSideCondition('reflect') && this.getCategory(move) === 'Physical') ||
+							(target.side.getSideCondition('lightscreen') && this.getCategory(move) === 'Special')) {
+						return;
+					}
+					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
+						this.debug('Flower Veil weaken');
+						if (this.activePerHalf > 1) return this.chainModify([2732, 4096]);
+						return this.chainModify(0.5);
+					}
+				}
+			},
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Flower Veil');
+			},
+			onSideResidualOrder: 26,
+			onSideResidualSubOrder: 10,
+			onSideEnd(side) {
+				this.add('-sideend', side, 'move: Flower Veil');
+			},
+		},
+		secondary: null,
+		target: "allySide",
+		type: "Fire",
+		zMove: {boost: {spe: 1}},
+		contestType: "Beautiful",
+	},
 	electricterrain: {
 		inherit: true,
 		condition: {

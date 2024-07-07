@@ -499,57 +499,27 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		shortDesc: "If user is Cherrim and Sunny Day is active, it and allies' Attack, Sp. Atk and Speed are 1.5x.",
 	},
 	flowerveil: {
-			inherit: true,
+		inherit: true,
 			onModifyAccuracyPriority: undefined,
 			onModifyAccuracy: undefined,
 			onWeather(target, source, effect) {
 				if (target.hasItem('utilityumbrella')) return;
 				if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
 					if (target.side.sideConditions['flowerveil']) return;
-					else target.side.addSideCondition('flowerveil'); 
-				}
-			},
-			onStart(target) {
-				if (this.field.isWeather('sunnyday') && !target.side.sideConditions['flowerveil']) {
-					 target.side.addSideCondition('flowerveil'); 
-				}
-			},
-			condition: {
-				duration: 5,
-				durationCallback(target, source, effect) {
-					if (source?.hasItem('lightclay')) {
-						return 8;
-					}
-					return 5;
-				},
-				onAnyModifyDamage(damage, source, target, move) {
-					if (target !== source && this.effectState.target.hasAlly(target)) {
-						if ((target.side.getSideCondition('reflect') && this.getCategory(move) === 'Physical') ||
-								(target.side.getSideCondition('lightscreen') && this.getCategory(move) === 'Special')) {
-							return;
-						}
-						if (!target.getMoveHitData(move).crit && !move.infiltrates) {
-							this.debug('Flower Veil weaken');
-							if (this.activePerHalf > 1) return this.chainModify([2732, 4096]);
-							return this.chainModify(0.5);
-						}
-					}
-				},
-				onSideStart(side) {
-					this.add('-sidestart', side, 'ability: Flower Veil');
-				},
-				onSideResidualOrder: 26,
-				onSideResidualSubOrder: 10,
-				onSideEnd(side) {
-					this.add('-sideend', side, 'ability: Flower Veil');
-				}
-			},
+					else target.side.addSideCondition('flowerveil');
+			}
+		},
+		onStart(target) {
+			if (this.field.isWeather('sunnyday') && !target.side.sideConditions['flowerveil']) {
+				target.side.addSideCondition('flowerveil');
+			}
+		},
+		desc: "If Sunny Day is Active, Sets Flower Veil; For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Sun.",
+		shortDesc: "For 5 turns, damage to allies halved. Sun only.",
 		name: "Flower Veil",
 		isBreakable: true,
 		rating: 0,
 		num: 166,
-		desc: "If Sunny Day is Active, Sets Flower Veil; For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Sun.",
-		shortDesc: "For 5 turns, damage to allies halved. Sun only.",
 	},
 	forewarn: {
 		inherit: true,
