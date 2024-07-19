@@ -655,5 +655,19 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			contestType: "Cute",
 			shortDesc: "Puts user to sleep for a turn, +1 to every stat (excluding evasion and accuracy)"
 		},
+		cometpunch: {
+			inherit: true,
+			basePower: 18,
+			category: "Physical",
+			pp: 10,
+			priority: 0,
+			willCrit: true,
+			multihit: 4,
+			secondary: null,
+			target: "normal",
+			type: "Bug",
+			desc: "Hits four times. This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+			shortDesc: "Always results in a critical hit. Hits 4 times.",
+			},
 	//#endregion
 };

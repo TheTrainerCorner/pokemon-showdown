@@ -209,6 +209,23 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Lanturn", this)
 			.learnset
 				.add("Thunderclap");
+		new ModifyPokemon("Ledian",  this)
+			.abilities
+				.setAbility0("Motor Drive")
+			.pokemon.baseStats
+				.setHP(85)
+				.setDEF(55)
+				.setATK(104)
+				.setSPA(23)
+				.setSPD(113)
+			.pokemon.learnset
+				.add("Bullet Punch")
+				.add("Electrify")
+				.add("Ion Deluge")
+				.add("Meteor Mash")
+				.add("Trailblaze")
+				.add("Victory Dance")
+				.add("Volt Tackle")
 		new ModifyPokemon("Magcargo", this)
 			.learnset	
 				.remove("Magma Storm")
