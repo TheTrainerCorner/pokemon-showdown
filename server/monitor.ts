@@ -9,7 +9,6 @@
 
 import {exec, ExecException, ExecOptions} from 'child_process';
 import {crashlogger, FS} from "../lib";
-import * as pathModule from 'path';
 
 const MONITOR_CLEAN_TIMEOUT = 2 * 60 * 60 * 1000;
 
@@ -92,13 +91,6 @@ export const Monitor = new class {
 			Config.autolockdown = false;
 			Rooms.global.startLockdown(error);
 		}
-	}
-
-	logPath(path: string) {
-		if (Config.logsdir) {
-			return FS(pathModule.join(Config.logsdir, path));
-		}
-		return FS(pathModule.join('logs', path));
 	}
 
 	log(text: string) {
@@ -286,7 +278,7 @@ export const Monitor = new class {
 		for (const i in this.networkUse) {
 			buf += `${this.networkUse[i]}\t${this.networkCount[i]}\t${i}\n`;
 		}
-		void Monitor.logPath('networkuse.tsv').write(buf);
+		void FS('logs/networkuse.tsv').write(buf);
 	}
 
 	clearNetworkUse() {
@@ -341,8 +333,8 @@ export const Monitor = new class {
 	async version() {
 		let hash;
 		try {
-			await FS('.git/index').copyFile(Monitor.logPath('.gitindex').path);
-			const index = Monitor.logPath('.gitindex');
+			await FS('.git/index').copyFile('logs/.gitindex');
+			const index = FS('logs/.gitindex');
 			const options = {
 				cwd: __dirname,
 				env: {GIT_INDEX_FILE: index.path},

@@ -1,4 +1,4 @@
-export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
+export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	shiftry: {
 		inherit: true,
 		abilities: {0: "Chlorophyll", 1: "Early Bird", H: "Pickpocket"},

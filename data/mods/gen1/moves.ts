@@ -3,7 +3,7 @@
  * Some moves have had major changes, such as Bite's typing.
  */
 
-export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
+export const Moves: {[k: string]: ModdedMoveData} = {
 	acid: {
 		inherit: true,
 		secondary: {
@@ -207,7 +207,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 
 			return 2 * this.lastDamage;
 		},
-		flags: {contact: 1, protect: 1, metronome: 1},
 	},
 	crabhammer: {
 		inherit: true,
@@ -236,7 +235,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Disable",
 		pp: 20,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, bypasssub: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'disable',
 		onTryHit(target) {
 			// This function should not return if the checks are met. Adding && undefined ensures this happens.
@@ -470,7 +469,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Light Screen",
 		pp: 30,
 		priority: 0,
-		flags: {metronome: 1},
+		flags: {},
 		volatileStatus: 'lightscreen',
 		onTryHit(pokemon) {
 			if (pokemon.volatiles['lightscreen']) {
@@ -485,9 +484,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "self",
 		type: "Psychic",
 	},
+	metronome: {
+		inherit: true,
+		noMetronome: ["Metronome", "Struggle"],
+	},
 	mimic: {
 		inherit: true,
-		flags: {protect: 1, bypasssub: 1, metronome: 1},
 		onHit(target, source) {
 			const moveslot = source.moves.indexOf('mimic');
 			if (moveslot < 0) return false;
@@ -647,7 +649,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Reflect",
 		pp: 20,
 		priority: 0,
-		flags: {metronome: 1},
+		flags: {},
 		volatileStatus: 'reflect',
 		onTryHit(pokemon) {
 			if (pokemon.volatiles['reflect']) {
@@ -800,7 +802,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		name: "Substitute",
 		pp: 10,
 		priority: 0,
-		flags: {metronome: 1},
 		volatileStatus: 'substitute',
 		onTryHit(target) {
 			if (target.volatiles['substitute']) {
@@ -898,6 +899,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
+		flags: {},
 	},
 	superfang: {
 		inherit: true,

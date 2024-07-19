@@ -1,4 +1,4 @@
-export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
+export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	bulbasaur: {
 		tier: "LC",
 	},
@@ -6,7 +6,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "NFE",
 	},
 	venusaur: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	venusaurmega: {
@@ -165,7 +165,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	clefable: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	vulpix: {
@@ -245,7 +245,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	persianalola: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	psyduck: {
@@ -492,7 +492,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	chansey: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	tangela: {
@@ -588,11 +588,11 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		doublesTier: "DOU",
 	},
 	vaporeon: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	jolteon: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "DOU",
 	},
 	flareon: {
@@ -648,7 +648,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "NFE",
 	},
 	dragonite: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	mewtwo: {

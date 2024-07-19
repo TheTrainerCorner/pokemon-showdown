@@ -6,7 +6,7 @@
  * Psychic was immune to ghost
  */
 
-export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
+export const TypeChart: {[k: string]: ModdedTypeData | null} = {
 	bug: {
 		damageTaken: {
 			Bug: 0,

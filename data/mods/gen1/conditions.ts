@@ -8,7 +8,7 @@
  * under certain conditions and re-applied under other conditions.
  */
 
-export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDataTable = {
+export const Conditions: {[id: string]: ModdedConditionData} = {
 	brn: {
 		name: 'brn',
 		effectType: 'Status',

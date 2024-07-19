@@ -1,4 +1,4 @@
-export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
+export const Abilities: {[k: string]: ModdedAbilityData} = {
 	neutralizinggas: {
 		inherit: true,
 		// Ability suppression implemented in sim/pokemon.ts:Pokemon#ignoringAbility
@@ -19,7 +19,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 					this.add('-end', target, 'Slow Start', '[silent]');
 				}
 				if (target.m.innate) {
-					if (!this.dex.abilities.get(target.m.innate.slice(8)).flags['cantsuppress']) {
+					if (!this.dex.abilities.get(target.m.innate.slice(8)).isPermanent) {
 						target.removeVolatile(target.m.innate);
 					}
 				}
@@ -55,9 +55,13 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			if (!pokemon.isStarted || this.effectState.gaveUp) return;
 			const isAbility = pokemon.ability === 'trace';
 
-			const possibleTargets = pokemon.adjacentFoes().filter(
-				target => !target.getAbility().flags['notrace'] && target.ability !== 'noability'
-			);
+			const additionalBannedAbilities = [
+				// Zen Mode included here for compatability with Gen 5-6
+				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'zenmode',
+			];
+			const possibleTargets = pokemon.adjacentFoes().filter(target => (
+				!target.getAbility().isPermanent && !additionalBannedAbilities.includes(target.ability)
+			));
 			if (!possibleTargets.length) return;
 
 			const target = this.sample(possibleTargets);

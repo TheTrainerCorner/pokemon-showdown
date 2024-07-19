@@ -1,21 +1,17 @@
-export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTable = {
+export const Abilities: {[k: string]: ModdedAbilityData} = {
 	commander: {
 		inherit: true,
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1, notransform: 1},
-	},
-	gulpmissile: {
-		inherit: true,
-		flags: {cantsuppress: 1, notransform: 1},
+		isPermanent: true,
 	},
 	hadronengine: {
 		inherit: true,
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1, notransform: 1},
+		isPermanent: true,
 	},
 	illuminate: {
 		inherit: true,
 		onTryBoost() {},
 		onModifyMove() {},
-		flags: {},
+		isBreakable: undefined,
 		rating: 0,
 	},
 	mindseye: {
@@ -24,7 +20,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	orichalcumpulse: {
 		inherit: true,
-		flags: {failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1, notransform: 1},
+		isPermanent: true,
 	},
 	supersweetsyrup: {
 		inherit: true,

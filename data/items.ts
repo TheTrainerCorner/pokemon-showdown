@@ -1,4 +1,4 @@
-export const Items: import('../sim/dex-items').ItemDataTable = {
+export const Items: {[itemid: string]: ItemData} = {
 	abilityshield: {
 		name: "Ability Shield",
 		spritenum: 746,
@@ -324,8 +324,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		onDisableMove(pokemon) {
 			for (const moveSlot of pokemon.moveSlots) {
-				const move = this.dex.moves.get(moveSlot.id);
-				if (move.category === 'Status' && move.id !== 'mefirst') {
+				if (this.dex.moves.get(moveSlot.move).category === 'Status') {
 					pokemon.disableMove(moveSlot.id);
 				}
 			}
@@ -1430,6 +1429,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 235,
 		gen: 2,
+		isNonstandard: "Past",
 	},
 	dragoniumz: {
 		name: "Dragonium Z",
@@ -2123,6 +2123,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 1582,
 		gen: 8,
+		isNonstandard: "Unobtainable",
 	},
 	galaricawreath: {
 		name: "Galarica Wreath",
@@ -2132,6 +2133,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 1592,
 		gen: 8,
+		isNonstandard: "Unobtainable",
 	},
 	galladite: {
 		name: "Galladite",
@@ -3594,12 +3596,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
-	metalalloy: {
-		name: "Metal Alloy",
-		spritenum: 761,
-		num: 2482,
-		gen: 9,
-	},
 	metalcoat: {
 		name: "Metal Coat",
 		spritenum: 286,
@@ -3652,7 +3648,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 					pokemon.removeVolatile('metronome');
 					return;
 				}
-				if (move.callsMove) return;
 				if (this.effectState.lastMove === move.id && pokemon.moveLastTurnResult) {
 					this.effectState.numConsecutive++;
 				} else if (pokemon.volatiles['twoturnmove']) {
@@ -5034,6 +5029,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 5,
 		gen: 1,
 		isPokeball: true,
+		isNonstandard: "Unobtainable",
 	},
 	safetygoggles: {
 		name: "Safety Goggles",
@@ -5511,6 +5507,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 499,
 		gen: 2,
 		isPokeball: true,
+		isNonstandard: "Unobtainable",
 	},
 	starfberry: {
 		name: "Starf Berry",

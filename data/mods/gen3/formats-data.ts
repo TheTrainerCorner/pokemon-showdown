@@ -1,4 +1,4 @@
-export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormatsDataTable = {
+export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	bulbasaur: {
 		tier: "LC",
 	},
@@ -21,7 +21,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	wartortle: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	blastoise: {
 		tier: "UU",
@@ -42,7 +42,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "NFE",
 	},
 	beedrill: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	pidgey: {
 		tier: "LC",
@@ -141,7 +141,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	gloom: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	vileplume: {
 		tier: "UU",
@@ -180,7 +180,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	mankey: {
-		tier: "LC",
+		tier: "ZU",
 	},
 	primeape: {
 		tier: "UU",
@@ -225,13 +225,13 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	weepinbell: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	victreebel: {
 		tier: "UU",
 	},
 	tentacool: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	tentacruel: {
 		tier: "UU",
@@ -240,13 +240,13 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	graveler: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	golem: {
 		tier: "UU",
 	},
 	ponyta: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	rapidash: {
 		tier: "UU",
@@ -270,7 +270,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "ZU",
 	},
 	doduo: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	dodrio: {
 		tier: "UUBL",
@@ -303,13 +303,13 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 	},
 	onix: {
-		tier: "LC",
+		tier: "ZU",
 	},
 	steelix: {
 		tier: "UUBL",
 	},
 	drowzee: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	hypno: {
 		tier: "UU",
@@ -408,7 +408,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UUBL",
 	},
 	smoochum: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	jynx: {
 		tier: "UUBL",
@@ -420,7 +420,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	magby: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	magmar: {
 		tier: "UU",
@@ -438,7 +438,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 	},
 	lapras: {
-		tier: "UU",
+		tier: "UUBL",
 	},
 	ditto: {
 		tier: "ZU",
@@ -462,7 +462,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UUBL",
 	},
 	porygon: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	porygon2: {
 		tier: "UUBL",
@@ -522,7 +522,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "ZU",
 	},
 	quilava: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	typhlosion: {
 		tier: "UUBL",
@@ -531,7 +531,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	croconaw: {
-		tier: "ZU",
+		tier: "NFE",
 	},
 	feraligatr: {
 		tier: "UU",
@@ -546,7 +546,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	noctowl: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	ledyba: {
 		tier: "LC",
@@ -558,10 +558,10 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	ariados: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	chinchou: {
-		tier: "PU",
+		tier: "ZU",
 	},
 	lanturn: {
 		tier: "UU",
@@ -573,7 +573,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "PU",
 	},
 	natu: {
-		tier: "LC",
+		tier: "ZU",
 	},
 	xatu: {
 		tier: "UU",
@@ -582,7 +582,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	flaaffy: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	ampharos: {
 		tier: "UU",
@@ -609,7 +609,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	aipom: {
-		tier: "ZUBL",
+		tier: "ZU",
 	},
 	sunkern: {
 		tier: "LC",
@@ -693,7 +693,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "PUBL",
 	},
 	corsola: {
-		tier: "ZUBL",
+		tier: "PU",
 	},
 	remoraid: {
 		tier: "LC",
@@ -741,7 +741,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "OU",
 	},
 	larvitar: {
-		tier: "LC",
+		tier: "ZU",
 	},
 	pupitar: {
 		tier: "NU",
@@ -816,7 +816,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "LC",
 	},
 	lombre: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	ludicolo: {
 		tier: "UUBL",
@@ -915,13 +915,13 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "ZU",
 	},
 	lairon: {
-		tier: "ZUBL",
+		tier: "PU",
 	},
 	aggron: {
 		tier: "UU",
 	},
 	meditite: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	medicham: {
 		tier: "UUBL",
@@ -939,7 +939,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "PU",
 	},
 	volbeat: {
-		tier: "ZU",
+		tier: "PU",
 	},
 	illumise: {
 		tier: "ZU",
@@ -966,7 +966,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "NU",
 	},
 	numel: {
-		tier: "LC",
+		tier: "ZU",
 	},
 	camerupt: {
 		tier: "UU",
@@ -1041,7 +1041,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	anorith: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	armaldo: {
 		tier: "UUBL",
@@ -1104,7 +1104,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "UU",
 	},
 	clamperl: {
-		tier: "ZU",
+		tier: "ZUBL",
 	},
 	huntail: {
 		tier: "NU",

@@ -1,4 +1,4 @@
-export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable = {
+export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	charizardmegax: {
 		inherit: true,
 		color: "Red",

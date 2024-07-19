@@ -65,7 +65,6 @@ export interface EventMethods {
 	onModifySpA?: CommonHandlers['ModifierSourceMove'];
 	onModifySpD?: CommonHandlers['ModifierMove'];
 	onModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
-	onModifySTAB?: CommonHandlers['ModifierSourceMove'];
 	onModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
 	onMoveAborted?: CommonHandlers['VoidMove'];
 	onNegateImmunity?: ((this: Battle, pokemon: Pokemon, type: string) => boolean | void) | boolean;
@@ -165,7 +164,6 @@ export interface EventMethods {
 	onFoeModifySpA?: CommonHandlers['ModifierSourceMove'];
 	onFoeModifySpD?: CommonHandlers['ModifierMove'];
 	onFoeModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
-	onFoeModifySTAB?: CommonHandlers['ModifierSourceMove'];
 	onFoeModifyType?: MoveEventMethods['onModifyType'];
 	onFoeModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onFoeModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
@@ -264,7 +262,6 @@ export interface EventMethods {
 	onSourceModifySpA?: CommonHandlers['ModifierSourceMove'];
 	onSourceModifySpD?: CommonHandlers['ModifierMove'];
 	onSourceModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
-	onSourceModifySTAB?: CommonHandlers['ModifierSourceMove'];
 	onSourceModifyType?: MoveEventMethods['onModifyType'];
 	onSourceModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onSourceModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
@@ -365,7 +362,6 @@ export interface EventMethods {
 	onAnyModifySpA?: CommonHandlers['ModifierSourceMove'];
 	onAnyModifySpD?: CommonHandlers['ModifierMove'];
 	onAnyModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
-	onAnyModifySTAB?: CommonHandlers['ModifierSourceMove'];
 	onAnyModifyType?: MoveEventMethods['onModifyType'];
 	onAnyModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onAnyModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
@@ -455,7 +451,6 @@ export interface EventMethods {
 	onModifySpAPriority?: number;
 	onModifySpDPriority?: number;
 	onModifySpePriority?: number;
-	onModifySTABPriority?: number;
 	onModifyTypePriority?: number;
 	onModifyWeightPriority?: number;
 	onRedirectTargetPriority?: number;
@@ -532,7 +527,6 @@ export interface PokemonEventMethods extends EventMethods {
 	onAllyModifySpA?: CommonHandlers['ModifierSourceMove'];
 	onAllyModifySpD?: CommonHandlers['ModifierMove'];
 	onAllyModifySpe?: (this: Battle, spe: number, pokemon: Pokemon) => number | void;
-	onAllyModifySTAB?: CommonHandlers['ModifierSourceMove'];
 	onAllyModifyType?: MoveEventMethods['onModifyType'];
 	onAllyModifyTarget?: MoveEventMethods['onModifyTarget'];
 	onAllyModifyWeight?: (this: Battle, weighthg: number, pokemon: Pokemon) => number | void;
@@ -607,8 +601,6 @@ export interface FieldConditionData extends
 export type ConditionData = PokemonConditionData | SideConditionData | FieldConditionData;
 
 export type ModdedConditionData = ConditionData & {inherit?: true};
-export interface ConditionDataTable {[id: IDEntry]: ConditionData}
-export interface ModdedConditionDataTable {[id: IDEntry]: ModdedConditionData}
 
 export class Condition extends BasicEffect implements
 	Readonly<BasicEffect & SideConditionData & FieldConditionData & PokemonConditionData> {

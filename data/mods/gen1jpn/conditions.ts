@@ -1,4 +1,4 @@
-export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDataTable = {
+export const Conditions: {[k: string]: ModdedConditionData} = {
 	invulnerability: {
 		// Dig/Fly
 		name: 'invulnerability',

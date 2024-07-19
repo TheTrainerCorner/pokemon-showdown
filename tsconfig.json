@@ -15,7 +15,6 @@
         "incremental": true,
         "allowUnreachableCode": false,
         "esModuleInterop": true,
-        "noImplicitOverride": false,
         "useDefineForClassFields": false
     },
     "types": ["node"],
@@ -27,7 +26,6 @@
         "./config/*.ts",
         "./data/*",
         "./data/text/*",
-        "./data/random-battles/**/*",
         "./data/mods/*/*",
         "./dev-tools/*.ts",
         "./lib/*.ts",

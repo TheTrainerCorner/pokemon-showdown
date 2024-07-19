@@ -144,7 +144,11 @@ export class FriendsDatabase {
 			sent.add(request.receiver);
 		}
 		const receivedResults = await this.all('getReceived', [user.id]) || [];
-		if (!receivedResults) {
+		if (!Array.isArray(receivedResults)) {
+			Monitor.crashlog(new Error("Malformed results received"), 'A friends process', {
+				user: user.id,
+				result: JSON.stringify(receivedResults),
+			});
 			return {received, sent};
 		}
 		for (const request of receivedResults) {
@@ -152,22 +156,22 @@ export class FriendsDatabase {
 		}
 		return {sent, received};
 	}
-	all(statement: string, data: any[] | AnyObject): Promise<any[] | null> {
+	all(statement: string, data: any[] | AnyObject) {
 		return this.query({type: 'all', data, statement});
 	}
-	transaction(statement: string, data: any[] | AnyObject): Promise<{result: any} | null> {
+	transaction(statement: string, data: any[] | AnyObject) {
 		return this.query({data, statement, type: 'transaction'});
 	}
-	run(statement: string, data: any[] | AnyObject): Promise<{changes: number, lastInsertRowid: number}> {
+	run(statement: string, data: any[] | AnyObject) {
 		return this.query({statement, data, type: 'run'});
 	}
-	get(statement: string, data: any[] | AnyObject): Promise<AnyObject | null> {
+	get(statement: string, data: any[] | AnyObject) {
 		return this.query({statement, data, type: 'get'});
 	}
 	private async query(input: DatabaseRequest) {
 		const process = PM.acquire();
 		if (!process || !Config.usesqlite) {
-			return null;
+			return {result: null};
 		}
 		const result = await process.query(input);
 		if (result.error) {

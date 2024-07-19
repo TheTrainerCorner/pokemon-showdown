@@ -314,12 +314,13 @@ export function clearRequireCache(options: {exclude?: string[]} = {}) {
 	}
 }
 
-export function uncacheModuleTree(mod: NodeJS.Module, excludes: string[]) {
-	if (!mod.children?.length || excludes.some(p => mod.filename.includes(p))) return;
-	for (const [i, child] of mod.children.entries()) {
+export function uncacheModuleTree(mod: NodeJS.Module, excludes: string[], depth = 0) {
+	depth++;
+	if (depth >= 10) return;
+	if (!mod.children || excludes.some(p => mod.filename.includes(p))) return;
+	for (const child of mod.children) {
 		if (excludes.some(p => child.filename.includes(p))) continue;
-		mod.children?.splice(i, 1);
-		uncacheModuleTree(child, excludes);
+		uncacheModuleTree(child, excludes, depth);
 	}
 	delete (mod as any).children;
 }
@@ -342,8 +343,10 @@ export function deepFreeze<T>(obj: T): T {
 	Object.freeze(obj);
 	if (Array.isArray(obj)) {
 		for (const elem of obj) deepFreeze(elem);
-	} else {
-		for (const elem of Object.values(obj)) deepFreeze(elem);
+		return obj;
+	}
+	for (const key of Object.keys(obj)) {
+		deepFreeze((obj as any)[key]);
 	}
 	return obj;
 }
@@ -414,15 +417,12 @@ export function formatSQLArray(arr: unknown[], args?: unknown[]) {
 }
 
 export class Multiset<T> extends Map<T, number> {
-	get(key: T) {
-		return super.get(key) ?? 0;
-	}
 	add(key: T) {
-		this.set(key, this.get(key) + 1);
+		this.set(key, (this.get(key) ?? 0) + 1);
 		return this;
 	}
 	remove(key: T) {
-		const newValue = this.get(key) - 1;
+		const newValue = (this.get(key) ?? 0) - 1;
 		if (newValue <= 0) return this.delete(key);
 		this.set(key, newValue);
 		return true;

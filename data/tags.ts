@@ -9,7 +9,7 @@ interface TagData {
 	genericNumCol?: (thing: Species | Move | Item | Ability) => number;
 }
 
-export const Tags: {[id: IDEntry]: TagData} = {
+export const Tags: {[id: string]: TagData} = {
 	// Categories
 	// ----------
 	physical: {
@@ -45,10 +45,6 @@ export const Tags: {[id: IDEntry]: TagData} = {
 	restrictedlegendary: {
 		name: "Restricted Legendary",
 		speciesFilter: species => species.tags.includes("Restricted Legendary"),
-	},
-	ultrabeast: {
-		name: "Ultra Beast",
-		speciesFilter: species => species.tags.includes("Ultra Beast"),
 	},
 	paradox: {
 		name: "Paradox",

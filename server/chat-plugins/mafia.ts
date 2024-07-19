@@ -231,7 +231,6 @@ class MafiaPlayer extends Rooms.RoomGamePlayer<Mafia> {
 }
 
 class Mafia extends Rooms.RoomGame<MafiaPlayer> {
-	override readonly gameid = 'mafia' as ID;
 	started: boolean;
 	theme: MafiaDataTheme | null;
 	hostid: ID;
@@ -276,10 +275,12 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 	constructor(room: ChatRoom, host: User) {
 		super(room);
 
+		this.gameid = 'mafia' as ID;
 		this.title = 'Mafia';
 		this.playerCap = 20;
 		this.allowRenames = false;
 		this.started = false;
+		this.ended = false;
 
 		this.theme = null;
 
@@ -1015,12 +1016,6 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 		return this.hasPlurality;
 	}
 
-	override removePlayer(player: MafiaPlayer) {
-		delete this.playerTable[player.id];
-		player.updateHtmlRoom();
-		return super.removePlayer(player);
-	}
-
 	eliminate(toEliminate: string, ability: string) {
 		if (!(toEliminate in this.playerTable || toEliminate in this.dead)) return;
 		if (!this.started) {
@@ -1033,7 +1028,10 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			if (this.requestedSub.includes(player.id)) {
 				this.requestedSub.splice(this.requestedSub.indexOf(player.id), 1);
 			}
-			this.removePlayer(player);
+			delete this.playerTable[player.id];
+			this.playerCount--;
+			player.updateHtmlRoom();
+			player.destroy();
 			return;
 		}
 		if (toEliminate in this.playerTable) {
@@ -1083,14 +1081,16 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 			}
 		}
 		this.clearVotes(player.id);
+		delete this.playerTable[player.id];
 		let subIndex = this.requestedSub.indexOf(player.id);
 		if (subIndex !== -1) this.requestedSub.splice(subIndex, 1);
 		subIndex = this.hostRequestedSub.indexOf(player.id);
 		if (subIndex !== -1) this.hostRequestedSub.splice(subIndex, 1);
 
+		this.playerCount--;
 		this.updateRoleString();
 		this.updatePlayers();
-		this.removePlayer(player);
+		player.updateHtmlRoom();
 	}
 
 	revealRole(user: User, toReveal: MafiaPlayer, revealAs: string) {
@@ -1758,7 +1758,7 @@ class Mafia extends Rooms.RoomGame<MafiaPlayer> {
 	}
 
 	end() {
-		this.setEnded();
+		this.ended = true;
 		this.sendHTML(this.roomWindow());
 		this.updatePlayers();
 		if (this.room.roomid === 'mafia' && this.started) {

@@ -12,7 +12,7 @@ import {LogViewer} from './chatlog';
 import {roomFaqs, visualizeFaq} from './room-faqs';
 
 const DATA_PATH = 'config/chat-plugins/responder.json';
-const LOG_PATH = Monitor.logPath('responder.jsonl').path;
+const LOG_PATH = 'logs/responder.jsonl';
 
 export let answererData: {[roomid: string]: PluginData} = {};
 

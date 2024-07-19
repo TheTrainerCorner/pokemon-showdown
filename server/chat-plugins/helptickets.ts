@@ -169,41 +169,48 @@ export function writeStats(line: string) {
 	const date = new Date();
 	const month = Chat.toTimestamp(date).split(' ')[0].split('-', 2).join('-');
 	try {
-		Monitor.logPath(`tickets/${month}.tsv`).appendSync(line + '\n');
+		FS(`logs/tickets/${month}.tsv`).appendSync(line + '\n');
 	} catch (e: any) {
 		if (e.code !== 'ENOENT') throw e;
 	}
 }
 
 export class HelpTicket extends Rooms.SimpleRoomGame {
-	override readonly gameid = "helpticket" as ID;
-	override readonly allowRenames = true;
-	override room: ChatRoom;
+	room: ChatRoom;
 	ticket: TicketState;
 	claimQueue: string[];
-	involvedStaff = new Set<ID>();
+	involvedStaff: Set<ID>;
 	createTime: number;
 	activationTime: number;
-	emptyRoom = false;
-	firstClaimTime = 0;
-	unclaimedTime = 0;
+	emptyRoom: boolean;
+	firstClaimTime: number;
+	unclaimedTime: number;
 	lastUnclaimedStart: number;
-	closeTime = 0;
-	resolution: 'unknown' | 'dead' | 'unresolved' | 'resolved' = 'unknown';
-	result: TicketResult | null = null;
+	closeTime: number;
+	resolution: 'unknown' | 'dead' | 'unresolved' | 'resolved';
+	result: TicketResult | null;
 
 	constructor(room: ChatRoom, ticket: TicketState) {
 		super(room);
 		this.room = room;
 		this.room.settings.language = Users.get(ticket.creator)?.language || 'english' as ID;
 		this.title = `Help Ticket - ${ticket.type}`;
+		this.gameid = "helpticket" as ID;
+		this.allowRenames = true;
 		this.ticket = ticket;
 		this.claimQueue = [];
 
 		/* Stats */
+		this.involvedStaff = new Set();
 		this.createTime = Date.now();
 		this.activationTime = (ticket.active ? this.createTime : 0);
+		this.emptyRoom = false;
+		this.firstClaimTime = 0;
+		this.unclaimedTime = 0;
 		this.lastUnclaimedStart = (ticket.active ? this.createTime : 0);
+		this.closeTime = 0;
+		this.resolution = 'unknown';
+		this.result = null;
 	}
 
 	onJoin(user: User, connection: Connection) {
@@ -311,7 +318,7 @@ export class HelpTicket extends Rooms.SimpleRoomGame {
 
 	forfeit(user: User) {
 		if (!(user.id in this.playerTable)) return;
-		this.removePlayer(this.playerTable[user.id]);
+		this.removePlayer(user);
 		if (!this.ticket.open) return;
 		this.room.modlog({action: 'TICKETABANDON', isGlobal: false, loggedBy: user.id});
 		this.addText(`${user.name} is no longer interested in this ticket.`, user);
@@ -470,11 +477,15 @@ export class HelpTicket extends Rooms.SimpleRoomGame {
 		}
 
 		this.room.game = null;
-		(this.room as any) = null;
-		this.setEnded();
-		for (const player of this.players) player.destroy();
-		(this.players as any) = null;
-		(this.playerTable as any) = null;
+		// @ts-ignore
+		this.room = null;
+		for (const player of this.players) {
+			player.destroy();
+		}
+		// @ts-ignore
+		this.players = null;
+		// @ts-ignore
+		this.playerTable = null;
 	}
 	onChatMessage(message: string, user: User) {
 		HelpTicket.uploadReplaysFrom(message, user, user.connections[0]);
@@ -506,7 +517,7 @@ export class HelpTicket extends Rooms.SimpleRoomGame {
 			recommended: ticket.recommended,
 		};
 		const date = Chat.toTimestamp(new Date()).split(' ')[0];
-		void Monitor.logPath(`tickets/${date.slice(0, -3)}.jsonl`).append(JSON.stringify(entry) + '\n');
+		void FS(`logs/tickets/${date.slice(0, -3)}.jsonl`).append(JSON.stringify(entry) + '\n');
 	}
 
 	/**
@@ -532,7 +543,7 @@ export class HelpTicket extends Rooms.SimpleRoomGame {
 			let lines;
 			try {
 				lines = await ProcessManager.exec([
-					`rg`, Monitor.logPath(`tickets/${date ? `${date}.jsonl` : ''}`).path, ...args,
+					`rg`, FS(`logs/tickets/${date ? `${date}.jsonl` : ''}`).path, ...args,
 				]);
 			} catch (e: any) {
 				if (e.message.includes('No such file or directory')) {
@@ -552,7 +563,7 @@ export class HelpTicket extends Rooms.SimpleRoomGame {
 			}
 		} else {
 			if (!date) throw new Chat.ErrorMessage(`Specify a month.`);
-			const path = Monitor.logPath(`tickets/${date}.jsonl`);
+			const path = FS(`logs/tickets/${date}.jsonl`);
 			if (!path.existsSync()) {
 				throw new Chat.ErrorMessage(`There are no logs for the month "${date}".`);
 			}
@@ -980,10 +991,12 @@ export async function getBattleLog(battle: string, noReplay = false): Promise<Ba
 		const data = JSON.parse(raw);
 		if (data.log?.length) {
 			const log = data.log.split('\n');
-			const players: BattleInfo['players'] = {} as any;
-			for (const [i, id] of data.players.entries()) {
-				players[`p${i + 1}` as SideID] = toID(id);
-			}
+			const players = {
+				p1: toID(data.p1),
+				p2: toID(data.p2),
+				p3: toID(data.p3),
+				p4: toID(data.p4),
+			};
 			const chat = [];
 			const mons: BattleInfo['pokemon'] = {};
 			for (const line of log) {
@@ -996,7 +1009,7 @@ export async function getBattleLog(battle: string, noReplay = false): Promise<Ba
 					slot = slot.slice(0, -1); // p2a -> p2
 					// safe to not check here bc this should always exist in the players table.
 					// if it doesn't, there's a problem
-					const id = players[slot as SideID] as string;
+					const id = players[slot as SideID];
 					if (!mons[id]) mons[id] = [];
 					name = name?.trim() || "";
 					const setId = `${name || ""}-${species}`;
@@ -1010,7 +1023,7 @@ export async function getBattleLog(battle: string, noReplay = false): Promise<Ba
 			}
 			return {
 				log: chat,
-				title: `${players.p1} vs ${players.p2}`,
+				title: `${data.p1} vs ${data.p2}`,
 				url: `https://${Config.routes.replays}/${battle}`,
 				players,
 				pokemon: mons,
@@ -1713,8 +1726,11 @@ export const pages: Chat.PageTable = {
 					buf += `<p><Button>other</Button></p>`;
 					break;
 				case 'password':
-					buf += `<p>If you need your Pokémon Showdown password reset, you can fill out a <a href="https://www.smogon.com/forums/password-reset-form/">Password Reset Form</a>.</p>`;
-					buf += `<p>You will need to make a Smogon account to be able to fill out a form.`;
+					buf += `<p>Password resets are currently closed to regular users due to policy revamp and administrative backlog.</p>`;
+					buf += `<p>Users with a public room auth (Voice or higher) and Smogon badgeholders can still get their passwords reset `;
+					buf += `(see <a href="https://www.smogon.com/forums/threads/names-passwords-rooms-and-servers-contacting-upper-staff.3538721/#post-6227626">this post</a> for more informations).</p>`;
+					buf += `<p>To those who do not belong to those groups, we apologize for the temporary inconvenience.</p>`;
+					buf += `<p>Thanks for your understanding!</p>`;
 					break;
 				case 'roomhelp':
 					buf += `<p>${this.tr`If you are a room driver or up in a public room, and you need help watching the chat, one or more global staff members would be happy to assist you!`}</p>`;
@@ -1867,7 +1883,10 @@ export const pages: Chat.PageTable = {
 					logUrl = `/view-chatlog-help-${ticket.userid}--${Chat.toTimestamp(created).split(' ')[0]}`;
 				}
 				const room = Rooms.get(roomid);
-				if (ticket.text) {
+				if (room) {
+					const ticketGame = room.getGame(HelpTicket)!;
+					buf += `<a href="/${roomid}"><button class="button" ${ticketGame.getPreview()}>${this.tr(!ticket.claimed && ticket.open ? 'Claim' : 'View')}</button></a> `;
+				} else if (ticket.text) {
 					let title = Object.entries(ticket.notes || {})
 						.map(([userid, note]) => Utils.html`${note} (by ${userid})`)
 						.join('&#10;');
@@ -1875,9 +1894,6 @@ export const pages: Chat.PageTable = {
 						title = `title="Staff notes:&#10;${title}"`;
 					}
 					buf += `<a class="button" ${title} href="/view-help-text-${ticket.userid}">${ticket.claimed ? `Claim` : `View`}</a>`;
-				} else if (room) {
-					const ticketGame = room.getGame(HelpTicket)!;
-					buf += `<a href="/${roomid}"><button class="button" ${ticketGame.getPreview()}>${this.tr(!ticket.claimed && ticket.open ? 'Claim' : 'View')}</button></a> `;
 				}
 				if (logUrl) {
 					buf += `<a href="${logUrl}"><button class="button">${this.tr`Log`}</button></a>`;
@@ -1955,15 +1971,7 @@ export const pages: Chat.PageTable = {
 				for (const staff in ticket.notes) {
 					buf += Utils.html`<p>${ticket.notes[staff]} (by ${staff})</p>`;
 				}
-				buf += `<br /><form data-submitsend="/ht addnote ${ticket.userid},{note}&#10;/j view-help-text-${ticket.userid}">`;
-				buf += `Add note: <input name="note" /> <button type="submit" class="button">Submit</button>`;
-				buf += `</form>`;
 				buf += `</details></div>`;
-			} else {
-				buf += `<br /><div class="infobox">`;
-				buf += `<form data-submitsend="/ht note ${ticket.userid},{note}&#10;/j view-help-text-${ticket.userid}">`;
-				buf += `Add note: <input name="note" /> <button type="submit" class="button">Submit</button>`;
-				buf += `</form></div>`;
 			}
 
 			if (!ticket.resolved) {
@@ -2084,7 +2092,7 @@ export const pages: Chat.PageTable = {
 			}
 			const dateUrl = Chat.toTimestamp(date).split(' ')[0].split('-', 2).join('-');
 
-			const rawTicketStats = Monitor.logPath(`tickets/${dateUrl}.tsv`).readIfExistsSync();
+			const rawTicketStats = FS(`logs/tickets/${dateUrl}.tsv`).readIfExistsSync();
 			if (!rawTicketStats) return `<div class="pad"><br />${this.tr`No ticket stats found.`}</div>`;
 
 			// Calculate next/previous month for stats and validate stats exist for the month
@@ -2110,13 +2118,13 @@ export const pages: Chat.PageTable = {
 			const nextString = Chat.toTimestamp(nextDate).split(' ')[0].split('-', 2).join('-');
 
 			let buttonBar = '';
-			if (Monitor.logPath(`tickets/${prevString}.tsv`).readIfExistsSync()) {
+			if (FS(`logs/tickets/${prevString}.tsv`).readIfExistsSync()) {
 				buttonBar += `<a class="button" href="/view-help-stats-${table}-${prevString}" target="replace" style="float: left">&lt; ${this.tr`Previous Month`}</a>`;
 			} else {
 				buttonBar += `<a class="button disabled" style="float: left">&lt; ${this.tr`Previous Month`}</a>`;
 			}
 			buttonBar += `<a class="button${table === 'tickets' ? ' disabled"' : `" href="/view-help-stats-tickets-${dateUrl}" target="replace"`}>${this.tr`Ticket Stats`}</a> <a class="button ${table === 'staff' ? ' disabled"' : `" href="/view-help-stats-staff-${dateUrl}" target="replace"`}>${this.tr`Staff Stats`}</a>`;
-			if (Monitor.logPath(`tickets/${nextString}.tsv`).readIfExistsSync()) {
+			if (FS(`logs/tickets/${nextString}.tsv`).readIfExistsSync()) {
 				buttonBar += `<a class="button" href="/view-help-stats-${table}-${nextString}" target="replace" style="float: right">${this.tr`Next Month`} &gt;</a>`;
 			} else {
 				buttonBar += `<a class="button disabled" style="float: right">${this.tr`Next Month`} &gt;</a>`;
@@ -2945,14 +2953,14 @@ export const commands: Chat.ChatCommands = {
 			if (!/[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(date)) {
 				return this.errorReply(`Invalid date (must be YYYY-MM-DD format).`);
 			}
-			const logPath = Monitor.logPath(`chat/help-${userid}/${date.slice(0, -3)}/${date}.txt`);
+			const logPath = FS(`logs/chat/help-${userid}/${date.slice(0, -3)}/${date}.txt`);
 			if (!(await logPath.exists())) {
 				return this.errorReply(`There are no logs for tickets from '${userid}' on the date '${date}'.`);
 			}
-			if (!(await Monitor.logPath(`private/${userid}`).exists())) {
-				await Monitor.logPath(`private/${userid}`).mkdirp();
+			if (!(await FS(`logs/private/${userid}`).exists())) {
+				await FS(`logs/private/${userid}`).mkdirp();
 			}
-			await logPath.copyFile(Monitor.logPath(`private/${userid}/${date}.txt`).path);
+			await logPath.copyFile(`logs/private/${userid}/${date}.txt`);
 			await logPath.write(''); // empty out the logfile
 			this.globalModlog(`HELPTICKET PRIVATELOGS`, null, `${userid} (${date})`);
 			this.privateGlobalModAction(`${user.name} set the ticket logs for '${userid}' on '${date}' to be private.`);
@@ -2969,15 +2977,15 @@ export const commands: Chat.ChatCommands = {
 			if (!/[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(date)) {
 				return this.errorReply(`Invalid date (must be YYYY-MM-DD format).`);
 			}
-			const logPath = Monitor.logPath(`private/${userid}/${date}.txt`);
+			const logPath = FS(`logs/private/${userid}/${date}.txt`);
 			if (!(await logPath.exists())) {
 				return this.errorReply(`There are no logs for tickets from '${userid}' on the date '${date}'.`);
 			}
-			const monthPath = Monitor.logPath(`chat/help-${userid}/${date.slice(0, -3)}`);
+			const monthPath = FS(`logs/chat/help-${userid}/${date.slice(0, -3)}`);
 			if (!(await monthPath.exists())) {
 				await monthPath.mkdirp();
 			}
-			await logPath.copyFile(Monitor.logPath(`chat/help-${userid}/${date.slice(0, -3)}/${date}.txt`).path);
+			await logPath.copyFile(`logs/chat/help-${userid}/${date.slice(0, -3)}/${date}.txt`);
 			await logPath.unlinkIfExists();
 			this.globalModlog(`HELPTICKET PUBLICLOGS`, null, `${userid} (${date})`);
 			this.privateGlobalModAction(`${user.name} set the ticket logs for '${userid}' on '${date}' to be public.`);

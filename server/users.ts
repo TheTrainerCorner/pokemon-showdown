@@ -45,7 +45,7 @@ const PERMALOCK_CACHE_TIME = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 const DEFAULT_TRAINER_SPRITES = [1, 2, 101, 102, 169, 170, 265, 266];
 
-import {Utils, ProcessManager} from '../lib';
+import {FS, Utils, ProcessManager} from '../lib';
 import {
 	Auth, GlobalAuth, SECTIONLEADER_SYMBOL, PLAYER_SYMBOL, HOST_SYMBOL, RoomPermission, GlobalPermission,
 } from './user-groups';
@@ -188,7 +188,7 @@ function isUsername(name: string) {
 function isTrusted(userid: ID) {
 	if (globalAuth.has(userid)) return userid;
 	for (const room of Rooms.global.chatRooms) {
-		if (room.persist && !room.settings.isPrivate && room.auth.isStaff(userid)) {
+		if (room.persist && room.settings.isPrivate !== true && room.auth.isStaff(userid)) {
 			return userid;
 		}
 	}
@@ -240,13 +240,6 @@ export class Connection {
 	lastRequestedPage: string | null;
 	lastActiveTime: number;
 	openPages: null | Set<string>;
-	/**
-	 * Used to distinguish Connection from User.
-	 *
-	 * Makes it easy to do something like
-	 * `for (const conn of (userOrConn.connections || [userOrConn]))`
-	 */
-	readonly connections = null;
 	constructor(
 		id: string,
 		worker: ProcessManager.StreamWorker,
@@ -339,16 +332,9 @@ export interface UserSettings {
 export class User extends Chat.MessageContext {
 	/** In addition to needing it to implement MessageContext, this is also nice for compatibility with Connection. */
 	readonly user: User;
-	/**
-	 * Not a source of truth - should always be in sync with
-	 * `[...Rooms.rooms.values()].filter(room => this.id in room.users)`
-	 */
 	readonly inRooms: Set<RoomID>;
 	/**
-	 * Not a source of truth - should always in sync with
-	 * `[...Rooms.rooms.values()].filter(`
-	 * `  room => room.game && this.id in room.game.playerTable && !room.game.ended`
-	 * `)`
+	 * Set of room IDs
 	 */
 	readonly games: Set<RoomID>;
 	mmrCache: {[format: string]: number};
@@ -872,7 +858,7 @@ export class User extends Chat.MessageContext {
 			Punishments.checkName(user, userid, registered);
 
 			Rooms.global.checkAutojoin(user);
-			Rooms.global.rejoinGames(user);
+			Rooms.global.joinOldBattles(this);
 			Chat.loginfilter(user, this, userType);
 			return true;
 		}
@@ -888,7 +874,7 @@ export class User extends Chat.MessageContext {
 			return false;
 		}
 		Rooms.global.checkAutojoin(this);
-		Rooms.global.rejoinGames(this);
+		Rooms.global.joinOldBattles(this);
 		Chat.loginfilter(this, null, userType);
 		return true;
 	}
@@ -944,14 +930,7 @@ export class User extends Chat.MessageContext {
 			room.game.onRename(this, oldid, joining, isForceRenamed);
 		}
 		for (const roomid of this.inRooms) {
-			const room = Rooms.get(roomid)!;
-			room.onRename(this, oldid, joining);
-			if (room.game && !this.games.has(roomid)) {
-				if (room.game.playerTable[this.id]) {
-					this.games.add(roomid);
-					room.game.onRename(this, oldid, joining, isForceRenamed);
-				}
-			}
+			Rooms.get(roomid)!.onRename(this, oldid, joining);
 		}
 		if (isForceRenamed) this.trackRename = oldname;
 		return true;
@@ -1081,10 +1060,12 @@ export class User extends Chat.MessageContext {
 				room.onJoin(this, connection);
 				this.inRooms.add(roomid);
 			}
-			// Yes, this is intentionally supposed to call onConnect twice
-			// during a normal login. Override onUpdateConnection if you
-			// don't want this behavior.
-			room.game?.onUpdateConnection?.(this, connection);
+			if (room.game && room.game.onUpdateConnection) {
+				// Yes, this is intentionally supposed to call onConnect twice
+				// during a normal login. Override onUpdateConnection if you
+				// don't want this behavior.
+				room.game.onUpdateConnection(this, connection);
+			}
 		}
 		this.updateReady(connection);
 	}
@@ -1295,17 +1276,20 @@ export class User extends Chat.MessageContext {
 	async tryJoinRoom(roomid: RoomID | Room, connection: Connection) {
 		roomid = roomid && (roomid as Room).roomid ? (roomid as Room).roomid : roomid as RoomID;
 		const room = Rooms.search(roomid);
-		if (!room) {
-			if (roomid.startsWith('view-')) {
-				return Chat.resolvePage(roomid, this, connection);
-			}
-			connection.sendTo(roomid, `|noinit|nonexistent|The room "${roomid}" does not exist.`);
-			return false;
+		if (!room && roomid.startsWith('view-')) {
+			return Chat.resolvePage(roomid, this, connection);
 		}
-		if (!room.checkModjoin(this)) {
-			if (!this.named) return Rooms.RETRY_AFTER_LOGIN;
-			connection.sendTo(roomid, `|noinit|joinfailed|The room "${roomid}" is invite-only, and you haven't been invited.`);
-			return false;
+		if (!room?.checkModjoin(this)) {
+			if (!this.named) {
+				return Rooms.RETRY_AFTER_LOGIN;
+			} else {
+				if (room) {
+					connection.sendTo(roomid, `|noinit|joinfailed|The room "${roomid}" is invite-only, and you haven't been invited.`);
+				} else {
+					connection.sendTo(roomid, `|noinit|nonexistent|The room "${roomid}" does not exist.`);
+				}
+				return false;
+			}
 		}
 		if ((room as GameRoom).tour) {
 			const errorMessage = (room as GameRoom).tour!.onBattleJoin(room as GameRoom, this);
@@ -1353,8 +1337,8 @@ export class User extends Chat.MessageContext {
 		}
 		if (!connection.inRooms.has(room.roomid)) {
 			if (!this.inRooms.has(room.roomid)) {
-				room.onJoin(this, connection);
 				this.inRooms.add(room.roomid);
+				room.onJoin(this, connection);
 			}
 			connection.joinRoom(room);
 			room.onConnect(this, connection);
@@ -1541,13 +1525,20 @@ export class User extends Chat.MessageContext {
 	destroy() {
 		// deallocate user
 		for (const roomid of this.games) {
-			const game = Rooms.get(roomid)?.game;
+			const room = Rooms.get(roomid);
+			if (!room) {
+				Monitor.warn(`while deallocating, room ${roomid} did not exist for ${this.id} in rooms ${[...this.inRooms]} and games ${[...this.games]}`);
+				this.games.delete(roomid);
+				continue;
+			}
+			const game = room.game;
 			if (!game) {
 				Monitor.warn(`while deallocating, room ${roomid} did not have a game for ${this.id} in rooms ${[...this.inRooms]} and games ${[...this.games]}`);
 				this.games.delete(roomid);
 				continue;
 			}
-			if (!game.ended) game.forfeit?.(this, " lost by being offline too long.");
+			if (game.ended) continue;
+			if (game.forfeit) game.forfeit(this);
 		}
 		this.clearChatQueue();
 		this.destroyPunishmentTimer();
@@ -1586,16 +1577,8 @@ function pruneInactive(threshold: number) {
 			user.destroy();
 		}
 		if (!user.can('addhtml')) {
-			const suspicious = global.Config?.isSuspicious?.(user) || false;
 			for (const connection of user.connections) {
-				if (
-					// conn's been inactive for 24h, just kill it
-					(now - connection.lastActiveTime > CONNECTION_EXPIRY_TIME) ||
-					// they're connected and not named, but not namelocked. this is unusual behavior, ultimately just wasting resources.
-					// people have been spamming us with conns as of writing this, so it appears to be largely bots doing this.
-					// so we're just gonna go ahead and dc them. if they're a real user, they can rejoin and go back to... whatever.
-					suspicious && (now - connection.connectedAt) > threshold
-				) {
+				if (now - connection.lastActiveTime > CONNECTION_EXPIRY_TIME) {
 					connection.destroy();
 				}
 			}
@@ -1617,7 +1600,7 @@ function logGhostConnections(threshold: number): Promise<unknown> {
 		}
 	}
 	return buffer.length ?
-		Monitor.logPath(`ghosts-${process.pid}.log`).append(buffer.join('\r\n') + '\r\n') :
+		FS(`logs/ghosts-${process.pid}.log`).append(buffer.join('\r\n') + '\r\n') :
 		Promise.resolve();
 }
 
@@ -1642,7 +1625,7 @@ function socketConnect(
 	}
 	// Emergency mode connections logging
 	if (Config.emergency) {
-		void Monitor.logPath('cons.emergency.log').append('[' + ip + ']\n');
+		void FS('logs/cons.emergency.log').append('[' + ip + ']\n');
 	}
 
 	const user = new User(connection);
@@ -1732,7 +1715,7 @@ function socketReceive(worker: ProcessManager.StreamWorker, workerid: number, so
 	}
 	// Emergency logging
 	if (Config.emergency) {
-		void Monitor.logPath('emergency.log').append(`[${user} (${connection.ip})] ${roomId}|${message}\n`);
+		void FS('logs/emergency.log').append(`[${user} (${connection.ip})] ${roomId}|${message}\n`);
 	}
 
 	for (const line of lines) {

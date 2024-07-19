@@ -341,7 +341,7 @@ export class Elimination {
 			}
 		}
 
-		user.game.setPlayerUser(user, null);
+		user.unlinkUser();
 	}
 
 	getAvailableMatches() {
@@ -388,7 +388,7 @@ export class Elimination {
 		if (loser.losses === this.maxSubtrees) {
 			loser.isEliminated = true;
 			loser.sendRoom(`|tournament|update|{"isJoined":false}`);
-			loser.game.setPlayerUser(loser, null);
+			loser.unlinkUser();
 		}
 
 		if (targetNode.parent) {

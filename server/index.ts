@@ -71,7 +71,6 @@ function setupGlobals() {
 	void Monitor.version().then((hash: any) => {
 		global.__version.tree = hash;
 	});
-	Repl.cleanup();
 
 	if (Config.watchconfig) {
 		FS('config/config.js').onModify(() => {

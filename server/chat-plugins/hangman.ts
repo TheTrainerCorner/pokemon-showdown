@@ -45,7 +45,6 @@ try {
 const maxMistakes = 6;
 
 export class Hangman extends Rooms.SimpleRoomGame {
-	override readonly gameid = 'hangman' as ID;
 	gameNumber: number;
 	creator: ID;
 	word: string;
@@ -70,6 +69,7 @@ export class Hangman extends Rooms.SimpleRoomGame {
 
 		this.gameNumber = room.nextGameNumber();
 
+		this.gameid = 'hangman' as ID;
 		this.title = 'Hangman';
 		this.creator = user.id;
 		this.word = word;

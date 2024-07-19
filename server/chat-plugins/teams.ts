@@ -225,10 +225,6 @@ export const TeamsHandler = new class {
 			return null;
 		}
 		rawTeam = Teams.pack(team);
-		if (!rawTeam.trim()) { // extra sanity check
-			connection.popup("Invalid team provided.");
-			return null;
-		}
 		// the && existing doesn't really matter because we've verified it above, this is just for TS
 		if (isUpdate && existing) {
 			const differenceExists = (
@@ -285,11 +281,7 @@ export const TeamsHandler = new class {
 		buf += `<small>Uploaded on: ${Chat.toTimestamp(teamData.date, {human: true})}</small><br />`;
 		buf += `<small>Format: ${Dex.formats.get(teamData.format).name}</small><br />`;
 		buf += `<small>Views: ${teamData.views === -1 ? 0 : teamData.views}</small>`;
-		const team = Teams.import(teamData.team);
-		if (!team) {
-			Monitor.crashlog(new Error(`Malformed team drawn from database`), 'A teams chat page', teamData);
-			throw new Chat.ErrorMessage("Oops! Something went wrong. Try again later.");
-		}
+		const team = Teams.unpack(teamData.team)!;
 		let link = `view-team-${teamData.teamid}`;
 		if (teamData.private) {
 			link += `-${teamData.private}`;
@@ -301,7 +293,7 @@ export const TeamsHandler = new class {
 
 		if (user && (teamData.ownerid === user.id || user.can('rangeban'))) {
 			buf += `<br />`;
-			buf += `<details class="readmore"><summary>Manage (edit/delete/etc)</summary>`;
+			buf += `<details class="readmore"><summary>Manage</summary>`;
 			buf += `<button class="button" name="send" value="/teams setprivacy ${teamData.teamid},${teamData.private ? 'no' : 'yes'}">`;
 			buf += teamData.private ? `Make public` : `Make private`;
 			buf += `</button><br />`;
@@ -314,11 +306,7 @@ export const TeamsHandler = new class {
 	renderTeam(teamData: StoredTeam, user?: User) {
 		let buf = this.preview(teamData, user, true);
 		buf += `<hr />`;
-		const team = Teams.unpack(teamData.team);
-		if (!team) {
-			Monitor.crashlog(new Error("Invalid team retrieved from database"), "A teams database request", teamData);
-			throw new Chat.ErrorMessage("An error occurred with retrieving the team. Please try again later.");
-		}
+		const team = Teams.unpack(teamData.team)!;
 		buf += team.map(set => {
 			let teamBuf = Teams.exportSet(set).replace(/\n/g, '<br />');
 			if (set.name && set.name !== set.species) {
@@ -327,8 +315,7 @@ export const TeamsHandler = new class {
 				teamBuf = teamBuf.replace(set.species, `<psicon pokemon="${set.species}" /> <br />${set.species}`);
 			}
 			if (set.item) {
-				const tester = new RegExp(`${Utils.escapeRegex(set.item)}\\b`);
-				teamBuf = teamBuf.replace(tester, `${set.item} <psicon item="${set.item}" />`);
+				teamBuf = teamBuf.replace(set.item, `${set.item} <psicon item="${set.item}" />`);
 			}
 			return teamBuf;
 		}).join('<hr />');
