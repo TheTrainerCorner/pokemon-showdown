@@ -366,15 +366,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	resentfulscreech: {
 		num: -3003,
 		accuracy: 100,
-		basePower: 60,
+		basePower: 50,
 		category: "Special",
 		name: "Resentful Screech",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
 		basePowerCallback(pokemon, target, move) {
-			if (pokemon.species.id === 'wishiwashiresentful') return 120;
-			return 60;
+			if (pokemon.species.id === 'wishiwashiresentful') return 100;
+			return 50;
 		},
 		target: "normal",
 		type: "Ghost",
