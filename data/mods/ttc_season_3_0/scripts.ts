@@ -663,8 +663,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Shelter")
 		new ModifyPokemon("Vikavolt", this)
 			.baseStats
-				.setATK(65)
-				.setSPA(165)
+				.setATK(80)
+				.setSPA(155)
+				.setSPE(88)
 		//#endregion
 		//#region Gen 8
 		new ModifyPokemon("Appletun", this)
