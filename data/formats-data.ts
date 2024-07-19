@@ -4984,6 +4984,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
+	indeedee: {
+		tier: "NU",
+		doublesTier: "DUU",
+		natDexTier: "RU",
+	},
 	indeedeef: {
 		tier: "(PU)",
 		doublesTier: "DOU",
