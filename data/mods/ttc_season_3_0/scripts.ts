@@ -533,8 +533,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Diamond Storm")
 		new ModifyPokemon("Clawitzer", this)
 			.baseStats
-				.setDEF(95)
-				.setSPE(80)
+				.setDEF(97)
+				.setSPE(79)
 		new ModifyPokemon("Dragalge", this)
 			.learnset
 				.add("Dragon Cheer")
