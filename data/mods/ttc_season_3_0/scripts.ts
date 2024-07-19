@@ -322,8 +322,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove("Wildbolt Storm")
 		new ModifyPokemon("Metagross", this)
 			.baseStats
-				.setATK(145)
-				.setSPA(65);
+				.setDEF(125)
+				.setSPA(85)
+				.setSPD(85);
 		new ModifyPokemon("Metagross-Mega", this)
 			.baseStats
 				.setSPA(95);	
