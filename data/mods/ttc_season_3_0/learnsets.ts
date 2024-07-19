@@ -117,6 +117,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			captivate: ["7E", "6E", "4M"],
 			celebrate: ["8S6", "7S5", "6S3"],
 			charm: ["9M", "9L45", "8M", "8L45", "7L29", "7E", "7V", "6L29", "6E", "5L29", "5E", "5D", "4E", "3E"],
+			cheaterstrick: ["9M"],
 			confide: ["7M", "6M"],
 			copycat: ["9L30", "8L30"],
 			covet: ["9L1", "8L1", "8S6", "7T", "7L1", "7E", "6T", "6L23", "6E", "5T", "5L21", "5E", "4E", "4S0"],
