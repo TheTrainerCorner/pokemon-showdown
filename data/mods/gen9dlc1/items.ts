@@ -1,9 +1,13 @@
-export const Items: {[k: string]: ModdedItemData} = {
+export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	berrysweet: {
 		inherit: true,
 		isNonstandard: "Past",
 	},
 	cloversweet: {
+		inherit: true,
+		isNonstandard: "Past",
+	},
+	dragonscale: {
 		inherit: true,
 		isNonstandard: "Past",
 	},
@@ -49,6 +53,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 		isNonstandard: "Past",
 	},
 	ribbonsweet: {
+		inherit: true,
+		isNonstandard: "Past",
+	},
+	souldew: {
 		inherit: true,
 		isNonstandard: "Past",
 	},

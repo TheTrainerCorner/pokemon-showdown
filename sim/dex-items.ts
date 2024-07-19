@@ -1,4 +1,4 @@
-import {PokemonEventMethods} from './dex-conditions';
+import type {PokemonEventMethods, ConditionData} from './dex-conditions';
 import {BasicEffect, toID} from './dex-data';
 
 interface FlingData {
@@ -17,7 +17,8 @@ export type ModdedItemData = ItemData | Partial<Omit<ItemData, 'name'>> & {
 	onCustap?: (this: Battle, pokemon: Pokemon) => void,
 };
 
-
+export interface ItemDataTable {[itemid: IDEntry]: ItemData}
+export interface ModdedItemDataTable {[itemid: IDEntry]: ModdedItemData}
 
 export class Item extends BasicEffect implements Readonly<BasicEffect> {
 	declare readonly effectType: 'Item';
@@ -196,10 +197,6 @@ export class DexItems {
 			});
 			if (item.gen > this.dex.gen) {
 				(item as any).isNonstandard = 'Future';
-			}
-			// hack for allowing mega evolution in LGPE
-			if (this.dex.currentMod === 'gen7letsgo' && !item.isNonstandard && !item.megaStone) {
-				(item as any).isNonstandard = 'Past';
 			}
 		} else {
 			item = new Item({name: id, exists: false});
