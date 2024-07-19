@@ -126,6 +126,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			let type = types[randomIndex];
 			if (type === '???') type = 'Normal';
 			this.effectState.gamblersluck = type;
+			pokemon.abilityState.gamblersluck = type;
 			this.add('-start', pokemon, `gamblersluck${type.toLowerCase()}`, '[silent]');
 		},
 		onResidualOrder: 28,
