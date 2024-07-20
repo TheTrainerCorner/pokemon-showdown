@@ -23,7 +23,7 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 9] National Dex Monotype",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		ruleset: [
 			'Standard Natdex', 'Terastal Clause',
 			'Species Clause', 'OHKO Clause', 'Evasion Clause',
@@ -39,7 +39,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Cherish Ball",
 		desc: "This format is for Cherish Ball Division.",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		ruleset: [
 			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
@@ -53,7 +53,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Luxury Ball",
 		desc: "This format is for Luxury Ball Division.",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		ruleset: [
 			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
@@ -67,7 +67,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Pokeball",
 		desc: "This format is for Pokeball Division.",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		ruleset: [
 			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
@@ -81,7 +81,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Speed Tour",
 		desc: "This format is for Speed TOur.",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		ruleset: [
 			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
@@ -95,7 +95,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex DoT",
 		desc: "This format is for Department of Testing.",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		ruleset: [
 			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
@@ -106,7 +106,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Custom Test",
 
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		searchShow: false,
 		debug: true,
 		battle: {trunc: Math.trunc},
@@ -118,7 +118,7 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] Other National Dex Draft",
 		desc: "This version of the National Dex Draft is for other leagues to use. Since TTC NatDex Draft format is a bit more stricter, it might be flexible with other leagues.",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		ruleset: [
 			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
@@ -128,7 +128,7 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 9] Custom Battle",
-		mod: "ttc_current",
+		mod: Config.ttcseason,
 		searchShow: false,
 		debug: true,
 		battle: {trunc: Math.trunc},

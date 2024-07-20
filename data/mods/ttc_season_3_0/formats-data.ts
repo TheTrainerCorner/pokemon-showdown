@@ -46,4 +46,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 		natDexTier: "OU",
 	},
+	marshadow: {
+		tier: "OU",
+		natDexTier: "OU",
+	}
 }
