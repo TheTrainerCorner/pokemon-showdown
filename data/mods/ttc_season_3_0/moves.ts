@@ -676,6 +676,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			basePower: 120,
 			category: "Special",
 			name: "Cheater's Trick",
+			desc: "This move's type changes based on the ability Gambler's Luck",
+			shortDesc: "Changes its type based on Gamblers Luck",
 			pp: 10,
 			priority: 0,
 			flags: {protect: 1, mirror: 1},
