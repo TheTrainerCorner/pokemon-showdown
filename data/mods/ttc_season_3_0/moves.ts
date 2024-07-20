@@ -696,6 +696,22 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			accuracy: 90,
 			basePower: 65,
 			selfSwitch: true,
+			desc: "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities. Has a 50% chance to lower the target's Defense by 1 stage.",
+			shortDesc: "User switches out after damaging the target. 50% lower the target's Defense",
+			category: "Physical",
+			name: "Rolling Kick",
+			pp: 15,
+			priority: 0,
+			flags: {contact: 1, protect: 1, mirror: 1},
+			secondary: {
+				chance: 50,
+				boosts: {
+					def: -1,
+				},
+			},
+			target: "normal",
+			type: "Fighting",
+			contestType: "Cool",
 		},
 	//#endregion
 };
