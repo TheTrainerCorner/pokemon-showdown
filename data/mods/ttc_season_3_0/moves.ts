@@ -311,6 +311,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		type: "Fire",
 		contestType: "Tough",
+		desc: "Has a 50% chance to burn the target.",
+		shortDesc: "50% chance to burn the target. Thaws user.",
 	},
 	//#endregion
 	//#region Beach Fakemon
