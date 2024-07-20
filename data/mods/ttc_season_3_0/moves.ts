@@ -300,7 +300,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 100,
 		category: "Special",
 		name: "Lava Tsunami",
-		pp: 8,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true,
