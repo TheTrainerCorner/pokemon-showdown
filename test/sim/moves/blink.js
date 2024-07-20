@@ -13,6 +13,7 @@ describe('Blink', () => {
 		]});
 		battle.setPlayer('p2', {team: [
 			{species: 'Snorlax', moves: ['sleeptalk']},
+			{species: 'TapuKoko', ability: 'electricsurge', moves: ['sleeptalk']},
 		]});
 	});
 	afterEach(() => {
@@ -31,5 +32,15 @@ describe('Blink', () => {
 		assert(battle.p1.active[0].status === 'slp');
 		battle.makeChoices('move crunch', 'move sleep talk');
 		assert.false(battle.p1.active[0].status === 'slp');
+	});
+
+	it("should not proc when electric terrain exist", () => {
+		battle.makeChoices("move blink", "switch 2");
+		let checkStats = ['atk', 'def', 'spa', 'spd', 'spe'];
+		for (const stat of checkStats) {
+			assert.false.statStage(battle.p1.active[0], stat, 1);
+		}
+		assert.false(battle.p1.active[0].status === 'slp');
+		battle.makeChoices("move crunch", "move sleeptalk");
 	});
 });
