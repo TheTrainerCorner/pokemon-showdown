@@ -669,7 +669,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			type: "Bug",
 			desc: "Hits four times. This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
 			shortDesc: "Always results in a critical hit. Hits 4 times.",
-			},
+		},
 		cheaterstrick: {
 			num: -7777,
 			accuracy: 100,
