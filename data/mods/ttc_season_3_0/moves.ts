@@ -658,6 +658,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		cometpunch: {
 			inherit: true,
 			basePower: 18,
+			accuracy: 100,
 			category: "Physical",
 			pp: 10,
 			priority: 0,
