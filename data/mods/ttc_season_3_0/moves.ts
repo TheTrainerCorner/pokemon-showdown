@@ -691,5 +691,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			maxMove: {basePower: 95},
 			contestType: "Tough",
 		},
+		rollingkick: {
+			inherit: true,
+			accuracy: 90,
+			basePower: 65,
+			selfSwitch: true,
+		},
 	//#endregion
 };
