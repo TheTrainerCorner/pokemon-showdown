@@ -16,7 +16,7 @@ If you specify a section that already exists, your format will be added to the b
 New sections will be added to the bottom of the specified column.
 The column value will be ignored for repeat sections.
 */
-
+import { Config } from "../server/config-loader";
 export const Formats: FormatList = [
 	{
 		section: "TTC Season 2 Offseason",
