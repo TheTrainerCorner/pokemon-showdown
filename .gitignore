@@ -76,4 +76,4 @@ pip-log.txt
 *.rdb
 
 
-test/sim/ttc2_0
+package-lock.json
