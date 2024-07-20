@@ -639,14 +639,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				const result = target.setStatus('slp', source, move);
 				if (!result) return result;
 				target.statusState.time = 2;
-				target.statusState.startTime = 2; 
-			},
-			boosts: {
-				atk: 1,
-				def: 1,
-				spa: 1,
-				spd: 1,
-				spe: 1,
+				target.statusState.startTime = 2;
+				target.setBoost({
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				});
 			},
 			secondary: null,
 			target: "self",
@@ -676,6 +676,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			basePower: 120,
 			category: "Special",
 			name: "Cheater's Trick",
+			desc: "This move's type changes based on the ability Gambler's Luck",
+			shortDesc: "Changes its type based on Gamblers Luck",
 			pp: 10,
 			priority: 0,
 			flags: {protect: 1, mirror: 1},
