@@ -723,9 +723,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Flapple", this)
 			.learnset
 				.add("Dragon Cheer")
-		new ModifyPokemon("Grapploct", this)
-			.learnset
-				.add("Comet Punch")
 		new ModifyPokemon("Hatterene", this)
 			.baseStats
 				.setATK(100)
