@@ -119,6 +119,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Gyarados", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Hitmonchan", this)
+			.learnset
+				.remove("Comet Punch")
 		new ModifyPokemon("Jolteon", this)
 			.learnset
 				.remove("Celebrate")
@@ -128,7 +131,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Sheer Cold")
 		new ModifyPokemon("Machamp", this)
 			.baseStats
-				.setSPA(55);
+				.setSPA(55)
+			.pokemon.learnset
+				.add("Comet Punch")
 		new ModifyPokemon("Marowak", this)
 			.baseStats
 				.setATK(85);
@@ -569,6 +574,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Dragon Cheer")
 		//#endregion
 		//#region Gen 7
+		new ModifyPokemon("Buzzwole", this)
+			.learnset
+				.remove("Comet Punch")
 		new ModifyPokemon("Comfey", this)
 			.learnset
 				.remove("Celebrate")
@@ -1027,6 +1035,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Pawmi", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Pancham", this)
+			.learnset
+				.remove("Comet Punch")
 		new ModifyPokemon("Piplup", this)
 			.learnset
 				.add("Sheer Cold")	
@@ -1042,6 +1053,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Squirtle", this)
 			.learnset
 				.remove("Celebrate")
+		new ModifyPokemon("Timburr", this)
+			.learnset
+				.remove("Comet Punch")
 		new ModifyPokemon("Vulpix-Alola", this)
 			.learnset
 				.remove("Celebrate")
