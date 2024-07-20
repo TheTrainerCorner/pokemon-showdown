@@ -533,6 +533,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add("Dragon Cheer")
 				.add("Sheer Cold")
+		new ModifyPokemon("Barbaracle", this)
+			.learnset
+				.add("Comet Punch")
 		new ModifyPokemon("Carbink", this)
 			.learnset	
 				.add("Diamond Storm")
@@ -563,6 +566,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Heliolisk", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Pangoro", this)
+			.learnset
+				.remove("Comet Punch")
 		new ModifyPokemon("Sylveon", this)
 			.learnset
 				.remove("Celebrate")
@@ -717,6 +723,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Flapple", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Grapploct", this)
+			.learnset
+				.add("Comet Punch")
 		new ModifyPokemon("Hatterene", this)
 			.baseStats
 				.setATK(100)
