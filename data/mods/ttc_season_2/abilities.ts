@@ -1,3 +1,4 @@
+import { Config } from "../../../server/config-loader";
 import { Pokemon } from "../../../sim";
 import { Ability } from "../../../sim/dex-abilities";
 
@@ -104,13 +105,13 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifySpe: undefined,
 		onStart(pokemon) {
-			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			const item = this.dex.mod(Config.ttcseason).items.get(pokemon.item);
 			if(item.tags?.includes("Ball") || item.isPokeball) {
 				pokemon.addVolatile('ballfetch');
 			}
 		},
 		onUpdate(pokemon) {
-			const item = this.dex.mod('ttc_current').items.get(pokemon.item);
+			const item = this.dex.mod(Config.ttcseason).items.get(pokemon.item);
 			if (!(item.tags?.includes("Ball") || item.isPokeball || item.megaStone) && pokemon.volatiles['ballfetch']) {
 				pokemon.removeVolatile('ballfetch');
 			}
@@ -275,8 +276,8 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 				if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch') return;
 				const type = move.type;
 				if (type && type !== '???') {
-					let types = this.dex.mod('ttc_current').types.all();
-					let _type = this.dex.mod('ttc_current').types.get(type);
+					let types = this.dex.mod(Config.ttcseason).types.all();
+					let _type = this.dex.mod(Config.ttcseason).types.get(type);
 					// 2 = Resistance
 					let resistType = types.find(x => x.damageTaken[_type.name] === 2);
 					if (target.getTypes().join() !== resistType?.name) {

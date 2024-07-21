@@ -151,4 +151,4 @@ class TestTools {
 
 const common = exports = module.exports = new TestTools();
 cache.set('base', common);
-cache.set('ttc_current', common);
+cache.set('ttc_season_3', common);

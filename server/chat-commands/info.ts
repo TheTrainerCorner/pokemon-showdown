@@ -12,6 +12,7 @@ import * as net from 'net';
 import {YouTube, Twitch} from '../chat-plugins/youtube';
 import {Net, Utils} from '../../lib';
 import {RoomSections} from './room-settings';
+import { Config } from '../config-loader';
 
 const ONLINE_SYMBOL = ` \u25C9 `;
 const OFFLINE_SYMBOL = ` \u25CC `;
@@ -551,7 +552,7 @@ export const commands: Chat.ChatCommands = {
 	dex: 'data',
 	pokedex: 'data',
 	data(target, room, user, connection, cmd) {
-		const modGen = 'ttc_current';
+		const modGen = Config.ttcseason;
 		if (!this.runBroadcast()) return;
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
@@ -881,7 +882,7 @@ export const commands: Chat.ChatCommands = {
 			isInverse = true;
 			targets.pop();
 		}
-		const modGen = 'ttc_current';
+		const modGen = Config.ttcseason;
 		let species: {types: string[], [k: string]: any} = dex.mod(modGen).species.get(targets[0]);
 		const type1 = dex.mod(modGen).types.get(targets[0]);
 		const type2 = dex.mod(modGen).types.get(targets[1]);
@@ -980,7 +981,7 @@ export const commands: Chat.ChatCommands = {
 		const {dex, targets} = this.splitFormat(target.split(/[,/]/));
 		if (targets.length !== 2) return this.errorReply("Attacker and defender must be separated with a comma.");
 
-		const modGen = 'ttc_current';
+		const modGen = Config.ttcseason;
 
 		let searchMethods = ['types', 'moves', 'species'];
 		const sourceMethods = ['types', 'moves'];
@@ -1052,7 +1053,7 @@ export const commands: Chat.ChatCommands = {
 	coverage(target, room, user) {
 		if (!this.runBroadcast()) return;
 		if (!target) return this.parse("/help coverage");
-		const modGen = 'ttc_current';
+		const modGen = Config.ttcseason;
 		const {dex, targets} = this.splitFormat(target.split(/[,+/]/));
 		const sources: (string | Move)[] = [];
 		let dispTable = false;
@@ -1338,7 +1339,7 @@ export const commands: Chat.ChatCommands = {
 					continue;
 				}
 			}
-			const modGen = 'ttc_current'
+			const modGen = Config.ttcseason
 			if (!pokemon) {
 				const testPoke = Dex.mod(modGen).species.get(arg);
 				if (testPoke.exists) {
