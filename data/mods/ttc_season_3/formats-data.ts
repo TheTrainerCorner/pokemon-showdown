@@ -49,5 +49,10 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	marshadow: {
 		tier: "OU",
 		natDexTier: "OU",
+	},
+	plushadow: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
 	}
 }
