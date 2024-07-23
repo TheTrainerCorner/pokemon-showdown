@@ -277,7 +277,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 				reflecttype: ["9M"],
 				"return": ["9M"],
 				rockslide: ["9M"],
-				shellsmash: ["9M"],
 				slash: ["9M"],
 				solarbeam: ["9M"],
 				solarblade: ["9M"],
@@ -295,6 +294,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 				watergun: ["9M"],
 				waterpulse: ["9M"],
 				withdraw: ["9M"],
+				workup: ["9M"],
 			}
 		},
 		wishiwashisoulless: {
