@@ -398,6 +398,33 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		}
 	},
+	phantasm: {
+		name: "Phantasm",
+		desc: "Upon switch-in, loses 75% of max HP to create a substitute. Fails if user is under 75% hp.",
+		onStart(pokemon) {
+			// In case of baton passing actually happened for some reason.
+			if (pokemon.volatiles['substitute']) {
+				this.add('-fail', pokemon, 'ability: Phantasm');
+				return this.NOT_FAIL;
+			}
+
+			if (
+				// Due to math, we can times the hp by 0.75 to get 75% of the hp.
+				(pokemon.hp <= (pokemon.maxhp * 0.75) ) || 
+				// Shedinja Case
+				(pokemon.maxhp === 1)
+			) {
+				this.add('-fail', pokemon, 'ability: Substitute', '[weak]');
+				return this.NOT_FAIL;
+			}
+			// This should deal exactly 75% of the damage to the user.
+			this.add('-activate', pokemon, 'ability: Phantasm');
+
+			this.directDamage(pokemon.maxhp * 0.75);
+			
+			pokemon.addVolatile('substitute');
+		}
+	}
 
 	//#endregion
 };

@@ -332,6 +332,22 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tier: "OU",
 		natDexTier: "OU",
 		doublesTier: "DOU",		
-	}
+	},
+	//#endregion
+
+	//#region Donation Pokemon
+	plushadow: {
+		num: -3015,
+		name: "Plushadow",
+		types: ["Ghost", "Normal"],
+		gender: "N",
+		baseStats: {hp: 90, atk: 58, def: 117, spa: 97, spd: 80, spe: 50},
+		abilities: {0: "Phantasm", 1: "Cotton Down", H: "Cursed Body"},
+		heightm: 0.2,
+		weightkg: 0.9,
+		color: "Gree",
+		eggGroups: ["Amorphous"],
+		tags: ["Fakemon"],
+	},
 	//#endregion
 };
