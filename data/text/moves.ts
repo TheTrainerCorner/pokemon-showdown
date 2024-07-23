@@ -5963,11 +5963,6 @@ export const MovesText: {[k: string]: MoveText} = {
 		start: "  [POKEMON] is waiting for a target to make a move!",
 		activate: "  [POKEMON] snatched [TARGET]'s move!",
 	},
-	//snipeshot: {
-		//name: "Snipe Shot",
-		//desc: "Has a higher chance for a critical hit. This move cannot be redirected to a different target by any effect.",
-		//shortDesc: "High critical hit ratio. Cannot be redirected.",
-	//},
 	snore: {
 		name: "Snore",
 		desc: "Has a 30% chance to make the target flinch. Fails if the user is not asleep.",
