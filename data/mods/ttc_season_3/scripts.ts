@@ -86,27 +86,27 @@ export const Scripts: ModdedBattleScriptsData = {
 				// Flying
 				.add("Bounce").add("Acrobatics")
 				// Ghost
-				.add("Shadow Claw").add("Shadow Punch").add("Lick")
+				.add("Shadow Claw").add("Lick")
 				// Grass
-				.add("Cut").add("Power Whip").add("Bullet Seed").add("Grass Knot").add("Grassy Glide").add("Trop Kick")
+				.add("Cut").add("Power Whip").add("Bullet Seed").add("Grass Knot").add("Grassy Glide").add("Cotton Guard")
 				// Ground
 				.add("Mud Bomb").add("Bulldoze").add("Stomping Tantrum").add("High Horsepower")
 				// Ice
-				.add("Ice Fang").add("Ice Ball").add("Ice Beam").add("Avalanche").add("Icy Wind")
+				.add("Ice Fang").add("Ice Ball").add("Ice Beam").add("Icy Wind")
 				// Normal
 				.add("Tail Slap").add("Crush Claw").add("Encore").add("Fake Out").add("Play Nice")
-				.add("Slash").add("Super Fang").add("Thrash").add("Dire Claw")
+				.add("Slash").add("Super Fang").add("Thrash").add("Poison Tail")
 				// Psychic
 				.add("Zen Headbutt").add("Extrasensory").add("Psychic Fangs").add("Mirror Coat").add("Magic Coat")
 				// Rock
-				.add("Rollout").add("Rock Slide").add("Rock Tomb").add("Smack Down").add("Tar Shot").add("Ancient Power")
+				.add("Rollout").add("Power Gem").add("Rock Tomb").add("Smack Down").add("Tar Shot").add("Ancient Power")
 				// Steel
 				.add("Hard Press").add("Iron Head").add("Metal Claw").add("Smart Strike").add("Spin Out")
 				// Water
 				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water")
 				// Eevee Starter moves removal
 				.remove("Baddy Bad").remove("Bouncy Bubble").remove("Buzzy Buzz").remove("Calm Mind").remove("Freezy Frost").remove("Glitzy Glow")
-				.remove("Sappy Seed").remove("Sizzly Slide").remove("Stored Power").remove("Sparkly Swirl").remove("Veevee Volley")
+				.remove("Sappy Seed").remove("Sizzly Slide").remove("Stored Power").remove("Sparkly Swirl").remove("Veevee Volley").remove("Pay Day")
 			.pokemon.baseStats
 				.setATK(65)
 				.setDEF(65)
