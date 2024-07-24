@@ -8,6 +8,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		// Giving Tindraco and Devdraco the tag to use their back sprite
 		this.modData("Pokedex", "tindraco").tags = ["Fakemon", "Has Back Sprite"];
 		this.modData("Pokedex", "devdraco").tags = ["Fakemon", "Has Back Sprite"];
+		this.modData("Pokedex", "farfetchdmega").tags = ["Fakemon", "Has Back Sprite"];
+		this.modData("Pokedex", "granbullmega").tags = ["Fakemon", "Has Back Sprite"];
+		this.modData("Pokedex", "octolure").tags = ["Fakemon", "Has Back Sprite"];
 		// Adjusting Meowth's data to include Meowth-Mega
 		this.modData("Pokedex", "meowth").otherFormes = ["Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
 		this.modData("Pokedex", "meowth").formeOrder = ["Meowth", "Meowth-Alola", "Meowth-Galar", "Meowth-Mega"];
@@ -95,7 +98,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Ice Fang").add("Ice Ball").add("Ice Beam").add("Icy Wind")
 				// Normal
 				.add("Tail Slap").add("Crush Claw").add("Encore").add("Fake Out").add("Play Nice")
-				.add("Slash").add("Super Fang").add("Thrash").add("Poison Tail")
+				.add("Slash").add("Super Fang").add("Thrash")
+				// Poison
+				.add("Poison Tail")
 				// Psychic
 				.add("Zen Headbutt").add("Extrasensory").add("Psychic Fangs").add("Mirror Coat").add("Magic Coat")
 				// Rock

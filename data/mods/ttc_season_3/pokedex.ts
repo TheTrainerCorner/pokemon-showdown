@@ -100,7 +100,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 0.8, 
 		weightkg: 20,  
 		eggGroups: ["Water1"], 
-		tags: ["Fakemon"],
+		tags: ["Fakemon", "Has Back Sprite"],
 		tier: "OU",
 		natDexTier: "OU",
 		doublesTier: "DOU",
@@ -122,6 +122,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Purple",
 		evos: ["Lickitale"],
 		eggGroups: ["Monster"],
+		tags: ["Fakemon"],
 	},
 	lickitale: {
 		num: -3015,
@@ -136,6 +137,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoType: "levelMove",
 		evoMove: "Dragon Rage",
 		eggGroups: ["Monster"],
+		tags: ["Fakemon"],
 	},
 
 	//#endregion
