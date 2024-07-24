@@ -105,8 +105,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				// Water
 				.add("Muddy Water").add("Aqua Tail").add("Surf").add("Waterfall").add("Chilling Water")
 				// Eevee Starter moves removal
-				.remove("Baddy Bad").remove("Bouncy Bubble").remove("Buzzy Buzz").remove("Freezy Frost").remove("Glitzy Glow")
-				.remove("Sappy Seed").remove("Sizzly Slide").remove("Sparkly Swirl").remove("Veevee Volley")
+				.remove("Baddy Bad").remove("Bouncy Bubble").remove("Buzzy Buzz").remove("Calm Mind").remove("Freezy Frost").remove("Glitzy Glow")
+				.remove("Sappy Seed").remove("Sizzly Slide").remove("Stored Power").remove("Sparkly Swirl").remove("Veevee Volley")
 			.pokemon.baseStats
 				.setATK(65)
 				.setDEF(65)
