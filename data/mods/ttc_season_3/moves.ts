@@ -628,19 +628,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			name: "Blink",
 			pp: 0.625,
 			priority: 0,
-			flags: {snatch: 1, heal: 1},
-			onTry(source) {
-				if (source.status === 'slp' || source.hasAbility('comatose')) return false;
-				if (source.hasAbility(['insomnia', 'vitalspirit'])) {
-					this.add('-fail', source, '[from] ability: ' + source.getAbility().name, '[of] ' + source);
-					return null;
-				}
+			flags: {recharge: 1, protect: 1, mirror: 1},
+			self: {
+				volatileStatus: 'mustrecharge',
 			},
 			onHit(target, source, move) {
-				const result = target.setStatus('slp', source, move);
+				const result = target.setStatus('mustrecharge', source, move);
 				if (!result) return result;
-				target.statusState.time = 2;
-				target.statusState.startTime = 2;
 				target.setBoost({
 					atk: 1,
 					def: 1,
@@ -654,7 +648,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			type: "Psychic",
 			zMove: {effect: 'clearnegativeboost'},
 			contestType: "Cute",
-			shortDesc: "Puts user to sleep for a turn, +1 to every stat (excluding evasion and accuracy)"
+			shortDesc: "User recharges for a turn, +1 to every stat (excluding evasion and accuracy)"
 		},
 		cometpunch: {
 			inherit: true,
