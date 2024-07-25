@@ -632,16 +632,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			self: {
 				volatileStatus: 'mustrecharge',
 			},
-			onHit(target, source, move) {
-				const result = target.setStatus('mustrecharge', source, move);
-				if (!result) return result;
-				target.setBoost({
+			selfBoost: {
+				boosts: {
 					atk: 1,
 					def: 1,
 					spa: 1,
 					spd: 1,
 					spe: 1,
-				});
+				},
 			},
 			secondary: null,
 			target: "self",
