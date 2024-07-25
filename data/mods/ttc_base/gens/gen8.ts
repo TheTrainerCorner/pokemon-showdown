@@ -193,7 +193,6 @@ export default function Gen8(dex: ModdedDex) {
 		.setSpA(80)
 		.pokemon.learnset()
 		.addMove('Zippy Zap')
-		.addMove('Aura Wheel')
 		.addMove('Bolt Strike')
 		.addMove('Volt Tackle')
 		.addMove('Jaw Lock')
