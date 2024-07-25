@@ -316,22 +316,21 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	//#endregion
 	//#region Beach Fakemon
-	quillrush: {
+	aquatickick: {
 		num: -3002,
-		name: 'Quillrush',
-		basePower: 120,
+		name: 'Aquatic Kick',
+		basePower: 90,
 		accuracy: 100,
 		pp: 10,
 		priority: 0,
-		type: "Ground",
+		critRatio: 2,
+		type: "Water",
 		category: "Physical",
-		flags: {contact: 1, protect: 1},
-		recoil: [33, 100],
+		flags: {contact: 1, kick: 1, protect: 1},
 		secondary: null,
 		target: "normal",
 		contestType: "Cool",
-		shortDesc: "Has 33% recoil.",
-		desc: "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "High critical hit ratio.",
 	},
 	//#endregion
 	//#region Healthy Fakemon

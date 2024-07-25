@@ -380,6 +380,16 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		shortDesc: "Psychic-type moves can hit Dark-types. Also Frisks on Switch-In",
 	},
+	belligerentquills: {
+		onAfterMove(source, target, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(target.maxhp / 8, target, source);
+			}
+		},
+		name: "Belligerent Quills",
+		desc: "Pokemon taking contact from this Pokemon lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon taking contact from this Pokemon lose 1/8 of their maximum HP",
+	},
 	//#endregion
 
 	//#region Donations

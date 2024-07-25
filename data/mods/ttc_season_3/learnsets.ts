@@ -208,7 +208,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			doubleedge: ["9L44"], 
 			highjumpkick: ["9L53"],
 			wavecrash: ["9L60"],
-			quillrush: ["9L64"],
+			aquatickick: ["9L64"],
 			aquaring: ["9E"], 
 			counter: ["9E"],
 			defog: ["9E"], 
@@ -240,6 +240,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			terablast: ["9M"],
 			tripleaxel: ["9M"],
 			waterfall: ["9M"],
+			sheercold: ["9M"],
+			stoneedge: ["9M"],
 		  },
 		},
 		crustocean: {
