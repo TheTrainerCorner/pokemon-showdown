@@ -54,5 +54,10 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Past",
 		tier: "OU",
 		natDexTier: "OU",
-	}
+	},
+	tyrannicalglutton: {
+		isNonstandard: "Past",
+		tier: "OU",
+		natDexTier: "OU",
+	},
 }
