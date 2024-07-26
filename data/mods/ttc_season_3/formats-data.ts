@@ -60,4 +60,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "OU",
 		natDexTier: "OU",
 	},
+	lickitale: {
+		tier: "OU",
+		natDexTier: "OU",
+	}
 }
