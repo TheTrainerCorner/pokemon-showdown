@@ -93,15 +93,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		// Hail The Coin Actual Implementation
-		onTryMove(source, target, move) {
+		onDamagingHit(damage, target, source, move) {
 			if (move.name !== "Pay Day") return; 
 			let rand = Math.floor(Math.random() * 9);
 			this.effectState.paydayAmount = rand + 1 || 1;
 			this.add('-start', source, `hailthecoinx${this.effectState.paydayAmount}`, '[silent]');
 			this.effectState.paydayTriggered = true;
-		},
-		onDamagingHit(damage, target, source, move) {
-			if (this.effectState.paydayTriggered! = true) return; 
 			let deductAmount = this.effectState.paydayAmount;
 			let taxpay = damage;
 			for (let i = 0; i < this.effectState.paydayAmount; i++) {
