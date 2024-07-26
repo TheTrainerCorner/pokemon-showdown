@@ -1,3 +1,5 @@
+import { Moves } from "./moves";
+
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#region Modify Abilities
 	wanderingspirit: { // [NERFED]
@@ -103,17 +105,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			let deductAmount = this.effectState.paydayAmount;
 			let taxpay = damage;
 			for (let i = 0; i < this.effectState.paydayAmount; i++) {
-				this.damage( taxpay * 0.05, target);
-				this.add('-end', source, `hailthecoinx${deductAmount}`, '[silent]');
-				deductAmount--;
-				this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
+				for (const target of source.foes()) {
+					this.damage( taxpay * 0.05, target)
+					this.add('-end', source, `hailthecoinx${deductAmount}`, '[silent]');
+					deductAmount--;
+					this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
+				}
 			}
-
 			this.add('-end', source, `hailthecoinx0`, '[silent]');
 		},
 		num: -3001,
-		desc: "When Meowth uses Payday, it shoots up between 1 to 10 coins in the air. Each coin impacts the opponent with 5% (4 damage) of Payday’s damage. Also has Mind's Eye implemented in this ability.",
-		shortDesc: "Move Not Payday; Gains 1-5 Coins (Max of 20); When using Payday, each coin does 5% of Payday!",
+		desc: "When Meowth uses Payday, it shoots up between 1 to 10 coins in the air. Each coin impacts the opponent with 5% of Payday’s damage. Also has Mind's Eye implemented in this ability.",
+		shortDesc: "When using Payday shots coins, each coin does 5% of Payday!",
 	},
 	gamblersluck: {
 		name: "Gambler's Luck",
