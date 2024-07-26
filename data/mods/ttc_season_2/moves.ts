@@ -9,6 +9,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	guidingblessing: {
 		inherit: true,
+		slotCondition: "Guiding Blessing",
 		condition: {
 			duration: 2,
 			onStart(pokemon, source) {
@@ -24,6 +25,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			}
 		},
+		secondary: null,
+		target: "self",
 		desc: "When the move is used, its effects take place at the end of the next turn (like wish). It heals the recipient for 75% of their hp.",
 		shortDesc: "Next Turn; Heal 3/4 of max hp",
 	},
