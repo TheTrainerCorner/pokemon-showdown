@@ -19,9 +19,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onEnd(target) {
 				if (target && !target.fainted) {
 					const damage = this.heal(this.effectState.hp, target, target);
-					if (damage) {
-						this.add('-heal', target, target.getHealth, '[from] move: Guiding Blessing', '[blesser]' + this.effectState.source.name);
-					}
 				}
 			}
 		},
