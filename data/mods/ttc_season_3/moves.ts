@@ -447,7 +447,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		name: "Ecliptic Punishment",
 		accuracy: 90,
 		basePower: 110,
-		category: "Physical",
+		category: "Special",
 		priority: 0,
 		pp: 10,
 		flags: {protect: 1, mirror: 1},
@@ -456,13 +456,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onModifyType(move, pokemon) {
 			if(pokemon.ability=== 'dawnoflunacy' && pokemon.activeTurns % 2==0){
-				move.type = 'Psychic';
-				move.category = 'Special';
+				move.type = 'Dark';
+				move.category = 'Physical';
 			}
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "Psychic",
 		contestType: "Cool",
 		desc: "Deals the respective damage & type based on Dawn of Lunacy; Takes highest offensive stat otherwise",
 		shortDesc: "Not sig. ability = uses highest offensive stat"
