@@ -93,7 +93,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		// Hail The Coin Actual Implementation
-		onAfterMove(source, target, move) {
+		onTryMove(source, target, move) {
 			if (move.name !== "Pay Day") return; 
 			let rand = Math.floor(Math.random() * 9);
 			this.effectState.paydayAmount = rand + 1 || 1;
