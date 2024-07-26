@@ -99,7 +99,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			this.effectState.paydayTriggered = true;
 		},
 		onDamage(source, target, move){
-			if (move.name !== "Pay Day") return; 
+			if (this.effectState.paydayTriggered! = true) return; 
 			let deductAmount = this.effectState.paydayAmount;
 			for (let i = 0; i < this.effectState.paydayAmount; i++) {
 				this.damage( this.lastDamage * 0.05, target);
