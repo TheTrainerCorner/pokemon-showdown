@@ -238,7 +238,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	guidingblessing: {
 		num: -15001,
 		name: "Guiding Blessing",
-		accuracy: 100,
+		accuracy: true,
 		basePower: 0,
 		pp: 5,
 		category: "Status",

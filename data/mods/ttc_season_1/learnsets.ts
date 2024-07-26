@@ -1187,6 +1187,9 @@ jirachinorthstar: {
 		waterpulse: ["9M"],
 		spotlight: ["9M"],
 		moonlight: ["9M"],
+		sheercold: ["9M"],
+		aurorabeam: ["9M"],
+		healbell: ["9M"],
 	},
 },
 meloettacaroler: {
