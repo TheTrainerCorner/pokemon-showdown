@@ -192,7 +192,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return this.chainModify(1.5);
 			}
 		},
-		onStart(pokemon) {
+		onSwitchIn(pokemon) {
 			for (const foe of pokemon.side.foes()) {
 				foe.side.addSideCondition('gmaxsteelsurge');
 				this.add('-activate', pokemon, 'ability: Iron Technician');
