@@ -12,7 +12,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			duration: 2,
 			onStart(pokemon, source) {
-				this.add('-singleturn', pokemon, 'Guiding Blessing', '[of]' + source);
 				this.effectState.hp = source.maxhp / Math.floor(3/4);
 			},
 			onResidualOrder: 4,
