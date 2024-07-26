@@ -9,11 +9,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	guidingblessing: {
 		inherit: true,
-		slotCondition: "Guiding Blessing",
+		slotCondition: 'Guiding Blessing',
 		condition: {
 			duration: 2,
 			onStart(pokemon, source) {
-				this.effectState.hp = source.maxhp / Math.floor(3/4);
+				this.effectState.hp = source.maxhp * 0.75;
 			},
 			onResidualOrder: 4,
 			onEnd(target) {
