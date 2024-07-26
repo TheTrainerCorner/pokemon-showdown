@@ -97,17 +97,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (move.name !== "Pay Day") return; 
 			let rand = Math.floor(Math.random() * 9);
 			this.effectState.paydayAmount = rand + 1 || 1;
-			this.add('-start', source, `hailthecoinx${this.effectState.paydayAmount}`, '[silent]');
+			this.add('-start', target, `hailthecoinx${this.effectState.paydayAmount}`, '[silent]');
 			this.effectState.paydayTriggered = true;
 			let deductAmount = this.effectState.paydayAmount;
 			let taxpay = damage;
 			for (let i = 0; i < this.effectState.paydayAmount; i++) {
-				this.damage(taxpay * 0.05, target, source);
-				this.add('-end', source, `hailthecoinx${deductAmount}`, '[silent]');
+				this.damage(taxpay * 0.05, source, target);
+				this.add('-end', target, `hailthecoinx${deductAmount}`, '[silent]');
 				deductAmount--;
-				this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
+				this.add('-start', target, `hailthecoinx${deductAmount}`, '[silent]');
 			}
-			this.add('-end', source, `hailthecoinx0`, '[silent]');
+			this.add('-end', target, `hailthecoinx0`, '[silent]');
 		},
 		num: -3001,
 		desc: "When Meowth uses Payday, it shoots up between 1 to 10 coins in the air. Each coin impacts the opponent with 5% of Payday’s damage. Also has Mind's Eye implemented in this ability.",
