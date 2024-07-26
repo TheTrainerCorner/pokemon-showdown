@@ -241,6 +241,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			waterfall: ["9M"],
 			sheercold: ["9M"],
 			stoneedge: ["9M"],
+			spikes: ["9M"],
 		  },
 		},
 		crustocean: {
