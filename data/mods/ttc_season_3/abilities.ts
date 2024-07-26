@@ -98,11 +98,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			this.add('-start', source, `hailthecoinx${this.effectState.paydayAmount}`, '[silent]');
 			this.effectState.paydayTriggered = true;
 		},
-		onDamage(source, target, move){
+		onDamage(damage, target, source, effect) {
 			if (this.effectState.paydayTriggered! = true) return; 
 			let deductAmount = this.effectState.paydayAmount;
+			let taxpay = damage;
 			for (let i = 0; i < this.effectState.paydayAmount; i++) {
-				this.damage( this.lastDamage * 0.05, target);
+				this.damage( taxpay * 0.05, target);
 				this.add('-end', source, `hailthecoinx${deductAmount}`, '[silent]');
 				deductAmount--;
 				this.add('-start', source, `hailthecoinx${deductAmount}`, '[silent]');
