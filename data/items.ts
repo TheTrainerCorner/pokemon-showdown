@@ -2113,7 +2113,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		onFractionalPriority: -0.1,
 		num: 316,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	galaricacuff: {
 		name: "Galarica Cuff",
@@ -3008,7 +3007,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 255,
 		gen: 3,
-		isNonstandard: "Past",
 	},
 	leafstone: {
 		name: "Leaf Stone",
@@ -3997,7 +3995,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 314,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	oldamber: {
 		name: "Old Amber",
@@ -4836,7 +4833,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 315,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	rockmemory: {
 		name: "Rock Memory",
@@ -4928,7 +4924,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 318,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	roseliberry: {
 		name: "Roseli Berry",
@@ -5147,7 +5142,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 254,
 		gen: 3,
-		isNonstandard: "Past",
 	},
 	sharpbeak: {
 		name: "Sharp Beak",
@@ -7080,7 +7074,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 317,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	weaknesspolicy: {
 		name: "Weakness Policy",
@@ -7619,5 +7612,8 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: -2,
 		gen: 8,
 		isNonstandard: "CAP",
+	},
+	pokepen: {
+		name: "Pokepen",
 	},
 };
