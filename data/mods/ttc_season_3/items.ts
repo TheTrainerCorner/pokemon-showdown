@@ -62,6 +62,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			else{
 				source.addVolatile('yawn')
 				target.useItem();
+				this.add('-activate', this.effectState.user, 'item: Lax Incense');
 			}
 			}
 		},
@@ -72,6 +73,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onDamagingHit(damage, target, source, move) {
 			if(move.category== "Special")
 				this.damage(source.baseMaxhp / 8, source, target);
+				this.add('-activate', this.effectState.user, 'item: Odd Incense');
 			}
 	},
 	rockincense: {
@@ -81,6 +83,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			if(move.type== "Rock"){
 				source.side.addSideCondition('stealthrock');
 				target.useItem();
+				this.add('-activate', this.effectState.user, 'item: Rock Incense');
 			}
 		}
 	},
@@ -91,6 +94,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			for (const side of target.side.foeSidesWithConditions()) {
 				source.side.addSideCondition('spikes');
 				target.useItem();
+				this.add('-activate', this.effectState.user, 'item: Rose Incense');
 			}
 		}
 	},
@@ -101,6 +105,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			if(move.type== "Water"){
 				this.heal(target.baseMaxhp / 4);
 				target.useItem();
+				this.add('-activate', this.effectState.user, 'item: Sea Incense');
 			}
 		}
 	},
@@ -111,6 +116,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			if(move.category== "Special"){
 				source.addVolatile('partiallytrapped')
 				target.useItem();
+				this.add('-activate', this.effectState.user, 'item: Wave Incense');
 			}
 		}
 	},
@@ -139,6 +145,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			if (this.effectState.triggered) {
 				this.heal(this.effectState.healing * 0.25);
 				this.effectState.triggered = false;
+				this.add('-activate', this.effectState.user, 'item: Full Incense');
 			}
 		}
 	},
