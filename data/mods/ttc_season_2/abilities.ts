@@ -458,14 +458,14 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	earlybird: {
 		inherit: true,
-		onStart(pokemon) {
+		onSwitchIn(pokemon) {
 			this.add('-ability', pokemon, 'Early Bird');
 			pokemon.addVolatile('earlybird');
 		},
 		condition: {
 			noCopy: true,
 			duration: 1,
-			onStart(target) {
+			onSwitchIn(target) {
 				this.add('-start', target, 'ability: Early Bird');
 			},
 			onModifyPriority(priority, source, pokemon, move) {

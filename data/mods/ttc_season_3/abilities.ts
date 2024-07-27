@@ -385,7 +385,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	belligerentquills: {
 		onAfterMove(source, target, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
-				if (!target.runImmunity(move.type)) return;
+				if (target.runImmunity(move.type)) return;
 				this.damage(target.maxhp / 8, target, source);
 			}
 		},
