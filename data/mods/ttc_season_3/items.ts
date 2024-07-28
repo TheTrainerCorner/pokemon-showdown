@@ -182,6 +182,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		fling: {
 			basePower: 10,
 		},
+
 		onBeforeTurn(pokemon) {
 			pokemon.itemState.wantedPosterActive = false;
 			let action = this.queue.willMove(pokemon);
@@ -204,7 +205,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 				if (!source.hasItem('wantedposter')) continue;
 				// Check to see if the item already procced
 				if (activated) continue;
-				
+				// We are checking to see if the pokemon did already use a move or not during this turn.
+				if (source.moveThisTurnResult) continue;
 				// Check to see if the source is using a move
 				if (!source.itemState.wantedPosterActive) continue;
 				// Check to see if the move exist

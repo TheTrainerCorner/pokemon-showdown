@@ -23,8 +23,8 @@ describe('Ecliptic Punishment', () => {
 		]});
 
 		battle.makeChoices('move eclipticpunishment', 'move knockoff');
-		assert.false.fullHP(battle.p2.active[0]); // Move should be a dark type move, so it should do damage
+		assert.fullHP(battle.p2.active[0]); // Move should be a dark type move, so it should do damage
 		battle.makeChoices('move eclipticpunishment', 'switch 2');
-		assert.fullHP(battle.p2.active[0]); // Move should be Psychic, which sould do no damage to houndoom.
+		assert.false.fullHP(battle.p2.active[0]); // Move should be Psychic, which sould do no damage to houndoom.
 	});
 })

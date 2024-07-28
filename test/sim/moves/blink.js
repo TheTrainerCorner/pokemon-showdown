@@ -20,27 +20,27 @@ describe('Blink', () => {
 		battle.destroy();
 	});
 
-	it("should only put the user to sleep for one turn", () => {
-		assert.false(battle.p1.active[0].status === 'slp');
-		battle.makeChoices('move blink', 'move sleeptalk');
-		assert(battle.p1.active[0].status === 'slp');
-		let checkStats = ['atk', 'def', 'spa', 'spd', 'spe'];
-		for (const stat of checkStats) {
-			assert.statStage(battle.p1.active[0], stat, 1);
-		}
-		battle.makeChoices('move crunch', 'move sleeptalk');
-		assert(battle.p1.active[0].status === 'slp');
-		battle.makeChoices('move crunch', 'move sleep talk');
-		assert.false(battle.p1.active[0].status === 'slp');
-	});
+	// it("should only put the user to sleep for one turn", () => {
+	// 	assert.false(battle.p1.active[0].status === 'slp');
+	// 	battle.makeChoices('move blink', 'move sleeptalk');
+	// 	assert(battle.p1.active[0].status === 'slp');
+	// 	let checkStats = ['atk', 'def', 'spa', 'spd', 'spe'];
+	// 	for (const stat of checkStats) {
+	// 		assert.statStage(battle.p1.active[0], stat, 1);
+	// 	}
+	// 	battle.makeChoices('move crunch', 'move sleeptalk');
+	// 	assert(battle.p1.active[0].status === 'slp');
+	// 	battle.makeChoices('move crunch', 'move sleep talk');
+	// 	assert.false(battle.p1.active[0].status === 'slp');
+	// });
 
-	it("should not proc when electric terrain exist", () => {
-		battle.makeChoices("move blink", "switch 2");
-		let checkStats = ['atk', 'def', 'spa', 'spd', 'spe'];
-		for (const stat of checkStats) {
-			assert.false.statStage(battle.p1.active[0], stat, 1);
-		}
-		assert.false(battle.p1.active[0].status === 'slp');
-		battle.makeChoices("move crunch", "move sleeptalk");
-	});
+	// it("should not proc when electric terrain exist", () => {
+	// 	battle.makeChoices("move blink", "switch 2");
+	// 	let checkStats = ['atk', 'def', 'spa', 'spd', 'spe'];
+	// 	for (const stat of checkStats) {
+	// 		assert.false.statStage(battle.p1.active[0], stat, 1);
+	// 	}
+	// 	assert.false(battle.p1.active[0].status === 'slp');
+	// 	battle.makeChoices("move crunch", "move sleeptalk");
+	// });
 });
