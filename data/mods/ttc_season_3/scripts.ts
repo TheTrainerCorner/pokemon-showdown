@@ -4,7 +4,27 @@ import { formatOrder } from '../../../lib/utils';
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: "ttc_season_2",
 	init() {
-
+		// Giving Ball Items the tag
+		const ballItems = [
+			"lifeorb",
+			"wikiberry",
+			"adrenalineorb",
+			"flameorb",
+			"liechiberry",
+			"snowball",
+			"toxicorb",
+			"yacheberry",
+			"aspearberry",
+			"destinyknot",
+			"ironball",
+			"oranberry",
+			"ovalstone",
+		];
+		for(let item of this.items.all()) {
+			if (item.isPokeball || item.megaStone || ballItems.includes(item.id)) {
+				this.modData('Items', item.id).tags = ["Ball"];
+			}
+		}
 		// Giving Tindraco and Devdraco the tag to use their back sprite
 		this.modData("Pokedex", "tindraco").tags = ["Fakemon", "Has Back Sprite"];
 		this.modData("Pokedex", "devdraco").tags = ["Fakemon", "Has Back Sprite"];
