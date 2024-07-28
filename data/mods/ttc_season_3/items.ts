@@ -281,6 +281,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onFoeAfterMove(source, target, move) {
 			if (this.effectState.didHit) {
+				if (move.category === "Status" || !target.runImmunity(move.type)) return;
 				this.add('-end', target, `armorplatex${target.itemState.armorPlateHits}`);
 				target.itemState.armorPlateHits -= 1;
 				if (target.itemState.armorPlateHits <= 0) {
