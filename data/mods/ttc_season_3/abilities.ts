@@ -2,6 +2,11 @@ import { Moves } from "./moves";
 
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#region Modify Abilities
+	magmaarmor: {
+		inherit: true,
+		desc: "This Pokemon receives 3/4 damage from Ice & Water type moves",
+		shortDesc: "This Pokemon receives 3/4 damage from Ice & Water type moves",
+	},
 	pickup: {
 		inherit: true,
 		onStart(pokemon) {
