@@ -2,6 +2,18 @@ import { Moves } from "./moves";
 
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#region Modify Abilities
+	pickup: {
+		inherit: true,
+		onStart(pokemon) {
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			for (const condition of sideConditions) {
+				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+					pokemon.foes()[0].side.addSideCondition(condition);
+					this.add('-sideend', pokemon.side, condition, '[from] ability: Pickup', '[of] ' + pokemon);
+				}
+			}
+		},
+	},
 	wanderingspirit: { // [NERFED]
 		inherit: true,
 		onStart(pokemon) {
