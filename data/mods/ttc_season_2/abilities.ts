@@ -501,13 +501,16 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	flowerveil: {
 		inherit: true,
-			onModifyAccuracyPriority: undefined,
-			onModifyAccuracy: undefined,
-			onWeather(target, source, effect) {
-				if (target.hasItem('utilityumbrella')) return;
-				if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
-					if (target.side.sideConditions['flowerveil']) return;
-					else target.side.addSideCondition('flowerveil');
+		onAllyTryBoost: undefined,
+		onAllySetStatus: undefined,
+		onAllyTryAddVolatile: undefined,
+		onModifyAccuracyPriority: undefined,
+		onModifyAccuracy: undefined,
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
+				if (target.side.sideConditions['flowerveil']) return;
+				else target.side.addSideCondition('flowerveil');
 			}
 		},
 		onStart(target) {
