@@ -211,8 +211,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onSwitchIn(pokemon) {
 			for (const foe of pokemon.side.foes()) {
-				foe.side.addSideCondition('gmaxsteelsurge');
-				this.add('-activate', pokemon, 'ability: Iron Technician');
+				if (pokemon.abilityState.SteelSpikesTriggered) return;
+					pokemon.abilityState.SteelSpikesTriggered = true;
+					foe.side.addSideCondition('gmaxsteelsurge');
+					this.add('-activate', pokemon, 'ability: Iron Technician');
 			}
 		},
 		num: -3005,
