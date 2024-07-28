@@ -1,4 +1,13 @@
 export const Moves: {[k: string]: ModdedMoveData} = {
+	psychicfangs: {
+		inherit: true,
+		onTryHit(pokemon) {
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('auroraveil');
+			pokemon.side.removeSideCondition('flowerveil');
+		}
+	},
 	//#region Physical Moves
 	direclaw:{
 		inherit:true,
