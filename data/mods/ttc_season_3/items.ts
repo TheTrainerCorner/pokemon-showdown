@@ -182,55 +182,35 @@ export const Items: {[k: string]: ModdedItemData} = {
 		fling: {
 			basePower: 10,
 		},
-
 		onBeforeTurn(pokemon) {
 			pokemon.itemState.wantedPosterActive = false;
 			let action = this.queue.willMove(pokemon);
-			if (action?.choice !== 'move') {
-				pokemon.itemState.wantedPosterActive = false;
-				return;
-			}
-			let move = action.move;
+			if (action?.choice !== 'move') return;
 
-			if (!move) {
-				pokemon.itemState.wantedPosterActive = false;
-			}
+			let move = action.move;
+			if (!move) return;
+
 			pokemon.itemState.wantedPosterActive = true;
 			pokemon.itemState.wantedPosterMove = move;
 		},
-		onFoeBeforeSwitchOut(target) {
+		onFoeBeforeSwitchOut(pokemon) {
 			let activated = false;
-			for (const source of target.foes()) {
-				// Check if source has Wanted Poster First
-				if (!source.hasItem('wantedposter')) continue;
-				// Check to see if the item already procced
+			for (const source of pokemon.foes()) {
 				if (activated) continue;
-				// We are checking to see if the pokemon did already use a move or not during this turn.
-				if (source.moveThisTurnResult) continue;
-				// Check to see if the source is using a move
+				if (!source.hasItem('wantedposter')) continue;
 				if (!source.itemState.wantedPosterActive) continue;
-				// Check to see if the move exist
 				if (!source.itemState.wantedPosterMove) continue;
 
-				// Typecast the move from itemState
 				let move = source.itemState.wantedPosterMove as Move;
-				// Check to see if the move is the category of Status or not.
 				if (move.category === "Status") continue;
-				this.add('-activate', source, 'item: Wanted Poster');
-				// Assuming everything is not the above, we can proc the move
-				this.actions.runMove(move, source, source.getLocOf(target));
-				for (const [actionIndex, action] of this.queue.entries()) {
-					if (action.pokemon === source && action.choice === "move"){
-						this.queue.list.splice(actionIndex, 1);
-						break;
-					}
-				}
-				// Use the item afterwards
-				source.useItem();
-				// change activated prop to true to say that the item already procced
+				if (source.moveThisTurnResult) continue;
+
+				this.actions.runMove(move, source, source.getLocOf(pokemon));
 				activated = true;
+				source.useItem();
+				break;
 			}
-		},
+		}
 	},
 	bubbleddome: {
 		name: "Bubbled Dome",

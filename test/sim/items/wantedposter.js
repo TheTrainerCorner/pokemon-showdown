@@ -6,48 +6,34 @@ const common = require('./../../common');
 let battle;
 
 describe('Wanted Poster', () => {
-	beforeEach(() => {
-		battle = common.createBattle();
+	afterEach(() => battle.destroy());
 
-	});
-	afterEach(() => {
-		battle.destroy();
-	});
-
-	it("should proc and deal damage to the meowth", () => {
-		battle.setPlayer('p1', {team: [
-			{species: 'Cinccino', item: 'wantedposter', moves: ['tailslap', 'sleeptalk']},
-			{species: 'Lopunny', item: 'leftovers', moves: ['sleeptalk']},
-		]});
-		battle.setPlayer('p2', {team: [
-			{species: 'Meowth', moves: ['sleeptalk']},
-			{species: 'Pikachu', moves: ['sleeptalk']},
-		]});
-		assert(battle.p1.active[0].hasItem('wantedposter'));
-		battle.makeChoices('move tailslap', 'switch 2');
-		assert.fullHP(battle.p1.active[0]);
-		assert.fullHP(battle.p2.active[0]);
-		assert.false(battle.p1.active[0].hasItem('wantedposter'));
-		battle.makeChoices('move sleeptalk', 'switch 2');
-		assert.fullHP(battle.p1.active[0]);
-		assert.false.fullHP(battle.p2.active[0]);
-		battle.makeChoices('move sleeptalk', 'switch 2');
-		assert.fullHP(battle.p2.active[0]);
+	it (`should execute before the target switches out`, () => {
+		battle = common.createBattle([[
+			{species: 'Beedrill', ability: 'swarm', item: 'wantedposter', moves: ['knockoff']},
+		], [
+			{species: 'Alakazam', level: 50, ability: 'magicguard', moves: ['psyshock']},
+			{species: 'Clefable', ability: 'unaware', moves: ['calmmind']},
+		]]);
+		battle.makeChoices('move knockoff', 'switch 2');
+		assert.species(battle.p2.active[0], 'Alakazam');
+		assert.fainted(battle.p2.active[0]);
+		assert.false(battle.p1.active[0].item === 'wantedposter');
 	});
 
-	// it("should not proc since regice is faster", () => {
-	// 	battle.setPlayer('p1', {team: [
-	// 		{species: 'Dragapult', item: 'wantedposter', moves: ["thunderbolt", 'sleeptalk']},
-	// 	]});
-	// 	battle.setPlayer('p2', {
-	// 		team: [
-	// 			{species: 'Claydol', level: 50, item: 'leftovers', moves: ["teleport"]},
-	// 			{species: 'Metadraco', moves: ["warpath"]},
-	// 		]
-	// 	});
+	it (`should deal damage prior to attacker selecting a switch in after u-turn etc `, () => {
+		battle = common.createBattle([[
+			{species: 'dragapult', item: 'wantedposter', moves: ['knockoff']},
+		], [
+			{species: 'emolga', moves: ['voltswitch']},
+			{species: 'zapdos', moves: ['batonpass']},
+		]]);
 
-	// 	battle.makeChoices('move icebeam', 'move teleport');
-	// 	battle.makeChoices('', 'switch 2');
-	// 	assert.fullHP(battle.p2.active[0]);
-	// });
-});
+		battle.makeChoices('move knockoff', 'move voltswitch');
+		assert.false.fullHP(battle.p2.pokemon[0]);
+		battle.choose('p2', 'switch 2');
+		assert.equal(battle.p2.pokemon[0].name, "Zapdos");
+
+		assert(battle.p1.active[0].item === 'wantedposter');
+	})
+})
