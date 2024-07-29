@@ -23,16 +23,16 @@ describe('Wanted Poster', () => {
 
 	it (`should deal damage prior to attacker selecting a switch in after u-turn etc `, () => {
 		battle = common.createBattle([[
-			{species: 'dragapult', item: 'wantedposter', moves: ['knockoff']},
+			{species: 'acudraco', item: 'wantedposter', moves: ['knockoff']},
 		], [
-			{species: 'emolga', moves: ['voltswitch']},
-			{species: 'zapdos', moves: ['batonpass']},
+			{species: 'blissey', moves: ['teleport']},
+			{species: 'alomomola', moves: ["teleport"]}
 		]]);
 
-		battle.makeChoices('move knockoff', 'move voltswitch');
+		battle.makeChoices('move knockoff', 'move teleport');
 		assert.false.fullHP(battle.p2.pokemon[0]);
 		battle.choose('p2', 'switch 2');
-		assert.equal(battle.p2.pokemon[0].name, "Zapdos");
+		assert.equal(battle.p2.pokemon[0].name, "Alomomola");
 
 		assert(battle.p1.active[0].item === 'wantedposter');
 	})
