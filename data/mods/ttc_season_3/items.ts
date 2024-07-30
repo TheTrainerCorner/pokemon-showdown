@@ -183,32 +183,32 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 10,
 		},
 		onBeforeTurn(pokemon) {
-			pokemon.itemState.wantedPosterActive = false;
+			pokemon.itemState.wantedPosterActive = true;
 			let action = this.queue.willMove(pokemon);
 			if (action?.choice !== 'move') return;
 
 			let move = action.move;
 			if (!move) return;
 
-			pokemon.itemState.wantedPosterActive = true;
 			pokemon.itemState.wantedPosterMove = move;
+		},
+		onTryMove(source, target, move) {
+			source.itemState.wantedPosterActive = false;
 		},
 		onFoeBeforeSwitchOut(pokemon) {
 			let activated = false;
 			for (const source of pokemon.foes()) {
 				if (activated) continue;
+				if (source.moveThisTurn) break;
 				if (!source.hasItem('wantedposter')) continue;
 				if (!source.itemState.wantedPosterActive) continue;
 				if (!source.itemState.wantedPosterMove) continue;
-
 				let move = source.itemState.wantedPosterMove as Move;
 				if (move.category === "Status") continue;
-				if (source.moveThisTurnResult) continue;
 
-				this.actions.runMove(move, source, source.getLocOf(pokemon));
+				this.actions.useMove(move, source, pokemon);
 				activated = true;
 				source.useItem();
-				break;
 			}
 		}
 	},

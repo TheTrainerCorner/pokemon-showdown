@@ -33,7 +33,7 @@ describe('Wanted Poster', () => {
 		assert.false.fullHP(battle.p2.pokemon[0]);
 		battle.choose('p2', 'switch 2');
 		assert.equal(battle.p2.pokemon[0].name, "Alomomola");
-
+		assert.fullHP(battle.p2.active[0]);
 		assert(battle.p1.active[0].item === 'wantedposter');
 	})
 })
