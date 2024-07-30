@@ -361,14 +361,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Regice", this)
 			.abilities
 				.setAbility0("Absolute Zero")
-				.setAbility1("undefined")
+				.setAbility1("Undefined")
 				.setHiddenAbility("Filter")
 			.pokemon.learnset
 				.add("Sheer Cold")
 		new ModifyPokemon("Regirock", this)
 			.abilities
 				.setAbility0("Granite Storm")
-				.setAbility1("undefined")
+				.setAbility1("Undefined")
 				.setHiddenAbility("Filter")
 		new ModifyPokemon("Registeel", this)
 			.baseStats
@@ -443,6 +443,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(92)
 				.setSPD(91)
+			.pokemon.types
+				.setType('Steel', 'Fighting')
 		new ModifyPokemon("Luxray", this)
 			.baseStats
 				.setDEF(89)
@@ -499,7 +501,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Dragon Cheer")
 		new ModifyPokemon("Genesect", this)
 			.learnset
-				.remove('Shift Gear');
+				.remove('Shift Gear')
+			.pokemon.abilities
+				.setAbility0("Neuroforce")
 		new ModifyPokemon("Gothitelle", this)
 			.baseStats
 				.setHP(85)
