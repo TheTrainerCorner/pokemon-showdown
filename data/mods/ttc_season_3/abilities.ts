@@ -237,8 +237,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return null;
 			}
 		},
-		desc: "Moves with a chance to burn, deal no damage to this Pokemon and raise it's speed by 1 stage.",
-		shortDesc: "Immune to moves that have a chance to burn, and gains +1 Spe.",
+		onAnyDamage(damage, target, source, effect) {
+			const hazards = ['spikes', 'stealthrock','gmaxsteelsurge'];
+			if (hazards.includes(effect.id)) {
+				return false;
+			}
+		},
+		desc: "Immune to hazards and moves with a chance to burn, deal no damage to this Pokemon and raise it's speed by 1 stage.",
+		shortDesc: "Immune to hazards and moves that have a chance to burn, and gains +1 Spe.",
 		rating: 3,
 		num: -3006,
 	},

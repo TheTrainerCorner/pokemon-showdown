@@ -1227,7 +1227,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	shielddust: {
 		inherit: true,
 		onAnyDamage(damage, target, source, effect) {
-			const hazards = ['spikes', 'stealthrock'];
+			const hazards = ['spikes', 'stealthrock','gmaxsteelsurge'];
 			if (hazards.includes(effect.id)) {
 				return false;
 			}
