@@ -960,10 +960,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#region Fakemon
 		new ModifyPokemon("Acudraco", this)
-			.baseStats
-				.setDEF(95)
-				.setSPD(95)
-			.pokemon.learnset
+			.learnset
 				.add("Dragon Cheer")
 		new ModifyPokemon("Farfetchd-Mega", this)
 			.baseStats
@@ -971,9 +968,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(81)
 				.setSPE(117)
 		new ModifyPokemon("Thundraco", this)
-			.baseStats
-				.setSPA(124)
-			.pokemon.learnset
+			.learnset
 				.add("Dragon Cheer")
 		new ModifyPokemon("MeloettaAurora", this)
 			.learnset
@@ -982,10 +977,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.remove("Celebrate")
 				.add("Sheer Cold")
-		new ModifyPokemon("Metadraco", this)
-			.baseStats
-				.setATK(120)	
-			.pokemon.learnset
+		new ModifyPokemon("Metadraco", this)	
+			.learnset
 				.add("Dragon Cheer")
 		new ModifyPokemon("Sotanaht", this)
 			.abilities
