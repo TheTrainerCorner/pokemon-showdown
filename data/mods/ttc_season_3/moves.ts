@@ -383,6 +383,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			return success;
 		},
 		desc: "Taunts the target; Heals 50% if used on allies",
+		shortDesc: "Taunts the target; Heals 50% if used on allies"
 	},
 	//#endregion
 
