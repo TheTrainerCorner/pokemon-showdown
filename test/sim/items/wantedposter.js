@@ -35,5 +35,20 @@ describe('Wanted Poster', () => {
 		assert.equal(battle.p2.pokemon[0].name, "Alomomola");
 		assert.fullHP(battle.p2.active[0]);
 		assert(battle.p1.active[0].item === 'wantedposter');
+	});
+
+	it(`should not use the move twice`, () => {
+		battle = common.createBattle([[
+			{species: "Mimikyu", item: "wantedposter", moves: ['playrough']},
+		], [
+			{species: 'Gliscor', item: 'choicescarf', moves: ['uturn']},
+			{species: 'Blissey', item: 'leftovers', moves: ['sleeptalk']},
+		]]);
+
+		battle.makeChoices('move playrough', 'move uturn');
+		assert.false.fullHP(battle.p2.active[0]);
+		battle.choose('p2', 'switch 2');
+		assert.false(battle.p1.active[0].item === 'wantedposter');
+		assert.fullHP(battle.p2.active[0]);
 	})
 })

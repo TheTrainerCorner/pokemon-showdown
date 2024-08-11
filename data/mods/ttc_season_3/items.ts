@@ -183,34 +183,80 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 10,
 		},
 		onBeforeTurn(pokemon) {
-			pokemon.itemState.wantedPosterActive = true;
-			let action = this.queue.willMove(pokemon);
-			if (action?.choice !== 'move') return;
+			for (const side of this.sides) {
+				if(side.hasAlly(pokemon)) continue;
+				side.addSideCondition('wantedposter', pokemon);
+				const data = side.getSideConditionData('wantedposter');
+				if (!data.sources) {
+					data.sources = [];
+				}
+				
+				pokemon.itemState.wantedPosterActive = true;
+				let action = this.queue.willMove(pokemon);
+				if (action?.choice !== 'move') return;
 
-			let move = action.move;
-			if (!move) return;
+				let move = action.move;
+				if (!move) return;
 
-			pokemon.itemState.wantedPosterMove = move;
+				pokemon.itemState.wantedPosterMove = move;
+				data.sources.push(pokemon);
+			}
 		},
-		onTryMove(source, target, move) {
-			source.itemState.wantedPosterActive = false;
+		onModifyMove(move, source, target) {
+			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
 		},
-		onFoeBeforeSwitchOut(pokemon) {
-			let activated = false;
-			for (const source of pokemon.foes()) {
-				if (activated) continue;
-				if (source.moveThisTurn) break;
-				if (!source.hasItem('wantedposter')) continue;
-				if (!source.itemState.wantedPosterActive) continue;
-				if (!source.itemState.wantedPosterMove) continue;
-				let move = source.itemState.wantedPosterMove as Move;
-				if (move.category === "Status") continue;
-
-				this.actions.useMove(move, source, pokemon);
-				activated = true;
-				source.useItem();
+		onTryHit(target, pokemon) {
+			target.side.removeSideCondition('wantedposter');
+		},
+		condition: {
+			duration: 1,
+			onBeforeSwitchOut(pokemon) {
+				this.debug('Wanted Poster start');
+				let activated = false;
+				for (const source of pokemon.foes()) {
+					if (activated) continue;
+					if (source.moveThisTurn) break;
+					if (!source.hasItem('wantedposter')) continue;
+					if (!source.itemState.wantedPosterActive) continue;
+					if (!source.itemState.wantedPosterMove) continue;
+					let move = source.itemState.wantedPosterMove as Move;
+					if (move.category === "Status") continue;
+					this.add('-activate', pokemon, `move: ${move}`);
+					this.actions.runMove(move, source, source.getLocOf(pokemon));
+					activated = true;
+					source.useItem();
+				}
 			}
 		}
+		// onBeforeTurn(pokemon) {
+		// 	pokemon.itemState.wantedPosterActive = true;
+		// 	let action = this.queue.willMove(pokemon);
+		// 	if (action?.choice !== 'move') return;
+
+		// 	let move = action.move;
+		// 	if (!move) return;
+
+		// 	pokemon.itemState.wantedPosterMove = move;
+		// },
+		// onTryMove(source, target, move) {
+		// 	source.itemState.wantedPosterActive = false;
+		// },
+		// onFoeBeforeSwitchOut(pokemon) {
+		// 	let activated = false;
+		// 	for (const source of pokemon.foes()) {
+		// 		if (activated) continue;
+		// 		if (source.moveThisTurn) break;
+		// 		if (!source.hasItem('wantedposter')) continue;
+		// 		if (!source.itemState.wantedPosterActive) continue;
+		// 		if (!source.itemState.wantedPosterMove) continue;
+		// 		let move = source.itemState.wantedPosterMove as Move;
+		// 		if (move.category === "Status") continue;
+		// 		console.debug(this.actions);
+		// 		this.actions.runMove(move, source, source.getLocOf(pokemon));
+		// 		activated = true;
+		// 		source.useItem();
+		// 	}
+		// }
 	},
 	bubbleddome: {
 		name: "Bubbled Dome",
