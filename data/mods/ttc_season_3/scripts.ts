@@ -832,7 +832,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Armarouge", this)
 			.baseStats
 				.setHP(100)
-				.setATK(90)
+				.setATK(80)
+				.setSPA(125)
 				.setSPE(75)
 			.pokemon.learnset
 				.remove("Celebrate")
