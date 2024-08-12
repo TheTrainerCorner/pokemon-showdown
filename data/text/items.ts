@@ -644,10 +644,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Friend Ball",
 		desc: "A Poke Ball that makes caught Pokemon more friendly.",
 	},
-	fullincense: {
-		name: "Full Incense",
-		desc: "Holder moves last in its priority bracket.",
-	},
+	//fullincense: {
+	//	name: "Full Incense",
+	//	desc: "Holder moves last in its priority bracket.",
+	//},
 	galaricacuff: {
 		name: "Galarica Cuff",
 		desc: "Evolves Galarian Slowpoke into Galarian Slowbro when used.",
@@ -920,13 +920,13 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Latiosite",
 		desc: "If held by a Latios, this item allows it to Mega Evolve in battle.",
 	},
-	laxincense: {
-		name: "Lax Incense",
-		desc: "The accuracy of attacks against the holder is 0.9x.",
-		gen3: {
-			desc: "The accuracy of attacks against the holder is 0.95x.",
-		},
-	},
+	//laxincense: {
+	//	name: "Lax Incense",
+	//	desc: "The accuracy of attacks against the holder is 0.9x.",
+	//	gen3: {
+	//		desc: "The accuracy of attacks against the holder is 0.95x.",
+	//	},
+	//},
 	leafstone: {
 		name: "Leaf Stone",
 		desc: "Evolves Gloom into Vileplume, Weepinbell into Victreebel, Exeggcute into Exeggutor or Alolan Exeggutor, Eevee into Leafeon, Nuzleaf into Shiftry, and Pansage into Simisage when used.",
@@ -1247,10 +1247,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Occa Berry",
 		desc: "Halves damage taken from a supereffective Fire-type attack. Single use.",
 	},
-	oddincense: {
-		name: "Odd Incense",
-		desc: "Holder's Psychic-type attacks have 1.2x power.",
-	},
+	//oddincense: {
+	//	name: "Odd Incense",
+	//	desc: "Holder's Psychic-type attacks have 1.2x power.",
+	//},
 	oldamber: {
 		name: "Old Amber",
 		desc: "Can be revived into Aerodactyl.",
@@ -1508,10 +1508,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 			desc: "Holder's first successful Rock-type attack will have 1.5x power. Single use.",
 		},
 	},
-	rockincense: {
-		name: "Rock Incense",
-		desc: "Holder's Rock-type attacks have 1.2x power.",
-	},
+	//rockincense: {
+	//	name: "Rock Incense",
+	//	desc: "Holder's Rock-type attacks have 1.2x power.",
+	//},
 	rockmemory: {
 		name: "Rock Memory",
 		desc: "Holder's Multi-Attack is Rock type.",
@@ -1534,10 +1534,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Root Fossil",
 		desc: "Can be revived into Lileep.",
 	},
-	roseincense: {
-		name: "Rose Incense",
-		desc: "Holder's Grass-type attacks have 1.2x power.",
-	},
+	//roseincense: {
+	//	name: "Rose Incense",
+	//	desc: "Holder's Grass-type attacks have 1.2x power.",
+	//},
 	roseliberry: {
 		name: "Roseli Berry",
 		desc: "Halves damage taken from a supereffective Fairy-type attack. Single use.",
@@ -1596,13 +1596,13 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Scope Lens",
 		desc: "Holder's critical hit ratio is raised by 1 stage.",
 	},
-	seaincense: {
-		name: "Sea Incense",
-		desc: "Holder's Water-type attacks have 1.2x power.",
-		gen3: {
-			desc: "Holder's Water-type attacks have 1.05x power.",
-		},
-	},
+	//seaincense: {
+	//	name: "Sea Incense",
+	//	desc: "Holder's Water-type attacks have 1.2x power.",
+	//	gen3: {
+	//		desc: "Holder's Water-type attacks have 1.05x power.",
+	//	},
+	//},
 	sharpbeak: {
 		name: "Sharp Beak",
 		desc: "Holder's Flying-type attacks have 1.2x power.",
@@ -2301,10 +2301,10 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Watmel Berry",
 		desc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
 	},
-	waveincense: {
-		name: "Wave Incense",
-		desc: "Holder's Water-type attacks have 1.2x power.",
-	},
+	//waveincense: {
+	//	name: "Wave Incense",
+	//	desc: "Holder's Water-type attacks have 1.2x power.",
+	//},
 	weaknesspolicy: {
 		name: "Weakness Policy",
 		desc: "If holder is hit super effectively, raises Attack, Sp. Atk by 2 stages. Single use.",
