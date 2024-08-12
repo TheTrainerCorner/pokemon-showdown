@@ -159,7 +159,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		contestType: "Cool",
 		shortDesc: "Has a high chance to critically hit; 50% chance of lowering Defense",
-		desc: "This move has an increased chance to critically hit. Additionally, it has a 50% chance to lower the opponent's Defense"
+		desc: "High critical hit ratio. Additionally, 10% chance to lower the opponent's Defense"
 	},
 	horrifyingshield: {
 		num: -2007,
