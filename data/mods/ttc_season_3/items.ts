@@ -66,6 +66,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 			}
 		},
+		desc: "If hit by a a contact move, the attacker becomes drowsy. Single Use"
 	},
 	oddincense: {
 		inherit: true,
@@ -74,7 +75,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 			if(move.category== "Special")
 				this.damage(source.baseMaxhp / 8, source, target);
 				this.add('-activate', this.effectState.user, 'item: Odd Incense');
-			}
+			},
+			desc: "If the holder is hit by a special move, the attacker loses 1/8th of its max HP."
 	},
 	rockincense: {
 		inherit: true,
@@ -85,7 +87,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.useItem();
 				this.add('-activate', this.effectState.user, 'item: Rock Incense');
 			}
-		}
+		},
+		desc: "If hit by a rock move, automatically set up stealth rocks to the attacker's side. Single Use"
 	},
 	roseincense: {
 		inherit: true,
@@ -96,7 +99,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.useItem();
 				this.add('-activate', this.effectState.user, 'item: Rose Incense');
 			}
-		}
+		},
+		desc: "If hit by attacking move, automatically set up 1 layer of spikes. Single Use"
 	},
 	seaincense: {
 		inherit: true,
@@ -107,7 +111,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.useItem();
 				this.add('-activate', this.effectState.user, 'item: Sea Incense');
 			}
-		}
+		},
+		desc: "If hit by a water type move, the holder is healed for 25% max HP. Single Use"
 	},
 	waveincense: {
 		inherit: true,
@@ -118,7 +123,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.useItem();
 				this.add('-activate', this.effectState.user, 'item: Wave Incense');
 			}
-		}
+		},
+		desc: "If hit by a Special move, the attacker will be trapped in a whirlpool (One time use)"
 	},
 	fullincense: {
 		inherit: true,
@@ -147,7 +153,8 @@ export const Items: {[k: string]: ModdedItemData} = {
 				this.effectState.triggered = false;
 				this.add('-activate', this.effectState.user, 'item: Full Incense');
 			}
-		}
+		},
+		desc: "The first time the opposing pokemon restores HP, the holder of this item steals 25% of that healing and heals itself at the end of the turn."
 	},
 	pokepen: {
 		name: "PokePen",

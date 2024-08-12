@@ -385,7 +385,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			}
 		},
 		desc: "If a move makes contact with this pokemon, the opposing pokemon will be placed under a curse.",
-		shortDesc: "If a move makes contact, the opposing pokemon will be placed under a curse."
+		shortDesc: "Pokemon making contact with this Pokemon will be placed under a curse."
 	},
 	cutecharm: {
 		inherit: true,
