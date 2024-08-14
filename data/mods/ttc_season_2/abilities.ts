@@ -458,24 +458,20 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	},
 	earlybird: {
 		inherit: true,
-	//	onStart(pokemon) {
-	//		this.add('-ability', pokemon, 'Early Bird');
-	//		pokemon.addVolatile('earlybird');
-	//	},
-	//	condition: {
-	//		noCopy: true,
-	//		duration: 1,
-	//		onStart(target) {
-	//			this.add('-start', target, 'ability: Early Bird');
-	//		},
-	//		onModifyPriority(priority, source, pokemon, move) {
-	//			this.debug('Early Bird boost');
-	//			return priority + 1;
-	//		},
-	//		onEnd(target) {
-	//			this.add('-end', target, 'ability: Early Bird');
-	//		},
-	//	},
+		onStart(pokemon) {
+			this.add('-ability', pokemon, 'Early Bird');
+			pokemon.addVolatile('earlybird');
+		},
+		condition: {
+			noCopy: true,
+			duration: 1,
+			onStart(target) {
+				this.add('-start', target, 'ability: Early Bird');
+			},
+			onEnd(target) {
+				this.add('-end', target, 'ability: Early Bird');
+			},
+		},
 		desc: "Upon switch-in, the first move used will have +1 priority.",
 		shortDesc: "First move upon switch-in has +1 prioirty.",
 	},

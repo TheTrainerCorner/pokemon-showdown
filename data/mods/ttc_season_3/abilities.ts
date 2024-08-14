@@ -93,7 +93,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return priority + 1;
 			}
 			else
-			this.add('-end', target, 'ability: Early Bird');
+				this.add('-end', target, 'ability: Early Bird');
 		},
 	},
 	//#endregion
