@@ -690,6 +690,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Salazzle", this)
 			.learnset
 				.add("Dragon Cheer")
+		new ModifyPokemon("Solgaleo", this)
+			.abilities
+				.setAbility0("Clear Body")
 		new ModifyPokemon("TapuKoko", this)
 			.learnset
 				.add("Supercell Slam")
