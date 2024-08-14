@@ -85,6 +85,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		// 	}
 		// }
 	},
+	earlybird: {
+		inherit: true,
+		onModifyPriority(priority, source, target, move) {
+			if(source.activeMoveActions < 1){
+				this.add('-start', target, 'ability: Early Bird');
+				return priority + 1;
+			}
+			else
+			this.add('-end', target, 'ability: Early Bird');
+		},
+	},
 	//#endregion
 
 	//#region New Abilities
@@ -413,10 +424,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "Psychic-type moves can hit Dark-types. Also Frisks on Switch-In",
 	},
 	belligerentquills: {
+		onDamagingHitOrder: 1,
+		onSourceDamagingHit(damage, target, source, move) {
+			if (!target.hp) return;
+			this.effectState.didHit = true;
+		},
 		onAfterMove(source, target, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				if (target.runImmunity(move.type)) return;
-				this.damage(target.maxhp / 8, target, source);
+			if (this.effectState.didHit) {
+				if (this.checkMoveMakesContact(move, source, target, true)) {
+					this.damage(target.maxhp / 8, target, source);
+				}
+				this.effectState.didHit = false;
 			}
 		},
 		name: "Belligerent Quills",
