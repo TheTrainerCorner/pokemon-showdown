@@ -464,9 +464,12 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		},
 		condition: {
 			noCopy: true,
-			duration: 1,
+			duration: 2,
 			onStart(target) {
 				this.add('-start', target, 'ability: Early Bird');
+			},
+			onAfterMove(source, target, move) {
+				this.add('-end', target, 'ability: Early Bird');
 			},
 			onEnd(target) {
 				this.add('-end', target, 'ability: Early Bird');
