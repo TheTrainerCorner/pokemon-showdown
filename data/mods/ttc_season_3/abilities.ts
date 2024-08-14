@@ -89,11 +89,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifyPriority(priority, source, target, move) {
 			if(source.activeMoveActions < 1){
-				this.add('-start', target, 'ability: Early Bird');
 				return priority + 1;
 			}
-			else
-				this.add('-end', target, 'ability: Early Bird');
 		},
 	},
 	//#endregion
