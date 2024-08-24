@@ -643,7 +643,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.pokemon.abilities
 					.setAbility1('Shell Armor')
 				.pokemon.learnset
-					.add('Hydro Stream');
+					.add('Hydro Steam');
 			new ModifyPokemon('Pidgeotto', this)
 				.abilities
 					.setAbility0('Frisk')
