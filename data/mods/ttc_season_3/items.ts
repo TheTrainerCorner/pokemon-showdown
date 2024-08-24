@@ -181,60 +181,58 @@ export const Items: {[k: string]: ModdedItemData} = {
 
 		}
 	},
-	wantedposter: {
-		name: "Wanted Poster",
-		spritenum: -100,
-		desc: "If an opposing Pokemon were to switch out prior to using a damaging move, they will be attacked before switching.",
-		shortDesc: "If a foe is switching out, hits it using a damaging move before. Single use",
-		fling: {
-			basePower: 10,
-		},
-		onBeforeTurn(pokemon) {
-			for (const side of this.sides) {
-				if(side.hasAlly(pokemon)) continue;
-				side.addSideCondition('wantedposter', pokemon);
-				const data = side.getSideConditionData('wantedposter');
-				if (!data.sources) {
-					data.sources = [];
-				}
-				
-				pokemon.itemState.wantedPosterActive = true;
-				let action = this.queue.willMove(pokemon);
-				if (action?.choice !== 'move') return;
-
-				let move = action.move;
-				if (!move) return;
-
-				pokemon.itemState.wantedPosterMove = move;
-				data.sources.push(pokemon);
-			}
-		},
-		onModifyMove(move, source, target) {
-			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
-		},
-		onTryHit(target, pokemon) {
-			target.side.removeSideCondition('wantedposter');
-		},
-		condition: {
-			duration: 1,
-			onBeforeSwitchOut(pokemon) {
-				this.debug('Wanted Poster start');
-				let activated = false;
-				for (const source of pokemon.foes()) {
-					if (activated) continue;
-					if (source.moveThisTurn) break;
-					if (!source.hasItem('wantedposter')) continue;
-					if (!source.itemState.wantedPosterActive) continue;
-					if (!source.itemState.wantedPosterMove) continue;
-					let move = source.itemState.wantedPosterMove as Move;
-					if (move.category === "Status") continue;
-					this.add('-activate', pokemon, `move: ${move}`);
-					this.actions.runMove(move, source, source.getLocOf(pokemon));
-					activated = true;
-					source.useItem();
-				}
-			}
-		}
+	//wantedposter: {
+		//name: "Wanted Poster",
+		//spritenum: -100,
+		//desc: "If an opposing Pokemon were to switch out prior to using a damaging move, they will be attacked before switching.",
+		//shortDesc: "If a foe is switching out, hits it using a damaging move before. Single use",
+		//fling: {
+		//	basePower: 10,
+		//},
+		//onBeforeTurn(pokemon) {
+		//	for (const side of this.sides) {
+		//		if(side.hasAlly(pokemon)) continue;
+		//		side.addSideCondition('wantedposter', pokemon);
+		//		const data = side.getSideConditionData('wantedposter');
+		//		if (!data.sources) {
+		//			data.sources = [];
+		//		}
+		//		
+		//		pokemon.itemState.wantedPosterActive = true;
+		//		let action = this.queue.willMove(pokemon);
+		//		if (action?.choice !== 'move') return;
+		//		let move = action.move;
+		//		if (!move) return;
+		//		pokemon.itemState.wantedPosterMove = move;
+		//		data.sources.push(pokemon);
+		//	}
+		//},
+		//onModifyMove(move, source, target) {
+		//	if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
+		//},
+		//onTryHit(target, pokemon) {
+		//	target.side.removeSideCondition('wantedposter');
+		//},
+		//condition: {
+		//	duration: 1,
+		//	onBeforeSwitchOut(pokemon) {
+		//		this.debug('Wanted Poster start');
+		//		let activated = false;
+		//		for (const source of pokemon.foes()) {
+		//			if (activated) continue;
+		//			if (source.moveThisTurn) break;
+		//			if (!source.hasItem('wantedposter')) continue;
+		//			if (!source.itemState.wantedPosterActive) continue;
+		//			if (!source.itemState.wantedPosterMove) continue;
+		//			let move = source.itemState.wantedPosterMove as Move;
+		//			if (move.category === "Status") continue;
+		//			this.add('-activate', pokemon, `move: ${move}`);
+		//			this.actions.runMove(move, source, source.getLocOf(pokemon));
+		//			activated = true;
+		//			source.useItem();
+		//		}
+		//	}
+		//}
 		// onBeforeTurn(pokemon) {
 		// 	pokemon.itemState.wantedPosterActive = true;
 		// 	let action = this.queue.willMove(pokemon);
@@ -264,7 +262,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		// 		source.useItem();
 		// 	}
 		// }
-	},
+	//},
 	bubbleddome: {
 		name: "Bubbled Dome",
 		spritenum: -100,
