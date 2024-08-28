@@ -732,5 +732,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			type: "Fighting",
 			contestType: "Cool",
 		},
+		hyperdrill: {
+			num: 887,
+			accuracy: 90,
+			basePower: 100,
+			category: "Physical",
+			name: "Hyper Drill",
+			pp: 10,
+			priority: 0,
+			critRatio: 3,
+			flags: {contact: 1, mirror: 1},
+			secondary: null,
+			target: "normal",
+			type: "Normal",
+			contestType: "Clever",
+		}
 	//#endregion
 };
