@@ -3150,7 +3150,7 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	hyperdrill: {
 		name: "Hyper Drill",
-		shortDesc: "Bypasses protection without breaking it.",
+		shortDesc: "Bypasses protection without breaking it. Very high crit ratio",
 	},
 	hyperfang: {
 		name: "Hyper Fang",
