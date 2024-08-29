@@ -734,8 +734,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		hyperdrill: {
 			inherit: true,
-			accuracy: 90,
-			basePower: 100,
+			accuracy: 100,
+			basePower: 90,
 			category: "Physical",
 			name: "Hyper Drill",
 			pp: 10,
