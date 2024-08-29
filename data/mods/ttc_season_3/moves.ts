@@ -733,7 +733,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			contestType: "Cool",
 		},
 		hyperdrill: {
-			num: 887,
+			inherit: true,
 			accuracy: 90,
 			basePower: 100,
 			category: "Physical",
@@ -746,6 +746,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			target: "normal",
 			type: "Normal",
 			contestType: "Clever",
-		}
+		},
 	//#endregion
 };
