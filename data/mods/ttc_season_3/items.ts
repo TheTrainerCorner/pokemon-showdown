@@ -118,11 +118,13 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
-			if(move.category== "Special"){
-				source.addVolatile('partiallytrapped')
-				target.useItem();
-				this.add('-activate', this.effectState.user, 'item: Wave Incense');
-			}
+			if (move.category !== 'Special') return;
+
+			const whirlpool = this.dex.moves.get('whirlpool');
+
+			this.actions.useMove(whirlpool, target);
+			target.useItem();
+			console.log(this.actions);
 		},
 		desc: "If hit by a Special move, the attacker will be trapped in a whirlpool (One time use)"
 	},
