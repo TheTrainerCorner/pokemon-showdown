@@ -119,12 +119,13 @@ export const Items: {[k: string]: ModdedItemData} = {
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
 			if (move.category !== 'Special') return;
-
+			if (target.itemState.activated) return;
 			const whirlpool = this.dex.moves.get('whirlpool');
 
 			this.actions.useMove(whirlpool, target);
 			target.useItem();
-			console.log(this.actions);
+			// Should prevent the item from proccing more than once.
+			target.itemState.activated = true;
 		},
 		desc: "If hit by a Special move, the attacker will be trapped in a whirlpool (One time use)"
 	},
