@@ -2999,12 +2999,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 10,
 		},
-		onModifyAccuracyPriority: -2,
-		onModifyAccuracy(accuracy) {
-			if (typeof accuracy !== 'number') return;
-			this.debug('lax incense - decreasing accuracy');
-			return this.chainModify([3686, 4096]);
-		},
+		//onModifyAccuracyPriority: -2,
+		//onModifyAccuracy(accuracy) {
+		//	if (typeof accuracy !== 'number') return;
+		//	this.debug('lax incense - decreasing accuracy');
+		//	return this.chainModify([3686, 4096]);
+		//},
 		num: 255,
 		gen: 3,
 	},
@@ -3987,12 +3987,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 10,
 		},
-		onBasePowerPriority: 15,
-		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Psychic') {
-				return this.chainModify([4915, 4096]);
-			}
-		},
+		//onBasePowerPriority: 15,
+		//onBasePower(basePower, user, target, move) {
+		//	if (move.type === 'Psychic') {
+		//		return this.chainModify([4915, 4096]);
+		//	}
+		//},
 		num: 314,
 		gen: 4,
 	},
@@ -4825,12 +4825,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 10,
 		},
-		onBasePowerPriority: 15,
-		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Rock') {
-				return this.chainModify([4915, 4096]);
-			}
-		},
+		//onBasePowerPriority: 15,
+		//onBasePower(basePower, user, target, move) {
+		//	if (move.type === 'Rock') {
+		//		return this.chainModify([4915, 4096]);
+		//	}
+		//},
 		num: 315,
 		gen: 4,
 	},
@@ -4916,12 +4916,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 10,
 		},
-		onBasePowerPriority: 15,
-		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Grass') {
-				return this.chainModify([4915, 4096]);
-			}
-		},
+		//onBasePowerPriority: 15,
+		//onBasePower(basePower, user, target, move) {
+		//	if (move.type === 'Grass') {
+		//		return this.chainModify([4915, 4096]);
+		//	}
+		//},
 		num: 318,
 		gen: 4,
 	},
@@ -5134,12 +5134,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 10,
 		},
-		onBasePowerPriority: 15,
-		onBasePower(basePower, user, target, move) {
-			if (move && move.type === 'Water') {
-				return this.chainModify([4915, 4096]);
-			}
-		},
+		//onBasePowerPriority: 15,
+		//onBasePower(basePower, user, target, move) {
+		//	if (move && move.type === 'Water') {
+		//		return this.chainModify([4915, 4096]);
+		//	}
+		//},
 		num: 254,
 		gen: 3,
 	},
@@ -7066,12 +7066,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		fling: {
 			basePower: 10,
 		},
-		onBasePowerPriority: 15,
-		onBasePower(basePower, user, target, move) {
-			if (move.type === 'Water') {
-				return this.chainModify([4915, 4096]);
-			}
-		},
+		//onBasePowerPriority: 15,
+		//onBasePower(basePower, user, target, move) {
+		//	if (move.type === 'Water') {
+		//		return this.chainModify([4915, 4096]);
+		//	}
+		//},
 		num: 317,
 		gen: 4,
 	},
