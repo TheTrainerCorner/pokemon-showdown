@@ -106,7 +106,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onModifySpe: undefined,
 		onStart(pokemon) {
 			const item = this.dex.mod(Config.ttcseason).items.get(pokemon.item);
-			if(item.tags?.includes("Ball") || item.isPokeball) {
+			if(item.tags?.includes("Ball") || item.isPokeball || item.megaStone) {
 				pokemon.addVolatile('ballfetch');
 			}
 		},

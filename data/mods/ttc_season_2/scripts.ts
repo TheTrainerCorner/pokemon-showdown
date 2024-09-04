@@ -3159,5 +3159,28 @@ export const Scripts: ModdedBattleScriptsData = {
 			this.modData('Moves', move.includes(' ') ? move.toLowerCase().replace(' ', '') : move.toLowerCase()).flags['pivot'] = 1;
 		}
 		// #endregion
+
+		// Season 2 Ball
+		const ballItems = [
+			"lifeorb",
+			"wikiberry",
+			"adrenalineorb",
+			"flameorb",
+			"liechiberry",
+			"snowball",
+			"toxicorb",
+			"yacheberry",
+			"aspearberry",
+			"destinyknot",
+			"ironball",
+			"oranberry",
+			"ovalstone",
+			"frostorb",
+		];
+		for(let item of this.items.all()) {
+			if (item.isPokeball || item.megaStone || ballItems.includes(item.id)) {
+				this.modData('Items', item.id).tags = ["Ball"];
+			}
+		}
 	},
 };
