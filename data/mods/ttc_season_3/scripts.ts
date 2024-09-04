@@ -19,6 +19,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			"ironball",
 			"oranberry",
 			"ovalstone",
+			"frostorb",
 		];
 		for(let item of this.items.all()) {
 			if (item.isPokeball || item.megaStone || ballItems.includes(item.id)) {
