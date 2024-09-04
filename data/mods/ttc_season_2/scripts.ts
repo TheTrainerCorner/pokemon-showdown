@@ -3160,7 +3160,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 		// #endregion
 
-		// Season 2 Ball
+	// Season 2 Ball
 		const ballItems = [
 			"lifeorb",
 			"wikiberry",
@@ -3183,4 +3183,5 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 		}
 	},
+	// #endregion
 };
