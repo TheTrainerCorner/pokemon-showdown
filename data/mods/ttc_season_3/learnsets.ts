@@ -745,6 +745,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			poweruppunch: ["9M"],
 			brickbreak: ["9M"],
 			sunnyday: ["9M"],
+			protect: ["9M"],
 		}
 	},
 	lickitunghisui: {
