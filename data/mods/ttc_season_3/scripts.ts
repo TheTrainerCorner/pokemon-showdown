@@ -710,7 +710,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add("Burning Bulwark")
 				.add("Dragon Cheer")
 				.add("Morning Sun")
-				.add("Shelter")
 		new ModifyPokemon("Vikavolt", this)
 			.baseStats
 				.setATK(80)
