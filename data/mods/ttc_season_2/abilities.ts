@@ -106,16 +106,16 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onModifySpe: undefined,
 		onStart(pokemon) {
 			const item = this.dex.mod(Config.ttcseason).items.get(pokemon.item);
-			if(item.tags?.includes("Ball") || item.isPokeball || item.megaStone) {
+			if(item.tags?.includes("Ball") || item.isPokeball || item.megaStone || item.name== "Frostorb") {
 				pokemon.addVolatile('ballfetch');
 			}
 		},
 		onUpdate(pokemon) {
 			const item = this.dex.mod(Config.ttcseason).items.get(pokemon.item);
-			if (!(item.tags?.includes("Ball") || item.isPokeball || item.megaStone) && pokemon.volatiles['ballfetch']) {
+			if (!(item.tags?.includes("Ball") || item.isPokeball || item.megaStone || item.name== "Frost Orb") && pokemon.volatiles['ballfetch']) {
 				pokemon.removeVolatile('ballfetch');
 			}
-			else if ((item.tags?.includes("Ball") || item.isPokeball || item.megaStone) && !pokemon.volatiles['ballfetch']) {
+			else if ((item.tags?.includes("Ball") || item.isPokeball || item.megaStone || item.name== "Frost Orb") && !pokemon.volatiles['ballfetch']) {
 				pokemon.addVolatile('ballfetch');
 			}
 		},

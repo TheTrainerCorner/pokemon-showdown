@@ -27,4 +27,18 @@ export const Items: {[itemid: string]: ModdedItemData} = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
+	frostorb: {
+		name: "Frost Orb",
+		spritenum: -100,
+		fling: {
+			basePower: 30,
+			status: 'frb',
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('frb', pokemon);
+		},
+		num: -273,
+	},
 }

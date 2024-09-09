@@ -43,18 +43,4 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		isNonstandard: "Future",
 	},
-	frostorb: {
-		name: "Frost Orb",
-		spritenum: -100,
-		fling: {
-			basePower: 30,
-			status: 'frb',
-		},
-		onResidualOrder: 28,
-		onResidualSubOrder: 3,
-		onResidual(pokemon) {
-			pokemon.trySetStatus('frb', pokemon);
-		},
-		num: -273,
-	},
 };
