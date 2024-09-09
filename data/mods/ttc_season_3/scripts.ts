@@ -365,14 +365,12 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon("Regice", this)
 			.abilities
 				.setAbility0("Absolute Zero")
-				.setAbility1("Undefined")
 				.setHiddenAbility("Filter")
 			.pokemon.learnset
 				.add("Sheer Cold")
 		new ModifyPokemon("Regirock", this)
 			.abilities
 				.setAbility0("Granite Storm")
-				.setAbility1("Undefined")
 				.setHiddenAbility("Filter")
 		new ModifyPokemon("Registeel", this)
 			.baseStats
