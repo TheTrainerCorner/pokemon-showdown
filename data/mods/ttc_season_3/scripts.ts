@@ -367,11 +367,13 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility0("Absolute Zero")
 				.setHiddenAbility("Filter")
 			.pokemon.learnset
-				.add("Sheer Cold")
+				.add("Sheer Cold");
+		this.modData('Pokedex', 'regice').abilities[1] = undefined;
 		new ModifyPokemon("Regirock", this)
 			.abilities
 				.setAbility0("Granite Storm")
 				.setHiddenAbility("Filter")
+		this.modData('Pokedex', 'regirock').abilities[1] = undefined;
 		new ModifyPokemon("Registeel", this)
 			.baseStats
 				.setATK(100)
