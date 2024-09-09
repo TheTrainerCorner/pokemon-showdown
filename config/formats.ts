@@ -18,21 +18,21 @@ The column value will be ignored for repeat sections.
 */
 import { Config } from "../server/config-loader";
 export const Formats: FormatList = [
-	{
-		section: "TTC Season 2 Offseason",
-	},
-	{
-		name: "[Gen 9] National Dex Monotype",
-		mod: Config.ttcseason,
-		ruleset: [
-			'Standard Natdex', 'Terastal Clause',
-			'Species Clause', 'OHKO Clause', 'Evasion Clause',
-			'Sleep Clause Mod',
+	// {
+	// 	section: "TTC Season 2 Offseason",
+	// },
+	// {
+	// 	name: "[Gen 9] National Dex Monotype",
+	// 	mod: Config.ttcseason,
+	// 	ruleset: [
+	// 		'Standard Natdex', 'Terastal Clause',
+	// 		'Species Clause', 'OHKO Clause', 'Evasion Clause',
+	// 		'Sleep Clause Mod',
 
-			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist',
-			'Offseason Complex Bans', 'Offseason Banlist',
-		],
-	},
+	// 		'Season Complex Bans', 'Season Unbanlist', 'Season Banlist',
+	// 		'Offseason Complex Bans', 'Offseason Banlist',
+	// 	],
+	// },
 	{
 		section: "TTC Cherish Ball Division",
 	},
@@ -73,6 +73,20 @@ export const Formats: FormatList = [
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
 			'Dynamax Clause', 'Terastal Clause',
 			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'
+		],
+	},
+	{
+		section: "TTC Love Ball Division",
+	},
+	{
+		name: "[Gen 9] National Dex Love Ball",
+		desc: "This format is for Love Ball Division.",
+		mod: Config.ttcseason,
+		ruleset: [
+			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
+			'Species Clause', 'Sleep Clause Mod',
+			'Z-Move Clause', 'Dynamax Clause', 'Terastal Clause',
+			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist',
 		],
 	},
 	{
