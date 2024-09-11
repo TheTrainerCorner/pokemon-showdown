@@ -3053,7 +3053,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('return')
 				.add('roleplay')
 				.add('round')
-				.add('safegurad')	
+				.add('safeguard')	
 				.add('secretpower')
 				.add('shadowball')	
 				.add('signalbeam')
