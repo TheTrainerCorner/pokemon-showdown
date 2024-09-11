@@ -691,7 +691,10 @@ export const Scripts: ModdedBattleScriptsData = {
 					.setATK(85)
 					.setDEF(80)
 					.setSPA(40)
-					.setSPD(80);
+					.setSPD(80)
+				.pokemon.abilities
+					.setAbility0('Unnerve')
+					.setHiddenAbility('Vampire')
 			new ModifyPokemon('Gloom', this)
 				.abilities
 					.setAbility1('Neutralizing Gas')
