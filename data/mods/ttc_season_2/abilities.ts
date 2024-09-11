@@ -565,7 +565,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	frigidinspiration: {
 		inherit: true,
 		desc: "Meloetta Only! When in Caroler Form, all Physical Moves are increased by 30%; When in Aurora Form, all Special Moves are increased by 30%.",
-		shortDesc: "Physical moves gain 1.3x more damage whe in Caroler Form; Special moves gain 1.3x more damage in Aurora Form.",
+		shortDesc: "Physical moves gain 1.3x more damage when in Aurora Form; Special moves gain 1.3x more damage in Caroler Form.",
 	},
 	fullmetalbody: {
 		inherit: true,
