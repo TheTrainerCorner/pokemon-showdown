@@ -148,4 +148,17 @@ export const Formats: FormatList = [
 		battle: {trunc: Math.trunc},
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
+	{
+		name: "[Gen 9] Free-For-All",
+		mod: Config.ttcseason,
+		gameType: 'freeforall',
+		rated: false,
+		tournamentShow: false,
+		ruleset: [
+			'OHKO Clause', 'Evasion Clause',
+			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
+			'Dynamax Clause', 'Terastal Clause',
+			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'
+		],
+	},
 ];
