@@ -5026,31 +5026,31 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2,
 		num: 162,
 	},
-	vitalspirit: {
-		onUpdate(pokemon) {
-			if (pokemon.status === 'slp') {
-				this.add('-activate', pokemon, 'ability: Vital Spirit');
-				pokemon.cureStatus();
-			}
-		},
-		onSetStatus(status, target, source, effect) {
-			if (status.id !== 'slp') return;
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] ability: Vital Spirit');
-			}
-			return false;
-		},
-		onTryAddVolatile(status, target) {
-			if (status.id === 'yawn') {
-				this.add('-immune', target, '[from] ability: Vital Spirit');
-				return null;
-			}
-		},
-		isBreakable: true,
-		name: "Vital Spirit",
-		rating: 1.5,
-		num: 72,
-	},
+	//vitalspirit: {
+	//	onUpdate(pokemon) {
+	//		if (pokemon.status === 'slp') {
+	//			this.add('-activate', pokemon, 'ability: Vital Spirit');
+	//			pokemon.cureStatus();
+	//		}
+	//	},
+	//	onSetStatus(status, target, source, effect) {
+	//		if (status.id !== 'slp') return;
+	//		if ((effect as Move)?.status) {
+	//			this.add('-immune', target, '[from] ability: Vital Spirit');
+	//		}
+	//		return false;
+	//	},
+	//	onTryAddVolatile(status, target) {
+	//		if (status.id === 'yawn') {
+	//			this.add('-immune', target, '[from] ability: Vital Spirit');
+	//			return null;
+	//		}
+	//	},
+	//	isBreakable: true,
+	//	name: "Vital Spirit",
+	//	rating: 1.5,
+	//	num: 72,
+	//},
 	voltabsorb: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Electric') {
