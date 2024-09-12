@@ -155,7 +155,7 @@ export const Formats: FormatList = [
 		rated: false,
 		tournamentShow: false,
 		ruleset: [
-			'OHKO Clause', 'Evasion Clause',
+			'Standard NatDex','OHKO Clause', 'Evasion Clause',
 			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
 			'Dynamax Clause', 'Terastal Clause',
 			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'
