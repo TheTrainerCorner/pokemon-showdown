@@ -5026,7 +5026,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2,
 		num: 162,
 	},
-	//vitalspirit: {
+	vitalspirit: {
 	//	onUpdate(pokemon) {
 	//		if (pokemon.status === 'slp') {
 	//			this.add('-activate', pokemon, 'ability: Vital Spirit');
@@ -5046,11 +5046,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	//			return null;
 	//		}
 	//	},
-	//	isBreakable: true,
-	//	name: "Vital Spirit",
-	//	rating: 1.5,
-	//	num: 72,
-	//},
+		isBreakable: true,
+		name: "Vital Spirit",
+		rating: 1.5,
+		num: 72,
+	},
 	voltabsorb: {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Electric') {
