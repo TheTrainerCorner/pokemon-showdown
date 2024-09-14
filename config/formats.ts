@@ -161,4 +161,11 @@ export const Formats: FormatList = [
 			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'
 		],
 	},
+	{
+		name: "[Gen 9] Unrated Random Battle",
+		mod: 'gen9',
+		team: 'random',
+		rated: false,
+		ruleset: ['Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
+	},
 ];
