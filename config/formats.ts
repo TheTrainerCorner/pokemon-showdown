@@ -163,7 +163,7 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 9] Unrated Random Battle",
-		mod: 'gen9',
+		mod: Config.ttcseason,
 		team: 'random',
 		rated: false,
 		ruleset: ['Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
