@@ -15480,7 +15480,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.add('-fail', source, 'heal');
 				return null;
 			}
-			if (source.hasAbility(['insomnia', 'vitalspirit'])) {
+			if (source.hasAbility(['insomnia'])) {
 				this.add('-fail', source, '[from] ability: ' + source.getAbility().name, '[of] ' + source);
 				return null;
 			}
