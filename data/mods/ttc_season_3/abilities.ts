@@ -338,12 +338,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	pallesthesia: {
 		name: "Pallesthesia",
+		onModifyMovePriority: -5,
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Fighting'] = true;
+				move.ignoreImmunity['Normal'] = true;
+			}
+		},
 		onSourceModifyDamage(damage, target, source, effect) {
 			const action = this.queue.willMove(source);
 			const move = action?.choice === 'move' ? action.move : null;
 			if (!move || (move.category === 'Status')) return damage;
 			// Assuming that the move does exist and is either a special or physical move, which is a damaging move.
-			this.add('-activate', target, 'ability: Pallesthesia');
+			this.add('-activate', source, 'ability: Pallesthesia');
 			return this.chainModify([2868, 4096]);
 		},
 		onModifyAtk(atk, source, target, move) {
