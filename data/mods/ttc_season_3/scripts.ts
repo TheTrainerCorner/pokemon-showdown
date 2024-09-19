@@ -1196,6 +1196,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData('Pokedex', 'terapagos').tags.push('Use Gen 5');
 		this.modData('Pokedex', 'terapagosstellar').tags.push('Use Gen 5');
 		this.modData('Pokedex', 'terapagosterastal').tags.push('Use Gen 5');
+		this.modData('Pokedex', 'raichualola').evoRegion = undefined;
 		//#endregion
 	},
 };
