@@ -72,10 +72,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 		inherit: true,
 		onDamagingHitOrder: 2,
 		onDamagingHit(damage, target, source, move) {
-			if(move.category== "Special")
+			if(move.category== "Special") {
 				this.damage(source.baseMaxhp / 8, source, target);
 				this.add('-activate', this.effectState.user, 'item: Odd Incense');
-			},
+			}
+		},
 			desc: "If the holder is hit by a special move, the attacker loses 1/8th of its max HP."
 	},
 	rockincense: {
