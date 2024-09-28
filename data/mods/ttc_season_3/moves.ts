@@ -748,4 +748,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			contestType: "Clever",
 		},
 	//#endregion
+
+	brickbreak: {
+		inherit: true,
+		onTryHit(pokemon) {
+			// will shatter screens through sub, before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('auroraveil');
+			pokemon.side.removeSideCondition('flowerveil');
+		}
+	},
 };
