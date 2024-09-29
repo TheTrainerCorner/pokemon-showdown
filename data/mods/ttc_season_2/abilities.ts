@@ -732,7 +732,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 			}
 		},
 		desc: "Focus Blast can't miss; Focus Punch is changed to have a neutral priority and has a bp of 130. Still has Focus",
-		shortDesc: "Focus Blast can't miss; Focus Punch = Neutral Priority and 130 Base Power.",
+		shortDesc: "Focus Blast can't miss; Focus Punch = Neutral Priority and 130 Base Power. Still has Focus",
 	},
 	ironfist: {
 		inherit: true,
