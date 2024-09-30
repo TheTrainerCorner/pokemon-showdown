@@ -2,6 +2,23 @@ import { Moves } from "./moves";
 
 export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#region Modify Abilities
+	screencleaner: {
+		inherit: true,
+		onStart(pokemon) {
+			let activated = false;
+			for (const sideCondition of ['reflect', 'lightscreen', 'auroraveil', 'flowerveil']) {
+				for (const side of [pokemon.side, ...pokemon.side.foeSidesWithConditions()]) {
+					if (side.getSideCondition(sideCondition)) {
+						if (!activated) {
+							this.add('-activate', pokemon, 'ability: Screen Cleaner');
+							activated = true;
+						}
+						side.removeSideCondition(sideCondition);
+					}
+				}
+			}
+		}
+	},
 	magmaarmor: {
 		inherit: true,
 		desc: "This Pokemon receives 3/4 damage from Ice & Water type moves",
@@ -246,8 +263,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		onAnyDamage(damage, target, source, effect) {
-			const hazards = ['spikes', 'stealthrock','gmaxsteelsurge'];
-			if (hazards.includes(effect.id)) {
+			const hazards = ['spikes', 'stealthrock', 'gmaxsteelsurge'];
+			if (target.hasAbility('lavasurfer') && hazards.includes(effect.id)) {
 				return false;
 			}
 		},
