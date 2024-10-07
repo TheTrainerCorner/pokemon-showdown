@@ -105,7 +105,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Cosmic', 'Psychic')
 		new ModifyPokemon('Lunala', this)
 			.types
-				.setType('Comsic', 'Ghost');
+				.setType('Cosmic', 'Ghost');
 		new ModifyPokemon('Necrozma', this)
 			.types
 				.setType('Cosmic');
