@@ -43258,7 +43258,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			scratch: ["7L1", "6L1", "5L1", "4L1", "3L1"],
 			screech: ["7L38", "6L32", "5L32", "4L32", "3L24"],
 			secretpower: ["6M", "4M", "3M"],
-			seismictoss: ["3T"],
+			seismictoss: ["7T", "3T"],
 			shadowball: ["7M", "6M", "5M", "4M", "3M"],
 			shadowclaw: ["7M", "7L33", "6M", "6L33", "5M", "5L49", "4M", "4L49"],
 			shadowsneak: ["7L7", "6L7", "5L22", "4L20"],
