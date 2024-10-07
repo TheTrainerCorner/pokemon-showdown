@@ -58,7 +58,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Cosmic', 'Dragon');
 		new ModifyPokemon('Cresselia', this)
 			.types
-				.setType('Cosmic');
+				.setType('Cosmic')
+			.pokemon.abilities
+				.setHiddenAbility('Cosmic Surge');
 		new ModifyPokemon('Gothita', this)
 			.types
 				.setType('Cosmic', 'Dark');
