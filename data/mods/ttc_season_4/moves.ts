@@ -293,5 +293,39 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
 		shortDesc: "100% chance to raise the user's Speed by 1.",
 	},
+	rebirth: {
+		num: -4006,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Rebirth",
+		pp: 0.625,
+		priority: 0,
+		flags: { heal: 1 },
+		boosts: {
+			atk: -2,
+			spa: -2,
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('rebirth');
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Rebirth');
+			},
+			onFaint(target, source, effect) {
+				// Assuming that target is self.
+				target.fainted = false;
+				target.status = ''; // Assuming that we need to remove the FNT status that is applied when a pokemon is fainted.
+				this.modify(target.hp, 1); // Assuming that hp needs to be > 0.
+				target.heal(target.baseMaxhp / 2);
+			},
+		},
+		selfdestruct: "ifHit",
+		target: "normal",
+		type: "Cosmic",
+		desc: "Lowers target's Attack and Special Attack by 2. User Faints. User Revives with 50% Max HP the following turn.",
+	},
 	//#endregion
 };
