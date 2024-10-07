@@ -4,7 +4,7 @@
  * The Current TTC Season
  * TTC Specific Config
  */
-exports.ttcseason = 'ttc_season_3';
+exports.ttcseason = 'ttc_season_4';
 
 /**
  * The server port - the port to run Pokemon Showdown under
