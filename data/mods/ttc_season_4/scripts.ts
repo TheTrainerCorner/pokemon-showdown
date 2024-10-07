@@ -50,7 +50,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Jirachi', this)
 			.types
 				.setType('Cosmic', 'Psychic');
-		new ModifyPokemon('Deoxy', this)
+		new ModifyPokemon('Deoxys', this)
 			.types
 				.setType('Cosmic');
 		new ModifyPokemon('Palkia', this)
