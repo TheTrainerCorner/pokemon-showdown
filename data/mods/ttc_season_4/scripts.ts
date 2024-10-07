@@ -53,6 +53,15 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Deoxys', this)
 			.types
 				.setType('Cosmic');
+		new ModifyPokemon('DeoxysAttack', this)
+			.types
+				.setType('Cosmic');
+		new ModifyPokemon('DeoxysDefense', this)
+			.types
+				.setType('Cosmic');
+		new ModifyPokemon('DeoxysSpeed', this)
+			.types
+				.setType('Cosmic');
 		new ModifyPokemon('Palkia', this)
 			.types
 				.setType('Cosmic', 'Dragon');
@@ -97,6 +106,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Lunala', this)
 			.types
 				.setType('Comsic', 'Ghost');
+		new ModifyPokemon('Necrozma', this)
+			.types
+				.setType('Cosmic');
 		new ModifyPokemon('Nihilego', this)
 			.types
 				.setType('Comsic', 'Poison');
