@@ -7,6 +7,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Cosmic Surge",
 		rating: 4,
 		num: -4001,
+		desc: "On Switch-In, starts Cosmic Terrain.",
+		shortDesc: 'On switch-in, starts Cosmic Terrain.',
 	},
 	//#endregion
 };
