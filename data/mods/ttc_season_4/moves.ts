@@ -306,9 +306,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			atk: -2,
 			spa: -2,
 		},
-		onHit(target) {
-			this.directDamage(target.hp - 1);
-			target.addVolatile('rebirth');
+		onHit(target, source, move) {
+			this.directDamage(source.hp - 1);
+			source.addVolatile('rebirth');
 		},
 		condition: {
 			onStart(pokemon) {
