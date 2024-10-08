@@ -469,7 +469,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 85,
 		category: "Physical",
 		pp: 10,
-		flags: {bite: 1, contact: 1},
+		flags: {bite: 1, contact: 1, protect: 1},
 		priority: 0,
 		type: "Fairy",
 		target: 'any',
