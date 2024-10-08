@@ -311,7 +311,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		condition: {
 			onStart(pokemon) {
-				pokemon.faint();
+				this.directDamage(pokemon.maxhp, pokemon);
 			},
 			onBeforeFaint(pokemon, effect) {
 				this.add('-activate', pokemon, 'move: Rebirth', pokemon);
