@@ -6,7 +6,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Dragon: 0,
 			Electric: 2,
 			Fairy: 0,
-			Fighting: 3,
+			Fighting: 2,
 			Fire: 3,
 			Flying: 0,
 			Ghost: 2,

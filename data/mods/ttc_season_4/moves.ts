@@ -301,24 +301,31 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		name: "Rebirth",
 		pp: 0.625,
 		priority: 0,
-		flags: { heal: 1 },
+		flags: { heal: 1, noassist: 1, nosleeptalk: 1, noparentalbond: 1 },
 		boosts: {
 			atk: -2,
 			spa: -2,
 		},
 		onHit(target, source, move) {
-			this.directDamage(source.hp - 1, source);
 			source.addVolatile('rebirth');
 		},
 		condition: {
 			onStart(pokemon) {
-				this.add('-singleturn', pokemon, 'move: Rebirth');
-				pokemon.switchFlag = true;
+				pokemon.faint();
 			},
-			
-			onSwitchOut(pokemon) {
-				this.heal(pokemon.baseMaxhp/2, pokemon);
-			}
+			onBeforeFaint(pokemon, effect) {
+				this.add('-activate', pokemon, 'move: Rebirth', pokemon);
+				pokemon.hp = this.trunc(pokemon.maxhp / 2);
+				pokemon.clearStatus();
+				this.add('-sethp', pokemon, pokemon.getHealth, '[silent]');
+				pokemon.clearBoosts();
+				this.add('-clearboost', pokemon, '[silent]');
+				for (const moveSlot of pokemon.moveSlots) {
+					moveSlot.pp = moveSlot.maxpp;
+				}
+				pokemon.switchFlag = true;
+				return false;
+			},
 		},
 		target: "normal",
 		type: "Cosmic",
