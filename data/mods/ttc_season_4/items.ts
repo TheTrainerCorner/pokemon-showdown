@@ -7,11 +7,12 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		onBeforeFaint(pokemon, effect) {
 			if (pokemon.itemState.phoenixsFeather) return;
-			this.add('-active', pokemon, "item: Phoenix's Feather");
+			this.add('-activate', pokemon, "item: Phoenix's Feather", pokemon);
 			pokemon.hp = this.trunc(pokemon.maxhp / 2);
 			pokemon.clearStatus();
 			this.add('-sethp', pokemon, pokemon.getHealth, '[silent]');
 			pokemon.clearBoosts();
+			this.add('-clearboost', pokemon, '[silent]');
 			pokemon.setStatus('phc', pokemon, effect, true);
 			return false;
 		},
