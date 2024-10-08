@@ -307,8 +307,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			spa: -2,
 		},
 		onHit(target, source, move) {
+			source.damage(source.hp - 1);
 			source.addVolatile('rebirth');
-			this.damage(source.hp - 1, source);
 		},
 		condition: {
 			onStart(pokemon) {
