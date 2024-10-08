@@ -302,16 +302,24 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		pp: 0.625,
 		priority: 0,
 		flags: { heal: 1 },
+		boosts: {
+			atk: -2,
+			spa: -2,
+		},
 		onHit(target, source, move) {
-			const success = this.boost({atk: -2, spa: -2}, target, source);
-			source.sethp(1);
-			this.heal(source.baseMaxhp / 2, source, source);
+			source.addVolatile('rebirth');
+		},
+		condition: {
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Rebirth');
+				pokemon.sethp(1);
+				pokemon.switchFlag = true;
+			},
 			
-			if (!success && !target.hasAbility('mirrorarmor')) {
-				delete move.selfSwitch;
+			onSwitchOut(pokemon) {
+				this.heal(pokemon.baseMaxhp/2, pokemon);
 			}
 		},
-		selfSwitch: true,
 		target: "normal",
 		type: "Cosmic",
 		desc: "Lowers target's Attack and Special Attack by 2. User Faints. User Revives with 50% Max HP the following turn.",
