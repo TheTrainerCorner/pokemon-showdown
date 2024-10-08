@@ -302,14 +302,14 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		pp: 0.625,
 		priority: 0,
 		flags: { heal: 1 },
-		boosts: {
-			atk: -2,
-			spa: -2,
-		},
 		onHit(target, source, move) {
-			source.addVolatile('rebirth');
+			const success = this.boost({atk: -2, spa: -2}, target, source);
 			source.sethp(1);
-			source.heal(source.baseMaxhp / 2);
+			this.heal(source.baseMaxhp / 2, source, source);
+			
+			if (!success && !target.hasAbility('mirrorarmor')) {
+				delete move.selfSwitch;
+			}
 		},
 		selfSwitch: true,
 		target: "normal",
