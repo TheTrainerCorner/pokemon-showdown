@@ -307,7 +307,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			spa: -2,
 		},
 		onHit(target, source, move) {
-			this.directDamage(source.hp - 1);
+			this.directDamage(source.hp - 1, source);
 			source.addVolatile('rebirth');
 		},
 		condition: {
