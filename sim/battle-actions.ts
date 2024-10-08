@@ -1818,6 +1818,13 @@ export class BattleActions {
 		if (pokemon.status === 'frb' && move.category === 'Special') {
 			baseDamage = this.battle.modify(baseDamage, 0.5);
 		}
+		if (pokemon.status === 'phc') {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true) && move.category === 'Physical') {
+				baseDamage = this.battle.modify(baseDamage, 0.5);
+			} else if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true) && move.category === 'Special') {
+				baseDamage = this.battle.modify(baseDamage, 0.5);
+			}
+		}
 
 		// Generation 5, but nothing later, sets damage to 1 before the final damage modifiers
 		if (this.battle.gen === 5 && !baseDamage) baseDamage = 1;
