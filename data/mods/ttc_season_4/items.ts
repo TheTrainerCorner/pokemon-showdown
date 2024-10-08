@@ -15,6 +15,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			this.add('-clearboost', pokemon, '[silent]');
 			pokemon.trySetStatus('phc', pokemon, effect);
 			pokemon.itemState.phoenixsFeather = true;
+			pokemon.useItem();
 			return false;
 		},
 		desc: "If user faints, item will revive them to 50% and inflicts the user with a Curse that does Damage over Time and lowers the Highest Offensive stat.",
