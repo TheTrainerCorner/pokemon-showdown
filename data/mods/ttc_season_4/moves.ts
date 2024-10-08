@@ -306,8 +306,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			atk: -2,
 			spa: -2,
 		},
-		onAfterHit(source, target, move) {
+		onHit(target, source, move) {
 			source.addVolatile('rebirth');
+		},
+		onAfterMove(source, target, move) {
 			source.faint();
 		},
 		condition: {
