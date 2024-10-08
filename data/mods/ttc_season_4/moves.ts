@@ -308,6 +308,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onHit(pokemon) {
 			pokemon.addVolatile('rebirth');
+			pokemon.faint();
 		},
 		condition: {
 			duration: 1,
@@ -322,7 +323,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				target.heal(target.baseMaxhp / 2);
 			},
 		},
-		selfdestruct: "ifHit",
 		target: "normal",
 		type: "Cosmic",
 		desc: "Lowers target's Attack and Special Attack by 2. User Faints. User Revives with 50% Max HP the following turn.",
