@@ -312,7 +312,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			onStart(pokemon) {
 				this.add('-singleturn', pokemon, 'move: Rebirth');
-				pokemon.sethp(1);
+				pokemon.damage(pokemon.hp - 1); // Should bring it to exactly 1 hopefully.
 				pokemon.switchFlag = true;
 			},
 			
