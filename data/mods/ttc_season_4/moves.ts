@@ -306,9 +306,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			atk: -2,
 			spa: -2,
 		},
-		onHit(pokemon) {
-			pokemon.addVolatile('rebirth');
-			pokemon.faint();
+		onAfterHit(source, target, move) {
+			source.addVolatile('rebirth');
+			source.faint();
 		},
 		condition: {
 			duration: 1,
