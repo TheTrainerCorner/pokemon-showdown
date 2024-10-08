@@ -308,11 +308,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		onHit(target, source, move) {
 			source.addVolatile('rebirth');
+			source.sethp(1);
 		},
 		condition: {
 			onStart(pokemon) {
 				this.add('-singleturn', pokemon, 'move: Rebirth');
-				pokemon.sethp(1);
 				pokemon.switchFlag = true;
 			},
 			
