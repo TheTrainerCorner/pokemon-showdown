@@ -156,7 +156,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		];
 
 		for (const pokemon of addToPokemon) {
-			this.modData('Learnsets', pokemon).learnset['synchronise'] = ['9M'];
+			this.modData('Learnsets', pokemon).learnset['synchronoise'] = ['9M'];
 		}
 		//#endregion
 		new ModifyPokemon('Shaymin', this)
