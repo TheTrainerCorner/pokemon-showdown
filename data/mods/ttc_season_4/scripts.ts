@@ -5,8 +5,8 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		//#region Cosmic Damage To
 		this.modData("TypeChart", "normal").damageTaken["Cosmic"] = 0;
-		this.modData("TypeChart", "fire").damageTaken["Cosmic"] = 0;
-		this.modData("TypeChart", "water").damageTaken["Cosmic"] = 0;
+		this.modData("TypeChart", "fire").damageTaken["Cosmic"] = 1;
+		this.modData("TypeChart", "water").damageTaken["Cosmic"] = 1;
 		this.modData("TypeChart", "grass").damageTaken["Cosmic"] = 0;
 		this.modData("TypeChart", "electric").damageTaken["Cosmic"] = 2;
 		this.modData("TypeChart", "ice").damageTaken["Cosmic"] = 2;

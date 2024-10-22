@@ -2,6 +2,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 	cosmic: {
 		damageTaken: {
 			Bug: 1,
+			Cosmic: 0,
 			Dark: 2,
 			Dragon: 0,
 			Electric: 2,
@@ -9,7 +10,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Fighting: 2,
 			Fire: 3,
 			Flying: 0,
-			Ghost: 2,
+			Ghost: 0,
 			Grass: 2,
 			Ground: 2,
 			Ice: 1,
@@ -17,7 +18,7 @@ export const TypeChart: {[k: string]: ModdedTypeData} = {
 			Poison: 1,
 			Psychic: 0,
 			Rock: 0,
-			Steel: 2,
+			Steel: 0,
 			Stellar: 0,
 			Water: 0,
 		},
