@@ -861,6 +861,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 29.5,
 		color: "Yellow",
 		prevo: "Sandshrew",
+		evos: ["Scaleslash"],
 		evoLevel: 22,
 		eggGroups: ["Field"],
 		otherFormes: ["Sandslash-Alola"],
