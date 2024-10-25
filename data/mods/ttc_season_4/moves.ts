@@ -1,79 +1,8 @@
 export const Moves: {[k: string]: ModdedMoveData} = {
 	//#region Cosmic Moves
-	aurorabeam: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	auroraveil: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	cometpunch: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	cosmicpower: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	doomdesire: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	dynamaxcannon: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	eternabeam: {
-		inherit: true,
-		self: undefined,
-		basePower: 145,
-		flags: { protect: 1, mirror: 1, cantusetwice: 1},
-		type: "Cosmic",
-		desc: undefined,
-		shortDesc: "Cannot be selected the turn after it's used.",
-	},
-	gravity: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	hyperspacefury: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	hyperspacehole: {
-		inherit: true,
-		basePower: 85,
-		type: "Cosmic",
-	},
-	jetpunch: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	luminacrash: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	lunarblessing: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	lunardance: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	meteorassault: {
-		inherit: true,
-		type: "Cosmic",
-		self: undefined,
-		flags: {protect: 1, mirror: 1, failinstruct: 1},
-		recoil: [1, 2],
-		desc: "1/2 Recoil Damage",
-		shortDesc: "1/2 Recoil Damage",
-	},
+
 	meteorbeam: {
 		inherit: true,
-		type: "Cosmic",
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
@@ -93,82 +22,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the terrain is Cosmic Terrain, the move completes in one turn.",
 		shortDesc: "Charges turn 1. Hits turn 2. No charge in Cosmic Terrain.",
 	},
-	meteormash: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	moonblast: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	moongeistbeam: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	moonlight: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	morningsun: {
-		inherit: true,
-		type: 'Cosmic',
-	},
-	photongeyser: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	prismaticlaser: {
-		inherit: true,
-		type: "Cosmic",
-		flags: { protect: 1, mirror: 1, cantusetwice: 1},
-		self: undefined,
-		basePower: 145,
-		desc: undefined,
-		shortDesc: "Cannot be selected the turn after it's used.",
-	},
-	signalbeam: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	spacialrend: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	sparklyswirl: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	sunsteelstrike: {
-		inherit: true,
-		type: "Cosmic",
-	},
 	swift: {
 		inherit: true,
-		type: "Cosmic",
 		onModifyPriority(priority, source, target, move) {
 			if (this.field.isTerrain('cosmicterrain')) {
 				return priority + 1;
 			}
 		},
-		basePower: 55,
-		desc: "If the current terrain is Cosmic Terrain, this move has its priority increased by 1.",
-		shortDesc: "User on Cosmic Terrain: +1 priority.",
-	},
-	terastarstorm: {
-		inherit: true,
-		type: "Cosmic",
-	},
-	vacuumwave: {
-		inherit: true,
-		type: "Cosmic",
-		overrideDefensiveStat: 'def',
-		basePower: 70,
-		desc: "Deals damage to the target based on its Defense instead of Special Defense. +1 Priority",
-		shortDesc: "Damages Target Base on Def; +1 Priority",
-	},
-	wish: {
-		inherit: true,
-		type: "Cosmic",
 	},
 	// New Moves
 	cosmicterrain: {
@@ -332,4 +192,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Lowers target's Attack and Special Attack by 2. User Faints. User Revives with 50% Max HP the following turn.",
 	},
 	//#endregion
+
+
 };

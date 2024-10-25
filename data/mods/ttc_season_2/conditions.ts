@@ -39,7 +39,7 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 			}
 		},
 	},
-	sunnday: {
+	sunnyday: {
 		inherit: true,
 		duration: 5,
 		durationCallback(source, effect) {
