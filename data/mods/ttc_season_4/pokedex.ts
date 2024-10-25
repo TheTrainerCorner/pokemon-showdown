@@ -44,4 +44,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		eggGroups: ["Field"],
 		tags: ["Fakemon"],
 	},
+	scaleslash: {
+		num: -4004,
+		name: "Scaleslash",
+		types: ["Ground", "Fairy"],
+		baseStats: {hp: 95, atk: 115, def: 130, spa: 55, spd: 75, spe: 105},
+		abilities: {0: "Rough Skin", H: "Spin Ability"},
+		heightm: 1.9,
+		weightkg: 46,
+		color: "Orange",
+		prevo: "Sandslash",
+		evoType: "other",
+		evoCondition: "Faint a dragon type pokemon and level-up",
+		eggGroups: ["Field"],
+		tags: ["Fakemon"],
+	}
 };
