@@ -7,7 +7,7 @@ export class ModifyMove {
 	constructor(name: string, dex: ModdedDex) {
 		this._name = name.includes(" ") ? name.toLowerCase().replace(' ', '') : name.toLowerCase();
 		this._dex = dex;
-		// console.log(this._name);
+		console.log(this._name);
 	}
 	public setAccuracy(accuracy: number) {
 		this._dex.modData('Moves', this._name).accuracy = accuracy;
