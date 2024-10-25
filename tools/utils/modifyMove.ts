@@ -9,9 +9,17 @@ export class ModifyMove {
 		this._dex = dex;
 		// console.log(this._name);
 	}
-
+	public setAccuracy(accuracy: number) {
+		this._dex.modData('Moves', this._name).accuracy = accuracy;
+		return this;
+	}
 	public setBasePower(basepower: number) {
 		this._dex.modData('Moves', this._name).basePower = basepower;
+		return this;
+	}
+
+	public setPowerPoint(pp: number) {
+		this._dex.modData('Moves', this._name).pp = pp;
 		return this;
 	}
 
@@ -33,6 +41,68 @@ export class ModifyMove {
 	public setRecoil(recoil: [number, number] | number | undefined) {
 		this._dex.modData('Moves', this._name).recoil = recoil;
 		return this;
+	}
+
+	public get secondaries() {
+		return new class ModifySecondaries {
+			constructor(private _name: string, private _dex: ModdedDex, private _move: ModifyMove) {}
+
+			setVolatileStatus(status: string, chance: number = 100) {
+				if (chance === 100) {
+					this._dex.modData('Moves', this._name).volatileStatus = status;
+				} else {
+					this._dex.modData('Moves', this._name).secondary = {
+						chance: chance,
+						volatileStatus: status
+					}
+				}
+				
+				return this;
+			}
+
+			setStatusCondition(status: string, chance: number = 100) {
+				if (chance === 100) {
+					this._dex.modData('Moves', this._name).status = status;
+				} else {
+					this._dex.modData('Moves', this._name).secondary = {
+						chance: chance,
+						status: status,
+					};
+				}
+
+				return this;
+			}
+
+			setSelfBoost(boosts: {[stat: string]: number}, chance: number = 100) {
+				if (chance === 100) {
+					this._dex.modData('Moves', this._name).self = {
+						boosts: boosts
+					}
+				} else {
+					this._dex.modData('Moves', this._name).self = {
+						chance: chance,
+						boosts: boosts
+					}
+				}
+
+				return this;
+			}
+
+			public setTargetBoosts(boosts: {[stat: string]: number}, chance: number = 100) {
+				if (chance === 100) {
+					this._dex.modData('Moves', this._name).boosts = boosts;
+				} else {
+					this._dex.modData('Moves', this._name).secondary = {
+						chance: chance,
+						boosts: boosts
+					};
+				}
+
+				return this;
+			}
+
+			public get move() { return this._move; }
+		} (this._name, this._dex, this);
 	}
 
 	public get flags() {

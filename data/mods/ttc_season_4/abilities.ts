@@ -12,6 +12,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	//#endregion
 
+	//#region Modify Abilities
+
 	baller: {
 		inherit: true,
 		onBasePower(basePower, attacker, defender, move) {
@@ -48,5 +50,36 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		desc: "The user's type changes to resist the oncoming move from the opposing pokemon. This ability can only be triggered once per switch in. (Protean Clause)",
 		shortDesc: "Changes type based on the oncoming move to resist. Once per switch in",
-	}
+	},
+	vitalspirit: {
+		inherit: true,
+		onDamagingHit(damage, target, source, effect) {
+			this.effectState.vitalSpirit = true;
+		},
+		onModifyDamage(damage, source, target, move) {
+			if (this.effectState.vitalSpirit) {
+				this.debug('Vital Spirit boost');
+				delete this.effectState.vitalSpirit;
+				return this.chainModify(1.5);
+			}
+		},
+		desc: "If hit by a physical move, the user's next attack will do 1.5x damage.",
+		shortDesc: "If hit by a phyiscal move, the user's next attack will do 1.5x damage.",
+	},
+
+	//#endregion
+
+	//#region New Abilities
+
+	sundance: {
+		onAfterMove(source, target, move) {
+			if (move.flags.dance) {
+				this.field.setWeather('sunnyday');
+			}
+		},
+		name: "Sun Dance",
+		shortDesc: "After performing a dancing move, Sunny Weather will occur!",
+	},
+
+	//#endregion
 };
