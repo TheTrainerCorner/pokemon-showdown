@@ -435,8 +435,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyMove('Ice Fang', this)
 			.setBasePower(70)
 			.setAccuracy(95);
-		new ModifyMove('Leak Lunge', this)
-			.setBasePower(65);
+		// new ModifyMove('Leak Lunge', this)
+		// 	.setBasePower(65);
 		new ModifyMove('Lunge', this)
 			.setAccuracy(95);
 		new ModifyMove('Skitter Smack', this)
