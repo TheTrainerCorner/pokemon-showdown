@@ -55,6 +55,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 9,
 		color: "Green",
 		evos: ["Harcrown"],
+		tags: ["Fakemon"],
 		eggGroups: ["Field"],
 	},
 	harcrown: {
@@ -70,6 +71,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		prevo: "Floralith",
 		evoLevel: 16,
 		evos: ["Demetrilith"],
+		tags: ["Fakemon"],
 		eggGroups: ['Field'],
 	},
 	demetrilith: {
@@ -84,6 +86,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Green",
 		prevo: "Harcrown",
 		evoLevel: 36,
+		tags: ["Fakemon"],
 		eggGroups: ["Field"],
 	},
 	scaleslash: {
