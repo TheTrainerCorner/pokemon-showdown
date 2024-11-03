@@ -43,6 +43,11 @@ export class ModifyMove {
 		return this;
 	}
 
+	public setPriority(priority: number = 0) {
+		this._dex.modData('Moves', this._name).priority = priority;
+		return this;
+	}
+
 	public get secondaries() {
 		return new class ModifySecondaries {
 			constructor(private _name: string, private _dex: ModdedDex, private _move: ModifyMove) {}

@@ -30,6 +30,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			}
 		},
 	},
+	lunardance: {
+		inherit: true,
+		terrain: 'cosmicterrain',
+		onTryHit: undefined,
+		selfdestruct: undefined,
+		slotCondition: undefined,
+		condition: undefined,
+		target: 'all',
+	},
 	// New Moves
 	cosmicterrain: {
 		num: -4001,
@@ -113,7 +122,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Cosmic",
 		contestType: "Tough",
 		desc: "This move combines Water in its type effectiveness against the target.",
-		shortDesc: "Combines Flying in its type effectiveness.",
+		shortDesc: "Combines Water in its type effectiveness.",
 	},
 	astroforce: {
 		num: -4004,
@@ -153,8 +162,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 100% chance to raise the user's Speed by 1 stage.",
 		shortDesc: "100% chance to raise the user's Speed by 1.",
 	},
-	rebirth: {
+	gravitationalslam: {
 		num: -4006,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Gravitational Slam",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1},
+		onBasePower(basePower, source) {
+			if (this.field.getPseudoWeather('gravity') && source.isGrounded()) {
+				return this.chainModify(1.5);
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Cosmic",
+	},
+	rebirth: {
+		num: -4007,
 		accuracy: true,
 		basePower: 0,
 		category: "Status",

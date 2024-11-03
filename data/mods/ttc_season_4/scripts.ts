@@ -25,108 +25,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("TypeChart", "fairy").damageTaken["Cosmic"] = 0;
 		//#endregion
 
-		//#region Change Moves types to Cosmic
-
-		let cosmicMoveList: string[] = [
-			'aurorabeam',
-			'auroraveil',
-			'cometpunch',
-			'cosmicpower',
-			'doomdesire',
-			'dynamaxcannon',
-			'eternabeam',
-			'gravity',
-			'hyperspacefury',
-			'hyperspacehole',
-			'jetpunch',
-			'luminacrash',
-			'lunarblessing',
-			'lunardance',
-			'meteorassault',
-			'meteorbeam',
-			'meteormash',
-			'moonblast',
-			'moongeistbeam',
-			'moonlight',
-			'morningsun',
-			'photongeyser',
-			'prismaticlaser',
-			'signalbeam',
-			'spacialrend',
-			'sparklyswirl',
-			'sunsteelstrike',
-			'swift',
-			'terastarstorm',
-			'vacuumwave',
-			'wish'
-		];
-
-		for (let move of cosmicMoveList) {
-			switch (move) {
-				case 'eternabeam':
-					new ModifyMove(move, this)
-						.setType('Cosmic')
-						.setBasePower(145)
-						.flags
-							.set({protect: 1, mirror: 1, cantusetwice: 1})
-						.move.descriptions
-							.setShortDesc("Cannot be selected the turn after it's used.")
-							.setLongDesc(undefined);
-					this.modData('Moves', move).self = undefined;
-					break;
-				case 'hyperspacehole':
-					new ModifyMove(move, this)
-						.setType('Cosmic')
-						.setBasePower(85);
-					break;
-				case 'meteorassault':
-					new ModifyMove(move, this)
-						.setType('Cosmic')
-						.flags
-							.set({ protect: 1, mirror: 1, failinstruct: 1})
-						.move.setRecoil([1, 2])
-						.descriptions
-							.setShortDesc('1/2 Recoil Damage')
-							.setLongDesc('1/2 Recoil Damage');
-					this.modData('Moves', move).self = undefined;
-					break;
-				case 'prismaticlaser':
-					new ModifyMove(move, this)
-						.setType('Cosmic')
-						.setBasePower(145)
-						.flags
-							.set({ protect: 1, mirror: 1, cantusetwice: 1})
-						.move.descriptions
-							.setShortDesc("Cannot be selected the turn after it's used.")
-							.setLongDesc(undefined);
-					this.modData('Moves', move).self = undefined;
-					break;
-				case 'swift':
-					new ModifyMove(move, this)
-						.setType('Cosmic')
-						.setBasePower(55)
-						.descriptions
-							.setLongDesc("If the current terrain is Cosmic Terrain, this move has its priority increased by 1.")
-							.setShortDesc("User on Cosmic Terrain: +1 priority.");
-					break;
-				case 'vacuumwave':
-					new ModifyMove(move, this)
-						.setType('Cosmic')
-						.setBasePower(70)
-						.setOverrideDefensiveStat('def')
-						.descriptions
-							.setLongDesc("Deals damage to ther target based on its Defense instead of Special Defense. +1 Priority.")
-							.setShortDesc("Damages Target Based on Def; +1 Priority.");
-					break;
-				default:
-					new ModifyMove(move, this)
-						.setType('Cosmic');
-					break;
-			}
-		}
-
-		//#endregion
-
 		//#region Pokemon Changes
 
 		//#region Gen 1
@@ -134,6 +32,15 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Blastoise', this)
 			.learnset
 				.remove('Hydro Steam');
+		new ModifyPokemon('Clefable', this)
+			.types
+				.setType('Cosmic', 'Fairy')
+			.pokemon.abilities
+				.setAbility0('Cosmic Surge')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Vacuum Wave')
+				.add('Stardust Trail');
 		new ModifyPokemon('Electrode-Hisui', this)
 			.learnset
 				.remove('Mist Ball');
@@ -145,9 +52,18 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility0('Venom Hielaman');
 
 		// NFE
+		new ModifyPokemon('Clefairy', this)
+			.types
+				.setType('Cosmic');
 		new ModifyPokemon('Wartortle', this)
 			.learnset
 				.remove('Hydro Steam');
+
+		// LC
+		new ModifyPokemon('Cleffa', this)
+			.types
+				.setType('Cosmic');
+
 		//#region Gen 2
 		
 		new ModifyPokemon('Bellossom', this)
@@ -161,15 +77,89 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#region Gen 3
 
+		// FE
+		new ModifyPokemon('Deoxys', this)
+			.types
+				.setType('Cosmic');
+		new ModifyPokemon('Deoxys-Attack', this)
+			.types
+				.setType('Cosmic');
+		new ModifyPokemon('Deoxys-Defense', this)
+			.types
+				.setType('Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Swift')
+				.add('Vacuum Wave');
+		new ModifyPokemon('Deoxys-Speed', this)
+			.types
+				.setType('Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Swift')
+				.add('Vacuum Wave');
+		new ModifyPokemon('Gardevoir', this)
+			.types
+				.setType('Psychic', 'Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance');
+		new ModifyPokemon('Jirachi', this)
+			.types
+				.setType('Cosmic', 'Psychic')
+			.pokemon.learnset
+				.add('Lunar Dance');
+		new ModifyPokemon('Lunatone', this)
+			.types
+				.setType('Water', 'Cosmic')
+			.pokemon.learnset
+				.add('Lunar Tides')
+				.add('Hydro Pump')
+				.add('Chilling Water')
+				.add('Water Pulse')
+				.add('Lunar Dance')
+				.add('Wish')
+				.add('Stardust Trail');
+		new ModifyPokemon('Solrock', this)
+			.types
+				.setType('Fire', 'Cosmic')
+			.pokemon.learnset
+				.add('Solar Flare')
+				.add('Astro Force')
+				.add('Sunsteel Strike')
+				.add('Lunar Dance')
+				.add('Stardust Trail')
+				.add('Wish')
+				.add('Blazing Torque')
+				.add('Raging Fury');
+
 		// NFE
+		new ModifyPokemon('Kirlia', this)
+			.types
+				.setType('Psychic', 'Cosmic');
 		new ModifyPokemon('Roselia', this)
 			.abilities
 				.setAbility0('Dazzling');
 
+		// LC
+		new ModifyPokemon('Ralts', this)
+			.types
+				.setType('Psychic', 'Cosmic');
+
 		//#endregion
 
 		//#region Gen 4
-
+		
+		new ModifyPokemon('Cresselia', this)
+			.types
+				.setType('Cosmic')
+			.pokemon.abilities
+				.setHiddenAbility('Cosmic Surge')
+			.pokemon.learnset
+				.add('Vacuum Wave')
+				.add('Stardust Trail');
+		new ModifyPokemon('Palkia', this)
+			.types
+				.setType('Cosmic', 'Dragon');
 		new ModifyPokemon('Roserade', this)
 			.abilities
 				.setAbility0('Dazzling');
@@ -185,9 +175,24 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#region Gen 5
 		
+		// FE
+		new ModifyPokemon('Beheeyem', this)
+			.types
+				.setType('Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Swift')
+				.add('Vacuum Wave');
 		new ModifyPokemon('Durant', this)
 			.learnset
 				.add('Lunge');
+		new ModifyPokemon('Gothitelle', this)
+			.types
+				.setType('Cosmic', 'Dark')
+			.pokemon.learnset
+				.add('Moonblast')
+				.add('Lunar Dance')
+				.add('Doom Desire');
 		new ModifyPokemon('Jellicent', this)
 			.baseStats
 				.setSPA(80)
@@ -195,6 +200,19 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Lilligant', this)
 			.abilities
 				.setHiddenAbility('Costar');
+		
+		// NFE
+		new ModifyPokemon('Gothorita', this)
+			.types
+				.setType('Cosmic', 'Dark');
+
+		// LC
+		new ModifyPokemon('Elgyem', this)
+			.types
+				.setType('Cosmic');
+		new ModifyPokemon('Gothita', this)
+			.types
+				.setType('Cosmic', 'Dark');
 
 		//#endregion
 
@@ -207,6 +225,22 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Florges', this)
 			.abilities
 				.setAbility0('Oblivious');
+		new ModifyPokemon('Hoopa', this)
+			.types
+				.setType('Cosmic', 'Ghost')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Stardust Trail')
+				.add('Astro Force')
+				.add('Vacuum Wave');
+		new ModifyPokemon('Hoopa-Unbound', this)
+			.types
+				.setType('Cosmic', 'Dark')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Stardust Trail')
+				.add('Astro Force')
+				.add('Vacuum Wave');
 
 		// NFE
 		new ModifyPokemon('Floette', this)
@@ -222,18 +256,68 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#region Gen 7
 
+		// FE
 		new ModifyPokemon('Comfey', this)
 			.abilities
 				.setAbility0('Aroma Veil');
+		new ModifyPokemon('Lunala', this)
+			.types
+				.setType('Cosmic', 'Ghost')
+			.pokemon.learnset
+				.add('Lunar Tides')
+				.add('Lunar Dance');
+		new ModifyPokemon('Minior', this)
+			.types
+				.setType('Rock', 'Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Meteor Assault')
+				.add('Stardust Trail');
+		new ModifyPokemon('Necrozma', this)
+			.types
+				.setType('Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Swift')
+				.add('Vacuum Wave')
+				.add('Astro Force')
+				.add('Stardust Trail');
+		new ModifyPokemon('Nihilego', this)
+			.types
+				.setType('Cosmic', 'Poison')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Moonblast')
+				.add('Vacuum Wave')
+				.add('Swift')
+				.add('Gravity')
+				.add('Stardust Trail');
 		new ModifyPokemon('Passimian', this)
 			.learnset
 				.add('High Jump Kick')
 				.add('Rolling Kick');
+		new ModifyPokemon('Solgaleo', this)
+			.types
+				.setType('Cosmic', 'Steel') // Subject to change
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Solar Flare');
+
+		// NFE
+		new ModifyPokemon('Cosmoem', this)
+			.types
+				.setType('Cosmic');
+
+		// LC
+		new ModifyPokemon('Cosmog', this)
+			.types
+				.setType('Cosmic');
 
 		//#endregion
 
 		//#region Gen 8
 
+		// FE
 		new ModifyPokemon('Boltund', this)
 			.learnset
 				.add('Supercell Slam')
@@ -243,14 +327,35 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Dracozolt', this)
 			.learnset
 				.add('Supercell Slam');
+		new ModifyPokemon('Eternatus', this)
+			.types
+				.setType('Poison', 'Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance');
 		new ModifyPokemon('Inteleon', this)
 			.learnset
 				.remove('Hydro Steam');
+		new ModifyPokemon('Orbeetle', this)
+			.types
+				.setType('Bug', 'Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Swift')
+				.add('Gravity')
+				.add('Signal Beam')
+				.add('Vacuum Wave')
+				.add('Moonblast');
+
+		// NFE
+		new ModifyPokemon('Dottler', this)
+			.types
+				.setType('Bug', 'Cosmic');
 
 		//#endregion
 
 		//#region Gen 9
 
+		// FE
 		new ModifyPokemon('BruteBonnet', this)
 			.baseStats
 				.setHP(115)
@@ -263,6 +368,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(50)
 			.pokemon.learnset
 				.remove('Meteor Beam');
+		new ModifyPokemon('Espathra', this)
+			.types
+				.setType('Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance');
 		new ModifyPokemon('FlutterMane', this)
 			.baseStats
 				.setHP(69)
@@ -271,6 +381,21 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(121)
 				.setSPD(121)
 				.setSPE(121);
+		new ModifyPokemon('IronMoth', this)
+			.types
+				.setType('Fire', 'Cosmic')
+			.pokemon.learnset
+				.add('Solar Flare')
+				.add('Swift')
+				.add('Lunar Dance');
+		new ModifyPokemon('Palafin-Hero', this)
+			.types
+				.setType('Water', 'Cosmic')
+			.pokemon.learnset
+				.add('Astro Force')
+				.add('Lunar Tides')
+				.add('Stardust Trail')
+				.add('Lunar Dance');
 		new ModifyPokemon('SlitherWing', this)
 			.baseStats
 				.setSPA(59)
@@ -279,6 +404,14 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(135)
 				.setSPE(113);
+		new ModifyPokemon('Terapagos', this)
+			.types
+				.setType('Normal', 'Cosmic');
+
+		// NFE
+		new ModifyPokemon('Flittle', this)
+			.types
+				.setType('Cosmic');
 
 		//#endregion
 
@@ -291,11 +424,24 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Sheer Cold')
 				.add('Encore')
 				.add('Taunt');
+		new ModifyPokemon('Cerinyx', this)
+			.types
+				.setType('Cosmic', 'Dark')
+			.pokemon.learnset
+				.add('Astro Force')
+				.add('Swift');
 		new ModifyPokemon('Crustocean', this)
 			.learnset
 				.add('Amnesia')
 				.add('Grassy Terrain')
 				.add('Spikes');
+		new ModifyPokemon('Jirachi-NorthStar', this)
+			.types
+				.setType('Ice', 'Cosmic')
+			.pokemon.learnset
+				.add('Stardust Trail')
+				.add('Lunar Dance')
+				.add('Swift');
 		new ModifyPokemon('Farfetchd-Mega', this)
 			.baseStats
 				.setDEF(84)
@@ -303,120 +449,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(113);
 
 		//#endregion
-
-		new ModifyPokemon('Cleffa', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Clefairy', this)
-			.types
-				.setType('Cosmic', 'Fairy');
-		new ModifyPokemon('Clefable', this)
-			.types
-				.setType('Cosmic', 'Fairy');
-		new ModifyPokemon('Ralts', this)
-			.types
-				.setType('Cosmic', 'Psychic');
-		new ModifyPokemon('Kirlia', this)
-			.types
-				.setType('Cosmic', 'Psychic');
-		new ModifyPokemon('Gardevoir', this)
-			.types
-				.setType('Cosmic', 'Psychic');
-		new ModifyPokemon('Lunatone', this)
-			.types
-				.setType('Cosmic', 'Water');
-		new ModifyPokemon('Solrock', this)
-			.types
-				.setType('Cosmic', 'Fire');
-		new ModifyPokemon('Jirachi', this)
-			.types
-				.setType('Cosmic', 'Psychic');
-		new ModifyPokemon('Deoxys', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('DeoxysAttack', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('DeoxysDefense', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('DeoxysSpeed', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Palkia', this)
-			.types
-				.setType('Cosmic', 'Dragon');
-		new ModifyPokemon('Cresselia', this)
-			.types
-				.setType('Cosmic')
-			.pokemon.abilities
-				.setHiddenAbility('Cosmic Surge');
-		new ModifyPokemon('Gothita', this)
-			.types
-				.setType('Cosmic', 'Dark');
-		new ModifyPokemon('Gothorita', this)
-			.types
-				.setType('Cosmic', 'Dark');
-		new ModifyPokemon('Gothitelle', this)
-			.types
-				.setType('Cosmic', 'Dark');
-		new ModifyPokemon('Elgyem', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Beheeyem', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Hoopa', this)
-			.types
-				.setType('Cosmic', 'Ghost');
-		new ModifyPokemon('Hoopa-Unbound', this)
-			.types
-				.setType('Cosmic', 'Dark');
-		new ModifyPokemon('Minior', this)
-			.types
-				.setType('Cosmic', 'Rock');
-		new ModifyPokemon('Cosmog', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Cosmoem', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Solgaleo', this)
-			.types
-				.setType('Cosmic', 'Psychic')
-		new ModifyPokemon('Lunala', this)
-			.types
-				.setType('Cosmic', 'Ghost');
-		new ModifyPokemon('Necrozma', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Nihilego', this)
-			.types
-				.setType('Comsic', 'Poison');
-		new ModifyPokemon('Dottler', this)
-			.types
-				.setType('Bug', 'Cosmic');
-		new ModifyPokemon('Orbeetle', this)
-			.types
-				.setType('Bug', 'Cosmic');
-		new ModifyPokemon('Eternatus', this)
-			.types
-				.setType('Cosmic', 'Poison');
-		new ModifyPokemon('Flittle', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('Espathra', this)
-			.types
-				.setType('Cosmic');
-		new ModifyPokemon('PalafinHero', this)
-			.types
-				.setType('Cosmic', 'Water');
-		new ModifyPokemon('IronMoth', this)
-			.types
-				.setType('Cosmic', 'Fire');
-		new ModifyPokemon('Terapagos', this)
-			.types
-				.setType('Cosmic', 'Normal');
 
 		//#endregion
 		//#endregion
@@ -427,21 +459,34 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		new ModifyMove('Ceaseless Edge', this)
 			.setBasePower(60);
+		new ModifyMove('Comet Punch', this)
+			.setType('Cosmic');
 		new ModifyMove('Cut', this)
 			.setAccuracy(95);
 		new ModifyMove('Fire Fang', this)
 			.setBasePower(70)
 			.setAccuracy(95);
+		new ModifyMove('Hyperspace Fury', this)
+			.setType('Cosmic');
 		new ModifyMove('Ice Fang', this)
 			.setBasePower(70)
 			.setAccuracy(95);
+		new ModifyMove('Jet Punch', this)
+			.setType('Cosmic');
 		// new ModifyMove('Leak Lunge', this)
 		// 	.setBasePower(65);
 		new ModifyMove('Lunge', this)
 			.setAccuracy(95);
+		new ModifyMove('Meteor Assault', this)
+			.setType('Cosmic')
+			.setRecoil([1, 2]);
+		new ModifyMove('Meteor Mash', this)
+			.setType('Cosmic');
 		new ModifyMove('Skitter Smack', this)
 			.setBasePower(80)
 			.setAccuracy(95);
+		new ModifyMove('Sunsteel Strike', this)
+			.setType('Cosmic');
 		new ModifyMove('Thunder Fang', this)
 			.setBasePower(70)
 			.setAccuracy(95);
@@ -487,16 +532,77 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyMove('Extrasensory', this)
 			.setAccuracy(90);
 
+		new ModifyMove('Doom Desire', this)
+			.setType('Cosmic');
+		new ModifyMove('Dynamax Cannon', this)
+			.setType('Cosmic');
+		new ModifyMove('Ecliptic Punishment', this)
+			.setType('Cosmic');
+		new ModifyMove('Eternabeam', this)
+			.setType('Cosmic')
+			.flags
+				.add('cantusetwice')
+			.move.setBasePower(145)
+			.descriptions
+				.setLongDesc()
+				.setShortDesc("Can't be used 2 times in a row.");
+		new ModifyMove('Hyperspace Hole', this)
+			.setType('Cosmic')
+			.setBasePower(85);
+		new ModifyMove('Lumina Crash', this)
+			.setType('Cosmic')
+			.setBasePower(70);
+		new ModifyMove('Meteor Beam', this)
+			.setType('Cosmic');
+		new ModifyMove('Moonblast', this)
+			.setType('Cosmic');
+		new ModifyMove('Moongeist Beam', this)
+			.setType('Cosmic');
+		new ModifyMove('Photon Geyser', this)
+			.setType('Cosmic');
+		new ModifyMove('Prismatic Laser', this)
+			.setType('Cosmic')
+			.flags
+				.add('cantusetwice')
+			.move.setBasePower(145);
+		new ModifyMove('Signal Beam', this)
+			.setType('Cosmic');
+		new ModifyMove('Swift', this)
+			.setType('Cosmic');
+		new ModifyMove('Tera Starstorm', this)
+			.setType('Cosmic');
+		new ModifyMove('Vacuum Wave', this)
+			.setType('Cosmic')
+			.setOverrideDefensiveStat('def')
+			.setBasePower(70)
+			.setPriority(0)
+			.descriptions
+				.setLongDesc()
+				.setShortDesc('Damage Target based on Defense');
+
 		//#endregion
 
 		//#region Status Moves
 
 		new ModifyMove('Cosmic Power', this)
+			.setType('Cosmic')
 			.setPowerPoint(8);
-
+		new ModifyMove('Gravity', this)
+			.setType('Cosmic');
+		new ModifyMove('Lunar Blessing', this)
+			.setType('Cosmic');
+		new ModifyMove('Lunar Dance', this)
+			.setType('Cosmic');
+		new ModifyMove('Moonlight', this)
+			.setType('Cosmic');
+		new ModifyMove('Morning Sun', this)
+			.setType('Cosmic');
+		new ModifyMove('Wish', this)
+			.setType('Cosmic');
 		//#endregion
 		
 		
+		//#endregion
 		//#endregion
 
 		//#region Field Support
