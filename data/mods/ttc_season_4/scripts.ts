@@ -298,7 +298,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Rolling Kick');
 		new ModifyPokemon('Solgaleo', this)
 			.types
-				.setType('Cosmic', 'Steel') // Subject to change
+				.setType('Cosmic', 'Psychic') // Subject to change
 			.pokemon.learnset
 				.add('Lunar Dance')
 				.add('Solar Flare');
