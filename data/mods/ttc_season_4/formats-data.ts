@@ -1,4 +1,20 @@
 export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
+	hooh: {
+		inherit: true,
+		tier: 'OU',
+	},
+	lugia: {
+		inherit: true,
+		tier: 'OU',
+	},
+	lunala: {
+		inherit: true,
+		tier: 'OU',
+	},
+	solgaleo: {
+		inherit: true,
+		tier: "OU",
+	},
 	infrochick: {
 		isNonstandard: "Past",
 		tier: "LC",
