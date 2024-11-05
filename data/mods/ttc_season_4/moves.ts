@@ -218,6 +218,58 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Cosmic",
 		desc: "Lowers target's Attack and Special Attack by 2. User Faints. User Revives with 50% Max HP the following turn.",
 	},
+	flowerveil: {
+		num: -4008,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: 'Flower Veil',
+		pp: 20,
+		priority: 0,
+		flags: { snatch: 1 },
+		sideCondition: "flowerveil",
+		onTry() {
+			return this.field.isWeather(['sunnyday']);
+		},
+		condition: {
+			duration: 5,
+			durationCallback(target, source, effect) {
+				if (source?.hasItem('lightclay')) {
+					return 8;
+				}
+				return 5;
+			},
+			onAnyModifyDamage(damage, source, target, move) {
+				if (target !== source && this.effectState.target.hasAlly(target)) {
+					if ((target.side.getSideCondition('reflect') && this.getCategory(move) === "Physical") ||
+							(target.side.getSideCondition('lightscreen') && this.getCategory(move) === "Special")) {
+								return;
+							}
+					if (!target.getMoveHitData(move).crit && !move.infiltrates) {
+						this.debug('Flower Veil weaken');
+						if (this.activePerHalf > 1) return this.chainModify([2732, 4096]);
+						return this.chainModify(0.5);
+					}
+				}
+			},
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Flower Veil');
+			},
+			onSideResidualOrder: 26,
+			onSideResidualSubOrder: 10,
+			onSideEnd(side) {
+				this.add('-sideend', side, 'move: Flower Veil');
+			}
+		},
+		secondary: null,
+		target: "allySide",
+		type: "Grass",
+		zMove: { boost: {spe: 1}},
+		contestType: "Beautiful",
+		desc: "For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Sun.",
+		shortDesc: "For 5 turns, damage allies halved. Sun only.",
+	},
+
 	//#endregion
 
 	//#region Field Support

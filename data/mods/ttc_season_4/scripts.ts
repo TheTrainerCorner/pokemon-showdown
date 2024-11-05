@@ -69,9 +69,32 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Bellossom', this)
 			.abilities
 				.setAbility1('Sun Dance');
+		new ModifyPokemon('Ho-Oh', this)
+			.abilities
+				.setHiddenAbility('Stalwart')
+			.pokemon.baseStats
+				.setATK(120)
+				.setSPD(134)
+				.setSPE(80)
+			.pokemon.learnset
+				.remove('Roost');
+		new ModifyPokemon('Lugia', this)
+			.abilities
+				.setHiddenAbility('Rain Dish')
+			.pokemon.baseStats
+				.setDEF(120)
+				.setSPD(134)
+				.setSPE(100)
+			.pokemon.learnset
+				.remove('Roost');
 		new ModifyPokemon('Politoed', this)
 			.types
 				.setType('Water', 'Normal');
+		
+		// NFE
+		new ModifyPokemon('Sneasel', this)
+			.abilities
+				.setAbility0('Tangled Feet');
 
 		//#endregion
 
@@ -119,6 +142,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Lunar Dance')
 				.add('Wish')
 				.add('Stardust Trail');
+		new ModifyPokemon('Kecleon', this)
+			.baseStats
+				.setHP(95)
+				.setATK(110)
+				.setDEF(85);
 		new ModifyPokemon('Solrock', this)
 			.types
 				.setType('Fire', 'Cosmic')
@@ -170,6 +198,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove('Bolt Strike')
 				.remove('Volt Tackle')
 				.remove('Fusion Bolt');
+		new ModifyPokemon('Weavile', this)
+			.abilities
+				.setAbility0('Tangled Feet');
 
 		//#endregion
 
@@ -202,6 +233,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Costar');
 		
 		// NFE
+		new ModifyPokemon('Bisharp', this)
+			.abilities
+				.setHiddenAbility('Ruy Lopez');
 		new ModifyPokemon('Gothorita', this)
 			.types
 				.setType('Cosmic', 'Dark');
@@ -263,7 +297,13 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Lunala', this)
 			.types
 				.setType('Cosmic', 'Ghost')
+			.pokemon.baseStats
+				.setHP(127)
+				.setATK(103)
+				.setDEF(74)
+				.setSPD(102)
 			.pokemon.learnset
+				.remove('Cosmic Power')
 				.add('Lunar Tides')
 				.add('Lunar Dance');
 		new ModifyPokemon('Minior', this)
@@ -299,7 +339,13 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Solgaleo', this)
 			.types
 				.setType('Cosmic', 'Psychic') // Subject to change
+			.pokemon.baseStats
+				.setHP(127)
+				.setDEF(102)
+				.setSPA(103)
+				.setSPD(74)
 			.pokemon.learnset
+				.remove('Cosmic Power')
 				.add('Lunar Dance')
 				.add('Solar Flare');
 
@@ -324,6 +370,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Zing Zap')
 				.remove('Bolt Strike')
 				.remove('Volt Tackle');
+		new ModifyPokemon('Corviknight', this)
+			.abilities
+				.setAbility0('Steadfast');
 		new ModifyPokemon('Dracozolt', this)
 			.learnset
 				.add('Supercell Slam');
@@ -332,6 +381,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Poison', 'Cosmic')
 			.pokemon.learnset
 				.add('Lunar Dance');
+		new ModifyPokemon('Flapple', this)
+			.abilities
+				.setHiddenAbility('Pressure');
 		new ModifyPokemon('Inteleon', this)
 			.learnset
 				.remove('Hydro Steam');

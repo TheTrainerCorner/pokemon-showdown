@@ -51,6 +51,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "The user's type changes to resist the oncoming move from the opposing pokemon. This ability can only be triggered once per switch in. (Protean Clause)",
 		shortDesc: "Changes type based on the oncoming move to resist. Once per switch in",
 	},
+	pressure: {
+		inherit: true,
+		onStart(pokemon) {
+			this.field.addPseudoWeather('gravity');
+		},
+		onDeductPP: undefined,
+		desc: undefined,
+		shortDesc: "On Switch-In, sets up Gravity",
+	},
 	vitalspirit: {
 		inherit: true,
 		onDamagingHit(damage, target, source, effect) {
@@ -79,6 +88,30 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		name: "Sun Dance",
 		shortDesc: "After performing a dancing move, Sunny Weather will occur!",
+	},
+
+	ruylopez: {
+		onSourceDamagingHit(damage, target, source, move) {
+			const stats: BoostID[] = [];
+			let stat: BoostID;
+			for (stat in target.boosts) {
+				if (target.boosts[stat] < 6 && stat !== 'evasion' && stat !== 'accuracy') {
+					stats.push(stat);
+				}
+			}
+
+			if (stats.length) {
+				const randomStat = this.sample(stats);
+				const boost: SparseBoostsTable = {};
+				boost[randomStat] = -1;
+				this.boost(boost, target);
+			} else {
+				return false;
+			}
+		},
+		name: "Ruy Lopez",
+		desc: "When this pokemon attacks, lowers one random stat by 1 stage. Cannot be evasion or accuracy",
+		shortDesc: "When this pokemon attacks, lowers one random stat of the opponent by 1 stage."
 	},
 
 	//#endregion
