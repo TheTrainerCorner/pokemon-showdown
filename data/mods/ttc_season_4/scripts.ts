@@ -620,7 +620,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyMove('Signal Beam', this)
 			.setType('Cosmic');
 		new ModifyMove('Swift', this)
-			.setType('Cosmic');
+			.setType('Cosmic')
+			.setBasePower(55)
+			.descriptions
+				.setLongDesc(undefined)
+				.setShortDesc("+1 Priority in Cosmic Terrain");
 		new ModifyMove('Tera Starstorm', this)
 			.setType('Cosmic');
 		new ModifyMove('Vacuum Wave', this)
