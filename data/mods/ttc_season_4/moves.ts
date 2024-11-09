@@ -269,7 +269,109 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Sun.",
 		shortDesc: "For 5 turns, damage allies halved. Sun only.",
 	},
+	royalpledge: {
+		num: -4009,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Royal Pledge",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		sideCondition: "royalpledge",
+		condition: {
+			duration: 4,
+			name: "Royal's Garden",
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Royal Pledge');
+			},
+			onResidualOrder: 2,
+			onResidualSubOrder: 26,
+			onResidual(target, source, effect) {
+				if (target.hasType('Grass')) return;
 
+				this.damage(target.maxhp / 16, target);
+			},
+			onSideEnd(side) {
+				this.add('-sideend', side, 'move: Royal Pledge');
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		desc: "Creates the Royal's Garden on the target's side of the field for 4 turns. This damages all non-Grass type Pokemon on that side of the field for 1/16 of their maximum HP at the end of each turn. Targets are not trapped.",
+		shortDesc: "Royal's Garden;Damages Foe's Non-Grass Type for 1/16 of Max HP; Does not Trap",
+	},
+	ushiromotare: {
+		num: -4010,
+		accuracy: 90,
+		basePower: 25,
+		name: "Ushiromotare",
+		category: "Physical",
+		pp: 5,
+		priority: -6,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		multihit: 3,
+		multiaccuracy: true,
+		secondary: {
+			chance: 30,
+			onHit(target, source, move) {
+				switch(move.hit) {
+					case 1:
+						this.boost({ spe: -1}, target);
+						break;
+					case 2:
+						if (this.runEvent('DragOut', target, source, move)) {
+							target.forceSwitchFlag = true;
+						}
+						break;
+					case 3:
+						this.boost({ atk: 1}, source);
+						break;
+				}
+			}
+		},
+		target: "normal",
+		type: "Fighting",
+		desc: "Hits target 3 times, First Hit has a 30% chance to slow the opponent by 1 stage, Hit 2 has a 30% chance to switch out the opponent & Hit 3 has a 30% chance to boost the user's attack by 1 stage. This move always goes last.",
+		shortDesc: "Hits 3 Times; 30% on Each hit can do the following in order of hit, -1 Spd to Target; Force switch out the Target; +1 Atk to User",
+	},
+	bushidoscode: {
+		num: -4011,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Bushido's Code",
+		pp: 0.625,
+		priority: 0,
+		flags: { snatch: 1},
+		volatileStatus: 'bushidoscode',
+		condition: {
+			onStart(target, source, effect) {
+				if (target.volatiles['dragoncheer']) return false;
+				this.add('-start', target, "move: Bushido's Code");
+			},
+			onModifyCritRatio(critRatio) {
+				return critRatio + 2;
+			},
+			onTrapPokemon(pokemon) {
+				pokemon.tryTrap();
+			},
+			onBasePower(basePower, source, target, move) {
+				if (source.speciesState.bushidosCode) return;
+				// Boost the power for one turn to 1.3x for damaging move
+				if (move.basePower !== 0) {
+					source.speciesState.bushidosCode = true;
+					this.debug("Bushido's Code buffed");
+					return this.modify(basePower, 1.3);
+				}
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Steel",
+		desc: "Gives the user +2 to their crit rate, and next attacking mvoe used by the user has a 1.3x damage boost. This user cannot swap out of battle."
+	},
 	//#endregion
 
 	//#region Field Support

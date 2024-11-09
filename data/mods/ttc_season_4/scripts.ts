@@ -217,6 +217,18 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Durant', this)
 			.learnset
 				.add('Lunge');
+		new ModifyPokemon('Emboar', this)
+			.abilities
+				.setHiddenAbility('Analytic')
+			.pokemon.baseStats
+				.setHP(126)
+				.setDEF(94)
+				.setSPA(99)
+				.setSPD(94)
+				.setSPE(24)
+			.pokemon.learnset
+				.add('Circle Throw')
+				.add('Ushiromontare');
 		new ModifyPokemon('Gothitelle', this)
 			.types
 				.setType('Cosmic', 'Dark')
@@ -231,6 +243,35 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Lilligant', this)
 			.abilities
 				.setHiddenAbility('Costar');
+		new ModifyPokemon('Samurott', this)
+			.types
+				.setType('Water', 'Steel')
+			.pokemon.baseStats
+				.setATK(122)
+				.setSPA(120)
+				.setSPE(83)
+			.pokemon.learnset
+				.add('Iron Head')
+				.add('Metal Claw')
+				.add('Tachyon Cutter')
+				.add("Bushidos Code");
+		new ModifyPokemon('Serperior', this)
+			.types
+				.setType('Grass', 'Normal')
+			.pokemon.baseStats
+				.setATK(85)
+				.setSPA(87)
+				.setSPD(105)
+			.pokemon.learnset
+				.add('Shed Tail')
+				.add('Tri Attack')
+				.add('Razor Wind')
+				.add('Weather Ball')
+				.add('Extreme Speed')
+				.add('Tail Slap')
+				.add('Poison Tail')
+				.add('Solar Blade')
+				.add('Royal Pledge');
 		
 		// NFE
 		new ModifyPokemon('Bisharp', this)
