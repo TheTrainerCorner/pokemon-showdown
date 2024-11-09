@@ -228,7 +228,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(24)
 			.pokemon.learnset
 				.add('Circle Throw')
-				.add('Ushiromontare');
+				.add('Ushiromotare');
 		new ModifyPokemon('Gothitelle', this)
 			.types
 				.setType('Cosmic', 'Dark')
