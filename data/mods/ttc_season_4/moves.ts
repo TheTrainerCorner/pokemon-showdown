@@ -370,7 +370,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		secondary: null,
 		target: "self",
 		type: "Steel",
-		desc: "Gives the user +2 to their crit rate, and next attacking mvoe used by the user has a 1.3x damage boost. This user cannot swap out of battle."
+		desc: "Gives the user +2 to their crit rate, and next attacking move used by the user has a 1.3x damage boost. This user cannot swap out of battle.",
+		shortDesc: "Gives Status to user; +2 to Crit Rate; Next attacking move does 1.3x more damage; Cannot switch out",
 	},
 	//#endregion
 
