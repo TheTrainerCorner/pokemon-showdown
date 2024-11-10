@@ -71,7 +71,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility1('Sun Dance');
 		new ModifyPokemon('Ho-Oh', this)
 			.abilities
-				.setHiddenAbility('Stalwart')
+				.setHiddenAbility('Air Lock')
 			.pokemon.baseStats
 				.setATK(120)
 				.setSPD(134)
@@ -103,24 +103,20 @@ export const Scripts: ModdedBattleScriptsData = {
 		// FE
 		new ModifyPokemon('Deoxys', this)
 			.types
-				.setType('Cosmic');
+				.setType('Cosmic')
+			.pokemon.learnset
+				.add('Lunar Dance')
+				.add('Swift')
+				.add('Vacuum Wave');
 		new ModifyPokemon('Deoxys-Attack', this)
 			.types
 				.setType('Cosmic');
 		new ModifyPokemon('Deoxys-Defense', this)
 			.types
-				.setType('Cosmic')
-			.pokemon.learnset
-				.add('Lunar Dance')
-				.add('Swift')
-				.add('Vacuum Wave');
+				.setType('Cosmic');
 		new ModifyPokemon('Deoxys-Speed', this)
 			.types
-				.setType('Cosmic')
-			.pokemon.learnset
-				.add('Lunar Dance')
-				.add('Swift')
-				.add('Vacuum Wave');
+				.setType('Cosmic');
 		new ModifyPokemon('Gardevoir', this)
 			.types
 				.setType('Psychic', 'Cosmic')
@@ -197,7 +193,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Zing Zap')
 				.remove('Bolt Strike')
 				.remove('Volt Tackle')
-				.remove('Fusion Bolt');
+				.remove('Fusion Bolt')
+				.remove('Extreme Speed');
 		new ModifyPokemon('Weavile', this)
 			.abilities
 				.setAbility0('Tangled Feet');
