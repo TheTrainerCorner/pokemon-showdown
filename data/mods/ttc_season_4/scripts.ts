@@ -597,8 +597,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.setAccuracy(95);
 		new ModifyMove('Jet Punch', this)
 			.setType('Cosmic');
-		// new ModifyMove('Leak Lunge', this)
-		// 	.setBasePower(65);
+		new ModifyMove('Leek Lunge', this)
+			.setBasePower(65);
 		new ModifyMove('Lunge', this)
 			.setAccuracy(95);
 		new ModifyMove('Meteor Assault', this)
