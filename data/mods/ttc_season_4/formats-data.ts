@@ -39,4 +39,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Past",
 		tier: "OU",
 	},
+	ironexplorer: {
+		isNonstandard: "Past",
+		tier: "OU",
+	},
 };

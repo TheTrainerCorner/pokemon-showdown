@@ -103,5 +103,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		evoCondition: "Faint a dragon type pokemon and level-up",
 		eggGroups: ["Field"],
 		tags: ["Fakemon"],
-	}
+	},
+	ironexplorer: {
+		num: -4008,
+		name: "Iron Explorer",
+		types: ['Cosmic', 'Ghost'],
+		baseStats: { hp: 76, atk: 96, def: 94, spa: 116, spd: 54, spe: 144 },
+		abilities: { 0: 'Quark Drive', H: 'Clear Body'},
+		heightm: 3,
+		weightkg: 50,
+		color: "Green",
+		tags: ['Fakemon', 'Paradox'],
+		eggGroups: ["Undiscovered"],
+	},
 };

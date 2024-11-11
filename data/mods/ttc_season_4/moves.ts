@@ -373,6 +373,30 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Gives the user +2 to their crit rate, and next attacking move used by the user has a 1.3x damage boost. This user cannot swap out of battle.",
 		shortDesc: "Gives Status to user; +2 to Crit Rate; Next attacking move does 1.3x more damage; Cannot switch out",
 	},
+	liftoff: {
+		num: -800,
+		accuracy: 100,
+		basePower: 110,
+		category: "Physical",
+		name: "Lift Off",
+		pp: 10,
+		priority: 0,
+		flags: { charge: 1, protect: 1, mirror: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) return;
+
+			this.add('-prepare', attacker, move.name);
+			this.boost({atk: 1}, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) return;
+
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Cosmic"
+	},
+
 	//#endregion
 
 	//#region Field Support
