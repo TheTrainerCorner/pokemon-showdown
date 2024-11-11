@@ -1,5 +1,6 @@
 import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
 import { ModifyMove } from '../../../tools/utils/modifyMove';
+import { Abilities } from '../fullpotential/abilities';
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: "ttc_season_3",
@@ -69,6 +70,20 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Bellossom', this)
 			.abilities
 				.setAbility1('Sun Dance');
+		new ModifyPokemon('Feraligatr', this)
+			.types
+				.setType('Water', 'Poison')
+			.pokemon.abilities
+				.setAbility1('Strong Jaw')
+			.pokemon.baseStats
+				.setATK(115)
+			.pokemon.learnset
+				.add('Cross Poison')
+				.add('Poison Fang')
+				.add('Poison Jab')
+				.add('Mortal Spin')
+				.add('Belch')
+				.add('Hyper Fang');
 		new ModifyPokemon('Ho-Oh', this)
 			.abilities
 				.setHiddenAbility('Air Lock')
@@ -87,9 +102,28 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(100)
 			.pokemon.learnset
 				.remove('Roost');
+		new ModifyPokemon('Meganium', this)
+			.baseStats
+				.setHP(105)
+				.setSPA(110)
+			.pokemon.learnset
+				.add('Dazzling Gleam');
 		new ModifyPokemon('Politoed', this)
 			.types
 				.setType('Water', 'Normal');
+		new ModifyPokemon('Typhlosion', this)
+			.types
+				.setType('Fire', 'Dark')
+			.pokemon.baseStats
+				.setATK(107)
+				.setSPA(107)
+			.pokemon.learnset
+				.add('Dark Pulse')
+				.add('Darkest Lariat')
+				.add('Fiery Wrath')
+				.add('Foul Play')
+				.add('Pursuit')
+				.add('Snarl');
 		
 		// NFE
 		new ModifyPokemon('Sneasel', this)
