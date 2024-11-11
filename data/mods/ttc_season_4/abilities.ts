@@ -113,6 +113,62 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "When this pokemon attacks, lowers one random stat by 1 stage. Cannot be evasion or accuracy",
 		shortDesc: "When this pokemon attacks, lowers one random stat of the opponent by 1 stage."
 	},
+	gatherersbounty: {
+		// Handles the berry gain chance
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (!pokemon.hp || pokemon.item) return;
+			if (!this.randomChance(1, 4)) return;
+
+			// True = Sitrus; False = Starf Berry
+			let berryChance = this.randomChance(1, 2);
+			let berry;
+			if (berryChance) berry = this.dex.items.get('sitrusberry');
+			else berry = this.dex.items.get('starfberry');
+
+			pokemon.setItem(berry);
+			this.add('-item', pokemon, pokemon.getItem(), "[from] ability: Gatherer's Bounty");
+		},
+
+		// Handles the double effect part
+		onTryHeal(damage, target, source, effect) {
+			if(!effect) return;
+			// Including Berry Juice and Leftovers in this.
+			if (effect.name === 'Berry Juice' || effect.name === 'Leftovers')
+				this.add('-activate', target, "ability: Gatherer's Bounty");
+			if ((effect as Item).isBerry) return this.chainModify(2);
+		},
+		onChangeBoost(boost, target, source, effect) {
+			if (effect && (effect as Item).isBerry) {
+				let b: BoostID;
+				for (b in boost) {
+					boost[b]! *= 2;
+				}
+			}
+		},
+		onSourceModifyDamagePriority: -1,
+		onSourceModifyDamage(damage, source, target, move) {
+			if (target.abilityState.berryWeaken) {
+				target.abilityState.berryWeaken = false;
+				return this.chainModify(0.5);
+			}
+		},
+		onTryEatItemPriority: -1,
+		onTryEatItem(item, pokemon) {
+			this.add('-activate', pokemon, "ability: Gatherer's Bounty");
+		},
+		onEatItem(item, pokemon) {
+			const weakenBerries = [
+				'Babiri Berry', 'Charti Berry', 'Chilan Berry', 'Chople Berry', 'Coba Berry', 'Colbur Berry', 'Haban Berry', 'Kasib Berry', 'Kebia Berry', 'Occa Berry', 'Passho Berry', 'Payapa Berry', 'Rindo Berry', 'Roseli Berry', 'Shuca Berry', 'Tanga Berry', 'Wacan Berry', 'Yache Berry',
+			];
+			// Record if the pokemon ate a berry to resist the attack
+			pokemon.abilityState.berryWeaken = weakenBerries.includes(item.name);
+		},
+		name: "Gatherer's Bounty",
+		desc: "At the end of each turn, If this pokemon is not currently holding an item, then it has a 25% chance of gaining a Sitrus or Starf Berry. When this Pokemon eats certain Berries, the effects are doubled. Berries that restore HP or PP have the amount doubled, Berries that raise stat stages have the amount doubled, Berries that havle damage taken guarter it instead, and a Jaboca Berry or Rowap Berry has the attacker lose 1/4 of its maximum HP, rounded down.",
+		shortDesc: "25% chance to gain a Sitrus or Starf berry at the end of turn. Berrys gain a doubling effect."
+	},
 
 	//#endregion
 };
