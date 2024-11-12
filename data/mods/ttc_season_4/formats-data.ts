@@ -39,6 +39,18 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Past",
 		tier: "OU",
 	},
+	blubblin: {
+		isNonstandard: "Past",
+		tier: "LC",
+	},
+	whaluma: {
+		isNonstandard: "Past",
+		tier: "NFE"
+	},
+	echowhalisp: {
+		isNonstandard: "Past",
+		tier: 'OU',
+	},
 	ironexplorer: {
 		isNonstandard: "Past",
 		tier: "OU",

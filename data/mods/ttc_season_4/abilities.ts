@@ -169,6 +169,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "At the end of each turn, If this pokemon is not currently holding an item, then it has a 25% chance of gaining a Sitrus or Starf Berry. When this Pokemon eats certain Berries, the effects are doubled. Berries that restore HP or PP have the amount doubled, Berries that raise stat stages have the amount doubled, Berries that havle damage taken guarter it instead, and a Jaboca Berry or Rowap Berry has the attacker lose 1/4 of its maximum HP, rounded down.",
 		shortDesc: "25% chance to gain a Sitrus or Starf berry at the end of turn. Berrys gain a doubling effect."
 	},
-
+	luminouswraith: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === "Electric") {
+				this.debug('Luminous Wraith boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === "Electric") {
+				this.debug('Luminous Wraith boost');
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Luminous Wraith",
+		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using an Electric-type attack.",
+	},
 	//#endregion
 };

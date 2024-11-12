@@ -480,6 +480,82 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			yawn: ["9M"],
 		},
 	},
+	blubblin: {
+		learnset: {
+			// Level Up Moves
+			tackle: ["9L1"],
+			playnice: ["9L1"],
+			watergun: ["9L5"],
+			astonish: ["9L8"],
+			taunt: ["9L11"],
+			shockwave: ["9L15"],
+			waterpulse: ["9L19"],
+			whirlpool: ["9L25"],
+			brine: ["9L31"],
+			nightshade: ["9L37"],
+			paraboliccharge: ["9L44"],
+			shadowball: ["9L51"],
+			hydropump: ["9L59"],
+			thunder: ["9L64"],
+			thunderclap: ["9L73"],
+			aquatail: ["9L82"],
+			partingshot: ["9L88"],
+			soak: ["9L94"],
+			cleansingspirits: ["9L100"],
+		},
+	},
+	whaluma: {
+		learnset: {
+			// Level Up Moves
+			tackle: ["9L1"],
+			playnice: ["9L1"],
+			watergun: ["9L5"],
+			astonish: ["9L8"],
+			taunt: ["9L11"],
+			shockwave: ["9L15"],
+			waterpulse: ["9L19"],
+			whirlpool: ["9L25"],
+			brine: ["9L31"],
+			nightshade: ["9L37"],
+			paraboliccharge: ["9L44"],
+			shadowball: ["9L51"],
+			hydropump: ["9L59"],
+			thunder: ["9L64"],
+			thunderclap: ["9L73"],
+			aquatail: ["9L82"],
+			partingshot: ["9L88"],
+			soak: ["9L94"],
+			cleansingspirits: ["9L100"],
+
+
+		},
+	},
+	echowhalisp: {
+		learnset: {
+			// Level Up Moves
+			tackle: ["9L1"],
+			playnice: ["9L1"],
+			watergun: ["9L5"],
+			astonish: ["9L8"],
+			taunt: ["9L11"],
+			shockwave: ["9L15"],
+			waterpulse: ["9L19"],
+			whirlpool: ["9L25"],
+			brine: ["9L31"],
+			nightshade: ["9L37"],
+			paraboliccharge: ["9L44"],
+			shadowball: ["9L51"],
+			hydropump: ["9L59"],
+			thunder: ["9L64"],
+			thunderclap: ["9L73"],
+			aquatail: ["9L82"],
+			partingshot: ["9L88"],
+			soak: ["9L94"],
+			cleansingspirits: ["9L100"],
+
+
+		},
+	},
 	scaleslash: {
 		learnset: {
 			aerialace: ["9M", "7M", "6M", "5M", "4M", "3M"],
