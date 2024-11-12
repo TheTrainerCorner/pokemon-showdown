@@ -1226,7 +1226,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			'nacli',
 			'naclstack',
 			'garganacl',
-			'characadet',
+			'charcadet',
 			'armarouge',
 			'ceruledge',
 			'tadbulb',
