@@ -1335,7 +1335,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		for (let poke of listOfGen9Pokemon) {
 			let dex = this.modData('Pokedex', poke);
-
+			console.log(poke);
 			if (dex.tags) dex.tags.push('Use Gen 5');
 			else dex.tags = ['Use Gen 5'];
 		}
