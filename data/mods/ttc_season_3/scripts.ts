@@ -1334,7 +1334,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		];
 
 		for (let poke of listOfGen9Pokemon) {
-			this.modData('Pokedex', poke).tags.push('Use Gen 5');
+			let dex = this.modData('Pokedex', poke);
+
+			if (dex.tags) dex.tags.push('Use Gen 5');
+			else dex.tags = ['Use Gen 5'];
 		}
 		//#endregion
 	},
