@@ -1316,7 +1316,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			'ogerpon',
 			'ogerponwellspring',
 			'ogerponhearthflame',
-			'ogerponcronerstone',
+			'ogerponcornerstone',
 			'ogerpontealtera',
 			'ogerponwellspringtera',
 			'ogerponhearthflametera',
