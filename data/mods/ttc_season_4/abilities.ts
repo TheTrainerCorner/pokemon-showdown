@@ -75,6 +75,29 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If hit by a physical move, the user's next attack will do 1.5x damage.",
 		shortDesc: "If hit by a phyiscal move, the user's next attack will do 1.5x damage.",
 	},
+	dawnoflunacy: {
+		inherit: true,
+		onResidualOrder: undefined,
+		onResidual: undefined,
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgemnt', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+
+			if (move.type == 'Normal' && !noModifyType.includes(move.id) &&
+				!(move.isZ && move.category !== 'Status') && !(move.name === 'Tera Blast' && pokemon.terastallized)) {
+				move.type = 'Cosmic';
+				move.typeChangerBoosted = this.effect;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.typeChangerBoosted === this.effect) return this.chainModify([4915, 4096]);
+		},
+		desc: "This Pokemon's Normal-type moves become Cosmic-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, But before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Cosmic Type and have 1.2x power.",
+	},
 
 	//#endregion
 
