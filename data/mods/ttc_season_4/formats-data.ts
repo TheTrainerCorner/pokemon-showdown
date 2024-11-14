@@ -55,4 +55,12 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Past",
 		tier: "OU",
 	},
+	tapupuaa: {
+		isNonstandard: "Past",
+		tier: "OU",
+	},
+	tapunalo: {
+		isNonstandard: 'Past',
+		tier: "OU",
+	}
 };

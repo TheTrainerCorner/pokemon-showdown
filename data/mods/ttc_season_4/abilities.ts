@@ -98,6 +98,26 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon's Normal-type moves become Cosmic-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, But before Ion Deluge and Electrify's effects.",
 		shortDesc: "This Pokemon's Normal-type moves become Cosmic Type and have 1.2x power.",
 	},
+	swarm: {
+		inherit: true,
+		onStart: undefined,
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Bug' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Swarm boost');
+				return this.chainModify(2);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Bug' && attacker.hp <= attacker.maxhp / 3) {
+				this.debug('Swarm boost');
+				return this.chainModify(2);
+			}
+		},
+		desc: "At 1/3 or less of its max HP, this Pokemon's offensive stat is 2x with Bug-type Moves",
+		shortDesc: '1/3 or less of max Hp, Offensive stat increased by 2x with Bug-type moves.',
+	},
 
 	//#endregion
 
@@ -209,6 +229,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		name: "Luminous Wraith",
 		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using an Electric-type attack.",
+	},
+	myriadsurge: {
+		onStart(pokemon) {
+			this.field.setTerrain('myriadterrain');
+		},
+		name: "Myriad Surge",
+		shortDesc: "Sets Myriad Terrain upon Switch-In",
+	},
+	calamitysurge: {
+		onStart(pokemon) {
+			this.field.setTerrain('calamityterrain');
+		},
+		name: "Calamity Surge",
+		shortDesc: "Sets up Calamity Terrain upon Switch-In",
 	},
 	//#endregion
 };

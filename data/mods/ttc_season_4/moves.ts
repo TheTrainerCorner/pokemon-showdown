@@ -39,6 +39,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: undefined,
 		target: 'all',
 	},
+	eclipticpunishment: {
+		inherit: true,
+		onModifyType: undefined,
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('spa', false, true) < pokemon.getStat('atk', false, true)) move.category ='Physical';
+		},
+		desc: undefined,
+		shortDesc: "uses highest offensive stat.",
+	},
 	// New Moves
 	cosmicterrain: {
 		num: -4001,
@@ -702,6 +711,116 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		desc: "Has a 50% chance to raise Attack by 1 stage.",
 		shortDesc: '50% chance to +1 Atk.',
-	}
+	},
+	//#endregion
+
+	//#region New Terrains
+	myriadterrain: {
+		num: -4001,
+		accuracy: true,
+		basePower: 0,
+		category: 'Status',
+		name: "Myriad Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: "myriadterrain",
+		condition: {
+			duration: 5,
+			onStart(target, source, effect) {
+				// Reset Stats upon activation
+				target.clearBoosts();
+				source.clearBoosts();
+			},
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onTryBoost(boost, target, source, effect) {
+				// Prevent the activation of boosting by moves
+				if (!target.isGrounded || target.isSemiInvulnerable()) return;
+				// Items and Abilities are not restricted by the terrain.
+				if (effect.effectType === "Item" || effect.effectType === "Ability") return;
+				this.add('-activate', target, 'move: Electric Terrain');
+				return null;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Bug' && attacker.isGrounded()) {
+					this.debug('myriad terrain boost');
+					return this.chainModify([5325, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Myriad Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Electric Terrrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Electric Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Bug",
+		desc: "For 5 turns, the terrain becoms Myriad Terrain. At the start of the effect, resets all stat boosts. During the effect, the power of Bug-type attacks made by grounded Pokemon is multipled by 1.3 and grounded Pokemon cannot gain any stat boosts from moves. Items and Abilities are not under this affect. Fails if the current terrain is Myriad Terrain.",
+		shortDesc: "5 turns. Grounded: +Bug power, resets all stat boosts, cannot gain stat boost via moves.",
+	},
+	calamityterrain: {
+		num: -4001,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Calamity Terrain",
+		pp: 10,
+		priority: 0,
+		flags: {nonsky: 1},
+		terrain: "calamityterrain",
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === "Dark" && attacker.isGrounded()) {
+					this.debug('calamity terrain boost');
+					return this.chainModify([5325, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === "Ability") {
+					this.add('-fieldstart', 'move: Calamity Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Calamity Terrain');
+				}
+			},
+			onTryHeal(heal, target, source, effect) {
+				if (!target.isGrounded()) return true;
+				if (effect.effectType === "Item") return true;
+				this.damage(target.maxhp / 8); // Deals damage first
+				return true;
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Calamity Terrain');
+			},
+		},
+		secondary: null,
+		target: "all",
+		type: "Dark",
+		desc: "For 5 turns, the terrain becomes Calamity Terrain. During the effect, the power of Dark-type attacks used by grounded Pokemon is multipled by 1.3, upon the activation of healing will take 1/8 of their max hp before healing (Items are excluded from this). Fails if the current terrain is Calamity Terrain.",
+		shortDesc: "5 turns. Grounded: +Dark power, takes 1/8 of max hp upon activation of healing not from items."
+	},
 	//#endregion
 };
