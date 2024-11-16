@@ -354,6 +354,14 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Florges', this)
 			.abilities
 				.setAbility0('Oblivious');
+		new ModifyPokemon('Gogoat', this)
+			.learnset
+				.add('Astro Force')
+				.add('Stardust Trail')
+				.add('Swift')
+				.add('Moonblast')
+				.add('Meteor Assault')
+				.add('Lunar Dance');
 		new ModifyPokemon('Hoopa', this)
 			.types
 				.setType('Cosmic', 'Ghost')
