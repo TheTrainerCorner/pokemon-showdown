@@ -26,6 +26,20 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("TypeChart", "fairy").damageTaken["Cosmic"] = 0;
 		//#endregion
 
+		//#region Removing Apple Acid & Grav Apple
+		const removeAppleAcid = ["flapple", "roserade", "vileplume", "virizion"];
+
+		for (const poke of removeAppleAcid) {
+			delete this.modData("Learnsets", poke).learnset['appleacid'];
+		}
+
+		const removeGravApple = ["rillaboom", "appletun", "cherrim"];
+		
+		for (const poke of removeGravApple) {
+			delete this.modData("Learnsets", poke).learnset['gravapple'];
+		}
+		//#endregion
+
 		//#region Pokemon Changes
 
 		//#region Gen 1

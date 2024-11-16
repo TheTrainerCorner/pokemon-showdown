@@ -13,7 +13,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#endregion
 
 	//#region Modify Abilities
-
+	earlybird: {
+		inherit: true,
+		onModifyPriority(priority, source, target, move) {
+			if (source.abilityState.earlybird) return;
+			if (source.activeMoveActions < 1) {
+				return priority + 3;
+			}
+		},
+		desc: "Once per battle, when this pokemon uses an attacking move, it gets +3 prioirty.",
+		shortDesc: "Once per battle, attacking move gains +3 priority."
+	},
 	baller: {
 		inherit: true,
 		onBasePower(basePower, attacker, defender, move) {

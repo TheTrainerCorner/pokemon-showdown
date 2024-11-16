@@ -48,6 +48,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: undefined,
 		shortDesc: "uses highest offensive stat.",
 	},
+	appleacid: {
+		inherit: true,
+		secondary: undefined,
+		onHit(target) {
+			target.setType(target.getTypes(true).map(type => type === "Steel" ? "???" : type));
+			this.add('-start', target, 'typechange', target.getTypes().join('/'), '[from] move: Apple Acid');
+		},
+		desc: undefined,
+		shortDesc: 'Removes steel typing off of the opponent pokemon.',
+	},
+	gravapple: {
+		inherit: true,
+		secondary: undefined,
+		accuracy: 95,
+		onHit(target) {
+			this.field.addPseudoWeather('gravity');
+		},
+		desc: undefined,
+		shortDesc: "Sets up gravity when hits opposing Pokemon",
+	},
 	// New Moves
 	cosmicterrain: {
 		num: -4001,
