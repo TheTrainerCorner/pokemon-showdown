@@ -501,7 +501,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aquatail: ["9L82"],
 			partingshot: ["9L88"],
 			soak: ["9L94"],
-			cleansingspirits: ["9L100"],
 
 			// Other Moves
 			allyswitch: ["9M"],
@@ -586,7 +585,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aquatail: ["9L82"],
 			partingshot: ["9L88"],
 			soak: ["9L94"],
-			cleansingspirits: ["9L100"],
 
 			// Other Moves
 			allyswitch: ["9M"],
@@ -672,7 +670,6 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			aquatail: ["9L82"],
 			partingshot: ["9L88"],
 			soak: ["9L94"],
-			cleansingspirits: ["9L100"],
 
 			// Other Moves
 			allyswitch: ["9M"],
