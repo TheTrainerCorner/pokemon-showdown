@@ -62,5 +62,9 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	tapunalo: {
 		isNonstandard: 'Past',
 		tier: "OU",
-	}
+	},
+	galaxeon: {
+		isNonstandard: 'Past',
+		tier: 'OU',
+	},
 };

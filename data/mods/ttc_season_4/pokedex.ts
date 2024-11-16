@@ -187,4 +187,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		tags: ["Fakemon", "Sub-Legendary"],
 		eggGroups: ["Undiscovered"],
 	},
+	galaxeon: {
+		num: -4014,
+		name: "Galaxeon",
+		types: ["Cosmic"],
+		baseStats: {hp: 75, atk: 120, def: 110, spa: 95, spd: 75, spe: 65},
+		abilities: {0: "Pressure", 1: "Forewarn", H: "Illuminate"},
+		heightm: 1.2,
+		weightkg: 32,
+		color: "Purple",
+		evoCondition: "SHOT UP IN SPACE",
+		prevo: "Eevee",
+		tags: ["Fakemon", 'Has Back Sprite'],
+		eggGroups: ["Field"],
+	},
 };
