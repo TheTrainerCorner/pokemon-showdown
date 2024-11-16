@@ -76,6 +76,10 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			snarl: ["9M"],
 			wideguard: ["9M"],
 			workup: ["9M"],
+			moonblast: ["9M"],
+			sparklyswirl: ["9M"],
+			stardusttrail: ["9M"],
+
 		},
 	},
 	pyrogrif: {
@@ -1063,6 +1067,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			dazzlinggleam: ["9M"],
 			freezingglare: ["9M"],
 			moonlight: ["9M"],
+			aurorabeam: ["9M"],
+			freezedry: ["9M"],
 			// Base Eevee
 			alluringvoice: ["9M"],
 			attract: ["8M", "7M", "7V", "6M", "5M", "5S2", "4M", "4S0", "3M"],
