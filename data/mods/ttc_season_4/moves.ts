@@ -713,13 +713,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 
 	// The basic Move changes have been moved to the scripts.ts file since they are simple and can make a class builder for it.
 	//#region Complex Physical Move Changes
-	gravapple: {
-		inherit: true,
-		accuracy: 95,
-		volatileStatus: 'smackdown',
-		desc: "100% chance to lower Defense by 1 stage; Does 1.5x more damage when used against a target under the effects of Gravity; Grounds the target.",
-		shortDesc: "-1 Def; 1.5x against target in Gravity; Grounds the Target.",
-	},
+	// gravapple: {
+	// 	inherit: true,
+	// 	accuracy: 95,
+	// 	volatileStatus: 'smackdown',
+	// 	desc: "100% chance to lower Defense by 1 stage; Does 1.5x more damage when used against a target under the effects of Gravity; Grounds the target.",
+	// 	shortDesc: "-1 Def; 1.5x against target in Gravity; Grounds the Target.",
+	// },
 	metalclaw: {
 		inherit: true,
 		basePower: 60,
