@@ -602,6 +602,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(84)
 				.setSPD(84)
 				.setSPE(113);
+		new ModifyPokemon('Plushadow', this)
+			.learnset
+				.add('Body Press');
 
 		//#endregion
 
