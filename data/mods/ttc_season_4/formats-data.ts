@@ -67,4 +67,12 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: 'Past',
 		tier: 'OU',
 	},
+	gogoatmega: {
+		isNonstandard: "Past",
+		tier: "OU",
+	},
+	pachirisumega: {
+		isNonstandard: "Past",
+		tier: "OU",
+	},
 };

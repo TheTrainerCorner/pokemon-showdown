@@ -1,25 +1,31 @@
 export const Items: {[k: string]: ModdedItemData} = {
-	phoenixsfeather: {
-		name: "Phoenix's Feather",
+	gogoatite: {
+		name: "Gogoatite",
 		spritenum: -100,
-		fling: {
-			basePower: 10,
+		megaStone: "Gogoat-Mega",
+		megaEvolves: "Gogoat",
+		itemUser: ["Gogoat"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
 		},
-		onBeforeFaint(pokemon, effect) {
-			if (pokemon.itemState.phoenixsFeather) return;
-			this.add('-activate', pokemon, "item: Phoenix's Feather", pokemon);
-			pokemon.hp = this.trunc(pokemon.maxhp / 2);
-			pokemon.clearStatus();
-			this.add('-sethp', pokemon, pokemon.getHealth, '[silent]');
-			pokemon.clearBoosts();
-			this.add('-clearboost', pokemon, '[silent]');
-			pokemon.trySetStatus('phc', pokemon, effect);
-			pokemon.itemState.phoenixsFeather = true;
-			pokemon.useItem();
-			return false;
+		num: -4001,
+		gen: 9,
+		isNonstandard: "Past",
+	},
+	pachirisite: {
+		name: "Pachirisite",
+		spritenum: -100,
+		megaStone: "Pachirisu-Mega",
+		megaEvolves: "Pachirisu",
+		itemUser: ["Pachirisu"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
 		},
-		desc: "If user faints, item will revive them to 50% and inflicts the user with a Curse that does Damage over Time and lowers the Highest Offensive stat.",
-		shortDesc: "If User Faints, Revives to 50%, Inflicts User with Phoenix's Curse.",
+		num: -4002,
+		gen: 9,
+		isNonstandard: "Past",
 	},
 
 	//#region Gatherer's Bounty change to berries
