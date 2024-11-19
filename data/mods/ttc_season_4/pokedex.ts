@@ -158,7 +158,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 3,
 		weightkg: 50,
 		color: "Green",
-		tags: ['Fakemon', 'Paradox'],
+		tags: ['Fakemon', 'Paradox', "Has Back Sprite"],
 		eggGroups: ["Undiscovered"],
 	},
 	tapupuaa: {
@@ -214,6 +214,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Teal",
 		eggGroups: ["Field"],
 		requiredItem: "Gogoatite",
+		tags: ["Fakemon", "Has Back Sprite"],
 	},
 	pachirisumega: {
 		num: 417,
@@ -228,6 +229,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "White",
 		eggGroups: ["Field", "Fairy"],
 		requiredItem: "Pachirisite",
+		tags: ["Fakemon", "Has Back Sprite"],
 	},
 
 };
