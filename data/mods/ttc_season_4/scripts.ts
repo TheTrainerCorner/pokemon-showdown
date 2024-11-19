@@ -806,8 +806,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 
 		//#endregion
-
-
+		
 		//#region Removing Field Support off of certain moves
 		for (let move of ['auroraveil', 'reflect', 'lightscreen']) {
 			this.modData('Moves', move).durationCallback = (source: Pokemon, effect: Pokemon) => {
