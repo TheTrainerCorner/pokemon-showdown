@@ -747,10 +747,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		terrain: "myriadterrain",
 		condition: {
 			duration: 5,
-			onStart(target, source, effect) {
-				// Reset Stats upon activation
-				target.clearBoosts();
-				source.clearBoosts();
+			onStart() {
+				this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
 			},
 			durationCallback(source, effect) {
 				if (source?.hasItem('terrainextender')) {
@@ -825,10 +826,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 			},
 			onTryHeal(heal, target, source, effect) {
-				if (!target.isGrounded()) return true;
-				if (effect.effectType === "Item") return true;
+				if (!target.isGrounded() || effect.effectType === "Item") return heal;
 				this.damage(target.maxhp / 8); // Deals damage first
-				return true;
+				return false;
 			},
 			onFieldResidualOrder: 27,
 			onFieldResidualSubOrder: 7,
