@@ -43,8 +43,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	toxicthread: {
 		inherit: true,
-		desc: "Lowers the target's speed by 1 and poisons them. Ignores steel immunity.",
-		shortDesc: "-1 Spe and Poisons the target; Ignores Steel Types.",
+		desc: "Lowers the target's speed by 1 and poisons them. Ignores type immunity.",
+		shortDesc: "-1 Spe and Poisons the target; Ignores type immunity",
 	},
 	courtchange: {
 		inherit: true,
