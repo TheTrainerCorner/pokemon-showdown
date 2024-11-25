@@ -172,7 +172,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 45.5,
 		eggGroups: ["Undiscovered"],
 		color: "Gray",
-		tags: ["Fakemon", "Sub-Legendary"]
+		tags: ["Fakemon", "Sub-Legendary", "Has Back Sprite"]
 	},
 	tapunalo: {
 		num: -4013,
@@ -184,7 +184,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		heightm: 1.9,
 		weightkg: 21.5,
 		color: "Green",
-		tags: ["Fakemon", "Sub-Legendary"],
+		tags: ["Fakemon", "Sub-Legendary", "Has Back Sprite"],
 		eggGroups: ["Undiscovered"],
 	},
 	galaxeon: {
