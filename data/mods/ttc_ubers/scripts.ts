@@ -287,7 +287,16 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add('Toxic Thread');
 		// Gen 8
-		new ModifyPokemon('Dragapult', this);
+		new ModifyPokemon('Dragapult', this)
+			.abilities
+				.setAbility0('Technician')
+			.pokemon.learnset
+				.add('Metal Claw')
+				.add('Charge Beam')
+				.add('Flame Charge')
+				.add('Ominous Wind')
+				.add('Incinerate')
+				.add('Pin Missile');
 		new ModifyPokemon('Zacian', this);
 		new ModifyPokemon('Zamazenta', this);
 		new ModifyPokemon('Eternatus', this);
