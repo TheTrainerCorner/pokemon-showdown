@@ -303,10 +303,45 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Calyrex-Ice', this);
 		new ModifyPokemon('Calyrex-Shadow', this);
 		// Gen 9
-		new ModifyPokemon('Wo-Chien', this);
-		new ModifyPokemon('Chien-Pao', this);
-		new ModifyPokemon('Ting-Lu', this);
-		new ModifyPokemon('Chi-Yu', this);
+		new ModifyPokemon('Wo-Chien', this)
+			.abilities
+				.setHiddenAbility('Grass Pelt')
+			.pokemon.baseStats
+				.setHP(105)
+				.setATK(90)
+				.setDEF(105)
+				.setSPA(90)
+				.setSPE(45)
+			.pokemon.learnset
+				.add('Synthesis')
+				.add('Grassy Glide')
+				.add('Cotton Guard')
+				.add('Sappy Seed');
+		new ModifyPokemon('Chien-Pao', this)
+			.abilities
+				.setHiddenAbility('Sharpness')
+			.pokemon.baseStats
+				.setATK(120)
+			.pokemon.learnset
+				.add('Bitter Blade');
+		new ModifyPokemon('Ting-Lu', this)
+			.abilities
+				.setHiddenAbility('Mold Breaker')
+			.pokemon.learnset
+				.add('Headlong Rush')
+				.add('Pain Split')
+				.add('Pursuit')
+				.add('Stockpile')
+				.add('Spit Up')
+				.add('Swallow');
+		new ModifyPokemon('Chi-Yu', this)
+			.abilities
+				.setHiddenAbility('Magma Armor')
+			.pokemon.baseStats
+				.setSPA(135)
+				.setSPD(120)
+			.pokemon.learnset
+				.add('Fiery Wrath');
 		new ModifyPokemon('Koriadon', this);
 		new ModifyPokemon('Miraidon', this);
 		new ModifyPokemon('Okidogi', this)
