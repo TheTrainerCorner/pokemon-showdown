@@ -86,6 +86,20 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setHP(130)
 				.setSPE(110);
+		new ModifyPokemon('Lugia', this)
+			.abilities
+				.setAbility0('Power Of Alchemy')
+			.pokemon.learnset
+				.add('Thunderbolt')
+				.add('Ice Beam')
+				.add('Flamethrower')
+				.add('Flip Turn');
+		new ModifyPokemon("Ho-oh", this)
+			.abilities
+				.setAbility0('Drought')
+			.pokemon.learnset
+				.add('U-Turn')
+				.add('Solar Blade');
 		// Gen 3
 		new ModifyPokemon('Luvdisc', this)
 			.abilities
@@ -139,6 +153,17 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(70)
 				.setSPA(90)
 				.setSPE(70);
+		new ModifyPokemon('Rayquaza', this)
+			.baseStats
+				.setHP(100)
+				.setATK(145)
+				.setSPA(145)
+				.setSPE(110)
+			.pokemon.learnset
+				.add('Dragon Rush');
+		new ModifyPokemon('Manectric-Mega', this)
+			.abilities
+				.setAbility0('Teravolt');
 		// Gen 4
 		new ModifyPokemon('Rampardos', this)
 			.baseStats
@@ -203,6 +228,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(170)
 				.setSPE(95);
 		new ModifyPokemon('Genesect', this); // Allow Douses
+		new ModifyPokemon('Victini', this)
+			.learnset
+				.add('Victory Dance');
 		// Gen 6
 		new ModifyPokemon('Aegislash', this)
 			.baseStats
@@ -214,7 +242,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(150);
 		new ModifyPokemon('Xerneas', this);
 		new ModifyPokemon('Yveltal', this);
-		new ModifyPokemon('Zygarde-Complete', this);
+		new ModifyPokemon('Zygarde-Complete', this)
+			.baseStats
+				.setHP(206)
+				.setATK(120)
+			.pokemon.learnset
+				.add('Supercell Slam');
 		new ModifyPokemon('Hoopa', this)
 			.abilities
 				.setAbility0('Illusion')
@@ -244,6 +277,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Swords Dance')
 				.add('Bulk Up')
 				.add('Sludge Bomb');
+		new ModifyPokemon('Pangoro', this)
+			.baseStats
+				.setHP(110)
+				.setDEF(93)
+				.setSPD(86);
 		// Gen 7
 		new ModifyPokemon('TapuKoko', this)
 			.learnset
@@ -286,6 +324,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(121)
 			.pokemon.learnset
 				.add('Toxic Thread');
+		new ModifyPokemon('Melmetal', this)
+			.learnset
+				.add('Trick Room');
 		// Gen 8
 		new ModifyPokemon('Dragapult', this)
 			.abilities
@@ -316,7 +357,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Synthesis')
 				.add('Grassy Glide')
 				.add('Cotton Guard')
-				.add('Sappy Seed');
+				.add('Sappy Seed')
+				.add('Parting Shot');
 		new ModifyPokemon('Chien-Pao', this)
 			.abilities
 				.setHiddenAbility('Sharpness')
@@ -333,7 +375,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Pursuit')
 				.add('Stockpile')
 				.add('Spit Up')
-				.add('Swallow');
+				.add('Swallow')
+				.add('Parting Shot');
 		new ModifyPokemon('Chi-Yu', this)
 			.abilities
 				.setHiddenAbility('Magma Armor')
@@ -373,5 +416,23 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Sparkly Swirl')
 				.add('Court Change')
 				.add('Clear Smog');
+	// TTC Fakemons
+		new ModifyPokemon('Pangoro-Mega', this)
+			.baseStats
+				.setHP(110)
+				.setDEF(123)
+				.setSPD(116);
+		new ModifyPokemon('Cerinyx', this)
+			.baseStats
+				.setHP(109)
+				.setATK(136)
+				.setDEF(91)
+				.setSPA(136)
+				.setSPD(86)
+			.pokemon.learnset
+				.add('Trailblaze')
+				.add('Nasty Plot')
+				.add('Baddy Bad')
+				.add('Ceaseless Edge');
 	}
 };
