@@ -115,7 +115,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Blaziken', this)
 			.abilities
 				.setAbility1('Speed Boost');
-		new ModifyPokemon('Blaziken', this)
+		new ModifyPokemon('Blaziken-Mega', this)
 			.abilities
 				.setAbility0('Speed Boost');
 		new ModifyPokemon('Slaking', this)
