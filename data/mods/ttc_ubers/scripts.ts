@@ -231,6 +231,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Victini', this)
 			.learnset
 				.add('Victory Dance');
+		new ModifyPokemon('Zekrom', this)
+			.abilities
+				.setAbility0('Transistor');
 		// Gen 6
 		new ModifyPokemon('Aegislash', this)
 			.baseStats
