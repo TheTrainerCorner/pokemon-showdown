@@ -1,6 +1,5 @@
 import { ModifyPokemon } from "../../../tools/utils/modifyPokemon";
 import { ModifyMove } from '../../../tools/utils/modifyMove';
-import { Abilities } from '../fullpotential/abilities';
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: "ttc_season_3",
