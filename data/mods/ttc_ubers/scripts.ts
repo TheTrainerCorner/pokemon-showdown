@@ -136,10 +136,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility0('Aerilate');
 		new ModifyPokemon('Deoxys', this)
 			.baseStats
-				.setHP(70)
+				.setHP(65)
 				.setDEF(60)
 				.setSPD(60)
-				.setSPE(130);
+				.setSPE(135);
 		new ModifyPokemon('Deoxys-Attack', this)
 			.baseStats
 				.setHP(70);
