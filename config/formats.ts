@@ -111,10 +111,11 @@ export const Formats: FormatList = [
 		desc: "This format is for Speed TOur.",
 		mod: Config.ttcseason,
 		ruleset: [
-			'Standard NatDex', 'OHKO Clause', 'Evasion Clause',
-			'Species Clause', 'Sleep Clause Mod', 'Z-Move Clause',
-			'Dynamax Clause', 'Terastal Clause',
-			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'
+			'Standard Natdex', 'Terastal Clause',
+			'Species Clause', 'OHKO Clause', 'Evasion Clause',
+			'Sleep Clause Mod',
+			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist',
+			'Offseason Complex Bans', 'Offseason Banlist',
 		],
 	},
 	{
@@ -174,5 +175,14 @@ export const Formats: FormatList = [
 			'Dynamax Clause', 'Terastal Clause',
 			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'
 		],
+	},
+	{
+		name: "[Gen 9] Triples",
+		mod: Config.ttcseason,
+		gameType: 'triples',
+		searchShow: false,
+		ruleset: [
+			'Standard Doubles', 'Evasion Abilities Clause', 'Dynamax Clause', 'Terastal Clause',
+			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'],
 	},
 ];
