@@ -328,9 +328,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Solgaleo', this);
 		new ModifyPokemon('Lunala', this);
 		new ModifyPokemon('Celesteela', this)
-			.abilities
-				.setHiddenAbility('Illuminate')
-			.pokemon.learnset
+			.learnset
 				.add('Signal Beam')
 				.add('Dazzling Gleam')
 				.add('Lunar Blessing');
