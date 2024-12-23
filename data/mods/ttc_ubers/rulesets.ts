@@ -4,6 +4,16 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		desc: "All of the complex bans for Offseason",
 		ruleset: [],
 	},
+	seasonunbanlist: {
+		inherit: true,
+		desc: "All of the unbans during Offseason",
+		unbanlist: [
+			'Burn Drive',
+			'Chill Drive',
+			'Douse Drive',
+			'Shock Drive'
+		],
+	},
 	seasonbanlist: {
 		inherit: true,
 		desc: "Everything that is ban during Offseason",

@@ -227,7 +227,24 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(170)
 				.setSPE(95);
-		new ModifyPokemon('Genesect', this); // Allow Douses
+		new ModifyPokemon('Genesect', this)
+			.abilities
+				.setAbility0('Download')
+				.setHiddenAbility('Neuroforce')
+			.pokemon.learnset
+				.add('Shift Gear');
+		new ModifyPokemon('Genesect-Burn', this)
+			.abilities
+				.setHiddenAbility('Neuroforce');
+		new ModifyPokemon('Genesect-Chill', this)
+			.abilities
+				.setHiddenAbility('Neuroforce');
+		new ModifyPokemon('Genesect-Douse', this)
+			.abilities
+				.setHiddenAbility('Neuroforce');
+		new ModifyPokemon('Genesect-Shock', this)
+			.abilities
+				.setHiddenAbility('Neuroforce');
 		new ModifyPokemon('Victini', this)
 			.learnset
 				.add('Victory Dance');
