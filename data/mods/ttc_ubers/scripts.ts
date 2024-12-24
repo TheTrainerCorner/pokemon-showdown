@@ -98,7 +98,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility0('Drought')
 			.pokemon.learnset
-				.add('U-Turn')
+				.add('UTurn')
 				.add('Solar Blade');
 		// Gen 3
 		new ModifyPokemon('Luvdisc', this)
