@@ -1,4 +1,8 @@
 export const Rulesets: {[k: string]: ModdedFormatData} = {
+	offseasonbanlist: {
+		inherit: true,
+		banlist: [],
+	},
 	seasoncomplexbans: {
 		inherit: true,
 		desc: "All of the complex bans for Offseason",
