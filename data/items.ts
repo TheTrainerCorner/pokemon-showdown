@@ -582,7 +582,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Kyogre"],
 		num: 535,
 		gen: 9,
-		isNonstandard: "Past",
 	},
 	blukberry: {
 		name: "Bluk Berry",
@@ -4753,7 +4752,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Groudon"],
 		num: 534,
 		gen: 9,
-		isNonstandard: "Past",
 	},
 	repeatball: {
 		name: "Repeat Ball",
