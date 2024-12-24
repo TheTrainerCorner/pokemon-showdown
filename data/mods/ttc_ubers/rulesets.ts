@@ -8,7 +8,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		inherit: true,
 		desc: "All of the unbans during Offseason",
 		unbanlist: [
-			'ND Ubers',
+			'ND Uber',
 			'Burn Drive',
 			'Chill Drive',
 			'Douse Drive',
