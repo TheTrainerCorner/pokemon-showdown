@@ -313,6 +313,10 @@ export const Items: {[k: string]: ModdedItemData} = {
 			pokemon.itemState.armorPlateHits = 3;
 			this.add('-start', pokemon, `armorplatex3`);
 		},
+		onEnd(pokemon) {
+			// Should end the effects if the item was knocked off.
+			this.add('-end', pokemon, 'armorplatexend', '[silent]');
+		},
 		onFoeAfterMove(source, target, move) {
 			if (this.effectState.didHit) {
 				if (move.category === "Status" || !target.runImmunity(move.type)) return;
