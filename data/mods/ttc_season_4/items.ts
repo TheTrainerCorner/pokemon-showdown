@@ -36,10 +36,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 10,
 		},
 		onStart(source) {
+			this.debug('Wanted Poster started');
 			for(const target of source.side.foes()) {
 				for (const sourceType of source.types) {
-					if (this.dex.getImmunity(sourceType, target)) continue;
 					if (this.dex.getEffectiveness(sourceType, target) < 1) continue;
+					this.debug(`${this.dex.getEffectiveness(sourceType, target)}`);
 					this.effectState.wantedPoster = true;
 				}
 
@@ -47,7 +48,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.addVolatile('trapped', target);
 				target.addVolatile('wantedposter', target);
 				source.useItem();
-				return;
 			}
 		},
 		condition: {
