@@ -48,6 +48,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 						data.sources = [];
 					}
 					data.sources.push(pokemon);
+					this.debug(`wanted poster started`);
 				}
 			}
 
