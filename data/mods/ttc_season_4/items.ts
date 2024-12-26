@@ -39,7 +39,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			for(const target of source.side.foes()) {
 				for (const sourceType of source.types) {
 					if (this.dex.getImmunity(sourceType, target)) continue;
-					if (!(this.dex.getEffectiveness(sourceType, target) > 1)) continue;
+					if (this.dex.getEffectiveness(sourceType, target) < 1) continue;
 					this.effectState.wantedPoster = true;
 				}
 
