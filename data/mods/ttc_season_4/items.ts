@@ -35,7 +35,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		fling: {
 			basePower: 10,
 		},
-		onBeforeTurn(source) {
+		onStart(source) {
 			for(const target of source.side.foes()) {
 				for (const sourceType of source.types) {
 					if (this.dex.getImmunity(sourceType, target)) continue;
