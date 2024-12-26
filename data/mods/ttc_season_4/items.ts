@@ -27,6 +27,68 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 9,
 		isNonstandard: "Past",
 	},
+	wantedposter: {
+		name: "Wanted Poster",
+		spritenum: -100,
+		desc: "If an opposing Pokemon were to switch out prior to using a damaging move, they will be attacked before switching.",
+		shortDesc: "If a foe is switching out, attacks the foe using a damaging move before switch out. Single use.",
+		fling: {
+			basePower: 10,
+		},
+		// We are going to try and treat the moves like pursuit.
+		// We need to modify the move and apply a beforeTurnCallback to it.
+		onModifyMove(move, source, target) {
+			if (move.category === "Status") return;
+			move.beforeTurnCallback = (pokemon) => {
+				for (const side of this.sides) {
+					if (side.hasAlly(pokemon)) continue;
+					side.addSideCondition('wantedposter', pokemon);
+					const data = side.getSideConditionData('wantedposter');
+					if(!data.sources) {
+						data.sources = [];
+					}
+					data.sources.push(pokemon);
+				}
+			}
+
+			// next we need to set the move's accuracy to true
+			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
+
+			// we need to inject the move into an effectState
+			this.effectState.wantedPosterMove = move;
+		},
+		onTryHit(target, pokemon) {
+			target.side.removeSideCondition('wantedposter');
+		},
+		condition: {
+			duration: 1,
+			onBeforeSwitchOut(pokemon) {
+				this.debug('Wanted Poster start');
+				let alreadyAdded = false;
+				const move = this.effectState.wantedPosterMove as Move;
+				pokemon.removeVolatile('destinybond');
+				for (const source of this.effectState.sources as Pokemon[]) {
+					if (!source.isAdjacent(pokemon) || !this.queue.cancelMove(source) || !source.hp) continue;
+					if (!alreadyAdded) {
+						this.add('-activate', pokemon, `move: ${move.name}`);
+						alreadyAdded = true;
+					}
+					
+					if (source.canMegaEvo || source.canUltraBurst) {
+						for (const [actionIndex, action] of this.queue.entries()) {
+							if (action.pokemon === source && action.choice === 'megaEvo') {
+								this.actions.runMegaEvo(source);
+								this.queue.list.splice(actionIndex, 1);
+								break;
+							}
+						}
+					}
+					this.actions.runMove(move, source, source.getLocOf(pokemon));
+					source.useItem();
+				}
+			}
+		}
+	},
 
 	//#region Gatherer's Bounty change to berries
 	jabocaberry: {
