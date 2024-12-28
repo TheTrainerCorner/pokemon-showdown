@@ -30,36 +30,40 @@ export const Items: {[k: string]: ModdedItemData} = {
 	wantedposter: {
 		name: "Wanted Poster",
 		spritenum: -100,
-		desc: "If the opposing pokemon is at a type disadvantage, consumes the item, and prevents the target from escaping. descrease the damage they take by 20%",
-		shortDesc: "If the opposing pokemon is at a type disadvantage, prevents target from escaping, descreases damage by 20% to the target. Single use.",
+		desc: "Upon switch-in, consumes the item and traps the target. The target will take 30% less damage from the user as a result of consuming the item.",
+		shortDesc: "Upon Switch-in, consumes item, traps the target; target takes 30% less damage from user. Single Use.",
 		fling: {
 			basePower: 10,
 		},
-		onStart(source) {
-			this.debug('Wanted Poster started');
-			for(const target of source.side.foes()) {
-				for (const sourceType of source.types) {
-					if (this.dex.getEffectiveness(sourceType, target) < 1) continue;
-					this.debug(`${this.dex.getEffectiveness(sourceType, target)}`);
-					this.effectState.wantedPoster = true;
+		onStart(pokemon) {
+			for (const target of pokemon.side.foes()) {
+				if (pokemon.isAdjacent(target)) {
+					target.addVolatile('wantedposter');
+					target.itemState.wantedPoster = pokemon;
 				}
-
-				if (!this.effectState.wantedPoster) return;
-				target.addVolatile('trapped', target);
-				target.addVolatile('wantedposter', target);
-				source.useItem();
 			}
+			pokemon.useItem();
 		},
 		condition: {
-			onSourceModifyAtk(atk, attacker, defender, move) {
-				this.debug('Wanted Poster Atk weaken');
-				return this.chainModify([3413, 4096]);
+			onTrapPokemon(pokemon) {
+				pokemon.tryTrap();
 			},
-			onSourceModifySpA(atk, attacker, defender, move) {
-				this.debug(' Wanted Poster spa weaken');
-				return this.chainModify([3413, 4096]);
+			onMaybeTrapPokemon(pokemon) {
+				if (!pokemon.itemState.wantedPoster) return;
+				if (!pokemon.isAdjacent(pokemon.itemState.wantedPoster)) return;
+				pokemon.maybeTrapped = true;
+			},
+			onSourceModifyAtk(atk, source, target, move) {
+				if (source === target.itemState.wantedPoster) {
+					return this.chainModify([2868, 4096]);
+				}
+			},
+			onSourceModifySpA(atk, source, target, move) {
+				if (source === target.itemState.wantedPoster) {
+					return this.chainModify([2868, 4096]);
+				}
 			}
-		}
+		},
 	},
 
 	//#region Gatherer's Bounty change to berries
