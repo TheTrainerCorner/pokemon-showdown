@@ -359,7 +359,10 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Zacian', this);
 		new ModifyPokemon('Zamazenta', this);
 		new ModifyPokemon('Eternatus', this);
-		new ModifyPokemon('Calyrex-Ice', this);
+		new ModifyPokemon('Calyrex-Ice', this)
+			.baseStats
+				.setATK(155)
+				.setSPA(95);
 		new ModifyPokemon('Calyrex-Shadow', this);
 		// Gen 9
 		new ModifyPokemon('Wo-Chien', this)

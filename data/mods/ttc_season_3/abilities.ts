@@ -4,24 +4,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#region Modify Abilities
 	asoneglastrier: {
 		inherit: true,
-		onEnd: undefined,
-		onFoeTryEatItem: undefined,
 		onPreStart(pokemon) {
 			this.add('-ability', pokemon, 'As One');
-		},
-		onStart(pokemon) {
-			let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
-				if (!activated) {
-					this.add('-ability', pokemon, 'Unnerve', 'boost');
-					activated = true;
-				}
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
-					this.boost({spa: -1}, target, pokemon, null, true);
-				}
-			}
 		},
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
