@@ -448,7 +448,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(92)
 				.setSPD(91)
 			.pokemon.types
-				.setType('Steel', 'Fighting')
+				.setType('Steel', 'Psychic');
 		new ModifyPokemon("Luxray", this)
 			.baseStats
 				.setDEF(89)
