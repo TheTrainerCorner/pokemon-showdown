@@ -702,8 +702,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	gengarmega: {
 		isNonstandard: "Past",
-		tier: "Illegal",
-		natDexTier: "AG",
+		tier: "Uber",
+		natDexTier: "Uber",
 	},
 	gengargmax: {
 		isNonstandard: "Past",
