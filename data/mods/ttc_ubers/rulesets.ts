@@ -33,4 +33,22 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'Assist', 'Last Respects',
 		],
 	},
+	noshellsmashmegatoise: {
+		inherit: true,
+		onValidateSet(_) {
+			return [];
+		}
+	},
+	nocalmmindforthepatioset: {
+		inherit: true,
+		onValidateSet(_) {
+			return [];
+		}
+	},
+	nodragondanceforkyub: {
+		inherit: true,
+		onValidateSet(_) {
+			return [];
+		}
+	}
 };
