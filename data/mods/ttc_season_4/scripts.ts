@@ -4,6 +4,10 @@ import { ModifyMove } from '../../../tools/utils/modifyMove';
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: "ttc_season_3",
 	init() {
+
+		new ModifyPokemon('Kyurem-Black', this)
+			.learnset
+				.add('Dragon Dance');
 		//#region Cosmic Damage To
 		this.modData("TypeChart", "normal").damageTaken["Cosmic"] = 0;
 		this.modData("TypeChart", "fire").damageTaken["Cosmic"] = 1;
