@@ -1,27 +1,39 @@
 export const Rulesets: {[k: string]: ModdedFormatData} = {
-	offseasonbanlist: {
+	offseasoncomplexbans: {
 		inherit: true,
-		banlist: [],
-	},
-	seasoncomplexbans: {
-		inherit: true,
-		desc: "All of the complex bans for Offseason",
-		ruleset: [],
-	},
-	seasonunbanlist: {
-		inherit: true,
-		desc: "All of the unbans during Offseason",
-		unbanlist: [
-			'ND Uber',
-			'Burn Drive',
-			'Chill Drive',
-			'Douse Drive',
-			'Shock Drive'
+		ruleset: [
+			'No Calm Mind For The Patio Set',
+			'No Dragon Dance For The Patio Set',
+			'No Dragon Dance For Kyurem-Black',
+			'No Last Respects For Basculegion',
 		],
 	},
-	seasonbanlist: {
+	offseasonunbanlist: {
 		inherit: true,
-		desc: "Everything that is ban during Offseason",
+		unbanlist: [
+			// Tier
+			'ND Uber',
+			// Adding this just in case
+			'Unreleased',
+			// Tiers
+			'LGPE',
+			// Moves
+			'Barb Barrage', 'Baton Pass','Blazing Torque', 'Ceaseless Edge',
+			'Chloroblast', 'Combat Torque', 'Dire Claw',
+			"Dragon's Maw", 'Esper Wing', 'Infernal Parade',
+			'Magical Torque', 'Mountain Gale', 'Noxious Torque',
+			'Psyshield Bash', 'Raging Fury', 'Shelter',
+			'Springtide Storm', 'Stone Axe', 'Triple Arrows',
+			'Victory Dance', 'Wicked Torque',
+			// Items
+			'Custap Berry', 'Thick Club', 'Full Incense',
+			'Lax Incense', 'Odd Incense', 'Rock Incense',
+			'Rose Incense', 'Sea Incense', 'Wave Incense',
+			'Burn Drive', 'Chill Drive', 'Douse Drive', 'Shock Drive'
+		],
+	},
+	offseasonbanlist: {
+		inherit: true,
 		banlist: [
 			// Tiers
 			'ND AG',
@@ -31,13 +43,6 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'King\'s Rock', 'Quick Claw', 'Razor Fang',
 			// Moves
 			'Assist', 'Last Respects',
-		],
-	},
-	offseasoncomplexbans: {
-		inherit: true,
-		desc: "All of the complex bans for Offseason",
-		ruleset: [
-			'Weather Rocks and Extender Ban',
 		],
 	},
 };

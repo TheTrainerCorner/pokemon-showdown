@@ -28,8 +28,7 @@ export const Formats: FormatList = [
 			'Standard Natdex', 'Terastal Clause',
 			'Species Clause', 'OHKO Clause', 'Evasion Clause',
 			'Sleep Clause Mod',
-			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist',
-			'Offseason Complex Bans', 'Offseason Banlist',
+			'Offseason Complex Bans', 'OffSeason Unbanlist', 'Offseason Banlist',
 		],
 	},
 	// {
