@@ -65,7 +65,6 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'Custap Berry', 'Thick Club', 'Full Incense',
 			'Lax Incense', 'Odd Incense', 'Rock Incense',
 			'Rose Incense', 'Sea Incense', 'Wave Incense',
-			'Thick Club',
 		],
 	},
 	seasonbanlist: {
