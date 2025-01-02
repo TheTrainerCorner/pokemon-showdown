@@ -226,7 +226,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Kyurem-Black', this)
 			.baseStats
 				.setATK(170)
-				.setSPE(95);
+				.setSPE(95)
+			.pokemon.learnset
+				.add('Dragon Dance');
 		new ModifyPokemon('Genesect', this)
 			.abilities
 				.setAbility0('Download')
