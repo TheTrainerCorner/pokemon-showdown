@@ -24,7 +24,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'Magical Torque', 'Mountain Gale', 'Noxious Torque',
 			'Psyshield Bash', 'Raging Fury', 'Shelter',
 			'Springtide Storm', 'Stone Axe', 'Triple Arrows',
-			'Victory Dance', 'Wicked Torque',
+			'Victory Dance', 'Wicked Torque', 'Last Respects',
 			// Items
 			'Custap Berry', 'Thick Club', 'Full Incense',
 			'Lax Incense', 'Odd Incense', 'Rock Incense',
@@ -42,7 +42,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			// Items
 			'King\'s Rock', 'Quick Claw', 'Razor Fang',
 			// Moves
-			'Assist', 'Last Respects',
+			'Assist',
 		],
 	},
 };

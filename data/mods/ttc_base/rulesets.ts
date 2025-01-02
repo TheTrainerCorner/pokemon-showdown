@@ -196,7 +196,7 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 
 			if (set.species === kyuremblack.name) {
 				if (set.moves.includes(dragonDance.name)) {
-					problems.push(`${set.name} can not have Dragon Dance due to being a nerd!`);
+					problems.push(`Dragon Dance is Complex Banned on ${set.name}`);
 				}
 				return problems;
 			}
