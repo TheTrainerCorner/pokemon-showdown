@@ -6,8 +6,8 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'No Dragon Dance For The Patio Set',
 			'No Dragon Dance For Kyurem-Black',
 			'No Last Respects For Basculegion',
-			'No Power Construct For Zygarde',
-			'No Power Construct For Zygarde-10%',
+			// 'No Power Construct For Zygarde',
+			// 'No Power Construct For Zygarde-10%',
 		],
 	},
 	offseasonunbanlist: {
