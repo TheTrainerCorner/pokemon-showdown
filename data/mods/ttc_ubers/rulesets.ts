@@ -33,28 +33,11 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'Assist', 'Last Respects',
 		],
 	},
-	noshellsmashmegatoise: {
+	offseasoncomplexbans: {
 		inherit: true,
-		onValidateSet(_) {
-			return [];
-		}
+		desc: "All of the complex bans for Offseason",
+		ruleset: [
+			'Weather Rocks and Extender Ban',
+		],
 	},
-	nocalmmindforthepatioset: {
-		inherit: true,
-		onValidateSet(_) {
-			return [];
-		}
-	},
-	nodragondanceforkyub: {
-		inherit: true,
-		onValidateSet(_) {
-			return [];
-		}
-	},
-	offseasoncomplexbankyuremblack: {
-		inherit: true,
-		onValidateSet(_) {
-			return [];
-		}
-	}
 };
