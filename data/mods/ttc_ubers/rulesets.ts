@@ -50,5 +50,11 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		onValidateSet(_) {
 			return [];
 		}
+	},
+	offseasoncomplexbankyuremblack: {
+		inherit: true,
+		onValidateSet(_) {
+			return [];
+		}
 	}
 };
