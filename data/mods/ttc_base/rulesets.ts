@@ -43,6 +43,8 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			'No Dragon Dance For Kyurem-Black',
 			'No Last Respects For Houndstone',
 			'No Last Respects For Basculegion',
+			'No Power Construct For Zygarde',
+			'No Power Construct For Zygarde-10%',
 		],
 	},
 	seasonunbanlist: {
@@ -218,7 +220,43 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 			}
 
 			return problems;
-		}	
+		}
+	},
+	nopowerconstructforzygarde: {
+		effectType: "ValidatorRule",
+		name: "No Power Construct For Zygarde",
+		desc: "Prevents Zygarde from using Power Construct",
+		onValidateSet(set) {
+			const problems = [];
+			const zygarde = this.dex.species.get('Zygarde');
+			const powerConstruct = this.dex.abilities.get('Power Construct');
+
+			if (zygarde.name === set.species) {
+				if (powerConstruct.name === set.ability) {
+					problems.push(`Power Construct is Complex Banned on ${set.name}`);
+				}
+			}
+
+			return problems;
+		},
+	},
+	nopowerconstructforzygarde10: {
+		effectType: "ValidatorRule",
+		name: "No Power Construct for Zygarde-10%",
+		desc: "Prevents Zygarde-10% from using Power Construct",
+		onValidateSet(set) {
+			const problems = [];
+			const zygarde10 = this.dex.species.get('Zygarde-10%');
+			const powerConstruct = this.dex.abilities.get('Power Construct');
+			
+			if (zygarde10.name === set.species) {
+				if (powerConstruct.name === set.ability) {
+					problems.push(`Power Construct is Complex Banned on ${set.name}`);
+				}
+			}
+
+			return problems;
+		}
 	},
 	nonastyplotforinteleonmega: {
 		name: "No Nasty Plot for Inteleon-Mega",
