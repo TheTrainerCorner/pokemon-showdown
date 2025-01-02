@@ -41,8 +41,8 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		name: "Offseason Complex Bans",
 		desc: "Complex Bans for Season 2 Offseason (Monotype)!",
 		ruleset: [
-			'Offseason Complex Ban Acudraco',
-			'Offseason Complex Ban Kyurem-Black',
+			// 'Offseason Complex Ban Acudraco',
+			// 'Offseason Complex Ban Kyurem-Black',
 			'Weather Rocks and Extender Ban',
 		],	
 	},
@@ -50,9 +50,9 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		name: "Season Complex Bans",
 		desc: "All of the complex bans for season 2",
 		ruleset: [
-			'No Shell Smash Mega Toise',
-			'No Calm Mind For The Patio Set',
-			'No Dragon Dance for The Patio Set',
+			// 'No Shell Smash Mega Toise',
+			// 'No Calm Mind For The Patio Set',
+			// 'No Dragon Dance for The Patio Set',
 		],
 	},
 	seasonunbanlist: {
