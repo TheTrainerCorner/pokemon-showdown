@@ -99,7 +99,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility0('Drought')
 			.pokemon.learnset
 				.add('UTurn')
-				.add('Solar Blade');
+				.add('Solar Blade')
+				.remove('Celebrate');
 		// Gen 3
 		new ModifyPokemon('Luvdisc', this)
 			.abilities
@@ -160,7 +161,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(145)
 				.setSPE(110)
 			.pokemon.learnset
-				.add('Dragon Rush');
+				.add('Dragon Rush')
+				.remove('Celebrate');
 		new ModifyPokemon('Manectric-Mega', this)
 			.abilities
 				.setAbility0('Teravolt');
