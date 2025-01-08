@@ -178,6 +178,19 @@
 			}
 		]
 	},
+	"fearow": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Swords Dance", "Drill Peck", "Knock Off", "Drill Run"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Beak Blast", "Pursuit", "U-Turn", "Roost"]
+			}
+		]
+	},
 	"dragonite": {
 		"level": 84,
 		"sets": [

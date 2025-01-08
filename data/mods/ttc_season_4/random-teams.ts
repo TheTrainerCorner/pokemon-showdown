@@ -1176,7 +1176,7 @@ export class RandomTeams {
 		if (species.id === 'blastoise' && role === 'Leftovers') return 'Shell Armor';
 		if (species.id === 'blastoise' && role === 'White Herb') return 'Shell Armor';
 
-		if (species.id === 'beedrill' && role === 'Heavy Duty Boots') return 'Swarm';
+		if (species.id === 'beedrill' && role === 'Heavy Duty Boots' && !(moves.has('swordsdance') || moves.has('firstimpression'))) return 'Swarm';
 		if (species.id === 'beedrill' && role === 'Heavy Duty Boots' && moves.has('swordsdance')) return 'Merciless';
 		if (species.id === 'beedrill' && role === 'Heavy Duty Boots' && moves.has('firstimpression')) return 'Sniper';
 
@@ -1187,6 +1187,9 @@ export class RandomTeams {
 		if (species.id === 'raticate' && role === 'Flame Orb') return 'Guts';
 		if (species.id === 'raticate' && role === 'Assault Vest') return 'Strong Jaw';
 		if (species.id === 'raticate' && role === 'Choice Band') return 'Hustle';
+
+		if (species.id === 'fearow' && role === 'Heavy Duty Boots' && !moves.has('beakblast')) return 'Big Pecks';
+		if (species.id === 'fearow' && role === 'Heavy Duty Boots' && moves.has('beakblast')) return 'Frisk';
 
 		if (species.id === 'dragonite' && role === 'Heavy Duty Boots') return 'Multiscale';
 		if (species.id === 'dragonite' && role === 'Choice Scarf') return 'Stalwart';
