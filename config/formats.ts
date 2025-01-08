@@ -22,7 +22,7 @@ export const Formats: FormatList = [
 		section: "TTC",
 	},
 	{
-		name: "[Gen 9] National Dex Random",
+		name: "[Gen 9] National Dex Randoms",
 		mod: Config.ttcseason,
 		team: "random",
 		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
