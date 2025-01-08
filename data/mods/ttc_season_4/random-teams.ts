@@ -1337,6 +1337,11 @@ export class RandomTeams {
 			case "White Herb": return "White Herb";
 			case "Metronome": return "Metronome";
 		}
+
+		if (species.id === 'vensaurmega') return 'Venusaurite';
+		if (species.id === 'charizardmegax') return 'Charizardite X';
+		if (species.id === 'charizardmegay') return 'Charizardite Y';
+		if (species.id === 'blastoisemega') return 'Blastoisinite';
 		// if (!isDoubles) {
 		// 	if (
 		// 		!isLead && role === 'Bulky Setup' &&
