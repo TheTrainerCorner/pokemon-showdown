@@ -18,15 +18,15 @@ The column value will be ignored for repeat sections.
 */
 import { Config } from "../server/config-loader";
 export const Formats: FormatList = [
-	{
-		section: "TTC",
-	},
-	{
-		name: "[Gen 9] National Dex Randoms",
-		mod: Config.ttcseason,
-		team: "random",
-		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
-	},
+	// {
+	// 	section: "TTC",
+	// },
+	// {
+	// 	name: "[Gen 9] National Dex Randoms",
+	// 	mod: Config.ttcseason,
+	// 	team: "random",
+	// 	ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
+	// },
 	{
 		section: "TTC Season 3 Offseason",
 	},
