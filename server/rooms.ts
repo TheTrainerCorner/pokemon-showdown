@@ -409,7 +409,7 @@ export abstract class BasicRoom {
 	 * Like addByUser, but without logging
 	 */
 	sendByUser(user: User | null, text: string) {
-		this.send('|c|' + (user ? user.getIdentity(this) : '~') + '|/log ' + text);
+		this.send('|c|' + (user ? user.getIdentity(this) : '&') + '|/log ' + text);
 	}
 	/**
 	 * Like addByUser, but sends to mods only.
@@ -843,13 +843,6 @@ export abstract class BasicRoom {
 				this.rename(this.title, this.roomid.slice(0, lastDashIndex) as RoomID);
 			}
 		}
-		this.bestOf?.setPrivacyOfGames(privacy);
-
-		if (this.game) {
-			for (const player of this.game.players) {
-				player.getUser()?.updateSearch();
-			}
-		}
 	}
 	validateSection(section: string) {
 		const target = toID(section);
@@ -1023,7 +1016,7 @@ export abstract class BasicRoom {
 			const staffIntro = this.getStaffIntroMessage(user);
 			if (staffIntro) this.sendUser(user, staffIntro);
 		} else if (!user.named) {
-			this.reportJoin('l', ' ' + oldid, user);
+			this.reportJoin('l', oldid, user);
 		} else {
 			this.reportJoin('n', user.getIdentityWithStatus(this) + '|' + oldid, user);
 		}
@@ -1219,7 +1212,7 @@ export class GlobalRoomState {
 				auth: {},
 				creationTime: Date.now(),
 				isPrivate: 'hidden',
-				modjoin: '%',
+				modjoin: Users.SECTIONLEADER_SYMBOL,
 				autojoin: true,
 			}];
 		}
@@ -1323,62 +1316,6 @@ export class GlobalRoomState {
 			const timerData = {
 				...room.battle.timer.settings,
 				active: !!room.battle.timer.timer || false,
-			},
-		};
-	}
-	deserializeBattleRoom(battle: NonNullable<Awaited<ReturnType<GlobalRoomState['serializeBattleRoom']>>>) {
-		const {inputLog, players, roomid, title, rated, timer} = battle;
-		const [, formatid] = roomid.split('-');
-		const room = Rooms.createBattle({
-			format: formatid,
-			inputLog,
-			roomid,
-			title,
-			rated: Number(rated),
-			players: [],
-			delayedTimer: timer.active,
-		});
-		if (!room || !room.battle) return false; // shouldn't happen???
-		if (timer) { // json blob of settings
-			Object.assign(room.battle.timer.settings, timer);
-		}
-		for (const [i, playerid] of players.entries()) {
-			room.auth.set(playerid, Users.PLAYER_SYMBOL);
-			const player = room.battle.players[i];
-			(player.id as string) = playerid;
-			room.battle.playerTable[playerid] = player;
-			player.hasTeam = true;
-			const user = Users.getExact(playerid);
-			player.name = user?.name || playerid; // in case user hasn't reconnected yet
-			user?.joinRoom(room);
-		}
-		return true;
-	}
-
-	async saveBattles() {
-		let count = 0;
-		const out = Monitor.logPath('battles.jsonl.progress').createAppendStream();
-		for (const room of Rooms.rooms.values()) {
-			if (!room.battle || room.battle.ended) continue;
-			room.battle.frozen = true;
-			room.battle.timer.stop();
-			const b = await this.serializeBattleRoom(room);
-			if (!b) continue;
-			await out.writeLine(JSON.stringify(b));
-			count++;
-		}
-		await out.writeEnd();
-		await Monitor.logPath('battles.jsonl.progress').rename(Monitor.logPath('battles.jsonl').path);
-		return count;
-	}
-
-	battlesLoading = false;
-	async loadBattles() {
-		this.battlesLoading = true;
-		for (const u of Users.users.values()) {
-			u.send(
-				`|pm|~|${u.getIdentity()}|/uhtml restartmsg,` +
-				`<div class="broadcast-red"><b>Your battles are currently being restored.<br />Please be patient as they load.</div>`
 			};
 			await logDatabase.query(
 				`INSERT INTO stored_battles (roomid, input_log, players, title, rated, timer) VALUES ($1, $2, $3, $4, $5, $6)` +
@@ -1556,7 +1493,6 @@ export class GlobalRoomState {
 			if (level === 50) displayCode |= 16;
 			 // 32 was previously used for Multi Battles
 			if (format.bestOfDefault) displayCode |= 64;
-			if (format.teraPreviewDefault) displayCode |= 128;
 			this.formatList += ',' + displayCode.toString(16);
 		}
 		return this.formatList;
@@ -1574,8 +1510,9 @@ export class GlobalRoomState {
 			if (!Config.groups[rank] || !rank) continue;
 
 			const tarGroup = Config.groups[rank];
-			const groupType = tarGroup.id === 'bot' || (!tarGroup.mute && !tarGroup.root) ?
+			let groupType = tarGroup.id === 'bot' || (!tarGroup.mute && !tarGroup.root) ?
 				'normal' : (tarGroup.root || tarGroup.declare) ? 'leadership' : 'staff';
+			if (tarGroup.id === 'sectionleader') groupType = 'staff';
 
 			rankList.push({
 				symbol: rank,
@@ -1844,7 +1781,7 @@ export class GlobalRoomState {
 			}
 		}
 		for (const user of Users.users.values()) {
-			user.send(`|pm|~|${user.tempGroup}${user.name}|/raw <div class="broadcast-red"><b>The server is restarting soon.</b><br />Please finish your battles quickly. No new battles can be started until the server resets in a few minutes.</div>`);
+			user.send(`|pm|&|${user.tempGroup}${user.name}|/raw <div class="broadcast-red"><b>The server is restarting soon.</b><br />Please finish your battles quickly. No new battles can be started until the server resets in a few minutes.</div>`);
 		}
 
 		this.lockdown = true;
@@ -2136,8 +2073,8 @@ export class GameRoom extends BasicRoom {
 		const silent = options === 'forpunishment' || options === 'silent' || options === 'auto';
 		if (silent) connection = undefined;
 		const isPrivate = this.settings.isPrivate || this.hideReplay;
-		const hidden = options === 'auto' ? 10 :
-			options === 'forpunishment' || (this as any).unlistReplay ? 2 :
+		const hidden = options === 'forpunishment' || options === 'auto' ? 10 :
+			(this as any).unlistReplay ? 2 :
 			isPrivate ? 1 :
 			0;
 		

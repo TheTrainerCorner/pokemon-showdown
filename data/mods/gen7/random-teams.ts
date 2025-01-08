@@ -99,8 +99,7 @@ function sereneGraceBenefits(move: Move) {
 }
 
 export class RandomGen7Teams extends RandomGen8Teams {
-	randomSets: {[species: string]: RandomTeamsTypes.RandomSpeciesData} = require('./sets.json');
-	protected cachedStatusMoves: ID[];
+	randomSets: {[species: string]: RandomTeamsTypes.RandomSpeciesData} = require('./random-sets.json');
 
 	constructor(format: Format | string, prng: PRNG | PRNGSeed | null) {
 		super(format, prng);
@@ -139,14 +138,14 @@ export class RandomGen7Teams extends RandomGen8Teams {
 					types.has('Fighting') || movePool.includes('psychicfangs') || movePool.includes('calmmind')
 				)
 			),
-			Rock: (movePool, moves, abilities, types, counter, species) => (!counter.get('Rock') && species.baseStats.atk >= 80),
-			Steel: (movePool, moves, abilities, types, counter, species) => (!counter.get('Steel') && species.baseStats.atk >= 100),
+			Rock: (movePool, moves, abilities, types, counter, species) => (
+				!counter.get('Rock') && (species.baseStats.atk >= 100 || abilities.has('Rock Head'))
+			),
+			Steel: (movePool, moves, abilities, types, counter, species) => (
+				!counter.get('Steel') && species.baseStats.atk >= 100
+			),
 			Water: (movePool, moves, abilities, types, counter) => !counter.get('Water'),
 		};
-		// Nature Power is Tri Attack this gen
-		this.cachedStatusMoves = this.dex.moves.all()
-			.filter(move => move.category === 'Status' && move.id !== 'naturepower')
-			.map(move => move.id);
 	}
 
 	newQueryMoves(
@@ -314,7 +313,9 @@ export class RandomGen7Teams extends RandomGen8Teams {
 
 		// Develop additional move lists
 		const badWithSetup = ['defog', 'dragontail', 'haze', 'healbell', 'nuzzle', 'pursuit', 'rapidspin', 'toxic'];
-		const statusMoves = this.cachedStatusMoves;
+		const statusMoves = this.dex.moves.all()
+			.filter(move => move.category === 'Status')
+			.map(move => move.id);
 
 		// General incompatibilities
 		const incompatiblePairs = [
@@ -344,6 +345,7 @@ export class RandomGen7Teams extends RandomGen8Teams {
 			['wildcharge', 'thunderbolt'],
 			['gunkshot', 'poisonjab'],
 			[['drainpunch', 'focusblast'], ['closecombat', 'highjumpkick', 'superpower']],
+			['stoneedge', 'headsmash'],
 			['dracometeor', 'dragonpulse'],
 			['dragonclaw', 'outrage'],
 			['knockoff', ['darkestlariat', 'darkpulse', 'foulplay']],
@@ -357,7 +359,7 @@ export class RandomGen7Teams extends RandomGen8Teams {
 			// Lunatone
 			['moonlight', 'rockpolish'],
 			// Smeargle
-			['nuzzle', 'whirlwind'],
+			['destinybond', 'whirlwind'],
 			// Liepard
 			['copycat', 'uturn'],
 			// Seviper
@@ -838,13 +840,42 @@ export class RandomGen7Teams extends RandomGen8Teams {
 		if (abilityData.length <= 1) return abilityData[0].name;
 
 		// Hard-code abilities here
-		if (species.id === 'pangoro' && counter.get('ironfist')) return 'Iron Fist';
-		if (species.id === 'tornadus' && counter.get('Status')) return 'Prankster';
-		if (species.id === 'marowak' && counter.get('recoil')) return 'Rock Head';
-		if (species.id === 'sawsbuck') return moves.has('headbutt') ? 'Serene Grace' : 'Sap Sipper';
-		if (species.id === 'toucannon' && counter.get('skilllink')) return 'Skill Link';
-		if (species.id === 'golduck' && teamDetails.rain) return 'Swift Swim';
-		if (species.id === 'roserade' && counter.get('technician')) return 'Technician';
+		if (species.id === 'gurdurr' || (
+			abilities.has('Guts') &&
+			!abilities.has('Quick Feet') &&
+			(moves.has('facade') || (moves.has('sleeptalk') && moves.has('rest')))
+		)) return 'Guts';
+
+		if (species.id === 'starmie') return role === 'Wallbreaker' ? 'Analytic' : 'Natural Cure';
+		if (species.id === 'ninetales') return 'Drought';
+		if (species.id === 'talonflame' && role === 'Z-Move user') return 'Gale Wings';
+		if (species.id === 'golemalola' && moves.has('return')) return 'Galvanize';
+		if (species.id === 'raticatealola') return 'Hustle';
+		if (species.id === 'ninjask' || species.id === 'seviper') return 'Infiltrator';
+		if (species.id === 'arcanine') return 'Intimidate';
+		if (species.id === 'rampardos' && role === 'Bulky Attacker') return 'Mold Breaker';
+		if (species.baseSpecies === 'Altaria') return 'Natural Cure';
+		// If Ambipom doesn't qualify for Technician, Skill Link is useless on it
+		if (species.id === 'ambipom' && !counter.get('technician')) return 'Pickup';
+		if (
+			['dusknoir', 'raikou', 'suicune', 'vespiquen', 'wailord'].includes(species.id)
+		) return 'Pressure';
+		if (species.id === 'tsareena') return 'Queenly Majesty';
+		if (species.id === 'druddigon' && role === 'Bulky Support') return 'Rough Skin';
+		if (species.id === 'kommoo' && role === 'Z-Move user') return 'Soundproof';
+		if (species.id === 'stunfisk') return 'Static';
+		if (species.id === 'breloom') return 'Technician';
+		if (species.id === 'zangoose') return 'Toxic Boost';
+		if (species.id === 'porygon2') return 'Trace';
+
+		if (abilities.has('Gluttony') && (moves.has('recycle') || moves.has('bellydrum'))) return 'Gluttony';
+		if (abilities.has('Harvest') && (role === 'Bulky Support' || role === 'Staller')) return 'Harvest';
+		if (abilities.has('Moxie') && (counter.get('Physical') > 3 || moves.has('bounce'))) return 'Moxie';
+		if (abilities.has('Regenerator') && role === 'AV Pivot') return 'Regenerator';
+		if (abilities.has('Shed Skin') && moves.has('rest') && !moves.has('sleeptalk')) return 'Shed Skin';
+		if (abilities.has('Sniper') && moves.has('focusenergy')) return 'Sniper';
+		if (abilities.has('Unburden') && ['acrobatics', 'bellydrum', 'closecombat'].some(m => moves.has(m))) return 'Unburden';
+		if (abilities.has('Weak Armor') && types.has('Water') && counter.get('setup')) return 'Weak Armor';
 
 		let abilityAllowed: Ability[] = [];
 		// Obtain a list of abilities that are allowed (not culled)
@@ -908,7 +939,6 @@ export class RandomGen7Teams extends RandomGen8Teams {
 			if (species.baseSpecies === 'Arceus' && species.requiredItems) return species.requiredItems[1];
 			if (species.name === 'Raichu-Alola') return 'Aloraichium Z';
 			if (species.name === 'Decidueye') return 'Decidium Z';
-			if (species.name === 'Incineroar') return 'Incinium Z';
 			if (species.name === 'Kommo-o') return 'Kommonium Z';
 			if (species.name === 'Lunala') return 'Lunalium Z';
 			if (species.baseSpecies === 'Lycanroc') return 'Lycanium Z';
@@ -962,7 +992,7 @@ export class RandomGen7Teams extends RandomGen8Teams {
 		if (moves.has('shellsmash')) {
 			return (ability === 'Solid Rock' && !!counter.get('priority')) ? 'Weakness Policy' : 'White Herb';
 		}
-		if ((ability === 'Guts' || moves.has('facade')) && !moves.has('sleeptalk') && species.id !== 'stoutland') {
+		if ((ability === 'Guts' || moves.has('facade')) && !moves.has('sleeptalk')) {
 			return (types.includes('Fire') || ability === 'Quick Feet' || ability === 'Toxic Boost') ? 'Toxic Orb' : 'Flame Orb';
 		}
 		if (ability === 'Magic Guard' && role !== 'Bulky Support') {
@@ -993,7 +1023,7 @@ export class RandomGen7Teams extends RandomGen8Teams {
 
 		const scarfReqs = (
 			role !== 'Wallbreaker' &&
-			species.baseStats.spe >= 60 && species.baseStats.spe <= 109 &&
+			species.baseStats.spe >= 60 && species.baseStats.spe <= 108 &&
 			!counter.get('priority') && !moves.has('pursuit')
 		);
 
@@ -1029,14 +1059,8 @@ export class RandomGen7Teams extends RandomGen8Teams {
 		}
 		if (moves.has('outrage') && counter.get('setup')) return 'Lum Berry';
 		if (
-			(ability === 'Rough Skin') || (
-				species.id !== 'hooh' &&
-				ability === 'Regenerator' && species.baseStats.hp + species.baseStats.def >= 180 && this.randomChance(1, 2)
-			) || (
-				ability !== 'Regenerator' && !counter.get('setup') && counter.get('recovery') &&
-				this.dex.getEffectiveness('Fighting', species) < 1 &&
-				(species.baseStats.hp + species.baseStats.def) > 200 && this.randomChance(1, 2)
-			)
+			(ability === 'Rough Skin') || (species.id !== 'hooh' &&
+			ability === 'Regenerator' && species.baseStats.hp + species.baseStats.def >= 180 && this.randomChance(1, 2))
 		) return 'Rocky Helmet';
 		if (['kingsshield', 'protect', 'spikyshield', 'substitute'].some(m => moves.has(m))) return 'Leftovers';
 		if (
@@ -1140,11 +1164,8 @@ export class RandomGen7Teams extends RandomGen8Teams {
 
 		const level = this.adjustLevel || this.randomSets[species.id]["level"] || (species.nfe ? 90 : 80);
 
-		// Minimize confusion damage, including if Foul Play is its only physical attack
-		if (
-			(!counter.get('Physical') || (counter.get('Physical') <= 1 && (moves.has('foulplay') || moves.has('rapidspin')))) &&
-			!moves.has('copycat') && !moves.has('transform')
-		) {
+		// Minimize confusion damage
+		if (!counter.get('Physical') && !moves.has('copycat') && !moves.has('transform')) {
 			evs.atk = 0;
 			ivs.atk = 0;
 		}

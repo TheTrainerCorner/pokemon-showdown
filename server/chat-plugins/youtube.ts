@@ -227,7 +227,7 @@ export class YoutubeInterface {
 		if (id.includes('?')) id = id.split('?')[0];
 		return id;
 	}
-	async generateVideoDisplay(link: string, fullInfo = false) {
+	async generateVideoDisplay(link: string, fullInfo = false, broadcasting = false) {
 		if (!Config.youtubeKey) {
 			throw new Chat.ErrorMessage(`This server does not support YouTube commands. If you're the owner, you can enable them by setting up Config.youtubekey.`);
 		}
@@ -237,7 +237,12 @@ export class YoutubeInterface {
 		if (!fullInfo) {
 			let buf = `<b>${info.title}</b> `;
 			buf += `(<a class="subtle" href="https://youtube.com/channel/${info.channelUrl}">${info.channelTitle}</a>)<br />`;
-			buf += `<youtube src="https://www.youtube.com/embed/${id}" />`;
+			if (broadcasting) {
+				buf += `<button class="button" name="send" value="/show https://www.youtube.com/watch?v=${id}">`;
+				buf += `Click to view "${info.title}"</button>`;
+			} else {
+				buf += `<youtube src="https://www.youtube.com/embed/${id}" />`;
+			}
 			return buf;
 		}
 		let buf = `<table style="margin:0px;"><tr>`;
@@ -412,35 +417,95 @@ export class GroupWatch extends Rooms.SimpleRoomGame {
 		buf += `</p>`;
 		return buf;
 	}
-	display() {
-		return (
-			Utils.html`<center><div class="pad"><strong>${this.room.title} Groupwatch - ${this.title}</strong><br /><br />` +
-			`<p>${this.started ? this.getVideoDisplay() : ""}</p><hr />` +
-			`<p>${this.started ? this.getStatsDisplay() : "<i>Waiting to start the video...</i>"}</p>` +
-			`<p>${this.hints().join('<br />')}</p>`
-		);
+	controls(html: string) {
+		this.add(`|controlshtml|<center>${html}</center>`);
 	}
-	update() {
-		for (const user of Object.values(this.room.users)) {
-			for (const conn of user.connections) {
-				if (conn.openPages?.has(`groupwatch-${this.id}`)) {
-					void Chat.parse(`/j view-groupwatch-${this.id}`, this.room, user, conn);
-				}
-			}
-		}
+	field(html: string) {
+		this.add(`|fieldhtml|${html}`);
 	}
-	async changeVideo(url: string) {
-		const info = await YouTube.getGroupwatchData(url);
-		if (!info) throw new Chat.ErrorMessage(`Could not retrieve data for URL ${url}`);
-		this.url = url;
-		this.started = Date.now();
-		this.info = info;
-		this.update();
+	add(buf: string) {
+		this.room.add(buf).update();
 	}
 	destroy() {
-		GroupWatch.groupwatches.delete(this.id);
-		this.room.game = null;
+		this.controls(`<b>The group watch has ended.</b>`);
+		let endBuf = `<center>`;
+		endBuf += this.getStatsDisplay();
+		endBuf += `<br /> Thanks for watching!</center>`;
+		this.field(endBuf);
 		this.room = null!;
+	}
+}
+
+export class TwitchStream extends Rooms.SimpleRoomGame {
+	started = false;
+	data: TwitchChannel;
+	constructor(room: Room, data: TwitchChannel) {
+		super(room);
+		this.data = data;
+	}
+	static async createStreamWatch(room: Room, channel: string) {
+		if ([...Rooms.rooms.values()].some(
+			r => r.roomid.startsWith(`twitch-`) && r.parent?.roomid === room?.roomid
+		)) {
+			throw new Chat.ErrorMessage(`Twitch watch already in progress for this room.`);
+		}
+		const data = await Twitch.getChannel(channel);
+		if (!data) throw new Chat.ErrorMessage(`Channel not found`);
+		const watchRoom = Rooms.createGameRoom(
+			`twitch-stream-watch-${room.nextGameNumber()}` as RoomID,
+			Utils.html`[Twitch Watch] ${data.display_name}`,
+			{isPrivate: 'hidden'}
+		);
+		room.saveSettings();
+		watchRoom.setParent(room);
+		const stream = new TwitchStream(watchRoom, data);
+		watchRoom.game = stream;
+		return watchRoom;
+	}
+	field(buf: string) {
+		this.add(`|fieldhtml|${buf}`);
+	}
+	controls(buf: string) {
+		this.add(`|controlshtml|${buf}`);
+	}
+	add(data: string) {
+		return this.room.add(data).update();
+	}
+	onJoin(user: User) {
+		if (!user.named) return;
+		this.controls(this.getControlsDisplay());
+	}
+	onLeave(user: User) {
+		if (!user.named) return;
+		this.controls(this.getControlsDisplay());
+	}
+	start() {
+		if (this.started) {
+			throw new Chat.ErrorMessage(`Stream already started`);
+		}
+		this.controls(this.getControlsDisplay());
+		this.field(this.getStreamDisplay());
+		this.add(`|html|<h2>The stream watch has started!</h2>`);
+		this.started = true;
+	}
+	end() {
+		this.field('');
+		this.controls(`<center><h2>Stream watch ended</h2></center>`);
+		this.room.parent?.add(`|uhtmlchange|ts-${this.room.roomid}|`);
+		this.add(`|expire|Stream ended`);
+		this.room.destroy();
+	}
+	getControlsDisplay() {
+		let buf = `<p style="background: #6441a5; padding: 5px;border-radius:8px;color:white;font-weight:bold;text-align:center;">`;
+		buf += `<strong>Watching <a href="${this.data.url}" class="subtle">${this.data.display_name}</strong><br />`;
+		buf += `${Chat.count(Object.keys(this.room.users).length, 'users')} watching<br />`;
+		buf += `<strong>Playing: ${this.data.game}`;
+		return buf;
+	}
+	getStreamDisplay() {
+		let buf = `<p style="background: #6441a5; padding: 5px;border-radius:8px;color:white;font-weight:bold;text-align:center;">`;
+		buf += `<twitch src="${this.data.url}" width="600" height="330" />`;
+		return buf;
 	}
 }
 
@@ -671,67 +736,15 @@ export const commands: Chat.ChatCommands = {
 		`/youtube channel [channel] - View the data of a specified channel. Can be either channel ID or channel name.`,
 		`/youtube video [video] - View data of a specified video. Can be either channel ID or channel name.`,
 		`/youtube update [channel], [name] - sets a channel's PS username to [name]. Requires: % @ #`,
-		`/youtube repeat [time] - Sets an interval for [time] minutes, showing a random channel each time. Requires: # ~`,
-		`/youtube addcategory [name] - Adds the [category] to the channel category list. Requires: @ # ~`,
-		`/youtube removecategory [name] - Removes the [category] from the channel category list. Requires: @ # ~`,
-		`/youtube setcategory [category], [channel name] - Sets the category for [channel] to [category]. Requires: @ # ~`,
-		`/youtube decategorize [channel name] - Removes the category for the [channel], if there is one. Requires: @ # ~`,
+		`/youtube repeat [time] - Sets an interval for [time] minutes, showing a random channel each time. Requires: # &`,
+		`/youtube addcategory [name] - Adds the [category] to the channel category list. Requires: @ # &`,
+		`/youtube removecategory [name] - Removes the [category] from the channel category list. Requires: @ # &`,
+		`/youtube setcategory [category], [channel name] - Sets the category for [channel] to [category]. Requires: @ # &`,
+		`/youtube decategorize [channel name] - Removes the category for the [channel], if there is one. Requires: @ # &`,
 		`/youtube categores - View all channels sorted by category.`,
-	],
-	groupwatch: {
-		async create(target, room, user) {
-			room = this.requireRoom();
-			if (!GROUPWATCH_ROOMS.includes(room.roomid)) {
-				return this.errorReply(`This room is not allowed to use the groupwatch function.`);
-			}
-			this.checkCan('mute', null, room);
-			const [url, title] = Utils.splitFirst(target, ',').map(p => p.trim());
-			if (!url || !title) return this.errorReply(`You must specify a video to watch and a title for the group watch.`);
-			const game = await YouTube.createGroupWatch(url, room, title);
-			this.modlog(`YOUTUBE GROUPWATCH`, null, `${url} (${title})`);
-			room.add(
-				`|uhtml|${game.id}|` +
-				`<button class="button" name="send" value="/j view-groupwatch-${game.id}">Join the ongoing group watch!</button>`
-			);
-			room.send(`|tempnotify|youtube|New groupwatch - ${title}!`);
-			this.update();
-		},
-		end(target, room, user) {
-			room = this.requireRoom();
-			this.checkCan('mute', null, room);
-			const game = this.requireGame(GroupWatch);
-			this.modlog(`GROUPWATCH END`);
-			this.add(`|uhtmlchange|${game.id}|`);
-			game.destroy();
-		},
-		start(target, room, user) {
-			room = this.requireRoom();
-			this.checkCan('mute', null, room);
-			const game = this.requireGame(GroupWatch);
-			game.start();
-			game.update();
-		},
-		async edit(target, room, user) {
-			room = this.requireRoom();
-			this.checkCan('mute', null, room);
-			const game = this.requireGame(GroupWatch);
-			await game.changeVideo(target);
-		},
-		list() {
-			let buf = `<strong>Ongoing groupwatches:</strong><br />`;
-			for (const curRoom of Rooms.rooms.values()) {
-				if (!curRoom.getGame(GroupWatch)) continue;
-				buf += `<button class="button" name="send" value="/j ${curRoom.roomid}">${curRoom.title}</button>`;
-			}
-			this.runBroadcast();
-			this.sendReplyBox(buf);
-		},
-	},
-	groupwatchhelp: [
-		`/groupwatch create [link],[title] - create a groupwatch for the given Youtube or Twitch [link] with the [title]. Requires: % @ ~ #`,
-		`/groupwatch end - End the current room's groupwatch, if one exists. Requires: % @ ~ #`,
-		`/groupwatch start - Begin playback for the current groupwatch. Requires: % @ ~ #`,
-		`/groupwatch edit [link] - Change the current groupwatch, if one exists, to be viewing the given [link]. Requires: % @ ~ #`,
+		`/youtube groupwatch [link], [title] - Creates a group watch of the [url] with the given [title]. Requires % @ & #`,
+		`/youtube startwatch - Starts the group watch in the current room, if there is one. Requires % @ & #`,
+		`/youtube stopwatch - Ends the current group watch, if there is one in the current room. Requires % @ & #`,
 	],
 	twitch: {
 		async channel(target, room, user) {

@@ -124,7 +124,7 @@ export const TeamsHandler = new class {
 		}
 		const user = connection.user;
 		const format = Dex.formats.get(toID(formatName));
-		if (format.effectType !== 'Format' || format.team) {
+		if (!format.exists || format.team) {
 			connection.popup("Invalid format:\n\n" + formatName);
 			return null;
 		}

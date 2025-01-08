@@ -319,7 +319,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	whoishelp: [
 		`/whois - Get details on yourself: alts, group, IP address, and rooms.`,
-		`/whois [username] - Get details on a username: alts (Requires: % @ ~), group, IP address (Requires: @ ~), and rooms.`,
+		`/whois [username] - Get details on a username: alts (Requires: % @ &), group, IP address (Requires: @ &), and rooms.`,
 	],
 
 	'chp': 'offlinewhois',
@@ -419,7 +419,7 @@ export const commands: Chat.ChatCommands = {
 			return Utils.html`<a href="/${id}">${shortId}</a>`;
 		}).join(' | '));
 	},
-	sharedbattleshelp: [`/sharedbattles [user1], [user2] - Finds recent battles common to [user1] and [user2]. Requires % @ ~`],
+	sharedbattleshelp: [`/sharedbattles [user1], [user2] - Finds recent battles common to [user1] and [user2]. Requires % @ &`],
 
 	sp: 'showpunishments',
 	showpunishments(target, room, user) {
@@ -429,14 +429,14 @@ export const commands: Chat.ChatCommands = {
 		}
 		return this.parse(`/join view-punishments-${room}`);
 	},
-	showpunishmentshelp: [`/showpunishments - Shows the current punishments in the room. Requires: % @ # ~`],
+	showpunishmentshelp: [`/showpunishments - Shows the current punishments in the room. Requires: % @ # &`],
 
 	sgp: 'showglobalpunishments',
 	showglobalpunishments(target, room, user) {
 		this.checkCan('lock');
 		return this.parse(`/join view-globalpunishments`);
 	},
-	showglobalpunishmentshelp: [`/showpunishments - Shows the current global punishments. Requires: % @ # ~`],
+	showglobalpunishmentshelp: [`/showpunishments - Shows the current global punishments. Requires: % @ # &`],
 
 	async host(target, room, user, connection, cmd) {
 		if (!target) return this.parse('/help host');
@@ -447,7 +447,7 @@ export const commands: Chat.ChatCommands = {
 		const dnsblMessage = dnsbl ? ` [${dnsbl}]` : ``;
 		this.sendReply(`IP ${target}: ${host || "ERROR"} [${hostType}]${dnsblMessage}`);
 	},
-	hosthelp: [`/host [ip] - Gets the host for a given IP. Requires: % @ ~`],
+	hosthelp: [`/host [ip] - Gets the host for a given IP. Requires: % @ &`],
 
 	searchip: 'ipsearch',
 	ipsearchall: 'ipsearch',
@@ -503,7 +503,7 @@ export const commands: Chat.ChatCommands = {
 			this.sendReply(`More than 100 users found. Use /ipsearchall for the full list.`);
 		}
 	},
-	ipsearchhelp: [`/ipsearch [ip|range|host], (room) - Find all users with specified IP, IP range, or host. If a room is provided only users in the room will be shown. Requires: ~`],
+	ipsearchhelp: [`/ipsearch [ip|range|host], (room) - Find all users with specified IP, IP range, or host. If a room is provided only users in the room will be shown. Requires: &`],
 
 	checkchallenges(target, room, user) {
 		room = this.requireRoom();
@@ -528,7 +528,7 @@ export const commands: Chat.ChatCommands = {
 		const [from, to] = user1.id === chall.from ? [user1, user2] : [user2, user1];
 		this.sendReplyBox(Utils.html`${from.name} is challenging ${to.name} in ${Dex.formats.get(chall.format).name}.`);
 	},
-	checkchallengeshelp: [`!checkchallenges [user1], [user2] - Check if the specified users are challenging each other. Requires: * @ # ~`],
+	checkchallengeshelp: [`!checkchallenges [user1], [user2] - Check if the specified users are challenging each other. Requires: * @ # &`],
 
 	/*********************************************************
 	 * Client fallback
@@ -556,9 +556,7 @@ export const commands: Chat.ChatCommands = {
 		if (!this.runBroadcast()) return;
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
-
-		const {dex, format, targets} = this.splitFormat(target, true, true);
-
+		const {dex, format, targets} = this.splitFormat(target, true);
 		let buffer = '';
 		target = targets.join(',');
 		const targetId = toID(target);
@@ -633,7 +631,7 @@ export const commands: Chat.ChatCommands = {
 					};
 					details["Weight"] = `${pokemon.weighthg / 10} kg <em>(${weighthit} BP)</em>`;
 					const gmaxMove = pokemon.canGigantamax || dex.species.get(pokemon.changesFrom).canGigantamax;
-					if (gmaxMove && dex.gen === 8) details["G-Max Move"] = gmaxMove;
+					if (gmaxMove && dex.gen >= 8) details["G-Max Move"] = gmaxMove;
 					if (pokemon.color && dex.gen >= 5) details["Dex Colour"] = pokemon.color;
 					if (pokemon.eggGroups && dex.gen >= 2) details["Egg Group(s)"] = pokemon.eggGroups.join(", ");
 					const evos: string[] = [];
@@ -719,9 +717,7 @@ export const commands: Chat.ChatCommands = {
 						Gen: String(move.gen) || 'CAP',
 					};
 
-					const pastGensOnly = (move.isNonstandard === "Past" && dex.gen >= 8) ||
-						(move.isNonstandard === "Gigantamax" && dex.gen !== 8);
-					if (pastGensOnly) details["&#10007; Past Gens Only"] = "";
+					if (move.isNonstandard === "Past" && dex.gen >= 8) details["&#10007; Past Gens Only"] = "";
 					if (move.secondary || move.secondaries || move.hasSheerForce) details["&#10003; Boosted by Sheer Force"] = "";
 					if (move.flags['contact'] && dex.gen >= 3) details["&#10003; Contact"] = "";
 					if (move.flags['sound'] && dex.gen >= 3) details["&#10003; Sound"] = "";
@@ -779,11 +775,13 @@ export const commands: Chat.ChatCommands = {
 						}
 					}
 
-					if (move.isMax) {
-						details["&#10003; Max Move"] = "";
-						if (typeof move.isMax === "string") details["User"] = `${move.isMax}`;
-					} else if (dex.gen === 8 && move.maxMove?.basePower) {
-						details["Dynamax Power"] = String(move.maxMove.basePower);
+					if (dex.gen >= 8) {
+						if (move.isMax) {
+							details["&#10003; Max Move"] = "";
+							if (typeof move.isMax === "string") details["User"] = `${move.isMax}`;
+						} else if (move.maxMove?.basePower) {
+							details["Dynamax Power"] = String(move.maxMove.basePower);
+						}
 					}
 
 					const targetTypes: {[k: string]: string} = {
@@ -795,7 +793,7 @@ export const commands: Chat.ChatCommands = {
 						allAdjacentFoes: "All Adjacent Opponents",
 						foeSide: "Opposing Side",
 						allySide: "User's Side",
-						allyTeam: "User's Team",
+						allyTeam: "User's Side",
 						allAdjacent: "All Adjacent Pok\u00e9mon",
 						any: "Any Pok\u00e9mon",
 						all: "All Pok\u00e9mon",
@@ -842,7 +840,7 @@ export const commands: Chat.ChatCommands = {
 	datahelp: [
 		`/data [pokemon/item/move/ability/nature] - Get details on this pokemon/item/move/ability/nature.`,
 		`/data [pokemon/item/move/ability/nature], Gen [generation number/format name] - Get details on this pokemon/item/move/ability/nature for that generation/format.`,
-		`!data [pokemon/item/move/ability/nature] - Show everyone these details. Requires: + % @ # ~`,
+		`!data [pokemon/item/move/ability/nature] - Show everyone these details. Requires: + % @ # &`,
 	],
 
 	dt: 'details',
@@ -865,7 +863,7 @@ export const commands: Chat.ChatCommands = {
 			`<code>/details [Pok\u00e9mon/item/move/ability/nature], Gen [generation number]</code>: get details on this Pok\u00e9mon/item/move/ability/nature in that generation.<br />` +
 			`You can also append the generation number to <code>/dt</code>; for example, <code>/dt1 Mewtwo</code> gets details on Mewtwo in Gen 1.<br />` +
 			`<code>/details [Pok\u00e9mon/item/move/ability/nature], [format]</code>: get details on this Pok\u00e9mon/item/move/ability/nature in that format.<br />` +
-			`<code>!details [Pok\u00e9mon/item/move/ability/nature]</code>: show everyone these details. Requires: + % @ # ~`
+			`<code>!details [Pok\u00e9mon/item/move/ability/nature]</code>: show everyone these details. Requires: + % @ # &`
 		);
 	},
 
@@ -884,95 +882,41 @@ export const commands: Chat.ChatCommands = {
 			isInverse = true;
 			targets.pop();
 		}
+		const modGen = Config.ttcseason;
+		let species: {types: string[], [k: string]: any} = dex.mod(modGen).species.get(targets[0]);
+		const type1 = dex.mod(modGen).types.get(targets[0]);
+		const type2 = dex.mod(modGen).types.get(targets[1]);
+		const type3 = dex.mod(modGen).types.get(targets[2]);
 
-		const originalSearch = target;
-		let imperfectMatch = false;
-		let isMatch = false;
-		let species = dex.species.get(targets[0]);
-		let type1 = dex.types.get(targets[0]);
-		let type2 = dex.types.get(targets[1]);
-		let type3 = dex.types.get(targets[2]);
-		if (species.name !== "" && !species.exists && type1.name !== "" && !type1.exists) {
-			const typeSearchResults = dex.dataSearch(targets[0], ['TypeChart']);
-			const speciesSearchResults = dex.dataSearch(targets[0], ['Pokedex']);
-			if (typeSearchResults && typeSearchResults[0].name !== "") {
-				type1 = dex.types.get(typeSearchResults[0].name);
-				imperfectMatch = true;
-			} else if (speciesSearchResults && speciesSearchResults[0].name !== "") {
-				species = dex.species.get(speciesSearchResults[0].name);
-				imperfectMatch = true;
-			} else {
-				return this.sendReplyBox(Utils.html`${originalSearch} isn't a recognized type or Pokemon${Dex.gen > dex.gen ? ` in Gen ${dex.gen}` : ""}.`);
-			}
-		}
-
-		if (type2.name !== "" && !type2.exists) {
-			const searchResults = dex.dataSearch(targets[1], ['TypeChart']);
-			if (searchResults && searchResults[0].name !== "") {
-				type2 = dex.types.get(searchResults[0].name);
-				imperfectMatch = true;
-			} else {
-				return this.sendReplyBox(Utils.html`${originalSearch} isn't a recognized type or Pokemon${Dex.gen > dex.gen ? ` in Gen ${dex.gen}` : ""}.`);
-			}
-		}
-
-		if (type3.name !== "" && !type3.exists) {
-			const searchResults = dex.dataSearch(targets[2], ['TypeChart']);
-			if (searchResults && searchResults[0].name !== "") {
-				type3 = dex.types.get(searchResults[0].name);
-				imperfectMatch = true;
-			} else {
-				return this.sendReplyBox(Utils.html`${originalSearch} isn't a recognized type or Pokemon${Dex.gen > dex.gen ? ` in Gen ${dex.gen}` : ""}.`);
-			}
-		}
-
-		const types = [];
 		if (species.exists) {
-			for (const type of species.types) {
-				types.push(type);
-			}
 			target = species.name;
-			isMatch = true;
-		} else if (type1.exists) {
-			types.push(type1.name);
-			target = type1.name;
-			isMatch = true;
-		}
-
-		let alreadyFoundType2 = false;
-		let alreadyFoundType3 = false;
-		if (types.toString().toLowerCase().includes(type2.name.toLowerCase())) {
-			alreadyFoundType2 = true;
-		}
-		if (types.toString().toLowerCase().includes(type3.name.toLowerCase())) {
-			alreadyFoundType3 = true;
-		}
-
-		if (isMatch) {
-			const searchTarget = [];
-			searchTarget.push(target);
-			if (type2.exists && !alreadyFoundType2) {
-				types.push(type2.name);
-				searchTarget.push(type2.name);
+		} else {
+			const types = [];
+			if (type1.exists) {
+				types.push(type1.name);
+				if (type2.exists && type2 !== type1) {
+					types.push(type2.name);
+				}
+				if (type3.exists && type3 !== type1 && type3 !== type2) {
+					types.push(type3.name);
+				}
 			}
-			if (type3.exists && !alreadyFoundType3) {
-				types.push(type3.name);
-				searchTarget.push(type3.name);
+
+			if (types.length === 0) {
+				return this.sendReplyBox(Utils.html`${target} isn't a recognized type or Pokemon${Dex.gen > dex.gen ? ` in Gen ${dex.gen}` : ""}.`);
 			}
-			target = searchTarget.join("/");
+			species = {types: types};
+			target = types.join("/");
 		}
 
-		if (imperfectMatch) {
-			this.sendReply(`No Pok\u00e9mon or type named '${originalSearch}' was found${Dex.gen > dex.gen ? ` in Gen ${dex.gen}` : ""}. Searching for '${target}' instead.`);
-		}
 		const weaknesses = [];
 		const resistances = [];
 		const immunities = [];
 		for (const type of dex.types.names()) {
-			const notImmune = dex.getImmunity(type, types);
+			const notImmune = dex.mod(modGen).getImmunity(type, species);
 			if (notImmune || isInverse) {
 				let typeMod = !notImmune && isInverse ? 1 : 0;
-				typeMod += (isInverse ? -1 : 1) * dex.getEffectiveness(type, types);
+				typeMod += (isInverse ? -1 : 1) * dex.mod(modGen).getEffectiveness(type, species);
 				switch (typeMod) {
 				case 1:
 					weaknesses.push(type);
@@ -1011,13 +955,13 @@ export const commands: Chat.ChatCommands = {
 			trapped: "Trapping",
 		};
 		for (const status in statuses) {
-			if (!dex.getImmunity(status, types)) {
+			if (!dex.mod(modGen).getImmunity(status, species)) {
 				immunities.push(statuses[status]);
 			}
 		}
 
 		const buffer = [];
-		buffer.push(`${species.exists ? `${target} (ignoring abilities):` : `${target}:`}`);
+		buffer.push(`${species.exists ? `${species.name} (ignoring abilities):` : `${target}:`}`);
 		buffer.push(`<span class="message-effect-weak">Weaknesses</span>: ${weaknesses.join(', ') || '<font color=#999999>None</font>'}`);
 		buffer.push(`<span class="message-effect-resist">Resistances</span>: ${resistances.join(', ') || '<font color=#999999>None</font>'}`);
 		buffer.push(`<span class="message-effect-immune">Immunities</span>: ${immunities.join(', ') || '<font color=#999999>None</font>'}`);
@@ -1025,11 +969,9 @@ export const commands: Chat.ChatCommands = {
 	},
 	weaknesshelp: [
 		`/weakness [pokemon] - Provides a Pok\u00e9mon's resistances, weaknesses, and immunities, ignoring abilities.`,
-		`/weakness [type 1], [type 2] - Provides a type or type combination's resistances, weaknesses, and immunities, ignoring abilities.`,
-		`/weakness [pokemon], [type 1], [type 2] - Provides a Pok\u00e9mon's type and type combination's resistances, weaknesses, and immunities, ignoring abilities.`,
+		`/weakness [type 1]/[type 2] - Provides a type or type combination's resistances, weaknesses, and immunities, ignoring abilities.`,
 		`!weakness [pokemon] - Shows everyone a Pok\u00e9mon's resistances, weaknesses, and immunities, ignoring abilities. Requires: + % @ # &`,
-		`!weakness [type 1], [type 2] - Shows everyone a type or type combination's resistances, weaknesses, and immunities, ignoring abilities. Requires: + % @ # &`,
-		`!weakness [pokemon], [type 1], [type 2] - Shows everyone a Pok\u00e9mon's type and type combination's resistances, weaknesses, and immunities, ignoring abilities. Requires: + % @ # &`,
+		`!weakness [type 1]/[type 2] - Shows everyone a type or type combination's resistances, weaknesses, and immunities, ignoring abilities. Requires: + % @ # &`,
 	],
 
 	eff: 'effectiveness',
@@ -1192,14 +1134,23 @@ export const commands: Chat.ChatCommands = {
 			const immune: string[] = [];
 
 			for (const type in bestCoverage) {
-				if (bestCoverage[type] === 0) {
+				switch (bestCoverage[type]) {
+				case 0:
 					immune.push(type);
-				} else if (bestCoverage[type] < 1) {
+					break;
+				case 0.25:
+				case 0.5:
 					resists.push(type);
-				} else if (bestCoverage[type] > 1) {
-					superEff.push(type);
-				} else {
+					break;
+				case 1:
 					neutral.push(type);
+					break;
+				case 2:
+				case 4:
+					superEff.push(type);
+					break;
+				default:
+					throw new Error(`/coverage effectiveness of ${bestCoverage[type]} from parameters: ${target}`);
 				}
 			}
 			buffer.push(`Coverage for ${sources.join(' + ')}:`);
@@ -1260,14 +1211,23 @@ export const commands: Chat.ChatCommands = {
 							bestEff = Math.pow(2, bestEff);
 						}
 					}
-					if (bestEff === 0) {
+					switch (bestEff) {
+					case 0:
 						cell += `bgcolor=#666666 title="${typing}"><font color=#000000>${bestEff}</font>`;
-					} else if (bestEff < 1) {
+						break;
+					case 0.25:
+					case 0.5:
 						cell += `bgcolor=#AA5544 title="${typing}"><font color=#660000>${bestEff}</font>`;
-					} else if (bestEff > 1) {
-						cell += `bgcolor=#559955 title="${typing}"><font color=#003300>${bestEff}</font>`;
-					} else {
+						break;
+					case 1:
 						cell += `bgcolor=#6688AA title="${typing}"><font color=#000066>${bestEff}</font>`;
+						break;
+					case 2:
+					case 4:
+						cell += `bgcolor=#559955 title="${typing}"><font color=#003300>${bestEff}</font>`;
+						break;
+					default:
+						throw new Error(`/coverage effectiveness of ${bestEff} from parameters: ${target}`);
 					}
 					cell += '</th>';
 					buffer += cell;
@@ -1602,10 +1562,11 @@ export const commands: Chat.ChatCommands = {
 		const globalRanks = [
 			`<strong>Global ranks</strong>`,
 			`+ <strong>Global Voice</strong> - They can use ! commands like !groups`,
+			`§ <strong>Section Leader</strong> - They oversee rooms in a particular section`,
 			`% <strong>Global Driver</strong> - Like Voice, and they can lock users and check for alts`,
 			`@ <strong>Global Moderator</strong> - The above, and they can globally ban users`,
 			`* <strong>Global Bot</strong> - An automated account that can use HTML anywhere`,
-			`~ <strong>Global Administrator</strong> - They can do anything, like change what this message says and promote users globally`,
+			`&amp; <strong>Global Administrator</strong> - They can do anything, like change what this message says and promote users globally`,
 		];
 
 		this.sendReplyBox(
@@ -1617,7 +1578,7 @@ export const commands: Chat.ChatCommands = {
 	groupshelp: [
 		`/groups - Explains what the symbols (like % and @) before people's names mean.`,
 		`/groups [global|room] - Explains only global or room symbols.`,
-		`!groups - Shows everyone that information. Requires: + % @ # ~`,
+		`!groups - Shows everyone that information. Requires: + % @ # &`,
 	],
 
 	punishments(target, room, user) {
@@ -1661,7 +1622,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	punishmentshelp: [
 		`/punishments - Explains punishments.`,
-		`!punishments - Show everyone that information. Requires: + % @ # ~`,
+		`!punishments - Show everyone that information. Requires: + % @ # &`,
 	],
 
 	repo: 'opensource',
@@ -1681,7 +1642,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	opensourcehelp: [
 		`/opensource - Links to PS's source code repository.`,
-		`!opensource - Show everyone that information. Requires: + % @ # ~`,
+		`!opensource - Show everyone that information. Requires: + % @ # &`,
 	],
 
 	staff(target, room, user) {
@@ -1761,7 +1722,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	introhelp: [
 		`/intro - Provides an introduction to competitive Pok\u00e9mon.`,
-		`!intro - Show everyone that information. Requires: + % @ # ~`,
+		`!intro - Show everyone that information. Requires: + % @ # &`,
 	],
 
 	mentoring: 'smogintro',
@@ -1795,8 +1756,7 @@ export const commands: Chat.ChatCommands = {
 		const SUPPORTED_BATTLESPOT_FORMATS = [
 			'gen5gbusingles', 'gen5gbudoubles', 'gen6battlespotsingles', 'gen6battlespotdoubles', 'gen6battlespottriples', 'gen7battlespotsingles', 'gen7battlespotdoubles', 'gen7bssfactory',
 		];
-		const isRandomBattle = (room?.battle && (room.battle.format.endsWith('randombattle') ||
-			room.battle.format.endsWith('randomdoublesbattle')));
+		const isRandomBattle = room?.battle?.format.endsWith('randombattle');
 		const isBattleSpotBattle = (room?.battle && (SUPPORTED_BATTLESPOT_FORMATS.includes(room.battle.format) ||
 			room.battle.format.includes("battlespotspecial")));
 		if (RANDOMS_CALC_COMMANDS.includes(cmd) ||
@@ -1821,7 +1781,7 @@ export const commands: Chat.ChatCommands = {
 		`/calc - Provides a link to a damage calculator`,
 		`/rcalc - Provides a link to the random battles damage calculator`,
 		`/bsscalc - Provides a link to the Battle Spot damage calculator`,
-		`!calc - Shows everyone a link to a damage calculator. Requires: + % @ # ~`,
+		`!calc - Shows everyone a link to a damage calculator. Requires: + % @ # &`,
 	],
 
 	capintro: 'cap',
@@ -1838,8 +1798,20 @@ export const commands: Chat.ChatCommands = {
 	},
 	caphelp: [
 		`/cap - Provides an introduction to the Create-A-Pok\u00e9mon project.`,
-		`!cap - Show everyone that information. Requires: + % @ # ~`,
+		`!cap - Show everyone that information. Requires: + % @ # &`,
 	],
+
+	gennext(target, room, user) {
+		if (!this.runBroadcast()) return;
+		this.sendReplyBox(
+			"NEXT (also called Gen-NEXT) is a mod that makes changes to the game:<br />" +
+			`- <a href="https://github.com/smogon/pokemon-showdown/blob/master/data/mods/gennext/README.md">README: overview of NEXT</a><br />` +
+			"Example replays:<br />" +
+			`- <a href="https://replay.pokemonshowdown.com/gennextou-120689854">Zergo vs Mr Weegle Snarf</a><br />` +
+			`- <a href="https://replay.pokemonshowdown.com/gennextou-130756055">NickMP vs Khalogie</a>`
+		);
+	},
+	gennexthelp: [`/gennext - Provides information on the Gen-NEXT mod.`],
 
 	battlerules(target, room, user) {
 		return this.parse(`/join view-battlerules`);
@@ -1900,26 +1872,17 @@ export const commands: Chat.ChatCommands = {
 					rulesetHtml = `No ruleset found for ${format.name}`;
 				}
 			}
-			const formatDesc = format.desc || '';
-			const descHtml: string[] = [];
-			const data = await getFormatResources(format.id);
-			if (data) {
-				for (const {resource_name, url} of data.resources) {
-					let rn = resource_name;
-					rn = rn.replace(/ thread$/gi, '');
-					rn = rn.replace(/Pokemon Showdown/gi, 'PS');
-					rn = rn.split(' ').map((x: string) => x[0].toUpperCase() + x.substr(1)).join(' ');
-					descHtml.push(`&bullet; <a href="${url}">${rn}</a>`);
+			let formatType: string = (format.gameType || "singles");
+			formatType = formatType.charAt(0).toUpperCase() + formatType.slice(1).toLowerCase();
+			if (!format.desc && !format.threads) {
+				if (format.effectType === 'Format') {
+					return this.sendReplyBox(`No description found for this ${formatType} ${format.section} format.<br />${rulesetHtml}`);
+				} else {
+					return this.sendReplyBox(`No description found for this rule.<br />${rulesetHtml}`);
 				}
-			} else if (format.threads?.length) {
-				descHtml.push(...format.threads);
-			} else {
-				const genID = ['rb', 'gs', 'rs', 'dp', 'bw', 'xy', 'sm', 'ss', 'sv'];
-				descHtml.push(`This format has no resources linked on its <a href="https://www.smogon.com/dex/${genID[format.gen - 1] || 'sv'}/formats/">Smogon Dex page</a>. ` +
-					`Please contact a <a href="https://www.smogon.com/forums/forums/757/">C&amp;C Leader</a> to resolve this. ` +
-					`Alternatively, if this format can't have a page on the Smogon Dex, message <username>dhelmise</username>.<br />`);
 			}
-			return this.sendReplyBox(`<h2>${format.name}</h2><hr />${formatDesc ? formatDesc + '<hr />' : ''}${descHtml.join("<br />")}${rulesetHtml ? `<br />${rulesetHtml}` : ''}`);
+			const descHtml = [...(format.desc ? [format.desc] : []), ...(format.threads || [])];
+			return this.sendReplyBox(`${descHtml.join("<br />")}<br />${rulesetHtml}`);
 		}
 
 		let tableStyle = `border:1px solid gray; border-collapse:collapse`;
@@ -2078,9 +2041,9 @@ export const commands: Chat.ChatCommands = {
 	},
 	ruleshelp: [
 		`/rules - Show links to room rules and global rules.`,
-		`!rules - Show everyone links to room rules and global rules. Requires: + % @ # ~`,
-		`/rules [url] - Change the room rules URL. Requires: # ~`,
-		`/rules remove - Removes a room rules URL. Requires: # ~`,
+		`!rules - Show everyone links to room rules and global rules. Requires: + % @ # &`,
+		`/rules [url] - Change the room rules URL. Requires: # &`,
+		`/rules remove - Removes a room rules URL. Requires: # &`,
 	],
 
 	faq(target, room, user) {
@@ -2124,7 +2087,7 @@ export const commands: Chat.ChatCommands = {
 			buffer.push(`<a href="https://pokemonshowdown.com/${this.tr`pages/privacy`}">${this.tr`Pokémon Showdown privacy policy`}</a>`);
 		}
 		if (showAll || ['lostpassword', 'password', 'lostpass'].includes(target)) {
-			buffer.push(`If you need your Pokémon Showdown password reset, you can fill out a <a href="https://www.smogon.com/forums/password-reset-form/">${this.tr`Password Reset Form`}</a>. <b>You will need to make a Smogon account to be able to fill out a form</b>; that's what the email address you sign in to Smogon with is for (PS accounts for regular users don't have emails associated with them).`);
+			buffer.push(`If you need your Pokémon Showdown password reset, you can fill out a <a href="https://www.smogon.com/forums/password-reset-form/">${this.tr`Password Reset Form`}</a>. You will need to make a Smogon account to be able to fill out the form, as password resets are processed through the Smogon forums.`);
 		}
 		if (!buffer.length && target) {
 			this.errorReply(`'${target}' is an invalid FAQ.`);
@@ -2137,7 +2100,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	faqhelp: [
 		`/faq [theme] - Provides a link to the FAQ. Add autoconfirmed, badges, proxy, ladder, staff, or tiers for a link to these questions. Add all for all of them.`,
-		`!faq [theme] - Shows everyone a link to the FAQ. Add autoconfirmed, badges, proxy, ladder, staff, or tiers for a link to these questions. Add all for all of them. Requires: + % @ # ~`,
+		`!faq [theme] - Shows everyone a link to the FAQ. Add autoconfirmed, badges, proxy, ladder, staff, or tiers for a link to these questions. Add all for all of them. Requires: + % @ # &`,
 	],
 
 	analysis: 'smogdex',
@@ -2317,14 +2280,14 @@ export const commands: Chat.ChatCommands = {
 	},
 	smogdexhelp: [
 		`/analysis [pokemon], [generation], [format] - Links to the Smogon University analysis for this Pok\u00e9mon in the given generation.`,
-		`!analysis [pokemon], [generation], [format] - Shows everyone this link. Requires: + % @ # ~`,
+		`!analysis [pokemon], [generation], [format] - Shows everyone this link. Requires: + % @ # &`,
 	],
 
-	bulbapedia(target, broadcast, user) {
-		if (!target) return this.parse('/help bulbapedia');
+	veekun(target, broadcast, user) {
+		if (!target) return this.parse('/help veekun');
 		if (!this.runBroadcast()) return;
 
-		const baseLink = 'https://bulbapedia.bulbagarden.net/wiki/';
+		const baseLink = 'http://veekun.com/dex/';
 
 		const pokemon = Dex.species.get(target);
 		const item = Dex.items.get(target);
@@ -2339,11 +2302,28 @@ export const commands: Chat.ChatCommands = {
 			if (pokemon.isNonstandard && pokemon.isNonstandard !== 'Past') {
 				return this.errorReply(`${pokemon.name} is not a real Pok\u00e9mon.`);
 			}
-			let baseSpecies = pokemon.baseSpecies;
-			if (pokemon.id.startsWith('flabebe')) baseSpecies = 'Flabébé';
-			const link = `${baseLink}${encodeURIComponent(baseSpecies)}_(Pokémon)`;
 
-			this.sendReplyBox(Utils.html`<a href="${link}">${pokemon.name} in-game information</a>, provided by Bulbapedia`);
+			const baseSpecies = pokemon.baseSpecies || pokemon.name;
+			let forme = pokemon.forme;
+
+			// Showdown and Veekun have different names for various formes
+			if (baseSpecies === 'Meowstic' && forme === 'F') forme = 'Female';
+			if (baseSpecies === 'Zygarde' && forme === '10%') forme = '10';
+			if (baseSpecies === 'Necrozma' && !Dex.species.get(baseSpecies + forme).battleOnly) forme = forme.substr(0, 4);
+			if (baseSpecies === 'Pikachu' && Dex.species.get(baseSpecies + forme).gen === 7) forme += '-Cap';
+			if (forme.endsWith('Totem')) {
+				if (baseSpecies === 'Raticate') forme = 'Totem-Alola';
+				if (baseSpecies === 'Marowak') forme = 'Totem';
+				if (baseSpecies === 'Mimikyu') forme += forme === 'Busted-Totem' ? '-Busted' : '-Disguised';
+			}
+
+			let link = `${baseLink}pokemon/${baseSpecies.toLowerCase()}`;
+			if (forme) {
+				if (baseSpecies === 'Arceus' || baseSpecies === 'Silvally') link += '/flavor';
+				link += `?form=${forme.toLowerCase()}`;
+			}
+
+			this.sendReplyBox(`<a href="${link}">${pokemon.name} description</a> by Veekun`);
 		}
 
 		// Item
@@ -2352,9 +2332,8 @@ export const commands: Chat.ChatCommands = {
 			if (item.isNonstandard && item.isNonstandard !== 'Past') {
 				return this.errorReply(`${item.name} is not a real item.`);
 			}
-			let link = `${baseLink}${encodeURIComponent(item.name)}`;
-			if (Dex.moves.get(item.name).exists) link += '_(item)';
-			this.sendReplyBox(Utils.html`<a href="${link}">${item.name} item description</a>, provided by Bulbapedia`);
+			const link = `${baseLink}items/${item.name.toLowerCase()}`;
+			this.sendReplyBox(`<a href="${link}">${item.name} item description</a> by Veekun`);
 		}
 
 		// Ability
@@ -2363,8 +2342,8 @@ export const commands: Chat.ChatCommands = {
 			if (ability.isNonstandard && ability.isNonstandard !== 'Past') {
 				return this.errorReply(`${ability.name} is not a real ability.`);
 			}
-			const link = `${baseLink}${encodeURIComponent(ability.name)}_(Ability)`;
-			this.sendReplyBox(`<a href="${link}">${ability.name} ability description</a>, provided by Bulbapedia`);
+			const link = `${baseLink}abilities/${ability.name.toLowerCase()}`;
+			this.sendReplyBox(`<a href="${link}">${ability.name} ability description</a> by Veekun`);
 		}
 
 		// Move
@@ -2373,24 +2352,24 @@ export const commands: Chat.ChatCommands = {
 			if (move.isNonstandard && move.isNonstandard !== 'Past') {
 				return this.errorReply(`${move.name} is not a real move.`);
 			}
-			const link = `${baseLink}${encodeURIComponent(move.name)}_(move)`;
-			this.sendReplyBox(`<a href="${link}">${move.name} move description</a>, provided by Bulbapedia`);
+			const link = `${baseLink}moves/${move.name.toLowerCase()}`;
+			this.sendReplyBox(`<a href="${link}">${move.name} move description</a> by Veekun`);
 		}
 
 		// Nature
 		if (nature.exists) {
 			atLeastOne = true;
-			const link = `${baseLink}Nature`;
-			this.sendReplyBox(`<a href="${link}">Nature descriptions</a>, provided by Bulbapedia`);
+			const link = `${baseLink}natures/${nature.name.toLowerCase()}`;
+			this.sendReplyBox(`<a href="${link}">${nature.name} nature description</a> by Veekun`);
 		}
 
 		if (!atLeastOne) {
 			return this.sendReplyBox(`Pok&eacute;mon, item, move, ability, or nature not found.`);
 		}
 	},
-	bulbapediahelp: [
-		`/bulbapedia [pokemon/item/move/ability/nature] - Links to Bulbapedia wiki page for this pokemon/item/move/ability/nature.`,
-		`!bulbapedia [pokemon/item/move/ability/nature] - Shows everyone this link. Requires: + % @ # ~`,
+	veekunhelp: [
+		`/veekun [pokemon] - Links to Veekun website for this pokemon/item/move/ability/nature.`,
+		`!veekun [pokemon] - Shows everyone this link. Requires: + % @ # &`,
 	],
 
 	register() {
@@ -2509,7 +2488,8 @@ export const commands: Chat.ChatCommands = {
 	pr: 'pickrandom',
 	pick: 'pickrandom',
 	pickrandom(target, room, user) {
-		if (!target || !target.includes(',')) return this.parse('/help pick');
+		if (!target) return false;
+		if (!target.includes(',')) return this.parse('/help pick');
 		if (!this.runBroadcast(true)) return false;
 		if (this.broadcasting) {
 			[, target] = Utils.splitFirst(this.message, ' ');
@@ -2605,7 +2585,7 @@ export const commands: Chat.ChatCommands = {
 			buf = Utils.html`<img src="${request.link}" width="${width}" height="${height}" />`;
 			if (resized) buf += Utils.html`<br /><a href="${request.link}" target="_blank">full-size image</a>`;
 		} else {
-			buf = await YouTube.generateVideoDisplay(request.link, false);
+			buf = await YouTube.generateVideoDisplay(request.link, false, true);
 			if (!buf) return this.errorReply('Could not get YouTube video');
 		}
 		buf += Utils.html`<br /><div class="infobox"><small>(Requested by ${request.name})</small>`;
@@ -2617,7 +2597,7 @@ export const commands: Chat.ChatCommands = {
 		room.add(`|c| ${request.name}|/raw ${buf}`);
 		this.privateModAction(`${user.name} approved showing media from ${request.name}.`);
 	},
-	approveshowhelp: [`/approveshow [user] - Approves the media display request of [user]. Requires: % @ # ~`],
+	approveshowhelp: [`/approveshow [user] - Approves the media display request of [user]. Requires: % @ # &`],
 
 	denyshow(target, room, user) {
 		room = this.requireRoom();
@@ -2641,13 +2621,13 @@ export const commands: Chat.ChatCommands = {
 		room.sendUser(targetUser, `|raw|<div class="broadcast-red">Your media request was denied.</div>`);
 		room.sendUser(targetUser, `|notify|Media request denied`);
 	},
-	denyshowhelp: [`/denyshow [user] - Denies the media display request of [user]. Requires: % @ # ~`],
+	denyshowhelp: [`/denyshow [user] - Denies the media display request of [user]. Requires: % @ # &`],
 
 	approvallog(target, room, user) {
 		room = this.requireRoom();
 		return this.parse(`/sl approved showing media from, ${room.roomid}`);
 	},
-	approvalloghelp: [`/approvallog - View a log of past media approvals in the current room. Requires: ~`],
+	approvalloghelp: [`/approvallog - View a log of past media approvals in the current room. Requires: % @ # &`],
 
 	viewapprovals(target, room, user) {
 		room = this.requireRoom();
@@ -2655,7 +2635,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	viewapprovalshelp: [
 		`/viewapprovals - View a list of users who have requested to show media in the current room.`,
-		`Requires: % @ # ~`,
+		`Requires: % @ # &`,
 	],
 
 	async show(target, room, user, connection) {
@@ -2680,7 +2660,7 @@ export const commands: Chat.ChatCommands = {
 		this.runBroadcast();
 		let buf;
 		if (YouTube.linkRegex.test(link)) {
-			buf = await YouTube.generateVideoDisplay(link, false);
+			buf = await YouTube.generateVideoDisplay(link, false, this.broadcasting);
 			this.message = this.message.replace(/&ab_channel=(.*)(&|)/ig, '').replace(/https:\/\/www\./ig, '');
 		} else if (Twitch.linkRegex.test(link)) {
 			const channelId = Twitch.linkRegex.exec(link)?.[2]?.trim();
@@ -2722,7 +2702,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	showhelp: [
 		`/show [url] - Shows you an image, audio clip, video file, or YouTube video.`,
-		`!show [url] - Shows an image, audio clip, video file, or YouTube video to everyone in a chatroom. Requires: whitelist % @ # ~`,
+		`!show [url] - Shows an image, audio clip, video file, or YouTube video to everyone in a chatroom. Requires: whitelist % @ # &`,
 	],
 
 	rebroadcast(target, room, user, connection) {
@@ -2803,7 +2783,7 @@ export const commands: Chat.ChatCommands = {
 		}
 	},
 	codehelp: [
-		`!code [code] - Broadcasts code to a room. Accepts multi-line arguments. Requires: + % @ ~ #`,
+		`!code [code] - Broadcasts code to a room. Accepts multi-line arguments. Requires: + % @ & #`,
 		`/code [code] - Shows you code. Accepts multi-line arguments.`,
 	],
 
@@ -2824,7 +2804,7 @@ export const commands: Chat.ChatCommands = {
 			allowEmpty: true, useIDs: false,
 		});
 		const format = Dex.formats.get(toID(args.format[0]));
-		if (format.effectType !== 'Format') {
+		if (!format.exists) {
 			return this.popupReply(`The format '${format}' does not exist.`);
 		}
 		delete args.format;
@@ -2949,7 +2929,7 @@ export const commands: Chat.ChatCommands = {
 		}
 		this.sendReplyBox(buf);
 	},
-	adminhelphelp: [`/adminhelp - Programmatically generates a list of all administrator commands. Requires: ~`],
+	adminhelphelp: [`/adminhelp - Programmatically generates a list of all administrator commands. Requires: &`],
 
 	altlog: 'altslog',
 	altslog(target, room, user) {
@@ -2961,65 +2941,8 @@ export const commands: Chat.ChatCommands = {
 		return this.parse(`/join view-altslog-${target}`);
 	},
 	altsloghelp: [
-		`/altslog [userid] - View the alternate account history for the given [userid]. Requires: % @ ~`,
+		`/altslog [userid] - View the alternate account history for the given [userid]. Requires: % @ &`,
 	],
-
-	randtopic(target, room, user) {
-		room = this.requireRoom();
-		if (!room.settings.topics?.length) {
-			return this.errorReply(`This room has no random topics to select from.`);
-		}
-		this.runBroadcast();
-		this.sendReply(Utils.html`|html|<div class="broadcast-blue">${Utils.randomElement(room.settings.topics)}</div>`);
-	},
-	randtopichelp: [
-		`/randtopic - Randomly selects a topic from the room's discussion topic pool and displays it.`,
-		`/addtopic [target] - Adds the [target] to the pool of random discussion topics. Requires: % @ # ~`,
-		`/removetopic [index] - Removes the topic from the room's topic pool. Requires: % @ # ~`,
-		`/randomtopics - View the discussion topic pool for the current room.`,
-	],
-
-	addtopic(target, room, user) {
-		room = this.requireRoom();
-		this.checkCan('mute', null, room);
-		target = target.trim();
-		if (!toID(target).length) {
-			return this.parse(`/help randtopic`);
-		}
-		if (!room.settings.topics) room.settings.topics = [];
-		room.settings.topics.push(target);
-		this.privateModAction(`${user.name} added the topic "${target}" to the random topic pool.`);
-		this.modlog('ADDTOPIC', null, target);
-		room.saveSettings();
-	},
-	addtopichelp: [`/addtopic [target] - Adds the [target] to the pool of random discussion topics. Requires: % @ # ~`],
-
-	removetopic(target, room, user) {
-		room = this.requireRoom();
-		this.checkCan('mute', null, room);
-		if (!toID(target)) {
-			return this.parse(`/help randtopic`);
-		}
-		const index = Number(toID(target)) - 1;
-		if (isNaN(index)) {
-			return this.errorReply(`Invalid topic index: ${target}. Must be a number.`);
-		}
-		if (!room.settings.topics?.[index]) {
-			return this.errorReply(`Topic ${index + 1} not found.`);
-		}
-		const topic = room.settings.topics.splice(index, 1)[0];
-		room.saveSettings();
-		this.privateModAction(`${user.name} removed topic ${index + 1} from the random topic pool.`);
-		this.modlog('REMOVETOPIC', null, topic);
-	},
-	removetopichelp: [`/removetopic [index] - Removes the topic from the room's topic pool. Requires: % @ # ~`],
-
-	listtopics: 'randomtopics',
-	randtopics: 'randomtopics',
-	randomtopics(target, room, user) {
-		room = this.requireRoom();
-		return this.parse(`/join view-topics-${room}`);
-	},
 };
 
 export const handlers: Chat.Handlers = {
@@ -3159,8 +3082,8 @@ export const pages: Chat.PageTable = {
 		buf += `<hr />`;
 		const formatId = toID(query[0]);
 		const format = Dex.formats.get(formatId);
-		if (!formatId || format.effectType !== 'Format') {
-			if (formatId) {
+		if (!formatId || !format.exists) {
+			if (formatId && !format.exists) {
 				buf += `<div class="message-error">The format '${formatId}' does not exist.</div><br />`;
 			}
 			buf += `<form data-submitsend="/buildformat {format}">`;

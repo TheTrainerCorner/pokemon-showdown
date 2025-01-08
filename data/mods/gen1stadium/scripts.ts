@@ -62,8 +62,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	},
 	actions: {
 		inherit: true,
-		runMove(moveOrMoveName, pokemon, targetLoc, options) {
-			let sourceEffect = options?.sourceEffect;
+		runMove(moveOrMoveName, pokemon, targetLoc, sourceEffect) {
 			const move = this.dex.getActiveMove(moveOrMoveName);
 			const target = this.battle.getTarget(pokemon, move, targetLoc);
 			if (target?.subFainted) target.subFainted = null;
@@ -93,14 +92,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			} else {
 				sourceEffect = move;
 			}
-			this.battle.actions.useMove(move, pokemon, {target, sourceEffect});
+			this.battle.actions.useMove(move, pokemon, target, sourceEffect);
 		},
 		// This function deals with AfterMoveSelf events.
 		// This leads with partial trapping moves shenanigans after the move has been used.
-		useMove(moveOrMoveName, pokemon, options) {
-			let sourceEffect = options?.sourceEffect;
-			let target = options?.target;
-			const moveResult = this.useMoveInner(moveOrMoveName, pokemon, {target, sourceEffect});
+		useMove(moveOrMoveName, pokemon, target, sourceEffect) {
+			const moveResult = this.useMoveInner(moveOrMoveName, pokemon, target, sourceEffect);
 
 			if (!sourceEffect && this.battle.effect.id) sourceEffect = this.battle.effect;
 			const baseMove = this.battle.dex.moves.get(moveOrMoveName);
@@ -157,9 +154,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		},
 		// This is the function that actually uses the move, running ModifyMove events.
 		// It uses the move and then deals with the effects after the move.
-		useMoveInner(moveOrMoveName, pokemon, options) {
-			let sourceEffect = options?.sourceEffect;
-			let target = options?.target;
+		useMoveInner(moveOrMoveName, pokemon, target, sourceEffect) {
 			if (!sourceEffect && this.battle.effect.id) sourceEffect = this.battle.effect;
 			const baseMove = this.battle.dex.moves.get(moveOrMoveName);
 			let move = this.battle.dex.getActiveMove(baseMove);

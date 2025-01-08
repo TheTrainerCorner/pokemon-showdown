@@ -35,13 +35,11 @@ REGEXFREE SOURCE FOR LINKREGEX
 			(
 				# characters allowed inside URL paths
 				(
-					[^\s()&<>[\]] | &amp; | &quot;
+					[^\s()&<>] | &amp; | &quot;
 				|
 					# parentheses in URLs should be matched, so they're not confused
 					# for parentheses around URLs
-					\( ( [^\s()<>&[\]] | &amp; )* \)
-	  			|
-					\[ ( [^\s()<>&[\]] | &amp; )* ]
+					\( ( [^\\s()<>&] | &amp; )* \)
 				)*
 				# URLs usually don't end with punctuation, so don't allow
 				# punctuation symbols that probably arent related to URL.
@@ -49,7 +47,7 @@ REGEXFREE SOURCE FOR LINKREGEX
 					[^\s()[\]{}\".,!?;:&<>*`^~\\]
 				|
 					# annoyingly, Wikipedia URLs often end in )
-					\( ( [^\s()<>&[\]] | &amp; )* \)
+					\( ( [^\s()<>&] | &amp; )* \)
 				)
 			)?
 		)?
@@ -60,7 +58,7 @@ REGEXFREE SOURCE FOR LINKREGEX
 	(?! [^ ]*&gt; )
 
 */
-export const linkRegex = /(?:(?:https?:\/\/[a-z0-9-]+(?:\.[a-z0-9-]+)*|www\.[a-z0-9-]+(?:\.[a-z0-9-]+)+|\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:(?:com?|org|net|edu|info|us|jp)\b|[a-z]{2,3}(?=:[0-9]|\/)))(?::[0-9]+)?(?:\/(?:(?:[^\s()&<>[\]]|&amp;|&quot;|\((?:[^\s()<>&[\]]|&amp;)*\)|\[(?:[^\s()<>&[\]]|&amp;)*])*(?:[^\s()[\]{}".,!?;:&<>*`^~\\]|\((?:[^\s()<>&[\]]|&amp;)*\)))?)?|[a-z0-9.]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,})(?![^ ]*&gt;)/ig;
+export const linkRegex = /(?:(?:https?:\/\/[a-z0-9-]+(?:\.[a-z0-9-]+)*|www\.[a-z0-9-]+(?:\.[a-z0-9-]+)+|\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:(?:com?|org|net|edu|info|us|jp)\b|[a-z]{2,3}(?=:[0-9]|\/)))(?::[0-9]+)?(?:\/(?:(?:[^\s()&<>]|&amp;|&quot;|\((?:[^\\s()<>&]|&amp;)*\))*(?:[^\s()[\]{}".,!?;:&<>*`^~\\]|\((?:[^\s()<>&]|&amp;)*\)))?)?|[a-z0-9.]+@[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,})(?![^ ]*&gt;)/ig;
 
 type SpanType = '_' | '*' | '~' | '^' | '\\' | '|' | '<' | '[' | '`' | 'a' | 'spoiler' | '>' | '(';
 

@@ -17,9 +17,8 @@ export const Scripts: ModdedBattleScriptsData = {
 	gen: 1,
 	init() {
 		for (const i in this.data.Pokedex) {
-			const poke = this.modData('Pokedex', i);
-			poke.gender = 'N';
-			poke.eggGroups = null;
+			(this.data.Pokedex[i] as any).gender = 'N';
+			(this.data.Pokedex[i] as any).eggGroups = null;
 		}
 	},
 	// BattlePokemon scripts.
@@ -123,22 +122,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		// This function is the main one when running a move.
 		// It deals with the beforeMove event.
 		// It also deals with how PP reduction works on gen 1.
-		runMove(moveOrMoveName, pokemon, targetLoc, options) {
-			let sourceEffect = options?.sourceEffect;
+		runMove(moveOrMoveName, pokemon, targetLoc, sourceEffect) {
 			const target = this.battle.getTarget(pokemon, moveOrMoveName, targetLoc);
-			let move = this.battle.dex.getActiveMove(moveOrMoveName);
-
-			// If a faster partial trapping move misses against a user of Hyper Beam during a recharge turn,
-			// the user of Hyper Beam will automatically use Hyper Beam during that turn.
-			const autoHyperBeam = (
-				move.id === 'recharge' && !pokemon.volatiles['mustrecharge'] && !pokemon.volatiles['partiallytrapped']
-			);
-			if (autoHyperBeam) {
-				move = this.battle.dex.getActiveMove('hyperbeam');
-				this.battle.hint(`In Gen 1, If a faster partial trapping move misses against a user of Hyper Beam during a recharge turn, ` +
-					`the user of Hyper Beam will automatically use Hyper Beam during that turn.`, true);
-			}
-
+			const move = this.battle.dex.getActiveMove(moveOrMoveName);
 			if (target?.subFainted) target.subFainted = null;
 
 			this.battle.setActiveMove(move, pokemon, target);
@@ -169,17 +155,14 @@ export const Scripts: ModdedBattleScriptsData = {
 					pokemon.deductPP(pokemon.volatiles['twoturnmove'].originalMove, null, target);
 				}
 			}
-			if (
-				(pokemon.volatiles['partialtrappinglock'] && target !== pokemon.volatiles['partialtrappinglock'].locked) ||
-				autoHyperBeam
-			) {
+			if (pokemon.volatiles['partialtrappinglock'] && target !== pokemon.volatiles['partialtrappinglock'].locked) {
 				const moveSlot = pokemon.moveSlots.find(ms => ms.id === move.id);
 				if (moveSlot && moveSlot.pp < 0) {
 					moveSlot.pp = 63;
 					this.battle.hint("In Gen 1, if a player is forced to use a move with 0 PP, the move will underflow to have 63 PP.");
 				}
 			}
-			this.useMove(move, pokemon, {target, sourceEffect});
+			this.useMove(move, pokemon, target, sourceEffect);
 			// Restore PP if the move is the first turn of a charging move. Save the move from which PP should be deducted if the move succeeds.
 			if (pokemon.volatiles['twoturnmove']) {
 				pokemon.deductPP(move, -1, target);
@@ -188,9 +171,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		},
 		// This function deals with AfterMoveSelf events.
 		// This leads with partial trapping moves shenanigans after the move has been used.
-		useMove(moveOrMoveName, pokemon, options) {
-			let sourceEffect = options?.sourceEffect;
-			let target = options?.target;
+		useMove(moveOrMoveName, pokemon, target, sourceEffect) {
 			if (!sourceEffect && this.battle.effect.id) sourceEffect = this.battle.effect;
 			const baseMove = this.battle.dex.moves.get(moveOrMoveName);
 			let move = this.battle.dex.getActiveMove(baseMove);
@@ -213,7 +194,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			// The charging turn of a two-turn move does not update pokemon.lastMove
 			if (!TWO_TURN_MOVES.includes(move.id) || pokemon.volatiles['twoturnmove']) pokemon.lastMove = move;
 
-			const moveResult = this.useMoveInner(moveOrMoveName, pokemon, {target, sourceEffect});
+			const moveResult = this.useMoveInner(moveOrMoveName, pokemon, target, sourceEffect);
 
 			if (move.id !== 'metronome') {
 				if (move.id !== 'mirrormove' ||
@@ -259,9 +240,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		},
 		// This is the function that actually uses the move, running ModifyMove events.
 		// It uses the move and then deals with the effects after the move.
-		useMoveInner(moveOrMoveName, pokemon, options) {
-			let sourceEffect = options?.sourceEffect;
-			let target = options?.target;
+		useMoveInner(moveOrMoveName, pokemon, target, sourceEffect) {
 			if (!sourceEffect && this.battle.effect.id) sourceEffect = this.battle.effect;
 			const baseMove = this.battle.dex.moves.get(moveOrMoveName);
 			let move = this.battle.dex.getActiveMove(baseMove);

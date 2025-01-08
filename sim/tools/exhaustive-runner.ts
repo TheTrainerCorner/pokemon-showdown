@@ -72,6 +72,7 @@ export class ExhaustiveRunner {
 
 	async run() {
 		const dex = Dex.forFormat(this.format);
+		dex.loadData(); // FIXME: This is required for `dex.gen` to be set properly...
 
 		const seed = this.prng.seed;
 		const pools = this.createPools(dex);

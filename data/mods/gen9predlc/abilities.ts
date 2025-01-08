@@ -34,19 +34,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		isNonstandard: "Future",
 	},
-	embodyaspectcornerstone: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	embodyaspecthearthflame: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	embodyaspectteal: {
-		inherit: true,
-		isNonstandard: "Future",
-	},
-	embodyaspectwellspring: {
+	embodyaspect: {
 		inherit: true,
 		isNonstandard: "Future",
 	},

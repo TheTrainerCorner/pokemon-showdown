@@ -64,7 +64,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				'adamantcrystal', 'griseouscore', 'lustrousglobe', 'wellspringmask',
 				'cornerstonemask', 'hearthflamemask', 'vilevial',
 			].includes(item.id) && item.forcedForme !== pokemon.species.name) {
-				const rawSpecies = (this.actions as any).getMixedSpecies(pokemon.m.originalSpecies, item.forcedForme!, pokemon);
+				// @ts-ignore
+				const rawSpecies = this.actions.getMixedSpecies(pokemon.m.originalSpecies, item.forcedForme!, pokemon);
 				const species = pokemon.setSpecies(rawSpecies);
 				if (!species) continue;
 				pokemon.baseSpecies = rawSpecies;
@@ -111,9 +112,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				let rawSpecies: Species | null = null;
 				const item = pokemon.getItem();
 				if (item.id === 'rustedsword') {
-					rawSpecies = (this.actions as any).getMixedSpecies(pokemon.m.originalSpecies, 'Zacian-Crowned', pokemon);
+					// @ts-ignore
+					rawSpecies = this.actions.getMixedSpecies(pokemon.m.originalSpecies, 'Zacian-Crowned', pokemon);
 				} else if (item.id === 'rustedshield') {
-					rawSpecies = (this.actions as any).getMixedSpecies(pokemon.m.originalSpecies, 'Zamazenta-Crowned', pokemon);
+					// @ts-ignore
+					rawSpecies = this.actions.getMixedSpecies(pokemon.m.originalSpecies, 'Zamazenta-Crowned', pokemon);
 				}
 				if (!rawSpecies) continue;
 				const species = pokemon.setSpecies(rawSpecies);
@@ -173,10 +176,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		case 'move':
 			if (!action.pokemon.isActive) return false;
 			if (action.pokemon.fainted) return false;
-			this.actions.runMove(action.move, action.pokemon, action.targetLoc, {
-				sourceEffect: action.sourceEffect, zMove: action.zmove,
-				maxMove: action.maxMove, originalTarget: action.originalTarget,
-			});
+			this.actions.runMove(action.move, action.pokemon, action.targetLoc, action.sourceEffect,
+				action.zmove, undefined, action.maxMove, action.originalTarget);
 			break;
 		case 'megaEvo':
 			this.actions.runMegaEvo(action.pokemon);
@@ -409,20 +410,22 @@ export const Scripts: ModdedBattleScriptsData = {
 		runMegaEvo(pokemon) {
 			if (pokemon.species.isMega) return false;
 
-			const species: Species = (this as any).getMixedSpecies(pokemon.m.originalSpecies, pokemon.canMegaEvo, pokemon);
+			// @ts-ignore
+			const species: Species = this.getMixedSpecies(pokemon.m.originalSpecies, pokemon.canMegaEvo, pokemon);
 
-			/* Do we have a proper sprite for it? Code for when megas actually exist
+			// Do we have a proper sprite for it?
 			if (this.dex.species.get(pokemon.canMegaEvo!).baseSpecies === pokemon.m.originalSpecies) {
 				pokemon.formeChange(species, pokemon.getItem(), true);
-			} else { */
-			const oSpecies = this.dex.species.get(pokemon.m.originalSpecies);
-			const oMegaSpecies = this.dex.species.get((species as any).originalSpecies);
-			pokemon.formeChange(species, pokemon.getItem(), true);
-			this.battle.add('-start', pokemon, oMegaSpecies.requiredItem, '[silent]');
-			if (oSpecies.types.length !== pokemon.species.types.length || oSpecies.types[1] !== pokemon.species.types[1]) {
-				this.battle.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+			} else {
+				const oSpecies = this.dex.species.get(pokemon.m.originalSpecies);
+				// @ts-ignore
+				const oMegaSpecies = this.dex.species.get(species.originalSpecies);
+				pokemon.formeChange(species, pokemon.getItem(), true);
+				this.battle.add('-start', pokemon, oMegaSpecies.requiredItem, '[silent]');
+				if (oSpecies.types.length !== pokemon.species.types.length || oSpecies.types[1] !== pokemon.species.types[1]) {
+					this.battle.add('-start', pokemon, 'typechange', pokemon.species.types.join('/'), '[silent]');
+				}
 			}
-			// }
 
 			pokemon.canMegaEvo = null;
 			return true;
@@ -449,10 +452,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				pokemon.formeChange(pokemon.species.id + tera, pokemon.getItem(), true);
 			} else {
 				if (pokemon.getItem().name.endsWith('Mask')) {
-					const species: Species = (this as any).getMixedSpecies(pokemon.m.originalSpecies,
+					// @ts-ignore
+					const species: Species = this.getMixedSpecies(pokemon.m.originalSpecies,
 						pokemon.getItem().forcedForme! + '-Tera', pokemon);
 					const oSpecies = this.dex.species.get(pokemon.m.originalSpecies);
-					const originalTeraSpecies = this.dex.species.get((species as any).originalSpecies);
+					// @ts-ignore
+					const originalTeraSpecies = this.dex.species.get(species.originalSpecies);
 					pokemon.formeChange(species, pokemon.getItem(), true);
 					this.battle.add('-start', pokemon, originalTeraSpecies.requiredItem, '[silent]');
 					if (oSpecies.types.length !== pokemon.species.types.length || oSpecies.types[1] !== pokemon.species.types[1]) {
@@ -462,15 +467,14 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 			this.battle.runEvent('AfterTerastallization', pokemon);
 		},
-		getMixedSpecies(originalForme, formeChange, pokemon) {
+		getMixedSpecies(originalForme, megaForme, pokemon) {
 			const originalSpecies = this.dex.species.get(originalForme);
-			const formeChangeSpecies = this.dex.species.get(formeChange);
-			if (originalSpecies.baseSpecies === formeChangeSpecies.baseSpecies &&
-				!formeChangeSpecies.isMega && !formeChangeSpecies.isPrimal) {
-				return formeChangeSpecies;
-			}
-			const deltas = (this as any).getFormeChangeDeltas(formeChangeSpecies, pokemon);
-			const species = (this as any).mutateOriginalSpecies(originalSpecies, deltas);
+			const megaSpecies = this.dex.species.get(megaForme);
+			if (originalSpecies.baseSpecies === megaSpecies.baseSpecies) return megaSpecies;
+			// @ts-ignore
+			const deltas = this.getFormeChangeDeltas(megaSpecies, pokemon);
+			// @ts-ignore
+			const species = this.mutateOriginalSpecies(originalSpecies, deltas);
 			return species;
 		},
 		getFormeChangeDeltas(formeChangeSpecies, pokemon) {
@@ -479,7 +483,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				ability: string,
 				baseStats: SparseStatsTable,
 				weighthg: number,
-				heightm: number,
 				originalSpecies: string,
 				requiredItem: string | undefined,
 				type?: string,
@@ -488,7 +491,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				ability: formeChangeSpecies.abilities['0'],
 				baseStats: {},
 				weighthg: formeChangeSpecies.weighthg - baseSpecies.weighthg,
-				heightm: ((formeChangeSpecies.heightm * 10) - (baseSpecies.heightm * 10)) / 10,
 				originalSpecies: formeChangeSpecies.name,
 				requiredItem: formeChangeSpecies.requiredItem,
 			};
@@ -499,7 +501,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			if (formeChangeSpecies.types.length > baseSpecies.types.length) {
 				deltas.type = formeChangeSpecies.types[1];
 			} else if (formeChangeSpecies.types.length < baseSpecies.types.length) {
-				deltas.type = this.battle.ruleTable.has('mixandmegaoldaggronite') ? 'mono' : baseSpecies.types[0];
+				deltas.type = 'mono';
 			} else if (formeChangeSpecies.types[1] !== baseSpecies.types[1]) {
 				deltas.type = formeChangeSpecies.types[1];
 			}
@@ -530,11 +532,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				baseStats[statName] = this.battle.clampIntRange(baseStats[statName] + deltas.baseStats[statName], 1, 255);
 			}
 			species.weighthg = Math.max(1, species.weighthg + deltas.weighthg);
-			species.heightm = Math.max(0.1, ((species.heightm * 10) + (deltas.heightm * 10)) / 10);
 			species.originalSpecies = deltas.originalSpecies;
 			species.requiredItem = deltas.requiredItem;
-			if (deltas.formeType === 'Mega') species.isMega = true;
-			if (deltas.formeType === 'Primal') species.isPrimal = true;
+			switch (deltas.formeType) {
+			case 'Mega': species.isMega = true; break;
+			case 'Primal': species.isPrimal = true; break;
+			}
 			return species;
 		},
 	},

@@ -30,8 +30,8 @@ export const Rulesets: {[k: string]: FormatData} = {
 	flatrules: {
 		effectType: 'ValidatorRule',
 		name: 'Flat Rules',
-		desc: "The in-game Flat Rules: Adjust Level Down 50, Species Clause, Item Clause = 1, -Mythical, -Restricted Legendary, Bring 6 Pick 3-6 depending on game type.",
-		ruleset: ['Obtainable', 'Team Preview', 'Species Clause', 'Nickname Clause', 'Item Clause = 1', 'Adjust Level Down = 50', 'Picked Team Size = Auto', 'Cancel Mod'],
+		desc: "The in-game Flat Rules: Adjust Level Down 50, Species Clause, Item Clause, -Mythical, -Restricted Legendary, Bring 6 Pick 3-6 depending on game type.",
+		ruleset: ['Obtainable', 'Team Preview', 'Species Clause', 'Nickname Clause', 'Item Clause', 'Adjust Level Down = 50', 'Picked Team Size = Auto', 'Cancel Mod'],
 		banlist: ['Mythical', 'Restricted Legendary', 'Greninja-Bond'],
 	},
 	limittworestricted: {
@@ -96,27 +96,27 @@ export const Rulesets: {[k: string]: FormatData} = {
 				return [`${set.name || set.species} does not exist in the National Dex.`];
 			}
 			const requireObtainable = this.ruleTable.has('obtainable');
-			if (requireObtainable) {
-				if (species.natDexTier === "Unreleased") {
-					const basePokemon = this.toID(species.baseSpecies);
-					if (this.ruleTable.has(`+pokemon:${species.id}`) || this.ruleTable.has(`+basepokemon:${basePokemon}`)) {
-						return;
-					}
-					return [`${set.name || set.species} does not exist in the National Dex.`];
-				}
-				for (const moveid of set.moves) {
-					const move = this.dex.moves.get(moveid);
-					if (move.isNonstandard === 'Unobtainable' && move.gen === this.dex.gen || move.id === 'lightofruin') {
-						if (this.ruleTable.has(`+move:${move.id}`)) continue;
-						const problem = `${set.name}'s move ${move.name} does not exist in the National Dex.`;
-						if (this.ruleTable.has('omunobtainablemoves')) {
-							const {outOfBattleSpecies} = this.getValidationSpecies(set);
-							if (!this.omCheckCanLearn(move, outOfBattleSpecies, this.allSources(outOfBattleSpecies), set, problem)) continue;
-						}
-						return [problem];
-					}
-				}
-			}
+			//if (requireObtainable) {
+				// if (species.natDexTier === "Unreleased") {
+				// 	const basePokemon = this.toID(species.baseSpecies);
+				// 	if (this.ruleTable.has(`+pokemon:${species.id}`) || this.ruleTable.has(`+basepokemon:${basePokemon}`)) {
+				// 		return;
+				// 	}
+				// 	return [`${set.name || set.species} does not exist in the National Dex.`];
+				// }
+				//for (const moveid of set.moves) {
+					//const move = this.dex.moves.get(moveid);
+					//if (move.isNonstandard === 'Unobtainable' && move.gen === this.dex.gen || move.id === 'lightofruin') {
+						//if (this.ruleTable.has(`+move:${move.id}`)) continue;
+						//const problem = `${set.name}'s move ${move.name} does not exist in the National Dex.`;
+						//if (this.ruleTable.has('omunobtainablemoves')) {
+							//const outOfBattleSpecies = this.getValidationSpecies(set)[0];
+							//if (!this.omCheckCanLearn(move, outOfBattleSpecies, this.allSources(outOfBattleSpecies), set, problem)) continue;
+						//}
+						//return [problem];
+					//}
+				//}
+			//}
 			// Any item that was legal in Gen 7 (Normal Gem for example) should be usable
 			if (!set.item) return;
 			let item = this.dex.items.get(set.item);
@@ -443,7 +443,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 		banlist: [
 			'Wooper-Paldea', 'Raichu-Alola', 'Vulpix-Alola', 'Ninetales-Alola', 'Growlithe-Hisui', 'Arcanine-Hisui',
 			'Geodude-Alola', 'Graveler-Alola', 'Golem-Alola', 'Sandshrew-Alola', 'Sandslash-Alola', 'Weezing-Galar',
-			'Sneasel-Hisui', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Basculin-Red-Striped', 'Basculin-Blue-Striped', 'Ursaluna-Base',
+			'Sneasel-Hisui', 'Sliggoo-Hisui', 'Goodra-Hisui', 'Basculin-Base', 'Basculin-Blue-Striped', 'Ursaluna-Base',
 		],
 		onValidateSet(set, format) {
 			const kitakamiDex = [
@@ -484,7 +484,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			if (type.name === 'Stellar') {
 				throw new Error(`There are no Stellar-type Pok\u00e9mon.`);
 			}
-			return type.name;
 		},
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
@@ -628,88 +627,25 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 	},
-	timerstarting: {
-		effectType: 'Rule',
-		name: 'Timer Starting',
-		desc: "Amount of time given at the start of the battle in seconds",
-		hasValue: 'positive-integer',
-		// hardcoded in server/room-battle.ts
-	},
-	dctimer: {
-		effectType: 'Rule',
-		name: 'DC Timer',
-		desc: "Enables or disables the disconnection timer",
-		// hardcoded in server/room-battle.ts
-	},
-	dctimerbank: {
-		effectType: 'Rule',
-		name: 'DC Timer Bank',
-		desc: "Enables or disables the disconnection timer bank",
-		// hardcoded in server/room-battle.ts
-	},
-	timergrace: {
-		effectType: 'Rule',
-		name: 'Timer Grace',
-		desc: "Grace period between timer activation and when total time starts ticking down.",
-		hasValue: 'positive-integer',
-		// hardcoded in server/room-battle.ts
-	},
-	timeraddperturn: {
-		effectType: 'Rule',
-		name: 'Timer Add Per Turn',
-		desc: "Amount of additional time given per turn in seconds",
-		hasValue: 'integer',
-		// hardcoded in server/room-battle.ts
-	},
-	timermaxperturn: {
-		effectType: 'Rule',
-		name: 'Timer Max Per Turn',
-		desc: "Maximum amount of time allowed per turn in seconds",
-		hasValue: 'positive-integer',
-		// hardcoded in server/room-battle.ts
-	},
-	timermaxfirstturn: {
-		effectType: 'Rule',
-		name: 'Timer Max First Turn',
-		desc: "Maximum amount of time allowed for the first turn in seconds",
-		hasValue: 'positive-integer',
-		// hardcoded in server/room-battle.ts
-	},
-	timeoutautochoose: {
-		effectType: 'Rule',
-		name: 'Timeout Auto Choose',
-		desc: "Enables or disables automatic selection of moves when a player times out",
-		// hardcoded in server/room-battle.ts
-	},
-	timeraccelerate: {
-		effectType: 'Rule',
-		name: 'Timer Accelerate',
-		desc: "Enables or disables timer acceleration",
-		// hardcoded in server/room-battle.ts
-	},
 	blitz: {
 		effectType: 'Rule',
 		name: 'Blitz',
 		// THIS 100% INTENTIONALLY SAYS TEN SECONDS PER TURN
-		// IGNORE Max Per Turn. Add Per Turn IS 5, TRANSLATING TO AN INCREMENT OF 10.
+		// IGNORE maxPerTurn. addPerTurn IS 5, TRANSLATING TO AN INCREMENT OF 10.
 		desc: "Super-fast 'Blitz' timer giving 30 second Team Preview and 10 seconds per turn.",
 		onBegin() {
 			this.add('rule', 'Blitz: Super-fast timer');
 		},
-		ruleset: [
-			'Timer Starting = 15', 'Timer Grace = 30',
-			'Timer Add Per Turn = 5', 'Timer Max Per Turn = 15', 'Timer Max First Turn = 40',
-		],
+		timer: {starting: 15, addPerTurn: 5, maxPerTurn: 15, maxFirstTurn: 40, grace: 30},
 	},
 	vgctimer: {
 		effectType: 'Rule',
 		name: 'VGC Timer',
 		desc: "VGC's timer: 90 second Team Preview, 7 minutes Your Time, 1 minute per turn",
-		ruleset: [
-			'Timer Starting = 420', 'Timer Grace = 90',
-			'Timer Add Per Turn = 0', 'Timer Max Per Turn = 55', 'Timer Max First Turn = 90',
-			'Timeout Auto Choose', 'DC Timer Bank',
-		],
+		timer: {
+			starting: 7 * 60, addPerTurn: 0, maxPerTurn: 55, maxFirstTurn: 90,
+			grace: 90, timeoutAutoChoose: true, dcTimerBank: false,
+		},
 	},
 	speciesclause: {
 		effectType: 'ValidatorRule',
@@ -753,31 +689,47 @@ export const Rulesets: {[k: string]: FormatData} = {
 		effectType: 'ValidatorRule',
 		name: 'Item Clause',
 		desc: "Prevents teams from having more than one Pok&eacute;mon with the same item",
-		hasValue: 'positive-integer',
 		onBegin() {
-			this.add('rule', `Item Clause: Limit ${this.ruleTable.valueRules.get('itemclause') || 1} of each item`);
-		},
-		onValidateRule(value) {
-			const num = Number(value);
-			if (num < 1 || num > this.ruleTable.maxTeamSize) {
-				throw new Error(`Item Clause must be between 1 and ${this.ruleTable.maxTeamSize}.`);
-			}
-			return value;
+			this.add('rule', 'Item Clause: Limit one of each item');
 		},
 		onValidateTeam(team) {
-			const itemTable = new this.dex.Multiset<string>();
+			const itemTable = new Set<string>();
 			for (const set of team) {
 				const item = this.toID(set.item);
 				if (!item) continue;
+				if (itemTable.has(item)) {
+					return [
+						`You are limited to one of each item by Item Clause.`,
+						`(You have more than one ${this.dex.items.get(item).name})`,
+					];
+				}
 				itemTable.add(item);
 			}
-			const itemLimit = Number(this.ruleTable.valueRules.get('itemclause') || 1);
-			for (const [itemid, num] of itemTable) {
-				if (num <= itemLimit) continue;
-				return [
-					`You are limited to ${itemLimit} of each item by Item Clause.`,
-					`(You have more than ${itemLimit} ${this.dex.items.get(itemid).name})`,
-				];
+		},
+	},
+	doubleitemclause: {
+		effectType: 'ValidatorRule',
+		name: 'Double Item Clause',
+		desc: "Prevents teams from having more than two Pok&eacute;mon with the same item",
+		onBegin() {
+			this.add('rule', 'Double Item Clause: Limit two of each item');
+		},
+		onValidateTeam(team) {
+			const itemTable: {[k: string]: number} = {};
+			for (const set of team) {
+				const item = this.toID(set.item);
+				if (!item) continue;
+				if (item in itemTable) {
+					if (itemTable[item] >= 2) {
+						return [
+							`You are limited to two of each item by Double Item Clause.`,
+							`(You have more than two ${this.dex.items.get(item).name})`,
+						];
+					}
+					itemTable[item]++;
+				} else {
+					itemTable[item] = 1;
+				}
 			}
 		},
 	},
@@ -977,13 +929,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('rule', 'Swagger Clause: Swagger is banned');
 		},
 	},
-	drypassclause: {
-		effectType: 'ValidatorRule',
-		name: 'DryPass Clause',
-		desc: "Stops teams from bringing Pok&eacute;mon with Baton Pass + any form of trapping, residual recovery, boosting, or Substitute.",
-		ruleset: ['Baton Pass Stat Clause', 'Baton Pass Stat Trap Clause'],
-		banlist: ['Baton Pass + Substitute', 'Baton Pass + Ingrain', 'Baton Pass + Aqua Ring', 'Baton Pass + Block', 'Baton Pass + Mean Look', 'Baton Pass + Spider Web', 'Baton Pass + Jaw Lock'],
-	},
 	batonpassclause: {
 		effectType: 'ValidatorRule',
 		name: 'Baton Pass Clause',
@@ -1132,40 +1077,6 @@ export const Rulesets: {[k: string]: FormatData} = {
 				if (passableBoosts) {
 					return [
 						`${set.name || set.species} has Baton Pass and a way to boost its stats, which is banned by Baton Pass Stat Clause.`,
-					];
-				}
-			}
-		},
-	},
-	batonpassstattrapclause: {
-		effectType: 'ValidatorRule',
-		name: 'Baton Pass Stat Trap Clause',
-		desc: "Stops teams from having a Pok&eacute;mon with Baton Pass that has any way to boost its stats or trap Pok&eacute;mon.",
-		onBegin() {
-			this.add('rule', 'Baton Pass Stat Trap Clause: No Baton Passer may have a way to boost stats or trap Pok\u00e9mon');
-		},
-		onValidateTeam(team) {
-			const statBoostOrTrapping = [
-				'Acid Armor', 'Acupressure', 'Agility', 'Amnesia', 'Ancient Power', 'Assist', 'Barrier', 'Belly Drum', 'Block', 'Bulk Up', 'Calm Mind', 'Charge',
-				'Charge Beam', 'Cosmic Power', 'Curse', 'Defend Order', 'Defense Curl', 'Dragon Dance', 'Growth', 'Guard Swap', 'Harden', 'Heart Swap', 'Howl',
-				'Iron Defense', 'Ingrain', 'Mean Look', 'Meteor Mash', 'Meditate', 'Metal Claw', 'Nasty Plot', 'Ominous Wind', 'Power Trick', 'Psych Up', 'Rage',
-				'Rock Polish', 'Sharpen', 'Silver Wind', 'Skull Bash', 'Spider Web', 'Steel Wing', 'Stockpile', 'Swords Dance', 'Tail Glow', 'Withdraw', 'Speed Boost',
-				'Apicot Berry', 'Ganlon Berry', 'Liechi Berry', 'Petaya Berry', 'Salac Berry', 'Starf Berry', 'Kee Berry', 'Maranga Berry', 'Weakness Policy',
-				'Blunder Policy', 'Luminiscent Moss', 'Snowball', 'Throat Spray', 'Mirror Herb', 'Adrenaline Orb',
-			].map(this.toID);
-			for (const set of team) {
-				if (!set.moves.map(this.toID).includes('batonpass' as ID)) continue;
-				let passableBoosts = false;
-				const item = this.toID(set.item);
-				const ability = this.toID(set.ability);
-				for (const move of set.moves) {
-					if (statBoostOrTrapping.includes(this.toID(move))) passableBoosts = true;
-				}
-				if (statBoostOrTrapping.includes(item)) passableBoosts = true;
-				if (statBoostOrTrapping.includes(ability)) passableBoosts = true;
-				if (passableBoosts) {
-					return [
-						`${set.name || set.species} has Baton Pass and a way to boost its stats or pass trapping, which is banned by Baton Pass Stat Trap Clause.`,
 					];
 				}
 			}
@@ -1384,9 +1295,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 				if (pokemon.species.id === 'rayquaza') {
 					pokemon.canMegaEvo = null;
 					// ability to terastal was determined before the clause activated, causing incorrect behavior
-					if (!this.ruleTable.has('terastalclause')) {
-						pokemon.canTerastallize = this.actions.canTerastallize(pokemon);
-					}
+					pokemon.canTerastallize = this.actions.canTerastallize(pokemon);
 				}
 			}
 		},
@@ -1463,8 +1372,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			// The effectiveness of Freeze Dry on Water isn't reverted
 			if (move && move.id === 'freezedry' && type === 'Water') return;
 			if (move && !this.dex.getImmunity(move, type)) return 1;
-			// Ignore normal effectiveness, prevents bug with Tera Shell
-			if (typeMod) return -typeMod;
+			return -typeMod;
 		},
 	},
 
@@ -1656,7 +1564,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 	'sketchpostgen7moves': {
 		effectType: 'ValidatorRule',
 		name: 'Sketch Post-Gen 7 Moves',
-		desc: "Allows Pokémon who learn Sketch to learn any Gen 8+ move (normally, Sketch is not usable in Gen 8 or Gen 9 Pre-DLC2).",
+		desc: "Allows Pokémon who learn Sketch to learn any Gen 8+ move (normally, Sketch is not usable in Gen 8+).",
 		// Implemented in sim/team-validator.ts
 	},
 	mimicglitch: {
@@ -1817,7 +1725,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			}
 		},
 		onTeamPreview() {
-			this.showOpenTeamSheets();
+			this.showOpenTeamSheets(this.rated === true);
 		},
 	},
 	aaarestrictedabilities: {
@@ -2766,126 +2674,9 @@ export const Rulesets: {[k: string]: FormatData} = {
 		},
 		// Implemented in Pokemon#getDetails
 	},
-	allowedpokemoves: {
+	uselessmovesclause: {
 		effectType: 'ValidatorRule',
-		name: "Allowed Pokemoves",
-		desc: "Allows players to define the amount of Pokemoves allowed per set.",
-		hasValue: 'positive-integer',
-		onValidateRule(value) {
-			const num = Number(value);
-			if (num > this.ruleTable.maxMoveCount || num < 1) {
-				throw new Error(`Allowed Pokemoves must be between 1 and ${this.ruleTable.maxMoveCount}.`);
-			}
-			return value;
-		},
-		// Validation in the Pokemoves format
-	},
-	uniquepokemoves: {
-		effectType: 'ValidatorRule',
-		name: "Unique Pokemoves",
-		desc: "Allows players to define how many times a Pokemon can be used as a Pokemove per team.",
-		hasValue: 'positive-integer',
-		onValidateRule(value) {
-			const num = Number(value);
-			if (num > this.ruleTable.maxMoveCount || num < 1) {
-				throw new Error(`Unique Pokemoves must be between 1 and ${this.ruleTable.maxMoveCount}.`);
-			}
-			return value;
-		},
-		onValidateTeam(team, format, teamHas) {
-			const pokemoves = new this.dex.Multiset<ID>();
-			for (const set of team) {
-				if (set.moves?.length) {
-					for (const moveid of set.moves) {
-						const pokemove = this.dex.species.get(moveid);
-						if (!pokemove.exists) continue;
-						pokemoves.add(pokemove.id);
-					}
-				}
-			}
-			const problems: string[] = [];
-			const uniquePokemoves = Number(this.ruleTable.valueRules.get('uniquepokemoveclause') || 1);
-			for (const [moveid, num] of pokemoves) {
-				if (num <= uniquePokemoves) continue;
-				problems.push(
-					`You have ${num} Pok\u00e9mon with ${this.dex.species.get(moveid).name} as a Pokemove.`,
-					`(Each Pok\u00e9mon can only be used as a Pokemove ${uniquePokemoves} time${uniquePokemoves === 1 ? '' : 's'} per team.)`
-				);
-			}
-			return problems;
-		},
-	},
-	ferventimpersonationmod: {
-		effectType: 'Rule',
-		name: "Fervent Impersonation Mod",
-		desc: `Nickname a Pok&eacute;mon after another Pok&eacute;mon that it shares a moveset with, and it will transform into the Pok&eacute;mon it's nicknamed after once it drops to or below 50% health.`,
-		onValidateTeam(team, format, teamHas) {
-			const exhaustedSpecies = new Set<string>();
-			for (const set of team) {
-				const species = this.dex.species.get(set.species);
-				const impersonation = this.dex.species.get(set.name);
-				if (exhaustedSpecies.has(species.baseSpecies) ||
-					(exhaustedSpecies.has(impersonation.baseSpecies) && impersonation.baseSpecies !== species.baseSpecies)) {
-					return [`You have more than one Pok\u00e9mon nicknamed after ${impersonation.baseSpecies}.`];
-				}
-				exhaustedSpecies.add(species.baseSpecies);
-				if (impersonation.exists && impersonation.baseSpecies !== species.baseSpecies) {
-					exhaustedSpecies.add(impersonation.baseSpecies);
-				}
-			}
-		},
-		onValidateSet(set) {
-			const species = this.dex.species.get(set.species);
-			const impersonation = this.dex.species.get(set.name);
-			if (this.ruleTable.isRestrictedSpecies(species)) {
-				return [
-					`${species.name} can't be used as a base species.`,
-					`(Restricted Pok\u00e9mon can only be used as impersonations.)`,
-				];
-			}
-			const rt = this.ruleTable;
-			if ((this.toID(set.name) !== species.id && this.toID(set.name) !== impersonation.id) ||
-				(impersonation.isNonstandard && !(rt.has(`+pokemontag:${this.toID(impersonation.isNonstandard)}`) ||
-					rt.has(`+pokemon:${impersonation.id}`) || rt.has(`+basepokemon:${this.toID(impersonation.baseSpecies)}`)))) {
-				return [`All Pok\u00e9mon must either have no nickname or must be nicknamed after a Pok\u00e9mon.`];
-			}
-		},
-		checkCanLearn(move, species, setSources, set) {
-			const impersonation = this.dex.species.get(set.name);
-			const baseCheckCanLearn = this.checkCanLearn(move, species, setSources, set);
-			if (baseCheckCanLearn) return baseCheckCanLearn;
-			return this.checkCanLearn(move, impersonation, setSources, set);
-		},
-		onResidualOrder: 29,
-		onResidual(pokemon) {
-			if (pokemon.transformed || !pokemon.hp) return;
-			const oldPokemon = pokemon.species;
-			const impersonation = this.dex.species.get(pokemon.set.name);
-			if (pokemon.species.baseSpecies === impersonation.baseSpecies || pokemon.hp > pokemon.maxhp / 2) return;
-			this.add('-activate', pokemon, 'ability: Power Construct');
-			const abilitySlot = Object.keys(oldPokemon.abilities).find(x => (
-				(oldPokemon.abilities as any)[x] === pokemon.set.ability
-			)) || "0";
-			pokemon.formeChange(impersonation.name, this.effect, true, abilitySlot);
-			pokemon.baseMaxhp = Math.floor(Math.floor(
-				2 * pokemon.species.baseStats['hp'] + pokemon.set.ivs['hp'] + Math.floor(pokemon.set.evs['hp'] / 4) + 100
-			) * pokemon.level / 100 + 10);
-			const newMaxHP = pokemon.volatiles['dynamax'] ? (2 * pokemon.baseMaxhp) : pokemon.baseMaxhp;
-			pokemon.hp = this.clampIntRange(newMaxHP - (pokemon.maxhp - pokemon.hp), 1, newMaxHP);
-			pokemon.maxhp = newMaxHP;
-			this.add('-heal', pokemon, pokemon.getHealth, '[silent]');
-		},
-	},
-	twisteddimensionmod: {
-		effectType: 'Rule',
-		name: "Twisted Dimension Mod",
-		desc: `The effects of Trick Room are always active, using Trick Room reverts the field to normal for 5 turns.`,
-		// implemented in Pokemon#getActionSpeed()
-	},
-	mixandmegaoldaggronite: {
-		effectType: 'Rule',
-		name: "Mix and Mega Old Aggronite",
-		desc: `Causes Aggronite to no longer give the Steel type in Mix and Mega.`,
-		// implemented in mods/mixandmega/scripts.ts
+		name: 'Useless Moves Clause',
+		// implemented in /mods/moderngen1/rulesets.ts
 	},
 };

@@ -42,11 +42,6 @@ export const HARDCODED_MOVE_WEIGHTS: {[moveID: string]: number} = {
 	avalanche: 1.2,
 	hex: 1.2,
 
-	// Attacks that set hazards on hit
-	// We REALLY like hazards
-	stoneaxe: 16,
-	ceaselessedge: 16,
-
 	// screens
 	lightscreen: 3, reflect: 3, auroraveil: 3, // TODO: make sure AVeil always gets Snow?
 

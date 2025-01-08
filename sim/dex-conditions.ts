@@ -1,5 +1,4 @@
-import {Utils} from '../lib';
-import {assignMissingFields, BasicEffect, toID} from './dex-data';
+import {BasicEffect, toID} from './dex-data';
 import type {SecondaryEffect, MoveEventMethods} from './dex-moves';
 
 export interface EventMethods {
@@ -466,7 +465,6 @@ export interface EventMethods {
 	onSourceModifySpAPriority?: number;
 	onSwitchInPriority?: number;
 	onTrapPokemonPriority?: number;
-	onTryBoostPriority?: number;
 	onTryEatItemPriority?: number;
 	onTryHealPriority?: number;
 	onTryHitPriority?: number;
@@ -621,12 +619,13 @@ export class Condition extends BasicEffect implements
 
 	constructor(data: AnyObject) {
 		super(data);
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
+		data = this;
 		this.effectType = (['Weather', 'Status'].includes(data.effectType) ? data.effectType : 'Condition');
-		assignMissingFields(this, data);
 	}
 }
 
-const EMPTY_CONDITION: Condition = Utils.deepFreeze(new Condition({name: '', exists: false}));
+const EMPTY_CONDITION: Condition = new Condition({name: '', exists: false});
 
 export class DexConditions {
 	readonly dex: ModdedDex;
@@ -644,7 +643,7 @@ export class DexConditions {
 	}
 
 	getByID(id: ID): Condition {
-		if (id === '') return EMPTY_CONDITION;
+		if (!id) return EMPTY_CONDITION;
 
 		let condition = this.conditionCache.get(id);
 		if (condition) return condition;

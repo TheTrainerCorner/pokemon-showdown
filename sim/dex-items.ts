@@ -1,6 +1,5 @@
-import type {PokemonEventMethods, ConditionData} from './dex-conditions';
-import {assignMissingFields, BasicEffect, toID} from './dex-data';
-import {Utils} from '../lib';
+import {PokemonEventMethods} from './dex-conditions';
+import {BasicEffect, toID} from './dex-data';
 
 interface FlingData {
 	basePower: number;
@@ -107,6 +106,8 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 
 	constructor(data: AnyObject) {
 		super(data);
+		// eslint-disable-next-line @typescript-eslint/no-this-alias
+		data = this;
 
 		this.fullname = `item: ${this.name}`;
 		this.effectType = 'Item';
@@ -150,12 +151,8 @@ export class Item extends BasicEffect implements Readonly<BasicEffect> {
 		if (this.onDrive) this.fling = {basePower: 70};
 		if (this.megaStone) this.fling = {basePower: 80};
 		if (this.onMemory) this.fling = {basePower: 50};
-
-		assignMissingFields(this, data);
 	}
 }
-
-const EMPTY_ITEM = Utils.deepFreeze(new Item({name: '', exists: false}));
 
 export class DexItems {
 	readonly dex: ModdedDex;
@@ -168,12 +165,13 @@ export class DexItems {
 
 	get(name?: string | Item): Item {
 		if (name && typeof name !== 'string') return name;
-		const id = name ? toID(name.trim()) : '' as ID;
+
+		name = (name || '').trim();
+		const id = toID(name);
 		return this.getByID(id);
 	}
 
 	getByID(id: ID): Item {
-		if (id === '') return EMPTY_ITEM;
 		let item = this.itemCache.get(id);
 		if (item) return item;
 		if (this.dex.data.Aliases.hasOwnProperty(id)) {
@@ -199,17 +197,9 @@ export class DexItems {
 			if (item.gen > this.dex.gen) {
 				(item as any).isNonstandard = 'Future';
 			}
-			if (this.dex.parentMod) {
-				// If this item is exactly identical to parentMod's item, reuse parentMod's copy
-				const parent = this.dex.mod(this.dex.parentMod);
-				if (itemData === parent.data.Items[id]) {
-					const parentItem = parent.items.getByID(id);
-					if (item.isNonstandard === parentItem.isNonstandard &&
-					    item.desc === parentItem.desc &&
-					    item.shortDesc === parentItem.shortDesc) {
-						item = parentItem;
-					}
-				}
+			// hack for allowing mega evolution in LGPE
+			if (this.dex.currentMod === 'gen7letsgo' && !item.isNonstandard && !item.megaStone) {
+				(item as any).isNonstandard = 'Past';
 			}
 		} else {
 			item = new Item({name: id, exists: false});

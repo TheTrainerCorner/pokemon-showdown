@@ -254,10 +254,8 @@ interface ModdedBattleActions {
 	runAction?: (this: BattleActions, action: Action) => void;
 	runMegaEvo?: (this: BattleActions, pokemon: Pokemon) => boolean;
 	runMove?: (
-		this: BattleActions, moveOrMoveName: Move | string, pokemon: Pokemon, targetLoc: number, options?: {
-			sourceEffect?: Effect | null, zMove?: string, externalMove?: boolean,
-			maxMove?: string, originalTarget?: Pokemon,
-		}
+		this: BattleActions, moveOrMoveName: Move | string, pokemon: Pokemon, targetLoc: number, sourceEffect?: Effect | null,
+		zMove?: string, externalMove?: boolean, maxMove?: string, originalTarget?: Pokemon
 	) => void;
 	runMoveEffects?: (
 		this: BattleActions, damage: SpreadMoveDamage, targets: SpreadMoveTargets, source: Pokemon,
@@ -290,16 +288,12 @@ interface ModdedBattleActions {
 		this: BattleActions, targets: Pokemon[], pokemon: Pokemon, move: ActiveMove, notActive?: boolean
 	) => boolean;
 	useMove?: (
-		this: BattleActions, move: Move, pokemon: Pokemon, options?: {
-			target?: Pokemon | null, sourceEffect?: Effect | null,
-			zMove?: string, maxMove?: string,
-		}
+		this: BattleActions, move: Move, pokemon: Pokemon, target?: Pokemon | null,
+		sourceEffect?: Effect | null, zMove?: string, maxMove?: string
 	) => boolean;
 	useMoveInner?: (
-		this: BattleActions, move: Move, pokemon: Pokemon, options?: {
-			target?: Pokemon | null, sourceEffect?: Effect | null,
-			zMove?: string, maxMove?: string,
-		}
+		this: BattleActions, move: Move, pokemon: Pokemon, target?: Pokemon | null,
+		sourceEffect?: Effect | null, zMove?: string, maxMove?: string
 	) => boolean;
 	getDamage?: (
 		this: BattleActions, pokemon: Pokemon, target: Pokemon, move: string | number | ActiveMove, suppressMessages: boolean
@@ -570,24 +564,6 @@ namespace RandomTeamsTypes {
 		moves: string[];
 		dynamaxLevel?: number;
 		gigantamax?: boolean;
-	}
-	export interface RandomDraftFactorySet {
-		name: string;
-		species: string;
-		gender: string;
-		moves: string[];
-		ability: string;
-		evs: SparseStatsTable;
-		ivs: SparseStatsTable;
-		item: string;
-		level: number;
-		shiny: boolean;
-		nature?: string;
-		happiness?: number;
-		dynamaxLevel?: number;
-		gigantamax?: boolean;
-		teraType?: string;
-		teraCaptain?: boolean;
 	}
 	export interface RandomSetData {
 		role: Role;

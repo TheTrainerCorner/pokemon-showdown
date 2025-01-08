@@ -47,7 +47,7 @@ const DEFAULT_TRAINER_SPRITES = [1, 2, 101, 102, 169, 170, 265, 266];
 
 import {FS, Utils, ProcessManager} from '../lib';
 import {
-	Auth, GlobalAuth, PLAYER_SYMBOL, HOST_SYMBOL, RoomPermission, GlobalPermission,
+	Auth, GlobalAuth, SECTIONLEADER_SYMBOL, PLAYER_SYMBOL, HOST_SYMBOL, RoomPermission, GlobalPermission,
 } from './user-groups';
 
 const MINUTES = 60 * 1000;
@@ -1745,6 +1745,7 @@ export const Users = {
 	isUsername,
 	isTrusted,
 	isPublicBot,
+	SECTIONLEADER_SYMBOL,
 	PLAYER_SYMBOL,
 	HOST_SYMBOL,
 	connections,

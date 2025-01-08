@@ -1,7 +1,7 @@
 export const ItemsText: {[k: string]: ItemText} = {
 	abilityshield: {
 		name: "Ability Shield",
-		shortDesc: "Holder's Ability cannot be changed, suppressed, or ignored by any effect.",
+		desc: "Holder's Ability cannot be changed by any effect.",
 
 		block: "  [POKEMON]'s Ability is protected by the effects of its Ability Shield!",
 	},
@@ -850,10 +850,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	icyrock: {
 		name: "Icy Rock",
-		shortDesc: "Holder's use of Snowscape lasts 8 turns instead of 5.",
-		gen8: {
-			shortDesc: "Holder's use of Hail lasts 8 turns instead of 5.",
-		},
+		desc: "Holder's use of Hail lasts 8 turns instead of 5.",
 	},
 	inciniumz: {
 		name: "Incinium Z",
@@ -991,8 +988,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	loadeddice: {
 		name: "Loaded Dice",
-		desc: "The holder's moves that normally hit 2 to 5 times instead hit 4 or 5 times. If the first hit is successful, the holder's use of Triple Kick or Triple Axel hits 3 times, and Population Bomb hits 4 to 10 times, at random.",
-		shortDesc: "Holder's moves that hit 2-5 times hit 4-5 times; Population Bomb hits 4-10 times.",
+		desc: "Holder's moves that hit 2-5 times hit 4-5 times; Population Bomb hits 4-10 times.",
 	},
 	lopunnite: {
 		name: "Lopunnite",
@@ -1624,7 +1620,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	shedshell: {
 		name: "Shed Shell",
-		shortDesc: "Holder cannot be prevented from choosing to switch out by any effect.",
+		desc: "Holder may switch out even when trapped by another Pokemon, or by Ingrain.",
 	},
 	shellbell: {
 		name: "Shell Bell",
@@ -1771,11 +1767,7 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	stoneplate: {
 		name: "Stone Plate",
-		shortDesc: "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type.",
-	},
-	strangeball: {
-		name: "Strange Ball",
-		shortDesc: "Placeholder if caught in Poke Ball not in current game.",
+		desc: "Holder's Rock-type attacks have 1.2x power. Judgment is Rock type.",
 	},
 	strawberrysweet: {
 		name: "Strawberry Sweet",
@@ -2278,11 +2270,8 @@ export const ItemsText: {[k: string]: ItemText} = {
 	},
 	utilityumbrella: {
 		name: "Utility Umbrella",
-		desc: "The holder ignores rain- and sun-based effects, including those of its Ability unless it is Orichalcum Pulse or Protosynthesis. Damage and accuracy calculations from attacks used by the holder are affected by rain and sun, but not attacks used against the holder.",
+		desc: "The holder ignores rain- and sun-based effects. Damage and accuracy calculations from attacks used by the holder are affected by rain and sun, but not attacks used against the holder.",
 		shortDesc: "The holder ignores rain- and sun-based effects.",
-		gen8: {
-			desc: "The holder ignores rain- and sun-based effects, including those of its Ability. Damage and accuracy calculations from attacks used by the holder are affected by rain and sun, but not attacks used against the holder.",
-		},
 	},
 	venusaurite: {
 		name: "Venusaurite",

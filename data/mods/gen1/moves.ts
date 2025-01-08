@@ -80,12 +80,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		self: {
 			volatileStatus: 'partialtrappinglock',
 		},
-		onTryMove(source, target) {
-			if (target.volatiles['mustrecharge']) {
-				target.removeVolatile('mustrecharge');
-				this.hint("In Gen 1, partial trapping moves negate the recharge turn of Hyper Beam, even if they miss.", true);
-			}
-		},
+		// FIXME: onBeforeMove(pokemon, target) {target.removeVolatile('mustrecharge')}
 		onHit(target, source) {
 			/**
 			 * The duration of the partially trapped must be always renewed to 2
@@ -141,12 +136,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		self: {
 			volatileStatus: 'partialtrappinglock',
 		},
-		onTryMove(source, target) {
-			if (target.volatiles['mustrecharge']) {
-				target.removeVolatile('mustrecharge');
-				this.hint("In Gen 1, partial trapping moves negate the recharge turn of Hyper Beam, even if they miss.", true);
-			}
-		},
+		// FIXME: onBeforeMove(pokemon, target) {target.removeVolatile('mustrecharge')}
 		onHit(target, source) {
 			/**
 			 * The duration of the partially trapped must be always renewed to 2
@@ -323,12 +313,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		self: {
 			volatileStatus: 'partialtrappinglock',
 		},
-		onTryMove(source, target) {
-			if (target.volatiles['mustrecharge']) {
-				target.removeVolatile('mustrecharge');
-				this.hint("In Gen 1, partial trapping moves negate the recharge turn of Hyper Beam, even if they miss.", true);
-			}
-		},
+		// FIXME: onBeforeMove(pokemon, target) {target.removeVolatile('mustrecharge')}
 		onHit(target, source) {
 			/**
 			 * The duration of the partially trapped must be always renewed to 2
@@ -956,12 +941,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		self: {
 			volatileStatus: 'partialtrappinglock',
 		},
-		onTryMove(source, target) {
-			if (target.volatiles['mustrecharge']) {
-				target.removeVolatile('mustrecharge');
-				this.hint("In Gen 1, partial trapping moves negate the recharge turn of Hyper Beam, even if they miss.", true);
-			}
-		},
+		// FIXME: onBeforeMove(pokemon, target) {target.removeVolatile('mustrecharge')}
 		onHit(target, source) {
 			/**
 			 * The duration of the partially trapped must be always renewed to 2

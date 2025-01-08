@@ -75,7 +75,7 @@ export const PrivateMessages = new class {
 		case 'none':
 			// drivers+ can override
 			if (!Auth.atLeast(Users.globalAuth.get(from as ID), '%')) {
-				throw new Chat.ErrorMessage(`${to} has indicated that they do not wish to receive offline PMs.`);
+				throw new Chat.ErrorMessage(`${to} has indicated that they do not wish to receive offine PMs.`);
 			}
 			break;
 		default:
@@ -102,7 +102,7 @@ export const PrivateMessages = new class {
 		}
 		if (!(options.isLogin ? user.registered : user.autoconfirmed)) {
 			if (options.forceBool) return false;
-			throw new Chat.ErrorMessage("You must be autoconfirmed to use offline messaging.");
+			throw new Chat.ErrorMessage("You must be autoconfirmed to use offine messaging.");
 		}
 		if (!Users.globalAuth.atLeast(user, Config.usesqlitepms)) {
 			if (options.forceBool) return false;
@@ -142,8 +142,8 @@ export const PrivateMessages = new class {
 		if (!PM.isParentProcess) return null!;
 		const time = Date.now();
 		// even though we expire once a week atm, we check once a day
-		const nextMidnight = new Date();
-		nextMidnight.setHours(24, 0, 0, 0);
+		const nextMidnight = new Date(time + 24 * 60 * 60 * 1000);
+		nextMidnight.setHours(0, 0, 1);
 		if (this.clearInterval) clearTimeout(this.clearInterval);
 		this.clearInterval = setTimeout(() => {
 			void this.clearOffline();
@@ -232,3 +232,4 @@ if (Config.usesqlite) {
 		});
 	}
 }
+

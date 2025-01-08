@@ -204,10 +204,9 @@ export class RoomBattleTimer {
 		this.lastDisabledTime = 0;
 		this.lastDisabledByUser = null;
 
-		const format = Dex.formats.get(battle.format, true);
-		const hasLongTurns = format.gameType !== 'singles';
+		const hasLongTurns = Dex.formats.get(battle.format, true).gameType !== 'singles';
 		const isChallenge = (battle.challengeType === 'challenge');
-		const timerEntry = Dex.formats.getRuleTable(format).timer;
+		const timerEntry = Dex.formats.getRuleTable(Dex.formats.get(battle.format, true)).timer;
 		const timerSettings = timerEntry?.[0];
 
 		// so that Object.assign doesn't overwrite anything with `undefined`
@@ -459,9 +458,6 @@ export class RoomBattleTimer {
 		}
 		let didSomething = false;
 		for (const player of players) {
-			if (!player.id) continue; // already eliminated, relevant for FFA gamesif it
-			// https://play.pokemonshowdown.com/battle-gen9unratedrandombattle-2255606027-5a6bcd9zlb93e6id5pp7juvhcg5w41spw
-			// why is this line here?
 			if (player.turnSecondsLeft > 0) continue;
 			if (this.settings.timeoutAutoChoose && player.secondsLeft > 0 && player.connected) {
 				void this.battle.stream.write(`>${player.slot} default`);
@@ -1165,7 +1161,7 @@ export class RoomBattle extends RoomGames.RoomGame<RoomBattlePlayer> {
 	checkForcedUserSettings(user: User) {
 		this.forcedSettings = {
 			modchat: this.forcedSettings.modchat || RoomBattle.battleForcedSetting(user, 'modchat'),
-			privacy: !!this.options.rated && (this.forcedSettings.privacy || RoomBattle.battleForcedSetting(user, 'privacy')),
+			privacy: this.forcedSettings.privacy || RoomBattle.battleForcedSetting(user, 'privacy'),
 		};
 		if (
 			this.players.some(p => p.getUser()?.battleSettings.special) ||
@@ -1243,8 +1239,7 @@ export class RoomBattle extends RoomGames.RoomGame<RoomBattlePlayer> {
 			this.room.title = `${this.p1.name} vs. ${this.p2.name}`;
 		}
 		this.room.send(`|title|${this.room.title}`);
-		const suspectTest = Chat.plugins['suspect-tests']?.suspectTests[this.format] ||
-			Chat.plugins['suspect-tests']?.suspectTests.suspects[this.format];
+		const suspectTest = Chat.plugins['suspect-tests']?.suspectTests[this.format];
 		if (suspectTest) {
 			const format = Dex.formats.get(this.format);
 			this.room.add(

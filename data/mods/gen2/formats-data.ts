@@ -42,7 +42,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	beedrill: {
-		tier: "ZUBL",
+		tier: "PU",
 	},
 	pidgey: {
 		tier: "LC",
@@ -210,7 +210,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "UU",
 	},
 	alakazam: {
-		tier: "OU",
+		tier: "UUBL",
 	},
 	machop: {
 		tier: "LC",
@@ -393,7 +393,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "PU",
 	},
 	staryu: {
-		tier: "ZUBL",
+		tier: "LC",
 	},
 	starmie: {
 		tier: "OU",
@@ -444,13 +444,13 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "PU",
 	},
 	eevee: {
-		tier: "ZUBL",
+		tier: "LC",
 	},
 	vaporeon: {
 		tier: "OU",
 	},
 	jolteon: {
-		tier: "OU",
+		tier: "UUBL",
 	},
 	flareon: {
 		tier: "NU",

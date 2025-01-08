@@ -55,7 +55,7 @@ const VALIDATORS = new Map<ID, TeamValidator>();
 for (let gen = 1; gen <= 9; gen++) {
 	for (const tier of TIERS) {
 		const format = Dex.formats.get(`gen${gen}${tier}`);
-		if (format.effectType === 'Format') {
+		if (format.exists) {
 			FORMATS.set(format.id, {gen: gen as GenerationNum, format});
 			VALIDATORS.set(format.id, new TeamValidator(format));
 		}
