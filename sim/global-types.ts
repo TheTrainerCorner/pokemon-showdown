@@ -583,10 +583,10 @@ namespace RandomTeamsTypes {
 
 	// TTC Roles
 	'Burn Setup' | 'Scale Shot' | 'Support' | 'Mixed Dragon Dance' | 'Overheat Chain' |
-	'Normal Pulse' | 'Spin Mega' |
+	'Normal Pulse' | 'Spin Mega' | 'Offensive' |
 
 	// Items
 	'Leftovers' | 'Armor Plate' | 'Weakness Policy' | 'Choice Scarf' | 'Heavy Duty Boots' | 'Life Orb' |
-	'White Herb' | 'Metronome'
+	'White Herb' | 'Metronome' | 'Flame Orb' | 'Assault Vest' | 'Choice Band'
 	;
 }

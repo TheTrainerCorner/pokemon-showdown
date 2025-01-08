@@ -1178,11 +1178,15 @@ export class RandomTeams {
 
 		if (species.id === 'beedrill' && role === 'Heavy Duty Boots') return 'Swarm';
 		if (species.id === 'beedrill' && role === 'Heavy Duty Boots' && moves.has('swordsdance')) return 'Merciless';
-		// if (species.id === 'beedrill' && role === 'Heavy Duty Boots' && moves.has('firstimpression')) return 'Sniper';
+		if (species.id === 'beedrill' && role === 'Heavy Duty Boots' && moves.has('firstimpression')) return 'Sniper';
 
 		if (species.id === 'butterfree' && role === 'Heavy Duty Boots') return 'Field Support';
 		if (species.id === 'butterfree' && role === 'Armor Plate') return 'Compound Eyes';
 		if (species.id === 'butterfree' && role === 'Life Orb') return 'Tinted Lens';
+
+		if (species.id === 'raticate' && role === 'Flame Orb') return 'Guts';
+		if (species.id === 'raticate' && role === 'Assault Vest') return 'Strong Jaw';
+		if (species.id === 'raticate' && role === 'Choice Band') return 'Hustle';
 
 		if (species.id === 'dragonite' && role === 'Heavy Duty Boots') return 'Multiscale';
 		if (species.id === 'dragonite' && role === 'Choice Scarf') return 'Stalwart';
@@ -1336,12 +1340,16 @@ export class RandomTeams {
 			case 'Life Orb': return "Life Orb";
 			case "White Herb": return "White Herb";
 			case "Metronome": return "Metronome";
+			case "Flame Orb": return "Flame Orb";
+			case "Assault Vest": return "Assault Vest";
+			case "Choice Band": return "Choice Band";
 		}
 
 		if (species.id === 'vensaurmega') return 'Venusaurite';
 		if (species.id === 'charizardmegax') return 'Charizardite X';
 		if (species.id === 'charizardmegay') return 'Charizardite Y';
 		if (species.id === 'blastoisemega') return 'Blastoisinite';
+		if (species.id === 'beedrillmega') return 'Beedrillite';
 		// if (!isDoubles) {
 		// 	if (
 		// 		!isLead && role === 'Bulky Setup' &&

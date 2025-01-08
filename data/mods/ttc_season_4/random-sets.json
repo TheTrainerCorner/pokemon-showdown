@@ -124,6 +124,23 @@
 			{
 				"role": "Heavy Duty Boots",
 				"movepool": ["Swords Dance", "Barb Barrage", "X-Scissor", "Throat Chop"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["First Impression", "Poison Jab", "Drill Run", "Tailwind"]
+			}
+		]
+	},
+	"beedrillmega": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Offensive",
+				"movepool": ["Swords Dance", "Drill Run", "Poison Jab", "Knock Off"]
+			},
+			{
+				"role": "Offensive Support",
+				"movepool": ["Tailwind", "First Impression", "Barb Barrage", "U-Turn"]
 			}
 		]
 	},
@@ -141,6 +158,23 @@
 			{
 				"role": "Life Orb",
 				"movepool": ["Quiver Dance", "Lumina Crash", "Bug Buzz", "Roost"]
+			}
+		]
+	},
+	"raticate": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Flame Orb",
+				"movepool": ["Facade", "Close Combat", "Throat Chop", "Wild Charge"]
+			},
+			{
+				"role": "Assault Vest",
+				"movepool": ["Psychic Fangs", "Fire Fang", "Crunch", "U-Turn"]
+			},
+			{
+				"role": "Choice Band",
+				"movepool": ["Close Combat", "Hyper Fang", "Zen Headbutt", "Iron Tail"]
 			}
 		]
 	},
