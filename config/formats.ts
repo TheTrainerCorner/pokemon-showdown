@@ -25,7 +25,7 @@ export const Formats: FormatList = [
 		name: "[Gen 9] National Dex Randoms",
 		mod: Config.ttcseason,
 		team: "random",
-		ruleset: ['Standard NatDex', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
+		ruleset: ['Standard NatDex', 'Species Clause', 'Sleep Clause Mod', 'Illusion Level Mod', '-Team Preview'],
 	},
 	{
 		section: "TTC Season 3 Offseason",
