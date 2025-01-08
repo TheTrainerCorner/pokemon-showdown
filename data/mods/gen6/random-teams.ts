@@ -100,14 +100,13 @@ export class RandomGen6Teams extends RandomGen7Teams {
 			Psychic: (movePool, moves, abilities, types, counter) => (
 				!counter.get('Psychic') && (types.has('Fighting') || movePool.includes('calmmind'))
 			),
-			Rock: (movePool, moves, abilities, types, counter, species) => (
-				!counter.get('Rock') && (species.baseStats.atk >= 95 || abilities.has('Rock Head'))
-			),
-			Steel: (movePool, moves, abilities, types, counter, species) => (
-				!counter.get('Steel') && species.baseStats.atk >= 100
-			),
+			Rock: (movePool, moves, abilities, types, counter, species) => (!counter.get('Rock') && species.baseStats.atk >= 80),
+			Steel: (movePool, moves, abilities, types, counter, species) => (!counter.get('Steel') && species.baseStats.atk >= 100),
 			Water: (movePool, moves, abilities, types, counter) => !counter.get('Water'),
 		};
+		this.cachedStatusMoves = this.dex.moves.all()
+			.filter(move => move.category === 'Status')
+			.map(move => move.id);
 	}
 
 	cullMovePool(
@@ -197,9 +196,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 
 		// Develop additional move lists
 		const badWithSetup = ['defog', 'dragontail', 'haze', 'healbell', 'nuzzle', 'pursuit', 'rapidspin', 'toxic'];
-		const statusMoves = this.dex.moves.all()
-			.filter(move => move.category === 'Status')
-			.map(move => move.id);
+		const statusMoves = this.cachedStatusMoves;
 
 		// General incompatibilities
 		const incompatiblePairs = [
@@ -243,7 +240,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 			// Lunatone
 			['moonlight', 'rockpolish'],
 			// Smeargle
-			['destinybond', 'whirlwind'],
+			['nuzzle', 'whirlwind'],
 			// Liepard
 			['copycat', 'uturn'],
 			// Seviper
@@ -635,35 +632,14 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		if (abilityData.length <= 1) return abilityData[0].name;
 
 		// Hard-code abilities here
-		if (
-			abilities.has('Guts') &&
-			!abilities.has('Quick Feet') &&
-			(moves.has('facade') || (moves.has('sleeptalk') && moves.has('rest')))
-		) return 'Guts';
+		if (species.id === 'pangoro' && counter.get('ironfist')) return 'Iron Fist';
+		if (species.id === 'tornadus' && counter.get('Status')) return 'Prankster';
+		if (species.id === 'marowak' && counter.get('recoil')) return 'Rock Head';
+		if (species.id === 'kingler' && counter.get('sheerforce')) return 'Sheer Force';
+		if (species.id === 'golduck' && teamDetails.rain) return 'Swift Swim';
+		if (species.id === 'roserade' && counter.get('technician')) return 'Technician';
 
-		if (species.id === 'starmie') return role === 'Wallbreaker' ? 'Analytic' : 'Natural Cure';
-		if (species.id === 'ninetales') return 'Drought';
-		if (species.id === 'ninjask' || species.id === 'seviper') return 'Infiltrator';
-		if (species.id === 'arcanine') return 'Intimidate';
-		if (species.id === 'rampardos' && role === 'Bulky Attacker') return 'Mold Breaker';
-		if (species.baseSpecies === 'Altaria') return 'Natural Cure';
-		// If Ambipom doesn't qualify for Technician, Skill Link is useless on it
-		if (species.id === 'ambipom' && !counter.get('technician')) return 'Pickup';
-		if (['dusknoir', 'vespiquen', 'wailord'].includes(species.id)) return 'Pressure';
-		if (species.id === 'druddigon' && role === 'Bulky Support') return 'Rough Skin';
-		if (species.id === 'stunfisk') return 'Static';
-		if (species.id === 'breloom') return 'Technician';
-		if (species.id === 'zangoose') return 'Toxic Boost';
-		if (species.id === 'porygon2') return 'Trace';
-
-		if (abilities.has('Harvest') && (role === 'Bulky Support' || role === 'Staller')) return 'Harvest';
-		if (abilities.has('Moxie') && (counter.get('Physical') > 3)) return 'Moxie';
-		if (abilities.has('Regenerator') && role === 'AV Pivot') return 'Regenerator';
-		if (abilities.has('Shed Skin') && moves.has('rest') && !moves.has('sleeptalk')) return 'Shed Skin';
-		if (abilities.has('Sniper') && moves.has('focusenergy')) return 'Sniper';
-		if (abilities.has('Unburden') && ['acrobatics', 'bellydrum'].some(m => moves.has(m))) return 'Unburden';
-
-		let abilityAllowed: Ability[] = [];
+		const abilityAllowed: string[] = [];
 		// Obtain a list of abilities that are allowed (not culled)
 		for (const ability of abilityData) {
 			if (ability.rating >= 1 && !this.shouldCullAbility(
@@ -749,7 +725,7 @@ export class RandomGen6Teams extends RandomGen7Teams {
 			return (ability === 'Solid Rock' && !!counter.get('priority')) ? 'Weakness Policy' : 'White Herb';
 		}
 		if (moves.has('psychoshift')) return 'Flame Orb';
-		if ((ability === 'Guts' || moves.has('facade')) && !moves.has('sleeptalk')) {
+		if ((ability === 'Guts' || moves.has('facade')) && !moves.has('sleeptalk') && species.id !== 'stoutland') {
 			return species.name === 'Conkeldurr' ? 'Flame Orb' : 'Toxic Orb';
 		}
 		if (ability === 'Magic Guard' && role !== 'Bulky Support') {
@@ -816,8 +792,14 @@ export class RandomGen6Teams extends RandomGen7Teams {
 		}
 		if (moves.has('outrage') && counter.get('setup')) return 'Lum Berry';
 		if (
-			(ability === 'Rough Skin') || (species.id !== 'hooh' &&
-			ability === 'Regenerator' && species.baseStats.hp + species.baseStats.def >= 180 && this.randomChance(1, 2))
+			(ability === 'Rough Skin') || (
+				species.id !== 'hooh' &&
+				ability === 'Regenerator' && species.baseStats.hp + species.baseStats.def >= 180 && this.randomChance(1, 2)
+			) || (
+				ability !== 'Regenerator' && !counter.get('setup') && counter.get('recovery') &&
+				this.dex.getEffectiveness('Fighting', species) < 1 &&
+				(species.baseStats.hp + species.baseStats.def) > 200 && this.randomChance(1, 2)
+			)
 		) return 'Rocky Helmet';
 		if (['kingsshield', 'protect', 'spikyshield', 'substitute'].some(m => moves.has(m))) return 'Leftovers';
 		if (
@@ -909,8 +891,11 @@ export class RandomGen6Teams extends RandomGen7Teams {
 
 		const level = this.adjustLevel || this.randomSets[species.id]["level"] || (species.nfe ? 90 : 80);
 
-		// Minimize confusion damage
-		if (!counter.get('Physical') && !moves.has('copycat') && !moves.has('transform')) {
+		// Minimize confusion damage, including if Foul Play is its only physical attack
+		if (
+			(!counter.get('Physical') || (counter.get('Physical') <= 1 && (moves.has('foulplay') || moves.has('rapidspin')))) &&
+			!moves.has('copycat') && !moves.has('transform')
+		) {
 			evs.atk = 0;
 			ivs.atk = 0;
 		}

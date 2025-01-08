@@ -1,5 +1,6 @@
-import {PokemonEventMethods} from './dex-conditions';
-import {BasicEffect, toID} from './dex-data';
+import type {PokemonEventMethods, ConditionData} from './dex-conditions';
+import {assignMissingFields, BasicEffect, toID} from './dex-data';
+import {Utils} from '../lib';
 
 interface AbilityEventMethods {
 	onCheckShow?: (this: Battle, pokemon: Pokemon) => void;
@@ -49,8 +50,11 @@ export class Ability extends BasicEffect implements Readonly<BasicEffect> {
 				this.gen = 3;
 			}
 		}
+		assignMissingFields(this, data);
 	}
 }
+
+const EMPTY_ABILITY = Utils.deepFreeze(new Ability({id: '', name: '', exists: false}));
 
 export class DexAbilities {
 	readonly dex: ModdedDex;
@@ -63,12 +67,12 @@ export class DexAbilities {
 
 	get(name: string | Ability = ''): Ability {
 		if (name && typeof name !== 'string') return name;
-
-		const id = toID(name);
+		const id = toID(name.trim());
 		return this.getByID(id);
 	}
 
 	getByID(id: ID): Ability {
+		if (id === '') return EMPTY_ABILITY;
 		let ability = this.abilityCache.get(id);
 		if (ability) return ability;
 

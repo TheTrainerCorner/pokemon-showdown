@@ -192,6 +192,12 @@ export abstract class RoomGame<PlayerClass extends RoomGamePlayer = RoomGamePlay
 		return true;
 	}
 
+	/**
+	 * Like `setPlayerUser`, but bypasses some unnecessary game list updates if
+	 * the user renamed directly from the old userid.
+	 *
+	 * `this.playerTable[oldUserid]` must exist or this will crash.
+	 */
 	renamePlayer(user: User, oldUserid: ID) {
 		if (user.id === oldUserid) {
 			this.playerTable[user.id].name = user.name;

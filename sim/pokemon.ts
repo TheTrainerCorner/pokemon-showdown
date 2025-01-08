@@ -281,7 +281,6 @@ export class Pokemon {
 	 * An object for storing untyped data, for mods to use.
 	 */
 	m: {
-		gluttonyFlag?: boolean, // Gen-NEXT
 		innate?: string, // Partners in Crime
 		originalSpecies?: string, // Mix and Mega
 		[key: string]: any,
@@ -605,7 +604,9 @@ export class Pokemon {
 
 	getActionSpeed() {
 		let speed = this.getStat('spe', false, false);
-		if (this.battle.field.getPseudoWeather('trickroom')) {
+		const trickRoomCheck = this.battle.ruleTable.has('twisteddimensionmod') ?
+			!this.battle.field.getPseudoWeather('trickroom') : this.battle.field.getPseudoWeather('trickroom');
+		if (trickRoomCheck) {
 			speed = 10000 - speed;
 		}
 		return this.battle.trunc(speed, 13);
@@ -1265,13 +1266,14 @@ export class Pokemon {
 			this.boosts[boostName] = pokemon.boosts[boostName];
 		}
 		if (this.battle.gen >= 6) {
+			// we need to remove all of the overlapping crit volatiles before adding any of them
 			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			for (const volatile of volatilesToCopy) this.removeVolatile(volatile);
 			for (const volatile of volatilesToCopy) {
 				if (pokemon.volatiles[volatile]) {
 					this.addVolatile(volatile);
 					if (volatile === 'gmaxchistrike') this.volatiles[volatile].layers = pokemon.volatiles[volatile].layers;
-				} else {
-					this.removeVolatile(volatile);
+					if (volatile === 'dragoncheer') this.volatiles[volatile].hasDragonType = pokemon.volatiles[volatile].hasDragonType;
 				}
 			}
 		}
@@ -1363,7 +1365,7 @@ export class Pokemon {
 	 */
 	formeChange(
 		speciesId: string | Species, source: Effect | null = this.battle.effect,
-		isPermanent?: boolean, message?: string
+		isPermanent?: boolean, abilitySlot = '0', message?: string
 	) {
 		const rawSpecies = this.battle.dex.species.get(speciesId);
 
@@ -1416,10 +1418,11 @@ export class Pokemon {
 			if (this.illusion) {
 				this.ability = ''; // Don't allow Illusion to wear off
 			}
+			const ability = species.abilities[abilitySlot] || species.abilities['0'];
 			// Ogerpon's forme change doesn't override permanent abilities
-			if (source || !this.getAbility().isPermanent) this.setAbility(species.abilities['0'], null, true);
+			if (source || !this.getAbility().flags['cantsuppress']) this.setAbility(ability, null, true);
 			// However, its ability does reset upon switching out
-			this.baseAbility = toID(species.abilities['0']);
+			this.baseAbility = toID(ability);
 		}
 		if (this.terastallized) {
 			this.knownType = true;
@@ -2032,9 +2035,9 @@ export class Pokemon {
 			return [this.terastallized];
 		}
 		const types = this.battle.runEvent('Type', this, null, null, this.types);
+		if (!types.length) types.push(this.battle.gen >= 5 ? 'Normal' : '???');
 		if (!excludeAdded && this.addedType) return types.concat(this.addedType);
-		if (types.length) return types;
-		return [this.battle.gen >= 5 ? 'Normal' : '???'];
+		return types;
 	}
 
 	isGrounded(negateImmunity = false) {

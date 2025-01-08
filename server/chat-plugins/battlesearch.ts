@@ -46,10 +46,12 @@ export async function runBattleSearch(userids: ID[], month: string, tierid: ID, 
 	if (useRipgrep) {
 		// Matches non-word (including _ which counts as a word) characters between letters/numbers
 		// in a user's name so the userid can case-insensitively be matched to the name.
-		const regexString = userids.map(id => `(?=.*?("p(1|2)":"${[...id].join('[^a-zA-Z0-9]*')}[^a-zA-Z0-9]*"))`).join('');
+		// We want to be order-insensitive for the player IDs. This union is much cheaper than using PCRE.
+		const userUnion = userids.map(id => `${[...id].join('[^a-zA-Z0-9]*')}[^a-zA-Z0-9]*`).join('|');
+		const regexString = userids.map(id => `(.*?("p(1|2)":"(${userUnion})"))`).join('');
 		let output;
 		try {
-			output = await ProcessManager.exec(['rg', '-i', regexString, '--no-line-number', '-P', '-tjson', ...files]);
+			output = await ProcessManager.exec(['rg', '-i', regexString, '--no-line-number', '-tjson', ...files]);
 		} catch {
 			return results;
 		}
@@ -440,11 +442,11 @@ export const commands: Chat.ChatCommands = {
 		this.runBroadcast();
 		return this.sendReply(
 			'/battlesearch [args] - Searches rated battle history for the provided [args] and returns information on battles between the userids given.\n' +
-			`If a number is provided in the [args], it is assumed to be a turn limit, else they're assumed to be userids. Requires &`
+			`If a number is provided in the [args], it is assumed to be a turn limit, else they're assumed to be userids. Requires ~`
 		);
 	},
 	rustbattlesearchhelp: [
-		`/battlesearch <user>, <format>, <days> - Searches for battles played by <user> in the past <days> days. Requires: &`,
+		`/battlesearch <user>, <format>, <days> - Searches for battles played by <user> in the past <days> days. Requires: ~`,
 	],
 };
 

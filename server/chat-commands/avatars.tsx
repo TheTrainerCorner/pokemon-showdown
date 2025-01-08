@@ -203,7 +203,7 @@ export const Avatars = new class {
 		const entry = customAvatars[user.id];
 		if (entry?.notNotified) {
 			user.send(
-				`|pm|&|${user.getIdentity()}|/raw ` +
+				`|pm|~|${user.getIdentity()}|/raw ` +
 				Chat.html`${<>
 					<p>
 						You have a new custom avatar!
@@ -626,6 +626,22 @@ const OFFICIAL_AVATARS_KYLEDOVE = new Set([
 	'laventon2', 'liza-masters', 'mallow-masters', 'musician-gen9', 'nemona-s', 'officeworker-gen9', 'officeworkerf-gen9',
 	'pearlclanmember', 'raifort', 'saguaro', 'salvatore', 'scientist-gen9', 'shauna-masters', 'silver-masters',
 	'steven-masters4', 'tate-masters', 'waiter-gen9', 'waitress-gen9',
+	'acerola-masters2', 'aetherfoundation2', 'amarys', 'artist-gen9', 'backpacker-gen9', 'blackbelt-gen9', 'blue-masters2',
+	'brendan-rs', 'briar', 'cabbie-gen9', 'caretaker', 'clair-masters', 'clive-v', 'cook-gen9', 'courier', 'crispin', 'cyrano',
+	'delinquent-gen9', 'delinquentf-gen9', 'delinquentf2-gen9', 'drayton', 'flaregrunt', 'flaregruntf', 'florian-festival',
+	'gloria-league', 'gloria-tundra', 'hau-masters', 'hiker-gen9', 'hyde', 'janitor-gen9', 'juliana-festival',
+	'kieran-champion', 'lacey', 'lana-masters', 'leaf-masters2', 'liza-gen6', 'lysandre-masters', 'may-e', 'may-rs', 'miku-fire',
+	'miku-grass', 'miku-psychic', 'miku-water', 'mina-masters', 'mustard-champion', 'nate-masters', 'nate-pokestar', 'ogreclan',
+	'perrin', 'piers-masters', 'red-masters3', 'rosa-pokestar2', 'roxanne-masters', 'roxie-masters', 'ruffian', 'sycamore-masters',
+	'tate-gen6', 'tucker', 'victor-league', 'victor-tundra', 'viola-masters', 'wallace-masters', 'worker-gen9', 'yukito-hideko',
+	'aarune', 'adaman-masters', 'allister-unmasked', 'anabel', 'aquagrunt-rse', 'aquagruntf-rse', 'aquasuit', 'archie-usum',
+	'arlo', 'barry-masters', 'blanche-casual', 'blanche', 'brandon', 'candela-casual', 'candela', 'candice-masters', 'christoph',
+	'cliff', 'curtis', 'dana', 'gladion-masters', 'greta', 'gurkinn', 'heath', 'irida-masters', 'jamie', 'magmagrunt-rse',
+	'magmagruntf-rse', 'magmasuit', 'magnus', 'mateo', 'mirror', 'mohn-anime', 'mohn', 'mom-paldea', 'mom-unova', 'mrbriney',
+	'mrstone', 'nancy', 'nate-pokestar3', 'neroli', 'peony-league', 'phil', 'player-go', 'playerf-go', 'rhi', 'rita', 'river',
+	'rosa-pokestar3', 'sabrina-frlg', 'selene-masters', 'sierra', 'spark-casual', 'spark', 'spenser', 'toddsnap', 'toddsnap2',
+	'victor-masters', 'vince', 'wally-rse', 'willow-casual', 'willow', 'yancy', 'zinnia-masters',
+	'acerola-masters3', 'bianca-masters', 'cheren-masters', 'gardenia-masters', 'nemona-masters',
 ]);
 
 const OFFICIAL_AVATARS_HYOOPPA = new Set([
@@ -641,7 +657,11 @@ const OFFICIAL_AVATARS_FIFTY = new Set([
 ]);
 
 const OFFICIAL_AVATARS_HORO = new Set([
-	'florian-bb', 'juliana-bb',
+	'florian-bb', 'juliana-bb', 'red-lgpe', 'liko', 'roy',
+]);
+
+const OFFICIAL_AVATARS_SELENA = new Set([
+	'kris',
 ]);
 
 for (const avatar of OFFICIAL_AVATARS_BELIOT419) OFFICIAL_AVATARS.add(avatar);
@@ -763,7 +783,7 @@ export const commands: Chat.ChatCommands = {
 	avatarshelp: [
 		`/avatars - Explains how to change avatars.`,
 		`/avatars [username] - Shows custom avatars available to a user.`,
-		`!avatars - Show everyone that information. Requires: + % @ # &`,
+		`!avatars - Show everyone that information. Requires: + % @ # ~`,
 	],
 
 	addavatar() {
@@ -917,7 +937,7 @@ export const commands: Chat.ChatCommands = {
 		Avatars.tryNotify(Users.get(to));
 	},
 	moveavatarshelp: [
-		`/moveavatars [from user], [to user] - Move all of the custom avatars from [from user] to [to user]. Requires: &`,
+		`/moveavatars [from user], [to user] - Move all of the custom avatars from [from user] to [to user]. Requires: ~`,
 	],
 
 	async masspavatar(target, room, user) {

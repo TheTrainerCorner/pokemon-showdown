@@ -52326,27 +52326,27 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 	},
 	rotomheat: {
 		learnset: {
-			overheat: ["9L1", "8L1", "7R", "6R", "5R", "4R"],
+			overheat: ["9R", "8R", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotomwash: {
 		learnset: {
-			hydropump: ["9L1", "8L1", "7R", "6R", "5R", "4R"],
+			hydropump: ["9R", "8R", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotomfrost: {
 		learnset: {
-			blizzard: ["9L1", "8L1", "7R", "6R", "5R", "4R"],
+			blizzard: ["9R", "8R", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotomfan: {
 		learnset: {
-			airslash: ["9L1", "8L1", "7R", "6R", "5R", "4R"],
+			airslash: ["9R", "8R", "7R", "6R", "5R", "4R"],
 		},
 	},
 	rotommow: {
 		learnset: {
-			leafstorm: ["9L1", "8L1", "7R", "6R", "5R", "4R"],
+			leafstorm: ["9R", "8R", "7R", "6R", "5R", "4R"],
 		},
 	},
 	uxie: {
@@ -67746,7 +67746,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			drainpunch: ["9M", "7T", "6T", "5T"],
 			dreameater: ["7M", "6M", "5M"],
 			dualchop: ["7T", "6T", "5T"],
-			echoedvoice: ["9L36", "7M", "7L36", "6M", "6L36", "5M", "5L36"],
+			echoedvoice: ["9L36", "9S5", "7M", "7L36", "6M", "6L36", "5M", "5L36"],
 			embargo: ["7M", "6M", "5M"],
 			endure: ["9M"],
 			energyball: ["9M", "7M", "6M", "5M"],
@@ -78368,10 +78368,11 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			bounce: ["8M", "7T"],
 			bulletseed: ["9M"],
 			captivate: ["7L37"],
+			celebrate: ["9S1"],
 			charm: ["9M", "8M"],
 			confide: ["7M"],
 			covet: ["7T"],
-			dazzlinggleam: ["9M", "8M", "7M"],
+			dazzlinggleam: ["9M", "9S1", "8M", "7M"],
 			doubleslap: ["7L1", "7S0"],
 			doubleteam: ["7M"],
 			drainingkiss: ["9M", "8M"],
@@ -78410,10 +78411,10 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			sleeptalk: ["9M", "8M", "7M"],
 			snore: ["8M", "7T"],
 			solarbeam: ["9M", "8M", "7M"],
-			splash: ["9L1", "8L1", "7L1"],
+			splash: ["9L1", "9S1", "8L1", "7L1"],
 			stomp: ["9L28", "8L28", "7L29"],
 			substitute: ["9M", "8M", "7M"],
-			sunnyday: ["9M", "8M", "7M"],
+			sunnyday: ["9M", "9S1", "8M", "7M"],
 			swagger: ["7M"],
 			sweetscent: ["9L16", "8L16", "7L17", "7S0"],
 			swift: ["9M"],
@@ -78429,6 +78430,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 		},
 		eventData: [
 			{generation: 7, level: 20, nature: "Naive", abilities: ["leafguard"], moves: ["magicalleaf", "doubleslap", "sweetscent"], pokeball: "cherishball"},
+			{generation: 9, level: 50, abilities: ["leafguard"], moves: ["celebrate", "sunnyday", "splash", "dazzlinggleam"], pokeball: "cherishball"},
 		],
 	},
 	tsareena: {
@@ -95815,6 +95817,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			toxic: ["7M", "4M"],
 			trick: ["9M", "9L1", "8M", "8L1", "7T", "4T"],
 			trickroom: ["9M", "8M", "7M", "4M"],
+			upperhand: ["9M"],
 			uturn: ["9M", "8M", "7M", "4M"],
 			willowisp: ["9M", "8M", "7M", "4M"],
 		},
@@ -96814,8 +96817,7 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			seedbomb: ["9M", "9L24", "8M", "8L24", "7T", "7L39"],
 			shadowball: ["9M", "9L36", "8M", "8L36", "7M", "7L43", "5M", "5L44"],
 			shadowsneak: ["9L4", "8L4", "7L4", "5L13"],
-			shellsmash: ["9E"],
-			sketch: ["7E", "5E"],
+			sketch: ["9S0", "5E"],
 			skittersmack: ["8T"],
 			sleeptalk: ["9M", "8M", "7M"],
 			snore: ["8M", "7T"],
@@ -96835,6 +96837,9 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			willowisp: ["9M", "9L20", "8M", "8L20", "7M", "7L15", "5M", "5L19"],
 			worryseed: ["7T"],
 		},
+		eventData: [
+			{generation: 9, level: 1, shiny: 1, moves: ["sketch"]},
+		],
 	},
 	necturna: {
 		learnset: {

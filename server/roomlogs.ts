@@ -227,10 +227,54 @@ export class Roomlog {
 		}
 	}
 	roomlog(message: string, date = new Date()) {
-		if (!this.roomlogStream) return;
-		const timestamp = Chat.toTimestamp(date).split(' ')[1] + ' ';
-		message = message.replace(/<img[^>]* src="data:image\/png;base64,[^">]+"[^>]*>/g, '');
-		void this.roomlogStream.write(timestamp + message + '\n');
+		if (!Config.logchat) return;
+		message = message.replace(/<img[^>]* src="data:image\/png;base64,[^">]+"[^>]*>/g, '[img]');
+		if (this.roomlogTable) {
+			const chatData = this.parseChatLine(message);
+			const type = message.split('|')[1] || "";
+			void this.insertLog(SQL`INSERT INTO roomlogs (${{
+				type: type,
+				roomid: this.roomid,
+				userid: toID(chatData?.user) || null,
+				time: SQL`now()`,
+				log: message,
+		  }})`);
+
+			const dateStr = Chat.toTimestamp(date).split(' ')[0];
+			void this.insertLog(SQL`INSERT INTO roomlog_dates (${{
+				roomid: this.roomid,
+				month: dateStr.slice(0, -3),
+				date: dateStr,
+			}}) ON CONFLICT (roomid, date) DO NOTHING;`);
+		} else if (this.roomlogStream) {
+			const timestamp = Chat.toTimestamp(date).split(' ')[1] + ' ';
+			void this.roomlogStream.write(timestamp + message + '\n');
+		}
+	}
+	private async insertLog(query: SQLStatement, ignoreFailure = false, retries = 3): Promise<void> {
+		try {
+			await this.roomlogTable?.query(query);
+		} catch (e: any) {
+			if (e?.code === '42P01') { // table not found
+				await roomlogDB!._query(FS('databases/schemas/roomlogs.sql').readSync(), []);
+				return this.insertLog(query, ignoreFailure, retries);
+			}
+			// connection terminated / transient errors
+			if (
+				!ignoreFailure &&
+				retries > 0 &&
+				e.message?.includes('Connection terminated unexpectedly')
+			) {
+				// delay before retrying
+				await new Promise(resolve => setTimeout(resolve, 2000));
+				return this.insertLog(query, ignoreFailure, retries - 1);
+			}
+			// crashlog for all other errors
+			const [q, vals] = roomlogDB!._resolveSQL(query);
+			Monitor.crashlog(e, 'a roomlog database query', {
+				query: q, values: vals,
+			});
+		}
 	}
 	modlog(entry: PartialModlogEntry, overrideID?: string) {
 		void Rooms.Modlog.write(this.roomid, entry, overrideID);
@@ -266,9 +310,9 @@ export class Roomlog {
 			await log.setupRoomlogStream();
 		}
 		const time = Date.now();
-		const nextMidnight = new Date(time + 24 * 60 * 60 * 1000);
-		nextMidnight.setHours(0, 0, 1);
-		Roomlogs.rollLogTimer = setTimeout(() => void Roomlog.rollLogs(), nextMidnight.getTime() - time);
+		const nextMidnight = new Date();
+		nextMidnight.setHours(24, 0, 0, 0);
+		Roomlogs.rollLogTimer = setTimeout(() => Roomlog.rollLogs(), nextMidnight.getTime() - time);
 	}
 	truncate() {
 		if (this.noAutoTruncate) return;

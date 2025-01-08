@@ -2398,6 +2398,22 @@ const commands: Chat.ChatCommands = {
 	},
 	tournamenthelp() {
 		if (!this.runBroadcast()) return;
+		if (target.endsWith('settings')) {
+			return this.sendReplyBox(
+				`<code>/tour settings autodq &lt;minutes|off></code> - Sets the automatic disqualification timeout for every tournament.<br />` +
+				`<code>/tour settings autostart &lt;on|minutes|off></code> - Sets the automatic start timeout for every tournament.<br />` +
+				`<code>/tour settings forcepublic &lt;on|off></code> - Specifies whether users can hide their battles for every tournament.<br />` +
+				`<code>/tour settings forcetimer &lt;on|off></code> - Specifies whether users can toggle the timer for every tournament.<br />` +
+				`<code>/tour settings modjoin &lt;on|off></code> - Specifies whether users can modjoin their battles for every tournament.<br />`	+
+				`<code>/tour settings autoconfirmedonly&lt;on|off></code> - Set requirement for signups for this tournament. If this is on, only autoconfirmed users can join a tournament.<br />`	+
+				`<code>/tour settings playercap &lt;number></code> - Sets the playercap for every tournament.<br />` +
+				`<code>/tour settings scouting &lt;on|off></code> - Specifies whether users can spectate other participants for every tournament.<br />` +
+				`<code>/tour settings recenttours &lt;number|off|forcedelete></code> - Specifies the amount of recent tournaments to list in /recenttours.<br />` +
+				`<code>/tour settings blockrecents &lt;on|off></code> - Toggles blocking tours in /recenttours from being made.<br />` +
+				`Requires: # ~`,
+			);
+		}
+
 		this.sendReplyBox(
 			`Tournament Commands<br/>` +
 			`- create/new &lt;format>, &lt;type>, [ &lt;comma-separated arguments>]: Creates a new tournament in the current room.<br />` +

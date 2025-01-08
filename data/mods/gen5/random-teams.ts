@@ -84,14 +84,16 @@ export class RandomGen5Teams extends RandomGen6Teams {
 			Psychic: (movePool, moves, abilities, types, counter) => (
 				!counter.get('Psychic') && (types.has('Fighting') || movePool.includes('calmmind'))
 			),
-			Rock: (movePool, moves, abilities, types, counter, species) => (
-				!counter.get('Rock') && (species.baseStats.atk >= 95 || abilities.has('Rock Head'))
-			),
+			Rock: (movePool, moves, abilities, types, counter, species) => (!counter.get('Rock') && species.baseStats.atk >= 80),
 			Steel: (movePool, moves, abilities, types, counter, species) => (
 				!counter.get('Steel') && ['aggron', 'metagross'].includes(species.id)
 			),
 			Water: (movePool, moves, abilities, types, counter) => !counter.get('Water'),
 		};
+		// Nature Power is Earthquake this gen
+		this.cachedStatusMoves = this.dex.moves.all()
+			.filter(move => move.category === 'Status' && move.id !== 'naturepower')
+			.map(move => move.id);
 	}
 
 	cullMovePool(
@@ -176,10 +178,7 @@ export class RandomGen5Teams extends RandomGen6Teams {
 
 		// Develop additional move lists
 		const badWithSetup = ['healbell', 'pursuit', 'toxic'];
-		// Nature Power is Earthquake this gen
-		const statusMoves = this.dex.moves.all()
-			.filter(move => move.category === 'Status' && move.id !== 'naturepower')
-			.map(move => move.id);
+		const statusMoves = this.cachedStatusMoves;
 
 		// General incompatibilities
 		const incompatiblePairs = [
@@ -590,30 +589,11 @@ export class RandomGen5Teams extends RandomGen6Teams {
 		if (abilityData.length <= 1) return abilityData[0].name;
 
 		// Hard-code abilities here
-		if (
-			abilities.has('Guts') &&
-			!abilities.has('Quick Feet') &&
-			(moves.has('facade') || (moves.has('sleeptalk') && moves.has('rest')))
-		) return 'Guts';
-		if (species.id === 'starmie') return role === 'Wallbreaker' ? 'Analytic' : 'Natural Cure';
-		if (species.id === 'ninetales') return 'Drought';
-		if (species.id === 'arcanine') return 'Intimidate';
-		if (species.id === 'rampardos' && role === 'Bulky Attacker') return 'Mold Breaker';
-		if (species.id === 'altaria') return 'Natural Cure';
-		if (species.id === 'mandibuzz') return 'Overcoat';
-		// If Ambipom doesn't qualify for Technician, Skill Link is useless on it
-		if (species.id === 'ambipom' && !counter.get('technician')) return 'Pickup';
-		if (['spiritomb', 'vespiquen', 'wailord', 'weavile'].includes(species.id)) return 'Pressure';
-		if (species.id === 'druddigon') return 'Rough Skin';
-		if (species.id === 'stunfisk') return 'Static';
-		if (species.id === 'zangoose') return 'Toxic Boost';
-		if (species.id === 'porygon2') return 'Trace';
+		if (species.id === 'marowak' && counter.get('recoil')) return 'Rock Head';
+		if (species.id === 'kingler' && counter.get('sheerforce')) return 'Sheer Force';
+		if (species.id === 'golduck' && teamDetails.rain) return 'Swift Swim';
 
-		if (abilities.has('Harvest')) return 'Harvest';
-		if (abilities.has('Shed Skin') && moves.has('rest') && !moves.has('sleeptalk')) return 'Shed Skin';
-		if (abilities.has('Unburden') && ['acrobatics', 'closecombat'].some(m => moves.has(m))) return 'Unburden';
-
-		let abilityAllowed: Ability[] = [];
+		const abilityAllowed: string[] = [];
 		// Obtain a list of abilities that are allowed (not culled)
 		for (const ability of abilityData) {
 			if (ability.rating >= 1 && !this.shouldCullAbility(
@@ -899,8 +879,11 @@ export class RandomGen5Teams extends RandomGen6Teams {
 			evs.hp -= 4;
 		}
 
-		// Minimize confusion damage
-		if (!counter.get('Physical') && !moves.has('transform')) {
+		// Minimize confusion damage, including if Foul Play is its only physical attack
+		if (
+			(!counter.get('Physical') || (counter.get('Physical') <= 1 && (moves.has('foulplay') || moves.has('rapidspin')))) &&
+			!moves.has('transform')
+		) {
 			evs.atk = 0;
 			ivs.atk = hasHiddenPower ? (ivs.atk || 31) - 28 : 0;
 		}
@@ -965,6 +948,9 @@ export class RandomGen5Teams extends RandomGen6Teams {
 
 			// Illusion shouldn't be in the last slot
 			if (species.name === 'Zoroark' && pokemon.length >= (this.maxTeamSize - 1)) continue;
+
+			// Prevent Shedinja from generating after Sandstorm/Hail setters
+			if (species.name === 'Shedinja' && (teamDetails.sand || teamDetails.hail)) continue;
 
 			// Dynamically scale limits for different team sizes. The default and minimum value is 1.
 			const limitFactor = Math.round(this.maxTeamSize / 6) || 1;

@@ -1696,7 +1696,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		doublesTier: "LC",
 	},
 	lucario: {
-		tier: "(OU)",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	hippopotas: {
