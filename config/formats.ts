@@ -26,6 +26,7 @@ export const Formats: FormatList = [
 		mod: Config.ttcseason,
 		team: "random",
 		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Illusion Level Mod'],
+		unbanlist: ['Mega'],
 	},
 	{
 		section: "TTC Season 3 Offseason",
