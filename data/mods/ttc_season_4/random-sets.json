@@ -634,7 +634,7 @@
 		"sets": [
 			{
 				"role": "Toxic Orb",
-				"movepool": ["Facade", "Darkest Lariat", "Slack Off"]
+				"movepool": ["Facade", "Darkest Lariat", "Slack Off", "Curse"]
 			},
 			{
 				"role": "Leftovers",
