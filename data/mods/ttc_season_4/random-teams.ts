@@ -1,4 +1,5 @@
 import { Utils } from "../../../lib";
+import { teamData } from "../../../server/chat-plugins/sample-teams";
 import { PRNG } from "../../../sim";
 import { RuleTable } from "../../../sim/dex-formats";
 import { Tags } from "../../tags";
@@ -1772,6 +1773,7 @@ export class RandomTeams {
 			if ((teamDetails.teraBlast || ruleTable.has('terastalclause')) && set.role === 'Tera Blast user') {
 				continue;
 			}
+			if ((teamDetails.megaStone && teamDetails.megaStone > 0 && species.isMega)) continue;
 			possibleSets.push(set);
 		}
 		const set = this.sampleIfArray(possibleSets);
@@ -1938,6 +1940,7 @@ export class RandomTeams {
 		const baseFormes: {[k: string]: number} = {};
 
 		const typeCount: {[k: string]: number} = {};
+		let megaCount: number = 0;
 		const typeComboCount: {[k: string]: number} = {};
 		const typeWeaknesses: {[k: string]: number} = {};
 		const teamDetails: RandomTeamsTypes.TeamDetails = {};
@@ -1958,6 +1961,9 @@ export class RandomTeams {
 
 			// Limit to one of each species (Species Clause)
 			if (baseFormes[species.baseSpecies]) continue;
+			
+			// Limit the number of Megas to one
+			if (megaCount >= 1 && species.isMega) continue
 
 			// Treat Ogerpon formes and Terapagos like the Tera Blast user role; reject if team has one already
 			if ((species.baseSpecies === 'Ogerpon' || species.baseSpecies === 'Terapagos') && teamDetails.teraBlast) continue;
@@ -2051,6 +2057,7 @@ export class RandomTeams {
 			}
 
 			// Track what the team has
+			if (species.isMega) megaCount = 1;
 			if (set.ability === 'Drizzle' || set.moves.includes('raindance')) teamDetails.rain = 1;
 			if (set.ability === 'Drought' || set.ability === 'Orichalcum Pulse' || set.moves.includes('sunnyday')) {
 				teamDetails.sun = 1;
