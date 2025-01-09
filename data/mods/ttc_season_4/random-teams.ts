@@ -1226,13 +1226,45 @@ export class RandomTeams {
 		if (species.id === 'ninetalesalola' && role === 'Heavy Duty Boots' && moves.has('nastypolt')) return 'Snow Warning';
 		if (species.id === 'ninetalesalola' && role === 'Heavy Duty Boots' && moves.has('chillyreception')) return 'Snow Cloak';
 
-		if (species.id === 'wigglytuff' && role === 'Leftovers' && moves.has('stealthrocks')) return 'Field Support';
+		if (species.id === 'wigglytuff' && role === 'Leftovers' && moves.has('stealthrock')) return 'Field Support';
 		if (species.id === 'wigglytuff' && role === 'Leftovers' && moves.has('knockoff')) return 'Fluffy';
 		if (species.id === 'wigglytuff' && role === 'Leftovers' && moves.has('healbell')) return 'Thick Fat';
 
 		if (species.id === 'vileplume') return 'Neutralizing Gas';
 
 		if (species.id === 'slowbro') return 'Regenerator';
+
+		if (species.id === 'kingler' && role === 'Armor Plate') return 'Shell Armor';
+		if (species.id === 'kingler' && role === 'Life Orb') return 'Sheer Force';
+		if (species.id === 'kingler' && role === 'Assault Vest') return 'Shell Armor';
+
+		if (species.id === 'marowak' && moves.has('stealthrock')) return 'Technician';
+		if (species.id === 'marowak' && moves.has('swordsdance')) return 'Rock Head';
+		if (species.id === 'marowak' && moves.has('smackdown')) return 'Technician';
+
+		if (species.id === 'marowakalola' && moves.has('bonemerang')) return 'Technician';
+		if (species.id === 'marowakalola' && moves.has('swordsdance')) return 'Rock Head';
+		if (species.id === 'marowakalola' && moves.has('stealthrock')) return 'Rock Head';
+
+		if (species.id === 'hitmonlee' && role === 'Choice Band') return 'Leg Day';
+		if (species.id === 'hitmonlee' && role === 'White Herb') return 'Unburden';
+		if (species.id === 'hitmonlee' && role === 'Normal Gem') return 'Unburden';
+
+		if (species.id === 'hitmonchan' && role === 'Assault Vest') return 'Inner Focus';
+		if (species.id === 'hitmonchan' && role === 'Punching Glove') return 'Iron Fist';
+		if (species.id === 'hitmonchan' && role === 'Choice Scarf') return 'Keen Eye';
+
+		if (species.id === 'weezing' && role === 'Black Sludge' && moves.has('clearsmog')) return 'Levitate';
+		if (species.id === 'weezing' && role === 'Rocky Helmet') return 'Stench';
+		if (species.id === 'weezing' && role === 'Black Sludge' && moves.has('haze')) return 'Neutralizing Gas';
+
+		if (species.id === 'weezinggalar' && role === 'Black Sludge') return 'Levitate';
+		if (species.id === 'weezinggalar' && role === 'Rocky Helmet') return 'Neutralizing Gas';
+		if (species.id === 'weezinggalar' && role === 'Life Orb') return 'Levitate';
+
+		if (species.id === 'seaking' && role === 'Mystic Water') return 'Supreme Overlord';
+		if (species.id === 'seaking' && role === 'Leftovers') return 'Lightning Rod';
+		if (species.id === 'seaking' && role === 'Choice Band') return 'Supreme Overlord';
 
 		if (species.id === 'gyarados' && role === 'Heavy Duty Boots') return 'Moxie';
 		if (species.id === 'gyarados' && role === 'Choice Scarf') return 'Moxie';
@@ -1241,6 +1273,12 @@ export class RandomTeams {
 		if (species.id === 'snorlax' && role === 'Toxic Orb') return 'Toxic Boost';
 		if (species.id === 'snorlax' && role === 'Leftovers') return 'Thick Fat';
 		if (species.id === 'snorlax' && role === 'Bubbled Dome') return 'Thick Fat';
+
+		if (species.id === 'articuno') return 'Snow Warning';
+
+		if (species.id === 'moltres' && role === 'Heavy Duty Boots' && moves.has('toxic')) return 'Pressure';
+		if (species.id === 'moltres' && role === 'Choice Scarf') return 'Drought';
+		if (species.id === 'moltres' && role === 'Heavy Duty Boots' && !moves.has('toxic')) return 'Drought';
 
 		if (species.id === 'zapdos' && role === 'Choice Scarf') return 'Elemental';
 		if (species.id === 'zapdos' && role === 'Leftovers') return 'Pressure';
@@ -1412,6 +1450,11 @@ export class RandomTeams {
 			case "Light Clay": return "Light Clay";
 			case "Rocky Helmet": return "Rocky Helmet";
 			case "Toxic Orb": return "Toxic Orb";
+			case "Thick Club": return "Thick Club";
+			case 'Normal Gem': return "Normal Gem";
+			case "Punching Glove": return "Punching Glove";
+			case "Black Sludge": return "Black Sludge";
+			case 'Mystic Water': return "Mystic Water";
 		}
 
 		if (species.id === 'venusaurmega') return 'Venusaurite';

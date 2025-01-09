@@ -268,7 +268,7 @@
 			},
 			{
 				"role": "Leftovers",
-				"movepool": ["Rapid Spin", "Swords Dance", "Stealth Rocks", "Spikes"]
+				"movepool": ["Rapid Spin", "Swords Dance", "Stealth Rock", "Spikes"]
 			}
 		]
 	},
@@ -281,7 +281,7 @@
 			},
 			{
 				"role": "Leftovers",
-				"movepool": ["Rapid Spin", "Knock Off", "Stealth Rocks", "Spikey Shield"]
+				"movepool": ["Rapid Spin", "Knock Off", "Stealth Rock", "Spikey Shield"]
 			},
 			{
 				"role": "Wide Lens",
@@ -302,7 +302,7 @@
 			},
 			{
 				"role": "Leftovers",
-				"movepool": ["Toxic Spikes", "Stealth Rocks", "Super Fang", "Earth Power"]
+				"movepool": ["Toxic Spikes", "Stealth Rock", "Super Fang", "Earth Power"]
 			}
 		]
 	},
@@ -319,7 +319,7 @@
 			},
 			{
 				"role": "Leftovers",
-				"movepool": ["Drill Run", "Gunk Shot", "Stealth Rocks", "Taunt"]
+				"movepool": ["Drill Run", "Gunk Shot", "Stealth Rock", "Taunt"]
 			}
 		]
 	},
@@ -379,7 +379,7 @@
 		"sets": [
 			{
 				"role": "Leftovers",
-				"movepool": ["Stealth Rocks", "Wish", "Reflect", "Light Screen"]
+				"movepool": ["Stealth Rock", "Wish", "Reflect", "Light Screen"]
 			},
 			{
 				"role": "Leftovers",
@@ -439,6 +439,142 @@
 			{
 				"role": "Mega",
 				"movepool": ["Scald", "Future Sight", "Slack Off", "Teleport"]
+			}
+		]
+	},
+	"kingler": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Armor Plate",
+				"movepool": ["Swords Dance", "Crabhammer", "X-Scissor", "Bullet Punch"]
+			},
+			{
+				"role": "Life Orb",
+				"movepool": ["Agility", "Liquidation", "Meteor Mash", "Close Combat"]
+			},
+			{
+				"role": "Assault Vest",
+				"movepool": ["Knock Off", "Crabhammer", "X-Scissor", "Bullet Punch"]
+			}
+		]
+	},
+	"marowak": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Thick Club",
+				"movepool": ["Bonemerang", "Stealth Rock", "Stone Edge", "Knock Off"]
+			},
+			{
+				"role": "Thick Club",
+				"movepool": ["Swords Dance", "Head Smash", "Earthquake", "Ice Punch"]
+			},
+			{
+				"role": "Thick Club",
+				"movepool": ["Smack Down", "Bonemerang", "Aerial Ace", "Power-Up Punch"]
+			}
+		]
+	},
+	"marowakalola": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Thick Club",
+				"movepool": ["Bonemerang", "Flame Charge", "Shadow Bone", "Flare Blitz"]
+			},
+			{
+				"role": "Thick Club",
+				"movepool": ["Swords Dance", "Poltergeist", "Flare Blitz", "Thunder Punch"]
+			},
+			{
+				"role": "Thick Club",
+				"movepool": ["Stealth Rock", "Flare Blitz", "Knock Off", "Poltergeist"]
+			}
+		]
+	},
+	"hitmonlee": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Choice Band",
+				"movepool": ["Blaze Kick", "Rolling Kick", "High Jump Kick", "Triple Axel"]
+			},
+			{
+				"role": "White Herb",
+				"movepool": ["Swords Dance", "Close Combat", "Knock Off", "Triple Axel"]
+			},
+			{
+				"role": "Normal Gem",
+				"movepool": ["Fake Out", "Close Combat", "Knock Off", "Poison Jab"]
+			}
+		]
+	},
+	"hitmonchan": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Assault Vest",
+				"movepool": ["Rapid Spin", "Focus Punch", "Knock Off", "Bullet Punch"]
+			},
+			{
+				"role": "Punching Glove",
+				"movepool": ["Drain Punch", "Bullet Punch", "Bulk Up", "Ice Punch"]
+			},
+			{
+				"role": "Choice Scarf",
+				"movepool": ["Dynamic Punch", "Dizzy Punch", "Stone Edge", "Knock Off"]
+			}
+		]
+	},
+	"weezing": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Black Sludge",
+				"movepool": ["Sludge Bomb", "Clear Smog", "Pain Split", "Fire Blast"]
+			},
+			{
+				"role": "Rocky Helmet",
+				"movepool": ["Toxic Spikes", "Gunk Shot", "Pain Split", "Defog"]
+			},
+			{
+				"role": "Black Sludge",
+				"movepool": ["Sludge Bomb", "Will-o-Wisp", "Pain Split", "Haze"]
+			}
+		]
+	},
+	"weezinggalar": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Black Sludge",
+				"movepool": ["Play Rough", "Gunk Shot", "Aromatherapy", "Defog"]
+			},
+			{
+				"role": "Rocky Helmet",
+				"movepool": ["Will-o-Wisp", "Dazzling Gleam", "Fire Blast", "Defog"]
+			},
+			{
+				"role": "Life Orb",
+				"movepool": ["Sludge Bomb", "Strange Steam", "Fire Blast", "Pain Split"]
+			}
+		]
+	},
+	"seaking": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Mystic Water",
+				"movepool": ["Swords Dance", "Liquidation", "Aqua Jet", "Megahorn"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Flip Turn", "Toxic", "Knock Off", "Protect"]
+			},
+			{
+				"role": "Choice Band",
+				"movepool": ["Flip Turn", "Aqua Jet", "Megahorn", "Liquidation"]
 			}
 		]
 	},
@@ -507,6 +643,40 @@
 			{
 				"role": "Bubbled Dome",
 				"movepool": ["Mega Kick", "Darkest Lariat", "Earthquake", "Power-Up Punch"]
+			}
+		]
+	},
+	"articuno": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Toxic", "Roost", "Blizzard", "U-Turn"]
+			},
+			{
+				"role": "Light Clay",
+				"movepool": ["Aurora Veil", "Blizzard", "Roost", "Heal Bell"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Calm Mind", "Freeze-Dry", "Focus Blast", "Roost"]
+			}
+		]
+	},
+	"moltres": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Toxic", "Roost", "U-Turn", "Flamethrower"]
+			},
+			{
+				"role": "Choice Scarf",
+				"movepool": ["Flamethrower", "U-Turn", "Solar Beam", "Scorching Sands"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Defog", "Roost", "Fusion Flare", "Solar Beam"]
 			}
 		]
 	},
