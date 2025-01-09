@@ -493,6 +493,23 @@
 			}
 		]
 	},
+	"snorlax": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Toxic Orb",
+				"movepool": ["Facade", "Darkest Lariat", "Slack Off"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Curse", "Slack Off", "Mega Kick", "Earthquake"]
+			},
+			{
+				"role": "Bubbled Dome",
+				"movepool": ["Mega Kick", "Darkest Lariat", "Earthquake", "Power-Up Punch"]
+			}
+		]
+	},
 	"zapdos": {
 		"level": 78,
 		"sets": [
@@ -503,6 +520,23 @@
 			{
 				"role": "Leftovers",
 				"movepool": ["Roost", "Tailwind", "Volt Switch", "Toxic"]
+			}
+		]
+	},
+	"zapdosgalar": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Life Orb",
+				"movepool": ["Tailwind", "Brave Bird", "Close Combat", "Bolt Beak"]
+			},
+			{
+				"role": "Choice Scarf",
+				"movepool": ["Brave Bird", "Close Combat", "Bolt Beak", "U-Turn"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Bulk Up", "Roost", "Thunderous Kick", "Brave Bird"]
 			}
 		]
 	},

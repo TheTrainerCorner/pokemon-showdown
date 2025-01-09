@@ -1238,8 +1238,16 @@ export class RandomTeams {
 		if (species.id === 'gyarados' && role === 'Choice Scarf') return 'Moxie';
 		if (species.id === 'gyarados' && role == 'Choice Band') return 'Intimidate';
 
+		if (species.id === 'snorlax' && role === 'Toxic Orb') return 'Toxic Boost';
+		if (species.id === 'snorlax' && role === 'Leftovers') return 'Thick Fat';
+		if (species.id === 'snorlax' && role === 'Bubbled Dome') return 'Thick Fat';
+
 		if (species.id === 'zapdos' && role === 'Choice Scarf') return 'Elemental';
 		if (species.id === 'zapdos' && role === 'Leftovers') return 'Pressure';
+
+		if (species.id === 'zapdosgalar' && role === 'Life Orb') return 'Wind Rider';
+		if (species.id === 'zapdosgalar' && role === 'Choice Scarf') return 'Defiant';
+		if (species.id === 'zapdosgalar' && role === 'Leftovers') return 'Defiant';
 
 		if (species.id === 'dragonite' && role === 'Heavy Duty Boots') return 'Multiscale';
 		if (species.id === 'dragonite' && role === 'Choice Scarf') return 'Stalwart';
@@ -1403,6 +1411,7 @@ export class RandomTeams {
 			case "Power Herb": return "Power Herb";
 			case "Light Clay": return "Light Clay";
 			case "Rocky Helmet": return "Rocky Helmet";
+			case "Toxic Orb": return "Toxic Orb";
 		}
 
 		if (species.id === 'venusaurmega') return 'Venusaurite';

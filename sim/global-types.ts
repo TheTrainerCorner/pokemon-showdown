@@ -588,6 +588,6 @@ namespace RandomTeamsTypes {
 	// Items
 	'Leftovers' | 'Armor Plate' | 'Weakness Policy' | 'Choice Scarf' | 'Heavy Duty Boots' | 'Life Orb' |
 	'White Herb' | 'Metronome' | 'Flame Orb' | 'Assault Vest' | 'Choice Band' | 'Choice Specs' | 'Sitrus Berry' |
-	'Bubbled Dome' | 'Wide Lens' | 'Power Herb' | 'Light Clay' | 'Rocky Helmet'
+	'Bubbled Dome' | 'Wide Lens' | 'Power Herb' | 'Light Clay' | 'Rocky Helmet' | 'Toxic Orb'
 	;
 }
