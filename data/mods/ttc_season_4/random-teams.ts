@@ -1773,7 +1773,7 @@ export class RandomTeams {
 			if ((teamDetails.teraBlast || ruleTable.has('terastalclause')) && set.role === 'Tera Blast user') {
 				continue;
 			}
-			if ((teamDetails.megaStone && teamDetails.megaStone > 0 && species.isMega)) continue;
+			// if ((teamDetails.megaStone && teamDetails.megaStone > 0 && species.isMega)) continue;
 			possibleSets.push(set);
 		}
 		const set = this.sampleIfArray(possibleSets);
