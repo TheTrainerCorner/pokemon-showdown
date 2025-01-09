@@ -1166,6 +1166,12 @@ export class RandomTeams {
 
 		//#region TTC Stuff
 
+		if (species.isMega) { 
+			// This should revert mega pokemon when in base form to use their first ability instead of the mega's ability
+			const base = Dex.species.get(species.baseSpecies);
+			return base.abilities[0];
+		}
+
 		//#region Gen 1
 
 		if (species.id === 'venusaur' && role === 'Life Orb') return 'Chlorophyll';
