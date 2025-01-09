@@ -1184,12 +1184,59 @@ export class RandomTeams {
 		if (species.id === 'butterfree' && role === 'Armor Plate') return 'Compound Eyes';
 		if (species.id === 'butterfree' && role === 'Life Orb') return 'Tinted Lens';
 
+		if (species.id === 'pidgeot' && role === 'Heavy Duty Boots') return 'Early Bird';
+		if (species.id === 'pidgeot' && role === 'Choice Specs') return 'Early Bird';
+		if (species.id === 'pidgeot' && role === 'Choice Scarf') return 'Frisk';
+
 		if (species.id === 'raticate' && role === 'Flame Orb') return 'Guts';
 		if (species.id === 'raticate' && role === 'Assault Vest') return 'Strong Jaw';
 		if (species.id === 'raticate' && role === 'Choice Band') return 'Hustle';
 
 		if (species.id === 'fearow' && role === 'Heavy Duty Boots' && !moves.has('beakblast')) return 'Big Pecks';
 		if (species.id === 'fearow' && role === 'Heavy Duty Boots' && moves.has('beakblast')) return 'Frisk';
+
+		if (species.id === 'arbok' && role === 'Sitrus Berry') return 'Intimidate';
+		if (species.id === 'arbok' && role === 'Leftovers') return 'Shed Skin';
+		if (species.id === 'arbok' && role === 'Choice Band') return 'Strong Jaw';
+
+		if (species.id === 'sotanaht' && role === 'Bubbled Dome') return 'Vampire';
+		if (species.id === 'sotanaht' && role === 'Leftovers') return 'Shed Skin';
+		if (species.id === 'sotanaht' && role === 'Heavy Duty Boots') return 'Cursed Body';
+
+		if (species.id === 'sandslash' && role === 'Leftovers' && moves.has('earthquake')) return 'Soft Sands';
+		if (species.id === 'sandslash' && role === 'Leftovers' && !moves.has('earthquake')) return 'Rough Skin';
+
+		if (species.id === 'sandslashalola' && role === 'Bubbled Dome') return 'Rough Skin';
+		if (species.id === 'sandslashalola' && role === 'Leftovers') return 'Battle Armor';
+		if (species.id === 'sandslashalola' && role === 'Wide Lens') return 'Rough Skin';
+
+		if (species.id === 'nidoqueen') return 'Sheer Force';
+
+		if (species.id === 'nidoking') return 'Hustle';
+
+		if (species.id === 'clefable' && role === 'Life Orb') return 'Magic Guard';
+		if (species.id === 'clefable' && role === 'Power Herb') return 'Unaware';
+		if (species.id === 'clefable' && role === 'Leftovers') return 'Unaware';
+
+		if (species.id === 'ninetales' && role === 'Life Orb') return 'Bad Dreams';
+		if (species.id === 'ninetales' && role === 'Leftovers') return 'Cursed Body';
+		if (species.id === 'ninetales' && role === 'Heavy Duty Boots') return 'Bad Dreams';
+
+		if (species.id === 'ninetalesalola' && role === 'Light Clay') return 'Snow Warning';
+		if (species.id === 'ninetalesalola' && role === 'Heavy Duty Boots' && moves.has('nastypolt')) return 'Snow Warning';
+		if (species.id === 'ninetalesalola' && role === 'Heavy Duty Boots' && moves.has('chillyreception')) return 'Snow Cloak';
+
+		if (species.id === 'wigglytuff' && role === 'Leftovers' && moves.has('stealthrocks')) return 'Field Support';
+		if (species.id === 'wigglytuff' && role === 'Leftovers' && moves.has('knockoff')) return 'Fluffy';
+		if (species.id === 'wigglytuff' && role === 'Leftovers' && moves.has('healbell')) return 'Thick Fat';
+
+		if (species.id === 'vileplume') return 'Neutralizing Gas';
+
+		if (species.id === 'slowbro') return 'Regenerator';
+
+		if (species.id === 'gyarados' && role === 'Heavy Duty Boots') return 'Moxie';
+		if (species.id === 'gyarados' && role === 'Choice Scarf') return 'Moxie';
+		if (species.id === 'gyarados' && role == 'Choice Band') return 'Intimidate';
 
 		if (species.id === 'zapdos' && role === 'Choice Scarf') return 'Elemental';
 		if (species.id === 'zapdos' && role === 'Leftovers') return 'Pressure';
@@ -1349,6 +1396,13 @@ export class RandomTeams {
 			case "Flame Orb": return "Flame Orb";
 			case "Assault Vest": return "Assault Vest";
 			case "Choice Band": return "Choice Band";
+			case "Choice Specs": return "Choice Specs";
+			case "Sitrus Berry": return "Stirus Berry";
+			case 'Bubbled Dome': return "Bubbled Dome";
+			case "Wide Lens": return "Wide Lens";
+			case "Power Herb": return "Power Herb";
+			case "Light Clay": return "Light Clay";
+			case "Rocky Helmet": return "Rocky Helmet";
 		}
 
 		if (species.id === 'venusaurmega') return 'Venusaurite';
@@ -1356,6 +1410,10 @@ export class RandomTeams {
 		if (species.id === 'charizardmegay') return 'Charizardite Y';
 		if (species.id === 'blastoisemega') return 'Blastoisinite';
 		if (species.id === 'beedrillmega') return 'Beedrillite';
+		if (species.id === 'pidgeotmega') return 'Pidgeotite';
+		if (species.id === 'slowbromega') return 'Slowbronite';
+		if (species.id === 'gyaradosmega') return 'Gyaradosite';
+		if (species.id === 'eeveemega') return 'Eeveeite';
 		// if (!isDoubles) {
 		// 	if (
 		// 		!isLead && role === 'Bulky Setup' &&

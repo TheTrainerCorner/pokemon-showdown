@@ -161,6 +161,36 @@
 			}
 		]
 	},
+	"pidgeot": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["U-Turn", "Aeroblast", "Defog", "Roost"]
+			},
+			{
+				"role": "Choice Specs",
+				"movepool": ["U-Turn", "Aeroblast", "Hyper Voice", "Heat Wave"]
+			},
+			{
+				"role": "Choice Scarf",
+				"movepool": ["U-Turn", "Hyper Voice", "Aeroblast", "Heat Wave"]
+			}
+		]
+	},
+	"pidgeotmega": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Prio Bird",
+				"movepool": ["Hurricane", "Gust", "U-Turn", "Aura Sphere"]
+			},
+			{
+				"role": "Offensive",
+				"movepool": ["Hurricane", "U-Turn", "Hyper Voice", "Heat Wave"]
+			}
+		]
+	},
 	"raticate": {
 		"level": 96,
 		"sets": [
@@ -188,6 +218,278 @@
 			{
 				"role": "Heavy Duty Boots",
 				"movepool": ["Beak Blast", "Pursuit", "U-Turn", "Roost"]
+			}
+		]
+	},
+	"arbok": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Sitrus Berry",
+				"movepool": ["Shed Tail", "Toxic Spikes", "Glare", "Gunk Shot"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Rest", "Coil", "Gunk Shot", "Earthquake"]
+			},
+			{
+				"role": "Choice Band",
+				"movepool": ["Poison Fang", "Psychic Fangs", "Ice Fang", "Switcheroo"]
+			}
+		]
+	},
+	"sotanaht": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Bubbled Dome",
+				"movepool": ["Soul Fang", "Psychic Fangs", "Fire Fang", "Leech Life"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Soul Fang", "Fire Lash", "Coil", "Rest"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Will-o-Wisp", "Shed Tail", "Soul Fang", "Super Fang"]
+			}
+		]
+	},
+	"sandslash": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Leftovers",
+				"movepool": ["Rapid Spin", "Spin Out", "Triple Axel", "Knock Off"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Rapid Spin", "Swords Dance", "Earthquake", "Knock Off"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Rapid Spin", "Swords Dance", "Stealth Rocks", "Spikes"]
+			}
+		]
+	},
+	"sandslashalola": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Bubbled Dome",
+				"movepool": ["Rapid Spin", "Spin Out", "Triple Axel", "Knock Off"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Rapid Spin", "Knock Off", "Stealth Rocks", "Spikey Shield"]
+			},
+			{
+				"role": "Wide Lens",
+				"movepool": ["Rapid Spin", "Swords Dance", "Triple Axel", "Iron Tail"]
+			}
+		]
+	},
+	"nidoqueen": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Life Orb",
+				"movepool": ["Earth Power", "Sludge Wave", "Ice Beam", "Thunderbolt"]
+			},
+			{
+				"role": "Bubbled Dome",
+				"movepool": ["Sludge Wave", "Earth Power", "Ice Beam", "Thunderbolt"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Toxic Spikes", "Stealth Rocks", "Super Fang", "Earth Power"]
+			}
+		]
+	},
+	"nidoking": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Choice Band",
+				"movepool": ["Drill Run", "Gunk Shot", "Megahorn", "Iron Tail"]
+			},
+			{
+				"role": "Choice Scarf",
+				"movepool": ["Drill Run", "Gunk Shot", "Stone Edge", "Megahorn"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Drill Run", "Gunk Shot", "Stealth Rocks", "Taunt"]
+			}
+		]
+	},
+	"clefable": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Life Orb",
+				"movepool": ["Moonblast", "Fire Blast", "Calm Mind", "Soft-Boiled"]
+			},
+			{
+				"role": "Power Herb",
+				"movepool": ["Moonblast", "Meteor Beam", "Fire Blast", "Soft-Boiled"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Calm Mind", "Soft-Boiled", "Flamethrower", "Moonblast"]
+			}
+		]
+	},
+	"ninetales": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Life Orb",
+				"movepool": ["Hypnosis", "Nasty Polt", "Fire Blast", "Shadow Ball"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Will-o-Wisp", "Destiny Bond", "Bitter Malice", "Burning Jealousy"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Healing Wish", "Bitter Malice", "Mystical Fire", "Hypnosis"]
+			}
+		]
+	},
+	"ninetalesalola": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Light Clay",
+				"movepool": ["Chilly Reception", "Aurora Veil", "Blizzard", "Sheer Cold"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Nasty Polt", "Ice Beam", "Moonblast", "Psyshock"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Chilly Reception", "Moonblast", "Sheer Cold", "Freeze-Dry"]
+			}
+		]
+	},
+	"wigglytuff": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Leftovers",
+				"movepool": ["Stealth Rocks", "Wish", "Reflect", "Light Screen"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Wish", "Protect", "Knock Off", "Moonblast"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Wish", "Protect", "Heal Bell", "Moonblast"]
+			}
+		]
+	},
+	"vileplume": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Rocky Helmet",
+				"movepool": ["Strength Sap", "Stun Spore", "Giga Drain", "Sludge Bomb"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Leech Seed", "Strength Sap", "Substitute", "Sludge Bomb"]
+			},
+			{
+				"role": "Life Orb",
+				"movepool": ["Strength Sap", "Sludge Bomb", "Giga Drain", "Moonblast"]
+			}
+		]
+	},
+	"slowbro": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Scald", "Future Sight", "Slack Off", "Teleport"]
+			},
+			{
+				"role": "Choice Specs",
+				"movepool": ["Scald", "Psychic", "Flamethrower", "Ice Beam"]
+			},
+			{
+				"role": "Rocky Helmet",
+				"movepool": ["Scald", "Body Press", "Slack Off", "Thunder Wave"]
+			}
+		]
+	},
+	"slowbromega": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Mega",
+				"movepool": ["Stored Power", "Iron Defense", "Calm Mind", "Slack Off"]
+			},
+			{
+				"role": "Mega",
+				"movepool": ["Scald", "Body Press", "Slack Off", "Thunder Wave"]
+			},
+			{
+				"role": "Mega",
+				"movepool": ["Scald", "Future Sight", "Slack Off", "Teleport"]
+			}
+		]
+	},
+	"gyarados": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Aqua Tail", "Dragon Rush", "Earthquake", "Dragon Dance"]
+			},
+			{
+				"role": "Choice Scarf",
+				"movepool": ["Aqua Tail", "Dragon Rush", "Earthquake", "Flip Turn"]
+			},
+			{
+				"role": "Choice Band",
+				"movepool": ["Aqua Tail", "Dragon Rush", "Earthquake", "Flip Turn"]
+			}
+		]
+	},
+	"gyaradosmega": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Mega",
+				"movepool": ["Aqua Tail", "Dragon Rush", "Earthquake", "Dragon Dance"]
+			},
+			{
+				"role": "Mega",
+				"movepool": ["Aqua Tail", "Dragon Rush", "Earthquake", "Flip Turn"]
+			},
+			{
+				"role": "Mega",
+				"movepool": ["Aqua Tail", "Earthquake", "Substitute", "Thunder Wave"]
+			}
+		]
+	},
+	"eeveemega": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Mega",
+				"movepool": ["Cheater's Trick", "Ice Beam", "Aura Sphere", "U-Turn"]
+			},
+			{
+				"role": "Mega",
+				"movepool": ["Cheater's Trick", "Body Press", "Cotton Guard", "Wish"]
+			},
+			{
+				"role": "Mega",
+				"movepool": ["Cheater's Trick", "Knock Off", "Wish", "U-Turn"]
 			}
 		]
 	},
