@@ -191,6 +191,19 @@
 			}
 		]
 	},
+	"zapdos": {
+		"level": 78,
+		"sets": [
+			{
+				"role": "Choice Scarf",
+				"movepool": ["Bolt Beak", "U-Turn", "Brave Bird", "Steel Wing"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Roost", "Tailwind", "Volt Switch", "Toxic"]
+			}
+		]
+	},
 	"dragonite": {
 		"level": 84,
 		"sets": [

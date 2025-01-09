@@ -1191,6 +1191,9 @@ export class RandomTeams {
 		if (species.id === 'fearow' && role === 'Heavy Duty Boots' && !moves.has('beakblast')) return 'Big Pecks';
 		if (species.id === 'fearow' && role === 'Heavy Duty Boots' && moves.has('beakblast')) return 'Frisk';
 
+		if (species.id === 'zapdos' && role === 'Choice Scarf') return 'Elemental';
+		if (species.id === 'zapdos' && role === 'Leftovers') return 'Pressure';
+
 		if (species.id === 'dragonite' && role === 'Heavy Duty Boots') return 'Multiscale';
 		if (species.id === 'dragonite' && role === 'Choice Scarf') return 'Stalwart';
 
@@ -1348,7 +1351,7 @@ export class RandomTeams {
 			case "Choice Band": return "Choice Band";
 		}
 
-		if (species.id === 'vensaurmega') return 'Venusaurite';
+		if (species.id === 'venusaurmega') return 'Venusaurite';
 		if (species.id === 'charizardmegax') return 'Charizardite X';
 		if (species.id === 'charizardmegay') return 'Charizardite Y';
 		if (species.id === 'blastoisemega') return 'Blastoisinite';
