@@ -1239,6 +1239,32 @@ export class RandomTeams {
 
 		if (species.id === 'vileplume') return 'Neutralizing Gas';
 
+		if (species.id === 'parasect' && role === 'Heavy Duty Boots') return 'Regenerator';
+		if (species.id === 'parasect' && role === 'Focus Sash') return 'Damp';
+
+		if (species.id === 'venomoth' && role === 'Life Orb') return 'Tinted Lens';
+		if (species.id === 'venomoth' && role === 'Leftovers') return 'Shield Dust';
+		if (species.id === 'venomoth' && role === 'Pokepen') return 'Shield Dust';
+
+		if (species.id === 'dugtrio' && role === 'Choice Band') return 'Sand Force';
+		if (species.id === 'dugtrio' && role === 'Focus Sash') return 'Emergency Exit';
+
+		if (species.id === 'persian' && role === 'Choice Band') return 'Unnerve';
+		if (species.id === 'persian' && role === 'Leftovers') return 'Limber';
+		if (species.id === 'persian' && role === 'Throat Spray') return 'Technician';
+
+		if (species.id === 'arcanine' && role === 'Life Orb') return 'Ball Fetch';
+		if (species.id === 'arcanine' && role === 'Heavy Duty Boots') return 'Intimidate';
+		if (species.id === 'arcanine' && role === 'Choice Band') return 'Intimidate';
+
+		if (species.id === 'victreebel' && role === 'Black Sludge') return 'Fly Trap';
+		if (species.id === 'victreebel' && role === 'Armor Plate') return 'Liquid Ooze';
+		if (species.id === 'victreebel' && role === 'Life Orb') return 'Fly Trap';
+
+		if (species.id === 'tentacruel' && role === 'Black Sludge' && moves.has('flipturn')) return 'Levitate';
+		if (species.id === 'tentacruel' && role === 'Armor Plate') return 'levitate';
+		if (species.id === 'tentacruel' && role === 'Black Sludge' && moves.has('scald')) return 'Toxic Debris';
+
 		if (species.id === 'slowbro') return 'Regenerator';
 
 		if (species.id === 'kingler' && role === 'Armor Plate') return 'Shell Armor';
@@ -1462,6 +1488,9 @@ export class RandomTeams {
 			case "Punching Glove": return "Punching Glove";
 			case "Black Sludge": return "Black Sludge";
 			case 'Mystic Water': return "Mystic Water";
+			case 'Focus Sash': return 'Focus Sash';
+			case 'Pokepen': return 'Pokepen';
+			case 'Throat Spray': return 'Throat Spray';
 		}
 
 		if (species.id === 'venusaurmega') return 'Venusaurite';

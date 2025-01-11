@@ -408,6 +408,121 @@
 			}
 		]
 	},
+	"parasect": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Spore", "U-Turn", "Leaf Blade", "Knock Off"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Spore", "U-Turn", "Leech Seed", "Aromatherapy"]
+			},
+			{
+				"role": "Focus Sash",
+				"movepool": ["Leaf Blade", "Counter", "Spore", "U-Turn"]
+			}
+		]
+	},
+	"venomoth": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Life Orb",
+				"movepool": ["Headlong Rush", "Stone Edge", "Pursuit", "Cut"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Defog", "Roost", "Toxic Spikes", "U-Turn"]
+			},
+			{
+				"role": "Pokepen",
+				"movepool": ["Toxic Thread", "Venoshock", "Toxic Spikes", "Roost"]
+			}
+		]
+	},
+	"dugtrio": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Choice Band",
+				"movepool": ["Headlong Rush", "Stone Edge", "Pursuit", "Cut"]
+			},
+			{
+				"role": "Focus Sash",
+				"movepool": ["Stealth Rock", "Headlong Rush", "Endeavor", "Sucker Punch"]
+			}
+		]
+	},
+	"persian": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Choice Band",
+				"movepool": ["Double-Edge", "Knock Off", "Flying Press", "U-Turn"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Foul Play", "Taunt", "Thunder Wave", "Pain Split"]
+			},
+			{
+				"role": "Throat Spray",
+				"movepool": ["Echoed Voice", "Snarl", "Vacuum Wave", "Nasty Polt"]
+			}
+		]
+	},
+	"arcanine": {
+		"level": 84,
+		"sets": [
+			{
+				"role": "Life Orb",
+				"movepool": ["Wild Charge", "Fire Blast", "Close Combat", "Morning Sun"]
+			},
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Morning Sun", "Flare Blitz", "Toxic", "Burning Bulwark"]
+			},
+			{
+				"role": "Choice Band",
+				"movepool": ["Flare Blitz", "Wild Charge", "Close Combat", "Extreme Speed"]
+			}
+		]
+	},
+	"vctreebel": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Black Sludge",
+				"movepool": ["Giga Drain", "Infestation", "Toxic", "Strength Sap"]
+			},
+			{
+				"role": "Armor Plate",
+				"movepool": ["Poison Jab", "Knock Off", "Trailblaze", "Swords Dance"]
+			},
+			{
+				"role": "Life Orb",
+				"movepool": ["Sludge Bomb", "Weather Ball", "Solar Beam", "Sunny Day"]
+			}
+		]
+	},
+	"tentacruel": {
+		"level": 84,
+		"sets": [
+			{
+				"role": "Black Sludge",
+				"movepool": ["Recover", "Flip Turn", "Rapid Spin", "Sludge Bomb"]
+			},
+			{
+				"role": "Armor Plate",
+				"movepool": ["Nasty Polt", "Scald", "Sludge Wave", "Ice Beam"]
+			},
+			{
+				"role": "Black Sludge",
+				"movepool": ["Scald", "Knock Off", "Haze", "Recover"]
+			}
+		]
+	},
 	"slowbro": {
 		"level": 100,
 		"sets": [

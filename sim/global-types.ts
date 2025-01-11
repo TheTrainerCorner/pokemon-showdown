@@ -589,6 +589,6 @@ namespace RandomTeamsTypes {
 	'Leftovers' | 'Armor Plate' | 'Weakness Policy' | 'Choice Scarf' | 'Heavy Duty Boots' | 'Life Orb' |
 	'White Herb' | 'Metronome' | 'Flame Orb' | 'Assault Vest' | 'Choice Band' | 'Choice Specs' | 'Sitrus Berry' |
 	'Bubbled Dome' | 'Wide Lens' | 'Power Herb' | 'Light Clay' | 'Rocky Helmet' | 'Toxic Orb' | 'Thick Club' |
-	'Normal Gem' | 'Punching Glove' | 'Black Sludge' | 'Mystic Water'
+	'Normal Gem' | 'Punching Glove' | 'Black Sludge' | 'Mystic Water' | 'Focus Sash' | 'Pokepen' | 'Throat Spray'
 	;
 }
