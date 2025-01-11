@@ -1258,7 +1258,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 		const setData = this.sample(effectivePool);
 		const moves = [];
-		for (const [i, moveSlot] of setData.set.moves.entries) {
+		for (const [i, moveSlot] of setData.set.moves.entries()) {
 			moves.push(setData.moveVariants ? moveSlot[setData.moveVariants[i]] : this.sample(moveSlot));
 		}
 
