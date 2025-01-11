@@ -208,6 +208,19 @@
 			}
 		]
 	},
+	"raticatealola": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Assault Vest",
+				"movepool": ["U-Turn", "Knock Off", "Hyper Fang", "Sucker Punch"]
+			},
+			{
+				"role": "Sitrus Berry",
+				"movepool": ["Bulk Up", "Knock Off", "Hyper Fang", "Taunt"]
+			}
+		]
+	},
 	"fearow": {
 		"level": 94,
 		"sets": [
@@ -455,6 +468,23 @@
 			}
 		]
 	},
+	"dugtrioalola": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Choice Band",
+				"movepool": ["Headlong Rush", "Iron Head", "Pursuit", "Stone Edge"]
+			},
+			{
+				"role": "Clear Amulet",
+				"movepool": ["Swords Dance", "Earthquake", "Iron Head", "Rock Slide"]
+			},
+			{
+				"role": "Focus Sash",
+				"movepool": ["Stealth Rock", "Endeavor", "Earthquake", "Rock Tomb"]
+			}
+		]
+	},
 	"persian": {
 		"level": 100,
 		"sets": [
@@ -469,6 +499,23 @@
 			{
 				"role": "Throat Spray",
 				"movepool": ["Echoed Voice", "Snarl", "Vacuum Wave", "Nasty Polt"]
+			}
+		]
+	},
+	"persianalola": {
+		"level": 100,
+		"sets": [
+			{
+				"role": "Heavy Duty Boots",
+				"movepool": ["Knock Off", "Taunt", "Parting Shot", "Thunder Wave"]
+			},
+			{
+				"role": "Life Orb",
+				"movepool": ["Dark Pulse", "Thunder", "Nasty Polt", "Trailblaze"]
+			},
+			{
+				"role": "Leftovers",
+				"movepool": ["Substitute", "Protect", "Toxic", "Roar"]
 			}
 		]
 	},

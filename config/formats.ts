@@ -24,8 +24,11 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Randoms",
 		mod: Config.ttcseason,
-		team: "random",
+		team: "randomFactory",
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Species Clause', 'Sleep Clause Mod', 'Illusion Level Mod', '!Team Preview'],
+		onBegin() {
+			this.add(`raw|<div class="boradcast-blue"><b>Randoms Tier: ${this.teamGenerator.factoryTier}</b></div>`);
+		}
 	},
 	{
 		section: "TTC Season 3 Offseason",

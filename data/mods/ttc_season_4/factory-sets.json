@@ -1,0 +1,251 @@
+{
+	"OU": {
+		"venusaur": {
+			"sets": [
+				{
+					"species": "Venusaur",
+					"item": "Life Orb",
+					"ability": "Chloropyhll",
+					"moves": [["Sunny Day"], ["Weather Ball"], ["Solar Beam"], ["Sludge Wave"]]
+				},
+				{
+					"species": "Venusaur",
+					"item": "Leftovers",
+					"ability": "Overgrow",
+					"moves": [["Leech Seed"], ["Substitute"], ["Giga Drain"], ["Protect"]]
+				},
+				{
+					"species": "Venusaur",
+					"item": "Leftovers",
+					"ability": "Overgrow",
+					"moves": [["Sleep Powder"], ["Knock Off"], ["Leech Seed"], ["Leaf Storm"]]
+				},
+				{
+					"species": "Venusaur",
+					"item": "Venusaurite",
+					"ability": "Chloropyhll",
+					"moves": [["Leech Seed"], ["Substitute"], ["Giga Drain"], ["Protect"]]
+				},
+				{
+					"species": "Venusaur",
+					"item": "Venusaurite",
+					"ability": "Chloropyhll",
+					"moves": [["Synthesis"], ["Swords Dance"], ["Power Whip"], ["Earthquake"]]
+				},
+				{
+					"species": "Venusaur",
+					"item": "Venusaurite",
+					"ability": "Chloropyhll",
+					"moves": [["Leaf Storm"], ["Earthquake"], ["Poison Jab"], ["Knock Off"]]
+				}
+			]
+		},
+		"charizard": {
+			"sets": [
+				{
+					"species": "Charizard",
+					"item": "Heavy-Duty Boots",
+					"ability": "Blaze",
+					"moves": [["Overheat"], ["Defog"], ["Will-o-Wisp"], ["U-Turn"]]
+				},
+				{
+					"species": "Charizard",
+					"item": "Heavy-Duty Boots",
+					"ability": "Blaze",
+					"moves": [["Dragon Dance"], ["Flare Blitz"], ["Dual Wingbeat"], ["Earthquake"]]
+				},
+				{
+					"species": "Charizard",
+					"item": "Heavy-Duty Boots",
+					"ability": "Blaze",
+					"moves": [["U-Turn"], ["Earthquake"], ["Poison Jab"], ["Knock Off"]]
+				},
+				{
+					"species": "Charizard",
+					"item": "Charizardite X",
+					"ability": "Blaze",
+					"moves": [["Dragon Dance"], ["Flare Blitz"], ["Dragon Rush"], ["Iron Tail"]]
+				},
+				{
+					"species": "Charizard",
+					"item": "Charizardite X",
+					"ability": "Blaze",
+					"moves": [["Will-o-Wisp"], ["Roost"], ["Dragon Dance"], ["Flare Blitz"]]
+				},
+				{
+					"species": "Charizard",
+					"item": "Charizardite X",
+					"ability": "Blaze",
+					"moves": [["Swords Dance"], ["Scale Shot"], ["Flare Blitz"], ["Earthquake"]]
+				},
+				{
+					"species": "Charizard",
+					"item": "Charizardite Y",
+					"ability": "Blaze",
+					"moves": [["Fire Blast"], ["Air Slash"], ["Solar Beam"], ["Focus Blast"]]
+				},
+				{
+					"species": "Charizard",
+					"item": "Charizardite Y",
+					"ability": "Blaze",
+					"moves": [["Will-o-Wisp"], ["U-Turn"], ["Fire Blast"], ["Roost"]]
+				},
+				{
+					"species": "Charizard",
+					"item":"Charizardite Y",
+					"abilty": "Blaze",
+					"moves": [["U-Turn"], ["Overheat"], ["Air Slash"], ["Roost"]]
+				}
+			]
+		},
+		"blastoise": {
+			"sets": [
+				{
+					"species": "Blastoise",
+					"item": "Leftovers",
+					"ability": "Shell Armor",
+					"moves": [["Rapid Spin"], ["Flip Turn"], ["Scald"], ["Life Dew"]]
+				},
+				{
+					"species": "Blastoise",
+					"item": "White Herb",
+					"ability": "Shell Armor",
+					"moves": [["Shell Smash"], ["Hydro Pump"], ["Ice Beam"], ["Focus Blast"]]
+				},
+				{
+					"species": "Blastoise",
+					"item": "Leftovers",
+					"ability": "Shell Armor",
+					"moves": [["Body Press"], ["Iron Defense"], ["Dark Pulse"], ["Rapid Spin"]]
+				},
+				{
+					"species": "Blastoise",
+					"item": "Blastoisite",
+					"ability": "Shell Armor",
+					"moves": [["Aura Sphere"], ["Dragon Pulse"], ["Water Pulse"], ["Dark Pulse"]]
+				},
+				{
+					"species": "Blastoise",
+					"item": "Blastoisite",
+					"ability": "Shell Armor",
+					"moves": [["Rapid Spin"], ["Water Pulse"], ["Flip Turn"], ["Aura Sphere"]]
+				}
+			]
+		},
+		"beedrill": {
+			"sets": [
+				{
+					"species": "Beedrill",
+					"item": "Heavy-Duty Boots",
+					"ability": "Swarm",
+					"moves": [["Toxic Spikes"], ["Barb Barrage"], ["Knock Off"], ["U-Turn"]]
+				},
+				{
+					"species": "Beedrill",
+					"item": "Heavy-Duty Boots",
+					"ability": "Merciless",
+					"moves": [["Swords Dance"], ["Barb Barrage"], ["X-Scissor"], ["Throat Chop"]]
+				},
+				{
+					"species": "Beedrill",
+					"item": "Heavy-Duty Boots",
+					"ability": "Sniper",
+					"moves": [["First Impression"], ["Poison Jab"], ["Drill Run"], ["Tailwind"]]
+				},
+				{
+					"species": "Beedrill",
+					"item": "Beerillite",
+					"ability": "Swarm",
+					"moves": [["Swords Dance"], ["Drill Run"], ["Poison Jab"], ["Knock Off"]]
+				},
+				{
+					"species": "Beedrill",
+					"item": "Beerillite",
+					"abilty": "Swarm",
+					"moves": [["Tailwind"], ["First Impression"], ["Barb Barrage"], ["U-Turn"]]
+				}
+			]
+		},
+		"butterfree": {
+			"sets": [
+				{
+					"species": "Butterfree",
+					"item": "Heavy-Duty Boots",
+					"ability": "Field Support",
+					"moves": [["Tailwind"], ["Teleport"], ["Roost"], ["Lumina Crash"]]
+				},
+				{
+					"species": "Butterfree",
+					"item": "Armor Plate",
+					"ability": "Compound Eyes",
+					"moves": [["Quiver Dance"], ["Sleep Powder"], ["Bug Buzz"], ["Lumina Crash"]]
+				},
+				{
+					"species": "Butterfree",
+					"item": "Life Orb",
+					"ability": "Tinted Lens",
+					"moves": [["Quiver Dance"], ["Lumina Crash"], ["Bug Buzz"], ["Roost"]]
+				}
+			]
+		},
+		"pidgeot": {
+			"sets": [
+				{
+					"species": "Pidgeot",
+					"item": "Heavy-Duty Boots",
+					"ability": "Early Bird",
+					"moves": [["U-Turn"], ["Aeroblast"], ["Defog"], ["Roost"]]
+				},
+				{
+					"species": "Pidgeot",
+					"item": "Choice Specs",
+					"ability": "Early Bird",
+					"moves": [["U-Turn"], ["Aeroblast"], ["Hyper Voice"], ["Heat Wave"]]
+				},
+				{
+					"species": "Pidgeot",
+					"item": "Choice Scarf",
+					"ability": "Frisk",
+					"moves": [["U-Turn"], ["Hyper Voice"], ["Aeroblast"], ["Heat Wave"]]
+				},
+				{
+					"species": "Pidgeot",
+					"item": "Pidgeotite",
+					"ability": "Keen Eye",
+					"moves": [["Hurricane"], ["Gust"], ["U-Turn"], ["Aura Sphere"]]
+				},
+				{
+					"species": "Pidgeot",
+					"item": "Pidgeotite",
+					"ability": "Keen Eye",
+					"moves": [["Hurricane"], ["U-Turn"], ["Hyper Voice"], ["Heat Wave"]]
+				}
+			]
+		},
+		"raticate": {
+			"sets": [
+				{
+					"species": "Raticate",
+					"item": "Flame Orb",
+					"level": 96,
+					"ability": "Guts",
+					"moves": [["Facade"], ["Pursuit"], ["Throat Chop"], ["Wild Charge"]]
+				},
+				{
+					"species": "Raticate",
+					"item": "Assault Vest",
+					"level": 96,
+					"ability": "Strong Jaw",
+					"moves": [["Fire Fang"], ["Psychic Fangs"], ["Crunch"], ["U-Turn"]]
+				},
+				{
+					"species": "Raticate",
+					"item": "Choice Band",
+					"level": 96,
+					"ability": "Hustle",
+					"moves": [["Hyper Fang"], ["Close Combat"], ["Zen Headbutt"], ["Iron Tail"]]
+				}
+			]
+		}
+	}	
+}
