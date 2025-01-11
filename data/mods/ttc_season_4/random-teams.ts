@@ -1312,7 +1312,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			const species = this.dex.species.get(this.sampleNoReplace(pokemonPool));
 			if (!species.exists) continue;
 
-			const speciesFlags = this.randomFactorySets[chosenTier][species.id].flags;
+			let speciesFlags = this.randomFactorySets[chosenTier][species.id].flags;
+			if (!speciesFlags) speciesFlags = {};
 
 			// Limit to one of each species (Species Clause)
 			if (teamData.baseFormes[species.baseSpecies]) continue;
