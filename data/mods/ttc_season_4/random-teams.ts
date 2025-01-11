@@ -1,4 +1,4 @@
-import { PRNG, Utils } from "../../../sim";
+import { PRNG, Utils, toID } from "../../../sim";
 import RandomGen8Teams, { MoveCounter, TeamData } from "../gen8/random-teams";
 
 export interface BattleFactorySpecies {
