@@ -1209,9 +1209,11 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			spikes: 1, 
 			toxicspikes: 1,
 			ceaselessedge: 1,
+			auroraveil: 1,
 		};
 		const abilitiesMax: {[k: string]: number} = {
 			toxicdebris: 1,
+			snowcloak: 1,
 		};
 
 		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
@@ -1223,7 +1225,12 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			sandforce: 'sandstorm', sandrush: 'sandstorm', sandveil: 'sandstorm',
 			snowcloak: 'snow', icebody: 'snow',
 		};
-		const weatherAbilities = ['drizzle', 'drought', 'snowwarning', 'sandstream'];
+		const weatherAbilities = [
+			'drizzle',
+			'drought', 'sundance',
+			'snowwarning', 'chillingneigh', 'asoneglastrier', 'absolutezero',
+			'sandstream', 'granitestorm'
+		];
 
 		let effectivePool: {set: AnyObject, moveVariants?: number[], itemVariants?: number, abilityVariants?: number}[] = [];
 		const priorityPool = [];
