@@ -1299,10 +1299,11 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			for (const move of curSet.moves) {
 				let pass = false;
 				const moveState = this.dex.moves.get(move);
-				for (const terrain of terrainMovesRequired[moveState.id]) {
-					if (teamData.terrain?.includes(terrain)) pass = true;
+				if (terrainMovesRequired[moveState.id]) {
+					for (const terrain of terrainMovesRequired[moveState.id]) {
+						if (teamData.terrain?.includes(terrain)) pass = true;
+					}
 				}
-
 				if (!pass) reject = true;
 			}
 
