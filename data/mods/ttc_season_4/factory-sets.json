@@ -337,7 +337,7 @@
 					"species": "Sandslash",
 					"item": "Leftovers",
 					"ability": "Rough Skin",
-					"moves": [["Rapid Spin"], ["Knock Off"], ["Stealth Rocks"], ["Spikey Shield"]]
+					"moves": [["Rapid Spin"], ["Knock Off"], ["Stealth Rock"], ["Spiky Shield"]]
 				},
 				{
 					"species": "Sandslash",
@@ -365,7 +365,7 @@
 					"species": "Sandslash-Alola",
 					"item": "Leftovers",
 					"ability": "Battle Armor",
-					"moves": [["Rapid Spin"], ["Knock Off"], ["Stealth Rock"], ["Spikey Shield"]]
+					"moves": [["Rapid Spin"], ["Knock Off"], ["Stealth Rock"], ["Spiky Shield"]]
 				},
 				{
 					"species": "Sandslash-Alola",
