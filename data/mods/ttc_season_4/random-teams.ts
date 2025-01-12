@@ -113,6 +113,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				movePool.includes('megahorn') || movePool.includes('xscissor') ||
 				(!counter.get('Bug') && types.has('Electric'))
 			),
+			Cosmic: (movePool, moves, abilities, types, counter) => !counter.get('Cosmic'),
 			Dark: (movePool, moves, abilities, types, counter) => !counter.get('Dark'),
 			Dragon: (movePool, moves, abilities, types, counter) => !counter.get('Dragon'),
 			Electric: (movePool, moves, abilities, types, counter) => !counter.get('Electric'),

@@ -120,13 +120,13 @@
 				},
 				{
 					"species": "Blastoise",
-					"item": "Blastoisite",
+					"item": "Blastoisinite",
 					"ability": "Shell Armor",
 					"moves": [["Aura Sphere"], ["Dragon Pulse"], ["Water Pulse"], ["Dark Pulse"]]
 				},
 				{
 					"species": "Blastoise",
-					"item": "Blastoisite",
+					"item": "Blastoisinite",
 					"ability": "Shell Armor",
 					"moves": [["Rapid Spin"], ["Water Pulse"], ["Flip Turn"], ["Aura Sphere"]]
 				}
@@ -154,13 +154,13 @@
 				},
 				{
 					"species": "Beedrill",
-					"item": "Beerillite",
+					"item": "Beedrillite",
 					"ability": "Swarm",
 					"moves": [["Swords Dance"], ["Drill Run"], ["Poison Jab"], ["Knock Off"]]
 				},
 				{
 					"species": "Beedrill",
-					"item": "Beerillite",
+					"item": "Beedrillite",
 					"abilty": "Swarm",
 					"moves": [["Tailwind"], ["First Impression"], ["Barb Barrage"], ["U-Turn"]]
 				}
@@ -246,6 +246,1890 @@
 					"moves": [["Hyper Fang"], ["Close Combat"], ["Zen Headbutt"], ["Iron Tail"]]
 				}
 			]
+		},
+		"raticatealola": {
+			"sets": [
+				{
+					"species": "Raticate-Alola",
+					"item": "Assault Vest",
+					"ability": "Thick Fat",
+					"moves": [["U-Turn"], ["Knock Off"], ["Hyper Fang"], ["Sucker Punch"]]
+				},
+				{
+					"species": "Raticate-Alola",
+					"item": "Sitrus Berry",
+					"ability": "Cheek Pouch",
+					"moves": [["Bulk Up"], ["Knock Off"], ["Hyper Fang"], ["Taunt"]]
+				}
+			]
+		},
+		"fearow": {
+			"sets": [
+				{
+					"species": "Fearow",
+					"item": "Heavy-Duty Boots",
+					"level": 94,
+					"ability": "Big Pecks",
+					"moves": [["Swords Dance"], ["Drill Peck"], ["Knock Off"], ["Drill Run"]]
+				},
+				{
+					"species": "Fearow",
+					"item": "Heavy-Duty Boots",
+					"level": 94,
+					"ability": "Frisk",
+					"moves": [["Beak Blast"], ["Pursuit"], ["U-Turn"], ["Roost"]]
+				},
+				{
+					"species": "Fearow",
+					"item": "Scope Lens",
+					"ability": "Sniper",
+					"moves": [["Focus Energy"], ["Drill Run"], ["Knock Off"], ["Beak Blast"]]
+				}
+			]
+		},
+		"arbok": {
+			"sets": [
+				{
+					"species": "Arbok",
+					"item": "Sitrus Berry",
+					"ability": "Intimidate",
+					"moves": [["Shed Tail"], ["Toxic Spikes"], ["Glare"], ["Gunk Shot"]]
+				},
+				{
+					"species": "Arbok",
+					"item": "Leftovers",
+					"ability": "Shed Skin",
+					"moves": [["Rest"], ["Coil"], ["Gunk Shot"], ["Earthquake"]]
+				},
+				{
+					"species": "Arbok",
+					"item": "Choice Band",
+					"abilty": "Strong Jaw",
+					"moves": [["Poison Fang"], ["Psychic Fangs"], ["Ice Fang"], ["Switcheroo"]]
+				}
+			]
+		},
+		"sotanaht": {
+			"sets": [
+				{
+					"species": "Sotanaht",
+					"item": "Bubbled Dome",
+					"ability": "Vampire",
+					"moves": [["Soul Fang"], ["Psychic Fangs"], ["Fire Fang"], ["Leech Life"]]
+				},
+				{
+					"species": "Sotanaht",
+					"item": "Leftovers",
+					"ability": "Shed Skin",
+					"moves": [["Soul Fang"], ["Fire Lash"], ["Coil"], ["Rest"]]
+				},
+				{
+					"species": "Sotanaht",
+					"item": "Heavy-Duty Boots",
+					"ability": "Cursed Body",
+					"moves": [["Will-o-Wisp"], ["Shed Tail"], ["Soul Fang"], ["Super Fang"]]
+				}
+			]
+		},
+		"sandslash": {
+			"sets": [
+				{
+					"species": "Sandslash",
+					"item": "Leftovers",
+					"ability": "Rough Skin",
+					"moves": [["Rapid Spin"], ["Knock Off"], ["Stealth Rocks"], ["Spikey Shield"]]
+				},
+				{
+					"species": "Sandslash",
+					"item": "Leftovers",
+					"ability": "Soft Sand",
+					"moves": [["Rapid Spin"], ["Swords Dance"], ["Earthquake"], ["Knock Off"]]
+				},
+				{
+					"species": "Sandslash",
+					"item": "Leftovers",
+					"ability": "Rough Skin",
+					"moves": [["Rapid Spin"], ["Super Fang"], ["Stealth Rock"], ["Spikes"]]
+				}
+			]
+		},
+		"sandslashalola": {
+			"sets": [
+				{
+					"species": "Sandslash-Alola",
+					"item": "Bubbled Dome",
+					"ability": "Rough Skin",
+					"moves": [["Rapid Spin"], ["Spin Out"], ["Triple Axel"], ["Knock Off"]]
+				},
+				{
+					"species": "Sandslash-Alola",
+					"item": "Leftovers",
+					"ability": "Battle Armor",
+					"moves": [["Rapid Spin"], ["Knock Off"], ["Stealth Rock"], ["Spikey Shield"]]
+				},
+				{
+					"species": "Sandslash-Alola",
+					"item": "Wide Lens",
+					"ability": "Rough Skin",
+					"moves": [["Rapid Spin"], ["Swords Dance"], ["Triple Axel"], ["Iron Tail"]]
+				}
+			]
+		},
+		"nidoqueen": {
+			"sets": [
+				{
+					"species": "Nidoqueen",
+					"item": "Life Orb",
+					"ability": "Sheer Force",
+					"moves": [["Earth Power"], ["Sludge Wave"], ["Ice Beam"], ["Thunderbolt"]]
+				},
+				{
+					"species": "Nidoqueen",
+					"item": "Bubbled Dome",
+					"ability": "Sheer Force",
+					"moves": [["Sludge Wave"], ["Earth Power"], ["Ice Beam"], ["Dragon Tail"]]
+				},
+				{
+					"species": "Nidoqueen",
+					"item": "Leftovers",
+					"ability": "Sheer Force",
+					"moves": [["Toxic Spikes"], ["Stealth Rock"], ["Super Fang"], ["Earth Power"]]
+				}
+			]
+		},
+		"nidoking": {
+			"sets": [
+				{
+					"species": "Nidoking",
+					"item": "Choice Band",
+					"abilty": "Hustle",
+					"moves": [["Drill Run"], ["Gunk Shot"], ["Megahorn"], ["Iron Tail"]]
+				},
+				{
+					"species": "Nidoking",
+					"item": "Choice Scarf",
+					"ability": "Hustle",
+					"moves": [["Drill Run"], ["Gunk Shot"], ["Stone Edge"], ["Megahorn"]]
+				},
+				{
+					"species": "Nidoking",
+					"item": "Leftovers",
+					"ability": "Hustle",
+					"moves": [["Drill Run"], ["Gunk Shot"], ["Stealth Rock"], ["Taunt"]]
+				}
+			]
+		},
+		"clefable": {
+			"sets": [
+				{
+					"species": "Clefable",
+					"item": "Life Orb",
+					"ability": "Magic Guard",
+					"moves": [["Moonblast"], ["Fire Blast"], ["Calm Mind"], ["Soft-Boiled"]]
+				},
+				{
+					"species": "Clefable",
+					"item": "Power Herb",
+					"ability": "Unaware",
+					"moves": [["Moonblast"], ["Meteor Beam"], ["Fire Blast"], ["Soft-Boiled"]]
+				},
+				{
+					"species": "Clefable",
+					"item": "Leftovers",
+					"ability": "Unaware",
+					"moves": [["Calm Mind"], ["Soft-Boiled"], ["Flamethrower"], ["Moonblast"]]
+				}
+			]
+		},
+		"ninetales": {
+			"sets": [
+				{
+					"species": "Ninetales",
+					"item": "Life Orb",
+					"ability": "Bad Dream",
+					"moves": [["Hypnosis"], ["Nasty Plot"], ["Fire Blast"], ["Shadow Ball"]]
+				},
+				{
+					"species": "Ninetales",
+					"item": "Leftovers",
+					"ability": "Cursed Body",
+					"moves": [["Will-o-Wisp"], ["Destiny Bond"], ["Bitter Malice"], ["Burning Jealousy"]]
+				},
+				{
+					"species": "Ninetales",
+					"item": "Heavy-Duty Boots",
+					"ability": "Bad Dreams",
+					"moves": [["Healing Wish"], ["Bitter Malice"], ["Mystical Fire"], ["Hypnosis"]]
+				}
+			]
+		},
+		"ninetalesalola": {
+			"sets": [
+				{
+					"species": "Ninetales-Alola",
+					"item": "Light Clay",
+					"ability": "Snow Warning",
+					"moves": [["Chilly Reception"], ["Aurora Veil"], ["Blizzard"], ["Sheer Cold"]]
+				},
+				{
+					"species": "Ninetales-Alola",
+					"item": "Heavy-Duty Boots",
+					"ability": "Snow Warning",
+					"moves": [["Nasty Plot"], ["Ice Beam"], ["Moonblast"], ["Psyshock"]]
+				},
+				{
+					"species": "Ninetales-Alola",
+					"item": "Heavy-Duty Boots",
+					"ability": "Snow Cloak",
+					"moves": [["Chilly Reception"], ["Moonblast"], ["Sheer Cold"], ["Freeze-Dry"]]
+				}
+			]
+		},
+		"wigglytuff": {
+			"sets": [
+				{
+					"species": "Wigglytuff",
+					"item": "Leftovers",
+					"ability": "Field Support",
+					"moves": [["Stealth Rock"], ["Wish"], ["Reflect"], ["Light Screen"]]
+				},
+				{
+					"species": "Wigglytuff",
+					"item": "Leftovers",
+					"ability": "Fluffy",
+					"moves": [["Wish"], ["Protect"], ["Knock Off"], ["Moonblast"]]
+				},
+				{
+					"species": "Wigglytuff",
+					"item": "Leftovers",
+					"ability": "Thick Fat",
+					"moves": [["Wish"], ["Protect"], ["Heal Bell"], ["Moonblast"]]
+				}
+			]
+		},
+		"vileplume": {
+			"sets": [
+				{
+					"species": "Vileplume",
+					"item": "Rocky Helmet",
+					"ability": "Neutralizing Gas",
+					"moves": [["Strength Sap"], ["Stun Spore"], ["Giga Drain"], ["Sludge Bomb"]]
+				},
+				{
+					"species": "Vileplume",
+					"item": "Leftovers",
+					"ability": "Neutralizing Gas",
+					"moves": [["Leech Seed"], ["Strength Sap"], ["Substitute"], ["Sludge Bomb"]]
+				},
+				{
+					"species": "Vileplume",
+					"item": "Life Orb",
+					"ability": "Neutralizing",
+					"moves": [["Strength Sap"], ["Sludge Bomb"], ["Giga Drain"], ["Moonblast"]]
+				}
+			]
+		},
+		"parasect": {
+			"sets": [
+				{
+					"species": "Parasect",
+					"item": "Heavy-Duty Boots",
+					"ability": "Regenerator",
+					"moves": [["Spore"], ["U-Turn"], ["Leaf Blade"], ["Knock Off"]]
+				},
+				{
+					"species": "Parasect",
+					"item": "Heavy-Duty Boots",
+					"ability": "Regenerator",
+					"moves": [["Spore"], ["U-Turn"], ["Leech Seed"], ["Aromatherapy"]]
+				},
+				{
+					"species": "Parasect",
+					"item": "Focus Sash",
+					"ability": "Damp",
+					"moves": [["Leaf Blade"], ["Counter"], ["Spore"], ["U-Turn"]]
+				}
+			]
+		},
+		"venomoth": {
+			"sets": [
+				{
+					"species": "Venomoth",
+					"item": "Life Orb",
+					"ability": "Tinted Lens",
+					"moves": [["Quiver Dance"], ["Roost"], ["Bug Buzz"], ["Sludge Wave"]]
+				},
+				{
+					"species": "Venomoth",
+					"item": "Leftovers",
+					"ability": "Shield Dust",
+					"moves": [["Defog"], ["Roost"], ["Toxic Spikes"], ["U-Turn"]]
+				},
+				{
+					"species": "Venomoth",
+					"item": "Pokepen",
+					"ability": "Shield Dust",
+					"moves": [["Toxic Thread"], ["Venoshock"], ["Toxic Spikes"], ["Roost"]]
+				}
+			]
+		},
+		"dugtrio": {
+			"sets": [
+				{
+					"species": "Dugtrio",
+					"item": "Choice Band",
+					"ability": "Sand Force",
+					"moves": [["Headlong Rush"], ["Stone Edge"], ["Pursuit"], ["Cut"]]
+				},
+				{
+					"species": "Dugtrio",
+					"item": "Focus Sash",
+					"ability": "Emergency Exit",
+					"moves": [["Stealth Rock"], ["Headlong Rush"], ["Endeavor"], ["Sucker Punch"]]
+				}
+			]
+		},
+		"dugtrioalola": {
+			"sets": [
+				{
+					"species": "Dugtrio-Alola",
+					"item": "Choice Band",
+					"ability": "Emergency Exit",
+					"moves": [["Headlong Rush"], ["Iron Head"], ["Pursuit"], ["Stone Edge"]]
+				},
+				{
+					"species": "Dugtrio-Alola",
+					"item": "Clear Amulet",
+					"ability": "Tangling Hair",
+					"moves": [["Swords Dance"], ["Earthquake"], ["Iron Head"], ["Rock Slide"]]
+				},
+				{
+					"species": "Dugtrio-Alola",
+					"item": "Focus Sash",
+					"ability": "Tangling Hair",
+					"moves": [["Stealth Rock"], ["Endeavor"], ["Earthquake"], ["Rock Tomb"]]
+				}
+			]
+		},
+		"persian": {
+			"sets": [
+				{
+					"species": "Persian",
+					"item": "Choice Band",
+					"ability": "Unnerve",
+					"moves": [["Double-Edge"], ["Knock Off"], ["Flying Press"], ["U-Turn"]]
+				},
+				{
+					"species": "Persian",
+					"item": "Leftovers",
+					"ability": "Limber",
+					"moves": [["Foul Play"], ["Taunt"], ["Thunder Wave"], ["Pain Split"]]
+				},
+				{
+					"species": "Persian",
+					"item": "Throat Spray",
+					"ability": "Technician",
+					"moves": [["Echoed Voice"], ["Snarl"], ["Vacuum Wave"], ["Nasty Plot"]]
+				}
+			]
+		},
+		"persianalola": {
+			"sets": [
+				{
+					"species": "Persian-Alola",
+					"item": "Heavy-Duty Boots",
+					"ability": "Prankster",
+					"moves": [["Knock Off"], ["Taunt"], ["Parting Shot"], ["Thunder Wave"]]
+				},
+				{
+					"species": "Persian-Alola",
+					"item": "Life Orb",
+					"ability": "Fur Coat",
+					"moves": [["Dark Pulse"], ["Thunder"], ["Nasty Plot"], ["Trailblaze"]]
+				},
+				{
+					"species": "Persian-Alola",
+					"item": "Leftovers",
+					"ability": "Fur Coat",
+					"moves": [["Substitute"], ["Protect"], ["Toxic"], ["Roar"]]
+				}
+			]
+		},
+		"meowth": {
+			"flags": { "megaOnly": 1},
+			"sets": [
+				{
+					"species": "Meowth",
+					"item": "Meowthite",
+					"ability": "Pickup",
+					"moves": [["U-Turn"], ["Payday"], ["Fake Out"], ["Knock Off"]]
+				},
+				{
+					"species": "Meowth",
+					"item": "Meowthite",
+					"ability": "Pickup",
+					"moves": [["Payday"], ["Focus Blast"], ["Eerie Spell"], ["U-Turn"]]
+				}
+			]
+		},
+		"golduck": {
+			"sets": [
+				{
+					"species": "Golduck",
+					"item": "Choice Specs",
+					"ability": "Swift Swim",
+					"moves": [["Flip Turn"], ["Ice Beam"], ["Scald"], ["Psychic"]]
+				},
+				{
+					"species": "Golduck",
+					"item": "Mystic Water",
+					"ability": "Swift Swim",
+					"moves": [["Rain Dance"], ["Hydro Pump"], ["Psychic Noise"], ["Ice Beam"]]
+				},
+				{
+					"species": "Golduck",
+					"item": "Salac Berry",
+					"ability": "Cloud Nine",
+					"moves": [["Substitute"], ["Nasty Plot"], ["Scald"], ["Psychic"]]
+				}
+			]
+		},
+		"arcanine": {
+			"sets": [
+				{
+					"species": "Arcanine",
+					"item": "Life Orb",
+					"level": 84,
+					"ability": "Ball Fetch",
+					"moves": [["Wild Charge"], ["Fire Blast"], ["Close Combat"], ["Morning Sun"]]
+				},
+				{
+					"species": "Arcanine",
+					"item": "Heavy-Duty Boots",
+					"level": 84,
+					"ability": "Intimidate",
+					"moves": [["Morning Sun"], ["Flare Blitz"], ["Toxic"], ["Burning Bulwark"]]
+				},
+				{
+					"species": "Arcanine",
+					"item": "Choice Band",
+					"level": 84,
+					"ability": "Intimidate",
+					"moves": [["Flare Blitz"], ["Wild Charge"], ["Close Combat"], ["Extreme Speed"]]
+				}
+			]
+		},
+		"arcaninehisui": {
+			"sets": [
+				{
+					"species": "Arcanine-Hisui",
+					"item": "Choice Band",
+					"ability": "Rock Head",
+					"moves": [["Head Smash"], ["Flare Blitz"], ["Wild Charge"], ["Extreme Speed"]]
+				},
+				{
+					"species": "Arcanine-Hisui",
+					"item": "Choice Scarf",
+					"ability": "Rock Head",
+					"moves": [["Head Smash"], ["Flare Blitz"], ["Wild Charge"], ["Close Combat"]]
+				},
+				{
+					"species": "Arcanine-Hisui",
+					"item": "Heavy-Duty Boots",
+					"ability": "Intimidate",
+					"moves": [["Will-o-Wisp"], ["Morning Sun"], ["Rock Slide"], ["Stealth Rock"]]
+				}
+			]
+		},
+		"poliwrath": {
+			"sets": [
+				{
+					"species": "Poliwrath",
+					"item": "Assault Vest",
+					"ability": "Water Absorb",
+					"moves": [["Circle Throw"], ["Drain Punch"], ["Flip Turn"], ["Knock Off"]]
+				},
+				{
+					"species": "Poliwrath",
+					"item": "Sitrus Berry",
+					"ability": "Water Absorb",
+					"moves": [["Belly Drum"], ["Jet Punch"], ["Drain Punch"], ["Surging Strikes"]]
+				},
+				{
+					"species": "Poliwrath",
+					"item": "Life Orb",
+					"ability": "Swift Swim",
+					"moves": [["Surging Strikes"], ["Rain Dance"], ["Close Combat"], ["Darkest Lariat"]]
+				}
+			]
+		},
+		"alakazam": {
+			"sets": [
+				{
+					"species": "Alakazam",
+					"item": "Life Orb",
+					"ability": "Magic Guard",
+					"moves": [["Dazzling Gleam"], ["Focus Blast"], ["Calm Mind"], ["Psyshock"]]
+				},
+				{
+					"species": "Alakazam",
+					"item": "Focus Sash",
+					"ability": "Magic Guard",
+					"moves": [["Thunder Wave"], ["Future Sight"], ["Encore"], ["Focus Blast"]]
+				},
+				{
+					"species": "Alakazam",
+					"item": "Rose Incense",
+					"ability": "Magic Guard",
+					"moves": [["Recycle"], ["Endure"], ["Psychic"], ["Taunt"]]
+				},
+				{
+					"species": "Alakazam",
+					"item": "Alakazite",
+					"ability": "Magic Guard",
+					"moves": [["Dazzling Gleam"], ["Focus Blast"], ["Energy Ball"], ["Psyshock"]]
+				},
+				{
+					"species": "Alakazam",
+					"item": "Alakazite",
+					"ability": "Magic Guard",
+					"moves": [["Substitute"], ["Calm Mind"], ["Focus Blast"], ["Psyshock"]]
+				},
+				{
+					"species": "Alakazam",
+					"item": "Alakazite",
+					"ability": "Magic Guard",
+					"moves": [["Psychic Terrain"], ["Expanding Force"], ["Focus Blast"], ["Charge Beam"]]
+				}
+			]
+		},
+		"machamp": {
+			"sets": [
+				{
+					"species": "Machamp",
+					"item": "Flame Orb",
+					"ability": "Guts",
+					"moves": [["Drain Punch"], ["Facade"], ["Darkest Lariat"], ["Bullet Punch"]]
+				},
+				{
+					"species": "Machamp",
+					"item": "Bubbled Dome",
+					"ability": "No Guard",
+					"moves": [["Dynamic Punch"], ["Rolling Kick"], ["Knock Off"], ["Stone Edge"]]
+				},
+				{
+					"species": "Machamp",
+					"item": "Leftovers",
+					"ability": "Guts",
+					"moves": [["Drain Punch"], ["Substitute"], ["Bulk Up"], ["Knock Off"]]
+				}
+			]
+		},
+		"victreebel": {
+			"sets": [
+				{
+					"species": "Victreebel",
+					"item": "Black Sludge",
+					"ability": "Fly Trap",
+					"moves": [["Giga Drain"], ["Infestation"], ["Toxic"], ["Strength Sap"]]
+				},
+				{
+					"species": "Victreebel",
+					"item": "Armor Plate",
+					"ability": "Liquid Ooze",
+					"moves": [["Poison Jab"], ["Knock Off"], ["Trailblaze"], ["Swords Dance"]]
+				},
+				{
+					"species": "Victreebel",
+					"item": "Life Orb",
+					"ability": "Fly Trap",
+					"moves": [["Sludge Bomb"], ["Weather Ball"], ["Solar Beam"], ["Sunny Day"]]
+				}
+			]
+		},
+		"tentacruel": {
+			"sets": [
+				{
+					"species": "Tentacruel",
+					"item": "Black Sludge",
+					"level": 84,
+					"ability": "Levitate",
+					"moves": [["Recover"], ["Flip Turn"], ["Rapid Spin"], ["Sludge Bomb"]]
+				},
+				{
+					"species": "Tentacruel",
+					"item": "Armor Plate",
+					"level": 84,
+					"ability": "Levitate",
+					"moves": [["Nasty Plot"], ["Scald"], ["Sludge Wave"], ["Ice Beam"]]
+				},
+				{
+					"species": "Tentacruel",
+					"item": "Black Sludge",
+					"level": 84,
+					"ability": "Toxic Debris",
+					"moves": [["Scald"], ["Knock Off"], ["Haze"], ["Recover"]]
+				}
+			]
+		},
+		"golem": {
+			"sets": [
+				{
+					"species": "Golem",
+					"item": "Solid Rock",
+					"ability": "Rocky Helmet",
+					"moves": [["Stealth Rock"], ["Rapid Spin"], ["Earthquake"], ["Stone Edge"]]
+				},
+				{
+					"species": "Golem",
+					"item": "Custap Berry",
+					"ability": "Sturdy",
+					"moves": [["Stealth Rock"], ["Rapid Spin"], ["Explosion"], ["Counter"]]
+				},
+				{
+					"species": "Golem",
+					"item": "Bubbled Dome",
+					"ability": "Rock Head",
+					"moves": [["Head Smash"], ["Submission"], ["Double Edge"], ["Earthquake"]]
+				}
+			]
+		},
+		"golemalola": {
+			"sets": [
+				{
+					"species": "Golem-Alola",
+					"item": "Choice Specs",
+					"ability": "Teravolt",
+					"moves": [["Thunder Clap"], ["Volt Switch"], ["Power Gem"], ["Aura Sphere"]]
+				},
+				{
+					"species": "Golem-Alola",
+					"item": "Loaded Dice",
+					"ability": "Baller",
+					"moves": [["Energy Ball"], ["Geodude Gattling"], ["Thunderbolt"], ["Rock Polish"]]
+				},
+				{
+					"species": "Golem-Alola",
+					"item": "Bubbled Dome",
+					"ability": "Magnet Pull",
+					"moves": [["Flamethrower"], ["Aura Sphere"], ["Discharge"], ["Volt Switch"]]
+				}
+			]
+		},
+		"rapidash": {
+			"sets": [
+				{
+					"species": "Rapidash",
+					"item": "Choice Scarf",
+					"ability": "Reckless",
+					"moves": [["Flare Blitz"], ["Double-Edge"], ["Jump Kick"], ["Mimic"]]
+				},
+				{
+					"species": "Rapidash",
+					"item": "Heavy-Duty Boots",
+					"ability": "Flame Body",
+					"moves": [["Blazing Torque"], ["Horn Leech"], ["Wil-o-Wisp"], ["Morning Sun"]]
+				},
+				{
+					"species": "Rapidash",
+					"item": "Frost Orb",
+					"ability": "Reckless",
+					"moves": [["Facade"], ["Flare Blitz"], ["Horn Leech"], ["Swords Dance"]]
+				}
+			]
+		},
+		"rapidashgalar": {
+			"sets": [
+				{
+					"species": "Rapidash-Galar",
+					"item": "Toxic Orb",
+					"ability": "Pastel Veil",
+					"moves": [["Facade"], ["Play Rough"], ["Fire Lash"], ["Swords Dance"]]
+				},
+				{
+					"species": "Rapidash-Galar",
+					"item": "Leftovers",
+					"ability": "Magic Guard",
+					"moves": [["Dazzling Gleam"], ["Luster Purge"], ["Morning Sun"], ["Calm Mind"]]
+				},
+				{
+					"species": "Rapidash-Galar",
+					"item": "Choice Specs",
+					"ability": "Fairy Aura",
+					"moves": [["Dazzling Gleam"], ["Luster Purge"], ["Mystical Fire"], ["Healing Wish"]]
+				}
+			]
+		},
+		"slowbro": {
+			"sets": [
+				{
+					"species": "Slowbro",
+					"item": "Heavy-Duty Boots",
+					"ability": "Regenerator",
+					"moves": [["Scald"], ["Future Sight"], ["Slack Off"], ["Teleport"]]
+				},
+				{
+					"species": "Slowbro",
+					"item": "Choice Specs",
+					"ability": "Regenerator",
+					"moves": [["Scald"], ["Psychic"], ["Flamethrower"], ["Ice Beam"]]
+				},
+				{
+					"species": "Slowbro",
+					"item": "Rocky Helmet",
+					"ability": "Regenerator",
+					"moves": [["Scald"], ["Body Press"], ["Slack Off"], ["Thunder Wave"]]
+				},
+				{
+					"species": "Slowbro",
+					"item": "Slowbronite",
+					"moves": [["Stored Power"], ["Iron Defense"], ["Calm Mind"], ["Slack Off"]]
+				},
+				{
+					"species": "Slowbro",
+					"item": "Slowbronite",
+					"moves": [["Scald"], ["Body Press"], ["Slack Off"], ["Thunder Wave"]]
+				},
+				{
+					"species": "Slowbro",
+					"item": "Slowbronite",
+					"moves": [["Scald"], ["Future Sight"], ["Slack Off"], ["Teleport"]]
+				}
+			]
+		},
+		"slowbrogalar": {
+			"sets": [
+				{
+					"species": "Slowbro-Galar",
+					"item": "Black Sludge",
+					"ability": "Regenerator",
+					"moves": [["Shell Side Arm"], ["Future Sight"], ["Haze"], ["Teleport"]]
+				},
+				{
+					"species": "Slowbro-Galar",
+					"item": "Bubbled Dome",
+					"ability": "Regenerator",
+					"moves": [["Sludge Bomb"], ["Fire Blast"], ["Psyshock"], ["Body Press"]]
+				},
+				{
+					"species": "Slowbro-Galar",
+					"item": "Sitrus Berry",
+					"ability": "Own Tempo",
+					"moves": [["Shell Side Arm"], ["Drain Punch"], ["Belly Drum"], ["Trick Room"]]
+				}
+			]
+		},
+		"magneton": {
+			"sets": [
+				{
+					"species": "Magneton",
+					"item": "Eviolite",
+					"ability": "Levitate",
+					"moves": [["Volt Switch"], ["Mirror Shot"], ["Thunderbolt"], ["Sonic Boom"]]
+				},
+				{
+					"species": "Magneton",
+					"item": "Eviolite",
+					"ability": "Levitate",
+					"moves": [["Toxic"], ["Volt Switch"], ["Steel Beam"], ["Mirror Shot"]]
+				},
+				{
+					"species": "Magneton",
+					"item": "Choice Scarf",
+					"ability": "Magnet Pull",
+					"moves": [["Thunderbolt"], ["Volt Switch"], ["Mirror Shot"], ["Sonic Boom"]]
+				}
+			]
+		},
+		"farfetchd": {
+			"sets": [
+				{
+					"species": "Farfetch'd",
+					"item": "Heavy-Duty Boots",
+					"ability": "Defiant",
+					"moves": [["Brave Bird"], ["Knock Off"], ["Roost"], ["U-Turn"]]
+				},
+				{
+					"species": "Farfetch'd",
+					"item": "Choice Band",
+					"ability": "Stalwart",
+					"moves": [["Sky Attack"], ["Solar Blade"], ["Skull Bash"], ["Close Combat"]]
+				},
+				{
+					"species": "Farfetch'd",
+					"item": "Focus Sash",
+					"ability": "Sharpness",
+					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Cut"], ["U-Turn"]]
+				},
+				{
+					"species": "Farfetch'd",
+					"item": "Leek",
+					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Close Combat"], ["U-Turn"]]
+				},
+				{
+					"species": "Farfetch'd",
+					"item": "Leek",
+					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Swords Dance"], ["Substitute"]]
+				},
+				{
+					"species": "Farfetch'd",
+					"item": "Leek",
+					"moves": [["Ceaseless Edge"], ["Whirlwind"], ["U-Turn"], ["Roost"]]
+				}
+			]
+		},
+		"dodrio": {
+			"sets": [
+				{
+					"species": "Dodrio",
+					"item": "Choice Band",
+					"level": 86,
+					"ability": "Early Bird",
+					"moves": [["Brave Bird"], ["Earthquake"], ["U-Turn"], ["Knock Off"]]
+				},
+				{
+					"species": "Dodrio",
+					"item": "Heavy-Duty Boots",
+					"level": 86,
+					"ability": "Wind Rider",
+					"moves": [["Swords Dance"], ["Brave Bird"], ["Earthquake"], ["Triple Axel"]]
+				},
+				{
+					"species": "Dodrio",
+					"item": "Armor Plate",
+					"level": 86,
+					"ability": "Tangled Feet",
+					"moves": [["Triple Axel"], ["Roost"], ["Earthquake"], ["U-Turn"]]
+				}
+			]
+		},
+		"dewgong": {
+			"sets": [
+				{
+					"species": "Dewgong",
+					"item": "Throat Spray",
+					"ability": "Slush Rush",
+					"moves": [["Hydro Pump"], ["Freeze-Dry"], ["Alluring Voice"], ["Flip Turn"]]
+				},
+				{
+					"species": "Dewgong",
+					"item": "Leftovers",
+					"ability": "Thick Fat",
+					"moves": [["Protect"], ["Flip Turn"], ["Whirlpool"], ["Perish Song"]]
+				},
+				{
+					"species": "Dewgong",
+					"item": "Heavy-Duty Boots",
+					"ability": "Slush Rush",
+					"moves": [["Scald"], ["Freeze-Dry"], ["Knock Off"], ["Flip Turn"]]
+				}
+			]
+		},
+		"muk": {
+			"sets": [
+				{
+					"species": "Muk",
+					"item": "Assault Vest",
+					"ability": "Regenerator",
+					"moves": [["Dire Claw"], ["Knock Off"], ["Ice Punch"], ["Shadow Sneak"]]
+				},
+				{
+					"species": "Muk",
+					"item": "Rocky Helmet",
+					"ability": "Regenerator",
+					"moves": [["Dire Claw"], ["Knock Off"], ["Pain Split"], ["Toxic Spikes"]]
+				}
+			]
+		},
+		"mukalola": {
+			"sets": [
+				{
+					"species": "Muk-Alola",
+					"item": "Assault Vest",
+					"ability": "Poison Touch",
+					"moves": [["Dire Claw"], ["Knock Off"], ["Ice Punch"], ["Shadow Sneak"]]
+				},
+				{
+					"species": "Muk-Alola",
+					"item": "Black Sludge",
+					"ability": "Corrosion",
+					"moves": [["Gunk Shot"], ["Knock Off"], ["Toxic"], ["Parting Shot"]]
+				}
+			]
+		},
+		"cloyster": {
+			"sets": [
+				{
+					"species": "Cloyster",
+					"item": "White Herb",
+					"level": 80,
+					"ability": "Skill Link",
+					"moves": [["Icicle Spear"], ["Rock Blast", "Drill Run"], ["Hydro Pump"], ["Shell Smash"]]
+				}
+			]
+		},
+		"gengar": {
+			"sets": [
+				{
+					"species": "Gengar",
+					"item": "Choice Specs",
+					"level": 81,
+					"ability": "Levitate",
+					"moves": [["Shadow Ball"], ["Sludge Wave"], ["Focus Blast"], ["Trick"]]
+				},
+				{
+					"species": "Gengar",
+					"item": "Life Orb",
+					"level": 81,
+					"ability": "Levitate",
+					"moves": [["Shadow Ball"], ["Focus Blast"], ["Sludge Wave"], ["Nasty Plot"]]
+				},
+				{
+					"species": "Gengar",
+					"item": "Black Sludge",
+					"level": 81,
+					"ability": "Levitate",
+					"moves": [["Substitute"], ["Will-o-Wisp"], ["Hex"], ["Sludge Bomb"]]
+				},
+				{
+					"species": "Gengar",
+					"item": "Gengarite",
+					"level": 78,
+					"moves": [["Nasty Plot"], ["Sludge Bomb"], ["Shadow Ball"], ["Focus Blast"]]
+				},
+				{
+					"species": "Gengar",
+					"item": "Gengarite",
+					"level": 78,
+					"moves": [["Zap Cannon"], ["Hex"], ["Sludge Bomb"], ["Toxic Spikes"]]
+				},
+				{
+					"species": "Gengar",
+					"item": "Gengarite",
+					"level": 78,
+					"moves": [["Substitute"], ["Nasty Plot"], ["Shadow Ball"], ["Sludge Bomb"]]
+				}
+			]
+		},
+		"hypno": {
+			"sets": [
+				{
+					"species": "Hypno",
+					"item": "Light Clay",
+					"ability": "Forewarn",
+					"moves": [["Foul Play"], ["Teleport"], ["Light Scree"], ["Reflect"]]
+				},
+				{
+					"species": "Hypno",
+					"item": "Psychic Seed",
+					"ability": "Psychic Surge",
+					"moves": [["Stored Power"], ["Body Press"], ["Barrier"], ["Wish"]]
+				},
+				{
+					"species": "Hypno",
+					"item": "Leftovers",
+					"ability": "Psychic Surge",
+					"moves": [["Expanding Force"], ["Focus Blast"], ["Draining Kiss"], ["Calm Mind"]]
+				}
+			]
+		},
+		"kingler": {
+			"sets": [
+				{
+					"species": "Kingler",
+					"item": "Armor Plate",
+					"ability": "Shell Armor",
+					"moves": [["Swords Dance"], ["Crabhammer"], ["X-Scissor"], ["Bullet Punch"]]
+				},
+				{
+					"species": "Kingler",
+					"item": "Life Orb",
+					"ability": "Sheer Force",
+					"moves": [["Agility"], ["Liquidation"], ["Meteor Mash"], ["Close Combat"]]
+				},
+				{
+					"species": "Kingler",
+					"item": "Assault Vest",
+					"ability": "Shell Armor",
+					"moves": [["Knock Off"], ["Crabhammer"], ["X-Scissor"], ["Bullet Punch"]]
+				}
+			]
+		},
+		"electrode": {
+			"sets": [
+				{
+					"species": "Electrode",
+					"item": "Life Orb",
+					"level": 92,
+					"ability": "Baller",
+					"moves": [["Thunderbolt"], ["Volt Switch"], ["Magnet Bomb"], ["Focus Blast"]]
+				},
+				{
+					"species": "Electrode",
+					"item": "Light Clay",
+					"level": 92,
+					"ability": "Galvanize",
+					"moves": [["Light Scree"], ["Reflect"], ["Explosion"], ["Flash Cannon"]]
+				},
+				{
+					"species": "Electrode",
+					"item": "Armor Plate",
+					"level": 92,
+					"ability": "Soundproof",
+					"moves": [["Toxic"], ["Taunt"], ["Volt Switch"], ["Flash Cannon"]]
+				}
+			]
+		},
+		"electrodehisui": {
+			"sets": [
+				{
+					"species": "Electrode-Hisui",
+					"item": "Life Orb",
+					"level": 87,
+					"ability": "Baller",
+					"moves": [["Energy Ball"], ["Thunderbolt"], ["Volt Switch"], ["Sludge Bomb"]]
+				},
+				{
+					"species": "Electrode-Hisui",
+					"item": "Leftovers",
+					"level": 87,
+					"ability": "Soundproof",
+					"moves": [["Sappy Seed"], ["Substitute"], ["Volt Switch"], ["Giga Drain"]]
+				},
+				{
+					"species": "Electrode-Hisui",
+					"item": "Heavy-Duty Boots",
+					"level": 87,
+					"ability": "Aftermath",
+					"moves": [["Taunt"], ["Thunder Wave"], ["Volt Switch"], ["Energy Ball"]]
+				}
+			]
+		},
+		"exeggutor": {
+			"sets": [
+				{
+					"species": "Exeggutor",
+					"item": "Petaya Berry",
+					"ability": "Pressure",
+					"moves": [["Sleep Powder"], ["Psychic Noise"], ["Barrage"], ["Wish"]]
+				},
+				{
+					"species": "Exeggutor",
+					"item": "Bubbled Dome",
+					"ability": "Thick Fat",
+					"moves": [["Earth Power"], ["Extrasensory"], ["Giga Drain"], ["Flamethrower"]]
+				},
+				{
+					"species": "Exeggutor",
+					"item": "Choice Specs",
+					"ability": "Pressure",
+					"moves": [["Extrasensory"], ["Focus Blast"], ["Leaf Storm"], ["Trick"]]
+				}
+			]
+		},
+		"exeggutoralola": {
+			"sets": [
+				{
+					"species": "Exeggutor-Alola",
+					"item": "Sitrus Berry",
+					"ability": "Pressure",
+					"moves": [["Barrage"], ["Dragon Hammer"], ["Synthesis"], ["Iron Tail"]]
+				},
+				{
+					"species": "Exeggutor-Alola",
+					"item": "Assault Vest",
+					"ability": "Lightning Rod",
+					"moves": [["Draco Meteor"], ["Earth Power"], ["Knock Off"], ["Giga Drain"]]
+				},
+				{
+					"species": "Exeggutor-Alola",
+					"item": "Leftovers",
+					"ability": "Pressure",
+					"moves": [["Curse"], ["Dragon Hammer"], ["Iron Tail"], ["Power Whip"]]
+				}
+			]
+		},
+		"marowak": {
+			"sets": [
+				{
+					"species": "Marowak",
+					"item": "Thick Club",
+					"ability": "Technician",
+					"moves": [["Bonemerang"], ["Stealth Rock"], ["Stone Edge"], ["Knock Off"]]
+				},
+				{
+					"species": "Marowak",
+					"item": "Thick Club",
+					"ability": "Rock Head",
+					"moves": [["Swords Dance"], ["Poltergeist"], ["Flare Blitz"], ["Thunder Punch"]]
+				},
+				{
+					"species": "Marowak",
+					"item": "Thick Club",
+					"ability": "Technician",
+					"moves": [["Smack Down"], ["Bonemerang"], ["Aerial Ace"], ["Power-Up Punch"]]
+				}
+			]
+		},
+		"marowakalola": {
+			"sets": [
+				{
+					"species": "Marowak-Alola",
+					"item": "Thick Club",
+					"ability": "Technician",
+					"moves": [["Bonemerang"], ["Flame Charge"], ["Shadow Bone"], ["Flare Blitz"]]
+				},
+				{
+					"species": "Marowak-Alola",
+					"item": "Thick Club",
+					"ability": "Rock Head",
+					"moves": [["Swords Dance"], ["Poltergeist"], ["Flare Blitz"], ["Thunder Punch"]]
+				},
+				{
+					"species": "Marowak-Alola",
+					"item": "Thick Club",
+					"ability": "Rock Head",
+					"moves": [["Stealth Rock"], ["Flare Blitz"], ["Knock Off"], ["Poltergeist"]]
+				}
+			]
+		},
+		"hitmonlee": {
+			"sets": [
+				{
+					"species": "Hitmonlee",
+					"item": "Choice Band",
+					"ability": "Leg Day",
+					"moves": [["Blaze Kick"], ["Rolling Kick"], ["High Jump Kick"], ["Triple Axel"]]
+				},
+				{
+					"species": "Hitmonlee",
+					"item": "White Herb",
+					"ability": "Unburden",
+					"moves": [["Swords Dance"], ["Close Combat"], ["Knock Off"], ["Triple Axel"]]
+				},
+				{
+					"species": "Hitmonlee",
+					"item": "Normal Gem",
+					"ability": "Unburden",
+					"moves": [["Fake Out"], ["Close Combat"], ["Knockn Off"], ["Poison Jab"]]
+				}
+			]
+		},
+		"hitmonchan": {
+			"sets": [
+				{
+					"species": "Hitmonchan",
+					"item": "Assault Vest",
+					"ability": "Inner Focus",
+					"moves": [["Rapid Spin"], ["Focus Punch"], ["Knock Off"], ["Bullet Punch"]]
+				},
+				{
+					"species": "Hitmonchan",
+					"item": "Punching Glove",
+					"ability": "Iron Fist",
+					"moves": [["Drain Punch"], ["Bullet Punch"], ["Bulk Up"], ["Ice Punch"]]
+				},
+				{
+					"species": "Hitmonchan",
+					"item": "Choice Scarf",
+					"ability": "Keen Eye",
+					"moves": [["Dynamic Punch"], ["Dizzy Punch"], ["Stone Edge"], ["Knock Off"]]
+				}
+			]
+		},
+		"weezing": {
+			"sets": [
+				{
+					"species": "Weezing",
+					"item": "Black Sludge",
+					"ability": "Levitate",
+					"moves": [["Sludge Bomb"], ["Clear Smog"], ["Pain Split"], ["Fire Blast"]]
+				},
+				{
+					"species": "Weezing",
+					"item": "Rocky Helmet",
+					"ability": "Stench",
+					"moves": [["Toxic Spikes"], ["Gunk Shot"], ["Pain Split"], ["Defog"]]
+				},
+				{
+					"species": "Weezing",
+					"item": "Black Sludge",
+					"ability": "Neutralizing Gas",
+					"moves": [["Sludge Bomb"], ["Will-o-Wisp"], ["Pain Split"], ["Haze"]]
+				}
+			]
+		},
+		"weezinggalar": {
+			"sets": [
+				{
+					"species": "Weezing-Galar",
+					"item": "Black Sludge",
+					"ability": "Levitate",
+					"moves": [["Play Rough"], ["Gunk Shot"], ["Aromatherapy"], ["Defog"]]
+				},
+				{
+					"species": "Weezing-Galar",
+					"item": "Rocky Helmet",
+					"ability": "Neutralizing Gas",
+					"moves": [["Will-o-Wisp"], ["Dazzling Gleam"], ["Fire Blast"], ["Defog"]]
+				},
+				{
+					"species": "Weezing-Galar",
+					"item": "Life Orb",
+					"ability": "Levitate",
+					"moves": [["Sludge Bomb"], ["Strange Steam"], ["Fire Blast"], ["Pain Split"]]
+				}
+			]
+		},
+		"rhydon": {
+			"sets": [
+				{
+					"species": "Rhydon",
+					"item": "Eviolite",
+					"level": 85,
+					"ability": "Sap Sipper",
+					"moves": [["Stone Edge"], ["Earthquake"], ["Stealth Rock"], ["Toxic"]]
+				},
+				{
+					"species": "Rhydon",
+					"item": "Eviolite",
+					"level": 85,
+					"ability": "Rock Head",
+					"moves": [["Swords Dance"], ["Head Smash"], ["Earthquake"], ["Megahorn"]]
+				},
+				{
+					"species": "Rhydon",
+					"item": "Choice Band",
+					"level": 85,
+					"ability": "Reckless",
+					"moves": [["Head Smash"], ["Headlong Rush"], ["Megahorn"], ["Dragon Rush"]]
+				}
+			]
+		},
+		"chansey": {
+			"sets": [
+				{
+					"species": "Chansey",
+					"item": "Eviolite",
+					"level": 85,
+					"ability": "Natural Cure",
+					"moves": [["Soft-Boiled"], ["Seismic Toss"], ["Toxic"], ["Heal Bell", "Stealth Rock", "Teleport"]]
+				}
+			]
+		},
+		"tangela": {
+			"sets": [
+				{
+					"species": "Tangela",
+					"item": "Eviolite",
+					"ability": "Regenerator",
+					"moves": [["Sleep Powder"], ["Leech Seed", "Knock Off"], ["Substitute", "Synthesis"], ["Protect", "Leaf Storm"]]
+				}
+			]
+		},
+		"kangaskhan": {
+			"sets": [
+				{
+					"species": "Kangaskhan",
+					"item": "Silk Scarf",
+					"ability": "Adaptability",
+					"moves": [["Fake Out"], ["Last Resort"]]
+				},
+				{
+					"species": "Kangaskhan",
+					"item": "Leftovers",
+					"ability": "Scrappy",
+					"happiness": 255,
+					"moves": [["Yawn"], ["Wish"], ["Protect"], ["Return"]]
+				},
+				{
+					"species": "Kangaskhan",
+					"item": "Wide Lens",
+					"ability": "Adaptability",
+					"moves": [["Mega Kick"], ["Iron Tail"], ["Fake Out"], ["Sing"]]
+				},
+				{
+					"species": "Kangaskhan",
+					"item": "Kangaskhanite",
+					"moves": [["Fake Out", "Last Resort"]]
+				},
+				{
+					"species": "Kangaskhan",
+					"item": "Kangaskhanite",
+					"happiness": 255,
+					"moves": [["Power-Up Punch"], ["Return"], ["Sucker Punch"], ["Earthquake"]]
+				}
+			]
+		},
+		"seaking": {
+			"sets": [
+				{
+					"species": "Seaking",
+					"item": "Mystic Water",
+					"ability": "Supreme Overlord",
+					"moves": [["Swords Dance"], ["Liquidation"], ["Aqua Jet"], ["Megahorn"]]
+				},
+				{
+					"species": "Seaking",
+					"item": "Leftovers",
+					"ability": "Lightning Rod",
+					"moves": [["Flip Turn"], ["Toxic"], ["Knock Off"], ["Protect"]]
+				},
+				{
+					"species": "Seaking",
+					"item": "Choice Band",
+					"ability": "Supreme Overlord",
+					"moves": [["Flip Turn"], ["Aqua Jet"], ["Megahorn"], ["Liquidation"]]
+				}
+			]
+		},
+		"starmie": {
+			"sets": [
+				{
+					"species": "Starmie",
+					"item": "Heavy-Duty Boots",
+					"ability": "Natural Cure",
+					"moves": [["Rapid Spin"], ["Scald"], ["Recover"], ["Thunderbolt"]]
+				},
+				{
+					"species": "Starmie",
+					"item": "Life Orb",
+					"ability": "Illuminate",
+					"moves": [["Dazzling Gleam"], ["Hydro Pump"], ["Psyshock"], ["Signal Beam"]]
+				},
+				{
+					"species": "Starmie",
+					"item": "Power Herb",
+					"ability": "Illuminate",
+					"moves": [["Meteor Beam"], ["Ice Beam"], ["Dazzling Gleam"], ["Hydro Pump"]]
+				}
+			]
+		},
+		"mrmime": {
+			"sets": [
+				{
+					"species": "Mr. Mime",
+					"item": "Life Orb",
+					"ability": "Psychic Surge",
+					"moves": [["Expanding Force"], ["Dazzling Gleam"], ["Mystical Fire"], ["Nasty Plot"]]
+				},
+				{
+					"species": "Mr. Mime",
+					"item": "Choice Scarf",
+					"ability": "Screen Cleaner",
+					"moves": [["Trick"], ["Dazzling Gleam"], ["Psyshock"], ["Teleport"]]
+				},
+				{
+					"species": "Mr. Mime",
+					"item": "Light Clay",
+					"ability": "Filter",
+					"moves": [["Reflect"], ["Light Screen"], ["Fake Out"], ["Dazzling Gleam"]]
+				}
+			]
+		},
+		"scyther": {
+			"sets": [
+				{
+					"species": "Scyther",
+					"item": "Choice Band",
+					"ability": "Adaptability",
+					"moves": [["U-Turn"], ["Dual Wingbeat"], ["Close Combat"], ["Knock Off"]]
+				},
+				{
+					"species": "Scyther",
+					"item": "Heavy-Duty Boots",
+					"ability": "Sharpness",
+					"moves": [["X-Scissor"], ["Aerial Ace"], ["Kowtow Cleave"], ["Leaf Blade"]]
+				},
+				{
+					"species": "Scyther",
+					"item": "Heavy-Duty Boots",
+					"ability": "Adaptability",
+					"moves": [["U-Turn"], ["Defog"], ["Roost"], ["Knock Off"]]
+				}
+			]
+		},
+		"jynx": {
+			"sets": [
+				{
+					"species": "Jynx",
+					"item": "Heavy-Duty Boots",
+					"ability": "Dazzling",
+					"moves": [["Nasty Plot"], ["Draining Kiss"], ["Psyshock"], ["Freeze-Dry"]]
+				},
+				{
+					"species": "Jynx",
+					"item": "Lax Incense",
+					"ability": "Dry Skin",
+					"moves": [["Fake Out"], ["Wish"], ["Ice Beam"], ["Psychic"]]
+				},
+				{
+					"species": "Jynx",
+					"item": "Choice Specs",
+					"ability": "Dazzling",
+					"moves": [["Aura Sphere"], ["Dazzling Gleam"], ["Psychic"], ["Freeze-Dry"]]
+				}
+			]
+		},
+		"pinsir": {
+			"sets": [
+				{
+					"species": "Pinsir",
+					"item": "Rose Incense",
+					"ability": "Mold Breaker",
+					"moves": [["Stealth Rock"], ["U-Turn"], ["Earthquake"], ["Knock Off"]]
+				},
+				{
+					"species": "Pinsir",
+					"item": "Choice Scarf",
+					"ability": "Moxie",
+					"moves": [["Megahorn"], ["Earthquake"], ["Close Combat"], ["U-Turn"]]
+				},
+				{
+					"species": "Pinsir",
+					"item": "Leftovers",
+					"ability": "Berserk",
+					"moves": [["Bulk Up"], ["Megahorn"], ["Earthquake"], ["Knock Off"]]
+				},
+				{
+					"species": "Pinsir",
+					"item": "Pinsirite",
+					"happiness": 255,
+					"ability": "Berserk",
+					"moves": [["Quick Attack"], ["Return"], ["Swords Dance"], ["Earthquake"]]
+				},
+				{
+					"species": "Pinsir",
+					"item": "Pinsirite",
+					"ability": "Moxie",
+					"moves": [["Double-Edge"], ["Quick Attack"], ["Swords Dance"], ["Earthquake"]]
+				}
+			]
+		},
+		"tauros": {
+			"sets": [
+				{
+					"species": "Tauros",
+					"item": "Life Orb",
+					"ability": "Sheer Force",
+					"moves": [["Raging Bull"], ["Throat Chop"], ["Flare Blitz"], ["Rock Slide"]]
+				},
+				{
+					"species": "Tauros",
+					"item": "Lax Incense",
+					"ability": "Intimidate",
+					"moves": [["Raging Bull"], ["Earthquake"], ["Play Rough"], ["Toxic"]]
+				}
+			]
+		},
+		"gyarados": {
+			"sets": [
+				{
+					"species": "Gyarados",
+					"item": "Heavy-Duty Boots",
+					"ability": "Moxie",
+					"moves": [["Aqua Tail"], ["Dragon Rush"], ["Earthquake"], ["Dragon Dance"]]
+				},
+				{
+					"species": "Gyarados",
+					"item": "Choice Scarf",
+					"ability": "Moxie",
+					"moves": [["Aqua Tail"], ["Dragon Rush"], ["Earthquake"], ["Flip Turn"]]
+				},
+				{
+					"species": "Gyarados",
+					"item": "Choice Band",
+					"ability": "Intimidate",
+					"moves": [["Aqua Tail"], ["Dragon Rush"], ["Earthquake"], ["Flip Turn"]]
+				},
+				{
+					"species": "Gyarados",
+					"item": "Gyaradosite",
+					"moves": [["Aqua Tail"], ["Dragon Rush"], ["Earthquake"], ["Dragon Dance", "Flip Turn"]]
+				},
+				{
+					"species": "Gyarados",
+					"item": "Gyaradosite",
+					"moves": [["Aqua Tail"], ["Earthquake"], ["Substitute"], ["Thunder Wave"]]
+				}
+			]
+		},
+		"lapras": {
+			"sets": [
+				{
+					"species": "Lapras",
+					"item": "Damp Rock",
+					"ability": "Drizzle",
+					"moves": [["Sparkling Aria"], ["Freeze-Dry"], ["Thunder"], ["Wish"]]
+				},
+				{
+					"species": "Lapras",
+					"item": "Wave Incense",
+					"ability": "Water Absorb",
+					"moves": [["Calm Mind"], ["Freeze-Dry"], ["Scald"], ["Wish"]]
+				}
+			]
+		},
+		"ditto": {
+			"sets": [
+				{
+					"species": "Ditto",
+					"item": "Choice Scarf",
+					"ability": "Imposter",
+					"moves": ["Transform"]
+				}
+			]
+		},
+		"eevee": {
+			"flags": {"megaOnly": 1},
+			"sets": [
+				{
+					"species": "Eevee-Starter",
+					"item": "Eeveeite",
+					"moves": [["Cheater's Trick"], ["Ice Beam"], ["Aura Sphere"], ["U-Turn"]]
+				},
+				{
+					"species": "Eevee-Starter",
+					"item": "Eeveeite",
+					"moves": [["Cheater's Trick"], ["Body Press"], ["Cotton Guard"], ["Wish"]]
+				},
+				{
+					"species": "Eevee-Starter",
+					"item": "Eeveeite",
+					"moves": [["Cheater's Trick"], ["Knock Off"], ["Wish"], ["U-Turn"]]
+				}
+			]
+		},
+		"vaporeon": {
+			"sets": [
+				{
+					"species": "Vaporeon",
+					"item": "Leftovers",
+					"ability": "Water Absorb",
+					"moves": [["Scald"], ["Toxic"], ["Wish"], ["Protect"]]
+				},
+				{
+					"species": "Vaporeon",
+					"item": "Leftovers",
+					"ability": "Rain Dish",
+					"moves": [["Surf"], ["Ice Beam"], ["Wish"], ["Calm Mind"]]
+				}
+			]
+		},
+		"jolteon": {
+			"sets": [
+				{
+					"species": "Jolteon",
+					"item": "Choice Specs",
+					"ability": "Volt Absorb",
+					"moves": [["Thunderbolt"], ["Alluring Voice"], ["Spikes"], ["Volt Switch"]]
+				},
+				{
+					"species": "Jolteon",
+					"item": "Leftovers",
+					"ability": "Speed Boost",
+					"moves": [["Thunderbolt"], ["Stored Power"], ["Substitute"], ["Calm Mind"]]
+				},
+				{
+					"species": "Jolteon",
+					"item": "Light Clay",
+					"ability": "Speed Boost",
+					"moves": [["Thunderbolt"], ["Reflect"], ["Light Screen"], ["Volt Switch"]]
+				}
+			]
+		},
+		"flareon": {
+			"sets": [
+				{
+					"species": "Flareon",
+					"item": "Choice Band",
+					"ability": "Sheer Force",
+					"moves": [["Flare Blitz"], ["Superpower"], ["Play Rough"], ["Stomping Tantrum"]]
+				},
+				{
+					"species": "Flareon",
+					"item": "Choice Scarf",
+					"ability": "Sheer Force",
+					"moves": [["Flare Blitz"], ["Superpower"], ["Play Rough"], ["Stomping Tantrum"]]
+				},
+				{
+					"species": "Flareon",
+					"item": "Heavy-Duty Boots",
+					"ability": "Turboblaze",
+					"moves": [["Flare Blitz"], ["Superpower"], ["Trailblaze"], ["Bulk Up"]]
+				}
+			]
+		},
+		"omastar": {
+			"sets": [
+				{
+					"species": "Omastar",
+					"item": "White Herb",
+					"ability": "Shell Armor",
+					"moves": [["Shell Smash"], ["Hydro Pump"], ["Power Gem"], ["Ice Beam"]]
+				},
+				{
+					"species": "Omastar",
+					"item": "Rocky Helmet",
+					"ability": "Iron Barbs",
+					"moves": [["Rapid Spin"], ["Scald"], ["Stealth Rock"], ["Knock Off"]]
+				},
+				{
+					"species": "Omastar",
+					"item": "Leftovers",
+					"ability": "Iron Barbs",
+					"moves": [["Spikes"], ["Toxic Spikes"], ["Rapid Spin"], ["Scald"]]
+				}
+			]
+		},
+		"kabutops": {
+			"sets": [
+				{
+					"species": "Kabutops",
+					"item": "Life Orb",
+					"ability": "Sharpness",
+					"moves": [["Razor Shell"], ["Stone Axe"], ["Rapid Spin"], ["Cut"]]
+				},
+				{
+					"species": "Kabutops",
+					"item": "Scope Lens",
+					"ability": "Sharpness",
+					"moves": [["Mighty Cleave"], ["Razor Shell"], ["Night Slash"], ["Leaf Blade"]]
+				},
+				{
+					"species": "Kabutops",
+					"item": "Bubbled Dome",
+					"ability": "Battle Armor",
+					"moves": [["Stone Axe"], ["Knock Off"], ["Flip Turn"], ["Rapid Spin"]]
+				}
+			]
+		},
+		"aerodactyl": {
+			"sets": [
+				{
+					"species": "Aerodactyl",
+					"item": "Choice Band",
+					"ability": "Intimidate",
+					"moves": [["Brave Bird"], ["Rock Slide"], ["Pursuit"], ["Earthquake"]]
+				},
+				{
+					"species": "Aerodactyl",
+					"item": "Sharp Beak",
+					"ability": "Intimidate",
+					"moves": [["Brave Bird"], ["Stone Edge"], ["Earthquake"], ["Dragon Dance"]]
+				},
+				{
+					"species": "Aerodactyl",
+					"item": "Heavy-Duty Boots",
+					"ability": "Unnerve",
+					"moves": [["Rock Slide"], ["Roost"], ["Defog"], ["Stealth Rock"]]
+				},
+				{
+					"species": "Aerodactyl",
+					"item": "Aerodactylite",
+					"ability": "Unnerve",
+					"moves": [["Brave Bird"], ["Stone Edge"], ["Fire Fang"], ["Hone Claw"]]
+				},
+				{
+					"species": "Aerodactyl",
+					"item": "Aerodactylite",
+					"ability": "Intimidate",
+					"moves": [["Brave Bird"], ["Substitute"], ["Dragon Dance"], ["Roost"]]
+				},
+				{
+					"species": "Aerodactyl",
+					"item": "Aerodactylite",
+					"ability": "Pressure",
+					"moves": [["Dual Wingbeat"], ["Stone Edge"], ["Earthquake"], ["Hone Claws"]]
+				}
+			]
+		},
+		"snorlax": {
+			"sets": [
+				{
+					"species": "Snorlax",
+					"item": "Toxic Orb",
+					"ability": "Toxic Boost",
+					"moves": [["Facade"], ["Darkest Lariat"], ["Slack Off"], ["Curse"]]
+				},
+				{
+					"species": "Snorlax",
+					"item": "Leftovers",
+					"ability": "Thick Fat",
+					"moves": [["Curse"], ["Slack Off"], ["Mega Kick"], ["Earthquake"]]
+				},
+				{
+					"species": "Snorlax",
+					"item": "Bubbled Dome",
+					"ability": "Thick Fat",
+					"moves": [["Mega Kick"], ["Darkest Lariat"], ["Earthquake"], ["Power-Up Punch"]]
+				}
+			]
+		},
+		"articuno": {
+			"sets": [
+				{
+					"species": "Articuno",
+					"item": "Heavy-Duty Boots",
+					"ability": "Snow Warning",
+					"moves": [["Toxic"], ["Roost"], ["Blizzard"], ["U-Turn"]]
+				},
+				{
+					"species": "Articuno",
+					"item": "Light Clay",
+					"ability": "Snow Warning",
+					"moves": [["Aurora Veil"], ["Blizzard"], ["Roost"], ["Heal Bell"]]
+				},
+				{
+					"species": "Articuno",
+					"item": "Heavy-Duty Boots",
+					"ability": "Snow Warning",
+					"moves": [["Calm Mind"], ["Freeze-Dry"], ["Focus Blast"], ["Roost"]]
+				}
+			]
+		},
+		"articunogalar": {
+			"sets": [
+				{
+					"species": "Articuno-Galar",
+					"item": "Choice Scarf",
+					"ability": "Psychic Surge",
+					"moves": [["Expanding Force"], ["Hurricane"], ["Lumina Crash"], ["U-Turn"]]
+				},
+				{
+					"species": "Articuno-Galar",
+					"item": "Twisted Spoon",
+					"ability": "Psychic Surge",
+					"moves": [["Esper Wing"], ["Hurricane"], ["Calm Mind"], ["Roost"]]
+				}
+			]
+		},
+		"moltres": {
+			"sets": [
+				{
+					"species": "Moltres",
+					"item": "Heavy-Duty Boots",
+					"ability": "Pressure",
+					"moves": [["Toxic"], ["Roost"], ["U-Turn"], ["Flamethrower"]]
+				},
+				{
+					"species": "Moltres",
+					"item": "Choice Scarf",
+					"ability": "Drought",
+					"moves": [["Flamethrower"], ["U-Turn"], ["Solar Beam"], ["Scorching Sands"]]
+				},
+				{
+					"species": "Moltres",
+					"item": "Heavy-Duty Boots",
+					"ability": "Drought",
+					"moves": [["Defog"], ["Roost"], ["Fusion Flare"], ["Solar Beam"]]
+				}
+			]
+		},
+		"moltresgalar": {
+			"sets": [
+				{
+					"species": "Moltres-Galar",
+					"item": "Heavy-Duty Boots",
+					"ability": "Dark Aura",
+					"moves": [["Defog"], ["Roost"], ["U-Turn"], ["Foul Play"]]
+				},
+				{
+					"species": "Moltres-Galar",
+					"item": "Heavy-Duty Boots",
+					"ability": "Berserk",
+					"moves": [["Nasty Plot"], ["Agility"], ["Hurricane"], ["Fiery Wrath"]]
+				},
+				{
+					"species": "Moltres-Galar",
+					"item": "Heavy-Duty Boots",
+					"ability": "Dark Aura",
+					"moves": [["Roost"], ["Fiery Wrath"], ["Sucker Punch"], ["Nasty Plot"]]
+				}
+			]
+		},
+		"zapdos": {
+			"sets": [
+				{
+					"species": "Zapdos",
+					"item": "Choice Scarf",
+					"level": 78,
+					"ability": "Elemental",
+					"moves": [["Bolt Beak"], ["U-Turn"], ["Brave Bird"], ["Steel Wing"]]
+				},
+				{
+					"species": "Zapdos",
+					"item": "Leftovers",
+					"level": 78,
+					"ability": "Pressure",
+					"moves": [["Roost"], ["Defog"], ["Volt Switch"], ["Hurricane"]]
+				}
+			]
+		},
+		"zapdosgalar": {
+			"sets": [
+				{
+					"species": "Zapdos-Galar",
+					"item": "Life Orb",
+					"ability": "Wind Rider",
+					"moves": [["Tailwind"], ["Brave Bird"], ["Close Combat"], ["Bolt Beak"]]
+				},
+				{
+					"species": "Zapdos-Galar",
+					"item": "Choice Scarf",
+					"ability": "Defiant",
+					"moves": [["Brave Bird"], ["Close Combat"], ["Bolt Beak"], ["U-Turn"]]
+				},
+				{
+					"species": "Zapdos-Galar",
+					"item": "Leftovers",
+					"ability": "Defiant",
+					"moves": [["Bulk Up"], ["Roost"], ["Thunderous Kick"], ["Brave Bird"]]
+				}
+			]
+		},
+		"dragonite": {
+			"sets": [
+				{
+					"species": "Dragonite",
+					"item": "Choice Scarf",
+					"level": 84,
+					"ability": "Stalwart",
+					"moves": [["Dragon Rush"], ["Sky Attack"], ["Skull Bash"], ["Earthquake"]]
+				},
+				{
+					"species": "Dragonite",
+					"item": "Heavy-Duty Boots",
+					"level": 84,
+					"ability": "Multiscale",
+					"moves": [["Dual Wingbeat"], ["Dragon Dance"], ["Roost"], ["Dragon Claw"]]
+				}
+			]
+		},
+		"mew": {
+			"sets": [
+				{
+					"species": "Mew",
+					"item": "Leftovers",
+					"level": 85,
+					"ability": "Illusion",
+					"moves": [["Spikes"], ["Roost"], ["U-Turn"], ["Synchronoise"]]
+				},
+				{
+					"species": "Mew",
+					"item": "Armor Plate",
+					"level": 85,
+					"ability": "Illusion",
+					"moves": [["Psychic Fangs"], ["Dragon Dance"], ["Knock Off"], ["Leech Life"]]
+				},
+				{
+					"species": "Mew",
+					"item": "Weakness Policy",
+					"level": 85,
+					"ability": "Synchronize",
+					"moves": [["Cosmic Power"], ["Stored Power"], ["Roost"], ["Earth Power"]]
+				}
+			]
 		}
-	}	
+	}
 }
