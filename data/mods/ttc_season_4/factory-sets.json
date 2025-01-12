@@ -524,7 +524,7 @@
 				{
 					"species": "Vileplume",
 					"item": "Life Orb",
-					"ability": "Neutralizing",
+					"ability": "Neutralizing Gas",
 					"moves": [["Strength Sap"], ["Sludge Bomb"], ["Giga Drain"], ["Moonblast"]]
 				}
 			]
