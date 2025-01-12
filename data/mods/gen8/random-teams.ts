@@ -15,6 +15,7 @@ export interface TeamData {
 	weaknesses: {[k: string]: number};
 	resistances: {[k: string]: number};
 	weather?: string;
+	terrain?: string[];
 	eeveeLimCount?: number;
 	gigantamax?: boolean;
 }

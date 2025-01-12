@@ -1239,17 +1239,16 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			mistysurge: "misty",
 		};
 
-		const terrainAbilitiesRequired: {[k: string]: string[]} = {
-			surgesurfer: ["electric", "psychic", "grassy", "misty"],
-			grasspelt: ["grassy"],
+		const terrainAbilitiesRequired: {[k: string]: string} = {
+			surgesurfer: "electric",
+			grasspelt: "grassy",
 		};
 
-		const terrainMovesRequired: {[k: string]: string[]} = {
-			risingvoltage: ["electric"],
-			expandingforce: ["psychic"],
-			grassyglide: ["grassy"],
-			mistyexplosion: ["misty"],
-			terrainpulse: ["electric", "psychic", "grassy", "misty"],
+		const terrainMovesRequired: {[k: string]: string} = {
+			risingvoltage: "electric",
+			expandingforce: "psychic",
+			grassyglide: "grassy",
+			mistyexplosion: "misty",
 		};
 
 		const terrainItemsRequire: {[k: string]: string} = {
@@ -1265,66 +1264,55 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			if (this.forceMonotype && !species.types.includes(this.forceMonotype)) continue;
 
 			const itemData = this.dex.items.get(curSet.item);
-			if (teamData.megaCount && teamData.megaCount > 0 && itemData.megaStone) continue; // reject 2+ mega stones
-			if (itemsMax[itemData.id] && teamData.has[itemData.id] >= itemsMax[itemData.id]) continue;
-
 			const abilityState = this.dex.abilities.get(curSet.ability);
-			if (abilitiesMax[abilityState.id] && teamData.has[abilityState.id] >= abilitiesMax[abilityState.id]) continue; // Limit specific abilities
-			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) continue;
-			if (teamData.weather && weatherAbilities.includes(abilityState.id)) continue; // reject 2+ weather setters
 
-			if (teamData.terrain && terrainAbilities[abilityState.id]) continue; // reject 2+ terrain setters
-			if (terrainAbilities[abilityState.id]) {
-				if (!teamData.terrain) teamData.terrain = [];
-				teamData.terrain.push(terrainAbilities[abilityState.id]);
+			if (teamData.megaCount && teamData.megaCount > 0 && itemData.megaStone) {
+				continue; // move to the next set if pokemon contains a mega stone and the team already has a mega stone.
+			}
+			
+			if (itemsMax[itemData.id] && teamData.has[itemData.id] >= itemsMax[itemData.id]) {
+				continue; // move to the next set if the pokemon contains an item that has already hit it's limit in the team.
+			}
+
+			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) {
+				continue; // move to the next set if the pokemon's ability requires a weather that is not possible in the team.
+			}
+
+			if (teamData.weather && weatherAbilities.includes(abilityState.id)) {
+				continue; // reject 2+ weather setters per team.
+			}
+
+			if (!teamData.terrain) teamData.terrain = []; // create the variable if it doesn't exist for some reason.
+
+			if (teamData.terrain && terrainAbilities[abilityState.id] && teamData.terrain.length > 0) {
+				continue; // reject 2+ terrain setters per team.
+			}
+
+			if (terrainItemsRequire[itemData.id] && !teamData.terrain.includes(terrainItemsRequire[itemData.id])) {
+				continue; // move to the next set if the pokemon's item requires a terrain that is not possible in the team.
+			}
+
+			if (terrainAbilitiesRequired[abilityState.id] && !teamData.terrain.includes(terrainAbilitiesRequired[abilityState.id])) {
+				continue; // move to the next set if the pokemon's ability requires a terrain that is not possible in the team.
 			}
 
 			let reject = false;
-
-			if (terrainItemsRequire[itemData.id] && !teamData.terrain?.includes(terrainItemsRequire[itemData.id])) {
-				reject = false; // reject any sets with a seed item possible and no terrain setter to activate it
-				break;
-			}
-
-			if (terrainAbilitiesRequired[abilityState.id]) {
-				let pass = false;
-				for (const terrain of terrainAbilitiesRequired[abilityState.id]) {
-					if (teamData.terrain?.includes(terrain)) pass = true;
-				}
-
-				if (!pass) reject = true;
-				break;
-			}
-
-			for (const move of curSet.moves) {
-				let pass = false;
-				const moveState = this.dex.moves.get(move);
-				if (terrainMovesRequired[moveState.id]) {
-					for (const terrain of terrainMovesRequired[moveState.id]) {
-						if (teamData.terrain?.includes(terrain)) pass = true;
-					}
-				}
-				if (!pass) reject = true;
-			}
-
-			if (reject) break;
-
 			let hasRequiredMove = false;
 			const curSetVariants = [];
 			for (const move of curSet.moves) {
 				const variantIndex = this.random(move.length);
 				const moveId = toID(move[variantIndex]);
 				if (movesMax[moveId] && teamData.has[moveId] >= movesMax[moveId]) {
-					reject = true;
+					reject = true; // reject any set that has a move that exceed the max limit for the team.
 					break;
 				}
 				if (requiredMoves[moveId] && !teamData.has[requiredMoves[moveId]]) {
-					hasRequiredMove = true;
+					hasRequiredMove = true; // place into the priority pool if they have a required move.
 				}
 
 				curSetVariants.push(variantIndex);
 			}
-			if (reject) continue;
+			if (reject) continue; // move on to the next set if the set fails the checks.
 			effectivePool.push({set: curSet, moveVariants: curSetVariants});
 			if (hasRequiredMove) priorityPool.push({set: curSet, moveVariants: curSetVariants});
 		}
@@ -1363,27 +1351,36 @@ export class RandomTTCTeams extends RandomGen8Teams {
 	randomFactoryTeam(side: PlayerOptions, depth = 0): RandomTeamsTypes.RandomFactorySet[] {
 		this.enforceNoDirectCustomBanlistChanges();
 
-		const forceResult = (depth >= 12);
-
+		const forceResult = depth >= 12;
 		if (!this.factoryTier) this.factoryTier = this.sample(['OU']);
 		const chosenTier = this.factoryTier;
 
 		const pokemon = [];
-
 		const pokemonPool = Object.keys(this.randomFactorySets[chosenTier]);
 
 		const teamData: TeamData = {
-			typeCount: {}, typeComboCount: {}, baseFormes: {}, megaCount: 0, has: {}, forceResult, weaknesses: {}, resistances: {},
+			typeCount: {},
+			typeComboCount: {},
+			baseFormes: {},
+			has: {},
+			forceResult: forceResult,
+			weaknesses: {},
+			resistances: {},
 		};
 
-		const requiredMoveFamilies = ['hazardSet', 'hazardClear'];
-		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
 		const weatherAbilitiesSet: {[k: string]: string} = {
 			drizzle: 'raindance',
 			drought: 'sunnyday', sundance: 'sunnyday',
 			snowwarning: 'snow', chillingneigh: 'snow', asoneglastrier: 'snow',
 			absolutezero: 'snow',
 			sandstream: 'sandstorm', granitestorm: 'sandstorm',
+		};
+		const terrainAbilitiesSet: {[k: string]: string} = {
+			electricsurge: "electric",
+			psychicsurge: "psychic",
+			grassysurge: "grassy",
+			seedsower: "grassy",
+			mistysurge: "misty",
 		};
 		const resistanceAbilities: {[k: string]: string[]} = {
 			colorchange: [
@@ -1415,6 +1412,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			garbagedisposal: ['Steel'],
 		};
 
+		const requiredMoveFamilies = ['hazardSet', 'hazardClear'];
+		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
+
 		while(pokemonPool.length && pokemon.length < this.maxTeamSize) {
 			const species = this.dex.species.get(this.sampleNoReplace(pokemonPool));
 			if (!species.exists) continue;
@@ -1424,12 +1424,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			// Limit to one of each species (Species Clause)
 			if (teamData.baseFormes[species.baseSpecies]) continue;
-
-			// Limit the number of megas to one
-			if (!teamData.megaCount) teamData.megaCount = 0;
-			if (teamData.megaCount >= 1 && speciesFlags.megaOnly) continue;
-
-			// Dynamically scale limits for different team sizes. the default and minimum value is 1.
+			
 			const limitFactor = Math.round(this.maxTeamSize / 6) || 1;
 
 			// Limit 2 of any type
@@ -1444,6 +1439,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			if (skip) continue;
 
+			// Generate the random set
 			const set = this.randomFactorySet(species, teamData, chosenTier);
 			if (!set) continue;
 
@@ -1456,48 +1452,35 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			if (teamData.typeComboCount[typeCombo] >= 1 * limitFactor) continue;
 
-			// Poke, the set passes, add it to our team
+			// Since the set passed, we can add it to our team.
 			pokemon.push(set);
 
-			// Now that our pokemon has passed all checks, we can update team data:
+			// Now we need to update the team data
 			for (const type of types) {
-				if (type in teamData.typeCount) {
-					teamData.typeCount[type]++;
-				} else {
-					teamData.typeCount[type] = 1;
-				}
+				teamData.typeCount[type] = (teamData.typeCount[type] + 1) || 1;
 			}
 
 			teamData.typeComboCount[typeCombo] = (teamData.typeComboCount[typeCombo] + 1) || 1;
-
 			teamData.baseFormes[species.baseSpecies] = 1;
-
 			const itemData = this.dex.items.get(set.item);
+			if (!teamData.megaCount) teamData.megaCount = 0;
 			if (itemData.megaStone) teamData.megaCount++;
-			if (itemData.id in teamData.has) {
-				teamData.has[itemData.id]++;
-			} else {
-				teamData.has[itemData.id] = 1;
-			}
+			teamData.has[itemData.id] = (teamData.has[itemData.id] + 1) || 1;
 
 			const abilityState = this.dex.abilities.get(set.ability);
+
 			if (abilityState.id in weatherAbilitiesSet) {
 				teamData.weather = weatherAbilitiesSet[abilityState.id];
 			}
 
-			if (abilityState.id in teamData.has) {
-				teamData.has[abilityState.id]++;
-			} else {
-				teamData.has[abilityState.id] = 1;
+			if (abilityState.id in terrainAbilitiesSet) {
+				teamData.terrain?.push(terrainAbilitiesSet[abilityState.id]);
 			}
 
+			teamData.has[abilityState.id] = (teamData.has[abilityState.id] + 1) || 1;
 			for (const move of set.moves) {
 				const moveId = toID(move);
-				if (moveId in teamData.has) {
-					teamData.has[moveId]++;
-				} else {
-					teamData.has[moveId] = 1;
-				}
+				teamData.has[moveId] = (teamData.has[moveId] + 1) || 1;
 				if (moveId in requiredMoves) {
 					teamData.has[requiredMoves[moveId]] = 1;
 				}
@@ -1506,12 +1489,12 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			for (const typeName of this.dex.types.names()) {
 				// Cover any major weakness (3+) with at least one resistance
 				if (teamData.resistances[typeName] >= 1) continue;
-				if (resistanceAbilities[abilityState.id]?.includes(typeName) || !this.dex.getImmunity(typeName, types)) {
-					// Heuristic: assume that Pokemon with these abilities don't have (too) negative typing.
+				if (resistanceAbilities[abilityState.id].includes(typeName) || !this.dex.getImmunity(typeName, types)) {
 					teamData.resistances[typeName] = (teamData.resistances[typeName] || 0) + 1;
 					if (teamData.resistances[typeName] >= 1) teamData.weaknesses[typeName] = 0;
 					continue;
 				}
+
 				const typeMod = this.dex.getEffectiveness(typeName, types);
 				if (typeMod < 0) {
 					teamData.resistances[typeName] = (teamData.resistances[typeName] || 0) + 1;
@@ -1523,9 +1506,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		}
 
 		if (pokemon.length < this.maxTeamSize) return this.randomFactoryTeam(side, ++depth);
-
-		// Quality control
-		if (!teamData.forceResult) {
+		
+		// Quality Control
+		if (!teamData.forceResult) { // If the team doesn't pass these checks, then we will need to redo the team again.
 			for (const requiredFamily of requiredMoveFamilies) {
 				if (!teamData.has[requiredFamily]) return this.randomFactoryTeam(side, ++depth);
 			}
