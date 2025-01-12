@@ -1202,15 +1202,26 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 		const itemsMax: {[k: string]: number} = { choicespecs: 1, choiceband: 1, choicescarf: 1};
 		const movesMax: {[k: string]: number} = {
-			rapidspin: 1, batonpass: 1, stealthrock: 1, defog: 1, spikes: 1, toxicspikes: 1,
+			rapidspin: 1,
+			batonpass: 1, 
+			stealthrock: 1, 
+			defog: 1, 
+			spikes: 1, 
+			toxicspikes: 1,
+			ceaselessedge: 1,
+		};
+		const abilitiesMax: {[k: string]: number} = {
+			toxicdebris: 1,
 		};
 
 		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
 		const weatherAbilitiesRequire: {[k: string]: string} = {
-			hydration: 'raindance', 'swiftswim': 'raindance',
+			hydration: 'raindance', swiftswim: 'raindance', raindish: 'raindance',
+			waterveil: 'raindance',
 			leafguard: 'sunnyday', solarpower: 'sunnyday', chlorophyll: 'sunnyday',
+			flowergift: 'sunnyday',
 			sandforce: 'sandstorm', sandrush: 'sandstorm', sandveil: 'sandstorm',
-			snowcloak: 'snow',
+			snowcloak: 'snow', icebody: 'snow',
 		};
 		const weatherAbilities = ['drizzle', 'drought', 'snowwarning', 'sandstream'];
 
@@ -1224,6 +1235,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			if (itemsMax[itemData.id] && teamData.has[itemData.id] >= itemsMax[itemData.id]) continue;
 
 			const abilityState = this.dex.abilities.get(curSet.ability);
+			if (abilitiesMax[abilityState.id] && teamData.has[abilityState.id] >= abilitiesMax[abilityState.id]) continue; // Limit specific abilities
 			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) continue;
 			if (teamData.weather && weatherAbilities.includes(abilityState.id)) continue; // reject 2+ weather setters
 
@@ -1298,15 +1310,40 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		const requiredMoveFamilies = ['hazardSet', 'hazardClear'];
 		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
 		const weatherAbilitiesSet: {[k: string]: string} = {
-			drizzle: 'raindance', drought: 'sunnyday', snowwarning: 'snow', sandstream: 'sandstorm',
+			drizzle: 'raindance',
+			drought: 'sunnyday', sundance: 'sunnyday',
+			snowwarning: 'snow', chillingneigh: 'snow', asoneglastrier: 'snow',
+			absolutezero: 'snow',
+			sandstream: 'sandstorm', granitestorm: 'sandstorm',
 		};
 		const resistanceAbilities: {[k: string]: string[]} = {
+			colorchange: [
+				'Bug', 'Cosmic', 'Dark', 'Dragon',
+				'Electric', 'Fighting', 'Flying',
+				'Fire', 'Fairy', 'Grass', 'Ground',
+				'Ice', 'Normal', 'Poison', 'Rock',
+				'Steel', 'Water'
+			],
+			aurabreak: ['Dark', 'Psychic', 'Fairy'],
+			// Water
 			dryskin: ['Water'], waterabsorb: ['Water'], stormdrain: ['Water'],
-			flashfire: ['Fire'], heatproof: ['Fire'],
+			silentwater: ['Water'], watercompaction: ['Water'], steamengine: ['Water', 'Fire'],
+			magmaarmor: ['Water', 'Fire'],
+			// Fire
+			flashfire: ['Fire'], heatproof: ['Fire'], mightyfire: ['Fire'],
+			// Fairy
+			sweettooth: ['Fairy'],
+			// Electric
 			lightningrod: ['Electric'], motordrive: ['Electric'], voltabsorb: ['Electric'],
-			sapsipper: ['Grass'],
+			phototaxis: ['Electric'], radiatinglight: ['Electric'],
+			// Grass
+			sapsipper: ['Grass'], naturesgift: ['Grass'],
+			// Ice
 			thickfat: ['Ice', 'Fire'],
+			// Ground
 			levitate: ['Ground'],
+			// Steel
+			garbagedisposal: ['Steel'],
 		};
 
 		while(pokemonPool.length && pokemon.length < this.maxTeamSize) {
@@ -1377,6 +1414,12 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			const abilityState = this.dex.abilities.get(set.ability);
 			if (abilityState.id in weatherAbilitiesSet) {
 				teamData.weather = weatherAbilitiesSet[abilityState.id];
+			}
+
+			if (abilityState.id in teamData.has) {
+				teamData.has[abilityState.id]++;
+			} else {
+				teamData.has[abilityState.id] = 1;
 			}
 
 			for (const move of set.moves) {
