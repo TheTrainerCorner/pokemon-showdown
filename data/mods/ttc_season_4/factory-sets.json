@@ -342,12 +342,6 @@
 				{
 					"species": "Sandslash",
 					"item": "Leftovers",
-					"ability": "Soft Sand",
-					"moves": [["Rapid Spin"], ["Swords Dance"], ["Earthquake"], ["Knock Off"]]
-				},
-				{
-					"species": "Sandslash",
-					"item": "Leftovers",
 					"ability": "Rough Skin",
 					"moves": [["Rapid Spin"], ["Super Fang"], ["Stealth Rock"], ["Spikes"]]
 				}
