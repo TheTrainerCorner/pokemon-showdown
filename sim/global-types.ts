@@ -523,6 +523,7 @@ namespace RandomTeamsTypes {
 		zCount?: number;
 		forceResult: boolean;
 		weather?: string;
+		terrain?: string[];
 		typeCount: {[k: string]: number};
 		typeComboCount: {[k: string]: number};
 		baseFormes: {[k: string]: number};

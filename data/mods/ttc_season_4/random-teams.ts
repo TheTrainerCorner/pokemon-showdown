@@ -1232,6 +1232,33 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			'sandstream', 'granitestorm'
 		];
 
+		const terrainAbilities: {[k: string]: string} = {
+			electricsurge: "electric",
+			psychicsurge: "psychic",
+			grassysurge: "grassy",
+			mistysurge: "misty",
+		};
+
+		const terrainAbilitiesRequired: {[k: string]: string[]} = {
+			surgersurfer: ["electric", "psychic", "grassy", "misty"],
+			grasspelt: ["grassy"],
+		};
+
+		const terrainMovesRequired: {[k: string]: string[]} = {
+			risingvoltage: ["electric"],
+			expandingforce: ["psychic"],
+			grassyglide: ["grassy"],
+			mistyexplosion: ["misty"],
+			terrainpulse: ["electric", "psychic", "grassy", "misty"],
+		};
+
+		const terrainItemsRequire: {[k: string]: string} = {
+			electricseed: "electric",
+			psychicseed: "psychic",
+			grassyseed: "grassy",
+			mistyseed: "misty",
+		};
+
 		let effectivePool: {set: AnyObject, moveVariants?: number[], itemVariants?: number, abilityVariants?: number}[] = [];
 		const priorityPool = [];
 		for (const curSet of setList) {
@@ -1246,7 +1273,41 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) continue;
 			if (teamData.weather && weatherAbilities.includes(abilityState.id)) continue; // reject 2+ weather setters
 
+			if (teamData.terrain && terrainAbilities[abilityState.id]) continue; // reject 2+ terrain setters
+			if (terrainAbilities[abilityState.id]) {
+				if (!teamData.terrain) teamData.terrain = [];
+				teamData.terrain.push(terrainAbilities[abilityState.id]);
+			}
+
 			let reject = false;
+
+			if (terrainItemsRequire[itemData.id] && !teamData.terrain?.includes(terrainItemsRequire[itemData.id])) {
+				reject = false; // reject any sets with a seed item possible and no terrain setter to activate it
+				break;
+			}
+
+			if (terrainAbilitiesRequired[abilityState.id]) {
+				let pass = false;
+				for (const terrain of terrainAbilitiesRequired[abilityState.id]) {
+					if (teamData.terrain?.includes(terrain)) pass = true;
+				}
+
+				if (!pass) reject = true;
+				break;
+			}
+
+			for (const move of curSet.moves) {
+				let pass = false;
+				const moveState = this.dex.moves.get(move);
+				for (const terrain of terrainMovesRequired[moveState.id]) {
+					if (teamData.terrain?.includes(terrain)) pass = true;
+				}
+
+				if (!pass) reject = true;
+			}
+
+			if (reject) break;
+
 			let hasRequiredMove = false;
 			const curSetVariants = [];
 			for (const move of curSet.moves) {
