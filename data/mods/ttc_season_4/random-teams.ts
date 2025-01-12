@@ -1240,7 +1240,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		};
 
 		const terrainAbilitiesRequired: {[k: string]: string[]} = {
-			surgersurfer: ["electric", "psychic", "grassy", "misty"],
+			surgesurfer: ["electric", "psychic", "grassy", "misty"],
 			grasspelt: ["grassy"],
 		};
 

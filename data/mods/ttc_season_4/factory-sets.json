@@ -2119,6 +2119,28 @@
 					"moves": [["Cosmic Power"], ["Stored Power"], ["Roost"], ["Earth Power"]]
 				}
 			]
+		},
+		"raichualola": {
+			"sets": [
+				{
+					"species": "Raichu-Alola",
+					"item": "Leftovers",
+					"level": 85,
+					"ability": "Surge Surfer",
+					"moves": [["Thunderbolt"], ["Rising Voltage"], ["Fake Out"], ["Psyshock"]]
+				}
+			]
+		},
+		"tapukoko": {
+			"sets": [
+				{
+					"species": "Tapu Koko",
+					"item": "Leftovers",
+					"level": 84,
+					"ability": "Electric Surge",
+					"moves": [["Brave Bird"], ["Thunderbolt"], ["Roost"], ["Volt Switch"]]
+				}
+			]
 		}
 	}
 }
