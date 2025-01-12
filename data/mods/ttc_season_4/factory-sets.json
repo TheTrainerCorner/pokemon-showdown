@@ -1531,12 +1531,6 @@
 			"sets": [
 				{
 					"species": "Kangaskhan",
-					"item": "Silk Scarf",
-					"ability": "Adaptability",
-					"moves": [["Fake Out"], ["Last Resort"]]
-				},
-				{
-					"species": "Kangaskhan",
 					"item": "Leftovers",
 					"ability": "Scrappy",
 					"happiness": 255,
@@ -1547,11 +1541,6 @@
 					"item": "Wide Lens",
 					"ability": "Adaptability",
 					"moves": [["Mega Kick"], ["Iron Tail"], ["Fake Out"], ["Sing"]]
-				},
-				{
-					"species": "Kangaskhan",
-					"item": "Kangaskhanite",
-					"moves": [["Fake Out", "Last Resort"]]
 				},
 				{
 					"species": "Kangaskhan",
