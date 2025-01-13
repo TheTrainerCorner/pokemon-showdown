@@ -241,7 +241,11 @@
 					"level": 96,
 					"ability": "Hustle",
 					"moves": [["Hyper Fang"], ["Close Combat"], ["Zen Headbutt"], ["Iron Tail"]]
-				},
+				}
+			]
+		},
+		"raticatealola": {
+			"sets": [
 				{
 					"species": "Raticate-Alola",
 					"item": "Assault Vest",
@@ -337,11 +341,7 @@
 					"item": "Leftovers",
 					"ability": "Rough Skin",
 					"moves": [["Rapid Spin"], ["Super Fang"], ["Stealth Rock"], ["Spikes"]]
-				}
-			]
-		},
-		"sandslashalola": {
-			"sets": [
+				},
 				{
 					"species": "Sandslash-Alola",
 					"item": "Bubbled Dome",
