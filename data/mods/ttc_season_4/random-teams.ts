@@ -1215,7 +1215,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			toxicdebris: 1,
 			snowcloak: 1,
 		};
-
+		let requiredAbilities: {[k: string]: string} = {};
 		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
 		const weatherAbilitiesRequire: {[k: string]: string} = {
 			hydration: 'raindance', swiftswim: 'raindance', raindish: 'raindance',
@@ -1274,6 +1274,10 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				continue; // move to the next set if the pokemon contains an item that has already hit it's limit in the team.
 			}
 
+			if (abilitiesMax[abilityState.id] && teamData.has[abilityState.id] >= abilitiesMax[abilityState.id]) {
+				continue; // move to the next set if the pokemon contains an ability that has already hit it's limit in the team.
+			}
+
 			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) {
 				continue; // move to the next set if the pokemon's ability requires a weather that is not possible in the team.
 			}
@@ -1294,8 +1298,18 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				continue; // move to the next set if the pokemon's ability requires a terrain that is not possible in the team.
 			}
 
+			// set a required ability to the weather ability if one is present.
+			if (teamData.weather) {
+				for (const ability of Object.keys(weatherAbilitiesRequire)) {
+					if (teamData.weather === weatherAbilitiesRequire[ability]) {
+						requiredAbilities[ability] = teamData.weather;
+					}
+				}
+			}
+
 			let reject = false;
 			let hasRequiredMove = false;
+			let hasRequiredAbility = false;
 			const curSetVariants = [];
 			for (const move of curSet.moves) {
 				const variantIndex = this.random(move.length);
@@ -1310,9 +1324,14 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 				curSetVariants.push(variantIndex);
 			}
+
+			if (requiredAbilities[abilityState.id]) {
+				hasRequiredAbility = true; // place into the priority pool if they have a required ability.
+			}
+
 			if (reject) continue; // move on to the next set if the set fails the checks.
 			effectivePool.push({set: curSet, moveVariants: curSetVariants});
-			if (hasRequiredMove) priorityPool.push({set: curSet, moveVariants: curSetVariants});
+			if (hasRequiredMove || hasRequiredAbility) priorityPool.push({set: curSet, moveVariants: curSetVariants});
 		}
 
 		if (priorityPool.length) effectivePool = priorityPool;
