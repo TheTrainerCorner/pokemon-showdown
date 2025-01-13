@@ -351,7 +351,7 @@ class Ladder extends LadderStore {
 		}
 
 		// users must have different IPs
-		if (new Set(users.map(user => user.latestIp)).size !== users.length) return false;
+		// if (new Set(users.map(user => user.latestIp)).size !== users.length) return false;
 
 		// users must not have been matched immediately previously
 		for (const user of users) {
