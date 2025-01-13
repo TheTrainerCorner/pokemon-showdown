@@ -1759,7 +1759,7 @@
 					"species": "Ditto",
 					"item": "Choice Scarf",
 					"ability": "Imposter",
-					"moves": ["Transform"]
+					"moves": [["Transform"]]
 				}
 			]
 		},
