@@ -23,19 +23,16 @@
 				{
 					"species": "Venusaur",
 					"item": "Venusaurite",
-					"ability": "Chloropyhll",
 					"moves": [["Leech Seed"], ["Substitute"], ["Giga Drain"], ["Protect"]]
 				},
 				{
 					"species": "Venusaur",
 					"item": "Venusaurite",
-					"ability": "Chloropyhll",
 					"moves": [["Synthesis"], ["Swords Dance"], ["Power Whip"], ["Earthquake"]]
 				},
 				{
 					"species": "Venusaur",
 					"item": "Venusaurite",
-					"ability": "Chloropyhll",
 					"moves": [["Leaf Storm"], ["Earthquake"], ["Poison Jab"], ["Knock Off"]]
 				}
 			]
@@ -244,11 +241,7 @@
 					"level": 96,
 					"ability": "Hustle",
 					"moves": [["Hyper Fang"], ["Close Combat"], ["Zen Headbutt"], ["Iron Tail"]]
-				}
-			]
-		},
-		"raticatealola": {
-			"sets": [
+				},
 				{
 					"species": "Raticate-Alola",
 					"item": "Assault Vest",
