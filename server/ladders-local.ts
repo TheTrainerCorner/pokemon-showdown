@@ -75,7 +75,7 @@ export class LadderStore {
 			ladderCaches.set(this.formatid, (this.ladder = ladder));
 			return this.ladder;
 		} catch {
-			// console.log('Ladders(' + this.formatid + ') err loading tsv: ' + JSON.stringify(this.ladder));
+			console.log('Ladders(' + this.formatid + ') err loading tsv: ' + JSON.stringify(this.ladder));
 		}
 		ladderCaches.set(this.formatid, (this.ladder = []));
 		return this.ladder;
