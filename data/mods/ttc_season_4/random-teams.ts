@@ -1223,7 +1223,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			leafguard: 'sunnyday', solarpower: 'sunnyday', chlorophyll: 'sunnyday',
 			flowergift: 'sunnyday',
 			sandforce: 'sandstorm', sandrush: 'sandstorm', sandveil: 'sandstorm',
-			snowcloak: 'snow', icebody: 'snow',
+			snowcloak: 'snow', icebody: 'snow', slushrush: 'snow',
 		};
 		const weatherAbilities = [
 			'drizzle',
