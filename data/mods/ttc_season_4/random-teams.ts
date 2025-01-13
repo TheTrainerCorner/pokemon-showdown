@@ -1216,7 +1216,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			snowcloak: 1,
 		};
 		let requiredAbilities: {[k: string]: string} = {};
-		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
+		const requiredMoves: {[k: string]: string} = {
+			// stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'
+		};
 		const weatherAbilitiesRequire: {[k: string]: string} = {
 			hydration: 'raindance', swiftswim: 'raindance', raindish: 'raindance',
 			waterveil: 'raindance',
