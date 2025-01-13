@@ -870,8 +870,8 @@
 			"sets": [
 				{
 					"species": "Golem",
-					"item": "Solid Rock",
-					"ability": "Rocky Helmet",
+					"item": "Rocky Helmet",
+					"ability": "Solid Rock",
 					"moves": [["Stealth Rock"], ["Rapid Spin"], ["Earthquake"], ["Stone Edge"]]
 				},
 				{
