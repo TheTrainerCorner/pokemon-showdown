@@ -13,7 +13,6 @@
  * @license MIT
  */
 
-import axios from 'axios';
 import {FS, Utils} from '../lib';
 
 // ladderCaches = {formatid: ladder OR Promise(ladder)}
@@ -69,15 +68,14 @@ export class LadderStore {
 				const line = dataLine.trim();
 				if (!line) continue;
 				const row = line.split('\t');
+				if (isNaN(Number(row[2]))) continue;
 				ladder.push([toID(row[1]), Number(row[0]), row[1], Number(row[2]), Number(row[3]), Number(row[4]), row[5]]);
 			}
-
+			// console.log('Ladders(' + this.formatid + ') loaded tsv: ' + JSON.stringify(this.ladder));
 			ladderCaches.set(this.formatid, (this.ladder = ladder));
-			console.log(ladderCaches);
-			console.log('Ladders(' + this.formatid + ') loaded tsv: ' + JSON.stringify(this.ladder));
 			return this.ladder;
 		} catch {
-			console.log('Ladders(' + this.formatid + ') err loading tsv: ' + JSON.stringify(this.ladder));
+			// console.log('Ladders(' + this.formatid + ') err loading tsv: ' + JSON.stringify(this.ladder));
 		}
 		ladderCaches.set(this.formatid, (this.ladder = []));
 		return this.ladder;
@@ -147,34 +145,37 @@ export class LadderStore {
 		return [formatid, buf];
 	}
 
+	async getTopData(prefix?: string) {
+		const ladder = await this.getLadder();
+		const data = [];
+
+		for (const [, row] of ladder.entries()) {
+			if (prefix && !row[0].startsWith(prefix)) continue;
+			data.push(row);
+		}
+
+		return data;
+	}
+
 	/**
 	 * Returns a Promise for the Elo rating of a user
 	 */
 	async getRating(userid: string) {
-		// Communicates with the bot to get the elo.
-		// const user = await axios.get(`https://main.thetrainercorner.net/api/discord/elo?userid=${userid}`);
-
 		const formatid = this.formatid;
 		const user = Users.getExact(userid);
 		if (user?.mmrCache[formatid]) {
 			return user.mmrCache[formatid];
 		}
-		const [data] = await LoginServer.request('mmr', {
-			format: formatid,
-			user: userid,
-		});
-		let mmr = NaN;
-		if (data && !data.errorip) {
-			mmr = Number(data);
+		const ladder = await this.getLadder();
+		const index = this.indexOfUser(userid);
+		let rating = 1000;
+		if (index >= 0) {
+			rating = ladder[index][1];
 		}
-		if (isNaN(mmr)) return 1000;
-
 		if (user && user.id === userid) {
-			user.mmrCache[formatid] = mmr;
+			user.mmrCache[formatid] = rating;
 		}
-		return mmr;
-		// if (isNaN(user.data.elo)) return 1000;
-		// return Number(user.data.elo) || 1000;
+		return rating;
 	}
 
 	/**
@@ -194,6 +195,23 @@ export class LadderStore {
 			row[5]++; // tie
 		}
 		row[6] = '' + new Date();
+	}
+
+	static async changeName(oldName: string, newName: string): Promise<LadderRow[]> {
+		const ratings: LadderRow[] = [];
+		for (const format of Dex.formats.all()) {
+			if (format.searchShow) {
+				const store = new LadderStore(format.id);
+				const ladder = await store.getLadder();
+				const userIndex = store.indexOfUser(oldName, false);
+				if (userIndex < 0) continue;
+				ratings.push(ladder[userIndex]);
+				ladder[userIndex][0] = toID(newName);
+				ladder[userIndex][2] = newName;
+				await store.save();
+			}
+		}
+		return ratings;
 	}
 
 	/**

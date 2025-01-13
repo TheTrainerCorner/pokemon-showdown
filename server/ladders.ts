@@ -8,7 +8,9 @@
  * @license MIT
  */
 
-const LadderStore: typeof import('./ladders-local').LadderStore = (require('./ladders-local')).LadderStore;
+const LadderStore: typeof import('./ladders-remote').LadderStore = (
+	typeof Config === 'object' && Config.remoteladder ? require('./ladders-remote') : require('./ladders-local')
+).LadderStore;
 
 const SECONDS = 1000;
 const PERIODIC_MATCH_INTERVAL = 60 * SECONDS;
@@ -110,7 +112,7 @@ class Ladder extends LadderStore {
 		if (isRated && !Ladders.disabled) {
 			const uid = user.id;
 			[valResult, rating] = await Promise.all([
-				TeamValidatorAsync.get(this.formatid).validateTeam(team, {removeNicknames, user: uid}),
+				TeamValidatorAsync.get(this.formatid).validateTeam(team, {removeNicknames}),
 				this.getRating(uid),
 			]);
 			if (uid !== user.id) {
@@ -124,7 +126,7 @@ class Ladder extends LadderStore {
 				rating = 1;
 			}
 			const validator = TeamValidatorAsync.get(this.formatid);
-			valResult = await validator.validateTeam(team, {removeNicknames, user: user.id});
+			valResult = await validator.validateTeam(team, {removeNicknames});
 		}
 
 		if (!valResult.startsWith('1')) {
