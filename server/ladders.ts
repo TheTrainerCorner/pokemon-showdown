@@ -336,6 +336,7 @@ class Ladder extends LadderStore {
 	 * Verifies whether or not a match made between two users is valid. Returns
 	 */
 	matchmakingOK(matches: [BattleReady, User][]) {
+		console.log(matches);
 		const formatid = toID(this.formatid);
 		const users = matches.map(([ready, user]) => user);
 		const userids = users.map(user => user.id);
