@@ -26,7 +26,6 @@ export const Formats: FormatList = [
 		mod: Config.ttcseason,
 		team: "randomFactory",
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Species Clause', 'Sleep Clause Mod', 'Illusion Level Mod', '!Team Preview'],
-		rated: false,
 		onBegin() {
 			this.add(`raw|<div class="boradcast-blue"><b>Randoms Tier: ${this.teamGenerator.factoryTier}</b></div>`);
 		}
