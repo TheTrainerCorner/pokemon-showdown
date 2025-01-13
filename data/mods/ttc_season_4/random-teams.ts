@@ -1363,6 +1363,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			typeComboCount: {},
 			baseFormes: {},
 			has: {},
+			terrain: [],
 			forceResult: forceResult,
 			weaknesses: {},
 			resistances: {},
