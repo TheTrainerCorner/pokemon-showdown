@@ -13,6 +13,7 @@
  * @license MIT
  */
 
+import axios from 'axios';
 import {FS, Utils} from '../lib';
 
 // ladderCaches = {formatid: ladder OR Promise(ladder)}
@@ -148,21 +149,30 @@ export class LadderStore {
 	 * Returns a Promise for the Elo rating of a user
 	 */
 	async getRating(userid: string) {
-		const formatid = this.formatid;
-		const user = Users.getExact(userid);
-		if (user?.mmrCache[formatid]) {
-			return user.mmrCache[formatid];
-		}
-		const ladder = await this.getLadder();
-		const index = this.indexOfUser(userid);
-		let rating = 1000;
-		if (index >= 0) {
-			rating = ladder[index][1];
-		}
-		if (user && user.id === userid) {
-			user.mmrCache[formatid] = rating;
-		}
-		return rating;
+		// Communicates with the bot to get the elo.
+		const user = await axios.get(`https://main.thetrainercorner.net/api/discord/elo?userid=${userid}`);
+
+		// const formatid = this.formatid;
+		// const user = Users.getExact(userid);
+		// if (user?.mmrCache[formatid]) {
+		// 	return user.mmrCache[formatid];
+		// }
+		// const [data] = await LoginServer.request('mmr', {
+		// 	format: formatid,
+		// 	user: userid,
+		// });
+		// let mmr = NaN;
+		// if (data && !data.errorip) {
+		// 	mmr = Number(data);
+		// }
+		// if (isNaN(mmr)) return 1000;
+
+		// if (user && user.id === userid) {
+		// 	user.mmrCache[formatid] = mmr;
+		// }
+		// return mmr;
+		if (isNaN(user.data.elo)) return 1000;
+		return Number(user.data.elo) || 1000;
 	}
 
 	/**
