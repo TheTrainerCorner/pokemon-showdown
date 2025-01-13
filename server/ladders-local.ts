@@ -150,29 +150,29 @@ export class LadderStore {
 	 */
 	async getRating(userid: string) {
 		// Communicates with the bot to get the elo.
-		const user = await axios.get(`https://main.thetrainercorner.net/api/discord/elo?userid=${userid}`);
+		// const user = await axios.get(`https://main.thetrainercorner.net/api/discord/elo?userid=${userid}`);
 
-		// const formatid = this.formatid;
-		// const user = Users.getExact(userid);
-		// if (user?.mmrCache[formatid]) {
-		// 	return user.mmrCache[formatid];
-		// }
-		// const [data] = await LoginServer.request('mmr', {
-		// 	format: formatid,
-		// 	user: userid,
-		// });
-		// let mmr = NaN;
-		// if (data && !data.errorip) {
-		// 	mmr = Number(data);
-		// }
-		// if (isNaN(mmr)) return 1000;
+		const formatid = this.formatid;
+		const user = Users.getExact(userid);
+		if (user?.mmrCache[formatid]) {
+			return user.mmrCache[formatid];
+		}
+		const [data] = await LoginServer.request('mmr', {
+			format: formatid,
+			user: userid,
+		});
+		let mmr = NaN;
+		if (data && !data.errorip) {
+			mmr = Number(data);
+		}
+		if (isNaN(mmr)) return 1000;
 
-		// if (user && user.id === userid) {
-		// 	user.mmrCache[formatid] = mmr;
-		// }
-		// return mmr;
-		if (isNaN(user.data.elo)) return 1000;
-		return Number(user.data.elo) || 1000;
+		if (user && user.id === userid) {
+			user.mmrCache[formatid] = mmr;
+		}
+		return mmr;
+		// if (isNaN(user.data.elo)) return 1000;
+		// return Number(user.data.elo) || 1000;
 	}
 
 	/**
