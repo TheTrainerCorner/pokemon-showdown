@@ -1174,7 +1174,7 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 	seedsower: {
 		inherit: true,
 		onDamagingHit(damage, target, source, move) {
-			source.addVolatile('leechseed');
+			source.addVolatile('leechseed', target);
 		},
 		desc: "Applies Leech Seed to the Attacking Pokemon. This ability is under the rules of Leech Seed, meaning that it will fail if the Attacking Pokemon is a grass type, or already has leech seed.",
 		shortDesc: "Applies Leech Seed to the Attacking Pokemon.",
