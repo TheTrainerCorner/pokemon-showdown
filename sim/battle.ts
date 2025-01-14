@@ -1955,7 +1955,7 @@ export class Battle {
 				this.add('-damage', target, target.getHealth, '[from] confusion');
 				break;
 			default:
-				if (effect.effectType === 'Move' || !name) {
+				if (effect.effectType === 'Move' || (effect.effectType === 'Ability' && effect.id === 'leechseed') || !name) {
 					this.add('-damage', target, target.getHealth);
 				} else if (source && (source !== target || effect.effectType === 'Ability')) {
 					this.add('-damage', target, target.getHealth, '[from] ' + name, '[of] ' + source);
