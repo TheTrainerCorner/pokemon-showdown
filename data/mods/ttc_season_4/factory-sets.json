@@ -2592,6 +2592,12 @@
 					"item": "Leftovers",
 					"ability": "Technician",
 					"moves": [["Stealth Rock"], ["Rapid Spin"], ["Ice Shard"], ["Earthquake"]]
+				},
+				{
+					"species": "Donphan",
+					"item": "Bubbled Dome",
+					"ability": "Uzumaki",
+					"moves": [["Rapid Spin"], ["Ice Spinner"], ["Earthquake"], ["Spin Out"]]
 				}
 			]
 		},
