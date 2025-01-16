@@ -254,5 +254,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Calamity Surge",
 		shortDesc: "Sets up Calamity Terrain upon Switch-In",
 	},
+	uzumaki: {
+		onBasePowerPriority: 43,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['spin']) {
+				this.debug('Uzumaki boost');
+				return this.chainModify([5325, 4096]);
+			}
+			if (move.flags['twist']) {
+				this.debug('Uzumaki boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		name: "Uzumaki",
+		rating: 3,
+		gen: 9,
+		shortDesc: "Spinning and Twisting moves used by this pokemon are 1.3x stronger.",
+	}
 	//#endregion
 };

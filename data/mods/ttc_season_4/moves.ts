@@ -425,7 +425,30 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "normal",
 		type: "Cosmic"
 	},
-
+	spiritroll: {
+		num: -4012,
+		accuracy: 100,
+		basePower: 85,
+		category: "Physical",
+		name: "Spirit Roll",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1 },
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					def: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+	},
+	barrage: {
+		inherit: true,
+		accuracy: 75,
+	},
 	//#endregion
 
 	//#region Field Support

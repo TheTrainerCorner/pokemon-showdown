@@ -139,7 +139,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Scaleslash",
 		types: ["Ground", "Fairy"],
 		baseStats: {hp: 95, atk: 115, def: 130, spa: 55, spd: 75, spe: 105},
-		abilities: {0: "Rough Skin", H: "Spin Ability"},
+		abilities: {0: "Rough Skin", 1: "Battle Armor", H: "Uzumaki"},
 		heightm: 1.9,
 		weightkg: 46,
 		color: "Orange",

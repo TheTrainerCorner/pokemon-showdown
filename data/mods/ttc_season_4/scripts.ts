@@ -69,9 +69,20 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Electrode-Hisui', this)
 			.learnset
 				.remove('Mist Ball');
+		new ModifyPokemon('Exeggutor', this)
+			.abilities
+				.setAbility0('Pressure')
+			.pokemon.baseStats
+				.setATK(90)
+				.setDEF(100)
+				.setSPD(85)
 		new ModifyPokemon('Pidgeot', this)
 			.learnset
 				.remove('Aeroblast');
+		new ModifyPokemon('Sandslash', this)
+			.abilities
+				.setAbility1('Sand Rush')
+				.setHiddenAbility('Uzumaki')
 		new ModifyPokemon('Vileplume', this)
 			.abilities
 				.setAbility0('Venom Hielaman');
@@ -88,12 +99,35 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Cleffa', this)
 			.types
 				.setType('Cosmic');
-
+		new ModifyPokemon('Exeggcute', this)
+			.types
+				.setType('Grass', 'Normal')
+			.pokemon.abilities
+				.setAbility1('Pressure')
+			.pokemon.baseStats
+				.setHP(75)
+				.setATK(60)
+				.setDEF(70)
+				.setSPD(70)
+				.setSPE(30)
+			.pokemon.learnset
+				.add('Focus Blast')
+		new ModifyPokemon('Sandshrew', this)
+			.abilities
+				.setAbility1('Sand Rush')
+				.setHiddenAbility('Uzumaki')
+		new ModifyPokemon('Sandshrew', this)
+			.abilities
+				.setAbility1('Sand Rush')
+				.setHiddenAbility('Uzumaki')
 		//#region Gen 2
 		
 		new ModifyPokemon('Bellossom', this)
 			.abilities
 				.setAbility1('Sun Dance');
+		new ModifyPokemon('Donphan', this)
+			.abilities
+				.setHiddenAbility('Uzumaki');
 		new ModifyPokemon('Feraligatr', this)
 			.types
 				.setType('Water', 'Poison')
@@ -134,7 +168,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Dazzling Gleam');
 		new ModifyPokemon('Politoed', this)
 			.types
-				.setType('Water', 'Normal');
+				.setType('Water', 'Normal')
+			.pokemon.abilities
+				.setAbility1('Uzumaki');
+		new ModifyPokemon('Poliwrath', this)
+			.abilities
+				.setAbility1('Uzumaki');
+		new ModifyPokemon('Spinda', this)
+			.abilities
+				.setAbility0('Uzumaki');
 		new ModifyPokemon('Typhlosion', this)
 			.types
 				.setType('Fire', 'Dark')
@@ -150,6 +192,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Snarl');
 		
 		// NFE
+		new ModifyPokemon('Poliwhirl', this)
+			.abilities
+				.setAbility1('Uzumaki');
+
 		new ModifyPokemon('Sneasel', this)
 			.abilities
 				.setAbility0('Tangled Feet');
@@ -310,6 +356,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Metal Claw')
 				.add('Tachyon Cutter')
 				.add("Bushidos Code");
+		new ModifyPokemon('Scolipede', this)
+			.abilities
+				.setAbility1('Uzumaki')
 		new ModifyPokemon('Serperior', this)
 			.types
 				.setType('Grass', 'Normal')
@@ -335,7 +384,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Gothorita', this)
 			.types
 				.setType('Cosmic', 'Dark');
-
+		new ModifyPokemon('Whirlipede', this)
+			.abilities
+				.setAbility1('Uzumaki')
+			.pokemon.learnset
+				.add("Mortal Spin")
 		// LC
 		new ModifyPokemon('Elgyem', this)
 			.types
@@ -395,6 +448,23 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#region Gen 7
 
 		// FE
+		new ModifyPokemon('Exeggutor-Alola', this)
+			.abilities
+				.setAbility1('Pressure')
+			.pokemon.baseStats
+				.setHP(100)
+				.setATK(125)
+				.setDEF(90)
+				.setSPA(100)
+				.setSPD(95)
+				.setSPE(35)
+			.pokemon.learnset
+				.add('Iron Tail')
+		new ModifyPokemon('Sandslash-Alola', this)
+			.abilities
+				.setAbility0('Battle Armor')
+				.setAbility1('Slush Rush')
+				.setHiddenAbility('Uzumaki');
 		new ModifyPokemon('Comfey', this)
 			.abilities
 				.setAbility0('Aroma Veil');
@@ -459,6 +529,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Cosmic');
 
 		// LC
+		new ModifyPokemon('Sandshrew-Alola', this)
+			.abilities
+				.setAbility1('Slush Rush')
+				.setHiddenAbility('Uzumaki')
 		new ModifyPokemon('Cosmog', this)
 			.types
 				.setType('Cosmic');
@@ -818,6 +892,56 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#region Other Moves
 		// Look at Moves.ts
+		//#endregion
+
+		// #region Add Spin Move Flag to moves
+		const spinMoves: string[] = [
+			"rapidspin",
+			"mortalspin",
+			"rollout",
+			"horndrill",
+			"rollingkick",
+			"drillrun",
+			"gyroball",
+			"icespinner",
+			"spinout",
+			"tripleaxel",
+			"triplekick",
+			"darkestlariat",
+			"steelroller",
+			"flamewheel",
+			"aurawheel",
+			"circlethrow",
+			"wringout",
+			"doubleironbash",
+			"hyperdrill",
+			"iceball",
+			"steamroller",
+			"dizzypunch",
+			"spiritroll",
+		];
+
+		for (const move of spinMoves) {
+			this.modData('Moves', move).flags.spin= 1;
+		}
+		//#endregion
+
+		// #region Add Twist Move Flag to moves
+		const twistMoves: string[] = [
+			"grassknot",
+			"sandtomb",
+			"firespin",
+			"sparklyswirl",
+			"twister",
+			"whirlpool",
+			"hurricane",
+			"thundercage",
+			"magmastorm",
+		];
+
+		for (const move of twistMoves) {
+			this.modData('Moves', move).flags.twist= 1;
+		}
 		//#endregion
 
 		//#endregion
