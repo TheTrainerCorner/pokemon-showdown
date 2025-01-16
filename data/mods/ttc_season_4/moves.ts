@@ -444,6 +444,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		target: "normal",
 		type: "Fairy",
+		desc: "Has a 100% chance to raise the user's Defense by 1 stage.",
+		shortDesc: "100% chance to raise the user's Defense by 1.",
 	},
 	barrage: {
 		inherit: true,
@@ -463,6 +465,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				},
 			},
 		},
+		desc: "Hits 2 to 5 times. Uses higher attacking stat of the pokemon. Uses the recycle effect on the mon",
+		shortDesc: "Hits 2-5 times. Special if Atk < Sp.atk. Recycles",
 	},
 	//#endregion
 
