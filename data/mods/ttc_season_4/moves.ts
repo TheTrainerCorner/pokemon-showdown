@@ -448,6 +448,21 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	barrage: {
 		inherit: true,
 		accuracy: 75,
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+		},
+		secondary: {
+			chance: 100,
+			self: {
+				onHit(pokemon) {
+					if (pokemon.item || !pokemon.lastItem) return false;
+					const item = pokemon.lastItem;
+					pokemon.lastItem = '';
+					this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Recycle');
+					pokemon.setItem(item);
+				},
+			},
+		},
 	},
 	//#endregion
 
