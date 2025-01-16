@@ -75,4 +75,8 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		isNonstandard: "Past",
 		tier: "OU",
 	},
+	scaleslash: {
+		isNonstandard: "Past",
+		tier: "OU",
+	}
 };
