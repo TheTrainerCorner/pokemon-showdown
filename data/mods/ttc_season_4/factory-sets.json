@@ -2352,6 +2352,42 @@
 				}
 			]
 		},
+		"dunsparce": {
+			"sets": [
+				{
+					"species": "Dunsparce",
+					"item": "Eviolite",
+					"level": 86,
+					"ability": "Serene Grace",
+					"moves": [["Body Slam"], ["Earthquake"], ["Coil"], ["Roost"]]
+				},
+				{
+					"species": "Dunsparce",
+					"item": "Eviolite",
+					"level": 86,
+					"ability": "Serene Grace",
+					"moves": [["Glare"], ["Headbutt"], ["Roost"], ["Earthquake"]]
+				}
+			]
+		},
+		"gligar": {
+			"sets": [
+				{
+					"species": "Gligar",
+					"item": "Eviolite",
+					"level": 82,
+					"ability": "Immunity",
+					"moves": [["Earthquake"], ["Roost"], ["Defog"], ["U-Turn"]]
+				},
+				{
+					"species": "Gligar",
+					"item": "Eviolite",
+					"level": 82,
+					"ability": "Immunity",
+					"moves": [["Earthquake"], ["Roost"], ["Spikes"], ["Toxic"]]
+				}
+			]
+		},
 		"steelix": {
 			"sets": [
 				{
@@ -2521,6 +2557,24 @@
 				}
 			]
 		},
+		"magcargo": {
+			"sets": [
+				{
+					"species": "Magcargo",
+					"item": "Heavy-Duty Boots",
+					"level": 95,
+					"ability": "Desolate Land",
+					"moves": [["Recover"], ["Lava Plume"], ["Stealth Rock"], ["Yawn"]]
+				},
+				{
+					"species": "Magcargo",
+					"item": "Heavy-Duty Boots",
+					"level": 95,
+					"ability": "Desolate Land",
+					"moves": [["Shell Smash"], ["Fire Blast"], ["Power Gem"], ["Earth Power"]]
+				}
+			]
+		},
 		"piloswine": {
 			"sets": [
 				{
@@ -2534,6 +2588,24 @@
 					"item": "Eviolite",
 					"ability": "Oblivious",
 					"moves": [["Roar"], ["Stealth Rock"], ["Icicle Crash"], ["Earthquake"]]
+				}
+			]
+		},
+		"corsola": {
+			"sets": [
+				{
+					"species": "Corsola",
+					"item": "Eviolite",
+					"level": 97,
+					"ability": "Regenerator",
+					"moves": [["Salt Cure"], ["Scald"], ["Recover"], ["Flip Turn"]]
+				},
+				{
+					"species": "Corsola",
+					"item": "Leftovers",
+					"level": 97,
+					"ability": "Regenerator",
+					"moves": [["Stealth Rock"], ["Scald"], ["Salt Cure"], ["Flip Turn"]]
 				}
 			]
 		},
@@ -2566,6 +2638,42 @@
 					"item": "Focus Sash",
 					"ability": "Refrigerate",
 					"moves": [["Spikes"], ["Freeze-Dry"], ["Rapid Spin"], ["Destiny Bond"]]
+				}
+			]
+		},
+		"mantine": {
+			"sets": [
+				{
+					"species": "Mantine",
+					"item": "Heavy-Duty Boots",
+					"level": 87,
+					"ability": "Water Absorb",
+					"moves": [["Scald"], ["Toxic"], ["Defog"], ["Roost"]]
+				},
+				{
+					"species": "Mantine",
+					"item": "Heavy-Duty Boots",
+					"level": 87,
+					"ability": "Water Absorb",
+					"moves": [["Scald"], ["Hurricane"], ["Flip Turn"], ["Roost"]]
+				}
+			]
+		},
+		"skarmory": {
+			"sets": [
+				{
+					"species": "Skarmory",
+					"item": "Rocky Helmet",
+					"level": 80,
+					"ability": "Intimidate",
+					"moves": [["Spikes"], ["Roost"], ["Body Press"], ["Whirlwind"]]
+				},
+				{
+					"species": "Skarmory",
+					"item": "Leftovers",
+					"level": 80,
+					"ability": "Intimidate",
+					"moves": [["Stealth Rock"], ["Roost"], ["Body Press"], ["Brave Bird"]]
 				}
 			]
 		},
@@ -2765,6 +2873,24 @@
 					"species": "Tyranitar",
 					"item": "Tyranitarite",
 					"moves": [["Dragon Dance"], ["Knock Off"], ["Stone Edge"], ["Earthquake"]]
+				}
+			]
+		},
+		"misdreavus": {
+			"sets": [
+				{
+					"species": "Misdreavus",
+					"item": "Eviolite",
+					"level": 90,
+					"ability": "Magic Guard",
+					"moves": [["Calm Mind"], ["Draining Kiss"], ["Shadow Ball"], ["Will-o-Wisp"]]
+				},
+				{
+					"species": "Misdreavus",
+					"item": "Eviolite",
+					"level": 90,
+					"ability": "Levitate",
+					"moves": [["Shadow Ball"], ["Taunt"], ["Will-o-Wisp"], ["Moonlight"]]
 				}
 			]
 		}
