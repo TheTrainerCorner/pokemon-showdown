@@ -453,15 +453,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		onModifyMove(move, pokemon) {
 			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
 		},
-		onAfterMove(source, target, move) {
-					if (source.item || !source.lastItem) return false;
-					const item = source.lastItem;
-					source.lastItem = '';
-					this.add('-item', source, this.dex.items.get(item), '[from] move: Barrage');
-					source.setItem(item);
+		secondary: {
+			chance: 100,
+			self: {
+				onHit(pokemon) {
+					if (pokemon.item || !pokemon.lastItem) return false;
+					const item = pokemon.lastItem;
+					pokemon.lastItem = '';
+					this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Barrage');
+					pokemon.setItem(item);
+				},
+			},
 		},
 		desc: "Hits 2 to 5 times. Uses higher attacking stat of the pokemon. Uses the recycle effect on the mon",
-		shortDesc: "Hits 2-5 times. Special if Atk < Sp.atk. Recycles",
+		shortDesc: "Hits 2-5 times. Special if Atk < Sp.atk. recycles",
 	},
 	//#endregion
 
