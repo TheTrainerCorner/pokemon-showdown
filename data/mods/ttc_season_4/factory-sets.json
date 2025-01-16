@@ -2111,6 +2111,54 @@
 				}
 			]
 		},
+		"meganium": {
+			"sets": [
+				{
+					"species": "Meganium",
+					"item": "Leftovers",
+					"ability": "Serene Grace",
+					"moves": [["Springtide Storm"], ["Energy Ball"], ["Protect"], ["Leech Seed"]]
+				},
+				{
+					"species": "Meganium",
+					"item": "Light Clay",
+					"ability": "Regenerator",
+					"moves": [["Giga Drain"], ["Reflect"], ["Light Screen"], ["Leech Seed"]]
+				}
+			]
+		},
+		"typhlosion": {
+			"sets": [
+				{
+					"species": "Typhlosion",
+					"item": "Choice Scarf",
+					"ability": "Flash Fire",
+					"moves": [["Overheat"], ["Burning Jealousy"], ["Fiery Wrath"], ["Shadow Ball"]]
+				},
+				{
+					"species": "Typhlosion",
+					"item": "Choice Band",
+					"ability": "Flash Fire",
+					"moves": [["Darkest Lariat"], ["Flame Charge"], ["Earthquake"], ["Flare Blitz"]]
+				}
+			]
+		},
+		"typlosionhisui": {
+			"sets": [
+				{
+					"species": "Typhlosion-Hisui",
+					"item": "Heavy-Duty Boots",
+					"ability": "Shadow Shield",
+					"moves": [["Burning Jealousy"], ["Infernal Parade"], ["Extrasensory"], ["Calm Mind"]]
+				},
+				{
+					"species": "Typhlosion-Hisui",
+					"item": "Choice Scarf",
+					"ability": "Shadow Shield",
+					"moves": [["Overheat"], ["Bitter Malice"], ["Extrasensory"], ["Energy Ball"]]
+				}
+			]
+		},
 		"ledian": {
 			"sets": [
 				{
