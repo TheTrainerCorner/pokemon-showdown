@@ -257,11 +257,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	uzumaki: {
 		onBasePowerPriority: 43,
 		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['spin']) {
-				this.debug('Uzumaki boost');
-				return this.chainModify([5325, 4096]);
-			}
-			if (move.flags['twist']) {
+			if (move.flags['spin'] || move.flags['twist']) {
 				this.debug('Uzumaki boost');
 				return this.chainModify([5325, 4096]);
 			}
