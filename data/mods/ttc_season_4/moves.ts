@@ -466,7 +466,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 		},
 		desc: "Hits 2 to 5 times. Uses higher attacking stat of the pokemon. Uses the recycle effect on the mon",
-		shortDesc: "Hits 2-5 times. Special if Atk < Sp.atk. recycles",
+		shortDesc: "Hits 2-5 times. Special if Atk < Sp.atk. Recycles.",
 	},
 	//#endregion
 
