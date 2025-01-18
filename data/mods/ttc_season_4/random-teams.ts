@@ -1200,7 +1200,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		const id = toID(species.name);
 		const setList = this.randomFactorySets[tier][id].sets;
 
-		const itemsMax: {[k: string]: number} = { choicespecs: 1, choiceband: 1, choicescarf: 1};
+		const itemsMax: {[k: string]: number} = { choicespecs: 1, choiceband: 1, choicescarf: 1, lightclay: 1};
 		const movesMax: {[k: string]: number} = {
 			rapidspin: 1,
 			batonpass: 1, 
