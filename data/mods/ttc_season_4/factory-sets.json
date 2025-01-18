@@ -2604,12 +2604,12 @@
 				},
 				{
 					"species": "Granbull",
-					"item": "Granbullite",
+					"item": "Granbulite",
 					"moves": [["Close Combat"], ["Knock Off"], ["Play Rough"], ["Earthquake"]]
 				},
 				{
 					"species": "Granbull",
-					"item": "Granbullite",
+					"item": "Granbulite",
 					"moves": [["Bulk Up"], ["Knock Off"], ["Drain Punch"], ["Heal Bell"]]
 				}
 			]
