@@ -1547,9 +1547,10 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		if (!teamData.forceResult) { // If the team doesn't pass these checks, then we will need to redo the team again.
 			// Double Checking that there is only one pokemon that has a mega stone per team.
 			if (teamData.megaCount && teamData.megaCount > 1) return this.randomFactoryTeam(side, ++depth);
-
-			for (const ability of Object.keys(weatherAbilitiesRequire)) { // checking to make sure weather exist for pokemon that require it.
-				if (weatherAbilitiesRequire[ability] && weatherAbilitiesRequire[ability] !== teamData.weather) return this.randomFactoryTeam(side, ++depth);
+			
+			for (const key of Object.keys(teamData.has)) {
+				if (weatherAbilitiesRequire[key] && (!teamData.weather || teamData.weather !== weatherAbilitiesRequire[key]))
+					return this.randomFactoryTeam(side, ++depth);
 			}
 			for (const requiredFamily of requiredMoveFamilies) {
 				if (!teamData.has[requiredFamily]) return this.randomFactoryTeam(side, ++depth);
