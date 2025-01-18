@@ -1276,7 +1276,7 @@
 					"item": "Light Clay",
 					"level": 92,
 					"ability": "Galvanize",
-					"moves": [["Light Scree"], ["Reflect"], ["Explosion"], ["Flash Cannon"]]
+					"moves": [["Light Screen"], ["Reflect"], ["Explosion"], ["Flash Cannon"]]
 				},
 				{
 					"species": "Electrode",
