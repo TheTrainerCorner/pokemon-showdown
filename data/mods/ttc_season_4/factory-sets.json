@@ -2175,6 +2175,54 @@
 				}
 			]
 		},
+		"feraligatr": {
+			"sets": [
+				{
+					"species": "Feraligatr",
+					"item": "Sitrus Berry",
+					"ability": "Strong Jaw",
+					"moves": [["Waterfall"], ["Poison Fang"], ["Ice Fang"], ["Dragon Dance"]]
+				},
+				{
+					"species": "Feraligatr",
+					"item": "Life Orb",
+					"ability": "Sheer Force",
+					"moves": [["Liquidation"], ["Cross Poison"], ["Sucker Punch"], ["Dragon Dance"]]
+				}
+			]
+		},
+		"furret": {
+			"sets": [
+				{
+					"species": "Furret",
+					"item": "Heavy-Duty Boots",
+					"ability": "Run Away",
+					"moves": [["Body Slam"], ["Knock Off"], ["U-Turn"], ["Super Fang"]]
+				},
+				{
+					"species": "Furret",
+					"item": "Armor Plate",
+					"ability": "Fur Coat",
+					"moves": [["Body Slam"], ["Fire Punch"], ["Zen Headbutt"], ["Tidy Up"]]
+				}
+			]
+		},
+		"noctowl": {
+			"sets": [
+				{
+					"species": "Noctowl",
+					"item": "Choice Specs",
+					"ability": "Early Bird",
+					"moves": [["Extrasensory"], ["Air Slash"], ["Moongeist Beam"], ["Hyper Voice"]]
+				},
+				{
+					"species": "Noctowl",
+					"item": "Armor Plate",
+					"ability": "Tinted Lens",
+					"moves": [["Extrasensory"], ["Air Slash"], ["Moongeist Beam"], ["Nasty Plot"]]
+				}
+			]
+		},
 		"ledian": {
 			"sets": [
 				{
@@ -2216,6 +2264,50 @@
 					"item": "Scope Lens",
 					"ability": "Sniper",
 					"moves": [["Cross Poison"], ["Trailblaze"], ["Lunge"], ["Swords Dance"]]
+				}
+			]
+		},
+		"crobat": {
+			"sets": [
+				{
+					"species": "Crobat",
+					"item": "Choice Band",
+					"ability": "Infiltrator",
+					"moves": [["Brave Bird"], ["Cross Poison"], ["U-Turn"], ["Fire Fang"]]
+				},
+				{
+					"species": "Crobat",
+					"item": "Shell Bell",
+					"ability": "Vampire",
+					"moves": [["Poison Fang"], ["Brave Bird"], ["Super Fang"], ["Roost"]]
+				},
+				{
+					"species": "Crobat",
+					"item": "Black Sludge",
+					"ability": "Unnerve",
+					"moves": [["Defog"], ["Brave Bird"], ["Roost"], ["U-Turn"]]
+				}
+			]
+		},
+		"lanturn": {
+			"sets": [
+				{
+					"species": "Lanturn",
+					"item": "Leftovers",
+					"ability": "Volt Absorb",
+					"moves": [["Scald"], ["Parabolic Charge"], ["Ice Beam"], ["Stockpile"]]
+				},
+				{
+					"species": "Lanturn",
+					"item": "Bubbled Dome",
+					"ability": "Water Absorb",
+					"moves": [["Scald"], ["Discharge"], ["Charge Beam"], ["Icy Wind"]]
+				},
+				{
+					"species": "Lanturn",
+					"item": "Armor Plate",
+					"ability": "Volt Absorb",
+					"moves": [["Scald"], ["Volt Switch"], ["Toxic"], ["Heal Bell"]]
 				}
 			]
 		},
@@ -2291,6 +2383,22 @@
 					"item": "Rocky Helmet",
 					"ability": "Flower Veil",
 					"moves": [["Strength Sap"], ["Moonblast"], ["Sludge Bomb"], ["Rapid Spin"]]
+				}
+			]
+		},
+		"azumarill": {
+			"sets": [
+				{
+					"species": "Azumarill",
+					"item": "Sitrus Berry",
+					"ability": "Huge Power",
+					"moves": [["Play Rough"], ["Aqua Jet"], ["Drain Punch"], ["Bell Drum"]]
+				},
+				{
+					"species": "Azumarill",
+					"item": "Leftovers",
+					"ability": "Thick Fat",
+					"moves": [["Whirlpool"], ["Curse"], ["Drain Punch"], ["Aqua Ring"]]
 				}
 			]
 		},
