@@ -1200,7 +1200,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		const id = toID(species.name);
 		const setList = this.randomFactorySets[tier][id].sets;
 
-		const itemsMax: {[k: string]: number} = { choicespecs: 1, choiceband: 1, choicescarf: 1, lightclay: 1};
+		const itemsMax: {[k: string]: number} = { choicespecs: 1, choiceband: 1, choicescarf: 1, lightclay: 1, eviolite: 2};
 		const movesMax: {[k: string]: number} = {
 			rapidspin: 1,
 			batonpass: 1, 
@@ -1547,7 +1547,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		if (!teamData.forceResult) { // If the team doesn't pass these checks, then we will need to redo the team again.
 			// Double Checking that there is only one pokemon that has a mega stone per team.
 			if (teamData.megaCount && teamData.megaCount > 1) return this.randomFactoryTeam(side, ++depth);
-			
+
 			for (const key of Object.keys(teamData.has)) {
 				if (weatherAbilitiesRequire[key] && (!teamData.weather || teamData.weather !== weatherAbilitiesRequire[key]))
 					return this.randomFactoryTeam(side, ++depth);
