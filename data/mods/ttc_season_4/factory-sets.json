@@ -332,15 +332,31 @@
 			"sets": [
 				{
 					"species": "Sandslash",
-					"item": "Leftovers",
+					"item": "Eviolite",
 					"ability": "Rough Skin",
 					"moves": [["Rapid Spin"], ["Knock Off"], ["Stealth Rock"], ["Spiky Shield"]]
 				},
 				{
 					"species": "Sandslash",
-					"item": "Leftovers",
+					"item": "Eviolite",
 					"ability": "Rough Skin",
 					"moves": [["Rapid Spin"], ["Super Fang"], ["Stealth Rock"], ["Spikes"]]
+				}
+			]
+		},
+		"scaleslash": {
+			"sets": [
+				{
+					"species": "Scaleslash",
+					"item": "Leftovers",
+					"ability": "Rough Skin",
+					"moves": [["Rapid Spin"], ["Spirit Roll"], ["Stealth Rock"], ["Spiky Shield"]]
+				},
+				{
+					"species": "Sandslash",
+					"item": "Assault Vest",
+					"ability": "Uzumaki",
+					"moves": [["Rapid Spin"], ["Drill Run"], ["Spirit Roll"], ["Knock Off"]]
 				}
 			]
 		},
