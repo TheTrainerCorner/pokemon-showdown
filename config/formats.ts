@@ -191,7 +191,6 @@ export const Formats: FormatList = [
 		name: "[Gen 9] Triples",
 		mod: Config.ttcseason,
 		gameType: 'triples',
-		searchShow: false,
 		ruleset: [
 			'Standard Doubles', 'Evasion Abilities Clause', 'Dynamax Clause', 'Terastal Clause',
 			'Season Complex Bans', 'Season Unbanlist', 'Season Banlist'],
