@@ -1214,12 +1214,12 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		const abilitiesMax: {[k: string]: number} = {
 			toxicdebris: 1,
 			snowcloak: 1,
+			drizzle: 1,
 		};
-		let requiredAbilities: {[k: string]: string} = {};
+		let requiredAbilities: {[k: string]: string} = { drizzle: 'weather' };
 		const requiredMoves: {[k: string]: string} = {
 			stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'
 		};
-		let requiredWeather: string = "";
 		const weatherAbilitiesRequire: {[k: string]: string} = {
 			hydration: 'raindance', swiftswim: 'raindance', raindish: 'raindance',
 			waterveil: 'raindance',
@@ -1234,14 +1234,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			'snowwarning', 'chillingneigh', 'asoneglastrier', 'absolutezero',
 			'sandstream', 'granitestorm'
 		];
-
-		const weatherAbilitiesSet: {[k: string]: string} = {
-			drizzle: 'raindance',
-			drought: 'sunnyday', sundance: 'sunnyday',
-			snowwarning: 'snow', chillingneigh: 'snow', asoneglastrier: 'snow',
-			absolutezero: 'snow',
-			sandstream: 'sandstorm', granitestorm: 'sandstorm',
-		};
 
 		const terrainAbilities: {[k: string]: string} = {
 			electricsurge: "electric",
@@ -1289,9 +1281,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				continue; // move to the next set if the pokemon contains an ability that has already hit it's limit in the team.
 			}
 
-			// if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) {
-			// 	continue; // move to the next set if the pokemon's ability requires a weather that is not possible in the team.
-			// }
+			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) {
+				continue; // move to the next set if the pokemon's ability requires a weather that is not possible in the team.
+			}
 
 			if (teamData.weather && weatherAbilities.includes(abilityState.id)) {
 				continue; // reject 2+ weather setters per team.
@@ -1307,11 +1299,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			if (terrainAbilitiesRequired[abilityState.id] && teamData.terrain !== terrainAbilitiesRequired[abilityState.id]) {
 				continue; // move to the next set if the pokemon's ability requires a terrain that is not possible in the team.
-			}
-
-			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) {
-				const weather = weatherAbilitiesRequire[abilityState.id];
-				requiredWeather = weather; // If we do not already have a weather pokemon, then we need to make that a priority to make the team.
 			}
 
 			let reject = false;
@@ -1337,13 +1324,10 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				hasRequiredAbility = true; // place into the priority pool if they have a required ability.
 			}
 
-			if (requiredWeather === weatherAbilitiesSet[abilityState.id]) {
-				hasRequiredWeather = true; // place into the priority pool if they have a required weather.
-			}
 
 			if (reject) continue; // move on to the next set if the set fails the checks.
 			effectivePool.push({set: curSet, moveVariants: curSetVariants});
-			if (hasRequiredMove || hasRequiredAbility || hasRequiredWeather) priorityPool.push({set: curSet, moveVariants: curSetVariants});
+			if (hasRequiredMove || hasRequiredAbility) priorityPool.push({set: curSet, moveVariants: curSetVariants});
 		}
 
 		if (priorityPool.length) effectivePool = priorityPool;
@@ -1395,14 +1379,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			forceResult: forceResult,
 			weaknesses: {},
 			resistances: {},
-		};
-		const weatherAbilitiesRequire: {[k: string]: string} = {
-			hydration: 'raindance', swiftswim: 'raindance', raindish: 'raindance',
-			waterveil: 'raindance',
-			leafguard: 'sunnyday', solarpower: 'sunnyday', chlorophyll: 'sunnyday',
-			flowergift: 'sunnyday',
-			sandforce: 'sandstorm', sandrush: 'sandstorm', sandveil: 'sandstorm',
-			snowcloak: 'snow', icebody: 'snow', slushrush: 'snow',
 		};
 		const weatherAbilitiesSet: {[k: string]: string} = {
 			drizzle: 'raindance',
@@ -1547,11 +1523,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		if (!teamData.forceResult) { // If the team doesn't pass these checks, then we will need to redo the team again.
 			// Double Checking that there is only one pokemon that has a mega stone per team.
 			if (teamData.megaCount && teamData.megaCount > 1) return this.randomFactoryTeam(side, ++depth);
-
-			for (const key of Object.keys(teamData.has)) {
-				if (weatherAbilitiesRequire[key] && (!teamData.weather || teamData.weather !== weatherAbilitiesRequire[key]))
-					return this.randomFactoryTeam(side, ++depth);
-			}
 			for (const requiredFamily of requiredMoveFamilies) {
 				if (!teamData.has[requiredFamily]) return this.randomFactoryTeam(side, ++depth);
 			}
