@@ -1424,6 +1424,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			garbagedisposal: ['Steel'],
 		};
 
+		const requiredAbilityFamilies = ['weather'];
+		const requiredAbilities: {[k: string]: string} = {drizzle: 'weather'};
 		const requiredMoveFamilies = ['hazardSet', 'hazardClear'];
 		const requiredMoves: {[k: string]: string} = {stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'};
 
@@ -1498,6 +1500,10 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				}
 			}
 
+			if (requiredAbilities[abilityState.id]) {
+				teamData.has[requiredAbilities[abilityState.id]] = 1;
+			}
+
 			for (const typeName of this.dex.types.names()) {
 				// Cover any major weakness (3+) with at least one resistance
 				if (teamData.resistances[typeName] >= 1) continue;
@@ -1523,6 +1529,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		if (!teamData.forceResult) { // If the team doesn't pass these checks, then we will need to redo the team again.
 			// Double Checking that there is only one pokemon that has a mega stone per team.
 			if (teamData.megaCount && teamData.megaCount > 1) return this.randomFactoryTeam(side, ++depth);
+			for (const requiredFamily of requiredAbilityFamilies) {
+				if (!teamData.has[requiredFamily]) return this.randomFactoryTeam(side, ++depth);
+			}
 			for (const requiredFamily of requiredMoveFamilies) {
 				if (!teamData.has[requiredFamily]) return this.randomFactoryTeam(side, ++depth);
 			}
