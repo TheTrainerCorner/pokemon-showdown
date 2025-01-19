@@ -2418,6 +2418,22 @@
 				}
 			]
 		},
+		"politoed": {
+			"sets": [
+				{
+					"species": "Politoed",
+					"item": "Choice Specs",
+					"ability": "Drizzle",
+					"moves": [["Weather Ball"], ["Hyper Voice"], ["Focus Blast"], ["Flip Turn"]]
+				},
+				{
+					"species": "Politoed",
+					"item": "Leftovers",
+					"ability": "Drizzle",
+					"moves": [["Scald"], ["Whirlpool"], ["Perish Song"], ["Protect"]]
+				}
+			]
+		},
 		"jumpluff": {
 			"sets": [
 				{
@@ -2434,6 +2450,22 @@
 				}
 			]
 		},
+		"sunflora": {
+			"sets": [
+				{
+					"species": "Sunflora",
+					"item": "Life Orb",
+					"ability": "Drought",
+					"moves": [["Solar Beam"], ["Flamethrower"], ["Earth Power"], ["Sludge Bomb"]]
+				},
+				{
+					"species": "Sunflora",
+					"item": "Heavy-Duty Boots",
+					"ability": "Drought",
+					"moves": [["Flamethrower"], ["Sizzly Slide"], ["Leech Seed"], ["Morning Sun"]]
+				}
+			]
+		},
 		"quagsire": {
 			"sets": [
 				{
@@ -2447,6 +2479,22 @@
 					"item": "Leftovers",
 					"ability": "Water Absorb",
 					"moves": [["Curse"], ["Recover"], ["Earthquake"], ["Ice Punch"]]
+				}
+			]
+		},
+		"espeon": {
+			"sets": [
+				{
+					"species": "Espeon",
+					"item": "Life Orb",
+					"ability": "Magic Guard",
+					"moves": [["Psychic"], ["Dazzling Gleam"], ["Calm Mind"], ["Shadow Ball"]]
+				},
+				{
+					"species": "Espeon",
+					"item": "Choice Scarf",
+					"ability": "Magic Bounce",
+					"moves": [["Psychic"], ["Dazzling Gleam"], ["Trick"], ["Shadow Ball"]]
 				}
 			]
 		},
