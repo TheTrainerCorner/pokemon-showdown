@@ -360,7 +360,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			for (const typeName of this.dex.types.names()) {
 				// Cover any major weakness (3+) with at least one resistance
 				if (teamData.resistances[typeName] >= 1) continue;
-				if (RESISTANCE.abilities[ability.id].includes(typeName) || !this.dex.getImmunity(typeName, types)) {
+				if ((RESISTANCE.abilities[ability.id] && RESISTANCE.abilities[ability.id].includes(typeName)) || !this.dex.getImmunity(typeName, types)) {
 					teamData.resistances[typeName] = (teamData.resistances[typeName] || 0) + 1;
 					if (teamData.resistances[typeName] >= 1) teamData.weaknesses[typeName] = 0;
 					continue;
