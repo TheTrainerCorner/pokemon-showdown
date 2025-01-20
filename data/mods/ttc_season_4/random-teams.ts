@@ -335,10 +335,10 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			
 			if (!teamData.megaCount) teamData.megaCount = 0;
 			if (item.megaStone) teamData.megaCount++;
-			if (ability.id in TYPES.abilities['weather']) {
+			if (TYPES.abilities['weather'][ability.id]) {
 				teamData.weather = TYPES.abilities['weather'][ability.id];
 			}
-			if (ability.id in TYPES.abilities['terrain']) {
+			if (TYPES.abilities['terrain'][ability.id]) {
 				teamData.terrain = TYPES.abilities['terrain'][ability.id];
 			}
 
