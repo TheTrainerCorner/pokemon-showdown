@@ -83,14 +83,14 @@ const REQUIRED: {
 	},
 	items: {},
 	moves: {
-		stealthrock: 'hazardSet',
-		rapidspin: 'hazardClear',
-		defog: 'hazardClear',
+		// stealthrock: 'hazardSet',
+		// rapidspin: 'hazardClear',
+		// defog: 'hazardClear',
 	},
 	families: {
 		abilities: ['weather'],
 		items: [],
-		moves: ['hazardSet', 'hazardClear'],
+		moves: [],
 	}
 };
 
