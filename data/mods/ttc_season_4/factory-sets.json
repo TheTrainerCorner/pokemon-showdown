@@ -2327,9 +2327,9 @@
 				},
 				{
 					"species": "Xatu",
-					"item": "Odd Incense",
+					"item": "Leftovers",
 					"ability": "Forewarn",
-					"moves": [["Night Shade"], ["Wish"], ["U-Turn"], ["Future Sight"]]
+					"moves": [["Calm Mind"], ["Roost"], ["Synchronoise"], ["Heat Wave"]]
 				}
 			]
 		},
