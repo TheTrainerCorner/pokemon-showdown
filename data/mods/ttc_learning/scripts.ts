@@ -11,14 +11,3 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Cosmic', 'Fire');
 	},
 };
-
-
-
-export const Pokedex: {[k: string]: ModdedSpeciesData} = {
-	neospacianflarescarab: {
-		num: -4015
-		name: "NeoSpacian Flare Scarab"
-		
-	}
-
-}
