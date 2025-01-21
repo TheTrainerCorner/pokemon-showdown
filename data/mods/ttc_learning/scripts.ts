@@ -5,11 +5,10 @@ export const Scripts: ModdedBattleScriptsData = {
 	init() {
 		new ModifyPokemon('Lopunny', this)
 			.types
-				.setType('Cosmic','Fighting');
+				.setType('Cosmic', 'Fighting');
 		new ModifyPokemon('Rabsca', this)
-			.types	
-				.setType('Cosmic','Fire');
-				.
+			.types
+				.setType('Cosmic', 'Fire');
 	},
 };
 
