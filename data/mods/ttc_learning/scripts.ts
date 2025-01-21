@@ -6,5 +6,20 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Lopunny', this)
 			.types
 				.setType('Cosmic','Fighting');
+		new ModifyPokemon('Rabsca', this)
+			.types	
+				.setType('Cosmic','Fire');
+				.
 	},
 };
+
+
+
+export const Pokedex: {[k: string]: ModdedSpeciesData} = {
+	neospacianflarescarab: {
+		num: -4015
+		name: "NeoSpacian Flare Scarab"
+		
+	}
+
+}

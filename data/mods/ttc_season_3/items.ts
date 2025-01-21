@@ -66,7 +66,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 			}
 		},
-		desc: "If hit by a a contact move, the attacker becomes drowsy. Single Use"
+		desc: "If hit by a contact move, the attacker becomes drowsy. Single Use"
 	},
 	oddincense: {
 		inherit: true,
