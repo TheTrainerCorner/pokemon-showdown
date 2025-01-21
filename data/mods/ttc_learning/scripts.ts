@@ -9,5 +9,17 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Rabsca', this)
 			.types
 				.setType('Cosmic', 'Fire');
+		new ModifyPokemon('Excadrill', this)
+			.types
+				.setType('Ground','Cosmic')
+			.pokemon.abilities
+				.setAbility0('Emergency Exit')
+				.setHiddenAbility('Intimidate')
+			.pokemon.baseStats
+				.setSPE(110)
+				.setHP(800)
+			.pokemon.learnset
+				.add('U Turn')
+				.remove('Sand Tomb')
 	},
 };
