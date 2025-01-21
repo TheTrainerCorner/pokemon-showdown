@@ -194,11 +194,11 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				continue; // move to the next set if the pokemon's item requires a terrain that is not possible in the team.
 			}
 
-			if (teamData.weather && TYPES.abilities['weather'][ability.id]) {
+			if (teamData.weather && Object.keys(TYPES.abilities['weather']).includes(ability.id)) {
 				continue; // reject 2+ weather setters per team.
 			}
 
-			if (teamData.terrain && TYPES.abilities['terrain'][ability.id]) {
+			if (teamData.terrain && Object.keys(TYPES.abilities['terrain']).includes(ability.id)) {
 				continue; // reject 2+ terrain setters per team.
 			}
 
