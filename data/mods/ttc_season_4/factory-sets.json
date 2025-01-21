@@ -482,13 +482,13 @@
 					"species": "Ninetales-Alola",
 					"item": "Heavy-Duty Boots",
 					"ability": "Snow Warning",
-					"moves": [["Nasty Plot"], ["Ice Beam"], ["Moonblast"], ["Psyshock"]]
+					"moves": [["Nasty Plot"], ["Ice Beam"], ["Dazzling Gleam"], ["Psyshock"]]
 				},
 				{
 					"species": "Ninetales-Alola",
 					"item": "Heavy-Duty Boots",
 					"ability": "Snow Cloak",
-					"moves": [["Chilly Reception"], ["Moonblast"], ["Sheer Cold"], ["Freeze-Dry"]]
+					"moves": [["Chilly Reception"], ["Dazzling Gleam"], ["Sheer Cold"], ["Freeze-Dry"]]
 				}
 			]
 		},
@@ -504,7 +504,7 @@
 					"species": "Wigglytuff",
 					"item": "Leftovers",
 					"ability": "Fluffy",
-					"moves": [["Wish"], ["Protect"], ["Knock Off"], ["Moonblast"]]
+					"moves": [["Wish"], ["Protect"], ["Knock Off"], ["Dazzling Gleam"]]
 				},
 				{
 					"species": "Wigglytuff",
@@ -1906,13 +1906,13 @@
 					"species": "Aerodactyl",
 					"item": "Choice Band",
 					"ability": "Intimidate",
-					"moves": [["Brave Bird"], ["Rock Slide"], ["Pursuit"], ["Earthquake"]]
+					"moves": [["Dual Wingbeat"], ["Rock Slide"], ["Pursuit"], ["Earthquake"]]
 				},
 				{
 					"species": "Aerodactyl",
 					"item": "Sharp Beak",
 					"ability": "Intimidate",
-					"moves": [["Brave Bird"], ["Stone Edge"], ["Earthquake"], ["Dragon Dance"]]
+					"moves": [["Dual Wingbeat"], ["Stone Edge"], ["Earthquake"], ["Dragon Dance"]]
 				},
 				{
 					"species": "Aerodactyl",
@@ -1924,13 +1924,13 @@
 					"species": "Aerodactyl",
 					"item": "Aerodactylite",
 					"ability": "Unnerve",
-					"moves": [["Brave Bird"], ["Stone Edge"], ["Fire Fang"], ["Hone Claw"]]
+					"moves": [["Dual Wingbeat"], ["Stone Edge"], ["Fire Fang"], ["Hone Claw"]]
 				},
 				{
 					"species": "Aerodactyl",
 					"item": "Aerodactylite",
 					"ability": "Intimidate",
-					"moves": [["Brave Bird"], ["Substitute"], ["Dragon Dance"], ["Roost"]]
+					"moves": [["Dual Wingbeat"], ["Substitute"], ["Dragon Dance"], ["Roost"]]
 				},
 				{
 					"species": "Aerodactyl",
@@ -2059,6 +2059,12 @@
 					"level": 78,
 					"ability": "Pressure",
 					"moves": [["Roost"], ["Defog"], ["Volt Switch"], ["Hurricane"]]
+				},
+				{
+					"species": "Zapdos",
+					"item": "Heavy-Duty Boots",
+					"ability": "Electric Surge",
+					"moves": [["Thunderbolt"], ["Roost"], ["Volt Switch"], ["Heat Wave"]]
 				}
 			]
 		},
@@ -2099,6 +2105,12 @@
 					"level": 84,
 					"ability": "Multiscale",
 					"moves": [["Dual Wingbeat"], ["Dragon Dance"], ["Roost"], ["Dragon Claw"]]
+				},
+				{
+					"species": "Dragonite",
+					"item": "Heavy-Duty Boots",
+					"ability": "Stalwart",
+					"moves": [["Dragon Dance"], ["Sky Attack"], ["Earthquake"], ["Dragon Rush"]]
 				}
 			]
 		},
@@ -3111,6 +3123,197 @@
 					"level": 90,
 					"ability": "Levitate",
 					"moves": [["Shadow Ball"], ["Taunt"], ["Will-o-Wisp"], ["Moonlight"]]
+				}
+			]
+		},
+		"vigoroth": {
+			"sets": [
+				{
+					"species": "Vigoroth",
+					"item": "Eviolite",
+					"ability": "Berserk",
+					"moves": [["Body Slam"], ["Knock Off"], ["Bulk Up"], ["Slack Off"]]
+				},
+				{
+					"species": "Vigoroth",
+					"item": "Eviolite",
+					"ability": "Berserk",
+					"moves": [["Mega Kick"], ["Gunk Shot"], ["Drain Punch"], ["Hone Claws"]]
+				}
+			]
+		},
+		"slaking": {
+			"sets": [
+				{
+					"species": "Slaking",
+					"item": "Leftovers",
+					"ability": "Truant",
+					"moves": [["Mega Kick"], ["Knock Off"], ["Earthquake"], ["Slack Off"]]
+				},
+				{
+					"species": "Slaking",
+					"item": "Rose Incense",
+					"ability": "Truant",
+					"moves": [["Mega Kick"], ["Power-Up Punch"], ["Knock Off"], ["Slack Off"]]
+				}
+			]
+		},
+		"ninjask": {
+			"sets": [
+				{
+					"species": "Ninjask",
+					"ability": "Speed Boost",
+					"moves": [["Acrobatics"], ["Leech Life"], ["Swords Dance"], ["U-Turn"]]		
+				},
+				{
+					"species": "Ninjask",
+					"item": "Heavy-Duty Boots",
+					"ability": "Speed Boost",
+					"moves": [["Dual Wingbeat"], ["Drill Run"], ["U-Turn"], ["Protect"]]
+				}
+			]
+		},
+		"shedinja": {
+			"sets": [
+				{
+					"species": "Shedinja",
+					"item": "Focus Sash",
+					"ability": "Wonder Guard",
+					"moves": [["Swords Dance"], ["Shadow Sneak"], ["Poltergeist"], ["Skitter Smack"]]
+				},
+				{
+					"species": "Shedinja",
+					"item": "Heavy-Duty Boots",
+					"ability": "Wonder Guard",
+					"moves": [["Swords Dance"], ["Shadow Sneak"], ["Skitter Smack"], ["Will-O-Wisp"]]
+				}
+			]
+		},
+		"exploud": {
+			"sets": [
+				{
+					"species": "Exploud",
+					"item": "Throat Spray",
+					"ability": "Punk Rock",
+					"moves": [["Boomburst"], ["Overdrive"], ["Flamethrower"], ["Shadow Ball"]]
+				},
+				{
+					"species": "Exploud",
+					"item": "Choice Specs",
+					"ability": "Scrappy",
+					"moves": [["Boomburst"], ["Focus Blast"], ["Ice Beam"], ["Flamethrower"]]
+				}
+			]
+		},
+		"mawile": {
+			"sets": [
+				{
+					"species": "Mawile",
+					"item": "Life Orb",
+					"ability": "Sheer Force",
+					"moves": [["Iron Head"], ["Play Rough"], ["Fire Fang"], ["Substitute"]]
+				},
+				{
+					"species": "Mawile",
+					"item": "Leftovers",
+					"ability": "Intimidate",
+					"moves": [["Stealth Rock"], ["Toxic"], ["Knock Off"], ["Play Rough"]]
+				},
+				{
+					"species": "Mawile",
+					"item": "Mawlitie",
+					"ability": "Intimidate",
+					"moves": [["Swords Dance"], ["Sucker Punch"], ["Play Rough"], ["Brick Break"]]
+				},
+				{
+					"species": "Mawile",
+					"item": "Mawlitie",
+					"ability": "Intimidate",
+					"moves": [["Fire Fang"], ["Iron Head"], ["Play Rough"], ["Knock Off"]]
+				}
+			]
+		},
+		"aggron": {
+			"sets": [
+				{
+					"species": "Aggron",
+					"item": "Weakness Policy",
+					"ability": "Sturdy",
+					"moves": [["Autotomize"], ["Iron Tail"], ["Stone Edge"], ["Earthquake"]]
+				},
+				{
+					"species": "Aggron",
+					"item": "Leftovers",
+					"ability": "Heavy Metal",
+					"moves": [["Heavy Slam"], ["Stealth Rock"], ["Toxic"], ["Low Kick"]]
+				},
+				{
+					"species": "Aggron",
+					"item": "Aggronite",
+					"ability": "Sturdy",
+					"moves": [["Curse"], ["Rest"], ["Heavy Slam"], ["Sleep Talk"]]
+				},
+				{
+					"species": "Aggron",
+					"item": "Aggronite",
+					"ability": "Sturdy",
+					"moves": [["Stealth Rock"], ["Thunder Wave"], ["Dragon Tail"], ["Heavy Slam"]]
+				},
+				{
+					"species": "Aggron",
+					"item": "Aggronite",
+					"ability": "Sturdy",
+					"moves": [["Earthquake"], ["Stone Edge"], ["Iron Tail"], ["Metal Burst"]]
+				}
+			]
+		},
+		"medicham": {
+			"sets": [
+				{
+					"species": "Medicham",
+					"item": "Choice Band",
+					"ability": "Pure Power",
+					"moves": [["Close Combat"], ["Zen Headbutt"], ["Bullet Punch"], ["Thief"]]
+				},
+				{
+					"species": "Medicham",
+					"item": "Choice Scarf",
+					"ability": "Pure Power",
+					"moves": [["Trick"], ["Close Combat"], ["Zen Headbutt"], ["Fire Punch"]]
+				},
+				{
+					"species": "Medicham",
+					"item": "Medichamite",
+					"ability": "Telepathy",
+					"moves": [["Substitute"], ["Bulk Up"], ["Drain Punch"], ["Zen Headbutt"]]
+				},
+				{
+					"species": "Medicham",
+					"item": "Medichamite",
+					"ability": "Telepathy",
+					"moves": [["Trailblaze"], ["Close Combat"], ["Zen Headbutt"], ["Triple Axel"]]
+				},
+				{
+					"species": "Medicham",
+					"item": "Medichamite",
+					"ability": "Telepathy",
+					"moves": [["Fake Out"], ["Bullet Punch"], ["Zen Headbutt"], ["Close Combat"]]
+				}
+			]
+		},
+		"manectric": {
+			"sets": [
+				{
+					"species": "Manectric",
+					"item": "Choice Specs",
+					"ability": "Teravolt",
+					"moves": [["Volt Switch"], ["Overheat"], ["Thunder"], ["Switcheroo"]]
+				},
+				{
+					"species": "Manectric",
+					"item": "Manectricite",
+					"ability": "Ball Fetch",
+					"moves": [["Volt Switch"], ["Overheat"], ["Thunder"], ["Thunder Cage"]]
 				}
 			]
 		}
