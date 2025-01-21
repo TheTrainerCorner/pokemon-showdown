@@ -4,6 +4,7 @@ export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'ttc_season_4',
 	init() {
 		new ModifyPokemon('Lopunny', this)
-		.types.setType('Cosmic','Fighting')
+			.types
+				.setType('Cosmic','Fighting');
 	},
 };
