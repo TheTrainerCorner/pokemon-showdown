@@ -3126,6 +3126,174 @@
 				}
 			]
 		},
+		"sceptile": {
+			"sets": [
+				{
+					"species": "Sceptile",
+					"item": "Pokepen",
+					"ability": "Unburden",
+					"moves": [["Swords Dance"], ["Earthquake"], ["Dragon Claw"], ["Cut"]]
+				},
+				{
+					"species": "Sceptile",
+					"item": "Sitrus Berry",
+					"ability": "Overgrow",
+					"moves": [["Shed Tail"], ["Leaf Storm"], ["Dragon Claw"], ["Earthquake"]]
+				},
+				{
+					"species": "Sceptile",
+					"item": "Sceptilite",
+					"ability": "Overgrow",
+					"moves": [["Bullet Seed"], ["Dual Chop"], ["Swords Dance"], ["Double Kick"]]
+				},
+				{
+					"species": "Sceptile",
+					"item": "Sceptilite",
+					"ability": "Overgrow",
+					"moves": [["Vacuum Wave"], ["Leaf Storm"], ["Dual Chop"], ["Rock Tomb"]]
+				}
+			]
+		},
+		"blaziken": {
+			"sets": [
+				{
+					"species": "Blaziken",
+					"item": "Air Balloon",
+					"ability": "Blaze",
+					"moves": [["Swords Dance"], ["Cut"], ["Close Combat"], ["Flare Blitz"]]
+				},
+				{
+					"species": "Blaziken",
+					"item": "Choice Scarf",
+					"ability": "No Guard",
+					"moves": [["Overheat"], ["Dynamic Punch"], ["Cut"], ["U-Turn"]]
+				},
+				{
+					"species": "Blaziken",
+					"item": "Blazikenite",
+					"ability": "Blaze",
+					"moves": [["Blaze Kick"], ["Swords Dance"], ["High Jump Kick"], ["Cut"]]
+				}
+			]
+		},
+		"swampert": {
+			"sets": [
+				{
+					"species": "Swampert",
+					"item": "Leftovers",
+					"ability": "Dry Skin",
+					"moves": [["Earthquake"], ["Stealth Rock"], ["Flip Turn"], ["Knock Off"]]
+				},
+				{
+					"species": "Swampert",
+					"item": "Leftovers",
+					"ability": "Dry Skin",
+					"moves": [["Roar"], ["Earthquake"], ["Toxic"], ["Protect"]]
+				},
+				{
+					"species": "Swampert",
+					"item": "Swampertite",
+					"ability": "Dry Skin",
+					"moves": [["Rain Dance"], ["Earthquake"], ["Ice Punch"], ["Waterfall"]]
+				}
+			]
+		},
+		"mightyena": {
+			"sets": [
+				{
+					"species": "Mightyena",
+					"item": "Life Orb",
+					"ability": "Ball Fetch",
+					"moves": [["Knock Off"], ["Play Rough"], ["Pursuit"], ["Fire Fang"]]
+				},
+				{
+					"species": "Mightyena",
+					"item": "Assault Vest",
+					"ability": "Intimidate",
+					"moves": [["Sucker Punch"], ["Super Fang"], ["Pursuit"], ["Play Rough"]]
+				}
+			]
+		},
+		"linoone": {
+			"sets": [
+				{
+					"species": "Linoone",
+					"item": "Aguav Berry",
+					"ability": "Gluttony",
+					"moves": [["Belly Drum"], ["Extreme Speed"], ["Stomping Tantrum"], ["Throat Chop"]]
+				}
+			]
+		},
+		"beautifly": {
+			"sets": [
+				{
+					"species": "Beautifly",
+					"item": "Armor Plate",
+					"ability": "Serene Grace",
+					"moves": [["Quiver Dance"], ["Moonblast"], ["Air Slash"], ["Spore"]]
+				}
+			]
+		},
+		"dustox": {
+			"sets": [
+				{
+					"species": "Dustox",
+					"item": "Heavy-Duty Boots",
+					"ability": "Photoaxis",
+					"moves": [["Defog"], ["Roost"], ["Toxic"], ["Parabolic Charge"]]
+				},
+				{
+					"species": "Dustox",
+					"item": "Armor Plate",
+					"ability": "Photoaxis",
+					"moves": [["Quiver Dance"], ["Roost"], ["Parabolic Charge"], ["Energy Ball"]]
+				}
+			]
+		},
+		"ludicolo": {
+			"sets": [
+				{
+					"species": "Ludicolo",
+					"item": "Life Orb",
+					"ability": "Dancer",
+					"moves": [["Quiver Dance"], ["Scald"], ["Giga Drain"], ["Ice Beam"]]
+				},
+				{
+					"species": "Ludicolo",
+					"item": "Damp Rock",
+					"ability": "Swift Swim",
+					"moves": [["Rain Dance"], ["Hydro Pump"], ["Leaf Storm"], ["Ice Beam"]]
+				},
+				{
+					"species": "Ludicolo",
+					"item": "Assault Vest",
+					"ability": "Dancer",
+					"moves": [["Fake Out"], ["Scald"], ["Giga Drain"], ["Icy Wind"]]
+				}
+			]
+		},
+		"shiftry": {
+			"sets": [
+				{
+					"species": "Shiftry",
+					"item": "Scope Lens",
+					"ability": "Wind Rider",
+					"moves": [["Tailwind"], ["Leaf Blade"], ["Night Slash"], ["Rock Slide"]]
+				},
+				{
+					"species": "Shiftry",
+					"item": "Choice Band",
+					"ability": "Wind Rider",
+					"moves": [["Ivy Cudgel"], ["Knock Off"], ["Brick Break"], ["Rock Slide"]]
+				},
+				{
+					"species": "Shiftry",
+					"item": "Life Orb",
+					"ability": "Chlorophyll",
+					"moves": [["Swords Dance"], ["Knock Off"], ["Ivy Cudgel"], ["Trailblaze"]]
+				}
+			]
+		},
 		"vigoroth": {
 			"sets": [
 				{
@@ -3202,6 +3370,22 @@
 					"item": "Choice Specs",
 					"ability": "Scrappy",
 					"moves": [["Boomburst"], ["Focus Blast"], ["Ice Beam"], ["Flamethrower"]]
+				}
+			]
+		},
+		"hariyama": {
+			"sets": [
+				{
+					"species": "Hariyama",
+					"item": "Flame Orb",
+					"ability": "Guts",
+					"moves": [["Fake Out"], ["Drain Punch"], ["Knock Off"], ["Earthquake"]]
+				},
+				{
+					"species": "Hariyama",
+					"item": "Bubbled Dome",
+					"ability": "Thick Fat",
+					"moves": [["Knock Off"], ["Drain Punch"], ["Headlong Rush"], ["Stone Edge"]]
 				}
 			]
 		},
@@ -3314,6 +3498,142 @@
 					"item": "Manectricite",
 					"ability": "Ball Fetch",
 					"moves": [["Volt Switch"], ["Overheat"], ["Thunder"], ["Thunder Cage"]]
+				}
+			]
+		},
+		"plusle": {
+			"sets": [
+				{
+					"species": "Plusle",
+					"item": "Magnet",
+					"ability": "Transistor",
+					"moves": [["Volt Switch"], ["Grass Knot"], ["Thunder"], ["Nuzzle"]]
+				},
+				{
+					"species": "Plusle",
+					"item": "Choice Scarf",
+					"ability": "Transistor",
+					"moves": [["Knock Off"], ["Volt Switch"], ["Thunder"], ["Switcheroo"]]
+				},
+				{
+					"species": "Plusle",
+					"item": "Salac Berry",
+					"ability": "Transistor",
+					"moves": [["Nasty Plot"], ["Substitute"], ["Alluring Voice"], ["Thunderbolt"]]
+				}
+			]	
+		},
+		"minun": {
+			"sets": [
+				{
+					"species": "Minun",
+					"item": "Focus Sash",
+					"ability": "Galvanize",
+					"moves": [["Extreme Speed"], ["Knock Off"], ["Encore"], ["Nuzzle"]]
+				},
+				{
+					"species": "Minun",
+					"item": "Choice Band",
+					"ability": "Galvanize",
+					"moves": [["Extreme Speed"], ["Knock Off"], ["Double-Edge"], ["Volt Switch"]]
+				}
+			]
+		},
+		"volbeat": {
+			"sets": [
+				{
+					"species": "Volbeat",
+					"item": "Heavy-Duty Boots",
+					"ability": "Prankster",
+					"moves": [["Roost"], ["Thunder Wave"], ["U-Turn"], ["Parabolic Charge"]]
+				},
+				{
+					"species": "Volbeat",
+					"item": "Heavy-Duty Boots",
+					"ability": "Prankster",
+					"moves": [["Tail Glow"], ["Parabolic Charge"], ["Giga Drain"], ["Dazzling Gleam"]]
+				}
+			]
+		},
+		"illumise": {
+			"sets": [
+				{
+					"species": "Illumise",
+					"item": "Choice Band",
+					"ability": "Tinted Lens",
+					"moves": [["U-Turn"], ["First Impression"], ["Play Rough"], ["Trick"]]
+				},
+				{
+					"species": "Illumise",
+					"item": "Heavy-Duty Boots",
+					"ability": "Oblivious",
+					"moves": [["Encore"], ["Toxic"], ["Substitute"], ["Roost"]]
+				}
+			]
+		},
+		"lunatone": {
+			"sets": [
+				{
+					"species": "Lunatone",
+					"item": "Power Herb",
+					"ability": "Levitate",
+					"moves": [["Meteor Beam"], ["Lumina Crash"], ["Lunar Tides"], ["Surf"]]
+				},
+				{
+					"species": "Lunatone",
+					"item": "Leftovers",
+					"ability": "Levitate",
+					"moves": [["Cosmic Power"], ["Lunar Tides"], ["Moonlight"], ["Stored Power"]]
+				},
+				{
+					"species": "Lunatone",
+					"item": "Choice Scarf",
+					"ability": "Levitate",
+					"moves": [["Lunar Tides"], ["Lumina Crash"], ["Surf"], ["Photon Geyser"]]
+				}
+			]
+		},
+		"solrock": {
+			"sets": [
+				{
+					"species": "Solrock",
+					"item": "Heavy-Duty Boots",
+					"ability": "Levitate",
+					"moves": [["Stealth Rock"], ["Wish"], ["Stardust Trail"], ["Blazing Torque"]]
+				},
+				{
+					"species": "Solrock",
+					"item": "Leftovers",
+					"ability": "Levitate",
+					"moves": [["Swords Dance"], ["Stardust Trail"], ["Flare Blitz"], ["Morning Sun"]]
+				},
+				{
+					"species": "Solrock",
+					"item": "Choice Band",
+					"ability": "Levitate",
+					"moves": [["Flare Blitz"], ["Stardust Trail"], ["Earthquake"], ["Photon Geyser"]]
+				}
+			]
+		},
+		"claydol": {
+			"sets": [
+				{
+					"species": "Claydol",
+					"item": "Leftovers",
+					"ability": "Field Support",
+					"moves": [["Reflect"], ["Light Screen"], ["Extrasensory"], ["Scorching Sands"]]
+				},
+				{
+					"species": "Claydol",
+					"item": "Bubbled Dome",
+					"ability": "Levitate",
+					"moves": [["Rapid Spin"], ["Extrasensory"], ["Scorching Sands"], ["Shore Up"]]
+				},
+				{
+					"species": "Claydol",
+					"item": "Armor Plate",
+					"ability": "Levitate",
+					"moves": [["Cosmic Power"], ["Shore Up"], ["Body Press"], ["Stored Power"]]
 				}
 			]
 		}
