@@ -3481,6 +3481,31 @@
 				}
 			]
 		},
+		"delcatty": {
+			"sets": [
+				{
+					"species": "Delcatty",
+					"item": "Life Orb",
+					"level": 95,
+					"ability": "Versatility",
+					"moves": [["Play Rough"], ["Extreme Speed"], ["Flamethrower"], ["Morning Sun"]]
+				},
+				{
+					"species": "Delcatty",
+					"item": "Leftovers",
+					"level": 95,
+					"ability": "Versatility",
+					"moves": [["Calm Mind"], ["Hyper Voice"], ["Flamethrower"], ["Ice Beam"]]
+				},
+				{
+					"species": "Delcatty",
+					"item": "Leftovers",
+					"level": 95,
+					"ability": "Pixilate",
+					"moves": [["Return"], ["Wish"], ["Toxic"], ["Heal Beal"]]
+				}
+			]
+		},
 		"mawile": {
 			"sets": [
 				{
@@ -3663,6 +3688,124 @@
 				}
 			]
 		},
+		"roselia": {
+			"sets": [
+				{
+					"species": "Roselia",
+					"item": "Eviolite",
+					"level": 83,
+					"ability": "Technician",
+					"moves": [["Giga Drain"], ["Sludge Bomb"], ["Spikes"], ["Synthesis"]]
+				},
+				{
+					"species": "Roselia",
+					"item": "Eviolite",
+					"level": 83,
+					"ability": "Technician",
+					"moves": [["Leech Seed"], ["Sludge Bomb"], ["Synthesis"], ["Sleep Powder"]]
+				}
+			]
+		},
+		"swalot": {
+			"sets": [
+				{
+					"species": "Swalot",
+					"item": "Black Sludge",
+					"level": 90,
+					"ability": "Power of Alchemy",
+					"moves": [["Gunk Shot"], ["Earthquake"], ["Ice Punch"], ["Swords Dance"]]
+				},
+				{
+					"species": "Swalot",
+					"item": "Black Sludge",
+					"level": 90,
+					"ability": "Liquid Ooze",
+					"moves": [["Toxic Spikes"], ["Knock Off"], ["Gunk Shot"], ["Earthquake"]]
+				}
+			]
+		},
+		"torkoal": {
+			"sets": [
+				{
+					"species": "Torkoal",
+					"item": "Chesto Berry",
+					"ability": "Shell Armor",
+					"moves": [["Body Press"], ["Lava Plume"], ["Iron Defense"], ["Rest"]]
+				},
+				{
+					"species": "Torkoal",
+					"item": "Heavy-Duty Boots",
+					"ability": "Drought",
+					"moves": [["Lava Plume"], ["Solar Beam"], ["Rapid Spin"], ["Stealth Rock"]]
+				}
+			]
+		},
+		"spinda": {
+			"sets": [
+				{
+					"species": "Spinda",
+					"item": "Leftovers",
+					"level": 95,
+					"ability": "Contrary",
+					"moves": [["Superpower"], ["Return"], ["Zen Headbutt"], ["Sucker Punch"]]
+				},
+				{
+					"species": "Spinda",
+					"item": "Choice Specs",
+					"level": 95,
+					"ability": "Contrary",
+					"moves": [["Hyper Voice"], ["Psycho Boost"], ["Trick"], ["Superpower"]]
+				},
+				{
+					"species": "Spinda",
+					"item": "Leftovers",
+					"level": 95,
+					"ability": "Own Tempo",
+					"moves": [["Rapid Spin"], ["Wish"], ["Toxic"], ["Close Combat"]]
+				}
+			]
+		},
+		"zangoose": {
+			"sets": [
+				{
+					"species": "Zangoose",
+					"item": "Toxic Orb",
+					"ability": "Toxic Boost",
+					"moves": [["Facade"], ["Close Combat"], ["Knock Off"], ["Swords Dance"]]
+				},
+				{
+					"species": "Zangoose",
+					"item": "Choice Band",
+					"ability": "Tough Claws",
+					"moves": [["Double-Edge"], ["Close Combat"], ["Knock Off"], ["Switcheroo"]]
+				}
+			]
+		},
+		"seviper": {
+			"sets": [
+				{
+					"species": "Seviper",
+					"item": "Life Orb",
+					"level": 92,
+					"ability": "Cold Blooded",
+					"moves": [["Swords Dance"], ["Gunk Shot"], ["Sucker Punch"], ["Earthquake"]]
+				},
+				{
+					"species": "Seviper",
+					"item": "Black Sludge",
+					"level": 92,
+					"ability": "Cold Blooded",
+					"moves": [["Coil"], ["Earthquake"], ["Knock Off"], ["Gunk Shot"]]
+				},
+				{
+					"species": "Seviper",
+					"item": "Choice Band",
+					"level": 92,
+					"ability": "Cold Blooded",
+					"moves": [["Switcheroo"], ["Gunk Shot"], ["Knock Off"], ["Earthquake"]]
+				}
+			]
+		},
 		"lunatone": {
 			"sets": [
 				{
@@ -3707,6 +3850,32 @@
 				}
 			]
 		},
+		"whiscash": {
+			"sets": [
+				{
+					"species": "Whiscash",
+					"item": "Power Herb",
+					"ability": "Water Bubble",
+					"moves": [["Wave Crash"], ["Earthquake"], ["Bounce"], ["Dragon Dance"]]
+				},
+				{
+					"species": "Whiscash",
+					"item": "Leftovers",
+					"ability": "Anticipation",
+					"moves": [["Scald"], ["Earthquake"], ["Stealth Rock"], ["Spikes"]]
+				}
+			]
+		},
+		"crawdaunt": {
+			"sets": [
+				{
+					"species": "Crawdaunt",
+					"item": "Choice Band",
+					"ability": "Adaptability",
+					"moves": [["Liquidation"], ["Knock Off"], ["Close Combat"], ["Aqua Jet"]]
+				}
+			]
+		},
 		"claydol": {
 			"sets": [
 				{
@@ -3726,6 +3895,252 @@
 					"item": "Armor Plate",
 					"ability": "Levitate",
 					"moves": [["Cosmic Power"], ["Shore Up"], ["Body Press"], ["Stored Power"]]
+				}
+			]
+		},
+		"cradily": {
+			"sets": [
+				{
+					"species": "Cradily",
+					"item": "Leftovers",
+					"ability": "Suction Cups",
+					"moves": [["Sappy Seed"], ["Amnesia"], ["Strength Sap"], ["Rock Slide"]]
+				},
+				{
+					"species": "Cradily",
+					"item": "Bubbled Dome",
+					"ability": "Water Absorb",
+					"moves": [["Snap Trap"], ["Sappy Seed"], ["Stone Edge"], ["Earthquake"]]
+				},
+				{
+					"species": "Cradily",
+					"item": "Loaded Dice",
+					"ability": "Suction Cups",
+					"moves": [["Stealth Rock"], ["Bullet Seed"], ["Rock Blast"], ["Swords Dance"]]
+				}
+			]
+		},
+		"armaldo": {
+			"sets": [
+				{
+					"species": "Armaldo",
+					"item": "Heavy-Duty Boots",
+					"ability": "Battle Armor",
+					"moves": [["Rapid Spin"], ["Leech Life"], ["Stealth Rock"], ["Knock Off"]]
+				},
+				{
+					"species": "Armaldo",
+					"item": "Choice Band",
+					"ability": "Battle Armor",
+					"moves": [["First Impression"], ["Mighty Cleave"], ["Flip Turn"], ["Earthquake"]]
+				},
+				{
+					"species": "Armaldo",
+					"item": "Pokepen",
+					"ability": "Swift Swim",
+					"moves": [["Rain Dance"], ["Aqua Tail"], ["Mighty Cleave"], ["Leech Life"]]
+				}
+			]
+		},
+		"castform": {
+			"sets": [
+				{
+					"species": "Castform",
+					"item": "Heat Rock",
+					"level": 89,
+					"ability": "Forecast",
+					"moves": [["Weather Ball"], ["Ice Beam"], ["Toxic"], ["Solar Beam"]]
+				},
+				{
+					"species": "Castform",
+					"item": "Icy Rock",
+					"level": 89,
+					"ability": "Forecast",
+					"moves": [["Blizzard"], ["Fire Blast"], ["Thunder Wave"], ["Scald"]]
+				},
+				{
+					"species": "Castform",
+					"item": "Damp Rock",
+					"level": 89,
+					"ability": "Forecast",
+					"moves": [["Scald"], ["Hurricane"], ["Ice Beam"], ["Defog"]]
+				}
+			]
+		},
+		"kecleon": {
+			"sets": [
+				{
+					"species": "Kecleon",
+					"item": "Leftovers",
+					"ability": "Color Change",
+					"moves": [["Knock Off"], ["Stealth Rock"], ["Recover"], ["Toxic"]]
+				}
+			]
+		},
+		"banette": {
+			"sets": [
+				{
+					"species": "Banette",
+					"item": "Colbur Berry",
+					"ability": "Prankster",
+					"moves": [["Will-o-Wisp"], ["Poltergeist"], ["Pain Split"], ["Knock Off"]]
+				},
+				{
+					"species": "Banette",
+					"item": "Leftovers",
+					"ability": "Cursed Body",
+					"moves": [["Infestation"], ["Thunder Wave"], ["Knock Off"], ["Shadow Sneak"]]
+				},
+				{
+					"species": "Banette",
+					"item": "Life Orb",
+					"ability": "Prankster",
+					"moves": [["Swords Dance"], ["Trailblaze"], ["Poltergeist"], ["Pounce"]]
+				},
+				{
+					"species": "Banette",
+					"item": "Banettite",
+					"moves": [["Cotton Guard"], ["Pain Split"], ["Poltergeist"], ["Skitter Smack"]]
+				},
+				{
+					"species": "Banette",
+					"item": "Banettite",
+					"moves": [["Encore"], ["Swords Dance"], ["Poltergeist"], ["Body Slam"]]
+				},
+				{
+					"species": "Banette",
+					"item": "Banettite",
+					"moves": [["Swords Dance"], ["Trailblaze"], ["Poltergeist"], ["Body Slam"]]
+				}
+			]
+		},
+		"dusclops": {
+			"sets": [
+				{
+					"species": "Dusclops",
+					"item": "Eviolite",
+					"ability": "Pressure",
+					"moves": [["Hex"], ["Will-o-Wisp"], ["Haze"], ["Pain Split"]]
+				}
+			]
+		},
+		"chimecho": {
+			"sets": [
+				{
+					"species": "Chimecho",
+					"item": "Choice Scarf",
+					"ability": "Soul-Heart",
+					"moves": [["Shadow Ball"], ["Psychic"], ["Boomburst"], ["Trick"]]
+				}
+			]
+		},
+		"walrein": {
+			"sets": [
+				{
+					"species": "Walrein",
+					"item": "Heavy-Duty Boots",
+					"ability": "Fur Coat",
+					"moves": [["Scald"], ["Freeze-Dry"], ["Slack Off"], ["Flip Turn"]]
+				}
+			]
+		},
+		"huntail": {
+			"sets": [
+				{
+					"species": "Huntail",
+					"item": "White Herb",
+					"ability": "Intimidate",
+					"moves": [["Aqua Tail"], ["Crunch"], ["Sucker Punch"], ["Shell Smash"]]
+				}
+			]
+		},
+		"relicanth": {
+			"sets": [
+				{
+					"species": "Relicanth",
+					"item": "Choice Band",
+					"level": 87,
+					"ability": "Rock Head",
+					"moves": [["Head Smash"], ["Liquidation"], ["Earthquake"], ["Flip Turn"]]
+				},
+				{
+					"species": "Relicanth",
+					"item": "Leftovers",
+					"level": 87,
+					"ability": "Rock Head",
+					"moves": [["Head Smash"], ["Flip Turn"], ["Stealth Rock"], ["Earthquake"]]
+				}
+			]
+		},
+		"luvdisc": {
+			"sets": [
+				{
+					"species": "Luvdisc",
+					"item": "Choice Scarf",
+					"ability": "Soul-Heart",
+					"moves": [["Fleur Cannon"], ["Flip Turn"], ["Hydro Pump"], ["Ice Beam"]]
+				}
+			]
+		},
+		"salamence": {
+			"sets": [
+				{
+					"species": "Salamence",
+					"item": "Heavy-Duty Boots",
+					"ability": "Intimidate",
+					"moves": [["Roost"], ["Aeroblast"], ["Draco Meteor"], ["Fire Blast"]]
+				},
+				{
+					"species": "Salamence",
+					"item": "Lum Berry",
+					"ability": "Moxie",
+					"moves": [["Dragon Dance"], ["Dual Wingbeat"], ["Earthquake"], ["Outrage"]]
+				}
+			]
+		},
+		"metagross": {
+			"sets": [
+				{
+					"species": "Metagross",
+					"item": "Assault Vest",
+					"ability": "Full Metal Body",
+					"moves": [["Knock Off"], ["Psychic Fangs"], ["Meteor Mash"], ["Earthquake"]]
+				},
+				{
+					"species": "Metagross",
+					"item": "Weakness Policy",
+					"ability": "Full Metal Body",
+					"moves": [["Rock Polish"], ["Earthquake"], ["Psychic Fangs"], ["Thunder Punch"]]
+				},
+				{
+					"species": "Metagross",
+					"item": "Custap Berry",
+					"ability": "Full Metal Body",
+					"moves": [["Stealth Rock"], ["Explosion"], ["Endure"], ["Knock Off"]]
+				},
+				{
+					"species": "Metagross",
+					"item": "Metagrossite",
+					"ability": "Full Metal Body",
+					"moves": [["Trailblaze"], ["Heavy Slam"], ["Psychic Fangs"], ["Earthquake"]]
+				}
+			]
+		},
+		"regirock": {
+			"sets": [
+				{
+					"species": "Regirock",
+					"item": "Leftovers",
+					"level": 84,
+					"ability": "Granite Storm",
+					"moves": [["Stealth Rock"], ["Stone Edge"], ["Body Press"], ["Toxic"]]
+				},
+				{
+					"species": "Regirock",
+					"item": "Chesto Berry",
+					"level": 84,
+					"ability": "Granite Storm",
+					"moves": [["Rest"], ["Iron Defense"], ["Body Press"], ["Stone Edge"]]
 				}
 			]
 		}
