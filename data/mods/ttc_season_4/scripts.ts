@@ -49,9 +49,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 
 		//#region Pokemon Changes
-		new ModifyPokemon('Luxray', this)
-			.types
-				.setType('Cosmic', 'Dark');
+		
 		//#region Gen 1
 		// FE
 		new ModifyPokemon('Blastoise', this)
