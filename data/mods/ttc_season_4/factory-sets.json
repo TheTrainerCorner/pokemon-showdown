@@ -3294,6 +3294,98 @@
 				}
 			]
 		},
+		"swellow": {
+			"sets": [
+				{
+					"species": "Swellow",
+					"item": "Heavy-Duty Boots",
+					"ability": "Aerilate",
+					"moves": [["Boomburst"], ["Heat Wave"], ["U-Turn"], ["Roost"]]
+				},
+				{
+					"species": "Swellow",
+					"item": "Flame Orb",
+					"ability": "Guts",
+					"moves": [["Extreme Speed"], ["Facade"], ["Brave Bird"], ["U-Turn"]]
+				}
+			]
+		},
+		"pelipper": {
+			"sets": [
+				{
+					"species": "Pelipper",
+					"item": "Heavy-Duty Boots",
+					"ability": "Drizzle",
+					"moves": [["Scald"], ["Roost"], ["Defog"], ["U-Turn"]]
+				},
+				{
+					"species": "Pelipper",
+					"item": "Choice Scarf",
+					"ability": "Drizzle",
+					"moves": [["Weather Ball"], ["Hurricane"], ["Knock Off"], ["Flip Turn"]]
+				}
+			]
+		},
+		"gardevoir": {
+			"sets": [
+				{
+					"species": "Gardevoir",
+					"item": "Choice Specs",
+					"ability": "Trace",
+					"moves": [["Moonblast"], ["Vacuum Wave"], ["Aura Sphere"], ["Psyshock"]]
+				},
+				{
+					"species": "Gardevoir",
+					"item": "Heavy-Duty Boots",
+					"ability": "Aura Break",
+					"moves": [["Future Sight"], ["Toxic"], ["Wish"], ["Teleport"]]
+				},
+				{
+					"species": "Gardevoir",
+					"item": "Gardevoirite",
+					"ability": "Trace",
+					"moves": [["Vacuum Wave"], ["Mystical Fire"], ["Draining Kiss"], ["Substitute"]]
+				},
+				{
+					"species": "Gardevoir",
+					"item": "Gardevoirite",
+					"ability": "Aura Break",
+					"moves": [["Moonblast"], ["Stored Power"], ["Calm Mind"], ["Recover"]]
+				}
+			]
+		},
+		"masquerain": {
+			"sets": [
+				{
+					"species": "Masquerain",
+					"item": "Armor Plate",
+					"ability": "Intimidate",
+					"moves": [["Scald"], ["Giga Drain"], ["Bug Buzz"], ["Quvier Dance"]]
+				},
+				{
+					"species": "Masquerain",
+					"item": "Rose Incense",
+					"ability": "Unnerve",
+					"moves": [["Scald"], ["Roost"], ["U-Turn"], ["Sticky Web"]]
+				}
+			]
+		},
+		"breloom": {
+			"sets": [
+				{
+					"species": "Breloom",
+					"item": "Toxic Orb",
+					"ability": "Poison Heal",
+					"moves": [["Drain Punch"], ["Substitute"], ["Leech Seed"], ["Spore"]]
+				},
+				{
+					"species": "Breloom",
+					"item": "Life Orb",
+					"ability": "Technician",
+					"moves": [["Close Combat"], ["Stone Edge"], ["Power-Up Punch"], ["Trailblaze"]]
+				}
+			]
+		},
 		"vigoroth": {
 			"sets": [
 				{
