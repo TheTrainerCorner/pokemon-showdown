@@ -3607,6 +3607,27 @@
 				}
 			]
 		},
+		"sableye": {
+			"sets": [
+				{
+					"specie": "Sableye",
+					"item": "Leftovers",
+					"ability": "Prankster",
+					"moves": [["Knock Off"], ["Encore"], ["Recover"], ["Will-o-Wisp"]]
+				},
+				{
+					"species": "Sableye",
+					"item": "Light Clay",
+					"ability": "Prankster",
+					"moves": [["Knock Off"], ["Light Screen"], ["Reflect"], ["Recover"]]
+				},
+				{
+					"species": "Sableye",
+					"item": "Sablenite",
+					"moves": [["Knock Off"], ["Night Shade"], ["Thunder Wave"], ["Recover"]]
+				}
+			]
+		},
 		"mawile": {
 			"sets": [
 				{
