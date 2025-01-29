@@ -2510,6 +2510,22 @@
 				}
 			]
 		},
+		"umbreon": {
+			"sets": [
+				{
+					"species": "Umbreon",
+					"item": "Leftovers",
+					"ability": "Dark Aura",
+					"moves": [["Foul Play"], ["Substitute"], ["Wish"], ["Knock Off"]]
+				},
+				{
+					"species": "Umbreon",
+					"item": "Armor Plate",
+					"ability": "Synchronize",
+					"moves": [["Calm Mind"], ["Moonlight"], ["Stored Power"], ["Snarl"]]
+				}
+			]
+		},
 		"slowking": {
 			"sets": [
 				{
@@ -2580,6 +2596,22 @@
 					"species": "Girafarig",
 					"item": "Eviolite",
 					"ability": "Sap Sipper",
+					"moves": [["Psychic Fangs"], ["Jump Kick"], ["Wish"], ["U-Turn"]]
+				}
+			]
+		},
+		"forretress": {
+			"sets": [
+				{
+					"species": "Forretress",
+					"item": "Occa Berry",
+					"ability": "Overcoat",
+					"moves": [["Rapid Spin"], ["Spikes"], ["Volt Switch"], ["Heavy Slam"]]
+				},
+				{
+					"species": "Forretress",
+					"item": "Armor Plate",
+					"ability": "Overcoat",
 					"moves": [["Psychic Fangs"], ["Jump Kick"], ["Wish"], ["U-Turn"]]
 				}
 			]
@@ -2674,6 +2706,22 @@
 				}
 			]
 		},
+		"qwilfish": {
+			"sets": [
+				{
+					"species": "Qwilfish",
+					"item": "Eviolite",
+					"ability": "Toxic Debris",
+					"moves": [["Flip Turn"], ["Barb Barrage"], ["Spiky Shield"], ["Haze"]]
+				},
+				{
+					"species": "Qwilfish",
+					"item": "Eviolite",
+					"ability": "Intimidate",
+					"move": [["Swords Dance"], ["Aqua Jet"], ["Barb Barrage"], ["Scale Shot"]]
+				}
+			]
+		},
 		"qwilfishhisui": {
 			"sets": [
 				{
@@ -2728,7 +2776,18 @@
 		},
 		"heracross": {
 			"sets": [
-
+				{
+					"species": "Heracross",
+					"item": "Choice Scarf",
+					"ability": "Moxie",
+					"moves": [["Megahorn"], ["Close Combat"], ["Stone Edge"], ["Knock Off"]]
+				},
+				{
+					"species": "Heracross",
+					"item": "Pokepen",
+					"ability": "Sap Sipper",
+					"moves": [["Bulk Up"], ["First Impression"], ["Drain Punch"], ["Trailblaze"]]
+				}
 				{
 					"species": "Heracross",
 					"item": "Heracronite",
@@ -2841,6 +2900,22 @@
 				}
 			]
 		},
+		"corsolagalar": {
+			"sets": [
+				{
+					"species": "Corsola-Galar",
+					"item": "Eviolite",
+					"ability": "Regenerator",
+					"moves": [["Toxic"], ["Strength Sap"], ["Stealth Rock"], ["Hex"]]
+				},
+				{
+					"species": "Corsola-Galar",
+					"item": "Eviolite",
+					"ability": "Regenerator",
+					"moves": [["Night Shade"], ["Head Smash"], ["Strength Sap"], ["Teleport"]]
+				}
+			]
+		},
 		"octillery": {
 			"sets": [
 				{
@@ -2906,6 +2981,32 @@
 					"level": 80,
 					"ability": "Intimidate",
 					"moves": [["Stealth Rock"], ["Roost"], ["Body Press"], ["Brave Bird"]]
+				}
+			]
+		},
+		"houndoom": {
+			"sets": [
+				{
+					"species": "Houndoom",
+					"item": "Life Orb",
+					"ability": "Ball Fetch",
+					"moves": [["Fiery Wrath"], ["Scorching Sands"], ["Sludge Bomb"], ["Flamethrower"]]
+				},
+				{
+					"species": "Houndoom",
+					"item": "Life Orb",
+					"ability": "Ball Fetch",
+					"moves": [["Nasty Plot"], ["Flamethrower"], ["Fiery Wrath"], ["Trailblaze"]]
+				},
+				{
+					"species": "Houndoom",
+					"item": "Houndoominite",
+					"moves": [["Fiery Wrath"], ["Flamethrower"], ["Scorching Sands"], ["Sludge Bomb"]]
+				},
+				{
+					"species": "Houndoom",
+					"item": "Houndoominite",
+					"moves": [["Nasty Plot"], ["Flamethrower"], ["Fiery Wrath"], ["Trailblaze"]]
 				}
 			]
 		},
