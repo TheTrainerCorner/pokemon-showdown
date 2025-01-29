@@ -821,7 +821,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		new ModifyMove('Cosmic Power', this)
 			.setType('Cosmic')
-			.setPowerPoint(8);
+			.setPowerPoint(5);
 		new ModifyMove('Gravity', this)
 			.setType('Cosmic');
 		new ModifyMove('Lunar Blessing', this)
