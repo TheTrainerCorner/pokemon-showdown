@@ -4076,6 +4076,12 @@
 			"sets": [
 				{
 					"species": "Luvdisc",
+					"item": "Choice Specs",
+					"ability": "Swift Swim",
+					"moves": [["Fleur Cannon"], ["Snipe Shot"], ["Flip Turn"], ["Hydro Pump"]]
+				},
+				{
+					"species": "Luvdisc",
 					"item": "Choice Scarf",
 					"ability": "Soul-Heart",
 					"moves": [["Fleur Cannon"], ["Flip Turn"], ["Hydro Pump"], ["Ice Beam"]]
@@ -4104,7 +4110,7 @@
 					"species": "Metagross",
 					"item": "Assault Vest",
 					"ability": "Full Metal Body",
-					"moves": [["Knock Off"], ["Psychic Fangs"], ["Meteor Mash"], ["Earthquake"]]
+					"moves": [["Knock Off"], ["Psychic Fangs"], ["Bullet Punch"], ["Earthquake"]]
 				},
 				{
 					"species": "Metagross",
