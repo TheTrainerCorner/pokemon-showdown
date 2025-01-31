@@ -38,6 +38,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		slotCondition: undefined,
 		condition: undefined,
 		target: 'all',
+		desc: "Sets up Cosmic Terrain",
+		shortDesc: "Sets up Cosmic Terrain",
 	},
 	eclipticpunishment: {
 		inherit: true,
@@ -113,6 +115,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		target: "all",
 		type: "Cosmic",
 		contestType: "Beatiful",
+		desc: "For 5 turns, the terrain becomes Cosmic Terrain. During the effect, the power of Cosmic-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon become weightless from its effect. Fails if the current terrain is Cosmic Terrain.",
+		shortDesc: "5 turns. Grounded: +Cosmic power, weighless"
 	},
 	solarflare: {
 		num: -4002,
