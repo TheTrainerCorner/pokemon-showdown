@@ -3846,6 +3846,62 @@
 				}
 			]
 		},
+		"sharpedo": {
+			"sets": [
+				{
+					"species": "Sharpedo",
+					"item": "Custap Berry",
+					"ability": "Rough Skin",
+					"moves": [["Hydro Pump"], ["Endure"], ["Dark Pulse"], ["Ice Beam"]]
+				},
+				{
+					"species": "Sharpedo",
+					"item": "Choice Scarf",
+					"ability": "Reckless",
+					"moves": [["Wave Crash"], ["Flip Turn"], ["Crunch"], ["Psychic Fangs"]]
+				},
+				{
+					"species": "Sharpedo",
+					"item": "Sharpedonite",
+					"ability": "Speed Boost",
+					"moves": [["Wave Crash"], ["Crunch"], ["Protect"], ["Ice Fang"]]
+				},
+				{
+					"species": "Sharpedo",
+					"item": "Sharpedonite",
+					"ability": "Speed Boost",
+					"moves": [["Liquidation"], ["Crunch"], ["Protect"], ["Poison Jab"]]
+				}
+			]
+		},
+		"camerupt": {
+			"sets": [
+				{
+					"species": "Camerupt",
+					"item": "Leftovers",
+					"ability": "Solid Rock",
+					"moves": [["Stealth Rock"], ["Lava Plume"], ["Eruption"], ["Earth Power"]]
+				},
+				{
+					"species": "Camerupt",
+					"item": "Choice Specs",
+					"ability": "Magma Armor",
+					"moves": [["Stealth Rock"], ["Magma Storm"], ["Toxic"], ["Slack Off"]]
+				},
+				{
+					"species": "Camerupt",
+					"item": "Cameruptite",
+					"ability": "Solid Rock",
+					"moves": [["Earth Power"], ["Eruption"], ["Steam Eruption"], ["Fire Blast"]]
+				},
+				{
+					"species": "Camerupt",
+					"item": "Cameruptite",
+					"ability": "Solid Rock",
+					"moves": [["Stealth Rock"], ["Magma Storm"], ["Toxic"], ["Slack Off"]]
+				}
+			]
+		},
 		"torkoal": {
 			"sets": [
 				{
@@ -3859,6 +3915,28 @@
 					"item": "Heavy-Duty Boots",
 					"ability": "Drought",
 					"moves": [["Lava Plume"], ["Solar Beam"], ["Rapid Spin"], ["Stealth Rock"]]
+				}
+			]
+		},
+		"grumpig": {
+			"sets": [
+				{
+					"species": "Grumpig",
+					"item": "Heavy-Duty Boots",
+					"ability": "Thick Fat",
+					"moves": [["Nasty Plot"], ["Psyshock"], ["Power Gem"], ["Earth Power"]]
+				},
+				{
+					"species": "Grumpig",
+					"item": "Leftovers",
+					"ability": "Limber",
+					"moves": [["Psychic Noise"], ["Dazzling Gleam"], ["Thunder Wave"], ["Slack Off"]]
+				},
+				{
+					"species": "Grumpig",
+					"item": "Sitrus Berry",
+					"ability": "Cud Chew",
+					"moves": [["Calm Mind"], ["Psychic"], ["Focus Blast"], ["Shadow Ball"]]
 				}
 			]
 		},
@@ -3884,6 +3962,72 @@
 					"level": 95,
 					"ability": "Own Tempo",
 					"moves": [["Rapid Spin"], ["Wish"], ["Toxic"], ["Close Combat"]]
+				}
+			]
+		},
+		"flygon": {
+			"sets": [
+				{
+					"species": "Flygon",
+					"item": "Choice Scarf",
+					"ability": "Tinted Lens",
+					"moves": [["Boomburst"], ["Draco Meteor"], ["Bug Buzz"], ["U-Turn"]]
+				},
+				{
+					"species": "Flygon",
+					"item": "Choice Band",
+					"ability": "Tinted Lens",
+					"moves": [["First Impression"], ["Earthquake"], ["Dragon Claw"], ["U-Turn"]]
+				},
+				{
+					"species": "Flygon",
+					"item": "Loaded Dice",
+					"ability": "Levitate",
+					"moves": [["Dragon Dance"], ["Earthquake"], ["Fire Punch"], ["Scale Shot"]]
+				}
+			]
+		},
+		"cacturne": {
+			"sets": [
+				{
+					"species": "Cacturne",
+					"item": "Heavy-Duty Boots",
+					"ability": "Water Absorb",
+					"moves": [["Leaf Storm"], ["Sucker Punch"], ["Dark Pulse"], ["Spikes"]]
+				},
+				{
+					"species": "Cacturne",
+					"item": "Life Orb",
+					"ability": "Water Absorb",
+					"moves": [["Swords Dance"], ["Drain Punch"], ["Cut"], ["Sucker Punch"]]
+				}
+			]
+		},
+		"altaria": {
+			"sets": [
+				{
+					"species": "Altaria",
+					"item": "Rocky Helmet",
+					"ability": "Fluffy",
+					"moves": [["Hurricane"], ["Alluring Voice"], ["Roost"], ["Will-o-Wisp"]]
+				},
+				{
+					"species": "Altaria",
+					"item": "Heavy-Duty Boots",
+					"ability": "Natural Cure",
+					"moves": [["Dazzling Gleam"], ["Defog"], ["Roost"], ["Heal Bell"]]
+				},
+				{
+					"species": "Altaria",
+					"item": "Altarianite",
+					"ability": "Fluffy",
+					"moves": [["Hyper Voice"], ["Draco Meteor"], ["Flamethrower"], ["Roost"]]
+				},
+				{
+					"species": "Altaria",
+					"item": "Altarianite",
+					"ability": "Natural Cure",
+					"moves": [["Hyper Voice"], ["Heal Bell"], ["Roost"], ["Will-o-Wisp"]]
 				}
 			]
 		},
@@ -4064,6 +4208,22 @@
 				}
 			]
 		},
+		"milotic": {
+			"sets": [
+				{
+					"species": "Milotic",
+					"item": "Flame Orb",
+					"ability": "Marvel Scale",
+					"moves": [["Bouncy Bubble"], ["Mirror Coat"], ["Recover"], ["Haze"]]
+				},
+				{
+					"species": "Milotic",
+					"item": "Heavy-Duty Boots",
+					"ability": "Competitive",
+					"moves": [["Scald"], ["Alluring Voice"], ["Ice Beam"], ["Recover"]]
+				}
+			]
+		},
 		"castform": {
 			"sets": [
 				{
@@ -4146,6 +4306,22 @@
 				}
 			]
 		},
+		"tropius": {
+			"sets": [
+				{
+					"species": "Tropius",
+					"item": "Sitrus Berry",
+					"ability": "Harvest",
+					"moves": [["Dragon Dance"], ["Dragon Hammer"], ["Leaf Blade"], ["Earthquake"]]
+				},
+				{
+					"species": "Tropius",
+					"item": "Leftovers",
+					"ability": "Chlorophyll",
+					"moves": [["Leech Seed"], ["Defog"], ["Solar Blade"], ["Dragon Tail"]]
+				}
+			]
+		},
 		"chimecho": {
 			"sets": [
 				{
@@ -4153,6 +4329,68 @@
 					"item": "Choice Scarf",
 					"ability": "Soul-Heart",
 					"moves": [["Shadow Ball"], ["Psychic"], ["Boomburst"], ["Trick"]]
+				}
+			]
+		},
+		"absol": {
+			"sets": [
+				{
+					"species": "Absol",
+					"item": "Focus Sash",
+					"ability": "Super Luck",
+					"moves": [["Focus Energy"], ["Night Slash"], ["Psycho Cut"], ["Sucker Punch"]]
+				},
+				{
+					"species": "Absol",
+					"item": "Choice Band",
+					"ability": "Justified",
+					"moves": [["Close Combat"], ["Knock Off"], ["Megahorn"], ["Play Rough"]]
+				},
+				{
+					"species": "Absol",
+					"item": "Life Orb",
+					"ability": "Justified",
+					"moves": [["Swords Dance"], ["Play Rough"], ["Pursuit"], ["Zen Headbutt"]]
+				},
+				{
+					"species": "Absol",
+					"item": "Absolite",
+					"ability": "Justified",
+					"moves": [["Knock Off"], ["Pursuit"], ["Fire Blast"], ["Play Rough"]]
+				},
+				{
+					"species": "Absol",
+					"item": "Absolite",
+					"ability": "Justified",
+					"moves": [["Swords Dance"], ["Sucker Punch"], ["Close Combat"], ["Play Rough"]]
+				}
+			]
+		},
+		"glalie": {
+			"sets": [
+				{
+					"species": "Glalie",
+					"item": "Never Melt Ice",
+					"ability": "Refrigerate",
+					"moves": [["Fake Out"], ["Extreme Speed"], ["Explosion"], ["Earthquake"]]
+				},
+				{
+					"species": "Glalie",
+					"item": "Choice Band",
+					"ability": "Refrigerate",
+					"moves": [["Extreme Speed"], ["Earthquake"], ["Meteor Mash"], ["Switcheroo"]]
+				},
+				{
+					"species": "Glalie",
+					"item": "Glailite",
+					"ability": "Refrigerate",
+					"moves": [["Fake Out"], ["Extreme Speed"], ["Iron Head"], ["Earthquake"]]
+				},
+				{
+					"species": "Glalie",
+					"item": "Glailite",
+					"ability": "Refrigerate",
+					"moves": [["Spikes"], ["Extreme Speed"], ["Fake Out"], ["Explosion"]]
 				}
 			]
 		},
@@ -4173,6 +4411,22 @@
 					"item": "White Herb",
 					"ability": "Intimidate",
 					"moves": [["Aqua Tail"], ["Crunch"], ["Sucker Punch"], ["Shell Smash"]]
+				}
+			]
+		},
+		"gorebyss": {
+			"sets": [
+				{
+					"species": "Gorebyss",
+					"item": "Heavy-Duty Boots",
+					"ability": "Regenerator",
+					"moves": [["Dazzling Gleam"], ["Scald"], ["Flip Turn"], ["Toxic"]]
+				},
+				{
+					"species": "Gorebyss",
+					"item": "White Herb",
+					"ability": "Dazzling",
+					"moves": [["Shell Smash"], ["Dazzling Gleam"], ["Hydro Pump"], ["Moonblast"]]
 				}
 			]
 		},
@@ -4269,6 +4523,166 @@
 					"level": 84,
 					"ability": "Granite Storm",
 					"moves": [["Rest"], ["Iron Defense"], ["Body Press"], ["Stone Edge"]]
+				}
+			]
+		},
+		"regice": {
+			"sets": [
+				{
+					"species": "Regice",
+					"item": "Heavy-Duty Boots",
+					"ability": "Absolute Zero",
+					"moves": [["Charge Beam"], ["Cold Snap"], ["Flash Cannon"], ["Thunderbolt"]]
+				},
+				{
+					"species": "Regice",
+					"item": "Choice Specs",
+					"ability": "Absolute Zero",
+					"moves": [["Blizzard"], ["Thunderbolt"], ["Freeze-Dry"], ["Focus Blast"]]
+				}
+			]
+		},
+		"registeel": {
+			"sets": [
+				{
+					"species": "Registeel",
+					"item": "Rose Incense",
+					"ability": "Iron Technician",
+					"moves": [["Stealth Rock"], ["Double Iron Bash"], ["Bulldoze"], ["Thunder Wave"]]
+				},
+				{
+					"species": "Registeel",
+					"item": "Chesto Berry",
+					"ability": "Iron Technician",
+					"moves": [["Double Iron Bash"], ["Body Press"], ["Rest"], ["Curse"]]
+				}
+			]
+		},
+		"latias": {
+			"sets": [
+				{
+					"species": "Latias",
+					"item": "Leftovers",
+					"ability": "Levitate",
+					"moves": [["Calm Mind"], ["Agility"], ["Aura Sphere"], ["Stored Power"]]
+				},
+				{
+					"species": "Latias",
+					"item": "Choice Scarf",
+					"ability": "Levitate",
+					"moves": [["Draco Meteor"], ["Psyshock"], ["Mystical Fire"], ["Trick"]]
+				},
+				{
+					"species": "Latias",
+					"item": "Heavy-Duty Boots",
+					"ability": "Levitate",
+					"moves": [["Mist Ball"], ["Thunderbolt"], ["Draco Meteor"], ["Recover"]]
+				},
+				{
+					"species": "Latias",
+					"item": "Latiasite",
+					"ability": "Levitate",
+					"moves": [["Calm Mind"], ["Thunderbolt"], ["Stored Power"], ["Recover"]]
+				},
+				{
+					"species": "Latias",
+					"item": "Latiasite",
+					"ability": "Levitate",
+					"moves": [["Psyshock"], ["Aura Sphere"], ["Thunder Wave"], ["Roost"]]
+				}
+			]
+		},
+		"latios": {
+			"sets": [
+				{
+					"species": "Latios",
+					"item": "Choice Scarf",
+					"ability": "Levitate",
+					"moves": [["Draco Meteor"], ["Luster Purge"], ["Aura Sphere"], ["Trick"]]
+				},
+				{
+					"species": "Latios",
+					"item": "Choice Specs",
+					"ability": "Levitate",
+					"moves": [["Draco Meteor"], ["Psyshock"], ["Thunderbolt"], ["Flip Turn"]]
+				},
+				{
+					"species": "Latios",
+					"item": "Leftovers",
+					"ability": "Levitate",
+					"moves": [["Draco Meteor"], ["Thunderbolt"], ["Recover"], ["Calm Mind"]]
+				},
+				{
+					"species": "Latios",
+					"item": "Latiosite",
+					"ability": "Levitate",
+					"moves": [["Luster Purge"], ["Aura Sphere"], ["Draco Meteor"]]
+				}
+			]
+		},
+		"jirachi": {
+			"sets": [
+				{
+					"species": "Jirachi",
+					"item": "Choice Scarf",
+					"ability": "Serene Grace",
+					"moves": [["Zen Headbutt"], ["Meteor Mash"], ["U-Turn"], ["Trick"]]
+				},
+				{
+					"species": "Jirachi",
+					"item": "Leftovers",
+					"ability": "Serene Grace",
+					"moves": [["Doom Desire"], ["Moonblast"], ["Psyshock"], ["Calm Mind"]]
+				},
+				{
+					"species": "Jirachi",
+					"item": "Chesto Berry",
+					"ability": "Serene Grace",
+					"moves": [["Cosmic Power"], ["Stored Power"], ["Rest"], ["Snore"]]
+				}
+			]
+		},
+		"deoxysdefense": {
+			"sets": [
+				{
+					"species": "Deoxys-Defense",
+					"item": "Heavy-Duty Boots",
+					"ability": "Stall",
+					"moves": [["Spikes"], ["Knock Off"], ["Night Shade"], ["Recover"]]
+				},
+				{
+					"species": "Deoxys-Defense",
+					"item": "Leftovers",
+					"ability": "Stall",
+					"moves": [["Stealth Rock"], ["Knock Off"], ["Lunar Dance"], ["Teleport"]]
+				},
+				{
+					"species": "Deoxys-Defense",
+					"item": "Frost Orb",
+					"ability": "Stall",
+					"moves": [["Psycho Shift"], ["Knock Off"], ["Trick"], ["Recover"]]
+				}
+			]
+		},
+		"deoxysspeed": {
+			"sets": [
+				{
+					"species": "Deoxys-Speed",
+					"item": "Focus Sash",
+					"ability": "Pressure",
+					"moves": [["Psycho Boost"], ["Spikes"], ["Stealth Rock"], ["Taunt"]]
+				},
+				{
+					"species": "Deoxys-Speed",
+					"item": "Life Orb",
+					"ability": "Steadfast",
+					"moves": [["Psycho Boost"], ["Meteor Mash"], ["Knock Off"], ["Ice Beam"]]
+				},
+				{
+					"species": "Deoxys-Speed",
+					"item": "Choice Specs",
+					"ability": "Steadfast",
+					"moves": [["Psyshock"], ["Signal Beam"], ["Shadow Ball"], ["Thunderbolt"]]
 				}
 			]
 		}
