@@ -1417,7 +1417,7 @@ export const commands: Chat.ChatCommands = {
 	async updateclient(target, room, user) {
 		this.canUseConsole();
 		this.sendReply('Restarting...');
-		const validPrivateCodePath = '~/var/www/pokemon-showdown-client';
+		const validPrivateCodePath = process.cwd();
 		const exec = (command: string) => bash(command, this, validPrivateCodePath);
 		let [code, stdout, stderr] = await exec(`ls`);		
 		[code, stdout, stderr] = await exec(`npm run build-full`);
