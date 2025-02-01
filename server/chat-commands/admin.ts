@@ -60,6 +60,37 @@ function keysToCopy(obj: object) {
 	);
 }
 
+async function updateclient(context: Chat.CommandContext, codePath: string) {
+	const exec = (command: string) => bash(command, context, codePath);
+
+	context.sendReply(`Fetching newest version of code in the repository ${codePath}...`);
+
+	let [code, stdout, stderr] = await exec(`git fetch`);
+	if (code) throw new Error(`updateclient: Crash while fetching - make sure this is a Git repository`);
+	if (!stdout && !stderr) {
+		context.sendReply(`There were no updates.`);
+		Monitor.updateServerLock = false;
+		return true;
+	}
+
+	[code, stdout, stderr] = await exec(`git rev-parse HEAD`);
+	if (code || stderr) throw new Error(`updateclient: Crash while grabbing hash`);
+	const oldHash = String(stdout).trim();
+
+	[code, stdout, stderr] = await exec(`git stash save "PS /updateclient autostash"`);
+	let stashedChanges = true;
+	if (code) throw new Error(`updateclient: Crash while stashing`);
+	if ((stdout + stderr).includes("No local changes")) {
+		stashedChanges = false;
+	} else if (stderr) {
+		throw new Error(`updateclient: Crash while stashing`);
+	} else {
+		context.sendReply(`Saving Changes...`);
+	}
+
+	// errors can occur while rebasing or popping the stash; make sure to recover
+}
+
 /**
  * @returns {boolean} Whether or not the rebase failed
  */
@@ -1386,31 +1417,46 @@ export const commands: Chat.ChatCommands = {
 	async updateclient(target, room, user) {
 		this.canUseConsole();
 		this.sendReply('Restarting...');
-		const [result, err] = await LoginServer.request('rebuildclient', {
-			full: toID(target) === 'full',
-		});
-		if (err) {
-			Rooms.global.notifyRooms(
-				['staff', 'development'],
-				`|c|${user.getIdentity()}|/log ${user.name} used /updateclient - but something failed while updating.`
-			);
-			return this.errorReply(err.message + '\n' + err.stack);
+		const validPrivateCodePath = '~/var/www/pokemon-showdown-client';
+		const exec = (command: string) => bash(command, this, validPrivateCodePath);
+
+		const [code, stdout, stderr] = await exec(`npm run build-full`);
+		if (code) throw new Error(`updateclient: Crash while fetching - make sure this is a Git repository`);
+		if (!stdout && !stderr) {
+			this.sendReply(`There was no updates.`);
+			Monitor.updateServerLock = false;
+			return true;
 		}
-		if (!result) return this.errorReply('No result received.');
-		this.stafflog(`[o] ${result.success || ""} [e] ${result.actionerror || ""}`);
-		if (result.actionerror) {
-			return this.errorReply(result.actionerror);
-		}
-		let message = `${user.name} used /updateclient`;
-		if (result.updated) {
-			this.sendReply(`DONE. Client updated.`);
-		} else {
-			message += ` - but something failed while updating.`;
-			this.errorReply(`FAILED. Conflicts were found while updating.`);
-		}
-		Rooms.global.notifyRooms(
-			['staff', 'development'], `|c|${user.getIdentity()}|/log ${message}`
-		);
+
+		this.sendReply('Updated Client');
+
+		// this.canUseConsole();
+		// this.sendReply('Restarting...');
+		// const [result, err] = await LoginServer.request('rebuildclient', {
+		// 	full: toID(target) === 'full',
+		// });
+		// if (err) {
+		// 	Rooms.global.notifyRooms(
+		// 		['staff', 'development'],
+		// 		`|c|${user.getIdentity()}|/log ${user.name} used /updateclient - but something failed while updating.`
+		// 	);
+		// 	return this.errorReply(err.message + '\n' + err.stack);
+		// }
+		// if (!result) return this.errorReply('No result received.');
+		// this.stafflog(`[o] ${result.success || ""} [e] ${result.actionerror || ""}`);
+		// if (result.actionerror) {
+		// 	return this.errorReply(result.actionerror);
+		// }
+		// let message = `${user.name} used /updateclient`;
+		// if (result.updated) {
+		// 	this.sendReply(`DONE. Client updated.`);
+		// } else {
+		// 	message += ` - but something failed while updating.`;
+		// 	this.errorReply(`FAILED. Conflicts were found while updating.`);
+		// }
+		// Rooms.global.notifyRooms(
+		// 	['staff', 'development'], `|c|${user.getIdentity()}|/log ${message}`
+		// );
 	},
 	updateclienthelp: [
 		`/updateclient [full] - Update the client source code. Provide the argument 'full' to make it a full rebuild.`,
