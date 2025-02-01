@@ -76,11 +76,18 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			toxicdebris: 1,
 			snowcloak: 1,
 			drizzle: 1,
+			drought: 1,
 		};
-		let requiredAbilities: {[k: string]: string} = { drizzle: 'weather' };
+		let requiredAbilities: {[k: string]: string} = { drizzle: 'weather', drought: 'weather' };
 		const requiredMoves: {[k: string]: string} = {
 			stealthrock: 'hazardSet', rapidspin: 'hazardClear', defog: 'hazardClear'
 		};
+		const weatherAbilitiesSet: {[k: string]: string[]} = {
+			raindance: ['hydration', 'swiftswim', 'raindance', 'raindish'],
+			sunnyday: ['leafguard', 'solarpower', 'chlorophyll', 'flowergift'],
+			sandstorm: ['sandforce', 'sandrush', 'sandveil'],
+			snow: ['snowcloak', 'icebody', 'slushrush']
+		}
 		const weatherAbilitiesRequire: {[k: string]: string} = {
 			hydration: 'raindance', swiftswim: 'raindance', raindish: 'raindance',
 			waterveil: 'raindance',
@@ -129,6 +136,13 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			const itemData = this.dex.items.get(curSet.item);
 			const abilityState = this.dex.abilities.get(curSet.ability);
+			// If we do have weather, then we must required some abilities to abuse the weather.
+			if (teamData.weather && weatherAbilitiesSet[teamData.weather]) {
+				for (const ability of weatherAbilitiesSet[teamData.weather]) {
+					requiredAbilities[ability] = 'weather';
+					abilitiesMax[ability] = 1; // we are going to restrict the team to at least one of each ability.
+				}
+			}
 
 			if (teamData.megaCount && teamData.megaCount > 0 && itemData.megaStone) {
 				continue; // move to the next set if pokemon contains a mega stone and the team already has a mega stone.
@@ -144,6 +158,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			if (weatherAbilitiesRequire[abilityState.id] && teamData.weather !== weatherAbilitiesRequire[abilityState.id]) {
 				continue; // move to the next set if the pokemon's ability requires a weather that is not possible in the team.
+			}
+			if (teamData.weather && abilityState.id === 'cloudnine') {
+				continue; // rejects the possibility of having a cloud nine pokemon with a weather setter.
 			}
 
 			if (teamData.weather && weatherAbilities.includes(abilityState.id)) {
@@ -165,7 +182,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			let reject = false;
 			let hasRequiredMove = false;
 			let hasRequiredAbility = false;
-			let hasRequiredWeather = false;
 			const curSetVariants = [];
 			for (const move of curSet.moves) {
 				const variantIndex = this.random(move.length);
