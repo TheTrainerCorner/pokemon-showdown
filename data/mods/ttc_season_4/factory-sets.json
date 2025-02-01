@@ -43,7 +43,7 @@
 					"species": "Charizard",
 					"item": "Heavy-Duty Boots",
 					"ability": "Blaze",
-					"moves": [["Overheat"], ["Defog"], ["Will-o-Wisp"], ["U-Turn"]]
+					"moves": [["Overheat"], ["Defog"], ["Will-O-Wisp"], ["U-turn"]]
 				},
 				{
 					"species": "Charizard",
@@ -55,7 +55,7 @@
 					"species": "Charizard",
 					"item": "Heavy-Duty Boots",
 					"ability": "Blaze",
-					"moves": [["U-Turn"], ["Earthquake"], ["Poison Jab"], ["Knock Off"]]
+					"moves": [["U-turn"], ["Earthquake"], ["Dual Wingbeat"], ["Flare Blitz"]]
 				},
 				{
 					"species": "Charizard",
@@ -67,7 +67,7 @@
 					"species": "Charizard",
 					"item": "Charizardite X",
 					"ability": "Blaze",
-					"moves": [["Will-o-Wisp"], ["Roost"], ["Dragon Dance"], ["Flare Blitz"]]
+					"moves": [["Will-O-Wisp"], ["Roost"], ["Dragon Dance"], ["Flare Blitz"]]
 				},
 				{
 					"species": "Charizard",
@@ -85,13 +85,13 @@
 					"species": "Charizard",
 					"item": "Charizardite Y",
 					"ability": "Blaze",
-					"moves": [["Will-o-Wisp"], ["U-Turn"], ["Fire Blast"], ["Roost"]]
+					"moves": [["Will-O-Wisp"], ["U-turn"], ["Fire Blast"], ["Roost"]]
 				},
 				{
 					"species": "Charizard",
 					"item":"Charizardite Y",
 					"abilty": "Blaze",
-					"moves": [["U-Turn"], ["Overheat"], ["Air Slash"], ["Roost"]]
+					"moves": [["U-turn"], ["Overheat"], ["Air Slash"], ["Roost"]]
 				}
 			]
 		},
@@ -135,7 +135,7 @@
 					"species": "Beedrill",
 					"item": "Heavy-Duty Boots",
 					"ability": "Swarm",
-					"moves": [["Toxic Spikes"], ["Barb Barrage"], ["Knock Off"], ["U-Turn"]]
+					"moves": [["Toxic Spikes"], ["Barb Barrage"], ["Knock Off"], ["U-turn"]]
 				},
 				{
 					"species": "Beedrill",
@@ -159,7 +159,7 @@
 					"species": "Beedrill",
 					"item": "Beedrillite",
 					"abilty": "Swarm",
-					"moves": [["Tailwind"], ["First Impression"], ["Barb Barrage"], ["U-Turn"]]
+					"moves": [["Tailwind"], ["First Impression"], ["Barb Barrage"], ["U-turn"]]
 				}
 			]
 		},
@@ -191,31 +191,29 @@
 					"species": "Pidgeot",
 					"item": "Heavy-Duty Boots",
 					"ability": "Early Bird",
-					"moves": [["U-Turn"], ["Aeroblast"], ["Defog"], ["Roost"]]
+					"moves": [["U-turn"], ["Hurricane"], ["Defog"], ["Roost"]]
 				},
 				{
 					"species": "Pidgeot",
 					"item": "Choice Specs",
 					"ability": "Early Bird",
-					"moves": [["U-Turn"], ["Aeroblast"], ["Hyper Voice"], ["Heat Wave"]]
+					"moves": [["U-turn"], ["Hurricane"], ["Hyper Voice"], ["Heat Wave"]]
 				},
 				{
 					"species": "Pidgeot",
 					"item": "Choice Scarf",
 					"ability": "Frisk",
-					"moves": [["U-Turn"], ["Hyper Voice"], ["Aeroblast"], ["Heat Wave"]]
+					"moves": [["U-turn"], ["Hyper Voice"], ["Hurricane"], ["Heat Wave"]]
 				},
 				{
 					"species": "Pidgeot",
 					"item": "Pidgeotite",
-					"ability": "Keen Eye",
-					"moves": [["Hurricane"], ["Gust"], ["U-Turn"], ["Aura Sphere"]]
+					"moves": [["Hurricane"], ["Gust"], ["U-turn"], ["Aura Sphere"]]
 				},
 				{
 					"species": "Pidgeot",
 					"item": "Pidgeotite",
-					"ability": "Keen Eye",
-					"moves": [["Hurricane"], ["U-Turn"], ["Hyper Voice"], ["Heat Wave"]]
+					"moves": [["Hurricane"], ["U-turn"], ["Hyper Voice"], ["Heat Wave"]]
 				}
 			]
 		},
@@ -233,7 +231,7 @@
 					"item": "Assault Vest",
 					"level": 96,
 					"ability": "Strong Jaw",
-					"moves": [["Fire Fang"], ["Psychic Fangs"], ["Crunch"], ["U-Turn"]]
+					"moves": [["Fire Fang"], ["Psychic Fangs"], ["Crunch"], ["U-turn"]]
 				},
 				{
 					"species": "Raticate",
@@ -250,7 +248,7 @@
 					"species": "Raticate-Alola",
 					"item": "Assault Vest",
 					"ability": "Thick Fat",
-					"moves": [["U-Turn"], ["Knock Off"], ["Hyper Fang"], ["Sucker Punch"]]
+					"moves": [["U-turn"], ["Knock Off"], ["Hyper Fang"], ["Sucker Punch"]]
 				},
 				{
 					"species": "Raticate-Alola",
@@ -274,7 +272,7 @@
 					"item": "Heavy-Duty Boots",
 					"level": 94,
 					"ability": "Frisk",
-					"moves": [["Beak Blast"], ["Pursuit"], ["U-Turn"], ["Roost"]]
+					"moves": [["Beak Blast"], ["Pursuit"], ["U-turn"], ["Roost"]]
 				},
 				{
 					"species": "Fearow",
@@ -324,7 +322,7 @@
 					"species": "Sotanaht",
 					"item": "Heavy-Duty Boots",
 					"ability": "Cursed Body",
-					"moves": [["Will-o-Wisp"], ["Shed Tail"], ["Soul Fang"], ["Super Fang"]]
+					"moves": [["Will-O-Wisp"], ["Shed Tail"], ["Soul Fang"], ["Super Fang"]]
 				}
 			]
 		},
@@ -353,7 +351,7 @@
 					"moves": [["Rapid Spin"], ["Spirit Roll"], ["Stealth Rock"], ["Spiky Shield"]]
 				},
 				{
-					"species": "Sandslash",
+					"species": "Scaleslash",
 					"item": "Assault Vest",
 					"ability": "Uzumaki",
 					"moves": [["Rapid Spin"], ["Drill Run"], ["Spirit Roll"], ["Knock Off"]]
@@ -365,7 +363,7 @@
 				{
 					"species": "Sandslash-Alola",
 					"item": "Bubbled Dome",
-					"ability": "Rough Skin",
+					"ability": "Uzumaki",
 					"moves": [["Rapid Spin"], ["Spin Out"], ["Triple Axel"], ["Knock Off"]]
 				},
 				{
@@ -377,7 +375,7 @@
 				{
 					"species": "Sandslash-Alola",
 					"item": "Wide Lens",
-					"ability": "Rough Skin",
+					"ability": "Uzumaki",
 					"moves": [["Rapid Spin"], ["Swords Dance"], ["Triple Axel"], ["Iron Tail"]]
 				}
 			]
@@ -460,7 +458,7 @@
 					"species": "Ninetales",
 					"item": "Leftovers",
 					"ability": "Cursed Body",
-					"moves": [["Will-o-Wisp"], ["Destiny Bond"], ["Bitter Malice"], ["Burning Jealousy"]]
+					"moves": [["Will-O-Wisp"], ["Destiny Bond"], ["Bitter Malice"], ["Burning Jealousy"]]
 				},
 				{
 					"species": "Ninetales",
@@ -542,19 +540,19 @@
 					"species": "Parasect",
 					"item": "Heavy-Duty Boots",
 					"ability": "Regenerator",
-					"moves": [["Spore"], ["U-Turn"], ["Leaf Blade"], ["Knock Off"]]
+					"moves": [["Spore"], ["U-turn"], ["Leaf Blade"], ["Knock Off"]]
 				},
 				{
 					"species": "Parasect",
 					"item": "Heavy-Duty Boots",
 					"ability": "Regenerator",
-					"moves": [["Spore"], ["U-Turn"], ["Leech Seed"], ["Aromatherapy"]]
+					"moves": [["Spore"], ["U-turn"], ["Leech Seed"], ["Aromatherapy"]]
 				},
 				{
 					"species": "Parasect",
 					"item": "Focus Sash",
 					"ability": "Damp",
-					"moves": [["Leaf Blade"], ["Counter"], ["Spore"], ["U-Turn"]]
+					"moves": [["Leaf Blade"], ["Counter"], ["Spore"], ["U-turn"]]
 				}
 			]
 		},
@@ -570,11 +568,11 @@
 					"species": "Venomoth",
 					"item": "Leftovers",
 					"ability": "Shield Dust",
-					"moves": [["Defog"], ["Roost"], ["Toxic Spikes"], ["U-Turn"]]
+					"moves": [["Defog"], ["Roost"], ["Toxic Spikes"], ["U-turn"]]
 				},
 				{
 					"species": "Venomoth",
-					"item": "Pokepen",
+					"item": "PokePen",
 					"ability": "Shield Dust",
 					"moves": [["Toxic Thread"], ["Venoshock"], ["Toxic Spikes"], ["Roost"]]
 				}
@@ -624,7 +622,7 @@
 					"species": "Persian",
 					"item": "Choice Band",
 					"ability": "Unnerve",
-					"moves": [["Double-Edge"], ["Knock Off"], ["Flying Press"], ["U-Turn"]]
+					"moves": [["Double-Edge"], ["Knock Off"], ["Flying Press"], ["U-turn"]]
 				},
 				{
 					"species": "Persian",
@@ -669,13 +667,13 @@
 					"species": "Meowth",
 					"item": "Meowthite",
 					"ability": "Pickup",
-					"moves": [["U-Turn"], ["Payday"], ["Fake Out"], ["Knock Off"]]
+					"moves": [["U-turn"], ["Pay Day"], ["Fake Out"], ["Knock Off"]]
 				},
 				{
 					"species": "Meowth",
 					"item": "Meowthite",
 					"ability": "Pickup",
-					"moves": [["Payday"], ["Focus Blast"], ["Eerie Spell"], ["U-Turn"]]
+					"moves": [["Pay Day"], ["Focus Blast"], ["Eerie Spell"], ["U-turn"]]
 				}
 			]
 		},
@@ -744,7 +742,7 @@
 					"species": "Arcanine-Hisui",
 					"item": "Heavy-Duty Boots",
 					"ability": "Intimidate",
-					"moves": [["Will-o-Wisp"], ["Morning Sun"], ["Rock Slide"], ["Stealth Rock"]]
+					"moves": [["Will-O-Wisp"], ["Morning Sun"], ["Rock Slide"], ["Stealth Rock"]]
 				}
 			]
 		},
@@ -897,7 +895,7 @@
 					"species": "Golem",
 					"item": "Bubbled Dome",
 					"ability": "Rock Head",
-					"moves": [["Head Smash"], ["Submission"], ["Double Edge"], ["Earthquake"]]
+					"moves": [["Head Smash"], ["Submission"], ["Double-Edge"], ["Earthquake"]]
 				}
 			]
 		},
@@ -907,7 +905,7 @@
 					"species": "Golem-Alola",
 					"item": "Choice Specs",
 					"ability": "Teravolt",
-					"moves": [["Thunder Clap"], ["Volt Switch"], ["Power Gem"], ["Aura Sphere"]]
+					"moves": [["Thunderclap"], ["Volt Switch"], ["Power Gem"], ["Aura Sphere"]]
 				},
 				{
 					"species": "Golem-Alola",
@@ -935,7 +933,7 @@
 					"species": "Rapidash",
 					"item": "Heavy-Duty Boots",
 					"ability": "Flame Body",
-					"moves": [["Blazing Torque"], ["Horn Leech"], ["Wil-o-Wisp"], ["Morning Sun"]]
+					"moves": [["Blazing Torque"], ["Horn Leech"], ["Will-O-Wisp"], ["Morning Sun"]]
 				},
 				{
 					"species": "Rapidash",
@@ -1051,37 +1049,37 @@
 		"farfetchd": {
 			"sets": [
 				{
-					"species": "Farfetch'd",
+					"species": "Farfetch’d",
 					"item": "Heavy-Duty Boots",
 					"ability": "Defiant",
-					"moves": [["Brave Bird"], ["Knock Off"], ["Roost"], ["U-Turn"]]
+					"moves": [["Brave Bird"], ["Knock Off"], ["Roost"], ["U-turn"]]
 				},
 				{
-					"species": "Farfetch'd",
+					"species": "Farfetch’d",
 					"item": "Choice Band",
 					"ability": "Stalwart",
 					"moves": [["Sky Attack"], ["Solar Blade"], ["Skull Bash"], ["Close Combat"]]
 				},
 				{
-					"species": "Farfetch'd",
+					"species": "Farfetch’d",
 					"item": "Focus Sash",
 					"ability": "Sharpness",
-					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Cut"], ["U-Turn"]]
+					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Cut"], ["U-turn"]]
 				},
 				{
-					"species": "Farfetch'd",
+					"species": "Farfetch’d",
 					"item": "Leek",
-					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Close Combat"], ["U-Turn"]]
+					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Close Combat"], ["U-turn"]]
 				},
 				{
-					"species": "Farfetch'd",
+					"species": "Farfetch’d",
 					"item": "Leek",
 					"moves": [["Leek Lunge"], ["Ceaseless Edge"], ["Swords Dance"], ["Substitute"]]
 				},
 				{
-					"species": "Farfetch'd",
+					"species": "Farfetch’d",
 					"item": "Leek",
-					"moves": [["Ceaseless Edge"], ["Whirlwind"], ["U-Turn"], ["Roost"]]
+					"moves": [["Ceaseless Edge"], ["Whirlwind"], ["U-turn"], ["Roost"]]
 				}
 			]
 		},
@@ -1092,7 +1090,7 @@
 					"item": "Choice Band",
 					"level": 86,
 					"ability": "Early Bird",
-					"moves": [["Brave Bird"], ["Earthquake"], ["U-Turn"], ["Knock Off"]]
+					"moves": [["Brave Bird"], ["Earthquake"], ["U-turn"], ["Knock Off"]]
 				},
 				{
 					"species": "Dodrio",
@@ -1106,7 +1104,7 @@
 					"item": "Armor Plate",
 					"level": 86,
 					"ability": "Tangled Feet",
-					"moves": [["Triple Axel"], ["Roost"], ["Earthquake"], ["U-Turn"]]
+					"moves": [["Triple Axel"], ["Roost"], ["Earthquake"], ["U-turn"]]
 				}
 			]
 		},
@@ -1181,22 +1179,22 @@
 					"species": "Gengar",
 					"item": "Choice Specs",
 					"level": 81,
-					"ability": "Levitate",
+					"ability": "Cursed Body",
 					"moves": [["Shadow Ball"], ["Sludge Wave"], ["Focus Blast"], ["Trick"]]
 				},
 				{
 					"species": "Gengar",
 					"item": "Life Orb",
 					"level": 81,
-					"ability": "Levitate",
+					"ability": "Cursed Body",
 					"moves": [["Shadow Ball"], ["Focus Blast"], ["Sludge Wave"], ["Nasty Plot"]]
 				},
 				{
 					"species": "Gengar",
 					"item": "Black Sludge",
 					"level": 81,
-					"ability": "Levitate",
-					"moves": [["Substitute"], ["Will-o-Wisp"], ["Hex"], ["Sludge Bomb"]]
+					"ability": "Cursed Body",
+					"moves": [["Substitute"], ["Will-O-Wisp"], ["Hex"], ["Sludge Bomb"]]
 				},
 				{
 					"species": "Gengar",
@@ -1224,7 +1222,7 @@
 					"species": "Hypno",
 					"item": "Light Clay",
 					"ability": "Forewarn",
-					"moves": [["Foul Play"], ["Teleport"], ["Light Scree"], ["Reflect"]]
+					"moves": [["Foul Play"], ["Teleport"], ["Light Screen"], ["Reflect"]]
 				},
 				{
 					"species": "Hypno",
@@ -1368,7 +1366,7 @@
 					"species": "Marowak",
 					"item": "Thick Club",
 					"ability": "Rock Head",
-					"moves": [["Swords Dance"], ["Poltergeist"], ["Flare Blitz"], ["Thunder Punch"]]
+					"moves": [["Swords Dance"], ["Head Smash"], ["Earthquake"], ["Ice Beam"]]
 				},
 				{
 					"species": "Marowak",
@@ -1418,7 +1416,7 @@
 					"species": "Hitmonlee",
 					"item": "Normal Gem",
 					"ability": "Unburden",
-					"moves": [["Fake Out"], ["Close Combat"], ["Knockn Off"], ["Poison Jab"]]
+					"moves": [["Fake Out"], ["Close Combat"], ["Knock Off"], ["Poison Jab"]]
 				}
 			]
 		},
@@ -1462,7 +1460,7 @@
 					"species": "Weezing",
 					"item": "Black Sludge",
 					"ability": "Neutralizing Gas",
-					"moves": [["Sludge Bomb"], ["Will-o-Wisp"], ["Pain Split"], ["Haze"]]
+					"moves": [["Sludge Bomb"], ["Will-O-Wisp"], ["Pain Split"], ["Haze"]]
 				}
 			]
 		},
@@ -1478,7 +1476,7 @@
 					"species": "Weezing-Galar",
 					"item": "Rocky Helmet",
 					"ability": "Neutralizing Gas",
-					"moves": [["Will-o-Wisp"], ["Dazzling Gleam"], ["Fire Blast"], ["Defog"]]
+					"moves": [["Will-O-Wisp"], ["Dazzling Gleam"], ["Fire Blast"], ["Defog"]]
 				},
 				{
 					"species": "Weezing-Galar",
@@ -1629,7 +1627,7 @@
 					"species": "Scyther",
 					"item": "Choice Band",
 					"ability": "Adaptability",
-					"moves": [["U-Turn"], ["Dual Wingbeat"], ["Close Combat"], ["Knock Off"]]
+					"moves": [["U-turn"], ["Dual Wingbeat"], ["Close Combat"], ["Knock Off"]]
 				},
 				{
 					"species": "Scyther",
@@ -1641,7 +1639,7 @@
 					"species": "Scyther",
 					"item": "Heavy-Duty Boots",
 					"ability": "Adaptability",
-					"moves": [["U-Turn"], ["Defog"], ["Roost"], ["Knock Off"]]
+					"moves": [["U-turn"], ["Defog"], ["Roost"], ["Knock Off"]]
 				}
 			]
 		},
@@ -1663,7 +1661,7 @@
 					"species": "Jynx",
 					"item": "Choice Specs",
 					"ability": "Dazzling",
-					"moves": [["Aura Sphere"], ["Dazzling Gleam"], ["Psychic"], ["Freeze-Dry"]]
+					"moves": [["Aura Sphere"], ["Draining Kiss"], ["Psychic"], ["Freeze-Dry"]]
 				}
 			]
 		},
@@ -1673,13 +1671,13 @@
 					"species": "Pinsir",
 					"item": "Rose Incense",
 					"ability": "Mold Breaker",
-					"moves": [["Stealth Rock"], ["U-Turn"], ["Earthquake"], ["Knock Off"]]
+					"moves": [["Stealth Rock"], ["U-turn"], ["Earthquake"], ["Knock Off"]]
 				},
 				{
 					"species": "Pinsir",
 					"item": "Choice Scarf",
 					"ability": "Moxie",
-					"moves": [["Megahorn"], ["Earthquake"], ["Close Combat"], ["U-Turn"]]
+					"moves": [["Megahorn"], ["Earthquake"], ["Close Combat"], ["U-turn"]]
 				},
 				{
 					"species": "Pinsir",
@@ -1782,7 +1780,7 @@
 				{
 					"species": "Eevee-Starter",
 					"item": "Eeveeite",
-					"moves": [["Cheater's Trick"], ["Ice Beam"], ["Aura Sphere"], ["U-Turn"]]
+					"moves": [["Cheater's Trick"], ["Ice Beam"], ["Aura Sphere"], ["U-turn"]]
 				},
 				{
 					"species": "Eevee-Starter",
@@ -1792,7 +1790,7 @@
 				{
 					"species": "Eevee-Starter",
 					"item": "Eeveeite",
-					"moves": [["Cheater's Trick"], ["Knock Off"], ["Wish"], ["U-Turn"]]
+					"moves": [["Cheater's Trick"], ["Knock Off"], ["Wish"], ["U-turn"]]
 				}
 			]
 		},
@@ -1924,7 +1922,7 @@
 					"species": "Aerodactyl",
 					"item": "Aerodactylite",
 					"ability": "Unnerve",
-					"moves": [["Dual Wingbeat"], ["Stone Edge"], ["Fire Fang"], ["Hone Claw"]]
+					"moves": [["Dual Wingbeat"], ["Stone Edge"], ["Fire Fang"], ["Hone Claws"]]
 				},
 				{
 					"species": "Aerodactyl",
@@ -1968,7 +1966,7 @@
 					"species": "Articuno",
 					"item": "Heavy-Duty Boots",
 					"ability": "Snow Warning",
-					"moves": [["Toxic"], ["Roost"], ["Blizzard"], ["U-Turn"]]
+					"moves": [["Toxic"], ["Roost"], ["Blizzard"], ["U-turn"]]
 				},
 				{
 					"species": "Articuno",
@@ -1990,7 +1988,7 @@
 					"species": "Articuno-Galar",
 					"item": "Choice Scarf",
 					"ability": "Psychic Surge",
-					"moves": [["Expanding Force"], ["Hurricane"], ["Lumina Crash"], ["U-Turn"]]
+					"moves": [["Expanding Force"], ["Hurricane"], ["Lumina Crash"], ["U-turn"]]
 				},
 				{
 					"species": "Articuno-Galar",
@@ -2006,13 +2004,13 @@
 					"species": "Moltres",
 					"item": "Heavy-Duty Boots",
 					"ability": "Pressure",
-					"moves": [["Toxic"], ["Roost"], ["U-Turn"], ["Flamethrower"]]
+					"moves": [["Toxic"], ["Roost"], ["U-turn"], ["Flamethrower"]]
 				},
 				{
 					"species": "Moltres",
 					"item": "Choice Scarf",
 					"ability": "Drought",
-					"moves": [["Flamethrower"], ["U-Turn"], ["Solar Beam"], ["Scorching Sands"]]
+					"moves": [["Flamethrower"], ["U-turn"], ["Solar Beam"], ["Scorching Sands"]]
 				},
 				{
 					"species": "Moltres",
@@ -2028,7 +2026,7 @@
 					"species": "Moltres-Galar",
 					"item": "Heavy-Duty Boots",
 					"ability": "Dark Aura",
-					"moves": [["Defog"], ["Roost"], ["U-Turn"], ["Foul Play"]]
+					"moves": [["Defog"], ["Roost"], ["U-turn"], ["Foul Play"]]
 				},
 				{
 					"species": "Moltres-Galar",
@@ -2051,7 +2049,7 @@
 					"item": "Choice Scarf",
 					"level": 78,
 					"ability": "Elemental",
-					"moves": [["Bolt Beak"], ["U-Turn"], ["Brave Bird"], ["Steel Wing"]]
+					"moves": [["Bolt Beak"], ["U-turn"], ["Brave Bird"], ["Steel Wing"]]
 				},
 				{
 					"species": "Zapdos",
@@ -2080,7 +2078,7 @@
 					"species": "Zapdos-Galar",
 					"item": "Choice Scarf",
 					"ability": "Defiant",
-					"moves": [["Brave Bird"], ["Close Combat"], ["Bolt Beak"], ["U-Turn"]]
+					"moves": [["Brave Bird"], ["Close Combat"], ["Bolt Beak"], ["U-turn"]]
 				},
 				{
 					"species": "Zapdos-Galar",
@@ -2121,7 +2119,7 @@
 					"item": "Leftovers",
 					"level": 85,
 					"ability": "Illusion",
-					"moves": [["Spikes"], ["Roost"], ["U-Turn"], ["Synchronoise"]]
+					"moves": [["Spikes"], ["Roost"], ["U-turn"], ["Synchronoise"]]
 				},
 				{
 					"species": "Mew",
@@ -2171,7 +2169,7 @@
 				}
 			]
 		},
-		"typlosionhisui": {
+		"typhlosionhisui": {
 			"sets": [
 				{
 					"species": "Typhlosion-Hisui",
@@ -2209,7 +2207,7 @@
 					"species": "Furret",
 					"item": "Heavy-Duty Boots",
 					"ability": "Run Away",
-					"moves": [["Body Slam"], ["Knock Off"], ["U-Turn"], ["Super Fang"]]
+					"moves": [["Body Slam"], ["Knock Off"], ["U-turn"], ["Super Fang"]]
 				},
 				{
 					"species": "Furret",
@@ -2253,7 +2251,7 @@
 					"species": "Ledian",
 					"item": "Choice Scarf",
 					"ability": "Iron Fist",
-					"moves": [["U-Turn"], ["Comet Punch"], ["Drain Punch"], ["Meteor Mash"]]
+					"moves": [["U-turn"], ["Comet Punch"], ["Drain Punch"], ["Meteor Mash"]]
 				}
 			]
 		},
@@ -2269,7 +2267,7 @@
 					"species": "Ariados",
 					"item": "Heavy-Duty Boots",
 					"ability": "Venom Hielaman",
-					"moves": [["Sticky Web"], ["Toxic Spikes"], ["U-Turn"], ["Poison Fang"]]
+					"moves": [["Sticky Web"], ["Toxic Spikes"], ["U-turn"], ["Poison Fang"]]
 				},
 				{
 					"species": "Ariados",
@@ -2285,7 +2283,7 @@
 					"species": "Crobat",
 					"item": "Choice Band",
 					"ability": "Infiltrator",
-					"moves": [["Brave Bird"], ["Cross Poison"], ["U-Turn"], ["Fire Fang"]]
+					"moves": [["Brave Bird"], ["Cross Poison"], ["U-turn"], ["Fire Fang"]]
 				},
 				{
 					"species": "Crobat",
@@ -2297,7 +2295,7 @@
 					"species": "Crobat",
 					"item": "Black Sludge",
 					"ability": "Unnerve",
-					"moves": [["Defog"], ["Brave Bird"], ["Roost"], ["U-Turn"]]
+					"moves": [["Defog"], ["Brave Bird"], ["Roost"], ["U-turn"]]
 				}
 			]
 		},
@@ -2329,13 +2327,13 @@
 					"species": "Xatu",
 					"item": "Heavy-Duty Boots",
 					"ability": "Magic Bounce",
-					"moves": [["Thunder Wave"], ["Defog"], ["Synchronoise"], ["U-Turn"]]
+					"moves": [["Thunder Wave"], ["Defog"], ["Synchronoise"], ["U-turn"]]
 				},
 				{
 					"species": "Xatu",
 					"item": "Assault Vest",
 					"ability": "Tinted Lens",
-					"moves": [["Air Slash"], ["Synchronoise"], ["Heat Wave"], ["U-Turn"]]
+					"moves": [["Air Slash"], ["Synchronoise"], ["Heat Wave"], ["U-turn"]]
 				},
 				{
 					"species": "Xatu",
@@ -2393,7 +2391,7 @@
 				{
 					"species": "Bellossom",
 					"item": "Rocky Helmet",
-					"ability": "Flower Veil",
+					"ability": "Sun Dance",
 					"moves": [["Strength Sap"], ["Moonblast"], ["Sludge Bomb"], ["Rapid Spin"]]
 				}
 			]
@@ -2578,7 +2576,7 @@
 			"sets": [
 				{
 					"species": "Wobbuffet",
-					"item": "Pokepen",
+					"item": "PokePen",
 					"ability": "Shadow Tag",
 					"moves": [["Destiny Bond"], ["Encore"], ["Counter"], ["Mirror Coat"]]
 				}
@@ -2596,7 +2594,7 @@
 					"species": "Girafarig",
 					"item": "Eviolite",
 					"ability": "Sap Sipper",
-					"moves": [["Psychic Fangs"], ["Jump Kick"], ["Wish"], ["U-Turn"]]
+					"moves": [["Psychic Fangs"], ["Jump Kick"], ["Wish"], ["U-turn"]]
 				}
 			]
 		},
@@ -2612,7 +2610,7 @@
 					"species": "Forretress",
 					"item": "Armor Plate",
 					"ability": "Overcoat",
-					"moves": [["Psychic Fangs"], ["Jump Kick"], ["Wish"], ["U-Turn"]]
+					"moves": [["Curse"], ["Body Press"], ["Gyro Ball"], ["Pain Split"]]
 				}
 			]
 		},
@@ -2641,7 +2639,7 @@
 					"item": "Eviolite",
 					"level": 82,
 					"ability": "Immunity",
-					"moves": [["Earthquake"], ["Roost"], ["Defog"], ["U-Turn"]]
+					"moves": [["Earthquake"], ["Roost"], ["Defog"], ["U-turn"]]
 				},
 				{
 					"species": "Gligar",
@@ -2744,7 +2742,7 @@
 					"species": "Scizor",
 					"item": "Leftovers",
 					"ability": "Technician",
-					"moves": [["Bullet Punch"], ["U-Turn"], ["Defog"], ["Roost"]]
+					"moves": [["Bullet Punch"], ["U-turn"], ["Defog"], ["Roost"]]
 				},
 				{
 					"species": "Scizor",
@@ -2760,7 +2758,7 @@
 				{
 					"species": "Scizor",
 					"item": "Scizorite",
-					"moves": [["Bullet Punch"], ["Pursuit"], ["U-Turn"], ["Roost"]]
+					"moves": [["Bullet Punch"], ["Pursuit"], ["U-turn"], ["Roost"]]
 				}
 			]
 		},
@@ -2768,7 +2766,7 @@
 			"sets": [
 				{
 					"species": "Shuckle",
-					"item": "Pokepen",
+					"item": "PokePen",
 					"ability": "Sturdy",
 					"moves": [["Sticky Web"], ["Stealth Rock"], ["Toxic"], ["Knock Off"]]
 				}
@@ -2784,7 +2782,7 @@
 				},
 				{
 					"species": "Heracross",
-					"item": "Pokepen",
+					"item": "PokePen",
 					"ability": "Sap Sipper",
 					"moves": [["Bulk Up"], ["First Impression"], ["Drain Punch"], ["Trailblaze"]]
 				},
@@ -2805,13 +2803,13 @@
 				{
 					"species": "Sneasel",
 					"item": "Choice Band",
-					"ability": "Inner Focus",
+					"ability": "Tangled Feet",
 					"moves": [["Triple Axel"], ["Knock Off"], ["Focus Punch"], ["Ice Shard"]]
 				},
 				{
 					"species": "Sneasel",
 					"item": "Life Orb",
-					"ability": "Inner Focus",
+					"ability": "Tangled Feet",
 					"moves": [["Swords Dance"], ["Focus Punch"], ["Triple Axel"], ["Knock Off"]]
 				}
 			]
@@ -3045,13 +3043,13 @@
 		"porygon2": {
 			"sets": [
 				{
-					"species": "Porygon 2",
+					"species": "Porygon2",
 					"item": "Eviolite",
 					"ability": "Analytic",
 					"moves": [["Discharge"], ["Tri Attack"], ["Teleport"], ["Recover"]]
 				},
 				{
-					"species": "Porygon 2",
+					"species": "Porygon2",
 					"item": "Eviolite",
 					"ability": "Trace",
 					"moves": [["Charge Beam"], ["Tri Attack"], ["Ice Beam"], ["Recover"]]
@@ -3080,7 +3078,7 @@
 					"species": "Hitmontop",
 					"item": "Bubbled Dome",
 					"ability": "Intimidate",
-					"moves": [["Rapid Spin"], ["U-Turn"], ["Close Combat"], ["Ice Spinner"]]
+					"moves": [["Rapid Spin"], ["U-turn"], ["Close Combat"], ["Ice Spinner"]]
 				},
 				{
 					"species": "Hitmontop",
@@ -3216,14 +3214,14 @@
 					"item": "Eviolite",
 					"level": 90,
 					"ability": "Magic Guard",
-					"moves": [["Calm Mind"], ["Draining Kiss"], ["Shadow Ball"], ["Will-o-Wisp"]]
+					"moves": [["Calm Mind"], ["Draining Kiss"], ["Shadow Ball"], ["Will-O-Wisp"]]
 				},
 				{
 					"species": "Misdreavus",
 					"item": "Eviolite",
 					"level": 90,
 					"ability": "Levitate",
-					"moves": [["Shadow Ball"], ["Taunt"], ["Will-o-Wisp"], ["Moonlight"]]
+					"moves": [["Shadow Ball"], ["Taunt"], ["Will-O-Wisp"], ["Moonlight"]]
 				}
 			]
 		},
@@ -3231,7 +3229,7 @@
 			"sets": [
 				{
 					"species": "Sceptile",
-					"item": "Pokepen",
+					"item": "PokePen",
 					"ability": "Unburden",
 					"moves": [["Swords Dance"], ["Earthquake"], ["Dragon Claw"], ["Cut"]]
 				},
@@ -3267,7 +3265,7 @@
 					"species": "Blaziken",
 					"item": "Choice Scarf",
 					"ability": "No Guard",
-					"moves": [["Overheat"], ["Dynamic Punch"], ["Cut"], ["U-Turn"]]
+					"moves": [["Overheat"], ["Dynamic Punch"], ["Cut"], ["U-turn"]]
 				},
 				{
 					"species": "Blaziken",
@@ -3401,13 +3399,13 @@
 					"species": "Swellow",
 					"item": "Heavy-Duty Boots",
 					"ability": "Aerilate",
-					"moves": [["Boomburst"], ["Heat Wave"], ["U-Turn"], ["Roost"]]
+					"moves": [["Boomburst"], ["Heat Wave"], ["U-turn"], ["Roost"]]
 				},
 				{
 					"species": "Swellow",
 					"item": "Flame Orb",
 					"ability": "Guts",
-					"moves": [["Extreme Speed"], ["Facade"], ["Brave Bird"], ["U-Turn"]]
+					"moves": [["Extreme Speed"], ["Facade"], ["Brave Bird"], ["U-turn"]]
 				}
 			]
 		},
@@ -3417,7 +3415,7 @@
 					"species": "Pelipper",
 					"item": "Heavy-Duty Boots",
 					"ability": "Drizzle",
-					"moves": [["Scald"], ["Roost"], ["Defog"], ["U-Turn"]]
+					"moves": [["Scald"], ["Roost"], ["Defog"], ["U-turn"]]
 				},
 				{
 					"species": "Pelipper",
@@ -3461,13 +3459,13 @@
 					"species": "Masquerain",
 					"item": "Armor Plate",
 					"ability": "Intimidate",
-					"moves": [["Scald"], ["Giga Drain"], ["Bug Buzz"], ["Quvier Dance"]]
+					"moves": [["Scald"], ["Giga Drain"], ["Bug Buzz"], ["Quiver Dance"]]
 				},
 				{
 					"species": "Masquerain",
 					"item": "Rose Incense",
 					"ability": "Unnerve",
-					"moves": [["Scald"], ["Roost"], ["U-Turn"], ["Sticky Web"]]
+					"moves": [["Scald"], ["Roost"], ["U-turn"], ["Sticky Web"]]
 				}
 			]
 		},
@@ -3524,13 +3522,13 @@
 				{
 					"species": "Ninjask",
 					"ability": "Speed Boost",
-					"moves": [["Acrobatics"], ["Leech Life"], ["Swords Dance"], ["U-Turn"]]		
+					"moves": [["Acrobatics"], ["Leech Life"], ["Swords Dance"], ["U-turn"]]		
 				},
 				{
 					"species": "Ninjask",
 					"item": "Heavy-Duty Boots",
 					"ability": "Speed Boost",
-					"moves": [["Dual Wingbeat"], ["Drill Run"], ["U-Turn"], ["Protect"]]
+					"moves": [["Dual Wingbeat"], ["Drill Run"], ["U-turn"], ["Protect"]]
 				}
 			]
 		},
@@ -3603,17 +3601,17 @@
 					"item": "Leftovers",
 					"level": 95,
 					"ability": "Pixilate",
-					"moves": [["Return"], ["Wish"], ["Toxic"], ["Heal Beal"]]
+					"moves": [["Return"], ["Wish"], ["Toxic"], ["Heal Bell"]]
 				}
 			]
 		},
 		"sableye": {
 			"sets": [
 				{
-					"specie": "Sableye",
+					"species": "Sableye",
 					"item": "Leftovers",
 					"ability": "Prankster",
-					"moves": [["Knock Off"], ["Encore"], ["Recover"], ["Will-o-Wisp"]]
+					"moves": [["Knock Off"], ["Encore"], ["Recover"], ["Will-O-Wisp"]]
 				},
 				{
 					"species": "Sableye",
@@ -3644,13 +3642,13 @@
 				},
 				{
 					"species": "Mawile",
-					"item": "Mawlitie",
+					"item": "Mawilite",
 					"ability": "Intimidate",
 					"moves": [["Swords Dance"], ["Sucker Punch"], ["Play Rough"], ["Brick Break"]]
 				},
 				{
 					"species": "Mawile",
-					"item": "Mawlitie",
+					"item": "Mawilite",
 					"ability": "Intimidate",
 					"moves": [["Fire Fang"], ["Iron Head"], ["Play Rough"], ["Knock Off"]]
 				}
@@ -3784,7 +3782,7 @@
 					"species": "Volbeat",
 					"item": "Heavy-Duty Boots",
 					"ability": "Prankster",
-					"moves": [["Roost"], ["Thunder Wave"], ["U-Turn"], ["Parabolic Charge"]]
+					"moves": [["Roost"], ["Thunder Wave"], ["U-turn"], ["Parabolic Charge"]]
 				},
 				{
 					"species": "Volbeat",
@@ -3800,7 +3798,7 @@
 					"species": "Illumise",
 					"item": "Choice Band",
 					"ability": "Tinted Lens",
-					"moves": [["U-Turn"], ["First Impression"], ["Play Rough"], ["Trick"]]
+					"moves": [["U-turn"], ["First Impression"], ["Play Rough"], ["Trick"]]
 				},
 				{
 					"species": "Illumise",
@@ -3960,7 +3958,7 @@
 					"species": "Spinda",
 					"item": "Leftovers",
 					"level": 95,
-					"ability": "Own Tempo",
+					"ability": "Uzumaki",
 					"moves": [["Rapid Spin"], ["Wish"], ["Toxic"], ["Close Combat"]]
 				}
 			]
@@ -3971,13 +3969,13 @@
 					"species": "Flygon",
 					"item": "Choice Scarf",
 					"ability": "Tinted Lens",
-					"moves": [["Boomburst"], ["Draco Meteor"], ["Bug Buzz"], ["U-Turn"]]
+					"moves": [["Boomburst"], ["Draco Meteor"], ["Bug Buzz"], ["U-turn"]]
 				},
 				{
 					"species": "Flygon",
 					"item": "Choice Band",
 					"ability": "Tinted Lens",
-					"moves": [["First Impression"], ["Earthquake"], ["Dragon Claw"], ["U-Turn"]]
+					"moves": [["First Impression"], ["Earthquake"], ["Dragon Claw"], ["U-turn"]]
 				},
 				{
 					"species": "Flygon",
@@ -4009,7 +4007,7 @@
 					"species": "Altaria",
 					"item": "Rocky Helmet",
 					"ability": "Fluffy",
-					"moves": [["Hurricane"], ["Alluring Voice"], ["Roost"], ["Will-o-Wisp"]]
+					"moves": [["Hurricane"], ["Alluring Voice"], ["Roost"], ["Will-O-Wisp"]]
 				},
 				{
 					"species": "Altaria",
@@ -4027,7 +4025,7 @@
 					"species": "Altaria",
 					"item": "Altarianite",
 					"ability": "Natural Cure",
-					"moves": [["Hyper Voice"], ["Heal Bell"], ["Roost"], ["Will-o-Wisp"]]
+					"moves": [["Hyper Voice"], ["Heal Bell"], ["Roost"], ["Will-O-Wisp"]]
 				}
 			]
 		},
@@ -4053,21 +4051,21 @@
 					"species": "Seviper",
 					"item": "Life Orb",
 					"level": 92,
-					"ability": "Cold Blooded",
+					"ability": "Cold-Blooded",
 					"moves": [["Swords Dance"], ["Gunk Shot"], ["Sucker Punch"], ["Earthquake"]]
 				},
 				{
 					"species": "Seviper",
 					"item": "Black Sludge",
 					"level": 92,
-					"ability": "Cold Blooded",
+					"ability": "Cold-Blooded",
 					"moves": [["Coil"], ["Earthquake"], ["Knock Off"], ["Gunk Shot"]]
 				},
 				{
 					"species": "Seviper",
 					"item": "Choice Band",
 					"level": 92,
-					"ability": "Cold Blooded",
+					"ability": "Cold-Blooded",
 					"moves": [["Switcheroo"], ["Gunk Shot"], ["Knock Off"], ["Earthquake"]]
 				}
 			]
@@ -4202,9 +4200,9 @@
 				},
 				{
 					"species": "Armaldo",
-					"item": "Pokepen",
+					"item": "PokePen",
 					"ability": "Swift Swim",
-					"moves": [["Rain Dance"], ["Aqua Tail"], ["Mighty Cleave"], ["Leech Life"]]
+					"moves": [["Cut"], ["Aqua Tail"], ["Mighty Cleave"], ["Leech Life"]]
 				}
 			]
 		},
@@ -4265,7 +4263,7 @@
 					"species": "Banette",
 					"item": "Colbur Berry",
 					"ability": "Prankster",
-					"moves": [["Will-o-Wisp"], ["Poltergeist"], ["Pain Split"], ["Knock Off"]]
+					"moves": [["Will-O-Wisp"], ["Poltergeist"], ["Pain Split"], ["Knock Off"]]
 				},
 				{
 					"species": "Banette",
@@ -4302,7 +4300,7 @@
 					"species": "Dusclops",
 					"item": "Eviolite",
 					"ability": "Pressure",
-					"moves": [["Hex"], ["Will-o-Wisp"], ["Haze"], ["Pain Split"]]
+					"moves": [["Hex"], ["Will-O-Wisp"], ["Haze"], ["Pain Split"]]
 				}
 			]
 		},
@@ -4370,7 +4368,7 @@
 			"sets": [
 				{
 					"species": "Glalie",
-					"item": "Never Melt Ice",
+					"item": "Never-Melt Ice",
 					"ability": "Refrigerate",
 					"moves": [["Fake Out"], ["Extreme Speed"], ["Explosion"], ["Earthquake"]]
 				},
@@ -4382,13 +4380,13 @@
 				},
 				{
 					"species": "Glalie",
-					"item": "Glailite",
+					"item": "Glalitite",
 					"ability": "Refrigerate",
 					"moves": [["Fake Out"], ["Extreme Speed"], ["Iron Head"], ["Earthquake"]]
 				},
 				{
 					"species": "Glalie",
-					"item": "Glailite",
+					"item": "Glalitite",
 					"ability": "Refrigerate",
 					"moves": [["Spikes"], ["Extreme Speed"], ["Fake Out"], ["Explosion"]]
 				}
@@ -4626,7 +4624,7 @@
 					"species": "Jirachi",
 					"item": "Choice Scarf",
 					"ability": "Serene Grace",
-					"moves": [["Zen Headbutt"], ["Meteor Mash"], ["U-Turn"], ["Trick"]]
+					"moves": [["Zen Headbutt"], ["Meteor Mash"], ["U-turn"], ["Trick"]]
 				},
 				{
 					"species": "Jirachi",
@@ -4692,7 +4690,7 @@
 					"species": "Torterra",
 					"item": "White Herb",
 					"ability": "Thick Fat",
-					"moves": [["Shell Smash"], ["Headlon Rush"], ["Cut"], ["Stone Edge"]]
+					"moves": [["Shell Smash"], ["Headlong Rush"], ["Cut"], ["Stone Edge"]]
 				},
 				{
 					"species": "Torterra",
@@ -4708,13 +4706,13 @@
 					"species": "Infernape",
 					"item": "Life Orb",
 					"ability": "Blaze",
-					"moves": [["Close Combat"], ["U-Turn"], ["Overheat"], ["Knock Off"]]
+					"moves": [["Close Combat"], ["U-turn"], ["Overheat"], ["Knock Off"]]
 				},
 				{
 					"species": "Infernape",
 					"item": "Choice Scarf",
 					"ability": "Steadfast",
-					"moves": [["Close Combat"], ["Cut"], ["U-Turn"], ["Flare Blitz"]]
+					"moves": [["Close Combat"], ["Cut"], ["U-turn"], ["Flare Blitz"]]
 				}
 			]
 		},
