@@ -2718,7 +2718,7 @@
 					"species": "Qwilfish",
 					"item": "Eviolite",
 					"ability": "Intimidate",
-					"move": [["Swords Dance"], ["Aqua Jet"], ["Barb Barrage"], ["Scale Shot"]]
+					"moves": [["Swords Dance"], ["Aqua Jet"], ["Barb Barrage"], ["Scale Shot"]]
 				}
 			]
 		},
