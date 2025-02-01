@@ -1417,14 +1417,14 @@ export const commands: Chat.ChatCommands = {
 	async updateclient(target, room, user) {
 		this.canUseConsole();
 		this.sendReply('Restarting...');
-		const validPrivateCodePath = process.cwd();
+		const validPrivateCodePath = `${process.cwd()}/../pokemon-showdown-client`;
 		this.sendReply(validPrivateCodePath);
 		const exec = (command: string) => bash(command, this, validPrivateCodePath);
 		let [code, stdout, stderr] = await exec(`ls`);		
-		[code, stdout, stderr] = await exec(`npm run build-full`);
 		this.sendReply(`${code}`);
 		this.sendReply(stdout);
 		this.sendReply(stderr);
+		[code, stdout, stderr] = await exec(`npm run build-full`);
 		if (code) throw new Error(`updateclient: Crash while fetching - make sure this is a Git repository`);
 		if (!stdout && !stderr) {
 			this.sendReply(`There was no updates.`);
