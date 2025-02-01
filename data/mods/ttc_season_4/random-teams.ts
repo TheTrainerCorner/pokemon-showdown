@@ -680,6 +680,91 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 		return false;
 	}
+	
+	getAbility(types: Set<string>, moves: Set<string>, abilities: Set<string>, counter: MoveCounter, movePool: string[], teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isDoubles: boolean, preferredType: string, role: RandomTeamsTypes.Role, isNoDynamax: boolean): string {
+		const abilityData = Array.from(abilities).map(a => this.dex.abilities.get(a));
+		Utils.sortBy(abilityData, abil => -abil.rating);
+
+		if (abilityData.length <= 1) return abilityData[0].name;
+
+		// Hard-code abilities here
+
+		// Lopunny, and other Facade users, don't want Limber, even if other abilities are poorly rated,
+		// since paralysis would arguably be good for them.
+		if (species.id === 'lopunny' && moves.has('facade')) return 'Cute Charm';
+		if (species.id === 'copperajahgmax') return 'Heavy Metal';
+		if (abilities.has('Guts') &&
+			// for Ursaring in BDSP
+			!abilities.has('Quick Feet') && (
+			species.id === 'gurdurr' || species.id === 'throh' ||
+			moves.has('facade') || (moves.has('rest') && moves.has('sleeptalk'))
+		)) return 'Guts';
+		if (abilities.has('Moxie') && (counter.get('Physical') > 3 || moves.has('bounce')) && !isDoubles) return 'Moxie';
+
+		if (isDoubles) {
+			if (abilities.has('Competitive') && !abilities.has('Shadow Tag') && !abilities.has('Strong Jaw')) return 'Competitive';
+			if (abilities.has('Friend Guard')) return 'Friend Guard';
+			if (abilities.has('Gluttony') && moves.has('recycle')) return 'Gluttony';
+			if (abilities.has('Guts')) return 'Guts';
+			if (abilities.has('Harvest')) return 'Harvest';
+			if (abilities.has('Healer') && (
+				abilities.has('Natural Cure') ||
+				(abilities.has('Aroma Veil') && this.randomChance(1, 2))
+			)) return 'Healer';
+			if (abilities.has('Intimidate')) return 'Intimidate';
+			if (species.id === 'lopunny') return 'Klutz';
+			if (abilities.has('Magic Guard') && !abilities.has('Unaware')) return 'Magic Guard';
+			if (abilities.has('Ripen')) return 'Ripen';
+			if (abilities.has('Stalwart')) return 'Stalwart';
+			if (abilities.has('Storm Drain')) return 'Storm Drain';
+			if (abilities.has('Telepathy') && (abilities.has('Pressure') || abilities.has('Analytic'))) return 'Telepathy';
+		}
+
+		let abilityAllowed: Ability[] = [];
+		// Obtain a list of abilities that are allowed (not culled)
+		for (const ability of abilityData) {
+			if (ability.rating >= 1 && !this.shouldCullAbility(
+				ability.name, types, moves, abilities, counter, movePool, teamDetails, species, isDoubles, '', '', isNoDynamax
+			)) {
+				abilityAllowed.push(ability);
+			}
+		}
+
+		// If all abilities are rejected, re-allow all abilities
+		if (!abilityAllowed.length) {
+			for (const ability of abilityData) {
+				if (ability.rating > 0) abilityAllowed.push(ability);
+			}
+			if (!abilityAllowed.length) abilityAllowed = abilityData;
+		}
+
+		if (abilityAllowed.length === 1) return abilityAllowed[0].name;
+		// Sort abilities by rating with an element of randomness
+		// All three abilities can be chosen
+		if (abilityAllowed[2] && abilityAllowed[0].rating - 0.5 <= abilityAllowed[2].rating) {
+			if (abilityAllowed[1].rating <= abilityAllowed[2].rating) {
+				if (this.randomChance(1, 2)) [abilityAllowed[1], abilityAllowed[2]] = [abilityAllowed[2], abilityAllowed[1]];
+			} else {
+				if (this.randomChance(1, 3)) [abilityAllowed[1], abilityAllowed[2]] = [abilityAllowed[2], abilityAllowed[1]];
+			}
+			if (abilityAllowed[0].rating <= abilityAllowed[1].rating) {
+				if (this.randomChance(2, 3)) [abilityAllowed[0], abilityAllowed[1]] = [abilityAllowed[1], abilityAllowed[0]];
+			} else {
+				if (this.randomChance(1, 2)) [abilityAllowed[0], abilityAllowed[1]] = [abilityAllowed[1], abilityAllowed[0]];
+			}
+		} else {
+			// Third ability cannot be chosen
+			if (abilityAllowed[0].rating <= abilityAllowed[1].rating) {
+				if (this.randomChance(1, 2)) [abilityAllowed[0], abilityAllowed[1]] = [abilityAllowed[1], abilityAllowed[0]];
+			} else if (abilityAllowed[0].rating - 0.5 <= abilityAllowed[1].rating) {
+				if (this.randomChance(1, 3)) [abilityAllowed[0], abilityAllowed[1]] = [abilityAllowed[1], abilityAllowed[0]];
+			}
+		}
+
+		// After sorting, choose the first ability
+		return abilityAllowed[0].name;
+
+	}
 
 	getHighPriorityItem(ability: string, types: Set<string>, moves: Set<string>, counter: MoveCounter, teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isLead: boolean, isDoubles: boolean): string | undefined {
 		// not undefined — we want "no item" not "go find a different item"
@@ -749,7 +834,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		}
 		if (ability === 'Sheer Force' && counter.get('sheerforce')) return 'Life Orb';
 		if (ability === 'Unburden') return (moves.has('closecombat') || moves.has('curse')) ? 'White Herb' : 'Sitrus Berry';
-
+		if (ability === 'Ball Fetch') return 'Life Orb';
 		if (moves.has('trick') || (moves.has('switcheroo') && !isDoubles) || ability === 'Gorilla Tactics') {
 			if (species.baseStats.spe >= 60 && species.baseStats.spe <= 108 && !counter.get('priority') && ability !== 'Triage') {
 				return 'Choice Scarf';
