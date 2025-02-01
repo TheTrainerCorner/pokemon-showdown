@@ -124,12 +124,12 @@ async function updateserver(context: Chat.CommandContext, codePath: string) {
 export const commands: Chat.ChatCommands = {
 	potd(target, room, user) {
 		this.canUseConsole();
-		const species = Dex.species.get(target);
+		const species = Dex.mod(Config.ttcseason).species.get(target);
 		if (species.id === Config.potd) {
 			return this.errorReply(`The PotD is already set to ${species.name}`);
 		}
 		if (!species.exists) return this.errorReply(`Pokemon "${target}" not found.`);
-		if (!Dex.species.getFullLearnset(species.id).length) {
+		if (!Dex.mod(Config.ttcseason).species.getFullLearnset(species.id).length) {
 			return this.errorReply(`That Pokemon has no learnset and cannot be used as the PotD.`);
 		}
 		Config.potd = species.id;
