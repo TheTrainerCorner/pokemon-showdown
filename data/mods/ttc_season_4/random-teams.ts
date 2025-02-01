@@ -97,6 +97,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			snowcloak: 'snow', icebody: 'snow', slushrush: 'snow',
 		};
 		const weatherAbilities = [
+			'forecast',
 			'drizzle',
 			'drought', 'sundance',
 			'snowwarning', 'chillingneigh', 'asoneglastrier', 'absolutezero',
@@ -257,6 +258,13 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			weaknesses: {},
 			resistances: {},
 		};
+		// We have to treat forecast differently since it is based on the rocks it holds.
+		const forecastWeatherAbilitiesSet: {[k: string]: string} = {
+			damprock: 'raindance',
+			heatrock: 'sunnyday',
+			icyrock: 'snow',
+			smoothrock: 'sandstorm',
+		};
 		const weatherAbilitiesSet: {[k: string]: string} = {
 			drizzle: 'raindance',
 			drought: 'sunnyday', sundance: 'sunnyday',
@@ -362,6 +370,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			if (abilityState.id in weatherAbilitiesSet) {
 				teamData.weather = weatherAbilitiesSet[abilityState.id];
+			}
+			if (abilityState.id === 'forecast') {
+				teamData.weather = forecastWeatherAbilitiesSet[itemData.id];
 			}
 
 			if (abilityState.id in terrainAbilitiesSet) {
