@@ -197,4 +197,14 @@ describe('TTC Random Battles', () => {
 			);
 		});
 	});
+
+	it ('should not allow castform to have blizzard, hurricane, and fire blast on the same set.', () => {
+		testNotBothMoves('castform', options, 'blizzard', 'hurricane');
+		testNotBothMoves('castform', options, 'blizzard', 'fireblast');
+		testNotBothMoves('castform', options, 'hurricane', 'fireblast');
+	});
+
+	it ('should force slaking to have slack off', () => {
+		testAlwaysHasMove('slaking', options, 'slackoff');
+	})
 });

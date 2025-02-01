@@ -762,6 +762,14 @@
         "doublesLevel": 84,
         "doublesMoves": ["calmmind", "dazzlinggleam", "moonblast", "mysticalfire", "protect", "psyshock", "trick"]
     },
+	"vigoroth": {
+		"level": 87,
+		"moves": ["bodyslam", "bulkup", "earthquake", "return", "shadowclaw", "slackoff"]
+	},
+	"slaking": {
+		"level": 82,
+		"moves": ["earthquake", "gigaimpact", "nightslash", "retaliate", "slackoff", "drainpunch"]
+	},
     "ninjask": {
         "level": 86,
         "moves": ["acrobatics", "leechlife", "swordsdance", "uturn"],
@@ -884,6 +892,10 @@
         "doublesLevel": 80,
         "doublesMoves": ["coil", "hypnosis", "muddywater", "recover"]
     },
+	"castform": {
+		"level": 98,
+		"moves": ["fireblast", "icebeam", "return", "scald", "thunderbolt", "thunderwave", "blizzard", "hurricane", "avalanche", "flamethrower"]
+	},
     "absol": {
         "level": 84,
         "moves": ["closecombat", "knockoff", "playrough", "suckerpunch", "swordsdance"],

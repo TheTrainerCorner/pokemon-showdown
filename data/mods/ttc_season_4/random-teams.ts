@@ -64,6 +64,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			(species.id === 'doublade' && movePool.includes('swordsdance')) ||
 			(species.id === 'entei' && movePool.includes('extremespeed')) ||
 			(species.id === 'genesectdouse' && movePool.includes('technoblast')) ||
+			(species.id === 'slaking' && movePool.includes('slackoff')) ||
 			(species.id === 'golisopod' && movePool.includes('leechlife') && movePool.includes('firstimpression'))
 		) {
 			// Entei should always have Extreme Speed, and Genesect-Douse should always have Techno Blast
@@ -78,11 +79,16 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		case 'acrobatics': case 'junglehealing':
 			// Special case to prevent lead Acrobatics Rillaboom
 			return {cull: (species.id.startsWith('rillaboom') && isLead) || (!isDoubles && !counter.setupType)};
+		case 'bite':
+			return {cull: (abilities.has('Vampire'))};
+		case 'blizzard':
+			return {cull: species.id === 'castform' && (moves.has('fireblast') || moves.has('hurricane'))};
 		case 'dualwingbeat': case 'fly':
 			return {cull: !types.has(move.type) && !counter.setupType && !!counter.get('Status')};
 		case 'healbell':
 			return {cull: movePool.includes('protect') || movePool.includes('wish')};
 		case 'fireblast':
+			if (species.id === 'castform') return { cull: (moves.has('blizzard') || moves.has('hurricane'))}
 			// Special case for Togekiss, which always wants Aura Sphere
 			return {cull: abilities.has('Serene Grace') && (!moves.has('trick') || counter.get('Status') > 1)};
 		case 'firepunch':
@@ -379,6 +385,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			// Special case for Mew, which only wants Brave Bird with Swords Dance
 			return {cull: moves.has('dragondance')};
 		case 'hurricane':
+			if (species.id === 'castform') return {cull: (moves.has('blizzard') || moves.has('fireblast'))};
 			return {cull: counter.setupType === 'Physical'};
 		case 'futuresight':
 			return {cull: moves.has('psyshock') || moves.has('trick') || movePool.includes('teleport')};
@@ -609,6 +616,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (species.name === 'Inteleon' || (counter.get('Water') > 1 && !moves.has('focusenergy')));
 		case 'Solar Power':
 			return (isNoDynamax && !teamDetails.sun);
+		case 'Surge Surfer':
+			return (moves.has('electricterrain') || abilities.has('Electric Surge'));
 		case 'Speed Boost':
 			return (isNoDynamax && species.id === 'ninjask');
 		case 'Steely Spirit':
@@ -691,6 +700,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 		// Lopunny, and other Facade users, don't want Limber, even if other abilities are poorly rated,
 		// since paralysis would arguably be good for them.
+		if (abilities.has('Truant') && (moves.has('recover') || moves.has('slackoff') || moves.has('shoreup'))) return 'Truant';
 		if (species.id === 'lopunny' && moves.has('facade')) return 'Cute Charm';
 		if (species.id === 'copperajahgmax') return 'Heavy Metal';
 		if (abilities.has('Guts') &&
@@ -769,6 +779,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 	getHighPriorityItem(ability: string, types: Set<string>, moves: Set<string>, counter: MoveCounter, teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isLead: boolean, isDoubles: boolean): string | undefined {
 		// not undefined — we want "no item" not "go find a different item"
 		if (moves.has('acrobatics') && ability !== 'Ripen') return ability === 'Grassy Surge' ? 'Grassy Seed' : '';
+		if (species.id === 'castform' && moves.has('blizzard')) return 'Icy Rock';
+		if (species.id === 'castform' && moves.has('hurricane')) return 'Damp Rock';
+		if (species.id === 'castform' && moves.has('fireblast')) return 'Heat Rock';
 		if (moves.has('geomancy') || moves.has('meteorbeam')) return 'Power Herb';
 		if (moves.has('shellsmash')) {
 			if (ability === 'Sturdy' && !isLead && !isDoubles) return 'Heavy-Duty Boots';
