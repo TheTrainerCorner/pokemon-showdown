@@ -1418,6 +1418,7 @@ export const commands: Chat.ChatCommands = {
 		this.canUseConsole();
 		this.sendReply('Restarting...');
 		const validPrivateCodePath = process.cwd();
+		this.sendReply(validPrivateCodePath);
 		const exec = (command: string) => bash(command, this, validPrivateCodePath);
 		let [code, stdout, stderr] = await exec(`ls`);		
 		[code, stdout, stderr] = await exec(`npm run build-full`);
