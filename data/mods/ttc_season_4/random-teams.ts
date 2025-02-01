@@ -16,89 +16,36 @@ interface BattleFactorySet {
 	ivs?: Partial<StatsTable>;
 }
 
-// Moves that restore HP:
-const RECOVERY_MOVES = [
+const RecoveryMove = [
 	'healorder', 'milkdrink', 'moonlight', 'morningsun', 'recover', 'roost', 'shoreup', 'slackoff', 'softboiled', 'strengthsap', 'synthesis',
 ];
-// Moves that drop stats:
-const CONTRARY_MOVES = [
-	'armorcannon', 'closecombat', 'leafstorm', 'makeitrain', 'overheat', 'spinout', 'superpower', 'vcreate',
+
+const ContraryMoves = [
+	'closecombat', 'leafstorm', 'overheat', 'dracometeor', 'superpower', 'vcreate', 'psychoboost',
 ];
-// Moves that boost Attack:
-const PHYSICAL_SETUP = [
-	'bellydrum', 'bulkup', 'coil', 'curse', 'dragondance', 'honeclaws', 'howl', 'meditate', 'poweruppunch', 'swordsdance', 'tidyup', 'victorydance',
+
+const PhysicalSetup = [
+	'bellydrum', 'bulkup', 'coil', 'curse', 'dragondance', 'honeclaws', 'howl', 'poweruppunch', 'swordsdance',
 ];
-// Moves which boost Special Attack:
-const SPECIAL_SETUP = [
-	'calmmind', 'chargebeam', 'geomancy', 'nastyplot', 'quiverdance', 'tailglow', 'torchsong',
+const SpecialSetup = [
+	'calmmind', 'chargebeam', 'geomancy', 'nastyplot', 'quiverdance', 'tailglow',
 ];
-// Moves that boost Attack AND Special Attack:
-const MIXED_SETUP = [
+const MixedSetup = [
 	'clangoroussoul', 'growth', 'happyhour', 'holdhands', 'noretreat', 'shellsmash', 'workup',
 ];
-// Some moves that only boost Speed:
-const SPEED_SETUP = [
-	'agility', 'autotomize', 'flamecharge', 'rockpolish', 'trailblaze',
+const SpeedSetup = [
+	'agility', 'autotomize', 'flamecharge', 'rockpolish',
 ];
-// Conglomerate for ease of access
-const SETUP = [
-	'acidarmor', 'agility', 'autotomize', 'bellydrum', 'bulkup', 'calmmind', 'clangoroussoul', 'coil', 'curse', 'dragondance',
-	'flamecharge', 'growth', 'honeclaws', 'howl', 'irondefense', 'meditate', 'nastyplot', 'noretreat', 'poweruppunch', 'quiverdance',
-	'rockpolish', 'shellsmash', 'shiftgear', 'swordsdance', 'tailglow', 'tidyup', 'trailblaze', 'workup', 'victorydance',
-];
-const SPEED_CONTROL = [
-	'electroweb', 'glare', 'icywind', 'lowsweep', 'quash', 'rocktomb', 'stringshot', 'tailwind', 'thunderwave', 'trickroom',
-];
-// Moves that shouldn't be the only STAB moves:
-const NO_STAB = [
-	'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'bulletpunch', 'chatter', 'chloroblast', 'clearsmog', 'covet',
-	'dragontail', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
-	'grassyglide', 'iceshard', 'icywind', 'incinerate', 'machpunch', 'meteorbeam', 'mortalspin', 'nuzzle', 'pluck', 'pursuit', 'quickattack',
-	'rapidspin', 'reversal', 'selfdestruct', 'shadowsneak', 'skydrop', 'snarl', 'strugglebug', 'suckerpunch', 'uturn', 'watershuriken',
+const NoStab = [
+	'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'chatter', 'clearsmog', 'dragontail', 'eruption', 'explosion',
+	'fakeout', 'firstimpression', 'flamecharge', 'flipturn', 'iceshard', 'icywind', 'incinerate', 'machpunch',
+	'meteorbeam', 'pluck', 'pursuit', 'quickattack', 'reversal', 'selfdestruct', 'skydrop', 'snarl', 'suckerpunch', 'uturn', 'watershuriken',
 	'vacuumwave', 'voltswitch', 'waterspout',
 ];
-// Hazard-setting moves
-const HAZARDS = [
+
+const Hazards = [
 	'spikes', 'stealthrock', 'stickyweb', 'toxicspikes',
 ];
-// Protect and its variants
-const PROTECT_MOVES = [
-	'banefulbunker', 'protect', 'spikyshield',
-];
-// Moves that switch the user out
-const PIVOT_MOVES = [
-	'chillyreception', 'flipturn', 'partingshot', 'shedtail', 'teleport', 'uturn', 'voltswitch',
-];
-
-// Moves that should be paired together when possible
-const MOVE_PAIRS = [
-	['lightscreen', 'reflect'],
-	['sleeptalk', 'rest'],
-	['protect', 'wish'],
-	['leechseed', 'protect'],
-	['leechseed', 'substitute'],
-];
-
-/** Pokemon who always want priority STAB, and are fine with it as its only STAB move of that type */
-const PRIORITY_POKEMON = [
-	'breloom', 'brutebonnet', 'honchkrow', 'mimikyu', 'scizor',
-];
-
-/** Pokemon who should never be in the lead slot */
-const NO_LEAD_POKEMON = [
-	'Zacian', 'Zamazenta',
-];
-const DOUBLES_NO_LEAD_POKEMON = [
-	'Basculegion', 'Houndstone', 'Roaring Moon', 'Zacian', 'Zamazenta',
-];
-
-const DEFENSIVE_TERA_BLAST_USERS = [
-	'alcremie', 'bellossom', 'comfey', 'florges',
-];
-
-function sereneGraceBenefits(move: Move) {
-	return move.secondary?.chance && move.secondary.chance > 20 && move.secondary.chance < 100;
-}
 
 export class RandomTTCTeams extends RandomGen8Teams {
 
@@ -106,34 +53,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		super(format, prng);
 		this.randomData = require('./random-sets.json');
 		this.moveEnforcementCheckers['Cosmic'] = (movepool, moves, abilities, types, counter) => !counter.get('Cosmic');
-		this.moveEnforcementCheckers['Bug'] = (movepool, moves, abilities, types, counter) => (
-			movepool.includes('megahorn') || movepool.includes('xscissor') ||
-			(!counter.get('Bug') && types.has('Electric'))
-		);
-		this.moveEnforcementCheckers['Grass'] = (movepool, moves, abilities, types, counter, species) => (
-			!counter.get('Grass') && (
-				movepool.includes('leafstorm') || movepool.includes('grassyglide') ||
-				species.baseStats.atk >= 100 || types.has('Electric') || abilities.has('Seed Sower')
-			)
-		);
-		this.moveEnforcementCheckers['Ice'] = (movepool, moves, abilities, types, counter) => {
-			if (!counter.get('Ice')) return true;
-			if (movepool.includes('iciclecrash')) return true;
-			if (movepool.includes('freezedry')) return true;
-			return abilities.has('Snow Warning') && movepool.includes('blizzard');
-		}
-		this.moveEnforcementCheckers['Steel'] = (movepool, moves, abilities, types, counter, species) => {
-			if (!counter.get('Steel')) return true;
-			if (species.baseStats.atk >= 90) return true;
-			if (movepool.includes('meteormash') || movepool.includes('gigatonhammer') || movepool.includes('makeitrain')) return true;
-			return !counter.get('Steel');
-		}
-		this.moveEnforcementCheckers['Water'] = (movepool, moves, abilities, types, counter) => {
-			if (!counter.get('Water') && !moves.has('hypervoice')) return true;
-			if (types.has('Ground')) return true;
-			if (['hypervoice', 'liquidation', 'surgingstrikes'].some(m => movepool.includes(m))) return true;
-			return abilities.has('Huge Power') && movepool.includes('aquajet');
-		}
 	}
 
 	shouldCullMove(move: Move, types: Set<string>, moves: Set<string>, abilities: Set<string>, counter: MoveCounter, movePool: string[], teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isLead: boolean, isDoubles: boolean, isNoDynamax: boolean): { cull: boolean; isSetup?: boolean; } {
@@ -696,8 +615,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (moves.has('fakeout') && !isDoubles);
 		case 'Sturdy':
 			return (moves.has('bulkup') || !!counter.get('recoil') || (!isNoDynamax && abilities.has('Solid Rock')));
-		case 'Surge Surfer':
-			return (!moves.has('electricterrain') || abilities.has('Electric Surge'));
 		case 'Swarm':
 			return (!counter.get('Bug') || !!counter.get('recovery'));
 		case 'Sweet Veil':
@@ -1093,7 +1010,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 		const randMoves =
 			(isDoubles && data.doublesMoves) ||
-			(isNoDynamax && []) ||
+			(isNoDynamax && data.noDynamaxMoves) ||
 			data.moves;
 		const movePool: string[] = [...(randMoves || this.dex.species.getMovePool(species.id))];
 
