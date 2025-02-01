@@ -179,7 +179,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 30,
 		category: "Physical",
 		name: "Stardust Trail",
-		pp: 32,
+		pp: 15,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		secondary: {

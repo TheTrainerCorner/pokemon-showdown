@@ -2799,5 +2799,9 @@
         "moves": ["astralbarrage", "nastyplot", "pollenpuff", "psyshock", "substitute", "trick"],
         "doublesLevel": 68,
         "doublesMoves": ["astralbarrage", "nastyplot", "pollenpuff", "protect", "psyshock"]
-    }
+    },
+	"galaxeon": {
+		"level": 87,
+		"moves": ["astroforce", "stardusttrail", "shadowball", "weatherball", "moonblast", "moonlight", "signalbeam", "gravitationalslam", "aurorabeam"]
+	}
 }
