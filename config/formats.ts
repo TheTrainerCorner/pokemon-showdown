@@ -24,6 +24,12 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 9] National Dex Randoms",
 		mod: Config.ttcseason,
+		team: "random",
+		ruleset: ["Standard NatDex", "Terastal Clause", "Species Clause", "Sleep Clause Mod", "Illusion Level Mod", "!Team Preview"],
+	},
+	{
+		name: "[Gen 9] National Dex Battle Factory",
+		mod: Config.ttcseason,
 		team: "randomFactory",
 		ruleset: ['Standard NatDex', 'Terastal Clause', 'Species Clause', 'Sleep Clause Mod', 'Illusion Level Mod', '!Team Preview'],
 		onBegin() {

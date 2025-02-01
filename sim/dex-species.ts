@@ -30,6 +30,10 @@ export interface SpeciesFormatsData {
 	natDexTier?: TierTypes.Singles | TierTypes.Other;
 	draftTier?: TierTypes.Drafts | TierTypes.Singles | TierTypes.Other;
 	tier?: TierTypes.Singles | TierTypes.Other;
+	randomBattleLevel?: number;
+	randomDoubleBattleLevel?: number;
+	randomBattleMoves?: string[];
+	randomDoubleBattleMoves?: string[];
 }
 
 export type ModdedSpeciesFormatsData = SpeciesFormatsData & {inherit?: true};
@@ -234,7 +238,10 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 	readonly natDexTier: TierTypes.Singles | TierTypes.Other;
 
 	readonly draftTier: TierTypes.Drafts | TierTypes.Singles | TierTypes.Other;
-
+	readonly randomBattleLevel?: number | undefined;
+	readonly randomBattleMoves?: string[] | undefined;
+	readonly randomDoubleBattleLevel?: number | undefined;
+	readonly randomDoubleBattleMoves?: string[] | undefined;
 	constructor(data: AnyObject) {
 		super(data);
 		// eslint-disable-next-line @typescript-eslint/no-this-alias
@@ -291,6 +298,10 @@ export class Species extends BasicEffect implements Readonly<BasicEffect & Speci
 		this.changesFrom = data.changesFrom ||
 			(this.battleOnly !== this.baseSpecies ? this.battleOnly : this.baseSpecies);
 		this.pokemonGoData = data.pokemonGoData || undefined;
+		this.randomBattleLevel = data.randomBattleLevel;
+		this.randomBattleMoves = data.randomBattleMoves;
+		this.randomDoubleBattleLevel = data.randomDoubleBattleLevel;
+		this.randomDoubleBattleMoves = data.randomDoubleBattleMoves;
 		if (Array.isArray(data.changesFrom)) this.changesFrom = data.changesFrom[0];
 
 		if (!this.gen && this.num >= 1) {
