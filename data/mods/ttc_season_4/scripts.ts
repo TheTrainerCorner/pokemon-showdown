@@ -103,8 +103,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.abilities
 				.setAbility1('Pressure')
 			.pokemon.baseStats
-				// .setHP(75)
-				.setHP(80)
+				.setHP(75)
 				.setATK(60)
 				.setDEF(70)
 				.setSPD(70)
