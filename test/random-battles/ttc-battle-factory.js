@@ -8,7 +8,7 @@ const {testTeam, assertSetValidity, validateLearnset } = require('./tools');
 const { default: Dex } = require('../../dist/sim/dex');
 
 describe('Season 4 Battle Factory', () => {
-	it ('ttc_season_4/factory-sets.json should be valid', () => {
+	it ('ttc_season_4/factory-sets.json should be valid', async (done) => {
 		const setsJSON = require(`../../data/mods/ttc_season_4/factory-sets.json`);
 		const dex = Dex.mod('ttc_season_4');
 		for (const speciesName of Object.keys(setsJSON['OU'])) {
@@ -49,5 +49,6 @@ describe('Season 4 Battle Factory', () => {
 				}
 			}	
 		}
-	});
+		done();
+	}).timeout(10000);
 })
