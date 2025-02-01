@@ -2802,6 +2802,6 @@
     },
 	"galaxeon": {
 		"level": 87,
-		"moves": ["astroforce", "stardusttrail", "shadowball", "weatherball", "moonblast", "moonlight", "signalbeam", "gravitationalslam", "aurorabeam"]
+		"moves": ["astroforce", "stardusttrail", "shadowball", "weatherball", "moonblast", "moonlight", "signalbeam", "aurorabeam"]
 	}
 }
