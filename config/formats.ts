@@ -27,7 +27,7 @@ export const Formats: FormatList = [
 		team: "random",
 		ruleset: ["Standard NatDex", "Terastal Clause", "Species Clause", "Sleep Clause Mod", "Illusion Level Mod", "!Team Preview"],
 		banlist: [
-			"Kyruem-White", "Kyruem-Black",
+			"Kyurem-White", "Kyurem-Black",
 			"Rayquaza", "Rayquaza-Mega",
 			"Mewtwo-Mega-X", "Mewtwo-Mega-Y",
 			"Groudon-Primal", "Kyogre-Primal",
