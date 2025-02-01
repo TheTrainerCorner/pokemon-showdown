@@ -71,7 +71,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility0('Pressure')
 			.pokemon.baseStats
-				.setATK(90)
+				// .setATK(90)
+				.setATK(100)
 				.setDEF(100)
 				.setSPD(85)
 		new ModifyPokemon('Pidgeot', this)
