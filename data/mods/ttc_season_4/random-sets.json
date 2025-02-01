@@ -3,9 +3,9 @@
         "level": 83,
         "moves": ["gigadrain", "leechseed", "sleeppowder", "sludgebomb", "substitute", "roaroftime"]
     },
-    "venusaurgmax": {
-        "doublesLevel": 80,
-        "doublesMoves": ["earthpower", "energyball", "leechseed", "protect", "sleeppowder", "sludgebomb"]
+	"venusaurmega": {
+        "level": 83,
+        "moves": ["gigadrain", "leechseed", "sleeppowder", "sludgebomb", "substitute", "roaroftime"]
     },
     "charizard": {
         "level": 83,
@@ -14,9 +14,19 @@
         "doublesMoves": ["airslash", "heatwave", "overheat", "protect", "scorchingsands", "tailwind"],
         "noDynamaxMoves": ["defog", "earthquake", "fireblast", "hurricane", "roost", "toxic"]
     },
-    "charizardgmax": {
+    "charizardmegax": {
+        "level": 83,
+        "moves": ["airslash", "earthquake", "fireblast", "focusblast", "roost"],
         "doublesLevel": 80,
-        "doublesMoves": ["airslash", "fireblast", "focusblast", "heatwave", "protect", "tailwind"]
+        "doublesMoves": ["airslash", "heatwave", "overheat", "protect", "scorchingsands", "tailwind"],
+        "noDynamaxMoves": ["defog", "earthquake", "fireblast", "hurricane", "roost", "toxic"]
+    },
+    "charizardmegay": {
+        "level": 83,
+        "moves": ["airslash", "earthquake", "fireblast", "focusblast", "roost"],
+        "doublesLevel": 80,
+        "doublesMoves": ["airslash", "heatwave", "overheat", "protect", "scorchingsands", "tailwind"],
+        "noDynamaxMoves": ["defog", "earthquake", "fireblast", "hurricane", "roost", "toxic"]
     },
     "blastoise": {
         "level": 81,
@@ -24,11 +34,11 @@
         "doublesLevel": 80,
         "doublesMoves": ["icebeam", "muddywater", "protect", "shellsmash"]
     },
-    "blastoisegmax": {
+    "blastoisemega": {
         "level": 81,
-        "moves": ["icebeam", "protect", "rapidspin", "scald", "toxic"],
+        "moves": ["earthquake", "hydropump", "icebeam", "shellsmash"],
         "doublesLevel": 80,
-        "doublesMoves": ["fakeout", "flipturn", "followme", "icywind", "lifedew", "muddywater"]
+        "doublesMoves": ["icebeam", "muddywater", "protect", "shellsmash"]
     },
     "butterfree": {
         "level": 87,
@@ -36,21 +46,11 @@
         "doublesLevel": 88,
         "doublesMoves": ["hurricane", "pollenpuff", "protect", "ragepowder", "sleeppowder", "tailwind"]
     },
-    "butterfreegmax": {
-        "level": 87,
-        "moves": ["airslash", "bugbuzz", "quiverdance", "sleeppowder"],
-        "doublesLevel": 88,
-        "doublesMoves": ["hurricane", "pollenpuff", "protect", "quiverdance", "sleeppowder"]
-    },
     "pikachu": {
         "level": 92,
         "moves": ["knockoff", "playrough", "surf", "voltswitch", "volttackle"],
         "doublesLevel": 91,
         "doublesMoves": ["fakeout", "grassknot", "knockoff", "protect", "volttackle"]
-    },
-    "pikachugmax": {
-        "doublesLevel": 90,
-        "doublesMoves": ["extremespeed", "fakeout", "knockoff", "surf", "volttackle"]
     },
     "raichu": {
         "level": 87,
@@ -171,6 +171,12 @@
         "doublesLevel": 80,
         "doublesMoves": ["focusblast", "nastyplot", "protect", "psychic", "shadowball"]
     },
+    "alakazammega": {
+        "level": 78,
+        "moves": ["counter", "focusblast", "nastyplot", "psychic", "shadowball"],
+        "doublesLevel": 80,
+        "doublesMoves": ["focusblast", "nastyplot", "protect", "psychic", "shadowball"]
+    },
     "machamp": {
         "level": 81,
         "moves": ["bulletpunch", "closecombat", "dynamicpunch", "facade", "knockoff", "stoneedge"],
@@ -201,6 +207,12 @@
         "doublesLevel": 84,
         "doublesMoves": ["calmmind", "fireblast", "icebeam", "psychic", "scald", "slackoff", "trickroom"]
     },
+    "slowbromega": {
+        "level": 85,
+        "moves": ["futuresight", "icebeam", "scald", "slackoff", "teleport", "thunderwave"],
+        "doublesLevel": 84,
+        "doublesMoves": ["calmmind", "fireblast", "icebeam", "psychic", "scald", "slackoff", "trickroom"]
+    },
     "slowbrogalar": {
         "level": 88,
         "moves": ["flamethrower", "psychic", "shellsidearm", "trick", "trickroom"],
@@ -224,19 +236,13 @@
         "doublesLevel": 86,
         "doublesMoves": ["focusblast", "nastyplot", "protect", "shadowball", "sludgebomb", "thunderbolt", "trick", "willowisp"]
     },
-    "gengargmax": {
-        "level": 80,
-        "moves": ["focusblast", "nastyplot", "shadowball", "sludgewave", "trick"],
+    "gengarmega": {
         "doublesLevel": 86,
-        "doublesMoves": ["focusblast", "nastyplot", "protect", "shadowball", "sludgebomb", "thunderbolt", "willowisp"]
+        "doublesMoves": ["focusblast", "nastyplot", "protect", "shadowball", "sludgebomb", "thunderbolt", "trick", "willowisp"]
     },
     "kingler": {
         "level": 84,
         "moves": ["agility", "liquidation", "rockslide", "superpower", "swordsdance", "xscissor"]
-    },
-    "kinglergmax": {
-        "doublesLevel": 86,
-        "doublesMoves": ["knockoff", "liquidation", "protect", "superpower", "xscissor"]
     },
     "exeggutor": {
         "level": 86,
@@ -295,6 +301,12 @@
         "moves": ["aromatherapy", "seismictoss", "softboiled", "stealthrock", "toxic"]
     },
     "kangaskhan": {
+        "level": 85,
+        "moves": ["doubleedge", "earthquake", "fakeout", "hammerarm", "suckerpunch"],
+        "doublesLevel": 88,
+        "doublesMoves": ["doubleedge", "drainpunch", "fakeout", "protect", "rockslide", "suckerpunch"]
+    },
+    "kangaskhanmega": {
         "level": 85,
         "moves": ["doubleedge", "earthquake", "fakeout", "hammerarm", "suckerpunch"],
         "doublesLevel": 88,
