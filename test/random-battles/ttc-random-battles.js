@@ -9,7 +9,7 @@ describe('TTC Random Battles', () => {
 	const dex = Dex.forFormat(options.format);
 	const generator = Teams.getGenerator(options.format);
 
-	it ('All moves on all sets should be obtainable', (done) => {
+	it('All moves on all sets should be obtainable', (done) => {
 		const rounds = 500;
 		for (const pokemon of Object.keys(dataJSON)) {
 			const species = dex.species.get(pokemon);
@@ -27,6 +27,12 @@ describe('TTC Random Battles', () => {
 		}
 		done();
 	}).timeout(10000);
+
+	it ('should not give mega evolution abilities to base formes', () => {
+		testSet('manectricmega', {rounds: 1, ...options}, set => {
+			assert(set.ability !== 'Intimidate', 'Mega Manectric should not have Intimidate before it mega evolves');
+		})
+	});
 
 	it ('should not generate Golisopod without Bug STAB', () => {
 		testSet('golisopod', options, set => {
