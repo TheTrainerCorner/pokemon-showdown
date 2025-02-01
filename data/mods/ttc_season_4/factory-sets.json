@@ -2787,7 +2787,7 @@
 					"item": "Pokepen",
 					"ability": "Sap Sipper",
 					"moves": [["Bulk Up"], ["First Impression"], ["Drain Punch"], ["Trailblaze"]]
-				}
+				},
 				{
 					"species": "Heracross",
 					"item": "Heracronite",
@@ -4683,6 +4683,112 @@
 					"item": "Choice Specs",
 					"ability": "Steadfast",
 					"moves": [["Psyshock"], ["Signal Beam"], ["Shadow Ball"], ["Thunderbolt"]]
+				}
+			]
+		},
+		"torterra": {
+			"sets": [
+				{
+					"species": "Torterra",
+					"item": "White Herb",
+					"ability": "Thick Fat",
+					"moves": [["Shell Smash"], ["Headlon Rush"], ["Cut"], ["Stone Edge"]]
+				},
+				{
+					"species": "Torterra",
+					"item": "Leftovers",
+					"ability": "Shell Armor",
+					"moves": [["Rapid Spin"], ["Earthquake"], ["Stealth Rock"], ["Synthesis"]]
+				}
+			]
+		},
+		"infernape": {
+			"sets": [
+				{
+					"species": "Infernape",
+					"item": "Life Orb",
+					"ability": "Blaze",
+					"moves": [["Close Combat"], ["U-Turn"], ["Overheat"], ["Knock Off"]]
+				},
+				{
+					"species": "Infernape",
+					"item": "Choice Scarf",
+					"ability": "Steadfast",
+					"moves": [["Close Combat"], ["Cut"], ["U-Turn"], ["Flare Blitz"]]
+				}
+			]
+		},
+		"empoleon": {
+			"sets": [
+				{
+					"species": "Empoleon",
+					"item": "Armor Plate",
+					"ability": "Torrent",
+					"moves": [["Stealth Rock"], ["Flip Turn"], ["Sheer Cold"], ["Roost"]]
+				},
+				{
+					"species": "Empoleon",
+					"item": "Assault Vest",
+					"ability": "Competitive",
+					"moves": [["Surf"], ["Flash Cannon"], ["Grass Knot"], ["Ice Beam"]]
+				},
+				{
+					"species": "Empoleon",
+					"item": "Leftovers",
+					"ability": "Torrent",
+					"moves": [["Scald"], ["Flip Turn"], ["Defog"], ["Roost"]]
+				}
+			]
+		},
+		"bibarel": {
+			"sets": [
+				{
+					"species": "Bibarel",
+					"item": "Life Orb",
+					"ability": "Fur Coat",
+					"moves": [["Swords Dance"], ["Wood Hammer"], ["Aqua Jet"], ["Liquidation"]]
+				}
+			]
+		},
+		"kricketune": {
+			"sets": [
+				{
+					"species": "Kricketune",
+					"item": "Heavy-Duty Boots",
+					"ability": "Punk Rock",
+					"moves": [["Boomburst"], ["Bug Buzz"], ["Sticky Web"], ["Taunt"]]
+				},
+				{
+					"species": "Kricketune",
+					"item": "Choice Scarf",
+					"ability": "Punk Rock",
+					"moves": [["Parting Shot"], ["Boomburst"], ["Bug Buzz"], ["Giga Drain"]]
+				}
+			]
+		},
+		"luxio": {
+			"sets": [
+				{
+					"species": "Luxio",
+					"item": "Eviolite",
+					"ability": "Strong Jaw",
+					"moves": [["Crunch"], ["Ice Fang"], ["Thunder Fang"], ["Volt Switch"]]
+				}
+			]
+		},
+		"luxray": {
+			"sets": [
+				{
+					"species": "Luxray",
+					"item": "Life Orb",
+					"ability": "Strong Jaw",
+					"moves": [["Crunch"], ["Sucker Punch"], ["Thunder Fang"], ["Ice Fang"]]
+				},
+				{
+					"species": "Luxray",
+					"item": "Choice Scarf",
+					"ability": "Strong Jaw",
+					"moves": [["Crunch"], ["Ice Fang"], ["Thunder Fang"], ["Volt Switch"]]
 				}
 			]
 		}
