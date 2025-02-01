@@ -26,18 +26,6 @@ export const Formats: FormatList = [
 		mod: Config.ttcseason,
 		team: "random",
 		ruleset: ["Standard NatDex", "Terastal Clause", "Species Clause", "Sleep Clause Mod", "Illusion Level Mod", "!Team Preview"],
-		banlist: [
-			"Kyurem-White", "Kyurem-Black",
-			"Rayquaza", "Rayquaza-Mega",
-			"Mewtwo-Mega-X", "Mewtwo-Mega-Y",
-			"Groudon-Primal", "Kyogre-Primal",
-			"Necrozma-Ultra", "Arceus",
-			"Zygarde-Complete",
-			"Diancie-Mega", "Terapagos-Stellar",
-			"Zacian-Crowned", "Zamazenta-Crowned",
-			"Latias-Mega", "Latios-Mega",
-			"Eternatus"
-		],
 	},
 	{
 		name: "[Gen 9] National Dex Battle Factory",
