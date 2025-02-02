@@ -2686,7 +2686,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	garchompmega: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "(OU)",
+		natDexTier: "OU",
 	},
 	riolu: {
 		tier: "LC",
