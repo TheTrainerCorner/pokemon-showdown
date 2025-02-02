@@ -2258,7 +2258,7 @@
     },
     "mudsdale": {
         "level": 83,
-        "moves": ["bodypress", "earthquake", "heavyslam", "rockslide", "stealthrock"],
+        "moves": ["bodypress", "earthquake", "heavyslam", "rockslide", "stealthrock", "slackoff"],
         "doublesLevel": 86,
         "doublesMoves": ["bodypress", "heavyslam", "highhorsepower", "protect", "rest", "rocktomb"]
     },

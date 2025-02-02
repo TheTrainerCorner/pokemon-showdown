@@ -239,6 +239,12 @@ describe('TTC Random Battles', () => {
 	it ('should not give Keen Eye to Pidgeot-Mega as base forme', () => {
 		testSet('pidgeotmega', options, (set) => {
 			assert(set.ability !== 'Keen Eye', `Pidgeot-Mega was given Keen Eye (Got ${set.ability})`);
-		})
+		});
 	});
+
+	it ('should give Air Lock to Ho-Oh', () => {
+		testSet('hooh', options, (set) => {
+			assert(set.ability === 'Air Lock', `Ho-Oh was not given Air Lock (Got ${set.ability})`);
+		})
+	})
 });
