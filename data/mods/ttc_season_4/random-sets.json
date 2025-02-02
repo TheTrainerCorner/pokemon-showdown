@@ -3421,6 +3421,14 @@
 		"level": 80,
 		"moves": ["sludgewave", "psychic", "mysticalfire", "dazzlinggleam", "airslash"]
 	},
+	"galladeolympios": {
+		"level": 80,
+		"moves": ["closecombat", "cut", "sacredsword", "horrifyingshield", "slash", "airslash"]
+	},
+	"gardevoirolympios": {
+		"level": 80,
+		"moves": ["dazzlinggleam", "drainingkiss", "aurasphere", "earthpower", "hypervoice", "sparklyswirl", "shadowball"]
+	},
 	"octolure": {
 		"level": 80,
 		"moves": ["thunderbolt", "scald", "shadowball", "psychic", "hydropump", "thunderwave", "toxic"]
