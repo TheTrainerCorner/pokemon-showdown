@@ -1095,13 +1095,13 @@
     },
     "metagross": {
         "level": 79,
-        "moves": ["agility", "bulletpunch", "earthquake", "explosion", "meteormash", "stealthrock", "thunderpunch"],
+        "moves": ["agility", "bulletpunch", "earthquake", "explosion", "ironhead", "stealthrock", "thunderpunch"],
         "doublesLevel": 82,
         "doublesMoves": ["agility", "bulletpunch", "icepunch", "meteormash", "stompingtantrum", "trick", "zenheadbutt"]
     },
 	"metagrossmega": {
         "level": 79,
-        "moves": ["agility", "bulletpunch", "earthquake", "explosion", "meteormash", "stealthrock", "thunderpunch"],
+        "moves": ["agility", "bulletpunch", "earthquake", "explosion", "ironhead", "stealthrock", "thunderpunch"],
         "doublesLevel": 82,
         "doublesMoves": ["agility", "bulletpunch", "icepunch", "meteormash", "stompingtantrum", "trick", "zenheadbutt"]
     },
