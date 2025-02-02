@@ -1,6 +1,6 @@
 'use strict';
 
-const { testSet, testNotBothMoves, testHasSTAB, testAlwaysHasMove} = require('./tools');
+const { testSet, testNotBothMoves, testHasSTAB, testAlwaysHasMove, testNotHasItemAndMove} = require('./tools');
 const assert = require('../assert');
 
 describe('TTC Random Battles', () => {
@@ -245,6 +245,10 @@ describe('TTC Random Battles', () => {
 	it ('should give Air Lock to Ho-Oh', () => {
 		testSet('hooh', options, (set) => {
 			assert(set.ability === 'Air Lock', `Ho-Oh was not given Air Lock (Got ${set.ability})`);
-		})
-	})
+		});
+	});
+
+	it ('should ensure that Beheeyem can not have Choice Specs with Trick Room', () => {
+		testNotHasItemAndMove('beheeyem', options, 'Choice Specs', 'trickroom');
+	});
 });

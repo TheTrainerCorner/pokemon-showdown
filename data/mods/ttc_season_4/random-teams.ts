@@ -667,7 +667,14 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 		return {cull: false};
 	}
+	shouldCullItem(item: Item, types: Set<string>, moves: Set<string>, abilities: Set<string>, counter: MoveCounter, movePool: string[], teamDetails: RandomTeamsTypes.TeamDetails, species: Species): boolean {
+		switch (item.name) {
+			case 'Choice Specs':
+				return (species.id === 'beheeyem' && moves.has('trickroom'));
+		}
 
+		return false;
+	}
 	shouldCullAbility(ability: string, types: Set<string>, moves: Set<string>, abilities: Set<string>, counter: MoveCounter, movePool: string[], teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isDoubles: boolean, preferredType: string, role: RandomTeamsTypes.Role, isNoDynamax: boolean): boolean {
 		if ([
 			'Flare Boost', 'Hydration', 'Ice Body', 'Immunity', 'Innards Out', 'Insomnia', 'Misty Surge', 'Moody',
@@ -882,6 +889,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		if (species.id === 'palafin') return 'Emergency Exit';
 		if (species.id === 'kecleon') return 'Color Change';
 		if (species.id === 'lopunny' && moves.has('facade')) return 'Cute Charm';
+		if (species.id === 'liepard' && moves.has('thunderwave')) return 'Prankster';
 		if (species.id === 'copperajahgmax') return 'Heavy Metal';
 		if (abilities.has('Guts') &&
 			// for Ursaring in BDSP
@@ -955,7 +963,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		return abilityAllowed[0].name;
 
 	}
-
+	
 	getHighPriorityItem(ability: string, types: Set<string>, moves: Set<string>, counter: MoveCounter, teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isLead: boolean, isDoubles: boolean): string | undefined {
 		// not undefined — we want "no item" not "go find a different item"
 		if (moves.has('acrobatics') && ability !== 'Ripen') return ability === 'Grassy Surge' ? 'Grassy Seed' : '';
@@ -1405,19 +1413,26 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			item = this.sample(species.requiredItems);
 		// First, the extra high-priority items
 		} else {
+			let failed = false;
 			item = this.getHighPriorityItem(ability, types, moves, counter, teamDetails, species, isLead, isDoubles);
 			if (item === undefined && isDoubles) {
 				item = this.getDoublesItem(ability, types, moves, abilities, counter, teamDetails, species);
 			}
+			failed = this.shouldCullItem(this.dex.items.get(item), types, moves, abilities, counter, movePool, teamDetails, species);
+			if (failed) item = undefined;
 			if (item === undefined) {
 				item = this.getMediumPriorityItem(ability, moves, counter, species, isLead, isDoubles, isNoDynamax!);
 			}
+			failed = this.shouldCullItem(this.dex.items.get(item), types, moves, abilities, counter, movePool, teamDetails, species);
+			if (failed) item = undefined;
 			if (item === undefined) {
 				item = this.getLowPriorityItem(
 					ability, types, moves, abilities, counter, teamDetails, species, isLead, isDoubles, isNoDynamax!
 				);
 			}
-
+			failed = this.shouldCullItem(this.dex.items.get(item), types, moves, abilities, counter, movePool, teamDetails, species);
+			if (failed) item = undefined;
+			
 			// fallback
 			if (item === undefined) item = isDoubles ? 'Sitrus Berry' : 'Leftovers';
 		}

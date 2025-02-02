@@ -84,6 +84,22 @@ function testHiddenPower(pokemon, options) {
 }
 
 /**
+ * 
+ * @param {ID} pokemon 
+ * @param {{format?: string, rounds?: number, isDoubles?: boolean, isLead?: boolean, isDynamx?: boolean, seed?: PRNGSeed}} options 
+ * @param {string} item 
+ * @param {string} move 
+ */
+function testNotHasItemAndMove(pokemon, options, item, move) {
+	testSet(pokemon, options, set => {
+		assert(
+			!(set.item === item && set.moves.includes(move)),
+			`${pokemon} should not generate ${item} and ${move} on the same set.`
+		);
+	});
+}
+
+/**
  * Tests that a Pokémon always gets a move.
  *
  * @param {ID} pokemon the ID of the Pokemon whose set is to be tested
@@ -190,6 +206,7 @@ exports.testNotBothMoves = testNotBothMoves;
 exports.testHiddenPower = testHiddenPower;
 exports.testTeam = testTeam;
 exports.testHasSTAB = testHasSTAB;
+exports.testNotHasItemAndMove = testNotHasItemAndMove;
 
 exports.assertSetValidity = assertSetValidity;
 exports.validateLearnset = validateLearnset;
