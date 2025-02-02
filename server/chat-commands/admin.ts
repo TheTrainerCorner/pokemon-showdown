@@ -1456,7 +1456,7 @@ export const commands: Chat.ChatCommands = {
 		
 		success = await updateclient(this, validPrivateCodePath);
 
-		this.addGlobalModAction(`${user.name} used /updateserver private`);
+		this.addGlobalModAction(`${user.name} used /updateclient`);
 
 		const exec = (command: string) => bash(command, this, validPrivateCodePath);
 		const [code, stdout, stderr] = await exec(`npm run build-full`);
