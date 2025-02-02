@@ -803,8 +803,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (moves.has('bulkup') || !!counter.get('recoil') || (!isNoDynamax && abilities.has('Solid Rock')));
 		case 'Swarm':
 			return (!counter.get('Bug') || !!counter.get('recovery'));
-		case 'Swift Swim':
-			return (!teamDetails.rain && !abilities.has('Slush Rush'));
 		case 'Sweet Veil':
 			return types.has('Grass');
 		case 'Swift Swim':
@@ -881,6 +879,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		// since paralysis would arguably be good for them.
 		if (abilities.has('Truant') && (moves.has('recover') || moves.has('slackoff') || moves.has('shoreup'))) return 'Truant';
 		if (species.id === 'hooh') return 'Air Lock';
+		if (species.id === 'palafin') return 'Emergency Exit';
 		if (species.id === 'kecleon') return 'Color Change';
 		if (species.id === 'lopunny' && moves.has('facade')) return 'Cute Charm';
 		if (species.id === 'copperajahgmax') return 'Heavy Metal';
