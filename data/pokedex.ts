@@ -20822,7 +20822,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 45.5,
 		eggGroups: ["Undiscovered"],
 		color: "Gray",
-		tags: ["Fakemon", "Sub-Legendary", "Has Back Sprite"]
+		tags: ["Fakemon", "Sub-Legendary", "Has Back Sprite"],
 		tier: "OU",
 		natDexTier: "OU",
 		doublesTier: "DOU",
