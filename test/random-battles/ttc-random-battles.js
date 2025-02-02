@@ -206,5 +206,11 @@ describe('TTC Random Battles', () => {
 
 	it ('should force slaking to have slack off', () => {
 		testAlwaysHasMove('slaking', options, 'slackoff');
+	});
+
+	it ('should give megastone to Venusaur-Mega', () => {
+		testSet('venusaurmega', options, (set) => {
+			assert(set.item === 'Venusaurite', `Venusaur-Mega does not have its mega stone. (Got ${set.item})`);
+		});
 	})
 });
