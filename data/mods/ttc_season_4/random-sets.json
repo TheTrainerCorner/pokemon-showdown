@@ -40,6 +40,14 @@
         "doublesLevel": 80,
         "doublesMoves": ["icebeam", "muddywater", "protect", "shellsmash"]
     },
+	"beedrill": {
+		"level": 80,
+		"moves": ["toxicspikes", "barbbarrage", "knockoff", "uturn", "swordsdance", "xscissor", "throatchop", "firstimpression", "poisonjab", "drillrun", "tailwind"]
+	},
+	"beedrillmega": {
+		"level": 80,
+		"moves": ["swordsdance", "drillrun", "poisonjab", "knockoff", "tailwind", "firstimpression", "uturn"]
+	},
     "butterfree": {
         "level": 87,
         "moves": ["energyball", "hurricane", "quiverdance", "sleeppowder"],
@@ -733,13 +741,31 @@
         "doublesLevel": 88,
         "doublesMoves": ["breakingswipe", "energyball", "focusblast", "leafstorm"]
     },
+	"sceptilemega": {
+        "level": 86,
+        "moves": ["earthquake", "focusblast", "gigadrain", "leafstorm", "leechseed", "rockslide", "substitute"],
+        "doublesLevel": 88,
+        "doublesMoves": ["breakingswipe", "energyball", "focusblast", "leafstorm"]
+    },
     "blaziken": {
         "level": 75,
         "moves": ["closecombat", "flareblitz", "knockoff", "stoneedge", "swordsdance"],
         "doublesLevel": 78,
         "doublesMoves": ["closecombat", "flareblitz", "knockoff", "protect", "swordsdance"]
     },
+	"blazikenmega": {
+        "level": 75,
+        "moves": ["closecombat", "flareblitz", "knockoff", "stoneedge", "swordsdance"],
+        "doublesLevel": 78,
+        "doublesMoves": ["closecombat", "flareblitz", "knockoff", "protect", "swordsdance"]
+    },
     "swampert": {
+        "level": 80,
+        "moves": ["earthquake", "flipturn", "icebeam", "protect", "scald", "stealthrock", "toxic"],
+        "doublesLevel": 86,
+        "doublesMoves": ["highhorsepower", "icywind", "muddywater", "protect", "stealthrock", "wideguard"]
+    },
+    "swampertmega": {
         "level": 80,
         "moves": ["earthquake", "flipturn", "icebeam", "protect", "scald", "stealthrock", "toxic"],
         "doublesLevel": 86,
