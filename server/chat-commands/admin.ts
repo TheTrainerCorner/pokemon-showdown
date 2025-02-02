@@ -1455,10 +1455,12 @@ export const commands: Chat.ChatCommands = {
 		let success = true;
 		
 		success = await updateclient(this, validPrivateCodePath);
+
 		this.addGlobalModAction(`${user.name} used /updateserver private`);
 
 		const exec = (command: string) => bash(command, this, validPrivateCodePath);
 		const [code, stdout, stderr] = await exec(`npm run build-full`);
+		this.sendReply(stdout);
 
 		if (code || stderr) throw new Error(`updateclient: Build failed | ${stderr} | ${code}`);
 		this.sendReply('updateclient: Build Complete');
