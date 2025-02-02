@@ -803,6 +803,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (moves.has('bulkup') || !!counter.get('recoil') || (!isNoDynamax && abilities.has('Solid Rock')));
 		case 'Swarm':
 			return (!counter.get('Bug') || !!counter.get('recovery'));
+		case 'Swift Swim':
+			return (!teamDetails.rain && !abilities.has('Slush Rush'));
 		case 'Sweet Veil':
 			return types.has('Grass');
 		case 'Swift Swim':
