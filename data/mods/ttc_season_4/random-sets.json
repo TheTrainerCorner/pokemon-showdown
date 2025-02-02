@@ -977,10 +977,10 @@
     },
     "rayquaza": {
         "level": 72,
-        "moves": ["dragondance", "earthquake", "extremespeed", "swordsdance", "vcreate"],
+        "moves": ["dragondance", "dragontail", "dragonclaw", "earthquake", "extremespeed", "swordsdance", "vcreate"],
         "doublesLevel": 74,
-        "doublesMoves": ["dracometeor", "dragonclaw", "dragondance", "earthpower", "extremespeed", "vcreate"],
-        "noDynamaxMoves": ["dracometeor", "dragondance", "earthquake", "extremespeed", "vcreate"]
+        "doublesMoves": ["dragontail", "dragonclaw", "dragondance", "earthpower", "extremespeed", "vcreate"],
+        "noDynamaxMoves": ["dragontail", "dragondance", "earthquake", "extremespeed", "vcreate"]
     },
     "jirachi": {
         "level": 78,
@@ -3147,5 +3147,17 @@
 	"pecharunt": {
 		"level": 80,
 		"moves": ["malignantchain", "nastyplot", "partingshot", "recover", "shadowball"]
+	},
+	"empoleon": {
+		"level": 80,
+		"moves": ["roost", "stealthrock", "sheercold", "flipturn", "surf", "flashcannon", "grassknot", "icebeam", "defog", "scald"]
+	},
+	"empoleonmega": {
+		"level": 80,
+		"moves": ["agility", "hydropump", "flashcannon", "icebeam", "aquajet", "wavecrash", "iceshard", "roost", "scald", "flipturn", "defog"]
+	},
+	"penquill": {
+		"level": 80,
+		"moves": ["rapidspin", "flipturn", "spikes", "knockoff", "aquatickick", "highhorsepower", "tripleaxel", "swordsdance"]
 	}
 }
