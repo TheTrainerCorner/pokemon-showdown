@@ -3205,5 +3205,19 @@
 	"penquill": {
 		"level": 80,
 		"moves": ["rapidspin", "flipturn", "spikes", "knockoff", "aquatickick", "highhorsepower", "tripleaxel", "swordsdance"]
+	},
+	"gourgeistmega": {
+		"level": 80,
+		"moves": ["fireblast", "energyball", "leechseed", "powerwhip", "shadowball", "sludgebomb", "substitute"]
+	},
+	"inteleonmega": {
+        "level": 80,
+        "moves": ["airslash", "darkpulse", "hydropump", "icebeam", "scald", "uturn"],
+        "doublesLevel": 80,
+        "doublesMoves": ["airslash", "hydropump", "icebeam", "muddywater", "uturn"]
+    },
+	"granbullmega": {
+		"level": 80,
+		"moves": ["earthquake", "encore", "playrough", "thunderwave"]
 	}
 }
