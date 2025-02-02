@@ -2951,5 +2951,201 @@
 	"houndstone": {
 		"level": 86,
 		"moves": ["bodypress", "poltergeist", "roar", "shadowsneak", "trick", "willowisp", "rest", "sleeptalk", "playrough"]
+	},
+	"flamigo": {
+		"level": 83,
+		"moves": ["bravebird", "closecombat", "throatchop", "uturn", "roost", "swordsdance"]
+	},
+	"cetitan": {
+		"level": 82,
+		"moves": ["earthquake", "iceshard", "iciclecrash", "liquidation", "playrough", "bellydrum"]
+	},
+	"veluza": {
+		"level": 85,
+		"moves": ["aquacutter", "aquajet", "flipturn", "nightslash", "psychocut", "filletaway"]
+	},
+	"dondozo": {
+		"level": 78,
+		"moves": ["curse", "rest", "sleeptalk", "wavecrash"]
+	},
+	"tatsugiri": {
+		"level": 86,
+		"moves": ["dracometeor", "hydropump", "nastyplot", "rapidspin", "surf"]
+	},
+	"farigiraf": {
+		"level": 91,
+		"moves": ["bodyslam", "protect", "psychicnoise", "wish", "futuresight", "hypervoice"]
+	},
+	"dudunsparce": {
+		"level": 82,
+		"moves": ["earthquake", "glare", "headbutt", "roost", "boomburst", "calmmind", "earthpower", "shadowball"]
+	},
+	"dudunsparcethreesegment": {
+		"level": 82,
+		"moves": ["earthquake", "glare", "headbutt", "roost", "boomburst", "calmmind", "earthpower", "shadowball"]	
+	},
+	"greattusk": {
+		"level": 77,
+		"moves": ["bulkup", "closecombat", "earthquake", "icespinner", "rapidspin", "headlongrush", "knockoff", "stealthrock"]
+	},
+	"brutebonnet": {
+		"level": 81,
+		"moves": ["closecombat", "crunch", "seedbomb", "spore", "suckerpunch"]
+	},
+	"sandyshocks": {
+		"level": 80,
+		"moves": ["earthpower", "spikes", "stealthrock", "thunderwave", "thunderbolt", "voltswitch"]
+	},
+	"screamtail": {
+		"level": 84,
+		"moves": ["encore", "playrough", "protect", "thunderwave", "wish"]
+	},
+	"fluttermane": {
+		"level": 74,
+		"moves": ["calmmind", "moonblast", "mysticalfire", "psyshock", "shadowball", "thunderbolt"]
+	},
+	"slitherwing": {
+		"level": 82,
+		"moves": ["bulkup", "closecombat", "earthquake", "flamecharge", "leechlife", "wildcharge", "firstimpression", "flareblitz", "uturn"]
+	},
+	"roaringmoon": {
+		"level": 79,
+		"moves": ["dragondance", "earthquake", "ironhead", "knockoff", "outrage", "roost", "uturn"]
+	},
+	"walkingwake": {
+		"level": 79,
+		"moves": ["dracometeor", "flamethrower", "flipturn", "hydropump", "hydrosteam", "sunnyday"]
+	},
+	"irontreads": {
+		"level": 77,
+		"moves": ["earthquake", "ironhead", "knockoff", "rapidspin", "stealthrock", "voltswitch"]
+	},
+	"ironmoth": {
+		"level": 78,
+		"moves": ["discharge", "energyball", "fierydance", "fireblast", "sludgewave", "uturn", "morningsun"]
+	},
+	"ironhands": {
+		"level": 79,
+		"moves": ["closecombat", "drainpunch", "fakeout", "heavyslam", "icepunch", "thunderpunch", "voltswitch", "wildcharge", "swordsdance"]
+	},
+	"ironjugulis": {
+		"level": 78,
+		"moves": ["darkpulse", "earthpower", "fireblast", "hurricane", "hydropump", "uturn"]
+	},
+	"ironthorns": {
+		"level": 83,
+		"moves": ["earthquake", "spikes", "stealthrock", "stoneedge", "thunderpunch", "voltswitch", "icepunch", "dragondance"]
+	},
+	"ironbundle": {
+		"level": 76,
+		"moves": ["encore", "flipturn", "freezedry", "hydropump", "icebeam", "substitute"]
+	},
+	"ironvaliant": {
+		"level": 79,
+		"moves": ["closecombat", "knockoff", "spiritbreak", "swordsdance", "calmmind", "moonblast", "psychic"]
+	},
+	"ironleaves": {
+		"level": 80,
+		"moves": ["closecombat", "leafblade", "megahorn", "psyblade", "swordsdance"]
+	},
+	"baxcalibur": {
+		"level": 75,
+		"moves": ["earthquake", "glaiverush", "iceshard", "iciclecrash", "dragondance", "swordsdance", "iciclespear"]
+	},
+	"gholdengo": {
+		"level": 77,
+		"moves": ["focusblast", "makeitrain", "nastyplot", "recover", "shadowball", "trick", "thunderwave"]
+	},
+	"tinglu": {
+		"level": 78,
+		"moves": ["earthquake", "ruination", "spikes", "stealthrock", "throatchop", "whirlwind", "bodypress", "heavyslam", "stoneedge"]
+	},
+	"chienpao": {
+		"level": 72,
+		"moves": ["iceshard", "iciclecrash", "sacredsword", "suckerpunch", "swordsdance", "throatchop"]
+	},
+	"wochien": {
+		"level": 83,
+		"moves": ["gigadrain", "knockoff", "leechseed", "protect", "ruination", "stunspore"]
+	},
+	"chiyu": {
+		"level": 77,
+		"moves": ["darkpulse", "fireblast", "nastyplot", "psychic", "willowisp", "flamethrower", "overheat"]
+	},
+	"koraidon": {
+		"level": 65,
+		"moves": ["collisioncourse", "flareblitz", "outrage", "uturn", "scaleshot", "swordsdance"]
+	},
+	"miraidon": {
+		"level": 65,
+		"moves": ["calmmind", "dracometeor", "electrodrift", "substitute", "overheat", "voltswitch"]
+	},
+	"dipplin": {
+		"level": 87,
+		"moves": ["dragonpulse", "dragontail", "gigadrain", "recover", "suckerpunch"]
+	},
+	"sinistcha": {
+		"level": 83,
+		"moves": ["calmmind", "matchagotcha", "shadowball", "strengthsap"]
+	},
+	"okidogi": {
+		"level": 77,
+		"moves": ["bulkup", "drainpunch", "gunkshot", "knockoff"]
+	},
+	"munkidori": {
+		"level": 79,
+		"moves": ["focusblast", "nastyplot", "psyshock", "sludgewave", "uturn", "fakeout", "psychicnoise"]
+	},
+	"fezandipiti": {
+		"level": 81,
+		"moves": ["beatup", "gunkshot", "heatwave", "playrough", "uturn", "roost", "swordsdance"]
+	},
+	"ogerpon": {
+		"level": 80,
+		"moves": ["ivycudgel", "knockoff", "spikes", "superpower", "synthesis", "uturn", "swordsdance"]
+	},
+	"ogerponwellspring": {
+		"level": 77,
+		"moves": ["ivycudgel", "synthesis", "woodhammer", "hornleech", "powerwhip", "swordsdance"]
+	},
+	"ogerponhearthflame": {
+		"level": 76,
+		"moves": ["hornleech", "ivycudgel", "powerwhip", "swordsdance"]
+	},
+	"ogerponcornerstone": {
+		"level": 76,
+		"moves": ["ivycudgel", "powerwhip", "synthesis", "hornleech", "swordsdance"]
+	},
+	"archaludon": {
+		"level": 82,
+		"moves": ["earthquake", "ironhead", "outrage", "swordsdance", "bodypress", "dracometeor", "dragontail", "flashcannon", "stealthrock", "thunderwave", "thunderbolt", "aurasphere"]
+	},
+	"hydrapple": {
+		"level": 82,
+		"moves": ["dragontail", "earthpower", "ficklebeam", "leafstorm", "gigadrain", "nastyplot", "recover", "dracometeor"]
+	},
+	"gougingfire": {
+		"level": 78,
+		"moves": ["dragondance", "earthquake", "heatcrash", "outrage"]
+	},
+	"ragingbolt": {
+		"level": 80,
+		"moves": ["dracometeor", "thunderbolt", "thunderclap", "voltswitch", "calmmind", "dragonpulse"]
+	},
+	"ironboulder": {
+		"level": 78,
+		"moves": ["closecombat", "mightycleave", "swordsdance", "zenheadbutt"]
+	},
+	"ironcrown": {
+		"level": 80,
+		"moves": ["calmmind", "focusblast", "psyshock", "tachyoncutter", "voltswitch"]
+	},
+	"terapagos": {
+		"level": 73,
+		"moves": ["calmmind", "rapidspin", "terastarstorm", "triattack", "rest", "sleeptalk"]
+	},
+	"pecharunt": {
+		"level": 80,
+		"moves": ["malignantchain", "nastyplot", "partingshot", "recover", "shadowball"]
 	}
 }
