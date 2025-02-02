@@ -18,6 +18,7 @@ interface BattleFactorySet {
 
 const RecoveryMove = [
 	'healorder', 'milkdrink', 'moonlight', 'morningsun', 'recover', 'roost', 'shoreup', 'slackoff', 'softboiled', 'strengthsap', 'synthesis',
+	'guidingblessing',
 ];
 
 const ContraryMoves = [
@@ -32,6 +33,7 @@ const SpecialSetup = [
 ];
 const MixedSetup = [
 	'clangoroussoul', 'growth', 'happyhour', 'holdhands', 'noretreat', 'shellsmash', 'workup',
+	'knowledgepath',
 ];
 const SpeedSetup = [
 	'agility', 'autotomize', 'flamecharge', 'rockpolish',
@@ -222,7 +224,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			(species.id === 'entei' && movePool.includes('extremespeed')) ||
 			(species.id === 'genesectdouse' && movePool.includes('technoblast')) ||
 			(species.id === 'slaking' && movePool.includes('slackoff')) ||
-			(species.id === 'golisopod' && movePool.includes('leechlife') && movePool.includes('firstimpression'))
+			(species.id === 'golisopod' && movePool.includes('leechlife') && movePool.includes('firstimpression')) ||
+			(species.id === 'meloettacaroler' && movePool.includes('snowtimesong'))
 		) {
 			// Entei should always have Extreme Speed, and Genesect-Douse should always have Techno Blast
 			// Golisopod should always have one of its bug moves (Leech Life or First Impression)
@@ -959,7 +962,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		) return 'Rocky Helmet';
 
 		if (species.name === 'Eternatus' && counter.get('Status') < 2) return 'Metronome';
-		if (species.name === 'Farfetch\u2019d') return this.randomChance(1, 2) ? 'Stick' : 'Leek';
+		if (species.name === 'Farfetch\u2019d') return 'Leek';
 		if (species.name === 'Froslass' && !isDoubles) return 'Wide Lens';
 		if (species.name === 'Latios' && counter.get('Special') === 2 && !isDoubles) return 'Soul Dew';
 		if (species.name === 'Lopunny') return isDoubles ? 'Iron Ball' : 'Toxic Orb';

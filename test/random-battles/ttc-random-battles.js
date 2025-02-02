@@ -212,5 +212,9 @@ describe('TTC Random Battles', () => {
 		testSet('venusaurmega', options, (set) => {
 			assert(set.item === 'Venusaurite', `Venusaur-Mega does not have its mega stone. (Got ${set.item})`);
 		});
+	});
+
+	it ('should always give Snowtime Song to Meloetta-Caroler', () => {
+		testAlwaysHasMove('meloettacaroler', options, 'snowtimesong');
 	})
 });

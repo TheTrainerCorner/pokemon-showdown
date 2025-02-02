@@ -3148,6 +3148,52 @@
 		"level": 80,
 		"moves": ["malignantchain", "nastyplot", "partingshot", "recover", "shadowball"]
 	},
+	"sotanaht": {
+		"level": 80,
+		"moves": ["soulfang", "firefang", "firelash", "psychicfangs", "willowisp", "toxic", "sludgewave", "leechlife"]
+	},
+	"metadraco": {
+		"level": 80,
+		"moves": ["warpath", "aurasphere", "dragondance", "flareblitz", "knockoff", "playrough"]
+	},
+	"acudraco": {
+		"level": 80,
+		"moves": ["knowledgepath", "flamethrower", "icebeam", "voltswitch", "zingzap", "mysticalfire"]
+	},
+	"thundraco": {
+		"level": 80,
+		"moves": ["smitepath", "wildboltstorm", "flamethrower", "dragonpulse", "aurasphere", "voltswitch"]
+	},
+	"farfetchdmega": {
+        "level": 80,
+        "moves": ["bravebird", "closecombat", "knockoff", "leafblade", "swordsdance", "ceaselessedge", "solarblade"],
+        "doublesLevel": 80,
+        "doublesMoves": ["bravebird", "closecombat", "leafblade", "protect", "quickattack", "swordsdance"]
+    },
+	"volcaronafaerie": {
+		"level": 80,
+		"moves": ["fierydance", "flamethrower", "dazzlinggleam", "bugbuzz", "gigadrain", "willowisp"]
+	},
+	"poisonus": {
+		"level": 80,
+		"moves": ["sludgewave", "psychic", "mysticalfire", "dazzlinggleam", "airslash"]
+	},
+	"poisonustherian": {
+		"level": 80,
+		"moves": ["sludgewave", "psychic", "mysticalfire", "dazzlinggleam", "airslash"]
+	},
+	"octolure": {
+		"level": 80,
+		"moves": ["thunderbolt", "scald", "shadowball", "psychic", "hydropump", "thunderwave", "toxic"]
+	},
+	"jirachinorthstar": {
+		"level": 80,
+		"moves": ["guidingblessing", "stardusttrail", "sheercold", "freezedry", "moonblast", "protect", "thunderbolt", "uturn"]
+	},
+	"meloettacaroler": {
+		"level": 80,
+		"moves": ["snowtimesong", "playrough", "moonblast", "icebeam", "drainpunch", "energyball", "freezyfrost"]
+	},
 	"empoleon": {
 		"level": 80,
 		"moves": ["roost", "stealthrock", "sheercold", "flipturn", "surf", "flashcannon", "grassknot", "icebeam", "defog", "scald"]
