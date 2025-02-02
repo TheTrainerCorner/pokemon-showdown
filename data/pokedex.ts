@@ -19837,9 +19837,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		tags: ["Fakemon"],
 		eggGroups: ["Field", "Dragon"],
-		tier: "OU",
-		natDexTier: "OU",
-		doublesTier: "DOU",
+		tier: "(OU)",
+		natDexTier: "(OU)",
+		doublesTier: "(DOU)",
 	},
 	tindraco: {
 		num: -2002,
