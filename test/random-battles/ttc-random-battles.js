@@ -234,5 +234,11 @@ describe('TTC Random Battles', () => {
 		testSet('kecleon', options, (set) => {
 			assert(set.ability === 'Color Change', `Kecleon's ability is not Color Change (Got ${set.ability})`);
 		});
-	})
+	});
+	
+	it ('should not give Keen Eye to Pidgeot-Mega as base forme', () => {
+		testSet('pidgeotmega', options, (set) => {
+			assert(set.ability !== 'Keen Eye', `Pidgeot-Mega was given Keen Eye (Got ${set.ability})`);
+		})
+	});
 });

@@ -1239,7 +1239,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		const ivs = {hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31};
 
 		const types = new Set(species.types);
-		const abilitiesSet = new Set(Object.values(species.abilities));
+		const abilitiesSet = new Set(Object.values((species.battleOnly || species.isMega) ? this.dex.species.get(species.baseSpecies).abilities : species.abilities));
 		if (species.unreleasedHidden) abilitiesSet.delete(species.abilities.H);
 		const abilities = new Set(abilitiesSet);
 
