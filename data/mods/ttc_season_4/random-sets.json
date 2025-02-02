@@ -2306,7 +2306,7 @@
     },
     "oranguru": {
         "level": 91,
-        "moves": ["focusblast", "nastyplot", "psychic", "thunderbolt", "trickroom"],
+        "moves": ["focusblast", "calmmind", "psychic", "thunderbolt", "trickroom"],
         "doublesLevel": 88,
         "doublesMoves": ["allyswitch", "focusblast", "instruct", "psychic", "trickroom"]
     },
