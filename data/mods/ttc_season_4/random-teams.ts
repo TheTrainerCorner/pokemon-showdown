@@ -130,6 +130,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 					counter.add('vampire');
 				}
 				if (move.flags['punch']) counter.add('ironfist');
+				if (move.flags['peck']) counter.add('bigpecks');
 				if (move.flags['kick']) counter.add('legday');
 				if (move.flags['sound']) counter.add('sound');
 				if (move.priority !== 0 || (moveid === 'grassyglide' && abilities.has('Grassy Surge'))) {
@@ -674,6 +675,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		].includes(ability)) return true;
 
 		switch (ability) {
+		case 'Chilling Neigh': // should deny access to chilling neigh if there is a way to setup snow already.
+			return (!(moves.has('snowscape') || teamDetails.snow));
 		// Abilities which are primarily useful for certain moves
 		case 'Contrary': case 'Serene Grace': case 'Skill Link': case 'Strong Jaw':
 			return !counter.get(toID(ability));
@@ -681,6 +684,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (moves.has('rapidspin') || species.nfe || isDoubles);
 		case 'Blaze':
 			return (isDoubles && abilities.has('Solar Power')) || (!isDoubles && !isNoDynamax && species.id === 'charizard');
+		case 'Big Pecks':
+			return (counter.get('bigpecks') < 2);
 		// case 'Bulletproof': case 'Overcoat':
 		// 	return !!counter.setupType;
 		case 'Chlorophyll':
@@ -691,14 +696,20 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (counter.get('Special') < 2 || (moves.has('rest') && moves.has('sleeptalk')));
 		case 'Compound Eyes': case 'No Guard':
 			return !counter.get('inaccurate');
+		case "Costar": // Should deny access to Costar if the pokemon has a form of self-boosting it's offensive stats.
+			return !(counter.get('physicalsetup') || counter.get('specialsetup') || counter.get('mixedsetup'));
+		case "Curious Medicine":
+			return !counter.get('recovery');
 		case 'Cursed Body':
 			return abilities.has('Infiltrator');
+		case 'Damp':
+			return moves.has('soak');
 		case 'Defiant':
 			return !counter.get('Physical');
 		case 'Download':
 			return (counter.damagingMoves.size < 3 || moves.has('trick'));
 		case 'Early Bird':
-			return (types.has('Grass') && isDoubles);
+			return !(counter.get('priority')) || moves.has('bravebird');
 		case 'Flash Fire':
 			return (this.dex.getEffectiveness('Fire', species) < -1 || abilities.has('Drought'));
 		case 'Gluttony':
@@ -707,6 +718,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (!moves.has('facade') && !moves.has('sleeptalk') && !species.nfe);
 		case 'Harvest':
 			return (abilities.has('Frisk') && !isDoubles);
+		case 'Hospitality':
+			return !counter.get('recovery');
 		case 'Hustle': case 'Inner Focus':
 			return ((species.id !== 'glalie' && counter.get('Physical') < 2) || abilities.has('Iron Fist'));
 		case 'Infiltrator':
@@ -718,6 +731,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return (counter.get('ironfist') < 2 || moves.has('dynamicpunch'));
 		case 'Justified':
 			return (isDoubles && abilities.has('Inner Focus'));
+		case 'Leg Day':
+			return (counter.get('legday') < 2 || moves.has('highjumpkick'));
 		case 'Lightning Rod':
 			return (species.types.includes('Ground') || (!isNoDynamax && counter.setupType === 'Physical'));
 		case 'Limber':
