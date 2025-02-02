@@ -49,7 +49,11 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 
 		//#region Pokemon Changes
-		
+		new ModifyPokemon('Pachirisu', this)
+			.learnset
+				.add('Vacuum Wave')
+				.add('Signal Beam')
+				.add('Stardust Trail');
 		//#region Gen 1
 		// FE
 		new ModifyPokemon('Blastoise', this)

@@ -132,7 +132,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#endregion
 
 	//#region New Abilities
-
+	plasmaticfur: {
+		onModifyDef(def, target, source, move) {
+			return this.chainModify([6144, 4096]);
+		},
+		onModifySpD(def, target, source, move) {
+			return this.chainModify([6144, 4096]);
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			let mod = 1;
+			if(move.type === 'Ice') mod *= 2;
+			return this.chainModify(mod);
+		},
+		name: "Plasmatic Fur",
+		desc: "Gains 1.5x to Defensive Stats, but weak to Ice-type moves.",
+	},
 	sundance: {
 		onAfterMove(source, target, move) {
 			if (move.flags.dance) {
