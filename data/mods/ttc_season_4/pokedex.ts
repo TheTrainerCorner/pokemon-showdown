@@ -231,5 +231,4 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		requiredItem: "Pachirisite",
 		tags: ["Fakemon", "Has Back Sprite"],
 	},
-
 };

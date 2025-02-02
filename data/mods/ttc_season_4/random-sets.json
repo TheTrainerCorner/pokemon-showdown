@@ -372,6 +372,12 @@
         "doublesLevel": 88,
         "doublesMoves": ["closecombat", "feint", "protect", "rockslide", "swordsdance", "xscissor"]
     },
+	"pinsirmega": {
+        "level": 84,
+        "moves": ["closecombat", "earthquake", "knockoff", "stealthrock", "stoneedge", "xscissor"],
+        "doublesLevel": 88,
+        "doublesMoves": ["closecombat", "feint", "protect", "rockslide", "swordsdance", "xscissor"]
+    },
     "tauros": {
         "level": 81,
         "moves": ["bodyslam", "closecombat", "throatchop", "zenheadbutt"],
@@ -620,6 +626,13 @@
         "doublesMoves": ["headsmash", "heavyslam", "highhorsepower", "protect", "rockpolish"],
         "noDynamaxMoves": ["curse", "earthquake", "headsmash", "heavyslam", "stealthrock", "toxic"]
     },
+	"steelixmega": {
+        "level": 83,
+        "moves": ["dragondance", "earthquake", "headsmash", "heavyslam", "stealthrock", "toxic"],
+        "doublesLevel": 88,
+        "doublesMoves": ["headsmash", "heavyslam", "highhorsepower", "protect", "rockpolish"],
+        "noDynamaxMoves": ["curse", "earthquake", "headsmash", "heavyslam", "stealthrock", "toxic"]
+    },
     "qwilfish": {
         "level": 86,
         "moves": ["destinybond", "spikes", "taunt", "thunderwave", "toxicspikes", "waterfall"],
@@ -627,6 +640,13 @@
         "doublesMoves": ["liquidation", "poisonjab", "protect", "taunt", "thunderwave", "toxicspikes"]
     },
     "scizor": {
+        "level": 79,
+        "moves": ["bulletpunch", "dualwingbeat", "knockoff", "roost", "superpower", "swordsdance", "uturn"],
+        "doublesLevel": 80,
+        "doublesMoves": ["bugbite", "bulletpunch", "dualwingbeat", "feint", "protect", "superpower", "swordsdance", "uturn"],
+        "noDynamaxMoves": ["bulletpunch", "knockoff", "roost", "superpower", "swordsdance", "uturn"]
+    },
+	"scizormega": {
         "level": 79,
         "moves": ["bulletpunch", "dualwingbeat", "knockoff", "roost", "superpower", "swordsdance", "uturn"],
         "doublesLevel": 80,
@@ -744,6 +764,12 @@
         "noDynamaxMoves": ["calmmind", "icebeam", "rest", "scald", "sleeptalk"]
     },
     "tyranitar": {
+        "level": 78,
+        "moves": ["crunch", "dragondance", "earthquake", "firepunch", "stealthrock", "stoneedge"],
+        "doublesLevel": 80,
+        "doublesMoves": ["dragondance", "firepunch", "highhorsepower", "lashout", "protect", "rockslide", "stoneedge"]
+    },
+	"tyranitarmega": {
         "level": 78,
         "moves": ["crunch", "dragondance", "earthquake", "firepunch", "stealthrock", "stoneedge"],
         "doublesLevel": 80,
@@ -868,6 +894,13 @@
     },
     "sableye": {
         "level": 90,
+        "moves": ["knockoff", "recover", "taunt", "toxic", "willowisp"],
+        "doublesLevel": 88,
+        "doublesMoves": ["disable", "encore", "fakeout", "foulplay", "knockoff", "quash", "recover", "willowisp"],
+        "noDynamaxMoves": ["encore", "knockoff", "recover", "taunt", "toxic", "willowisp"]
+    },
+	"sableyemega": {
+        "level": 80,
         "moves": ["knockoff", "recover", "taunt", "toxic", "willowisp"],
         "doublesLevel": 88,
         "doublesMoves": ["disable", "encore", "fakeout", "foulplay", "knockoff", "quash", "recover", "willowisp"],
@@ -1049,6 +1082,12 @@
         "doublesMoves": ["bodypress", "headsmash", "liquidation", "stealthrock", "yawn"]
     },
     "salamence": {
+        "level": 73,
+        "moves": ["dragondance", "dualwingbeat", "earthquake", "outrage"],
+        "doublesLevel": 79,
+        "doublesMoves": ["dragonclaw", "fireblast", "hurricane", "protect", "tailwind"]
+    },
+	"salamencemega": {
         "level": 73,
         "moves": ["dragondance", "dualwingbeat", "earthquake", "outrage"],
         "doublesLevel": 79,
