@@ -85,10 +85,37 @@ async function updateclient(context: Chat.CommandContext, codePath: string) {
 	} else if (stderr) {
 		throw new Error(`updateclient: Crash while stashing`);
 	} else {
-		context.sendReply(`Saving Changes...`);
+		context.sendReply(`Saving changes...`);
 	}
 
 	// errors can occur while rebasing or popping the stash; make sure to recover
+	try {
+		context.sendReply(`Rebasing...`);
+		[code] = await exec(`git rebase --no-autostash FETCH_HEAD`);
+		if (code) {
+			// conflict while rebasing
+			await exec(`git rebase --abort`);
+			throw new Error(`restore`);
+		}
+
+		if (stashedChanges) {
+			context.sendReply(`Restoring saved changes...`);
+			[code] = await exec(`git stash pop`);
+			if (code) {
+				// conflict while popping stash
+				await exec(`git reset HEAD .`);
+				await exec(`git checkout .`);
+				throw new Error(`restore`);
+			}
+		}
+
+		return true;
+	} catch {
+		// failed while rebasing or popping the stash
+		await exec(`git reset --hard ${oldHash}`);
+		if (stashedChanges) await exec(`git stash pop`);
+		return false;
+	}
 }
 
 /**
@@ -1416,24 +1443,29 @@ export const commands: Chat.ChatCommands = {
 
 	async updateclient(target, room, user) {
 		this.canUseConsole();
-		this.sendReply('Restarting...');
-		const validPrivateCodePath = `${process.cwd()}/../pokemon-showdown-client`;
-		this.sendReply(validPrivateCodePath);
-		const exec = (command: string) => bash(command, this, validPrivateCodePath);
-		let [code, stdout, stderr] = await exec(`ls`);		
-		this.sendReply(`${code}`);
-		this.sendReply(stdout);
-		this.sendReply(stderr);
-		[code, stdout, stderr] = await exec(`npm run build-full`);
-		if (code) throw new Error(`updateclient: Crash while fetching - make sure this is a Git repository`);
-		if (!stdout && !stderr) {
-			this.sendReply(`There was no updates.`);
-			Monitor.updateServerLock = false;
-			return true;
+		if (Monitor.updateServerLock) {
+			return this.errorReply(`/updateclient - Another update is already in progress (or a previous update crashed).`);
 		}
+		
+		const validPrivateCodePath = `${process.cwd()}/../pokemon-showdown-client`;
+		target = toID(target);
 
-		this.sendReply('Updated Client');
+		Monitor.updateServerLock = true;
+		
+		let success = true;
+		
+		success = await updateclient(this, validPrivateCodePath);
+		this.addGlobalModAction(`${user.name} used /updateserver private`);
 
+		const exec = (command: string) => bash(command, this, validPrivateCodePath);
+		const [code, stdout, stderr] = await exec(`npm run build-full`);
+
+		if (code || stderr) throw new Error(`updateclient: Build failed | ${stderr} | ${code}`);
+		this.sendReply('updateclient: Build Complete');
+
+		this.sendReply(success ? 'DONE' : 'FAILED, old changes restored.');
+
+		Monitor.updateServerLock = false;
 		// this.canUseConsole();
 		// this.sendReply('Restarting...');
 		// const [result, err] = await LoginServer.request('rebuildclient', {
