@@ -220,5 +220,13 @@ describe('TTC Random Battles', () => {
 
 	it ('should always give Shadow Ball to Octolure', () => {
 		testAlwaysHasMove('octolure', options, 'shadowball');
+	});
+
+	it ("should always give Cheater's Trick to Eevee-Mega", () => {
+		testAlwaysHasMove('eeveemega', options, 'cheaterstrick');
+	});
+
+	it ("should always give Pay Day to Meowth-Mega", () => {
+		testAlwaysHasMove('meowthmega', options, 'payday');
 	})
 });
