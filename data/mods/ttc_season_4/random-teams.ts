@@ -959,7 +959,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		) return 'Rocky Helmet';
 
 		if (species.name === 'Eternatus' && counter.get('Status') < 2) return 'Metronome';
-		if (species.name === 'Farfetch\u2019d') return 'Leek';
+		if (species.name === 'Farfetch\u2019d') return this.randomChance(1, 2) ? 'Stick' : 'Leek';
 		if (species.name === 'Froslass' && !isDoubles) return 'Wide Lens';
 		if (species.name === 'Latios' && counter.get('Special') === 2 && !isDoubles) return 'Soul Dew';
 		if (species.name === 'Lopunny') return isDoubles ? 'Iron Ball' : 'Toxic Orb';
