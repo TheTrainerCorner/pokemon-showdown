@@ -977,10 +977,10 @@
     },
     "rayquaza": {
         "level": 72,
-        "moves": ["dragonascent", "dragondance", "earthquake", "extremespeed", "swordsdance", "vcreate"],
+        "moves": ["dragondance", "earthquake", "extremespeed", "swordsdance", "vcreate"],
         "doublesLevel": 74,
-        "doublesMoves": ["dracometeor", "dragonascent", "dragonclaw", "dragondance", "earthpower", "extremespeed", "vcreate"],
-        "noDynamaxMoves": ["dracometeor", "dragonascent", "dragondance", "earthquake", "extremespeed", "vcreate"]
+        "doublesMoves": ["dracometeor", "dragonclaw", "dragondance", "earthpower", "extremespeed", "vcreate"],
+        "noDynamaxMoves": ["dracometeor", "dragondance", "earthquake", "extremespeed", "vcreate"]
     },
     "jirachi": {
         "level": 78,
