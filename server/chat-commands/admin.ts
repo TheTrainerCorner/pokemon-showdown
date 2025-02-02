@@ -1462,7 +1462,7 @@ export const commands: Chat.ChatCommands = {
 		const [code, stdout, stderr] = await exec(`npm run build-full`);
 		this.sendReply(stdout);
 
-		if (code || stderr) throw new Error(`updateclient: Build failed | ${stderr} | ${code}`);
+		if (code || stderr && !stderr.match('Failed to open stream:')) throw new Error(`updateclient: Build failed | ${stderr} | ${code}`);
 		this.sendReply('updateclient: Build Complete');
 
 		this.sendReply(success ? 'DONE' : 'FAILED, old changes restored.');
