@@ -120,7 +120,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 					// Less obvious forms of stab
 					(moveType === 'Normal' && (['Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate'].some(a => abilities.has(a)))) ||
 					(move.priority === 0 && (['Libero', 'Protean'].some(a => abilities.has(a))) && !this.noStab.includes(moveid)) ||
-					(moveType === 'Steel' && abilities.has('Steelworker'))
+					(moveType === 'Steel' && abilities.has('Steelworker')) || (moveType === 'Ghost' && abilities.has('Haunted Light'))
 				) {
 					counter.add('stab');
 				}
@@ -1316,6 +1316,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 						(moves.has('swordsdance') && species.id === 'mew' && runEnforcementChecker('Flying')) ||
 						// Dhelmise should have Anchor Shot
 						(abilities.has('Steelworker') && runEnforcementChecker('Steel')) ||
+						// Octolure should have Shadow Ball
+						(abilities.has('Haunted Light') && runEnforcementChecker('Ghost')) ||
 						// Check for miscellaneous important moves
 						(!isDoubles && runEnforcementChecker('recovery') && move.id !== 'stickyweb') ||
 						runEnforcementChecker('screens') ||

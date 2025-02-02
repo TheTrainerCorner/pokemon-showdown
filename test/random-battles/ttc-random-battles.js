@@ -216,5 +216,9 @@ describe('TTC Random Battles', () => {
 
 	it ('should always give Snowtime Song to Meloetta-Caroler', () => {
 		testAlwaysHasMove('meloettacaroler', options, 'snowtimesong');
+	});
+
+	it ('should always give Shadow Ball to Octolure', () => {
+		testAlwaysHasMove('octolure', options, 'shadowball');
 	})
 });

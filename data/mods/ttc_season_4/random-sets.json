@@ -3042,7 +3042,7 @@
 	},
 	"ironvaliant": {
 		"level": 79,
-		"moves": ["closecombat", "knockoff", "spiritbreak", "swordsdance", "calmmind", "moonblast", "psychic"]
+		"moves": ["closecombat", "knockoff", "spiritbreak", "swordsdance", "moonblast", "psychic"]
 	},
 	"ironleaves": {
 		"level": 80,
