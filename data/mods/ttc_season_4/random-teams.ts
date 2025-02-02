@@ -47,12 +47,169 @@ const Hazards = [
 	'spikes', 'stealthrock', 'stickyweb', 'toxicspikes',
 ];
 
+function sereneGraceBenefits(move: Move) {
+	return move.secondary?.chance && move.secondary.chance > 20 && move.secondary.chance < 100;
+}
+
 export class RandomTTCTeams extends RandomGen8Teams {
 
 	constructor(format: Format | string, prng: PRNG | PRNGSeed | null) {
 		super(format, prng);
 		this.randomData = require('./random-sets.json');
 		this.moveEnforcementCheckers['Cosmic'] = (movepool, moves, abilities, types, counter) => !counter.get('Cosmic');
+	}
+
+	unrejectableMovesInSingles(move: Move): boolean {
+		return (move.category !== 'Status' || !move.flags.heal) && ![
+			'facade', 'leechseed', 'lightscreen', 'reflect', 'sleeptalk', 'spore', 'substitute', 'switcheroo',
+			'teleport', 'toxic', 'trick'
+		].includes(move.id);
+	}
+
+	unrejectableMovesInDoubles(move: Move): boolean {
+		return move.id !== 'bodypress';
+	}
+
+	queryMoves(moves: Set<string> | null, types: string[], abilities: Set<string> = new Set(), movePool: string[] = []): MoveCounter {
+		const counter = new MoveCounter();
+
+		if (!moves?.size) return counter;
+
+		const categories = {Physical: 0, Special: 0, Status: 0};
+
+		for (const moveid of moves) {
+			let move = this.dex.moves.get(moveid);
+			if (move.id === 'naturepower') {
+				if (this.gen === 5) move = this.dex.moves.get('earthquake');
+			}
+
+			let moveType = move.type;
+			if (['judgement', 'multiattack', 'revelationdance'].includes(moveid)) moveType = types[0];
+			if (move.damage || move.damageCallback) {
+				// for moves that do a set amount of damage (i.e. Sesimic Toss)
+				counter.add('damage');
+				counter.damagingMoves.add(move);
+			} else {
+				// Are Physical/Special/Status:
+				categories[move.category]++;
+			}
+
+			// Moves that have a low base power
+			if (['lowkick'].includes(moveid) || (move.basePower && move.basePower <= 60 && !['rapidspin'].includes(moveid))) {
+				counter.add('technician');
+			}
+
+			// Moves that hit up to 5 times
+			if (move.multihit && Array.isArray(move.multihit) && move.multihit[1] === 5) counter.add('skilllink');
+			if (move.recoil || move.hasCrashDamage) counter.add('recoil');
+			if (move.drain) counter.add('drain');
+			// Moves which a base power, but aren't super-weak like rapid spin
+			if (move.basePower > 30 || move.multihit || move.basePowerCallback || ['infestation'].includes(moveid)) {
+				counter.add(moveType);
+				if (types.includes(moveType)) {
+					// STAB
+					// Certain moves aren't acceptable as a Pokemon's only STAB attack
+					if (!this.noStab.includes(moveid) && (!moveid.startsWith('hiddenpower') || types.length === 1)) {
+						counter.add('stab');
+						// Ties between Physical and Special setup should broken in favor of STABs
+						categories[move.category] += 0.1;
+					}
+				} else if (
+					// Less obvious forms of stab
+					(moveType === 'Normal' && (['Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate'].some(a => abilities.has(a)))) ||
+					(move.priority === 0 && (['Libero', 'Protean'].some(a => abilities.has(a))) && !this.noStab.includes(moveid)) ||
+					(moveType === 'Steel' && abilities.has('Steelworker'))
+				) {
+					counter.add('stab');
+				}
+
+				if (move.flags['bite']) {
+					counter.add('strongjaw');
+					counter.add('vampire');
+				}
+				if (move.flags['punch']) counter.add('ironfist');
+				if (move.flags['kick']) counter.add('legday');
+				if (move.flags['sound']) counter.add('sound');
+				if (move.priority !== 0 || (moveid === 'grassyglide' && abilities.has('Grassy Surge'))) {
+					counter.add('priority');
+				}
+				counter.damagingMoves.add(move);
+			}
+
+			// Moves with secondary effects
+			if (move.secondary) {
+				counter.add('sheerforce');
+				if (sereneGraceBenefits(move)) {
+				counter.add('serenegrace');
+				}
+			}
+			// Moves with low accuracy
+			if (move.accuracy && move.accuracy !== true && move.accuracy < 90) counter.add('inaccurate');
+
+			// Moves that change stats
+			if (RecoveryMove.includes(moveid)) counter.add('recovery');
+			if (ContraryMoves.includes(moveid)) counter.add('contrary');
+			if (PhysicalSetup.includes(moveid)) {
+				counter.add('physicalsetup');
+				counter.setupType = 'Physical';
+			} else if (SpecialSetup.includes(moveid)) {
+				counter.add('specialsetup');
+				counter.setupType = 'Special';
+			}
+
+			if (MixedSetup.includes(moveid)) counter.add('mixedsetup');
+			if (SpeedSetup.includes(moveid)) counter.add('speedsetup');
+			if (Hazards.includes(moveid)) counter.add('hazards');
+		}
+
+		// Keep track of the available moves
+		for (const moveid of movePool) {
+			const move = this.dex.moves.get(moveid);
+			if (move.damageCallback) continue;
+			if (move.category === 'Physical') counter.add('physicalpool');
+			if (move.category === 'Special') counter.add('specialpool');
+		}
+
+		// Choose a setup type
+		if (counter.get('mixedsetup')) {
+			counter.setupType = 'Mixed';
+		} else if (counter.get('physicalsetup') && counter.get('specialsetup')) {
+			const pool = {
+				Physical: categories['Physical'] + counter.get('physicalpool'),
+				Special: categories['Special'] + counter.get('specialpool'),
+			};
+
+			if (pool.Physical === pool.Special) {
+				if (categories['Physical'] > categories['Special']) counter.setupType = 'Physical';
+				if (categories['Special'] > categories['Physical']) counter.setupType = 'Special';
+			} else {
+				counter.setupType = pool.Physical > pool.Special ? 'Physical' : 'Special';
+			}
+		} else if (counter.setupType === 'Physical') {
+			if (
+				categories['Physical'] < 2 && (!counter.get('stab') || !counter.get('physicalpool')) &&
+				!(moves.has('rest') && moves.has('sleeptalk')) &&
+				!moves.has('batonpass')
+			) {
+				counter.setupType = '';
+			}
+		} else if (counter.setupType === 'Special') {
+			if (
+				(categories['Special'] < 2 && (!counter.get('stab') || !counter.get('specialpool'))) &&
+				!moves.has('quiverdance') &&
+				!(moves.has('rest') && moves.has('sleeptalk')) &&
+				!(moves.has('wish') && moves.has('protect')) &&
+				!moves.has('batonpass')
+			) {
+				counter.setupType = '';
+			}
+		}
+
+		counter.set('Physical', Math.floor(categories['Physical']));
+		counter.set('Special', Math.floor(categories['Special']));
+		counter.set('Status', categories['Status']);
+
+		return counter;
 	}
 
 	shouldCullMove(move: Move, types: Set<string>, moves: Set<string>, abilities: Set<string>, counter: MoveCounter, movePool: string[], teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isLead: boolean, isDoubles: boolean, isNoDynamax: boolean): { cull: boolean; isSetup?: boolean; } {
@@ -992,6 +1149,47 @@ export class RandomTTCTeams extends RandomGen8Teams {
 				!['Pastel Veil', 'Storm Drain'].includes(ability)
 			))
 		) return 'Lum Berry';
+	}
+
+	getLevel(species: Species, isDoubles: boolean, isNoDynamax: boolean): number {
+		const data = this.randomData[species.id];
+		// level set by rules
+		if (this.adjustLevel) return this.adjustLevel;
+		// doubles levelling
+		if (isDoubles && data.doublesLevel) return data.doublesLevel;
+		
+		if (isNoDynamax) {
+			const tier = species.name.endsWith('-Gmax') ? this.dex.species.get(species.changesFrom).tier : species.tier;
+			const tierScale: Partial<Record<Species['tier'], number>> = {
+				Uber: 76,
+				OU: 80,
+				UUBL: 81,
+				UU: 82,
+				RUBL: 83,
+				RU: 84,
+				NUBL: 85,
+				NU: 86,
+				PUBL: 87,
+				PU: 88, "(PU)": 88, NFE: 88,
+			};
+
+			const customScale: {[k: string]: number} = {
+				// These Pokemon are too strong and need a lower level
+				zaciancrowned: 65, calyrexshadow: 68, xerneas: 70, necrozmaduskman: 72, zacian: 72, kyogre: 73, eternatus: 73,
+				zekrom: 74, marshadow: 75, urshifurapidstrike: 79, haxorus: 80, inteleon: 80,
+				cresselia: 83, jolteon: 84, swoobat: 84, dugtrio: 84, slurpuff: 84, polteageist: 84,
+				wobbuffet: 86, scrafty: 86,
+				// These Pokemon are too weak and need a higher level
+				delibird: 100, vespiquen: 96, pikachu: 92, shedinja: 92, solrock: 90, arctozolt: 88, reuniclus: 87,
+				decidueye: 87, noivern: 85, magnezone: 82, slowking: 81,
+			};
+
+			return customScale[species.id] || tierScale[tier] || 80;
+		}
+
+		// Arbitrary leveling base on data files (typically winrate-influenced)
+		if (data.level) return data.level;
+		return 80;
 	}
 
 	getForme(species: Species): string {
