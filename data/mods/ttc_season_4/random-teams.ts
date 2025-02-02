@@ -775,7 +775,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			// Inteleon wants Torrent unless it is Gmax
 			return (species.name === 'Inteleon' || (counter.get('Water') > 1 && !moves.has('focusenergy')));
 		case 'Solar Power':
-			return (isNoDynamax && !teamDetails.sun);
+			return (!teamDetails.sun);
 		case 'Surge Surfer':
 			return (moves.has('electricterrain') || abilities.has('Electric Surge'));
 		case 'Speed Boost':
