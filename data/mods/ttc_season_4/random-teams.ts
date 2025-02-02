@@ -863,6 +863,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		// Lopunny, and other Facade users, don't want Limber, even if other abilities are poorly rated,
 		// since paralysis would arguably be good for them.
 		if (abilities.has('Truant') && (moves.has('recover') || moves.has('slackoff') || moves.has('shoreup'))) return 'Truant';
+		if (species.id === 'kecleon') return 'Color Change';
 		if (species.id === 'lopunny' && moves.has('facade')) return 'Cute Charm';
 		if (species.id === 'copperajahgmax') return 'Heavy Metal';
 		if (abilities.has('Guts') &&

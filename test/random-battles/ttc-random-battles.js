@@ -228,5 +228,11 @@ describe('TTC Random Battles', () => {
 
 	it ("should always give Pay Day to Meowth-Mega", () => {
 		testAlwaysHasMove('meowthmega', options, 'payday');
+	});
+
+	it ("should give Color Change to Kecleon", () => {
+		testSet('kecleon', options, (set) => {
+			assert(set.ability === 'Color Change', `Kecleon's ability is not Color Change (Got ${set.ability})`);
+		});
 	})
 });

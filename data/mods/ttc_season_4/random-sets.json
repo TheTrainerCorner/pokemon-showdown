@@ -412,6 +412,12 @@
         "doublesLevel": 82,
         "doublesMoves": ["aquatail", "dragondance", "dualwingbeat", "earthquake", "rockslide"]
     },
+	"aerodactylmega": {
+        "level": 83,
+        "moves": ["aquatail", "dualwingbeat", "earthquake", "honeclaws", "stoneedge"],
+        "doublesLevel": 82,
+        "doublesMoves": ["aquatail", "dragondance", "dualwingbeat", "earthquake", "rockslide"]
+    },
     "snorlax": {
         "level": 82,
         "moves": ["darkestlariat", "doubleedge", "earthquake", "facade", "heatcrash"]
@@ -506,6 +512,14 @@
         "doublesLevel": 88,
         "doublesMoves": ["airslash", "heatwave", "lightscreen", "psychic", "reflect", "roost", "tailwind"]
     },
+	"ampharos": {
+		"level": 80,
+		"moves": ["thunderbolt", "voltswitch", "dazzlinggleam", "powergem", "slackoff", "cottonguard", "paraboliccharge", "discharge", "meteorbeam"]
+	},
+	"ampharosmega": {
+		"level": 80,
+		"moves": ["agility", "thunderbolt", "dragonpulse", "dazzlinggleam", "cottonguard", "slackoff", "chargebeam", "trailblaze", "paraboliccharge", "voltswitch"]
+	},
     "bellossom": {
         "level": 81,
         "moves": ["gigadrain", "moonblast", "quiverdance", "sleeppowder", "strengthsap"],
@@ -807,6 +821,12 @@
         "doublesLevel": 89,
         "doublesMoves": ["aquatail", "bodypress", "headsmash", "heavyslam", "highhorsepower", "rockpolish"]
     },
+	"aggronmega": {
+        "level": 86,
+        "moves": ["bodypress", "earthquake", "headsmash", "heavyslam", "rockpolish", "stealthrock"],
+        "doublesLevel": 89,
+        "doublesMoves": ["aquatail", "bodypress", "headsmash", "heavyslam", "highhorsepower", "rockpolish"]
+    },
     "manectric": {
         "level": 87,
         "moves": ["flamethrower", "overheat", "switcheroo", "thunderbolt", "voltswitch"],
@@ -838,6 +858,12 @@
         "doublesMoves": ["dragonclaw", "dragondance", "earthquake", "firepunch", "protect", "rockslide", "tailwind"]
     },
     "altaria": {
+        "level": 91,
+        "moves": ["defog", "dracometeor", "earthquake", "fireblast", "roost", "toxic"],
+        "doublesLevel": 92,
+        "doublesMoves": ["defog", "dracometeor", "fireblast", "roost", "tailwind", "toxic"]
+    },
+	"altariamega": {
         "level": 91,
         "moves": ["defog", "dracometeor", "earthquake", "fireblast", "roost", "toxic"],
         "doublesLevel": 92,
@@ -897,6 +923,12 @@
 		"moves": ["fireblast", "icebeam", "return", "scald", "thunderbolt", "thunderwave", "blizzard", "hurricane", "avalanche", "flamethrower"]
 	},
     "absol": {
+        "level": 84,
+        "moves": ["closecombat", "knockoff", "playrough", "suckerpunch", "swordsdance"],
+        "doublesLevel": 88,
+        "doublesMoves": ["closecombat", "knockoff", "protect", "suckerpunch", "swordsdance"]
+    },
+	"absolmega": {
         "level": 84,
         "moves": ["closecombat", "knockoff", "playrough", "suckerpunch", "swordsdance"],
         "doublesLevel": 88,
@@ -1088,6 +1120,12 @@
         "doublesLevel": 88,
         "doublesMoves": ["auroraveil", "blizzard", "iceshard", "protect", "woodhammer"]
     },
+	"abomasnowmega": {
+        "level": 83,
+        "moves": ["auroraveil", "blizzard", "earthquake", "iceshard", "woodhammer"],
+        "doublesLevel": 88,
+        "doublesMoves": ["auroraveil", "blizzard", "iceshard", "protect", "woodhammer"]
+    },
     "weavile": {
         "level": 79,
         "moves": ["iceshard", "knockoff", "lowkick", "swordsdance", "tripleaxel"],
@@ -1167,6 +1205,18 @@
         "doublesLevel": 86,
         "doublesMoves": ["closecombat", "feint", "knockoff", "protect", "swordsdance", "tripleaxel", "zenheadbutt"]
     },
+	"kecleon": {
+		"level": 80,
+		"moves": ["knockoff", "stealthrock", "recover", "toxic"]
+	},
+	"banette": {
+		"level": 80,
+		"moves": ["willowisp", "poltergeist", "painsplit", "knockoff", "infestation", "thunderwave", "shadowsneak", "swordsdance", "trailblaze", "pounce"]
+	},
+	"banettemega": {
+		"level": 80,
+		"moves": ["cottonguard", "painsplit", "poltergeist", "skittersmack", "encore", "swordsdance", "bodyslam", "trailblaze"]
+	},
     "dusknoir": {
         "level": 88,
         "moves": ["earthquake", "icepunch", "painsplit", "poltergeist", "shadowsneak", "trick", "willowisp"],
@@ -1326,6 +1376,12 @@
     },
     "audino": {
         "level": 92,
+        "moves": ["healbell", "knockoff", "protect", "toxic", "wish"],
+        "doublesLevel": 90,
+        "doublesMoves": ["bodyslam", "healpulse", "helpinghand", "knockoff", "protect", "thunderwave"]
+    },
+	"audinomega": {
+        "level": 80,
         "moves": ["healbell", "knockoff", "protect", "toxic", "wish"],
         "doublesLevel": 90,
         "doublesMoves": ["bodyslam", "healpulse", "helpinghand", "knockoff", "protect", "thunderwave"]
