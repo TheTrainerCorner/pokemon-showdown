@@ -982,13 +982,13 @@
     },
     "altaria": {
         "level": 91,
-        "moves": ["defog", "dracometeor", "earthquake", "fireblast", "roost", "toxic"],
+        "moves": ["defog", "dracometeor", "earthquake", "fireblast", "roost", "toxic", "alluringvoice", "dazzlinggleam"],
         "doublesLevel": 92,
         "doublesMoves": ["defog", "dracometeor", "fireblast", "roost", "tailwind", "toxic"]
     },
 	"altariamega": {
         "level": 91,
-        "moves": ["defog", "dracometeor", "earthquake", "fireblast", "roost", "toxic"],
+        "moves": ["defog", "dracometeor", "earthquake", "fireblast", "roost", "toxic", "alluringvoice", "dazzlinggleam"],
         "doublesLevel": 92,
         "doublesMoves": ["defog", "dracometeor", "fireblast", "roost", "tailwind", "toxic"]
     },
