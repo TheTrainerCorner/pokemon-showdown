@@ -698,7 +698,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 			echoedvoice: ["9M"],
 			eeriespell: ["9M"],
 			faketears: ["9M"],
-			teintattack: ["9M"],
+			feintattack: ["9M"],
 			flail: ["9M"],
 			frostbreath: ["9M"],
 			grudge: ["9M"],
