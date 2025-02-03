@@ -50,7 +50,7 @@
 	},
     "butterfree": {
         "level": 87,
-        "moves": ["energyball", "hurricane", "quiverdance", "sleeppowder"],
+        "moves": ["energyball", "psychic", "quiverdance", "sleeppowder", "bugbuzz"],
         "doublesLevel": 88,
         "doublesMoves": ["hurricane", "pollenpuff", "protect", "ragepowder", "sleeppowder", "tailwind"]
     },
