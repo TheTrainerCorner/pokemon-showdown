@@ -3480,5 +3480,18 @@
 	"meowthmega": {
 		"level": 80,
 		"moves": ["payday", "uturn", "fakeout", "knockoff", "focusblast", "eeriespell"]
+	},
+	"galaxeon": {
+		"level": 80,
+		"moves": ["astroforce", "wish", "gravitationalslam", "dazzlinggleam", "freeze-dry", "freezingglare"]
+	},
+	"gogoatmega": {
+		"level": 80,
+		"moves": ["astroforce", "earthquake", "hornleech", "milkdrink", "trailblaze", "highhorsepower"]
+	},
+	"pachirisumega": {
+		"level": 80,
+		"moves": ["stardusttrail", "thunderpunch", "trailblaze", "uturn", "seedbomb", "quickattack", "nuzzle"]
 	}
+
 }
