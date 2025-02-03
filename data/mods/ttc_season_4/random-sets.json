@@ -1887,7 +1887,7 @@
     },
     "virizion": {
         "level": 81,
-        "moves": ["closecombat", "leafblade", "stoneedge", "swordsdance"],
+        "moves": ["closecombat", "hornleech", "stoneedge", "swordsdance", "zenheadbutt"],
         "doublesLevel": 86,
         "doublesMoves": ["closecombat", "coaching", "leafblade", "protect", "stoneedge", "swordsdance"],
         "noDynamaxMoves": ["closecombat", "leafblade", "stoneedge", "swordsdance"]
