@@ -268,7 +268,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			// Other Moves
 			aromatherapy: ["9M"],
-			amensia: ["9M"],
+			amnesia: ["9M"],
 			batonpass: ["9M"],
 			bite: ["9M"],
 			bodyslam: ["9M"],
@@ -349,7 +349,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 
 			// Other Moves
 			aromatherapy: ["9M"],
-			amensia: ["9M"],
+			amnesia: ["9M"],
 			batonpass: ["9M"],
 			bite: ["9M"],
 			bodyslam: ["9M"],
