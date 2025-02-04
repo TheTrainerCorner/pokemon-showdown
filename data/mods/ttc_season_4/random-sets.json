@@ -123,9 +123,9 @@
     },
     "ninetalesalola": {
         "level": 79,
-        "moves": ["auroraveil", "blizzard", "freezedry", "moonblast", "nastyplot"],
+        "moves": ["auroraveil", "blizzard", "freezedry", "dazzlinggleam", "nastyplot"],
         "doublesLevel": 81,
-        "doublesMoves": ["auroraveil", "blizzard", "encore", "freezedry", "moonblast"]
+        "doublesMoves": ["auroraveil", "blizzard", "encore", "freezedry", "dazzlinggleam"]
     },
     "wigglytuff": {
         "level": 95,
@@ -554,9 +554,9 @@
 	},
     "bellossom": {
         "level": 81,
-        "moves": ["gigadrain", "moonblast", "quiverdance", "sleeppowder", "strengthsap"],
+        "moves": ["gigadrain", "dazzlinggleam", "fleurcannon", "quiverdance", "sleeppowder", "strengthsap"],
         "doublesLevel": 86,
-        "doublesMoves": ["energyball", "moonblast", "quiverdance", "sleeppowder", "strengthsap"]
+        "doublesMoves": ["energyball", "dazzlinggleam", "fleurcannon", "quiverdance", "sleeppowder", "strengthsap"]
     },
     "azumarill": {
         "level": 83,
@@ -862,9 +862,9 @@
     },
 	"gardevoirmega": {
         "level": 82,
-        "moves": ["calmmind", "moonblast", "mysticalfire", "psyshock", "substitute", "trick", "willowisp"],
+        "moves": ["calmmind", "dazzlinggleam", "alluringvoice", "mysticalfire", "psyshock", "substitute", "trick", "willowisp"],
         "doublesLevel": 84,
-        "doublesMoves": ["calmmind", "dazzlinggleam", "moonblast", "mysticalfire", "protect", "psyshock", "trick"]
+        "doublesMoves": ["calmmind", "dazzlinggleam", "alluringvoice", "mysticalfire", "protect", "psyshock", "trick"]
     },
 	"vigoroth": {
 		"level": 87,
@@ -1523,9 +1523,9 @@
     },
     "musharna": {
         "level": 87,
-        "moves": ["calmmind", "moonblast", "moonlight", "psychic", "thunderwave"],
+        "moves": ["calmmind", "moonblast", "dazzlinggleam", "moonlight", "psychic", "thunderwave"],
         "doublesLevel": 88,
-        "doublesMoves": ["helpinghand", "hypnosis", "moonblast", "psychic", "trickroom"]
+        "doublesMoves": ["helpinghand", "hypnosis", "moonblast", "dazzlinggleam", "psychic", "trickroom"]
     },
     "unfezant": {
         "level": 85,
@@ -1599,10 +1599,10 @@
     },
     "whimsicott": {
         "level": 84,
-        "moves": ["defog", "energyball", "leechseed", "moonblast", "stunspore", "taunt", "uturn"],
+        "moves": ["defog", "energyball", "leechseed", "dazzlinggleam", "stunspore", "taunt", "uturn"],
         "doublesLevel": 82,
-        "doublesMoves": ["encore", "energyball", "helpinghand", "moonblast", "tailwind", "taunt"],
-        "noDynamaxMoves": ["defog", "encore", "energyball", "leechseed", "moonblast", "stunspore", "taunt", "uturn"]
+        "doublesMoves": ["encore", "energyball", "helpinghand", "dazzlinggleam", "tailwind", "taunt"],
+        "noDynamaxMoves": ["defog", "encore", "energyball", "leechseed", "dazzlinggleam", "stunspore", "taunt", "uturn"]
     },
     "lilligant": {
         "level": 84,
@@ -2023,9 +2023,9 @@
     },
     "aromatisse": {
         "level": 89,
-        "moves": ["calmmind", "moonblast", "protect", "toxic", "wish"],
+        "moves": ["calmmind", "dazzlinggleam", "protect", "toxic", "wish"],
         "doublesLevel": 86,
-        "doublesMoves": ["healpulse", "moonblast", "protect", "trickroom", "wish"]
+        "doublesMoves": ["healpulse", "dazzlinggleam", "protect", "trickroom", "wish"]
     },
     "slurpuff": {
         "level": 79,
@@ -2095,9 +2095,9 @@
     },
     "carbink": {
         "level": 87,
-        "moves": ["bodypress", "lightscreen", "moonblast", "reflect", "stealthrock"],
+        "moves": ["bodypress", "lightscreen", "dazzlinggleam", "reflect", "stealthrock"],
         "doublesLevel": 90,
-        "doublesMoves": ["bodypress", "irondefense", "moonblast", "stealthrock"]
+        "doublesMoves": ["bodypress", "irondefense", "dazzlinggleam", "stealthrock"]
     },
     "goodra": {
         "level": 83,
@@ -2155,7 +2155,7 @@
     },
     "xerneas": {
         "level": 66,
-        "moves": ["focusblast", "geomancy", "moonblast", "psyshock"],
+        "moves": ["focusblast", "geomancy", "dazzlinggleam", "psyshock"],
         "doublesLevel": 70,
         "doublesMoves": ["dazzlinggleam", "focusblast", "geomancy", "moonblast", "thunderbolt"]
     },
@@ -2179,15 +2179,15 @@
     },
     "diancie": {
         "level": 82,
-        "moves": ["bodypress", "diamondstorm", "earthpower", "moonblast", "stealthrock", "toxic"],
+        "moves": ["bodypress", "diamondstorm", "earthpower", "dazzlinggleam", "stealthrock", "toxic"],
         "doublesLevel": 80,
-        "doublesMoves": ["bodypress", "diamondstorm", "earthpower", "moonblast"]
+        "doublesMoves": ["bodypress", "diamondstorm", "earthpower", "dazzlinggleam"]
     },
 	"dianciemega": {
         "level": 82,
-        "moves": ["bodypress", "diamondstorm", "earthpower", "moonblast", "stealthrock", "toxic"],
+        "moves": ["bodypress", "diamondstorm", "earthpower", "dazzlinggleam", "stealthrock", "toxic"],
         "doublesLevel": 80,
-        "doublesMoves": ["bodypress", "diamondstorm", "earthpower", "moonblast"]
+        "doublesMoves": ["bodypress", "diamondstorm", "earthpower", "dazzlinggleam"]
     },
     "volcanion": {
         "level": 78,
@@ -2210,9 +2210,9 @@
     },
     "primarina": {
         "level": 81,
-        "moves": ["energyball", "hydropump", "moonblast", "psychic", "scald"],
+        "moves": ["energyball", "hydropump", "dazzlinggleam", "psychic", "scald"],
         "doublesLevel": 82,
-        "doublesMoves": ["dazzlinggleam", "flipturn", "hypervoice", "moonblast", "protect", "psychic"]
+        "doublesMoves": ["dazzlinggleam", "flipturn", "hypervoice", "dazzlinggleam", "protect", "psychic"]
     },
     "vikavolt": {
         "level": 82,
@@ -2222,9 +2222,9 @@
     },
     "ribombee": {
         "level": 80,
-        "moves": ["moonblast", "psychic", "stickyweb", "stunspore", "uturn"],
+        "moves": ["dazzlinggleam", "psychic", "stickyweb", "stunspore", "uturn"],
         "doublesLevel": 84,
-        "doublesMoves": ["helpinghand", "moonblast", "pollenpuff", "speedswap", "stickyweb", "tailwind"]
+        "doublesMoves": ["helpinghand", "dazzlinggleam", "pollenpuff", "speedswap", "stickyweb", "tailwind"]
     },
     "lycanroc": {
         "level": 79,
@@ -2276,9 +2276,9 @@
     },
     "shiinotic": {
         "level": 89,
-        "moves": ["energyball", "leechseed", "moonblast", "spore", "strengthsap"],
+        "moves": ["energyball", "leechseed", "dazzlinggleam", "spore", "strengthsap"],
         "doublesLevel": 88,
-        "doublesMoves": ["energyball", "moonblast", "protect", "spore", "strengthsap"]
+        "doublesMoves": ["energyball", "dazzlinggleam", "protect", "spore", "strengthsap"]
     },
     "salazzle": {
         "level": 81,
@@ -2490,9 +2490,9 @@
     },
     "tapulele": {
         "level": 79,
-        "moves": ["calmmind", "focusblast", "moonblast", "psychic", "psyshock", "shadowball"],
+        "moves": ["calmmind", "focusblast", "dazzlinggleam", "psychic", "psyshock", "shadowball"],
         "doublesLevel": 80,
-        "doublesMoves": ["calmmind", "dazzlinggleam", "focusblast", "moonblast", "protect", "psyshock"]
+        "doublesMoves": ["calmmind", "dazzlinggleam", "focusblast", "dazzlinggleam", "protect", "psyshock"]
     },
     "tapubulu": {
         "level": 82,
@@ -2502,9 +2502,9 @@
     },
     "tapufini": {
         "level": 77,
-        "moves": ["calmmind", "defog", "moonblast", "surf", "taunt"],
+        "moves": ["calmmind", "defog", "dazzlinggleam", "surf", "taunt"],
         "doublesLevel": 80,
-        "doublesMoves": ["haze", "healpulse", "moonblast", "muddywater", "naturesmadness", "protect", "taunt"]
+        "doublesMoves": ["haze", "healpulse", "dazzlinggleam", "muddywater", "naturesmadness", "protect", "taunt"]
     },
     "solgaleo": {
         "level": 71,
@@ -3241,7 +3241,7 @@
 	},
 	"fluttermane": {
 		"level": 74,
-		"moves": ["calmmind", "moonblast", "mysticalfire", "psyshock", "shadowball", "thunderbolt", "dazzlinggleam"]
+		"moves": ["calmmind", "dazzlinggleam", "mysticalfire", "psyshock", "shadowball", "thunderbolt", "dazzlinggleam"]
 	},
 	"slitherwing": {
 		"level": 82,
@@ -3281,7 +3281,7 @@
 	},
 	"ironvaliant": {
 		"level": 79,
-		"moves": ["closecombat", "knockoff", "spiritbreak", "swordsdance", "moonblast", "psychic"]
+		"moves": ["closecombat", "knockoff", "spiritbreak", "swordsdance", "dazzlinggleam", "psychic"]
 	},
 	"ironleaves": {
 		"level": 80,
@@ -3439,7 +3439,7 @@
 	},
 	"meloettacaroler": {
 		"level": 80,
-		"moves": ["snowtimesong", "playrough", "moonblast", "icebeam", "drainpunch", "energyball", "freezyfrost"]
+		"moves": ["snowtimesong", "playrough", "dazzlinggleam", "icebeam", "drainpunch", "energyball", "freezyfrost"]
 	},
 	"empoleon": {
 		"level": 80,
