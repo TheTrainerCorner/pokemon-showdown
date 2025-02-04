@@ -1522,7 +1522,7 @@
         "doublesMoves": ["copycat", "encore", "fakeout", "foulplay", "snarl", "taunt", "thunderwave"]
     },
     "musharna": {
-        "level": 87,
+        "level": 85,
         "moves": ["calmmind", "moonblast", "dazzlinggleam", "moonlight", "psychic", "thunderwave"],
         "doublesLevel": 88,
         "doublesMoves": ["helpinghand", "hypnosis", "moonblast", "dazzlinggleam", "psychic", "trickroom"]
@@ -2839,9 +2839,9 @@
         "doublesLevel": 88,
         "doublesMoves": ["earthquake", "poltergeist", "protect", "toxicspikes", "trickroom", "willowisp"]
     },
-    "alcremiegmax": {
+    "alcremie": {
         "level": 86,
-        "moves": ["calmmind", "dazzlinggleam", "mysticalfire", "psychic", "recover"],
+        "moves": ["calmmind", "dazzlinggleam", "drainingkiss", "mysticalfire", "psychic", "recover"],
         "doublesLevel": 85,
         "doublesMoves": ["dazzlinggleam", "decorate", "mysticalfire", "protect", "recover"]
     },

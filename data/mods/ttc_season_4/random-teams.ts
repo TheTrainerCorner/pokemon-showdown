@@ -682,6 +682,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		].includes(ability)) return true;
 
 		switch (ability) {
+		case 'Aroma Veil':
+			return ((species.id === 'alcremie'));
 		case 'Chilling Neigh': // should deny access to chilling neigh if there is a way to setup snow already.
 			return (!(moves.has('snowscape') || teamDetails.snow));
 		// Abilities which are primarily useful for certain moves
@@ -887,6 +889,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		if (abilities.has('Truant') && (moves.has('recover') || moves.has('slackoff') || moves.has('shoreup'))) return 'Truant';
 		if (species.id === 'wigglytuff' && (moves.has('reflect') || moves.has('lightscreen'))) return 'Field Support';
 		if (species.id === 'wigglytuff' && !(moves.has('reflect') || moves.has('lightscreen'))) return 'Fluffy';
+		if (species.id === 'alcremie' && moves.has('drainingkiss')) return "Triage";
 		if (species.id === 'hooh') return 'Air Lock';
 		if (species.id === 'palafin') return 'Emergency Exit';
 		if (species.id === 'kecleon') return 'Color Change';

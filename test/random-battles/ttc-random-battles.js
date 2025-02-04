@@ -69,13 +69,6 @@ describe('TTC Random Battles', () => {
 		});
 	});
 
-	it('should not generate 3-attack Alcremie-Gmax', () => {
-		testSet('alcremiegmax', options, set => assert(
-			!['psychic', 'dazzlinggleam', 'mysticalfire'].every(move => set.moves.includes(move)),
-			`Alcremie-Gmax should not get three attacks (got ${set.moves})`
-		));
-	});
-
 	it('should always give Doublade Swords Dance', () => {
 		testAlwaysHasMove('doublade', options, 'swordsdance');
 	});
