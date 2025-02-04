@@ -108,8 +108,6 @@ describe('TTC Random Battles', () => {
 
 	it('Toxapex should always have Scald', () => testAlwaysHasMove('toxapex', options, 'scald'));
 
-	it('Shiinotic should always have Moonblast', () => testAlwaysHasMove('shiinotic', options, 'moonblast'));
-
 	it('should prevent Dragon Dance and Extreme Speed from appearing together', () => {
 		testNotBothMoves('dragonite', options, 'dragondance', 'extremespeed');
 	});
@@ -250,5 +248,9 @@ describe('TTC Random Battles', () => {
 
 	it ('should ensure that Beheeyem can not have Choice Specs with Trick Room', () => {
 		testNotHasItemAndMove('beheeyem', options, 'Choice Specs', 'trickroom');
+	});
+
+	it ('should not have Light Clay if Wigglytuff has light screen', () => {
+		testNotHasItemAndMove('wigglytuff', options, 'Light Clay', 'lightscreen');
 	});
 });

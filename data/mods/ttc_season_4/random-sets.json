@@ -553,7 +553,7 @@
 		"moves": ["agility", "thunderbolt", "dragonpulse", "dazzlinggleam", "cottonguard", "slackoff", "chargebeam", "trailblaze", "paraboliccharge", "voltswitch"]
 	},
     "bellossom": {
-        "level": 81,
+        "level": 86,
         "moves": ["gigadrain", "dazzlinggleam", "fleurcannon", "quiverdance", "sleeppowder", "strengthsap"],
         "doublesLevel": 86,
         "doublesMoves": ["energyball", "dazzlinggleam", "fleurcannon", "quiverdance", "sleeppowder", "strengthsap"]

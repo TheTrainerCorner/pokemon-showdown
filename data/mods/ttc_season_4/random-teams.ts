@@ -885,6 +885,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		// Lopunny, and other Facade users, don't want Limber, even if other abilities are poorly rated,
 		// since paralysis would arguably be good for them.
 		if (abilities.has('Truant') && (moves.has('recover') || moves.has('slackoff') || moves.has('shoreup'))) return 'Truant';
+		if (species.id === 'wigglytuff' && (moves.has('reflect') || moves.has('lightscreen'))) return 'Field Support';
+		if (species.id === 'wigglytuff' && !(moves.has('reflect') || moves.has('lightscreen'))) return 'Fluffy';
 		if (species.id === 'hooh') return 'Air Lock';
 		if (species.id === 'palafin') return 'Emergency Exit';
 		if (species.id === 'kecleon') return 'Color Change';
@@ -969,6 +971,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		// not undefined — we want "no item" not "go find a different item"
 		if (moves.has('acrobatics') && ability !== 'Ripen') return ability === 'Grassy Surge' ? 'Grassy Seed' : '';
 		if (species.id === 'castform' && moves.has('blizzard')) return 'Icy Rock';
+		if (species.id === 'wigglytuff' && ability === 'Field Support') return 'Leftovers';
 		if (species.id === 'castform' && moves.has('hurricane')) return 'Damp Rock';
 		if (species.id === 'castform' && moves.has('fireblast')) return 'Heat Rock';
 		if (moves.has('geomancy') || moves.has('meteorbeam')) return 'Power Herb';
