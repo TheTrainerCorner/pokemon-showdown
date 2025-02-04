@@ -1994,7 +1994,7 @@
         "doublesMoves": ["closecombat", "drainpunch", "gunkshot", "icepunch", "knockoff", "protect"]
     },
     "meowstic": {
-        "level": 84,
+        "level": 91,
         "moves": ["lightscreen", "psychic", "reflect", "thunderwave", "yawn"],
         "doublesLevel": 84,
         "doublesMoves": ["fakeout", "lightscreen", "psychic", "reflect", "thunderwave"]
