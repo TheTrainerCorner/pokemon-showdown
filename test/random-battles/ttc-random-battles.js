@@ -69,6 +69,10 @@ describe('TTC Random Battles', () => {
 		});
 	});
 
+	it ('should always give Flamethrower to Audino-Mega', () => {
+		testAlwaysHasMove('audinomega', options, 'flamethrower');
+	})
+
 	it('should always give Doublade Swords Dance', () => {
 		testAlwaysHasMove('doublade', options, 'swordsdance');
 	});

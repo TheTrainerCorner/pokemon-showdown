@@ -228,7 +228,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			(species.id === 'golisopod' && movePool.includes('leechlife') && movePool.includes('firstimpression')) ||
 			(species.id === 'meloettacaroler' && movePool.includes('snowtimesong')) ||
 			(species.id === 'meowthmega' && movePool.includes('payday')) ||
-			(species.id === 'eeveemega' && movePool.includes('cheaterstrick'))
+			(species.id === 'eeveemega' && movePool.includes('cheaterstrick')) ||
+			(species.id === 'audinomega' && movePool.includes('flamethrower'))
 		) {
 			// Entei should always have Extreme Speed, and Genesect-Douse should always have Techno Blast
 			// Golisopod should always have one of its bug moves (Leech Life or First Impression)

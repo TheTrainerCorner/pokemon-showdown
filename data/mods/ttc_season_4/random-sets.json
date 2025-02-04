@@ -830,7 +830,7 @@
         "doublesMoves": ["highhorsepower", "icywind", "muddywater", "protect", "stealthrock", "wideguard"]
     },
     "linoone": {
-        "level": 85,
+        "level": 92,
         "moves": ["bellydrum", "extremespeed", "stompingtantrum", "throatchop"],
         "doublesLevel": 90,
         "doublesMoves": ["bellydrum", "extremespeed", "protect", "throatchop"]
@@ -1559,7 +1559,7 @@
     },
 	"audinomega": {
         "level": 80,
-        "moves": ["healbell", "knockoff", "protect", "toxic", "wish"],
+        "moves": ["healbell", "flamethrower", "dazzlinggleam", "wish"],
         "doublesLevel": 90,
         "doublesMoves": ["bodyslam", "healpulse", "helpinghand", "knockoff", "protect", "thunderwave"]
     },
