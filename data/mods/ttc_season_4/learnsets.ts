@@ -846,6 +846,8 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 	},
 	ironexplorer: {
 		learnset: {
+			moonblast: ["9M"],
+			stardusttrail: ["9M"],
 			ironhead: ["9M"],
 			flashcannon: ["9M"],
 			steelbeam: ["9M"],
