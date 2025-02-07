@@ -22,21 +22,29 @@ const RecoveryMove = [
 ];
 
 const ContraryMoves = [
-	'closecombat', 'leafstorm', 'overheat', 'dracometeor', 'superpower', 'vcreate', 'psychoboost',
+	'armorcannon', 'closecombat', 'leafstorm', 'makeitrain', 'overheat', 'spinout', 'dracometeor', 'superpower', 'vcreate', 'psychoboost',
 ];
 
 const PhysicalSetup = [
-	'bellydrum', 'bulkup', 'coil', 'curse', 'dragondance', 'honeclaws', 'howl', 'poweruppunch', 'swordsdance',
+	'bellydrum', 'bulkup', 'coil', 'curse', 'dragondance', 'honeclaws', 'howl', 'meditate', 'poweruppunch', 'swordsdance', 'tidyup', 'victorydance',
 ];
 const SpecialSetup = [
-	'calmmind', 'chargebeam', 'geomancy', 'nastyplot', 'quiverdance', 'tailglow',
+	'calmmind', 'chargebeam', 'geomancy', 'nastyplot', 'quiverdance', 'tailglow', 'takeheart', 'torchsong',
 ];
 const MixedSetup = [
 	'clangoroussoul', 'growth', 'happyhour', 'holdhands', 'noretreat', 'shellsmash', 'workup',
 	'knowledgepath',
 ];
 const SpeedSetup = [
-	'agility', 'autotomize', 'flamecharge', 'rockpolish',
+	'agility', 'autotomize', 'flamecharge', 'rockpolish', 'snowscape', 'trailblaze',
+];
+const Setup = [
+	'acidarmor', 'agility', 'autotomize', 'bellydrum', 'bulkup', 'calmmind', 'clangoroussoul', 'coil', 'curse', 'dragondance',
+	'flamecharge', 'growth', 'honeclaws', 'irondefense', 'meditate', 'nastyplot', 'noretreat', 'poweruppunch', 'quiverdance',
+	'rockpolish', 'shellsmash', 'shiftgear', 'swordsdance', 'tailglow', 'takeheart', 'tidyup', 'trailblaze', 'workup', 'victorydance',
+];
+const SpeedControl = [
+	'electroweb', 'glare', 'icywind', 'lowsweep', 'nuzzle', 'quash', 'tailwind', 'thunderwave', 'trickroom',
 ];
 const NoStab = [
 	'accelerock', 'aquajet', 'beakblast', 'bounce', 'breakingswipe', 'chatter', 'clearsmog', 'dragontail', 'eruption', 'explosion',
@@ -44,9 +52,30 @@ const NoStab = [
 	'meteorbeam', 'pluck', 'pursuit', 'quickattack', 'reversal', 'selfdestruct', 'skydrop', 'snarl', 'suckerpunch', 'uturn', 'watershuriken',
 	'vacuumwave', 'voltswitch', 'waterspout',
 ];
-
+const ProtectMoves = [
+	'banefulbunker', 'burningbulwark', 'protect', 'silktrap', 'spikyshield',
+];
+const PivotMoves = [
+	'chillyreception', 'flipturn', 'partingshot', 'shedtail', 'teleport', 'uturn', 'voltswitch', 'rollingkick',
+];
 const Hazards = [
 	'spikes', 'stealthrock', 'stickyweb', 'toxicspikes',
+];
+// Moves that should be paired together when possible
+const MovePairs = [
+	['lightscreen', 'reflect'],
+	['sleeptalk', 'rest'],
+	['protect', 'wish'],
+	['leechseed', 'protect'],
+	['leechseed', 'substitute'],
+];
+/** Pokemon who always want priority STAB, and are fine with it as its only STAB move of that type */
+const PriorityPokemon = [
+	'breloom', 'brutebonnet', 'cacturne', 'honchkrow', 'mimikyu', 'ragingbolt', 'scizor',
+];
+/** Pokemon who should never be in the lead slot */
+const NoLeadPokemon = [
+	'zacian', 'zamazenta',
 ];
 
 function sereneGraceBenefits(move: Move) {
@@ -162,6 +191,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 
 			if (MixedSetup.includes(moveid)) counter.add('mixedsetup');
 			if (SpeedSetup.includes(moveid)) counter.add('speedsetup');
+			if (Setup.includes(moveid)) counter.add('setup');
 			if (Hazards.includes(moveid)) counter.add('hazards');
 		}
 

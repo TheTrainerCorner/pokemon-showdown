@@ -3455,10 +3455,6 @@
         "doublesLevel": 88,
         "doublesMoves": ["closecombat", "drainpunch", "gunkshot", "icepunch", "knockoff", "protect"]
     },
-	"penquill": {
-		"level": 80,
-		"moves": ["rapidspin", "flipturn", "spikes", "knockoff", "aquatickick", "highhorsepower", "tripleaxel", "swordsdance"]
-	},
 	"gourgeistmega": {
 		"level": 80,
 		"moves": ["fireblast", "energyball", "leechseed", "powerwhip", "shadowball", "sludgebomb", "substitute"]
@@ -3480,6 +3476,82 @@
 	"meowthmega": {
 		"level": 80,
 		"moves": ["payday", "uturn", "fakeout", "knockoff", "focusblast", "eeriespell"]
+	},
+	"slugoliath": {
+		"level": 80,
+		"moves": ["fireblast", "earthquake", "lavatsunami", "ironhead", "mortalspin", "scorchingsands", "shadowball"]
+	},
+	"penquill": {
+		"level": 80,
+		"moves": ["rapidspin", "flipturn", "spikes", "knockoff", "aquatickick", "highhorsepower", "tripleaxel", "swordsdance"]
+	},
+	"crustocean": {
+		"level": 80,
+		"moves": ["aquacutter", "crabhammer", "earthquake", "headlongrush", "icespinner", "leafblade", " superpower", "stealthrock"]
+	},
+	"lickitale": {
+		"level": 80,
+		"moves": ["fantasytongue", "dazzlinggleam", "dragon pulse", "highhorsepower", "playrough"]
+	},
+	"tyrannicalglutton": {
+		"level": 80,
+		"moves": ["sludgebomb", "icebeam", "flamethrower", "earthpower", "gigadrain", "darkpulse", "knockoff"]
+	},
+	"wishiwashiresentful": {
+		"level": 80,
+		"moves": ["resentfulscreech", "darkpulse", "liquidation", "playrough", "shadowball"]
+	},
+	"akumu": {
+		"level": 70,
+		"moves": ["hypnosis", "peekaboo", "trick", "toxic", "thunderwave", "shadowclaw", "playrough", "burningjealousy"]
+	},
+	"catinator": {
+		"level": 80,
+		"moves": ["spikecannon", "magnetbomb", "spikyshield", "seedbomb", "stealthrock", "spikes", "steelspikes", "shelltrap"]
+	},
+	"cerinyx": {
+		"level": 70,
+		"moves": ["eclipticpunishment", "dazzlinggleam", "darkpulse", "flamethrower", "moonblast"]
+	},
+	"magcoral": {
+		"level": 80,
+		"moves": ["scald", "shellstorm", "stealthrock", "rockblast", "recover", "powergem", "earthpower"]
+	},
+	"jaguaptic": {
+		"level": 80,
+		"moves": ["psychic", "thunderbolt", "voltswitch", "uturn", "supercellslam", "paraboliccharge", "firefang"]
+	},
+	"plushadow": {
+		"level": 70,
+		"moves": ["playrough", "painsplit", "protect", "poltergeist", "shadowball", "willowisp", "thunderwave"]
+	},
+	"phextender": {
+		"level": 80,
+		"moves": ["rebirth", "flamethrower", "airslash", "defog", "uturn", "moonblast", "morningsun", "roost"]
+	},
+	"demetrilith": {
+		"level": 80,
+		"moves": ["earthquake", "petalblizzard", "playrough", "powerwhip", "rockslide", "cut"]
+	},
+	"echowhalisp": {
+		"level": 80,
+		"moves": ["bouncybubble", "paraboliccharge", "thunderbolt", "spiritshackle", "shadowball", "trailblaze"]
+	},
+	"scaleslash": {
+		"level": 80,
+		"moves": ["rapidspin", "spiritroll", "stealthrock", "spikyshield", "drillrun", "knockoff"]
+	},
+	"ironexplorer": {
+		"level": 80,
+		"moves": ["dragondarts", "dragonpulse", "swift", "nightshade", "phantomforce", "shadowball", "uturn"]
+	},
+	"tapunalo": {
+		"level": 70,
+		"moves": ["alluringvoice", "bugbuzz", "dazzlinggleam", "playrough", "spiritbreak"]
+	},
+	"tapupuaa": {
+		"level": 70,
+		"moves": ["darkestlariat", "playrough", "closecombat", "highhorsepower", "ragingfury", "throatchop"]
 	},
 	"galaxeon": {
 		"level": 80,
