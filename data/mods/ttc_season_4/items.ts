@@ -1,4 +1,22 @@
 export const Items: {[k: string]: ModdedItemData} = {
+	armorplate: {
+		inherit: true,
+		onFoeAfterMove(source, target, move) {
+			if (this.effectState.didHit) {
+				if (move.category === "Status" || !target.runImmunity(move.type)) return;
+				this.add('-end', target, `armorplatex${target.itemState.armorPlateHits}`);
+				target.itemState.armorPlateHits -= 2; // Should skip the second hit and move to the last hit. I don't want to deal with animation stuff.
+				if (target.itemState.armorPlateHits <= 0) {
+					this.add('-start', target, `armorplatexend`);
+					target.useItem();
+					this.add('-end', target, `armorplatexend`, '[silent]');
+				} else {
+					this.add('-start', target, `armorplatex${target.itemState.armorPlateHits}`);
+				}
+			}
+		},
+		desc: "Gives holder 1.2x boost to both defenses for 2 hits. Multi-hit moves are affected.",
+	},
 	gogoatite: {
 		name: "Gogoatite",
 		spritenum: -100,
