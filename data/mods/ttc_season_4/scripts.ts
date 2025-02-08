@@ -154,6 +154,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(80)
 			.pokemon.learnset
 				.remove('Roost');
+		new ModifyPokemon('Ledyba', this)
+			.types
+				.setType('Bug', 'Cosmic');
 		new ModifyPokemon('Ledian', this)
 			.types
 				.setType('Bug', 'Cosmic');
