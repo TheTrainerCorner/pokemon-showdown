@@ -41,7 +41,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#region Replacing Swarm for Myriad Surge
 		let swarmReplacement = [
-			'volcarona', 'kleavor', 'beedrill', 'galvantula', 'kicketune', 'lokix', 'scizor',
+			'volcarona', 'kleavor', 'beedrill', 'galvantula', 'kricketune', 'lokix', 'scizor',
 			'vespiquen', 'volbeat', 'dottler', 'scyther', 'blipbug', 'grubbin', 'joltik',
 			'karrablast', 'larvesta', 'ledyba', 'nymble', 'sewaddle', 'spinarak', 'venipede',
 		];
