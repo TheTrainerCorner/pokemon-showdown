@@ -88,7 +88,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Uzumaki')
 		new ModifyPokemon('Vileplume', this)
 			.abilities
-				.setAbility0('Venom Hielaman');
+				.setAbility0('Chlorophyll');
 
 		// NFE
 		new ModifyPokemon('Clefairy', this)
@@ -154,6 +154,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(80)
 			.pokemon.learnset
 				.remove('Roost');
+		new ModifyPokemon('Ledian', this)
+			.types
+				.setType('Bug', 'Cosmic');
 		new ModifyPokemon('Lugia', this)
 			.abilities
 				.setHiddenAbility('Rain Dish')
