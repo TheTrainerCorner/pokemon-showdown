@@ -557,6 +557,15 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Corviknight', this)
 			.abilities
 				.setAbility0('Steadfast');
+		new ModifyPokemon('Celesteela', this)
+			.types
+				.setType('Cosmic', 'Flying')
+			.pokemon.learnset
+				.add('Moonblast')
+				.add('Lunar Dance')
+				.add('Stardust Trail')
+				.add('Astro Force')
+				.add('Swift');
 		new ModifyPokemon('Dracozolt', this)
 			.learnset
 				.add('Supercell Slam');
