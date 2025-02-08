@@ -39,6 +39,24 @@ export const Scripts: ModdedBattleScriptsData = {
 		}
 		//#endregion
 
+		//#region Replacing Swarm for Myriad Surge
+		let swarmReplacement = [
+			'volcarona', 'kleavor', 'beedrill', 'galvantula', 'kicketune', 'lokix', 'scizor',
+			'vespiquen', 'volbeat', 'dottler', 'scyther', 'blipbug', 'grubbin', 'joltik',
+			'karrablast', 'larvesta', 'ledyba', 'nymble', 'sewaddle', 'spinarak', 'venipede',
+		];
+
+		for (const poke of swarmReplacement) {
+			let pokemon = this.species.get(poke);
+
+			if (!pokemon.exists) continue;
+
+			if (pokemon.abilities['0'] === 'Swarm') this.modData('Pokedex', poke).abilities['0'] = 'Myriad Surge';
+			if (pokemon.abilities['1'] === 'Swarm') this.modData('Pokedex', poke).abilities['1'] = 'Myriad Surge';
+			if (pokemon.abilities['H'] === 'Swarm') this.modData('Pokedex', poke).abilities['H'] = 'Myriad Surge';
+		}
+		//#endregion
+
 		//#region Galaxeon relationship with Eevee
 		this.modData("Pokedex", "eevee").evos.push("Galaxeon");
 		//#endregion
