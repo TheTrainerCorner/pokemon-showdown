@@ -2887,10 +2887,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(60)
 				.setSPD(170)
 				.setSPE(10);
-		new ModifyPokemon('Trevenant-Autumn', this)
-			.baseStats
-				.setATK(110)
-				.setSPE(71);
 		new ModifyPokemon('Octillery', this)
 			.baseStats
 				.setHP(76)

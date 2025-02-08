@@ -414,6 +414,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Florges', this)
 			.abilities
 				.setAbility0('Oblivious');
+		new ModifyPokemon('Heliolisk', this)
+			.learnset
+				.add('Earth Power');
 		new ModifyPokemon('Gogoat', this)
 			.learnset
 				.add('Astro Force')
@@ -633,6 +636,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Solar Flare')
 				.add('Swift')
 				.add('Lunar Dance');
+		new ModifyPokemon('Kingambit', this)
+			.abilities
+				.setHiddenAbility('Ruy Lopez');
 		new ModifyPokemon('Palafin-Hero', this)
 			.types
 				.setType('Water', 'Cosmic')
@@ -695,6 +701,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Plushadow', this)
 			.learnset
 				.add('Body Press');
+		new ModifyPokemon('TyrannicalGlutton', this)
+			.learnset
+				.remove('Wish');
 
 		//#endregion
 

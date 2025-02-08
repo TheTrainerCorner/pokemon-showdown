@@ -372,30 +372,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	//#endregion
 	//#region Season 1 Thanksgiving
-	trevenant: {
-		inherit: true,
-		otherFormes: ["Trevenant-Autumn"],
-		formeOrder: ["Trevenant", "Trevenant-Autumn"],
-	},
-	trevenantautumn: { // Shaw
-		num: 709,
-		name: "Trevenant-Autumn",
-		baseSpecies: "Trevenant",
-		forme: 'Autumn',
-		types: ["Grass", "Ghost"],
-		baseStats: {hp: 91, atk: 125, def: 83, spa: 65, spd: 82, spe: 56},
-		abilities: {0: "Wandering Spirit", 1: "Harvest", H: "Justified"},
-		heightm: 1.5,
-		weightkg: 71,
-		color: "Orange",
-		prevo: 'Phantump',
-		evoType: "trade",
-		tags: ["Fakemon"],
-		eggGroups: ["Grass", "Amorphous"],
-		tier: "OU",
-		natDexTier: "OU",
-		doublesTier: "DOU",
-	},
 	//#endregion
 	//#region Season 1 Winter
 	jirachi: {
