@@ -3543,7 +3543,7 @@
 	},
 	"ironexplorer": {
 		"level": 80,
-		"moves": ["dragondarts", "dragonpulse", "swift", "nightshade", "phantomforce", "shadowball", "uturn", "moonblast", "stardusttrail"]
+		"moves": ["dragondarts", "liftoff", "dragonpulse", "swift", "nightshade", "phantomforce", "shadowball", "uturn", "moonblast", "stardusttrail"]
 	},
 	"tapunalo": {
 		"level": 70,
