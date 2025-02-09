@@ -137,9 +137,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility1('Sand Rush')
 				.setHiddenAbility('Uzumaki')
-		new ModifyPokemon('Sandshrew', this)
+		new ModifyPokemon('Sandshrew-Alola', this)
 			.abilities
-				.setAbility1('Sand Rush')
+				.setAbility1('Slush Rush')
 				.setHiddenAbility('Uzumaki')
 		//#region Gen 2
 		
