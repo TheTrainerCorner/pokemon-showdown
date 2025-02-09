@@ -26,13 +26,13 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 
 		//#region Removing Apple Acid & Grav Apple
-		const removeAppleAcid = ["flapple", "roserade", "vileplume", "virizion"];
+		const removeAppleAcid = ["roserade", "vileplume", "virizion"];
 
 		for (const poke of removeAppleAcid) {
 			delete this.modData("Learnsets", poke).learnset['appleacid'];
 		}
 
-		const removeGravApple = ["rillaboom", "appletun", "cherrim"];
+		const removeGravApple = ["rillaboom", "cherrim"];
 		
 		for (const poke of removeGravApple) {
 			delete this.modData("Learnsets", poke).learnset['gravapple'];
