@@ -693,9 +693,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Solar Flare')
 				.add('Swift')
 				.add('Lunar Dance');
-		new ModifyPokemon('Kingambit', this)
-			.abilities
-				.setHiddenAbility('Ruy Lopez');
 		new ModifyPokemon('Palafin-Hero', this)
 			.types
 				.setType('Water', 'Cosmic')
