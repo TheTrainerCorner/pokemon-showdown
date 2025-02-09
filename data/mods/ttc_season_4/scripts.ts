@@ -113,7 +113,18 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Vileplume', this)
 			.abilities
 				.setAbility0('Chlorophyll');
-
+		new ModifyPokemon('Zapdos', this)
+			.abilities
+				.setAbility0('Volt Absorb');
+		new ModifyPokemon('Moltres', this)
+			.abilities
+				.setAbility0('Flash Fire');
+		new ModifyPokemon('Articuno', this)
+			.abilities
+				.setAbility0('Ice Body');
+		new ModifyPokemon('Aerodactyl', this)
+			.abilities
+				.setAbility0('Rivalry');
 		// NFE
 		new ModifyPokemon('Clefairy', this)
 			.types
@@ -167,6 +178,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Hyper Fang');
 		new ModifyPokemon('Ho-Oh', this)
 			.abilities
+				.setAbility0('Flash Fire')
 				.setHiddenAbility('Air Lock')
 			.pokemon.baseStats
 				.setATK(120)
@@ -182,6 +194,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Bug', 'Cosmic');
 		new ModifyPokemon('Lugia', this)
 			.abilities
+				.setAbility0('Forewarn')
 				.setHiddenAbility('Rain Dish')
 			.pokemon.baseStats
 				.setDEF(120)
@@ -298,6 +311,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Wish')
 				.add('Blazing Torque')
 				.add('Raging Fury');
+		new ModifyPokemon('Wailmer', this)
+			.abilities
+				.setHiddenAbility('Primordial Sea');
 
 		// NFE
 		new ModifyPokemon('Kirlia', this)
@@ -420,6 +436,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Poison Tail')
 				.add('Solar Blade')
 				.add('Royal Pledge');
+		new ModifyPokemon('Kyurem', this)
+			.abilities
+				.setAbility0('Thermal Exchange');
 		
 		// NFE
 		new ModifyPokemon('Bisharp', this)
