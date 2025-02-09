@@ -245,6 +245,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		return counter;
 	}
 
+
 	shouldCullMove(move: Move, types: Set<string>, moves: Set<string>, abilities: Set<string>, counter: MoveCounter, movePool: string[], teamDetails: RandomTeamsTypes.TeamDetails, species: Species, isLead: boolean, isDoubles: boolean, isNoDynamax: boolean): { cull: boolean; isSetup?: boolean; } {
 		if (isDoubles && species.baseStats.def >= 140 && movePool.includes('bodypress')) {
 			// In Doubles, Pokémon with Defense stats >= 140 should always have body press
