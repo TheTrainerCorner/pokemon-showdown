@@ -74,6 +74,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Stardust Trail');
 		//#region Gen 1
 		// FE
+		new ModifyPokemon('Arcanine', this)
+			.types
+				.setType('Fire', 'Electric')
+			.pokemon.baseStats
+				.setHP(105)
+				.setSPE(125);
 		new ModifyPokemon('Blastoise', this)
 			.learnset
 				.remove('Hydro Steam');
@@ -228,6 +234,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#region Gen 3
 
 		// FE
+		new ModifyPokemon('Absol', this)
+			.baseStats
+				.setHP(95)
+				.setDEF(68)
+				.setSPE(112);
+		new ModifyPokemon('Absol-Mega', this)
+			.baseStats
+				.setHP(95)
+				.setDEF(73)
+				.setSPE(139);
 		new ModifyPokemon('Deoxys', this)
 			.types
 				.setType('Cosmic')
@@ -299,7 +315,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#endregion
 
 		//#region Gen 4
-		
+		new ModifyPokemon('Bastiodon', this)
+			.baseStats
+				.setHP(95);
 		new ModifyPokemon('Cresselia', this)
 			.types
 				.setType('Cosmic')
@@ -311,6 +329,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Palkia', this)
 			.types
 				.setType('Cosmic', 'Dragon');
+		new ModifyPokemon('Rampardos', this)
+			.baseStats
+				.setSPE(83);
 		new ModifyPokemon('Roserade', this)
 			.abilities
 				.setAbility0('Dazzling');
@@ -675,6 +696,61 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Terapagos', this)
 			.types
 				.setType('Normal', 'Cosmic');
+		new ModifyPokemon('Ting-Lu', this)
+			.abilities
+				.setHiddenAbility('Mold Breaker')
+			.pokemon.learnset
+				.add('Headlong Rush')
+				.add('Pain Split')
+				.add('Pursuit')
+				.add('Stockpile')
+				.add('Spit Up')
+				.add('Swallow')
+				.add('Parting Shot');
+		new ModifyPokemon('Wo-Chien', this)
+			.abilities
+				.setHiddenAbility('Grass Pelt')
+			.pokemon.baseStats
+				.setHP(105)
+				.setATK(90)
+				.setDEF(105)
+				.setSPA(90)
+				.setSPE(45)
+			.pokemon.learnset
+				.add('Synthesis')
+				.add('Grassy Glide')
+				.add('Cotton Guard')
+				.add('Sappy Seed')
+				.add('Parting Shot');
+		new ModifyPokemon('Okidogi', this)
+			.abilities
+				.setAbility1('Ball Fetch')
+			.pokemon.baseStats
+				.setSPD(95)
+				.setSPE(96)
+			.pokemon.learnset
+				.add('Hammer Arm')
+				.add('Meteor Mash')
+				.add('Psycho Shift');
+		new ModifyPokemon('Munkidori', this)
+			.baseStats
+				.setATK(105)
+			.pokemon.learnset
+				.add('Knock Off')
+				.add('Zen Headbutt')
+				.add('Low Kick')
+				.add('Skill Swap');
+		new ModifyPokemon('Fezandipiti', this)
+			.abilities
+				.setHiddenAbility('Opportunist')
+			.pokemon.baseStats
+				.setHP(88)
+				.setDEF(89)
+				.setSPA(106)
+			.pokemon.learnset
+				.add('Sparkly Swirl')
+				.add('Court Change')
+				.add('Clear Smog');
 
 		// NFE
 		new ModifyPokemon('Flittle', this)
