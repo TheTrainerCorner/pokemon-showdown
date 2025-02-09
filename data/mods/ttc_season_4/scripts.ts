@@ -98,8 +98,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(100)
 				.setSPD(85)
 		new ModifyPokemon('Pidgeot', this)
-			.learnset
-				.remove('Aeroblast');
+			// .learnset // Was changed last minute
+			// 	.remove('Aeroblast');
 		new ModifyPokemon('Sandslash', this)
 			.abilities
 				.setAbility1('Sand Rush')
