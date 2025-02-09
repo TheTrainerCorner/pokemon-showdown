@@ -946,7 +946,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.setType('Cosmic');
 		new ModifyMove('Vacuum Wave', this)
 			.setType('Cosmic')
-			.setOverrideDefensiveStat('def')
+			.setOverrideOffensiveStat('def')
 			.setBasePower(70)
 			.setPriority(0)
 			.descriptions
