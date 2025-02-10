@@ -18,24 +18,24 @@ The column value will be ignored for repeat sections.
 */
 import { Config } from "../server/config-loader";
 export const Formats: FormatList = [
-	// {
-	// 	section: "TTC",
-	// },
-	// {
-	// 	name: "[Gen 9] National Dex Randoms",
-	// 	mod: Config.ttcseason,
-	// 	team: "random",
-	// 	ruleset: ["Standard NatDex", "Terastal Clause", "Species Clause", "Sleep Clause Mod", "Illusion Level Mod", "!Team Preview"],
-	// },
-	// {
-	// 	name: "[Gen 9] National Dex Battle Factory",
-	// 	mod: Config.ttcseason,
-	// 	team: "randomFactory",
-	// 	ruleset: ['Standard NatDex', 'Terastal Clause', 'Species Clause', 'Sleep Clause Mod', 'Illusion Level Mod', '!Team Preview'],
-	// 	onBegin() {
-	// 		this.add(`raw|<div class="boradcast-blue"><b>Randoms Tier: ${this.teamGenerator.factoryTier}</b></div>`);
-	// 	}
-	// },
+	{
+		section: "TTC",
+	},
+	{
+		name: "[Gen 9] National Dex Randoms",
+		mod: Config.ttcseason,
+		team: "random",
+		ruleset: ["Standard NatDex", "Terastal Clause", "Species Clause", "Sleep Clause Mod", "Illusion Level Mod", "!Team Preview"],
+	},
+	{
+		name: "[Gen 9] National Dex Battle Factory",
+		mod: Config.ttcseason,
+		team: "randomFactory",
+		ruleset: ['Standard NatDex', 'Terastal Clause', 'Species Clause', 'Sleep Clause Mod', 'Illusion Level Mod', '!Team Preview'],
+		onBegin() {
+			this.add(`raw|<div class="boradcast-blue"><b>Randoms Tier: ${this.teamGenerator.factoryTier}</b></div>`);
+		}
+	},
 	{
 		section: "TTC Season 3 Offseason",
 	},
