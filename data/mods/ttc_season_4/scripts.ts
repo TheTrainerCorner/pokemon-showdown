@@ -715,6 +715,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Terapagos', this)
 			.types
 				.setType('Normal', 'Cosmic');
+		new ModifyPokemon('Terapagos-Terestal', this)
+			.types
+				.setType('Normal', 'Cosmic');
 		new ModifyPokemon('Ting-Lu', this)
 			.abilities
 				.setHiddenAbility('Mold Breaker')
