@@ -124,7 +124,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility0('Ice Body');
 		new ModifyPokemon('Aerodactyl', this)
 			.abilities
-				.setAbility0('Rivalry');
+				.setAbility1('Rivalry');
 		// NFE
 		new ModifyPokemon('Clefairy', this)
 			.types

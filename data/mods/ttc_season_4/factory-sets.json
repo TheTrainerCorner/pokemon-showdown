@@ -134,7 +134,7 @@
 				{
 					"species": "Beedrill",
 					"item": "Heavy-Duty Boots",
-					"ability": "Swarm",
+					"ability": "Myriad Surge",
 					"moves": [["Toxic Spikes"], ["Barb Barrage"], ["Knock Off"], ["U-turn"]]
 				},
 				{
@@ -152,7 +152,7 @@
 				{
 					"species": "Beedrill",
 					"item": "Beedrillite",
-					"ability": "Swarm",
+					"ability": "Myriad Surge",
 					"moves": [["Swords Dance"], ["Drill Run"], ["Poison Jab"], ["Knock Off"]]
 				},
 				{
@@ -1933,7 +1933,7 @@
 				{
 					"species": "Aerodactyl",
 					"item": "Aerodactylite",
-					"ability": "Pressure",
+					"ability": "Rivalry",
 					"moves": [["Dual Wingbeat"], ["Stone Edge"], ["Earthquake"], ["Hone Claws"]]
 				}
 			]
@@ -2003,7 +2003,7 @@
 				{
 					"species": "Moltres",
 					"item": "Heavy-Duty Boots",
-					"ability": "Pressure",
+					"ability": "Flash Fire",
 					"moves": [["Toxic"], ["Roost"], ["U-turn"], ["Flamethrower"]]
 				},
 				{
@@ -2055,7 +2055,7 @@
 					"species": "Zapdos",
 					"item": "Leftovers",
 					"level": 78,
-					"ability": "Pressure",
+					"ability": "Volt Absorb",
 					"moves": [["Roost"], ["Defog"], ["Volt Switch"], ["Hurricane"]]
 				},
 				{

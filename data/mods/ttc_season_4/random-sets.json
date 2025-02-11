@@ -3547,7 +3547,7 @@
 	},
 	"tapunalo": {
 		"level": 70,
-		"moves": ["alluringvoice", "bugbuzz", "dazzlinggleam", "playrough", "spiritbreak"]
+		"moves": ["leechlife", "bugbuzz", "dazzlinggleam", "playrough", "solarbeam"]
 	},
 	"tapupuaa": {
 		"level": 70,
