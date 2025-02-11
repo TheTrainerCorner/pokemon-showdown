@@ -1,6 +1,6 @@
 'use strict';
 
-const { testSet, testNotBothMoves, testHasSTAB, testAlwaysHasMove, testNotHasItemAndMove} = require('./tools');
+const { testSet, testNotBothMoves, testHasSTAB, testAlwaysHasMove, testNotHasItemAndMove, testHasItemAndMove} = require('./tools');
 const assert = require('../assert');
 
 describe('TTC Random Battles', () => {
@@ -198,7 +198,7 @@ describe('TTC Random Battles', () => {
 		testNotBothMoves('castform', options, 'blizzard', 'fireblast');
 		testNotBothMoves('castform', options, 'hurricane', 'fireblast');
 	});
-
+	
 	it ('should force slaking to have slack off', () => {
 		testAlwaysHasMove('slaking', options, 'slackoff');
 	});

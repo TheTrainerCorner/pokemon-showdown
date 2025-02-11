@@ -700,6 +700,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		return {cull: false};
 	}
 	shouldCullItem(item: Item, types: Set<string>, moves: Set<string>, abilities: Set<string>, counter: MoveCounter, movePool: string[], teamDetails: RandomTeamsTypes.TeamDetails, species: Species): boolean {
+		if (item.megaStone && teamDetails.megaStone! >= 1) {
+			return true;
+		}
 		switch (item.name) {
 			case 'Choice Specs':
 				return (species.id === 'beheeyem' && moves.has('trickroom'));
@@ -1285,6 +1288,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 	randomSet(species: string | Species, teamDetails: RandomTeamsTypes.TeamDetails, isLead: boolean, isDoubles: boolean, isNoDynamax?: boolean): RandomTeamsTypes.RandomSet {
 		species = this.dex.species.get(species);
 		const forme = this.getForme(species);
+		
 		const gmax = species.name.endsWith('-Gmax');
 
 		const data = this.randomData[species.id];
@@ -1728,6 +1732,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			if (set.moves.includes('toxicspikes')) teamDetails.toxicSpikes = 1;
 			if (set.moves.includes('defog')) teamDetails.defog = 1;
 			if (set.moves.includes('rapidspin')) teamDetails.rapidSpin = 1;
+			if (Dex.items.get(set.item).megaStone) teamDetails.megaStone = 1;
 			if (set.moves.includes('auroraveil') || (set.moves.includes('reflect') && set.moves.includes('lightscreen'))) {
 				teamDetails.screens = 1;
 			}
