@@ -3450,9 +3450,9 @@
 		"moves": ["agility", "hydropump", "flashcannon", "icebeam", "aquajet", "wavecrash", "iceshard", "roost", "scald", "flipturn", "defog"]
 	},
 	"pangoromega": {
-        "level": 85,
+        "level": 79,
         "moves": ["closecombat", "gunkshot", "icepunch", "knockoff", "partingshot"],
-        "doublesLevel": 88,
+        "doublesLevel": 79,
         "doublesMoves": ["closecombat", "drainpunch", "gunkshot", "icepunch", "knockoff", "protect"]
     },
 	"gourgeistmega": {
