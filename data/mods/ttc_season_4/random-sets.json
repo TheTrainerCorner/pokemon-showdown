@@ -422,9 +422,9 @@
     },
     "flareon": {
         "level": 87,
-        "moves": ["facade", "flamecharge", "flareblitz", "quickattack", "superpower"],
+        "moves": ["stompingtantrum", "willowisp", "flareblitz", "morningsun", "superpower"],
         "doublesLevel": 88,
-        "doublesMoves": ["facade", "flamecharge", "flareblitz", "protect", "quickattack", "superpower"]
+        "doublesMoves": ["stompingtantrum", "flamecharge", "flareblitz", "protect", "willowisp", "superpower"]
     },
     "omastar": {
         "level": 82,
