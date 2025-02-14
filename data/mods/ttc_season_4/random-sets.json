@@ -2545,9 +2545,9 @@
     },
     "celesteela": {
         "level": 76,
-        "moves": ["airslash", "earthquake", "fireblast", "flashcannon", "leechseed", "protect"],
+        "moves": ["airslash", "earthquake", "fireblast", "moonblast", "leechseed", "protect"],
         "doublesLevel": 78,
-        "doublesMoves": ["airslash", "fireblast", "flashcannon", "leechseed", "protect", "wideguard"],
+        "doublesMoves": ["airslash", "fireblast", "moonblast", "leechseed", "protect", "wideguard"],
         "noDynamaxMoves": ["airslash", "earthquake", "fireblast", "heavyslam", "leechseed", "protect"]
     },
     "kartana": {
