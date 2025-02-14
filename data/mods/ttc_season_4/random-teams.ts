@@ -932,6 +932,7 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		if (species.id === 'liepard' && moves.has('thunderwave')) return 'Prankster';
 		if (species.id === 'virizion') return 'Honey Gather';
 		if (species.id === 'copperajahgmax') return 'Heavy Metal';
+		if (species.id === 'electivire') return 'Iron Fist';
 		if (abilities.has('Guts') &&
 			// for Ursaring in BDSP
 			!abilities.has('Quick Feet') && (

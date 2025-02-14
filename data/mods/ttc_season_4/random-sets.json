@@ -1329,9 +1329,9 @@
     },
     "electivire": {
         "level": 81,
-        "moves": ["crosschop", "earthquake", "flamethrower", "icepunch", "voltswitch", "wildcharge"],
+        "moves": ["closecombat", "earthquake", "firepunch", "icepunch", "voltswitch", "plasmafists"],
         "doublesLevel": 88,
-        "doublesMoves": ["crosschop", "flamethrower", "icepunch", "stompingtantrum", "wildcharge"]
+        "doublesMoves": ["closecombat", "firepunch", "icepunch", "stompingtantrum", "plasmafists"]
     },
     "magmortar": {
         "level": 87,
