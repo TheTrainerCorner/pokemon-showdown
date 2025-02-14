@@ -3273,7 +3273,7 @@
 	},
 	"ironthorns": {
 		"level": 83,
-		"moves": ["earthquake", "spikes", "stealthrock", "stoneedge", "thunderpunch", "voltswitch", "icepunch", "dragondance"]
+		"moves": ["earthquake", "spikes", "stealthrock", "stoneedge", "boltstrike", "voltswitch", "icepunch", "dragondance"]
 	},
 	"ironbundle": {
 		"level": 76,
