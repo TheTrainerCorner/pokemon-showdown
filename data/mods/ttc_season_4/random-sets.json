@@ -1221,9 +1221,9 @@
     },
 	"lopunnymega": {
         "level": 80,
-        "moves": ["closecombat", "facade", "healingwish", "switcheroo"],
+        "moves": ["closecombat", "playrough", "healingwish", "uturn"],
         "doublesLevel": 80,
-        "doublesMoves": ["closecombat", "fakeout", "switcheroo", "uturn"]
+        "doublesMoves": ["closecombat", "fakeout", "playrough", "uturn"]
     },
     "skuntank": {
         "level": 83,
