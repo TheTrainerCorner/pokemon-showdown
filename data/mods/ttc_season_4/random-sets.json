@@ -872,7 +872,7 @@
 	},
 	"slaking": {
 		"level": 82,
-		"moves": ["earthquake", "gigaimpact", "nightslash", "retaliate", "slackoff", "drainpunch"]
+		"moves": ["earthquake", "return", "knockoff", "slackoff", "drainpunch"]
 	},
     "ninjask": {
         "level": 86,
