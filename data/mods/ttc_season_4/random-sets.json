@@ -2143,9 +2143,9 @@
     },
     "avalugg": {
         "level": 85,
-        "moves": ["avalanche", "bodypress", "curse", "rapidspin", "recover"],
+        "moves": ["glaciallance", "bodypress", "curse", "rapidspin", "recover"],
         "doublesLevel": 88,
-        "doublesMoves": ["avalanche", "bodypress", "curse", "highhorsepower", "protect", "recover"]
+        "doublesMoves": ["glaciallance", "bodypress", "curse", "highhorsepower", "protect", "recover"]
     },
     "noivern": {
         "level": 83,

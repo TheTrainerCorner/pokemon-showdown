@@ -2862,7 +2862,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		isBreakable: true,
 		name: "Oblivious",
-		rating: 1.5,
+		rating: 3,
 		num: 12,
 	},
 	opportunist: {
