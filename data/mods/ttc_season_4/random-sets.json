@@ -1414,15 +1414,15 @@
     },
     "rotomheat": {
         "level": 82,
-        "moves": ["defog", "nastyplot", "overheat", "thunderbolt", "voltswitch", "willowisp"],
+        "moves": ["rapidspin", "volttackle", "poltergeist", "flareblitz", "willowisp"],
         "doublesLevel": 84,
-        "doublesMoves": ["electroweb", "overheat", "protect", "thunderbolt", "voltswitch", "willowisp"]
+        "doublesMoves": ["electroweb", "flareblitz", "protect", "volttackle", "willowisp"]
     },
     "rotomwash": {
         "level": 82,
-        "moves": ["hydropump", "thunderbolt", "trick", "voltswitch", "willowisp"],
+        "moves": ["scald", "rapidspin", "thunderbolt", "voltswitch", "willowisp"],
         "doublesLevel": 84,
-        "doublesMoves": ["hydropump", "protect", "thunderbolt", "thunderwave", "voltswitch", "willowisp"]
+        "doublesMoves": ["scald", "protect", "thunderbolt", "thunderwave", "voltswitch", "willowisp"]
     },
     "rotomfrost": {
         "level": 82,
@@ -1432,15 +1432,15 @@
     },
     "rotomfan": {
         "level": 84,
-        "moves": ["airslash", "nastyplot", "thunderbolt", "voltswitch", "willowisp"],
+        "moves": ["hypervoice", "nastyplot", "thunderbolt", "voltswitch", "willowisp"],
         "doublesLevel": 84,
-        "doublesMoves": ["airslash", "nastyplot", "protect", "thunderbolt"]
+        "doublesMoves": ["hypervoice", "nastyplot", "protect", "thunderbolt"]
     },
     "rotommow": {
         "level": 84,
-        "moves": ["leafstorm", "nastyplot", "thunderbolt", "trick", "voltswitch", "willowisp"],
+        "moves": ["rapidspin", "powerwhip", "zingzap", "landswrath", "willowisp"],
         "doublesLevel": 88,
-        "doublesMoves": ["electroweb", "leafstorm", "protect", "thunderbolt", "voltswitch", "willowisp"]
+        "doublesMoves": ["electroweb", "powerwhip", "protect", "zingzap", "landswrath", "willowisp"]
     },
     "uxie": {
         "level": 82,
@@ -1700,9 +1700,9 @@
     },
     "gothitelle": {
         "level": 87,
-        "moves": ["darkpulse", "nastyplot", "psychic", "thunderbolt", "trick"],
+        "moves": ["darkpulse", "nastyplot", "moonblast", "thunderbolt", "trick"],
         "doublesLevel": 83,
-        "doublesMoves": ["fakeout", "healpulse", "helpinghand", "hypnosis", "protect", "psychic", "trickroom"]
+        "doublesMoves": ["fakeout", "healpulse", "helpinghand", "hypnosis", "protect", "moonblast", "trickroom"]
     },
     "reuniclus": {
         "level": 84,
@@ -1760,9 +1760,9 @@
     },
     "beheeyem": {
         "level": 89,
-        "moves": ["darkpulse", "psychic", "thunderbolt", "trick", "trickroom"],
+        "moves": ["darkpulse", "signalbeam", "thunderbolt", "trick", "trickroom"],
         "doublesLevel": 88,
-        "doublesMoves": ["protect", "psychic", "shadowball", "thunderbolt", "trickroom"]
+        "doublesMoves": ["protect", "signalbeam", "shadowball", "thunderbolt", "trickroom"]
     },
     "chandelure": {
         "level": 82,
@@ -2669,11 +2669,11 @@
     },
     "orbeetle": {
         "level": 87,
-        "moves": ["bodypress", "bugbuzz", "calmmind", "psychic", "recover", "stickyweb", "uturn"]
+        "moves": ["bodypress", "bugbuzz", "calmmind", "moonblast", "recover", "stickyweb", "uturn"]
     },
     "orbeetlegmax": {
         "doublesLevel": 88,
-        "doublesMoves": ["helpinghand", "hypnosis", "lightscreen", "psychic", "reflect", "stickyweb", "strugglebug"]
+        "doublesMoves": ["helpinghand", "hypnosis", "lightscreen", "moonblast", "reflect", "stickyweb", "strugglebug"]
     },
     "thievul": {
         "level": 89,
@@ -3261,7 +3261,7 @@
 	},
 	"ironmoth": {
 		"level": 78,
-		"moves": ["discharge", "energyball", "fierydance", "fireblast", "sludgewave", "uturn", "morningsun"]
+		"moves": ["discharge", "energyball", "fierydance", "fireblast", "solarflare", "uturn", "morningsun"]
 	},
 	"ironhands": {
 		"level": 79,
@@ -3564,6 +3564,18 @@
 	"pachirisumega": {
 		"level": 80,
 		"moves": ["stardusttrail", "thunderpunch", "trailblaze", "uturn", "seedbomb", "quickattack", "nuzzle"]
-	}
+	},
+    "ledian": {
+        "level": 85,
+		"moves": ["cometpunch", "uturn", "icepunch", "victorydance", "drainpunch", "volttackle"]
+    },
+    "darkrai": {
+        "level": 73,
+		"moves": ["hypnosis", "darkpulse", "nastyplot", "sludgebomb", "icebeam", "focusblast"]
+    },
+    "deoxys": {
+        "level": 70,
+		"moves": ["zapcannon", "focusblast", "vacuumwave", "icebeam", "psychoboost"]
+    }
 
 }
