@@ -3543,7 +3543,7 @@
 	},
 	"ironexplorer": {
 		"level": 80,
-		"moves": ["dragondarts", "liftoff", "dragonpulse", "swift", "nightshade", "phantomforce", "shadowball", "uturn", "moonblast", "stardusttrail"]
+		"moves": ["dragondarts", "liftoff", "dragonpulse", "moonblast", "phantomforce", "shadowball", "uturn"]
 	},
 	"tapunalo": {
 		"level": 70,
@@ -3563,7 +3563,7 @@
 	},
 	"pachirisumega": {
 		"level": 80,
-		"moves": ["stardusttrail", "thunderpunch", "trailblaze", "uturn", "seedbomb", "quickattack", "nuzzle"]
+		"moves": ["stardusttrail", "thunderpunch", "uturn", "seedbomb", "slackoff", "nuzzle"]
 	},
     "ledian": {
         "level": 85,
