@@ -60,8 +60,10 @@ export const Scripts: ModdedBattleScriptsData = {
 			.types
 				.setType('Fire', 'Electric')
 			.pokemon.baseStats
-				.setHP(105)
-				.setSPE(125);
+				.setHP(100)
+				.setATK(105)
+				.setSPA(95)
+				.setSPE(120);
 		new ModifyPokemon('Blastoise', this)
 			.learnset
 				.remove('Hydro Steam');
@@ -92,6 +94,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.abilities
 				.setAbility1('Sand Rush')
 				.setHiddenAbility('Uzumaki')
+			.pokemon.baseStats
+				.setSPE(75);
 		new ModifyPokemon('Vileplume', this)
 			.abilities
 				.setAbility0('Chlorophyll');
@@ -496,13 +500,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		//#region Gen 7
 
 		// FE
+		new ModifyPokemon('Golem', this)
+			.baseStats
+				.setHP(100);
 		new ModifyPokemon('Exeggutor-Alola', this)
 			.abilities
 				.setAbility1('Pressure')
 			.pokemon.baseStats
 				.setHP(100)
 				.setATK(125)
-				.setDEF(90)
+				.setDEF(100)
 				.setSPA(100)
 				.setSPD(95)
 				.setSPE(35)
