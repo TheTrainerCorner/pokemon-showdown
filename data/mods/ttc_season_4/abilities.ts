@@ -16,26 +16,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	tangledfeet: {
 		inherit: true,
 		onModifyMove: undefined,
-		onSourceModifySecondaries(secondaries, target, source, move) {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
 			if (move.flags['kick']) {
-				secondaries.push({
-					chance: 33,
-					status: 'par',
-				});
+				if (this.randomChance(33, 100)) {
+					target.trySetStatus('par', source);
+				}
 			}
-
-			return secondaries;
-		},
-		// onModifySecondaries(secondaries, target, source, move) {
-		// 	if (move.flags['kick']) {
-		// 		secondaries.push({
-		// 			chance: 33,
-		// 			status: 'par'
-		// 		});
-		// 	}
-
-		// 	return secondaries;
-		// },
+		}
 	},
 	tanglinghair: {
 		inherit: true,
