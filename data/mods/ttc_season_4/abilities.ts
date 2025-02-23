@@ -28,15 +28,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	tanglinghair: {
 		inherit: true,
 		onModifyMove: undefined,
-		onModifySecondaries(secondaries, target, source, move) {
-			if (move.flags['kick']) {
-				secondaries.push({
-					chance: 33,
-					status: 'par',
-				});
+		onSourceDamagingHit(damage, target, source, move) {
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (this.checkMoveMakesContact(move, source, target)) {
+				if (this.randomChance(33, 100)) {
+					target.trySetStatus('par', source);
+				}
 			}
-
-			return secondaries;
 		},
 	},
 	earlybird: {
