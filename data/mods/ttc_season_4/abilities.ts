@@ -16,16 +16,26 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	tangledfeet: {
 		inherit: true,
 		onModifyMove: undefined,
-		onModifySecondaries(secondaries, target, source, move) {
+		onSourceModifySecondaries(secondaries, target, source, move) {
 			if (move.flags['kick']) {
 				secondaries.push({
 					chance: 33,
-					status: 'par'
+					status: 'par',
 				});
 			}
 
 			return secondaries;
 		},
+		// onModifySecondaries(secondaries, target, source, move) {
+		// 	if (move.flags['kick']) {
+		// 		secondaries.push({
+		// 			chance: 33,
+		// 			status: 'par'
+		// 		});
+		// 	}
+
+		// 	return secondaries;
+		// },
 	},
 	tanglinghair: {
 		inherit: true,
