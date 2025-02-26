@@ -63,7 +63,12 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHP(100)
 				.setATK(105)
 				.setSPA(95)
-				.setSPE(120);
+				.setSPE(120)
+			.pokemon.learnset
+				.add('Volt Switch')
+				.add('Supercell Slam')
+				.add('Discharge');
+
 		new ModifyPokemon('Blastoise', this)
 			.learnset
 				.remove('Hydro Steam');
