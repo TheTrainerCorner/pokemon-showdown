@@ -253,8 +253,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Cosmic')
 			.pokemon.learnset
 				.add('Lunar Dance')
-				.add('Swift')
-				.add('Vacuum Wave');
+				.add('Swift');
 		new ModifyPokemon('Deoxys-Attack', this)
 			.types
 				.setType('Cosmic');
@@ -789,7 +788,11 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setType('Cosmic', 'Dark')
 			.pokemon.learnset
 				.add('Astro Force')
-				.add('Swift');
+				.add('Swift')
+				.add('Frustration')
+				.add('Return')
+				.add('Tri Attack')
+				.remove('Blood Moon');
 		new ModifyPokemon('Crustocean', this)
 			.learnset
 				.add('Amnesia')
