@@ -54,6 +54,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Vacuum Wave')
 				.add('Signal Beam')
 				.add('Stardust Trail');
+		new ModifyPokemon('Empoleon', this)
+			.abilities
+				.setAbility1('Water Veil');
 		//#region Gen 1
 		// FE
 		new ModifyPokemon('Arcanine', this)
@@ -247,7 +250,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setHP(95)
 				.setDEF(73)
-				.setSPE(139);
+				.setSPE(132);
 		new ModifyPokemon('Deoxys', this)
 			.types
 				.setType('Cosmic')

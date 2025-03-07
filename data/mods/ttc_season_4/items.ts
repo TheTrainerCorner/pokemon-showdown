@@ -106,4 +106,17 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 	},
 	//#endregion
+	roseincense: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				for (const side of target.side.foeSidesWithConditions()) {
+					source.side.addSideCondition('spikes');
+					target.useItem();
+					this.add('-activate', this.effectState.user, 'item: Rose Incense');
+				}
+			}
+		},
+		desc: "If hit by a contact move, automatically set up 1 layer of spikes. Single Use.",
+	},
 };
