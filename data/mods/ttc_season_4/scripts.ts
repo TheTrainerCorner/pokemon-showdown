@@ -249,8 +249,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Absol-Mega', this)
 			.baseStats
 				.setHP(95)
-				.setDEF(73)
-				.setSPE(132);
+				.setDEF(70)
+				.setSPD(66)
+				.setSPE(139);
 		new ModifyPokemon('Deoxys', this)
 			.types
 				.setType('Cosmic')
