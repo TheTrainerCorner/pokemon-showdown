@@ -250,7 +250,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setHP(95)
 				.setDEF(70)
-				.setSPD(66)
+				.setSPD(61)
 				.setSPE(139);
 		new ModifyPokemon('Deoxys', this)
 			.types
