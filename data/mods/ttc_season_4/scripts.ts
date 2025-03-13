@@ -550,6 +550,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Lunar Dance')
 				.add('Meteor Assault')
 				.add('Stardust Trail');
+		new ModifyPokemon('Minior-Meteor', this)
+			.types
+				.setType('Rock', 'Cosmic');
 		new ModifyPokemon('Necrozma', this)
 			.types
 				.setType('Cosmic')

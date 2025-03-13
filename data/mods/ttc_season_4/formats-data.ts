@@ -2,10 +2,16 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	hooh: {
 		inherit: true,
 		tier: 'OU',
+		natDexTier: 'OU',
 	},
 	lugia: {
 		inherit: true,
 		tier: 'OU',
+		natDexTier: 'OU',
+	},
+	ursalunabloodmoon: {
+		inherit: true,
+		natDexTier: 'OU',
 	},
 	lunala: {
 		inherit: true,
