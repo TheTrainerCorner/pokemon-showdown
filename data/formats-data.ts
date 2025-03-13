@@ -1530,7 +1530,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ursalunabloodmoon: {
 		tier: "Uber",
 		doublesTier: "DOU",
-		natDexTier: "Uber",
+		// natDexTier: "Uber",
+		natDexTier: 'OU',
 	},
 	slugma: {
 		tier: "LC",
@@ -1671,12 +1672,14 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	lugia: {
 		tier: "Uber",
 		doublesTier: "DUber",
-		natDexTier: "Uber",
+		// natDexTier: "Uber",
+		natDexTier: 'OU',
 	},
 	hooh: {
 		tier: "Uber",
 		doublesTier: "DUber",
-		natDexTier: "Uber",
+		// natDexTier: "Uber",
+		natDexTier: 'OU',
 	},
 	celebi: {
 		isNonstandard: "Past",
