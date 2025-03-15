@@ -57,6 +57,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Empoleon', this)
 			.abilities
 				.setAbility1('Water Veil');
+		new ModifyPokemon('Pinsir', this)
+			.learnset
+				.remove('Feint');
 		//#region Gen 1
 		// FE
 		new ModifyPokemon('Arcanine', this)
