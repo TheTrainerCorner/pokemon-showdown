@@ -703,7 +703,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	gengarmega: {
 		isNonstandard: "Past",
 		tier: "Uber",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	gengargmax: {
 		isNonstandard: "Past",
@@ -1716,7 +1716,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	blazikenmega: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	mudkip: {
 		tier: "LC",
@@ -2368,7 +2368,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	metagrossmega: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	regirock: {
 		tier: "OU",
@@ -2702,7 +2702,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	lucariomega: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	hippopotas: {
 		tier: "LC",
@@ -3652,7 +3652,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	landorus: {
 		tier: "Uber",
 		doublesTier: "DUU",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	landorustherian: {
 		tier: "OU",
@@ -3687,27 +3687,27 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	genesect: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	genesectburn: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	genesectchill: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	genesectdouse: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	genesectshock: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	chespin: {
 		tier: "LC",
@@ -4616,7 +4616,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	marshadow: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	poipole: {
 		isNonstandard: "Past",
@@ -5059,7 +5059,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	dragapult: {
 		tier: "OU",
 		doublesTier: "DUU",
-		natDexTier: "Uber",
+		natDexTier: "OU",
 	},
 	zacian: {
 		tier: "Uber",

@@ -36,32 +36,17 @@ export const Formats: FormatList = [
 			this.add(`raw|<div class="boradcast-blue"><b>Randoms Tier: ${this.teamGenerator.factoryTier}</b></div>`);
 		}
 	},
-	{
-		section: "TTC Season 3 Offseason",
-	},
-	{
-		name: "[Gen 9] National Dex Ubers",
-		mod: Config.ttcseason,
-		ruleset: [
-			'Standard Natdex', 'Terastal Clause',
-			'Species Clause', 'OHKO Clause', 'Evasion Clause',
-			'Sleep Clause Mod',
-			'Offseason Complex Bans', 'OffSeason Unbanlist', 'Offseason Banlist',
-		],
-	},
 	// {
-	// 	section: "TTC Season 2 Offseason",
+	// 	section: "TTC Season 3 Offseason",
 	// },
 	// {
-	// 	name: "[Gen 9] National Dex Monotype",
+	// 	name: "[Gen 9] National Dex Ubers",
 	// 	mod: Config.ttcseason,
 	// 	ruleset: [
 	// 		'Standard Natdex', 'Terastal Clause',
 	// 		'Species Clause', 'OHKO Clause', 'Evasion Clause',
 	// 		'Sleep Clause Mod',
-
-	// 		'Season Complex Bans', 'Season Unbanlist', 'Season Banlist',
-	// 		'Offseason Complex Bans', 'Offseason Banlist',
+	// 		'Offseason Complex Bans', 'OffSeason Unbanlist', 'Offseason Banlist',
 	// 	],
 	// },
 	{
