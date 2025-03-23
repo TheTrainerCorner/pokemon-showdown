@@ -552,7 +552,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add('Lunar Dance')
 				.add('Meteor Assault')
-				.add('Stardust Trail');
+				.add('Stardust Trail')
+				.add('Shell Smash');
 		new ModifyPokemon('Minior-Meteor', this)
 			.types
 				.setType('Rock', 'Cosmic');
@@ -591,7 +592,6 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove('Cosmic Power')
 				.add('Lunar Dance')
 				.add('Solar Flare');
-
 		// NFE
 		new ModifyPokemon('Cosmoem', this)
 			.types
