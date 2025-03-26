@@ -48,39 +48,11 @@ export const Items: {[k: string]: ModdedItemData} = {
 	wantedposter: {
 		name: "Wanted Poster",
 		spritenum: -100,
-		desc: "Upon switch-in, consumes the item and traps the target. The target will take 30% less damage from the user as a result of consuming the item.",
-		shortDesc: "Upon Switch-in, consumes item, traps the target; target takes 30% less damage from user. Single Use.",
+		isNonstandard: "Unobtainable",
+		desc: "BANNED! Effects will be changed soon.",
+		shortDesc: "BANNED! Effects will be changed soon.",
 		fling: {
 			basePower: 10,
-		},
-		onStart(pokemon) {
-			for (const target of pokemon.side.foes()) {
-				if (pokemon.isAdjacent(target)) {
-					target.addVolatile('wantedposter');
-					target.itemState.wantedPoster = pokemon;
-				}
-			}
-			pokemon.useItem();
-		},
-		condition: {
-			onTrapPokemon(pokemon) {
-				pokemon.tryTrap();
-			},
-			onMaybeTrapPokemon(pokemon) {
-				if (!pokemon.itemState.wantedPoster) return;
-				if (!pokemon.isAdjacent(pokemon.itemState.wantedPoster)) return;
-				pokemon.maybeTrapped = true;
-			},
-			onSourceModifyAtk(atk, source, target, move) {
-				if (source === target.itemState.wantedPoster) {
-					return this.chainModify([2868, 4096]);
-				}
-			},
-			onSourceModifySpA(atk, source, target, move) {
-				if (source === target.itemState.wantedPoster) {
-					return this.chainModify([2868, 4096]);
-				}
-			}
 		},
 	},
 

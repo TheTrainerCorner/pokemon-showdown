@@ -843,7 +843,23 @@ export class Pokemon {
 			this.volatiles['embargo'] || this.battle.field.pseudoWeather['magicroom']
 		);
 	}
+	addPP(move: string | Move, amount?: number | null, target?: Pokemon | null | false) {
+		const gen = this.battle.get;
+		move = this.battle.dex.moves.get(move);
+		const ppData = this.getMoveData(move);
+		if (!ppData) return 0;
+		ppData.used = true;
+		if (!ppData.pp && gen > 1) return 0;
 
+		if (!amount) amount = 1;
+		ppData.pp += amount;
+		if (ppData.pp >= ppData.maxpp && gen > 1) {
+			amount = 0;
+			ppData.pp = ppData.maxpp;
+		}
+
+		return amount;
+	}
 	deductPP(move: string | Move, amount?: number | null, target?: Pokemon | null | false) {
 		const gen = this.battle.gen;
 		move = this.battle.dex.moves.get(move);

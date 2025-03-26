@@ -13,6 +13,20 @@ export const Rulesets: {[k: string]: ModdedFormatData} = {
 		// Removing the abilities that are affected by this clause
 		ruleset: ['Evasion Items Clause', 'Evasion Moves Clause']
 	},
+	seasonbanlist: {
+		inherit: true,
+		desc: "Everything that is ban during Season 3",
+		banlist: [
+			// Tiers
+			'ND Uber', 'ND AG',
+			// Abilities
+			'Moody', 'Power Construct', 'Shadow Tag',
+			// Items
+			'King\'s Rock', 'Quick Claw', 'Razor Fang', 'Wanted Poster',
+			// Moves
+			'Assist', 'Last Respects',
+		],
+	},
 	seasonunbanlist: {
 		inherit: true,
 		unbanlist: [
