@@ -1,6 +1,5 @@
 export const Moves: {[k: string]: ModdedMoveData} = {
 	//#region Cosmic Moves
-
 	meteorbeam: {
 		inherit: true,
 		onTryMove(attacker, defender, move) {
@@ -888,5 +887,13 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "For 5 turns, the terrain becomes Calamity Terrain. During the effect, the power of Dark-type attacks used by grounded Pokemon is multipled by 1.3, upon the activation of healing will take 1/8 of their max hp before healing (Items are excluded from this). Fails if the current terrain is Calamity Terrain.",
 		shortDesc: "5 turns. Grounded: +Dark power, takes 1/8 of max hp upon activation of healing not from items."
 	},
+	//#endregion
+
+	//#region Modify Moves
+	leechlife: {
+		inherit: true,
+		// Forgot to make leech life to not be used against protect.
+		flags: {bite: 1, contact: 1, mirror: 1, heal: 1, protect: 1},
+	}
 	//#endregion
 };
