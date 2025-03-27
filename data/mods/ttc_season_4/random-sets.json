@@ -70,7 +70,7 @@
     },
     "raichu": {
         "level": 87,
-        "moves": ["focusblast", "grassknot", "nastyplot", "surf", "thunderbolt", "voltswitch"],
+        "moves": ["focusblast", "grassknot", "nastyplot", "surf", "thunderbolt", "voltswitch", "return", "bodyslam", "fakeout"],
         "doublesLevel": 88,
         "doublesMoves": ["encore", "fakeout", "helpinghand", "nuzzle", "thunderbolt", "voltswitch"],
         "noDynamaxMoves": ["encore", "focusblast", "grassknot", "nastyplot", "surf", "thunderbolt", "voltswitch"]
