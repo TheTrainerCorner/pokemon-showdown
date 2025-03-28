@@ -245,7 +245,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			// 	pokemon.switchFlag = true;
 			// 	return false;
 			// },
-			onAfterFaint(length, target, source, effect) {
+			onBeforeFaint(target, source) {
 				this.add('-activate', target, 'move: Rebirth', target);
 				target.fainted = false;
 				target.faintQueued = false;
