@@ -232,19 +232,30 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onStart(pokemon) {
 				this.directDamage(pokemon.maxhp, pokemon);
 			},
-			onBeforeFaint(pokemon, effect) {
-				this.add('-activate', pokemon, 'move: Rebirth', pokemon);
-				pokemon.hp = this.trunc(pokemon.maxhp / 2);
-				pokemon.clearStatus();
-				this.add('-sethp', pokemon, pokemon.getHealth, '[silent]');
-				pokemon.clearBoosts();
-				this.add('-clearboost', pokemon, '[silent]');
-				for (const moveSlot of pokemon.moveSlots) {
-					moveSlot.pp = moveSlot.maxpp;
-				}
-				pokemon.switchFlag = true;
-				return false;
-			},
+			// onBeforeFaint(pokemon, effect) {
+			// 	this.add('-activate', pokemon, 'move: Rebirth', pokemon);
+			// 	pokemon.hp = this.trunc(pokemon.maxhp / 2);
+			// 	pokemon.clearStatus();
+			// 	this.add('-sethp', pokemon, pokemon.getHealth, '[silent]');
+			// 	pokemon.clearBoosts();
+			// 	this.add('-clearboost', pokemon, '[silent]');
+			// 	for (const moveSlot of pokemon.moveSlots) {
+			// 		moveSlot.pp = moveSlot.maxpp;
+			// 	}
+			// 	pokemon.switchFlag = true;
+			// 	return false;
+			// },
+			onAfterFaint(length, target, source, effect) {
+				this.add('-activate', target, 'move: Rebirth', target);
+				target.fainted = false;
+				target.faintQueued = false;
+				target.subFainted = false;
+				target.status = '';
+				target.hp = 1;
+				target.sethp(target.maxhp / 2);
+				this.add('-heal', target, target.getHealth, '[from] move: Rebirth');
+				target.removeVolatile('rebirth');
+			}
 		},
 		target: "normal",
 		type: "Cosmic",
