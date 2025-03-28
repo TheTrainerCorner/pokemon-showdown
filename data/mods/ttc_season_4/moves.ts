@@ -255,6 +255,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				target.sethp(target.maxhp / 2);
 				this.add('-heal', target, target.getHealth, '[from] move: Rebirth');
 				target.removeVolatile('rebirth');
+				target.switchFlag = true;
+				return false;
 			}
 		},
 		target: "normal",
