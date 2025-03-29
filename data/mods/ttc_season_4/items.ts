@@ -52,7 +52,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		shortDesc: "Upon direct kill, restores 1/8 of max HP.",
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move' && effect.category !== 'Status') {
-				this.heal(source.maxhp / 8, source);
+				this.heal(source.maxhp / 6, source);
 			}
 		},
 		fling: {
