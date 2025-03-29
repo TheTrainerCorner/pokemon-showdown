@@ -231,12 +231,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		condition: {
 			onStart(pokemon) {
 				this.directDamage(pokemon.maxhp - 1, pokemon);
-				// we can't allow the pokemon to hit 0, so we will do a fake revival.
-				this.add('-activate', pokemon, 'move: Rebirth');
-				this.heal(pokemon.maxhp * 0.5);
-				pokemon.clearStatus();
-				pokemon.clearBoosts();
 			},
+			onEmergencyExit(target) {
+				if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+				for (const side of this.sides) {
+					for (const active of side.active) {
+						active.switchFlag = false;
+					}
+				}
+				target.switchFlag = true;
+				this.add('-activate', target, 'move: Rebirth');
+			},
+			onSwitchOut(pokemon) {
+				pokemon.heal(pokemon.baseMaxhp / 2);
+			}
 		},
 		target: "normal",
 		type: "Cosmic",
