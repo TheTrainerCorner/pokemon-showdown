@@ -48,9 +48,13 @@ export const Items: {[k: string]: ModdedItemData} = {
 	wantedposter: {
 		name: "Wanted Poster",
 		spritenum: -100,
-		isNonstandard: "Unobtainable",
-		desc: "BANNED! Effects will be changed soon.",
-		shortDesc: "BANNED! Effects will be changed soon.",
+		desc: "Upon direct kill, restores 1/8 of the user's max HP.",
+		shortDesc: "Upon direct kill, restores 1/8 of max HP.",
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move' && effect.category !== 'Status') {
+				this.heal(source.maxhp / 8, source);
+			}
+		},
 		fling: {
 			basePower: 10,
 		},
