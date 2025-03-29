@@ -225,27 +225,43 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			atk: -2,
 			spa: -2,
 		},
-		onHit(target, source, move) {
-			source.addVolatile('rebirth');
-		},
 		condition: {
-			onStart(pokemon) {
-				this.directDamage(pokemon.maxhp - 1, pokemon);
-			},
-			onEmergencyExit(target) {
-				if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
-				for (const side of this.sides) {
-					for (const active of side.active) {
-						active.switchFlag = false;
-					}
-				}
-				target.switchFlag = true;
-				this.add('-activate', target, 'move: Rebirth');
-			},
+			duration: 1,
 			onSwitchOut(pokemon) {
-				pokemon.heal(pokemon.baseMaxhp / 2);
+				pokemon.heal(pokemon.baseMaxhp / 2, pokemon)
+			},
+		},
+		onHit(target, source, move) {
+			const success = this.boost({ atk: -2, spa: -2}, target, source);
+			if (!success && !target.hasAbility('mirrorarmor')) {
+				source.addVolatile('rebirth');
+				this.directDamage(source.maxhp - 1, source);
+				delete move.selfSwitch;
 			}
 		},
+		selfSwitch: true,
+		// onHit(target, source, move) {
+		// 	source.addVolatile('rebirth');
+		// },
+		// condition: {
+		// 	onStart(pokemon) {
+		// 		this.directDamage(pokemon.maxhp - 1, pokemon);
+				
+		// 	},
+		// 	onEmergencyExit(target) {
+		// 		if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+		// 		for (const side of this.sides) {
+		// 			for (const active of side.active) {
+		// 				active.switchFlag = false;
+		// 			}
+		// 		}
+		// 		target.switchFlag = true;
+		// 		this.add('-activate', target, 'move: Rebirth');
+		// 	},
+		// 	onSwitchOut(pokemon) {
+		// 		pokemon.heal(pokemon.baseMaxhp / 2);
+		// 	}
+		// },
 		target: "normal",
 		type: "Cosmic",
 		desc: "Lowers target's Attack and Special Attack by 2. User Faints. User Revives with 50% Max HP the following turn.",
