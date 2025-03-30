@@ -73,11 +73,11 @@ async function updateclient(context: Chat.CommandContext, codePath: string) {
 		return true;
 	}
 
-	[code, stdout, stderr] = await exec(`git rev-parse HEAD`);
+	[code, stdout, stderr] = await exec(`sudo -u showdown git rev-parse HEAD`);
 	if (code || stderr) throw new Error(`updateclient: Crash while grabbing hash`);
 	const oldHash = String(stdout).trim();
 
-	[code, stdout, stderr] = await exec(`git stash save "PS /updateclient autostash"`);
+	[code, stdout, stderr] = await exec(`sudo -u showdown git stash save "PS /updateclient autostash"`);
 	let stashedChanges = true;
 	if (code) throw new Error(`updateclient: Crash while stashing`);
 	if ((stdout + stderr).includes("No local changes")) {
@@ -91,7 +91,7 @@ async function updateclient(context: Chat.CommandContext, codePath: string) {
 	// errors can occur while rebasing or popping the stash; make sure to recover
 	try {
 		context.sendReply(`Rebasing...`);
-		[code] = await exec(`git rebase --no-autostash FETCH_HEAD`);
+		[code] = await exec(`sudo -u shwodown git rebase --no-autostash FETCH_HEAD`);
 		if (code) {
 			// conflict while rebasing
 			await exec(`git rebase --abort`);
@@ -103,8 +103,8 @@ async function updateclient(context: Chat.CommandContext, codePath: string) {
 			[code] = await exec(`git stash pop`);
 			if (code) {
 				// conflict while popping stash
-				await exec(`git reset HEAD .`);
-				await exec(`git checkout .`);
+				await exec(`sudo -u showdown git reset HEAD .`);
+				await exec(`sudo -u showdown git checkout .`);
 				throw new Error(`restore`);
 			}
 		}
