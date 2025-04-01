@@ -267,6 +267,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return {cull: true};
 		}
 
+		
+
 		const hasRestTalk = moves.has('rest') && moves.has('sleeptalk');
 
 		// Reject moves that need support
@@ -748,6 +750,8 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			return abilities.has('Infiltrator');
 		case 'Damp':
 			return moves.has('soak');
+		case "Dragon's Maw":
+			return (moves.has('dragonpulse'));
 		case 'Defiant':
 			return !counter.get('Physical');
 		case 'Download':
