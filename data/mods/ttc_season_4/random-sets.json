@@ -1,4 +1,8 @@
 {
+    "spinda": {
+        "level": 80,
+        "moves": ["agility", "dynamicpunch", "recycle", "storedpower"]
+    },
     "venusaur": {
         "level": 83,
         "moves": ["gigadrain", "leechseed", "sleeppowder", "sludgebomb", "substitute", "roaroftime"]
@@ -396,7 +400,7 @@
         "doublesLevel": 81,
         "doublesMoves": ["bounce", "dragondance", "icefang", "powerwhip", "protect", "waterfall"]
     },
-    "laprasgmax": {
+    "lapras": {
         "level": 85,
         "moves": ["freezedry", "icebeam", "protect", "sparklingaria", "thunderbolt", "toxic"],
         "doublesLevel": 84,
@@ -2089,7 +2093,7 @@
     },
     "dedenne": {
         "level": 90,
-        "moves": ["protect", "recycle", "thunderbolt", "toxic"],
+        "moves": ["protect", "recycle", "thunderbolt", "toxic", "paraboliccharge", "dazzlinggleam", "nuzzle"],
         "doublesLevel": 88,
         "doublesMoves": ["eerieimpulse", "helpinghand", "nuzzle", "recycle", "superfang", "thunderbolt"]
     },

@@ -916,7 +916,6 @@ export class RandomTTCTeams extends RandomGen8Teams {
 		Utils.sortBy(abilityData, abil => -abil.rating);
 
 		if (abilityData.length <= 1) return abilityData[0].name;
-
 		// Hard-code abilities here
 
 		// Lopunny, and other Facade users, don't want Limber, even if other abilities are poorly rated,
@@ -1022,6 +1021,9 @@ export class RandomTTCTeams extends RandomGen8Teams {
 			if (ability === 'Solid Rock') return 'Weakness Policy';
 			return 'White Herb';
 		}
+		// Always give Sitrus Berry to pokemon with recycle
+		if (moves.has('recylce') && species.name === "Spinda") return "Starf Berry";
+		if (moves.has('recycle')) return 'Sitrus Berry';
 		// Techno Blast should always be Water-type
 		if (moves.has('technoblast')) return 'Douse Drive';
 		// Species-specific logic

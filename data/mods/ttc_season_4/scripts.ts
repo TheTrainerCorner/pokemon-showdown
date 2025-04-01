@@ -25,6 +25,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData("TypeChart", "fairy").damageTaken["Cosmic"] = 0;
 		//#endregion
 
+		// #region Aprils Fools
+
+		new ModifyPokemon('Spinda', this)
+			.baseStats
+				.setSPE(890)
+			.pokemon.learnset
+				.add('Agility')
+				.add('Stored Power');
+		//#endregion
+
 		//#region Removing Apple Acid & Grav Apple
 		const removeAppleAcid = ["roserade", "vileplume", "virizion"];
 

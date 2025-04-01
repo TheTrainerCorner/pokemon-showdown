@@ -134,7 +134,7 @@
 				{
 					"species": "Beedrill",
 					"item": "Heavy-Duty Boots",
-					"ability": "Myriad Surge",
+					"ability": "Swarm",
 					"moves": [["Toxic Spikes"], ["Barb Barrage"], ["Knock Off"], ["U-turn"]]
 				},
 				{
@@ -152,7 +152,7 @@
 				{
 					"species": "Beedrill",
 					"item": "Beedrillite",
-					"ability": "Myriad Surge",
+					"ability": "Swarm",
 					"moves": [["Swords Dance"], ["Drill Run"], ["Poison Jab"], ["Knock Off"]]
 				},
 				{
