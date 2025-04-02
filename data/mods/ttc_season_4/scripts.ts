@@ -27,12 +27,12 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		// #region Aprils Fools
 
-		new ModifyPokemon('Spinda', this)
-			.baseStats
-				.setSPE(890)
-			.pokemon.learnset
-				.add('Agility')
-				.add('Stored Power');
+		// new ModifyPokemon('Spinda', this)
+		// 	.baseStats
+		// 		.setSPE(890)
+		// 	.pokemon.learnset
+		// 		.add('Agility')
+		// 		.add('Stored Power');
 		//#endregion
 
 		//#region Removing Apple Acid & Grav Apple
