@@ -13,6 +13,28 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	//#endregion
 
 	//#region Modify Abilities
+	pallesthesia: {
+		inherit: true,
+		onModifyAtk: undefined,
+		onModifySpA: undefined,
+		onBasePowerPriority: 21,
+		onBasePower(basePower, pokemon) {
+			let boosted = true;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (this.queue.willMove(target)) {
+					boosted = false;
+					break;
+				}
+			}
+			if (boosted) {
+				this.debug('Pallesthesia boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		desc: "Analytic + Scrappy",
+		shortDesc: "Analytic + Scrappy",
+	},
 	tangledfeet: {
 		inherit: true,
 		onModifyMove: undefined,
