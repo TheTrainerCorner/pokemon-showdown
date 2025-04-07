@@ -809,17 +809,17 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		terrain: "myriadterrain",
 		condition: {
 			duration: 5,
-			onStart() {
-				this.add('-clearallboost');
-				for (const pokemon of this.getAllActive()) {
-					pokemon.clearBoosts();
-				}
-			},
 			durationCallback(source, effect) {
 				if (source?.hasItem('terrainextender')) {
 					return 8;
 				}
 				return 5;
+			},
+			onStart() {
+				this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
 			},
 			onTryBoost(boost, target, source, effect) {
 				// Prevent the activation of boosting by moves
