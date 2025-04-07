@@ -35,6 +35,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "Analytic + Scrappy",
 		shortDesc: "Analytic + Scrappy",
 	},
+	gravecounter: {
+		inherit: true,
+		onTryHit(target, source, move) {
+			if (target !== source && !target.runImmunity(move.type)) {
+				this.damage((source.maxhp / 16), source, target);
+				return false;
+			}
+		},
+	},
 	tangledfeet: {
 		inherit: true,
 		onModifyMove: undefined,
