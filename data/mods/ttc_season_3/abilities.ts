@@ -387,6 +387,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
 			if (_move && ["Physical", "Special"].includes(_move.category)) return;
+			this.debug('pallesthesia damage boost');
 			this.add('-activate', source, 'ability: Pallesthesia');
 			return this.chainModify([5325, 4096]);
 		},
@@ -394,6 +395,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
 			if (_move && ["Physical", "Special"].includes(_move.category)) return;
+			this.debug('pallesthesia damage boost');
 			this.add('-activate', source, 'ability: Pallesthesia');
 			return this.chainModify([5325, 4096]);
 		},
