@@ -386,20 +386,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onModifyAtk(atk, source, target, move) {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
-			if (!_move) return;
-			if (["Physical", "Special"].includes(_move.category)) return;
-			this.debug('pallesthesia damage boost');
-			this.add('-activate', source, 'ability: Pallesthesia');
-			return this.chainModify([5325, 4096]);
+			if (["Status"].includes(_move!.category)) {
+				this.debug('pallesthesia damage boost');
+				this.add('-activate', source, 'ability: Pallesthesia');
+				return this.chainModify([5325, 4096]);
+			}
 		},
 		onModifySpA(atk, source, target, move) {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
-			if (!_move) return;
-			if (["Physical", "Special"].includes(_move.category)) return;
-			this.debug('pallesthesia damage boost');
-			this.add('-activate', source, 'ability: Pallesthesia');
-			return this.chainModify([5325, 4096]);
+			if (["Status"].includes(_move!.category)) {
+				this.debug('pallesthesia damage boost');
+				this.add('-activate', source, 'ability: Pallesthesia');
+				return this.chainModify([5325, 4096]);
+			}
 		},
 		desc: "If the target is using a non-damaging move, then the user does 30% more damage; if the target is using a damaging move, then the user will take 30% less damage. The user can also hit Ghost types with Normal and Fighting type moves.",
 		shortDesc: "Target: Non-Damaging Move; User does 30% more damage, else takes 30% less damage. Scrappy included.",
