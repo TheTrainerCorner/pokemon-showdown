@@ -386,7 +386,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onModifyAtk(atk, source, target, move) {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
-			if (["Status"].includes(_move!.category)) {
+			if (!_move) return;
+			this.debug(_move.name);
+			if (move.category === "Status") {
 				this.debug('pallesthesia damage boost');
 				this.add('-activate', source, 'ability: Pallesthesia');
 				return this.chainModify([5325, 4096]);
@@ -395,7 +397,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onModifySpA(atk, source, target, move) {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
-			if (["Status"].includes(_move!.category)) {
+			if (!_move) return;
+			this.debug(_move.name);
+			if (move.category === "Status") {
 				this.debug('pallesthesia damage boost');
 				this.add('-activate', source, 'ability: Pallesthesia');
 				return this.chainModify([5325, 4096]);
