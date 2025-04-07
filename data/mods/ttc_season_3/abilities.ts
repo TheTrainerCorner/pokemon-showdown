@@ -386,14 +386,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onModifyAtk(atk, source, target, move) {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
-			if (!_move || (_move.category === 'Physical' || _move.category === 'Special')) return;
+			if (_move && ["Physical", "Special"].includes(_move.category)) return;
 			this.add('-activate', source, 'ability: Pallesthesia');
 			return this.chainModify([5325, 4096]);
 		},
 		onModifySpA(atk, source, target, move) {
 			const action = this.queue.willMove(target);
 			const _move = action?.choice === 'move' ? action.move : null;
-			if (!_move || (_move.category === 'Physical' || _move.category === 'Special')) return;
+			if (_move && ["Physical", "Special"].includes(_move.category)) return;
 			this.add('-activate', source, 'ability: Pallesthesia');
 			return this.chainModify([5325, 4096]);
 		},
