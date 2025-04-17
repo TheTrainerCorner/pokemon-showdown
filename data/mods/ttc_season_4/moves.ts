@@ -7,6 +7,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
+			this.boost({spa: 1}, attacker, attacker, move);
 			if (this.field.isTerrain('cosmicterrain')) {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', attacker, move.name, defender);
@@ -237,32 +238,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				delete move.selfSwitch;
 			} else {
 				source.addVolatile('rebirth');
-				this.directDamage(source.maxhp - 1, source);
+				this.directDamage(source.hp - 1, source);
 			}
 		},
 		selfSwitch: true,
-		// onHit(target, source, move) {
-		// 	source.addVolatile('rebirth');
-		// },
-		// condition: {
-		// 	onStart(pokemon) {
-		// 		this.directDamage(pokemon.maxhp - 1, pokemon);
-				
-		// 	},
-		// 	onEmergencyExit(target) {
-		// 		if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
-		// 		for (const side of this.sides) {
-		// 			for (const active of side.active) {
-		// 				active.switchFlag = false;
-		// 			}
-		// 		}
-		// 		target.switchFlag = true;
-		// 		this.add('-activate', target, 'move: Rebirth');
-		// 	},
-		// 	onSwitchOut(pokemon) {
-		// 		pokemon.heal(pokemon.baseMaxhp / 2);
-		// 	}
-		// },
 		target: "normal",
 		type: "Cosmic",
 		desc: "Lowers target's Attack and Special Attack by 2. User Faints. User Revives with 50% Max HP the following turn.",
