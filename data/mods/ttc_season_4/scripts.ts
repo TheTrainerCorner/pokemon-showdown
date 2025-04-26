@@ -111,6 +111,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Pidgeot', this)
 			// .learnset // Was changed last minute
 			// 	.remove('Aeroblast');
+		this.modData('Pokedex', 'sandslash').evos = ['scaleslash'];
 		new ModifyPokemon('Sandslash', this)
 			.abilities
 				.setAbility1('Sand Rush')
