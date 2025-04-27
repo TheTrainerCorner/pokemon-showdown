@@ -422,7 +422,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Cosmic"
+		type: "Cosmic",
+		shortDesc: "Charges turn 1. Hits turn 2. +1 Atk.",
 	},
 	spiritroll: {
 		num: -4012,
