@@ -115,7 +115,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Navy",
 		prevo: "Blubblin",
 		evoLevel: 16,
-		evos: ["Echowalisp"],
+		evos: ["Echowhalisp"],
 		tags: ["Fakemon"],
 		eggGroups: ["Water 1"],
 	},

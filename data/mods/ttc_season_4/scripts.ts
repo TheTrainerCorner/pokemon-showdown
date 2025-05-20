@@ -51,6 +51,7 @@ export const Scripts: ModdedBattleScriptsData = {
 
 		//#region Galaxeon relationship with Eevee
 		this.modData("Pokedex", "eevee").evos.push("Galaxeon");
+		this.modData("Pokedex", 'sandslash').evos = ['Scaleslash'];
 		//#endregion
 
 		//#region Signal Beam to Light moves
