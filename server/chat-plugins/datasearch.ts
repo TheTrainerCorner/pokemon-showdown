@@ -107,8 +107,8 @@ export const commands: Chat.ChatCommands = {
 			}
 		}
 		const defaultFormat = this.extractFormat(room?.settings.defaultFormat || room?.battle?.format);
-		defaultFormat.format = Dex.formats.get('ttc_current');
-		defaultFormat.dex = Dex.mod('ttc_current');
+		defaultFormat.format = Dex.formats.get(Config.ttcseason);
+		defaultFormat.dex = Dex.mod(Config.ttcseason);
 		if (!target.includes('mod=')) {
 			const dex = defaultFormat.dex;
 			if (dex) target += `, mod=${dex.currentMod}`;
