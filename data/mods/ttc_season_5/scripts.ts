@@ -111,6 +111,54 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(110)
 				.setSPE(50);
-		
+		new ModifyPokemon('Annihilape', this)
+			.abilities
+				.setAbility1('Grave Counter');
+		new ModifyPokemon('Appletun', this)
+			.baseStats
+				.setHP(120)
+				.setATK(65)
+				.setDEF(100)
+				.setSPD(95)
+			.pokemon.learnset
+				.add('Syrup Bomb');
+		new ModifyPokemon('Araquanid', this)
+			.baseStats
+				.setHP(86)
+				.setATK(83)
+			.pokemon.learnset
+				.add('Silk Trap');
+		new ModifyPokemon('Arbok', this)
+			.types
+				.setType('Poison', 'Ground')
+			.pokemon.baseStats
+				.setHP(104)
+				.setATK(106)
+				.setDEF(93)
+				.setSPA(54)
+				.setSPD(91)
+				.setSPE(96)
+			.pokemon.learnset
+				.add('Noxious Torque')
+				.add('Wicked Torque');
+		new ModifyPokemon('Arboliva', this)
+			.abilities
+				.setAbility1('Leaf Guard')
+			.pokemon.baseStats
+				.setHP(93)
+				.setATK(59)
+				.setDEF(104)
+				.setSPD(118)
+				.setSPE(31)
+			.pokemon.learnset
+				.add('Syrup Bomb')
+				.add('Morning Sun')
+				.add('Revival Blessing')
+				.add('Natural Gift');
+		new ModifyPokemon('Arcanine', this)
+			.abilities
+				.setHiddenAbility('Kingly Presence')
+			.pokemon.learnset
+				.add('Sacred Fire');
 	},
  };
