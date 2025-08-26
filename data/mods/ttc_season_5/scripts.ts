@@ -160,5 +160,15 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Kingly Presence')
 			.pokemon.learnset
 				.add('Sacred Fire');
+		new ModifyPokemon('Arcanine-Hisui', this)
+			.baseStats
+				.setHP(115)
+				.setATK(120)
+				.setDEF(95)
+				.setSPA(85)
+				.setSPD(90)
+				.setSPE(95)
+			.pokemon.learnset
+				.add('Sacred Fire');
 	},
  };
