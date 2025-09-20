@@ -10,7 +10,7 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(85)
 			.pokemon.learnset
-				.add('icehammer');
+				.add('Ice Hammer');
 		new ModifyPokemon('Abomasnow-Mega', this)
 			.baseStats
 				.setDEF(110)
@@ -18,11 +18,21 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Absol', this)
 			.abilities
 				.setAbility0('Magic Bounce')
+			.pokemon.baseStats
+				.setDEF(58)
+				.setSPD(50)
 			.pokemon.learnset
-				.add('Doom Desire');
+				.add('Doom Desire')
+				.add('Heat Wave')
+				.add('Earthquake')
+				.add('Hurricane')
+				.remove('Fire Blast');
 		new ModifyPokemon('Absol-Mega', this)
 			.abilities
-				.setAbility0('Suresight');
+				.setAbility0('Disaster Zone')
+			.pokemon.baseStats
+				.setATK(140)
+				.setSPA(115);
 		new ModifyPokemon('Accelgor', this)
 			.abilities
 				.setAbility0('Dry Skin')
@@ -37,8 +47,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Aerodactyl', this)
 			.baseStats
 				.setHP(90)
-				.setATK(120)
 				.setDEF(73)
+				.setSPA(55)
 				.setSPE(132)
 			.pokemon.learnset
 				.add('Metal Claw')
@@ -47,8 +57,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Aerodactyl-Mega', this)
 			.baseStats
 				.setHP(90)
-				.setATK(140)
 				.setDEF(93)
+				.setSPA(75)
 				.setSPE(152);
 		new ModifyPokemon('Aggron', this)
 			.types

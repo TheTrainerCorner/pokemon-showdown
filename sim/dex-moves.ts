@@ -36,6 +36,7 @@ interface MoveFlags {
 	dance?: 1; // When used by a Pokemon, other Pokemon with the Ability Dancer can attempt to execute the same move.
 	defrost?: 1; // Thaws the user if executed successfully while the user is frozen.
 	disable?: 1; // If the move can disable moves on another pokemon.
+	disaster?: 1; // Disaster Moves.
 	distance?: 1; // Can target a Pokemon positioned anywhere in a Triple Battle.
 	explosion?: 1; // Explosion moves
 	failcopycat?: 1; // Cannot be selected by Copycat.
