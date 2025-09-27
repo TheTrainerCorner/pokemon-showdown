@@ -1327,8 +1327,13 @@ export const Abilities: { [k: string]: ModdedAbilityData} = {
 		onStart(pokemon) {
 			if (!this.effectState.switchingIn) return;
 			const target = pokemon.side.foe.active[pokemon.side.foe.active.length - 1 - pokemon.position];
-			if (target) {
-				this.boost({ atk: target.positiveBoosts() }, pokemon);
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.target) {
+				const powMod = [4096, 4506, 4915, 5325, 5734, 6144];
+				this.debug(`Steadfast boost: ${powMod[this.effectState.target]}/4096`);
+				return this.chainModify([powMod[this.effectState.target], 4096]);
 			}
 		},
 		desc: "Upon Switch-In, gains +1 atk boost per Positive Boost that the opposing Pokemon has.",
