@@ -4812,6 +4812,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		volatileStatus: 'embargo',
 		condition: {
 			duration: 5,
+			durationCallback(target, source, effect) {
+				if (effect?.name === 'Kingly Presence') {
+					return 2;
+				}
+				return 5;
+			},
 			onStart(pokemon) {
 				this.add('-start', pokemon, 'Embargo');
 				this.singleEvent('End', pokemon.getItem(), pokemon.itemState, pokemon);
