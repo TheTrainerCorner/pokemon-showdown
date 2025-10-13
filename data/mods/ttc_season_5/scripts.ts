@@ -372,10 +372,10 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Snuggle');
 		new ModifyPokemon('Blacephalon', this)
 			.baseStats
-				.setHP(58)
-				.setATK(107)
+				.setHP(57)
+				.setATK(103)
 				.setDEF(63)
-				.setSPD(84)
+				.setSPD(89)
 			.pokemon.learnset
 				.add('Burning Jealousy');
 		new ModifyPokemon('Blastoise', this)
@@ -438,5 +438,208 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('No Guard')
 			.pokemon.learnset
 				.add('Quantum Stance');
+		new ModifyPokemon('Cacturne', this)
+			.abilities
+				.setAbility1('Rough Skin')
+				.setHiddenAbility('Petrifying Gaze')
+			.pokemon.baseStats
+				.setATK(80)
+				.setDEF(105)
+				.setSPA(80)
+				.setSPD(105)
+				.setSPE(60)
+			.pokemon.learnset
+				.add('Life Dew')
+				.add('Muddy Water')
+				.add('Snarl')
+				.add('Acid Spray')
+				.add('Aerial Ace')
+				.add('Chilling Water')
+				.add('Camouflage');
+		new ModifyPokemon('Calyrex', this)
+			.abilities
+				.setAbility0('Telepathy')
+			.pokemon.baseStats
+				.setATK(100)
+				.setDEF(100)
+				.setSPA(110)
+				.setSPD(100)
+				.setSPE(90)
+			.pokemon.learnset
+				.add('Luster Purge')
+				.add('Teleport')
+				.add('Chloroblast')
+				.add('Healing Wish');
+		new ModifyPokemon('Camerupt', this)
+			.abilities
+				.setHiddenAbility('Artillery');
+		new ModifyPokemon('Carbink', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast')
+				.remove('Recover');
+		new ModifyPokemon('Carnivine', this)
+			.types
+				.setType('Grass')
+			.pokemon.abilities
+				.setAbility0('Gluttony')
+			.pokemon.baseStats
+				.setATK(108)
+				.setDEF(92)
+				.setSPA(80)
+				.setSPD(92)
+				.setSPE(66);
+		new ModifyPokemon('Carracosta', this)
+			.types
+				.setType('Water','Steel')
+			.pokemon.baseStats
+				.setHP(94)
+				.setSPD(90)
+			.pokemon.learnset
+				.add('Wave Crash')
+				.add('Fishous Rend')
+				.add('Trick Room');
+		new ModifyPokemon('Castform', this)
+			.baseStats
+				.setHP(90)
+				.setATK(90)
+				.setDEF(90)
+				.setSPA(90)
+				.setSPD(90)
+				.setSPE(90);
+		new ModifyPokemon('Celebi', this)
+			.learnset
+				.add('Forests Curse')
+				.add('Flower Trick')
+				.add('Teleport')
+				.remove('Cut');
+		new ModifyPokemon('Celesteela', this)
+			.learnset	
+				.add('Armor Cannon')
+				.add('Clear Smog')
+				.add('Corrosive Gas')
+				.add('Lift Off');
+		new ModifyPokemon('Centiskorch', this)
+			.baseStats
+				.setSPA(80)
+				.setSPE(85)
+			.pokemon.learnset
+				.add('Flame Charge')
+				.add('Temper Flare')
+				.add('Sizzly Slide')
+				.remove('Heat Crash');
+		new ModifyPokemon('Ceruledge', this)
+			.abilities
+				.setHiddenAbility('Blaze');
+		new ModifyPokemon('Cetitan', this)
+			.baseStats
+				.setHP(160)
+				.setSPD(65);
+		new ModifyPokemon('Chandelure', this)
+			.baseStats
+				.setHP(75)
+				.setATK(65)
+				.setDEF(75)
+				.setSPA(150)
+				.setSPD(80)
+				.setSPE(90)
+			.pokemon.learnset
+				.add('Torch Song');
+		new ModifyPokemon('Chatot', this)
+			.baseStats
+				.setDEF(55)
+				.setSPA(97)
+				.setSPD(52)
+			.pokemon.learnset
+				.add('Metronome')
+				.add('Roaring Bellow')
+				.add('Crest Rush');
+		new ModifyPokemon('Cherrim', this)
+			.abilities
+				.setAbility1('None')
+			.pokemon.baseStats
+				.setHP(80)
+				.setATK(79)
+				.setDEF(72)
+				.setSPA(102)
+				.setSPD(75)
+				.setSPE(82)
+			.pokemon.learnset
+				.add('Chloroblast')
+				.add('Fiery Dance')
+				.add('Flower Trick')
+				.add('Heat Wave')
+				.add('Overheat')
+				.add('Temper Flare')
+				.remove('Morning Sun')
+				.remove('Moonblast');
+		new ModifyPokemon('Cherrim-Sunshine', this)
+			.types
+				.setType('Grass','Fire')
+			.pokemon.baseStats
+				.setHP(80)
+				.setATK(79)
+				.setDEF(72)
+				.setSPA(102)
+				.setSPD(75)
+				.setSPE(82);
+		new ModifyPokemon('Chi-Yu', this)
+			.learnset
+			.add('Lava Tsunami');
+		new ModifyPokemon('Clawitzer', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Claydol', this)
+			.learnset
+				.add('Synchronoise')
+				.add('Psychic Noise')
+				.remove('Rain Dance');
+		new ModifyPokemon('Clefable', this)
+			.learnset
+				.add('Psychic Noise')
+				.add('Pixie Burst');
+		new ModifyPokemon('Clodsire', this)
+			.abilities	
+				.setAbility0('Gooey')
+			.pokemon.learnset
+				.add('Corrosive Gas');
+		new ModifyPokemon('Cloyster', this)
+			.types
+				.setType('Water', 'Rock')
+			.pokemon.abilities
+				.setHiddenAbility('Rough Skin')
+			.pokemon.learnset
+				.add('Head Smash')
+				.add('Stealth Rock')
+				.add('Power Gem')
+				.remove('Signal Beam');
+		new ModifyPokemon('Coalossal', this)
+			.learnset
+				.add('Searing Shot')
+				.add('Crag Blast');
+		new ModifyPokemon('Cobalion', this)
+			.learnset
+				.add('Psyshield Bash');
+		new ModifyPokemon('Cofagrigus', this)
+			.learnset
+				.add('Bitter Malice');
+		new ModifyPokemon('Conkeldurr', this)
+			.learnset
+				.add('Bestow');
+		new ModifyPokemon('Copperajah', this)
+			.learnset
+				.add('Steel Spikes')
+				.add('Toxic');
+		new ModifyPokemon('Corsola', this)
+			.abilities
+				.setAbility0('Rough Skin');
+		new ModifyPokemon('Corsola-Galar', this)
+			.baseStats
+				.setHP(85)
+				.setDEF(95)
+				.setSPA(105)
+				.setSPD(95)
+				.setSPE(35);
+
 	},
  };
