@@ -640,6 +640,213 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(105)
 				.setSPD(95)
 				.setSPE(35);
-
+		new ModifyPokemon('Corviknight', this)
+			.learnset
+				.add('Spikes')
+				.add('Crest Rush');
+		new ModifyPokemon('Crabominable', this)
+			.baseStats
+				.setATK(137)
+				.setDEF(87)
+				.setSPD(82);
+		new ModifyPokemon('Cradily', this)
+			.baseStats
+				.setHP(116)
+				.setATK(91)
+				.setSPE(23);
+		new ModifyPokemon('Cramorant', this)
+			.baseStats
+				.setATK(110)
+				.setSPA(110)
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Crawdaunt', this)
+			.baseStats
+				.setHP(73)
+				.setSPD(65)
+			.pokemon.learnset
+				.add('Flip Turn');
+		new ModifyPokemon('Cryogonal', this)
+			.baseStats
+				.setATK(50)
+				.setSPD(150)
+				.setSPE(110);
+		new ModifyPokemon('Darkrai', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Darmanitan', this)
+			.baseStats
+				.setATK(130)
+				.setSPE(105);
+		new ModifyPokemon('Darmanitan-Zen', this)
+			.baseStats
+				.setDEF(85)
+				.setSPA(130)
+				.setSPD(85)
+				.setSPE(45)
+			.pokemon.learnset
+				.add('Psychic Noise');
+		new ModifyPokemon('Darmanitan-Galar', this)
+			.baseStats
+				.setATK(130)
+				.setSPE(105);
+		new ModifyPokemon('Darmanitan-Galar-Zen', this)
+			.baseStats
+				.setATK(130)
+				.setDEF(50)
+				.setSPD(50)
+				.setSPE(115)
+			.pokemon.learnset
+				.remove('Belly Drum');
+		new ModifyPokemon('Decidueye', this)
+			.abilities
+				.setHiddenAbility('Bellligerent Quills')
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Decidueye-Hisui', this)
+			.baseStats
+				.setSPA(70)
+				.setSPE(95)
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Dedenne', this)
+			.baseStats
+				.setATK(53)
+				.setDEF(85)
+				.setSPA(91)
+				.setSPD(93)
+			.pokemon.learnset
+				.add('Pixie Burst')
+				.remove('Cut')
+				.remove('Moonblast');
+		new ModifyPokemon('Delcatty', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Delphox', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Delphox-Speed', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Dewgong', this)
+			.learnset
+				.add('Chilly Reception');
+		new ModifyPokemon('Dhelmise', this)
+			.learnset
+				.add('Hard Press');
+		new ModifyPokemon('Dodrio', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Dondozo', this)
+			.learnset
+				.add('Flip Turn')
+				.add('Clamp');
+		new ModifyPokemon('Donphan', this)
+			.abilities
+				.setHiddenAbility('Stamina');
+		new ModifyPokemon('Dracovish', this)
+			.baseStats
+				.setHP(100)
+				.setDEF(105)
+				.setSPA(90);
+		new ModifyPokemon('Dracozolt', this)
+			.abilities
+				.setHiddenAbility('Electromorphasis')
+			.pokemon.baseStats
+				.setHP(100)
+				.setATK(110)
+				.setDEF(95);
+		new ModifyPokemon('Dragalge', this)
+			.baseStats
+				.setHP(75);
+		new ModifyPokemon('Dragonite', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Drapion', this)
+			.types
+				.setType('Bug','Dark')
+			.pokemon.baseStats
+				.setATK(106)
+			.pokemon.learnset
+				.add('First Impression');
+		new ModifyPokemon('Dubwool', this)
+			.abilities
+				.setHiddenAbility('Rock Head')
+			.pokemon.baseStats
+				.setATK(110)
+				.setSPA(40)
+				.setSPE(78);
+		new ModifyPokemon('Dugtrio', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Dusknoir', this)
+			.learnset
+				.add('Rage Fist');
+		new ModifyPokemon('Dustox', this)
+			.baseStats
+				.setATK(65)
+				.setDEF(90)
+				.setSPA(65);
+		new ModifyPokemon('Eiscue', this)
+			.learnset
+				.add('Chilly Reception');
+		new ModifyPokemon('Eiscue-Noice', this)
+			.learnset
+				.add('Chilly Reception');
+		new ModifyPokemon('Eldegoss', this)
+			.abilities
+				.setHiddenAbility('Wind Rider')
+			.pokemon.learnset
+				.add('Sappy Seed')
+				.add('Floaty Fall');
+		new ModifyPokemon('Electrode', this)
+			.baseStats
+				.setSPA(95);
+		new ModifyPokemon('Electrode-Hisui', this)
+			.baseStats
+				.setDEF(85)
+				.setSPA(95)
+				.setSPD(85);
+		new ModifyPokemon('Emolga', this)
+			.baseStats
+				.setSPA(100)
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Empoleon', this)
+			.abilities
+				.setAbility1('Kingly Presence');
+		new ModifyPokemon('Enamorus', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Enamorus-Therian', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Entei', this)
+			.abilities
+				.setAbility0('White Smoke');
+		new ModifyPokemon('Escavalier', this)
+			.abilities
+				.setAbility1('Steadfast')
+			.pokemon.learnset
+				.add('Lunge');
+		new ModifyPokemon('Espathra', this)
+			.baseStats
+				.setDEF(65)
+				.setSPD(65);
+		new ModifyPokemon('Espeon', this)
+			.baseStats
+				.setDEF(70)
+				.setSPA(135)
+			.pokemon.learnset
+				.remove('Cut');
+		new ModifyPokemon('Exploud', this)
+			.baseStats
+				.setHP(106)
+				.setDEF(71)
+			.pokemon.learnset
+				.add('Roaring Bellows');
 	},
  };
