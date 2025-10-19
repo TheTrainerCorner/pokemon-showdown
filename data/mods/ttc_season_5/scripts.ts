@@ -1159,5 +1159,82 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setATK(76)
 				.setDEF(85)
 				.setSPE(74);
+		new ModifyPokemon('Illumise', this)
+			.learnset
+				.add('Powder');
+		new ModifyPokemon('Indeedee', this)
+			.learnset
+				.add('Revival Blessing');
+		new ModifyPokemon('Infernape', this)
+			.abilities
+				.setHiddenAbility('Turboblaze')
+			.pokemon.learnset
+				.add('Fiery Dance')
+				.add('Burn Up');
+		new ModifyPokemon('Inteleon', this)
+			.learnset
+				.add('Frost Breath');
+		new ModifyPokemon('Iron Boulder', this)
+			.learnset
+				.add('Psyblade');
+		new ModifyPokemon('Iron Bundle', this)
+			.baseStats
+				.setATK(72)
+			.pokemon.learnset
+				.add('Frost Breath');
+		new ModifyPokemon('Iron Crown', this)
+			.learnset
+				.add('Psyblade');
+		new ModifyPokemon('Iron Explorer', this)
+			.baseStats
+				.setATK(92)
+				.setSPA(112)
+				.setSPD(52);
+		new ModifyPokemon('Iron Leaves', this)
+			.learnset
+				.add('U-Turn');
+		new ModifyPokemon('Iron Moth', this)
+			.learnset
+				.add('Searing Shot')
+				.remove('Sludge Wave')
+				.remove('Toxic')
+				.remove('Toxic Spikes');
+		new ModifyPokemon('Iron Thorns', this)
+			.learnset
+				.add('Shift Gear')
+				.add('Plasma Fists')
+				.remove('Bolt Strike');
+		new ModifyPokemon('Iron Treads', this)
+			.abilities
+				.setHiddenAbility('Screen Cleaner');
+		new ModifyPokemon('Iron Valiant', this)
+			.learnset
+				.add('Pixie Burst')
+				.add('Secret Sword')
+				.remove('Moonblast');
+		new ModifyPokemon('Jirachi', this)
+			.abilities
+				.setHiddenAbility('Cosmic Surge')
+			.pokemon.learnset
+				.add('Rock Slide');
+		new ModifyPokemon('Jolteon', this)
+			.baseStats
+				.setATK(60)
+				.setDEF(65)
+			.pokemon.learnset
+				.add('Electro Shot');
+		new ModifyPokemon('Jumpluff', this)
+			.abilities
+				.setAbility0('Unburden')
+				.setAbility1('Wind Rider')
+			.pokemon.baseStats
+				.setSPA(70)
+			.pokemon.learnset
+				.add('Spore')
+				.add('Sappy Seed')
+				.remove('Pay Day');
+		new ModifyPokemon('Jynx', this)
+			.learnset
+				.add('Dazzling Gleam');
 	},
  };
