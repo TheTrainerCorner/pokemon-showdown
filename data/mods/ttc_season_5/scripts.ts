@@ -44,6 +44,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Razor Wind')
 				.remove('Signal Beam');
 		new ModifyPokemon('Acudraco', this);
+		new ModifyPokemon('Aegislash', this)
+			.learnset
+				.add('Zen Headbutt');
 		new ModifyPokemon('Aerodactyl', this)
 			.baseStats
 				.setHP(90)
@@ -116,7 +119,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Illuminate')
 			.pokemon.baseStats
 				.setATK(80)
-				.setDEF(90);
+				.setDEF(90)
+			.pokemon.learnset
+				.add('Flash Cannon');
 		new ModifyPokemon('Ampharos-Mega', this)
 			.baseStats
 				.setDEF(110)
@@ -226,6 +231,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset
 				.add('Eeerie Spell')
 				.add('Pixie Burst')
+				.add('Heal Block')
+				.add('Hypnosis')
 				.remove('Moonblast');
 		new ModifyPokemon('Articuno-Galar', this)
 			.baseStats
@@ -251,6 +258,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(102)
 			.pokemon.learnset
 				.add('Cold Snap');
+		new ModifyPokemon('Avalugg-Hisui', this)
+			.learnset
+				.add('Hydro Pump');
 		new ModifyPokemon('Azumarill', this)
 			.baseStats
 				.setATK(60)
@@ -260,11 +270,18 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add('Aquatic Kick')
 				.add('Flip Turn');
+		new ModifyPokemon('Banette', this)
+			.learnset
+				.add('Slash')
+				.add('Heal Block')
+				.add('Zen Headbutt');
 		new ModifyPokemon('Barbaracle', this)
 			.learnset
 				.add('Geodude Gatling')
 				.add('Crag Blast')
 				.add('Hammer Arm')
+				.add('Close Combat')
+				.add('Waterfall')
 				.remove('Cut')
 				.remove('Meteor Beam');
 		new ModifyPokemon('Barraskewda', this)
@@ -331,7 +348,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(85)
 				.setSPE(115)
 			.pokemon.learnset
-				.add('Piercing Doom');
+				.add('Piercing Doom')
+				.add('Bug Buzz')
+				.add('Lunge');
 		new ModifyPokemon('Beedrill-Mega', this)
 			.baseStats
 				.setHP(70)
@@ -384,7 +403,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add('Snipe Shot')
 				.add('Soak')
-				.add('Hard Press');
+				.add('Hard Press')
+				.add('Iron Head');
 		new ModifyPokemon('Blastoise-Mega', this)
 			.baseStats
 				.setSPA(145);
@@ -476,6 +496,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Carbink', this)
 			.learnset
 				.add('Pixie Burst')
+				.add('Self-Destruct')
 				.remove('Moonblast')
 				.remove('Recover');
 		new ModifyPokemon('Carnivine', this)
@@ -544,7 +565,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(80)
 				.setSPE(90)
 			.pokemon.learnset
-				.add('Torch Song');
+				.add('Torch Song')
+				.add('Heal block')
+				.add('Flame Wheel');
 		new ModifyPokemon('Chatot', this)
 			.baseStats
 				.setDEF(55)
@@ -583,6 +606,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(102)
 				.setSPD(75)
 				.setSPE(82);
+		new ModifyPokemon('Chestnaught', this)
+			.learnset
+				.add('Growth');
 		new ModifyPokemon('Chi-Yu', this)
 			.learnset
 			.add('Lava Tsunami');
@@ -597,7 +623,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Clefable', this)
 			.learnset
 				.add('Psychic Noise')
-				.add('Pixie Burst');
+				.add('Pixie Burst')
+				.add('Air Slash')
+				.add('Heal Block');
 		new ModifyPokemon('Clodsire', this)
 			.abilities	
 				.setAbility0('Gooey')
@@ -759,10 +787,19 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(95);
 		new ModifyPokemon('Dragalge', this)
 			.baseStats
-				.setHP(75);
+				.setHP(75)
+			.pokemon.learnset	
+				.add('Poison Jab');
 		new ModifyPokemon('Dragonite', this)
 			.learnset
-				.remove('Cut');
+				.remove('Cut')
+				.add('Whirlwind');
+		new ModifyPokemon('Drampa', this)
+			.learnset
+				.add('Body Slam')
+				.add('Parabolic Charge')
+				.add('Whirlwind')
+				.add('Earth Power');
 		new ModifyPokemon('Drapion', this)
 			.types
 				.setType('Bug','Dark')
@@ -808,6 +845,9 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(85)
 				.setSPA(95)
 				.setSPD(85);
+		new ModifyPokemon('Emboar', this)
+			.learnset
+				.add('Flame Wheel');
 		new ModifyPokemon('Emolga', this)
 			.baseStats
 				.setSPA(100)
@@ -841,12 +881,283 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(70)
 				.setSPA(135)
 			.pokemon.learnset
+				.add('Heal Block')
+				.add('Safeguard')
 				.remove('Cut');
+		new ModifyPokemon('Excadrill', this)
+			.learnset
+				.add('Megahorn')
+				.add('Agility');
 		new ModifyPokemon('Exploud', this)
 			.baseStats
 				.setHP(106)
 				.setDEF(71)
 			.pokemon.learnset
 				.add('Roaring Bellows');
+		new ModifyPokemon('Falinks', this)
+			.baseStats
+				.setSPD(80)
+				.setSPE(80);
+		new ModifyPokemon('Farfetchd-Mega', this)
+			.abilities
+				.setAbility0('Sharpness');
+		new ModifyPokemon('Farigiraf', this)
+			.baseStats
+				.setDEF(85)
+				.setSPE(55);
+		new ModifyPokemon('Fearow', this)
+			.baseStats
+				.setATK(110)
+				.setDEF(70)
+				.setSPA(51)
+				.setSPD(66)
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Fezandipiti', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Flamigo', this)
+			.learnset
+				.add('Axe Kick')
+				.add('Aquatic Kick')
+				.add('Crest Rush');
+		new ModifyPokemon('Flareon', this)
+			.learnset	
+				.add('Flame Wheel')
+				.add('Swords Dance')
+				.add('Taunt');
+		new ModifyPokemon('Floette', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Floette-Eternal', this)
+			.abilities
+				.setAbility0('Oblivious')
+				.setAbility1('Symbiosis')
+				.setHiddenAbility('Grassy Surge')
+			.pokemon.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Florges', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Flutter Mane', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Flygon', this)
+			.abilities
+				.setAbility1('Overcoat')
+			.pokemon.learnset
+				.add('Clanging Scales');
+		new ModifyPokemon('Forretress', this)
+			.learnset
+				.add('Steel Spikes');
+		new ModifyPokemon('Frosslass', this)
+			.learnset
+				.add('Phantom Force')
+				.add('Nasty Plot')
+				.add('Heal Block');
+		new ModifyPokemon('Furfrou', this)
+			.abilities
+				.setAbility1('Ball Fetch')
+			.pokemon.learnset
+				.add('Fire Fang')
+				.add('Ice Fang')
+				.add('Thunder Fang')
+				.add('Crunch')
+				.add('Double-Edge')
+				.add('Hyper Beam');
+		new ModifyPokemon('Furret', this)
+			.baseStats	
+				.setATK(86)
+				.setSPD(65)
+			.pokemon.learnset
+				.add('Extreme Speed')
+				.remove('Cut');
+		new ModifyPokemon('Galvantula', this)
+			.abilities
+				.setAbility1('Tinted Lens')
+			.pokemon.learnset
+				.remove('Cut')
+				.remove('Swift');
+		new ModifyPokemon('Garbodor', this)
+			.baseStats
+				.setHP(100)
+				.setDEF(97)
+			.pokemon.learnset
+				.add('Hard Press')
+				.add('Steel Spikes')
+				.add('Heal Block')
+				.add('Bullet Seed');
+		new ModifyPokemon('Gardevoir-Mega', this)
+			.types
+				.setType('Psychic', 'Cosmic')
+			.pokemon.abilities	
+				.setAbility0('Dawn Of Lunacy')
+			.pokemon.baseStats
+				.setATK(75)
+				.setDEF(80)
+			.pokemon.learnset
+				.add('Pixie Burst');
+		new ModifyPokemon('Gengar', this)
+			.baseStats
+				.setSPA(135)
+				.setSPE(115)
+			.pokemon.learnset
+				.add('Shadow Sneak');
+		new ModifyPokemon('Gengar-Mega', this)
+			.baseStats
+				.setSPA(150)
+				.setSPE(125);
+		new ModifyPokemon('Gigalith', this)
+			.baseStats
+				.setSPA(80)
+			.pokemon.learnset
+				.remove('Gravity');
+		new ModifyPokemon('Glaceon', this)
+			.learnset
+				.add('Chilly Reception')
+				.add('Taunt');
+		new ModifyPokemon('Gogoat', this)
+			.learnset
+				.add('Megahorn');
+		new ModifyPokemon('Golduck', this)
+			.abilities
+				.setHiddenAbility('Telepathy')
+			.pokemon.baseStats
+				.setATK(102)
+				.setSPA(92)
+				.setSPE(90)
+			.pokemon.learnset
+				.add('Meditate')
+				.add('Twin Beam');
+		new ModifyPokemon('Golurk', this)
+			.learnset
+				.add('Rage Fist');
+		new ModifyPokemon('Goodra', this)
+			.learnset
+				.add('Giga Drain');
+		new ModifyPokemon('Goodra-Hisui', this)
+			.learnset
+				.add('Iron Defense');
+		new ModifyPokemon('Gorebyss', this)
+			.learnset
+				.add('Wish')
+				.add('Bouncy Bubble')
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Gourgeist', this)
+			.learnset
+				.add('Hypnosis')
+				.add('Fire Spin')
+				.add('Self-Destruct')
+				.add('Shadow Claw');
+		new ModifyPokemon('Grafaiai', this)
+			.learnset
+				.add('Gastro Acid')
+				.add('Assist')
+				.add('Snatch');
+		new ModifyPokemon('Granbull', this)
+			.abilities	
+				.setHiddenAbility('Friend Guard');
+		new ModifyPokemon('Grapploct', this)
+			.learnset
+				.add('Aqua Jet')
+				.remove('Jet Punch');
+		new ModifyPokemon('Greedent', this)
+			.baseStats
+				.setHP(130)
+				.setDEF(95)
+			.pokemon.learnset
+				.add('Barrage')
+				.add('Population Bomb');
+		new ModifyPokemon('Greninja', this)
+			.learnset
+				.add('Nasty Plot')
+				.add('Psyshock')
+				.add('Flip Turn')
+				.remove('Cut');
+		new ModifyPokemon('Grumpig', this)
+			.abilities
+				.setAbility1('Pig Out');
+		new ModifyPokemon('Gumshoos', this)
+			.baseStats
+				.setDEF(73)
+				.setSPA(40)
+				.setSPD(75)
+				.setSPE(42);
+		new ModifyPokemon('Guzzlord', this)
+			.learnset
+				.add('Darkest Lariat')
+				.add('Obstruct');
+		new ModifyPokemon('Hariyama', this)
+			.baseStats
+				.setHP(154)
+				.setDEF(85)
+				.setSPD(88)
+			.pokemon.learnset
+				.add('Play Rough');
+		new ModifyPokemon('Hatterene', this)
+			.abilities
+				.setAbility0('Synchronize')
+			.pokemon.learnset
+				.add('Freezing Glare')
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Hawlucha', this)
+			.abilities
+				.setAbility0('Early Bird')
+			.pokemon.baseStats
+				.setATK(97)
+				.setSPA(69)
+			.pokemon.learnset
+				.add('Air Slash');
+		new ModifyPokemon('Haxorus', this)
+			.learnset
+				.add('Dragon Hammer');
+		new ModifyPokemon('Heliolisk', this)
+			.abilities
+				.setAbility1('Sand Force')
+			.pokemon.baseStats
+				.setATK(59)
+				.setSPE(114)
+			.pokemon.learnset
+				.add('Flash Cannon')
+				.add('Mornging Sun');
+		new ModifyPokemon('Heracross', this)
+			.abilities
+				.setAbility0('Battle Armor')
+			.pokemon.learnset
+				.add('Outrage');
+		new ModifyPokemon('Hitmonlee', this)
+			.learnset
+				.add('Aquatic Kick');
+		new ModifyPokemon('Honchkrow', this)
+			.learnset
+				.add('Population Bomb')
+				.add('Crest Rush');
+		new ModifyPokemon('Hoopa', this)
+			.learnset
+				.add('Heal Block');
+		new ModifyPokemon('Houndoom', this)
+			.abilities
+				.setHiddenAbility('Drought');
+		new ModifyPokemon('Houndstone', this)
+			.abilities
+				.setAbility0('Grave Counter')
+				.setHiddenAbility('Fluffy')
+			.pokemon.learnset
+				.add('Shadow Bone');
+		new ModifyPokemon('Hydrapple', this)
+			.learnset
+				.add('Apple Acid');
+		new ModifyPokemon('Hypno', this)
+			.baseStats
+				.setATK(76)
+				.setDEF(85)
+				.setSPE(74);
 	},
  };
