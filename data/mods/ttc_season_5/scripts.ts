@@ -683,7 +683,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(102)
 				.setSPD(75)
 				.setSPE(82);
-		new ModifyPokemon('Chestnaught', this)
+		new ModifyPokemon('Chesnaught', this)
 			.learnset
 				.add('Growth');
 		new ModifyPokemon('Chi-Yu', this)
