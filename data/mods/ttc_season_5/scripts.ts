@@ -1073,9 +1073,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setAbility0('Dawn Of Lunacy')
 			.pokemon.baseStats
 				.setATK(75)
-				.setDEF(80)
-			.pokemon.learnset
-				.add('Pixie Burst');
+				.setDEF(80);
 		new ModifyPokemon('Gengar', this)
 			.baseStats
 				.setSPA(135)
