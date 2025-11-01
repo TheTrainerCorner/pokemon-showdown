@@ -783,8 +783,6 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setATK(130)
 				.setSPE(105)
-			.pokemon.learnset
-				.add('Psychic Noise', 8);
 		new ModifyPokemon('Darmanitan-Zen', this)
 			.baseStats
 				.setDEF(85)
