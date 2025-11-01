@@ -797,7 +797,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(105)
 			.pokemon.learnset
 				.remove('Belly Drum');
-		new ModifyPokemon('Darmanitan-Galar-Zen', this)
+		new ModifyPokemon('Darmanitan-GalarZen', this)
 			.baseStats
 				.setATK(130)
 				.setDEF(50)
