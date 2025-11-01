@@ -435,7 +435,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setDEF(65)
 				.setSPD(105)
 				.setSPE(155);
-		new ModifyPokemon('Beeheeyem', this)
+		new ModifyPokemon('Beheeyem', this)
 			.abilities
 				.setHiddenAbility('Enlightenment')
 			.pokemon.baseStats
