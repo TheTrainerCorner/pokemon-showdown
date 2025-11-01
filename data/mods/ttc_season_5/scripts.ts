@@ -831,7 +831,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Delphox', this)
 			.learnset
 				.remove('Cut');
-		new ModifyPokemon('Delphox-Speed', this)
+		new ModifyPokemon('Deoxys-Speed', this)
 			.learnset
 				.remove('Cut');
 		new ModifyPokemon('Dewgong', this)
