@@ -4,7 +4,84 @@ import { ModifyMove } from "../../../tools/utils/modifyMove";
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'ttc_season_4',
 	init() {
-
+		// Move Changes
+		new ModifyMove('Ivy Cudgel', this)
+			.flags
+				.add('hammer');
+		new ModifyMove('Twineedle', this)
+			.secondaries
+				.setStatusCondition('tox', 20)
+			.move
+				.descriptions
+					.setLongDesc("Hits 2 times. Has a 20% chance to badly poison the target.")
+					.setShortDesc("Hits 2 times. 20% chance to badly poison.");
+		new ModifyMove('Fly', this)
+			.setBasePower(120);
+		new ModifyMove('Dig', this)
+			.setBasePower(120);
+		new ModifyMove('Dive', this)
+			.setBasePower(120);
+		new ModifyMove('Skull Bash', this)
+			.setBasePower(150)
+			.secondaries
+				.setVolatileStatus('flinch', 10)
+			.move.descriptions
+				.setLongDesc("Raises User's Defense by 1 on turn 1. Hits turn 2. Has a 10% chance to flinch the target.")
+				.setShortDesc("Raises user's Def by 1 on turn 1. Hits Turn 2. 10% chance to flinch.");
+		new ModifyMove('Sky Drop', this)
+			.setBasePower(80);
+		new ModifyMove('Blaze Kick', this)
+			.setBasePower(100)
+			.setAccuracy(90);
+		new ModifyMove('Meditate', this)
+			.setPowerPoint(32)
+			.secondaries.setSelfBoost({ atk: 1, spa: 1 });
+		new ModifyMove('Stone Edge', this)
+			.setAccuracy(85);
+		new ModifyMove('Rock Slide', this)
+			.setAccuracy(95);
+		new ModifyMove('Rock Blast', this)
+			.setAccuracy(95);
+		new ModifyMove('Tail Slap', this)
+			.setAccuracy(90);
+		new ModifyMove('Bone Rush', this)
+			.setAccuracy(95);
+		new ModifyMove('Pin Missile', this)
+			.setAccuracy(95);
+		new ModifyMove('Mortal Spin', this)
+			.setBasePower(50);
+		new ModifyMove('Feint', this)
+			.setBasePower(45);
+		new ModifyMove('Sand Tomb', this)
+			.setAccuracy(90);
+		new ModifyMove('Bonemerang', this)
+			.setAccuracy(90);
+		new ModifyMove('Rock Tomb', this)
+			.setAccuracy(95);
+		new ModifyMove('Bone Club', this)
+			.setAccuracy(90)
+			.setBasePower(75);
+		new ModifyMove('Razor Shell', this)
+			.setAccuracy(95);
+		new ModifyMove('Play Rough', this)
+			.setAccuracy(95);
+		new ModifyMove('Heat Wave', this)
+			.setAccuracy(95);
+		new ModifyMove('Meteor Beam', this)
+			.setAccuracy(95);
+		new ModifyMove('Charge Beam', this)
+			.setBasePower(55);
+		new ModifyMove('Icicle Crash', this)
+			.setAccuracy(95);
+		new ModifyMove('Focus Blast', this)
+			.secondaries
+				.setTargetBoosts({ spd: -1}, 10)
+			.move.descriptions
+				.setLongDesc("10% chance to lower the target's Special Defense by 1 stage.")
+				.setShortDesc("10% chance to lower the target's Sp. Def by 1.");
+		new ModifyMove('Snipe Shot', this)
+			.flags
+				.add('pulse');
 		// Pokemon Changes
 		new ModifyPokemon('Abomasnow', this)
 			.baseStats
