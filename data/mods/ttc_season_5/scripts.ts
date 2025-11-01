@@ -905,9 +905,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Eiscue', this)
 			.learnset
 				.add('Chilly Reception');
-		new ModifyPokemon('Eiscue-Noice', this)
-			.learnset
-				.add('Chilly Reception');
 		new ModifyPokemon('Eldegoss', this)
 			.abilities
 				.setHiddenAbility('Wind Rider')
