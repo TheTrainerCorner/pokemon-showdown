@@ -1029,7 +1029,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Forretress', this)
 			.learnset
 				.add('Steel Spikes');
-		new ModifyPokemon('Frosslass', this)
+		new ModifyPokemon('Froslass', this)
 			.learnset
 				.add('Phantom Force')
 				.add('Nasty Plot')
