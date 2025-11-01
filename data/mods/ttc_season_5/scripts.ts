@@ -782,27 +782,27 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Darmanitan', this)
 			.baseStats
 				.setATK(130)
-				.setSPE(105);
+				.setSPE(105)
+			.pokemon.learnset
+				.add('Psychic Noise', 8);
 		new ModifyPokemon('Darmanitan-Zen', this)
 			.baseStats
 				.setDEF(85)
 				.setSPA(130)
 				.setSPD(85)
-				.setSPE(45)
-			.pokemon.learnset
-				.add('Psychic Noise');
+				.setSPE(45);
 		new ModifyPokemon('Darmanitan-Galar', this)
 			.baseStats
 				.setATK(130)
-				.setSPE(105);
+				.setSPE(105)
+			.pokemon.learnset
+				.remove('Belly Drum');
 		new ModifyPokemon('Darmanitan-Galar-Zen', this)
 			.baseStats
 				.setATK(130)
 				.setDEF(50)
 				.setSPD(50)
-				.setSPE(115)
-			.pokemon.learnset
-				.remove('Belly Drum');
+				.setSPE(115);
 		new ModifyPokemon('Decidueye', this)
 			.abilities
 				.setHiddenAbility('Bellligerent Quills')
