@@ -6,6 +6,7 @@ export class ModifyPokemon {
 
 	constructor(name: string, dex: ModdedDex) {
 		this._name = name.includes("-") ? name.toLowerCase().replace('-' , '') : name.toLowerCase();
+		this._name = this._name.includes(" ") ? this._name.replace(/ +/g, '') : this._name;
 		this._dex = dex;
 		console.log(this._name);
 	}
