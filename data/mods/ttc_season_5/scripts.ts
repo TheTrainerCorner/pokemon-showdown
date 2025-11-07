@@ -1306,5 +1306,335 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Jynx', this)
 			.learnset
 				.add('Dazzling Gleam');
-	},
+		new ModifyPokemon('Kabutops', this)
+			.types
+				.setType('Water', 'Bug')
+			.pokemon.baseStats
+				.setATK(135)
+			.pokemon.learnset
+				.add('High Horsepower');
+		new ModifyPokemon('Kangaskhan', this)
+			.abilities
+				.setHiddenAbility('Guts')
+			.pokemon.baseStats
+				.setDEF(85)
+				.setSPD(85)
+			.pokemon.learnset
+				.add('Trailblaze')
+				.remove('Zap Cannon');
+		new ModifyPokemon('Kangaskhan-Mega', this)
+			.baseStats
+				.setDEF(110)
+				.setSPD(110);
+		new ModifyPokemon('Kartana', this)
+			.learnset
+				.add('Behemoth Blade');
+		new ModifyPokemon('Kartana', this)
+			.learnset
+				.add('Multi Attack');
+		new ModifyPokemon('Keldeo', this)
+			.learnset
+				.remove('Vacuum Wave');
+		new ModifyPokemon('Kilowattrel', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Kingdra', this)
+			.learnset
+				.add('Frost Breath');
+		new ModifyPokemon('Kingler', this)
+			.abilities
+				.setAbility0('Kingly Presence')
+			.pokemon.baseStats
+				.setHP(70)
+				.setSPD(60)
+			.pokemon.learnset
+				.add('Behemoth Bash')
+				.remove('Meteor Mash');
+		new ModifyPokemon('Kleavor', this)
+			.learnset
+				.remove('Morning Sun')	
+				.remove('Cross Poison');
+		new ModifyPokemon('Keldeo', this)
+			.learnset
+				.remove('Vacuum Wave');
+		new ModifyPokemon('Klefki', this)
+			.learnset
+				.add('Heal Bell')
+				.add('Topsy Turvy')
+				.add('Future Sight')
+			.pokemon.baseStats
+				.setHP(62);
+		new ModifyPokemon('Komala', this)
+			.learnset
+				.add('slack Off')
+				.remove('Wish');
+		new ModifyPokemon('Krookodile', this)
+			.learnset
+				.add('Dire Claw')
+				.add('Iron Head')
+			.pokemon.baseStats
+				.setATK(122);
+		new ModifyPokemon('Kyurem', this)
+			.baseStats
+				.setATK(120)
+				.setSPA(120)
+			.pokemon.learnset
+				.remove('Signal Beam');
+		new ModifyPokemon('Kyurem-Black', this)
+			.baseStats
+				.setATK(150)
+				.setSPE(95);
+		new ModifyPokemon('Lapras', this)
+			.abilities
+				.setHiddenAbility('Liquid Voice')
+			.pokemon.baseStats
+				.setATK(70)
+				.setSPE(55)
+			.pokemon.learnset
+				.add('Bouncy Bubble')	
+				.remove('Wish');
+		new ModifyPokemon('Latias', this)
+			.learnset
+				.remove('Cut')
+				.remove('Stored Power');
+		new ModifyPokemon('Latios', this)
+			.learnset
+				.remove('Cut')
+				.remove('Stored Power');
+		new ModifyPokemon('Leafeon', this)
+			.learnset
+				.add('Taunt');
+		new ModifyPokemon('Leavanny', this)
+			.abilities
+				.setAbility1('Swarm');
+		new ModifyPokemon('Ledian', this)
+			.learnset
+				.remove('Electrify');
+		new ModifyPokemon('Lickilicky', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Lickitung', this)
+			.learnset
+				.remove('Cut')
+			.pokemon.baseStats
+				.setATK(60)
+				.setSPA(55);
+		new ModifyPokemon('Lilligant', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Lopunny', this)
+			.learnset
+				.remove('Cut')
+				.add('Mach Punch')
+				.add('Draining Kiss')
+				.add('Cotton Guard')
+				.add('Dynamic Punch')
+				.add('Swords Dance');
+		new ModifyPokemon('Lumineon', this)
+			.abilities
+				.setHiddenAbility('Water Bubble')
+			.pokemon.learnset
+				.add('Quiver Dance')
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Lurantis', this)
+			.learnset
+				.add('Lunge')
+				.add('Bug Buzz')
+				.add('Hammer Arm');
+		new ModifyPokemon('Luvdisc', this)
+			.types
+				.setType('Water')
+			.pokemon.abilities
+				.setAbility1('Regenerator')
+			.pokemon.baseStats
+				.setHP(95)
+				.setATK(60)
+				.setDEF(60)
+				.setSPA(40)
+				.setSPD(45)
+				.setSPE(65)
+			.pokemon.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast')
+				.remove('Fleur Cannon');
+		new ModifyPokemon('Lycanroc', this)
+			.types
+				.setType('Rock', 'Normal');
+		new ModifyPokemon('Lycanroc-Dusk', this)
+			.types
+				.setType('Rock', 'Normal')
+			.pokemon.baseStats
+				.setSPA(48)
+				.setSPE(112)
+			.pokemon.learnset
+				.remove('Morning Sun');
+		new ModifyPokemon('Lycanroc-Midnight', this)
+			.learnset
+				.add('Head Smash')
+				.add('Accelerock');
+		new ModifyPokemon('Machamp', this)
+			.learnset
+				.remove('Vacuum Wave')
+				.remove('Comet Punch');
+		new ModifyPokemon('Malamar', this)
+			.learnset
+				.add('Psycho Boost')
+				.add('Close Combat')
+				.add('Bulk up');
+		new ModifyPokemon('Mankey', this)
+			.learnset
+				.remove('Meditate');
+		new ModifyPokemon('Mawile', this)
+			.learnset
+				.add('Dazzling Gleam');
+		new ModifyPokemon('Medicham', this)
+			.learnset
+				.add('Agility');
+		new ModifyPokemon('Meganium', this)
+			.learnset
+				.add('Pixie Burst')
+				.add('Leaf Blade')
+				.add('Earth Power')
+				.remove('Cut')
+				.remove('Moonblast');
+		new ModifyPokemon('Melmetal', this)
+			.learnset
+				.remove('Meteor Mash');
+		new ModifyPokemon('Meloetta', this)
+			.learnset
+				.add('Psychic Noise');		
+		new ModifyPokemon('Meloetta-Caroler', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Meowstic', this)
+			.learnset
+				.add('Heal Block')
+				.add('Wish')
+				.add('Taunt')
+				.add('Spikes')
+				.add('Toxic Spikes')
+				.add('Stealth Rock')
+				.remove('Cut');
+		new ModifyPokemon('Meowstic-F', this)
+			.learnset
+				.add('Earth Power')	
+				.add('Water Pulse')	
+				.remove('Cut')
+			.pokemon.baseStats
+				.setHP(94);
+		new ModifyPokemon('Mespirit', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Metagross', this)
+			.learnset
+				.add('Psyshield Bash');
+		new ModifyPokemon('Mienshao', this)
+			.learnset
+				.remove('Vacuum Wave');
+		new ModifyPokemon('Mightyena', this)
+			.learnset
+				.add('Extreme Speed')
+			.pokemon.baseStats
+				.setSPD(70)
+				.setSPE(87);
+		new ModifyPokemon('Milotic', this)
+			.learnset
+				.add('Knock Off');
+		new ModifyPokemon('Mismagius', this)
+			.learnset
+				.add('Pixie Burst')
+				.add('Alluring Voice')
+				.remove('Moonblast');
+		new ModifyPokemon('Moltres', this)
+			.learnset
+				.add('Crest Rush')
+			.pokemon.abilities
+				.setHiddenAbility('Flame Body');
+		new ModifyPokemon('Morpeko', this)
+			.baseStats
+				.setATK(118)
+				.setDEF(63)
+				.setSPD(63);
+		new ModifyPokemon('Mothim', this)
+			.abilities
+				.setAbility1('Honey Gather');
+		new ModifyPokemon('MrMime', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast')
+			.pokemon.abilities
+				.setAbility1('Telepathy');	
+		new ModifyPokemon('Mudsdale', this)
+			.abilities
+				.setAbility0('Vital Spirit');
+		new ModifyPokemon('Muk-Alola', this)
+			.abilities
+				.setAbility0('Regenerator')
+				.setAbility1('Poison Touch')
+			.pokemon.baseStats
+				.setHP(105)
+				.setDEF(80)
+				.setSPD(95);
+		new ModifyPokemon('Musharna', this)
+			.baseStats
+				.setSPA(117);				
+		new ModifyPokemon('Nidoking', this)
+			.abilities
+				.setAbility1('Hustle')
+				.setHiddenAbility('Kingly Presence')
+			.pokemon.baseStats
+				.setATK(119);
+		new ModifyPokemon('Nidoqueen', this)
+			.abilities
+				.setAbility1('Thick Fat')
+				.setHiddenAbility('Queenly Majesty')
+			.pokemon.baseStats
+				.setSPA(106);
+		new ModifyPokemon('Ninetales', this)
+			.abilities
+				.setHiddenAbility('Drought');
+		new ModifyPokemon('Ninetales', this)
+			.learnset
+				.add('Pixie Burst')
+				.add('Alluring Voice')
+				.remove('Moonblast')
+			.pokemon.baseStats
+				.setSPA(91);
+		new ModifyPokemon('Ninjask', this)
+			.learnset
+				.add('Piercing Doom');
+		new ModifyPokemon('Noivern', this)
+			.learnset
+				.add('Crest Rush')
+				.remove('Moonlight')
+			.pokemon.baseStats
+				.setSPE(133);
+		new ModifyPokemon('Obstagoon', this)
+			.learnset
+				.add('Foul Play')
+				.add('Snatch')
+			.pokemon.baseStats
+				.setDEF(106)
+				.setSPA(55)
+				.setSPD(86)
+				.setSPE(90);
+		new ModifyPokemon('Ogerpon-Cornerstone', this)
+			.abilities
+				.setAbility0('Rocky Payload');
+		new ModifyPokemon('Omastar', this)
+			.baseStats
+				.setSPD(95)
+				.setSPE(65);
+		new ModifyPokemon('Orthworm', this)
+			.learnset
+				.add('Shore Up');
+		new ModifyPokemon('Overqwil', this)
+			.baseStats
+				.setDEF(100)
+				.setSPA(75);
+		// start of p, no notes							
+	},	
  };
