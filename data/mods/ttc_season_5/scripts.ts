@@ -153,7 +153,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPE(121);
 		new ModifyPokemon('Alakazam-Mega', this)
 			.abilities
-				.setAbility0("Mind's Eye")
+				.setAbility0('Enlightenment')
 			.pokemon.baseStats
 				.setHP(75)
 				.setATK(59)
@@ -306,7 +306,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove('Cross Poison');
 		new ModifyPokemon('Aromatisse', this)
 			.learnset
-				.add('Eeerie Spell')
+				.add('Eerie Spell')
 				.add('Pixie Burst')
 				.add('Heal Block')
 				.add('Hypnosis')
@@ -595,7 +595,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPD(90)
 			.pokemon.learnset
 				.add('Wave Crash')
-				.add('Fishous Rend')
+				.add('Fishious Rend')
 				.add('Trick Room');
 		new ModifyPokemon('Castform', this)
 			.baseStats
@@ -1010,6 +1010,16 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setHiddenAbility('Grassy Surge')
 			.pokemon.learnset
 				.add('Pixie Burst')
+				.add('Alluring Voice')
+				.add('Baton Pass')
+				.add('Chilling Water')
+				.add('Defog')
+				.add('Draining Kiss')
+				.add('Light Screen')
+				.add('Psychic Noise')
+				.add('Stored Power')
+				.add('Trailblaze')
+				.add('Trick')
 				.remove('Moonblast');
 		new ModifyPokemon('Florges', this)
 			.learnset
@@ -1635,6 +1645,579 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setDEF(100)
 				.setSPA(75);
-		// start of p, no notes							
-	},	
+		new ModifyPokemon('Palafin-Hero', this)
+			.abilities
+				.setHiddenAbility('Justified')
+			.pokemon.baseStats
+				.setATK(145)
+				.setDEF(96)
+				.setSPA(63)
+				.setSPD(96);
+		new ModifyPokemon('Palafin', this)
+			.baseStats
+				.setATK(80)
+				.setDEF(73)
+				.setSPA(74)
+				.setSPD(73);
+		new ModifyPokemon('Palossand', this)
+			.abilities
+				.setAbility1('Sand Spit')
+			.pokemon.baseStats
+				.setATK(70)
+				.setSPD(90);
+		new ModifyPokemon('Pangoro', this)
+			.learnset
+				.add('Giga Drain');
+		new ModifyPokemon('Parasect', this)
+			.types	
+				.setType('Bug', 'Ghost')
+			.pokemon.learnset
+				.add('Shadow Claw')
+				.add('Shadow Sneak')
+				.add('Phantom Force')
+				.add('Night Slash');
+		new ModifyPokemon('Pawmot', this)
+			.learnset
+				.remove('Wish');
+		new ModifyPokemon('Pecharunt', this)
+			.baseStats	
+				.setATK(78)
+				.setSPD(98);
+		new ModifyPokemon('Pelipper', this)
+			.baseStats
+				.setHP(65)
+				.setSPD(75)
+				.setSPE(55);
+		new ModifyPokemon('Persian-Alola', this)
+			.baseStats
+				.setSPA(95);
+		new ModifyPokemon('Phione', this)
+			.baseStats
+				.setHP(70)
+				.setATK(70)
+				.setDEF(70)
+				.setSPA(70)
+				.setSPD(70)
+				.setSPE(70);
+		new ModifyPokemon('Pidgeot', this)
+			.abilities
+				.setHiddenAbility('Wind Rider')
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Pinsir', this)
+			.learnset
+				.add('Lunge')
+				.add('Aerial Ace');
+		new ModifyPokemon('Politoed', this)
+			.types
+				.setType('Water');
+		new ModifyPokemon('Poliwrath', this)
+			.learnset
+				.add('Aqua Jet')
+				.remove('Jet Punch')
+				.remove('Vacuum Wave');
+		new ModifyPokemon('Polteageist', this)
+			.learnset
+				.add('Scald')
+				.add('Life Dew')
+				.add('Chilling Water')
+				.add('Soak')
+				.add('Water Sport');
+		new ModifyPokemon('Primarina', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Pyroar', this)
+			.learnset
+				.add('Earth Power');
+		new ModifyPokemon('Quaquaval', this)
+			.learnset
+				.remove('Victory Dance');
+		new ModifyPokemon('Qwilfish', this)
+			.abilities
+				.setAbility0('Belligerent Quills')
+			.pokemon.baseStats
+				.setHP(85)
+				.setATK(75)
+				.setSPE(75);
+		new ModifyPokemon('Qwilfish-Hisui', this)
+			.learnset
+				.add('Spike Cannon')
+				.add('Spiky Shield')
+				.add('Baneful Bunker');
+		new ModifyPokemon('Rabsca', this)
+			.learnset
+				.add('Mud Bomb');
+		new ModifyPokemon('Raikou', this)
+			.abilities
+				.setAbility0('Static')
+			.pokemon.learnset
+				.remove('Cut')
+				.remove('Signal Beam')
+				.remove('Thunderclap');
+		new ModifyPokemon('Rampardos', this)
+			.baseStats
+				.setSPD(70)
+				.setSPE(73)
+			.pokemon.learnset
+				.remove('Cut');
+		new ModifyPokemon('Rapidash-Galar', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Raticate', this)
+			.baseStats
+				.setHP(70)
+				.setSPE(104);
+		new ModifyPokemon('Regirock', this)
+			.learnset	
+				.add('Salt Cure');
+		new ModifyPokemon('Relicanth', this)
+			.learnset
+				.add('Wave Crash');
+		new ModifyPokemon('Rhydon', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Rhyperior', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Ribombee', this)
+			.learnset	
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Roaring Moon', this)
+			.baseStats
+				.setATK(137)
+				.setSPA(59)
+				.setSPE(117);
+		new ModifyPokemon('Rotom-Fan', this)
+			.abilities
+				.setAbility1('Wind Rider');
+		new ModifyPokemon('Runerigus', this)
+			.learnset
+				.remove('Chilly Reception');
+		new ModifyPokemon('Sableye', this)
+			.baseStats
+				.setHP(75)
+				.setATK(85)
+				.setSPA(85)
+				.setSPE(30)
+			.pokemon.learnset
+				.add('Parting Shot')
+				.add('Heal Block')
+				.add('Safeguard')
+				.remove('Cut');
+		new ModifyPokemon('Sableye-Mega', this)
+			.baseStats
+				.setHP(75)
+				.setATK(95)
+				.setSPA(95)
+				.setSPE(20);
+		new ModifyPokemon('Salamence', this)
+			.baseStats
+				.setATK(110)
+				.setSPA(125);
+		new ModifyPokemon('Salamence-Mega', this)
+			.baseStats
+				.setATK(110)
+				.setDEF(130)
+				.setSPA(135)
+				.setSPD(95);
+		new ModifyPokemon('Samurott', this)
+			.baseStats	
+				.setATK(115)
+				.setSPA(110);
+		new ModifyPokemon('Sandaconda', this)
+			.baseStats
+				.setSPE(61)
+			.pokemon.learnset
+				.add('Sandsear Storm');
+		new ModifyPokemon('Sawk', this)
+			.baseStats
+				.setSPA(20)
+				.setSPE(95);
+		new ModifyPokemon('Scizor', this)
+			.learnset
+				.remove('Kowtow Cleave')
+				.remove('Leaf Blade')
+				.remove('Morning Sun')
+				.remove('Cross Poison');
+		new ModifyPokemon('Scolipede', this)
+			.learnset
+				.add('U-Turn');
+		new ModifyPokemon('Scrafty', this)
+			.abilities
+				.setAbility1('Defiant')
+			.pokemon.learnset
+				.add('Body Press')
+				.add('Parting Shot')
+				.add('Dynamic Punch');
+		new ModifyPokemon('Scream Tail', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Scyther', this)
+			.learnset
+				.remove('Cross Poison')
+				.remove('Morning Sun');
+		new ModifyPokemon('Seismitoad', this)
+			.learnset
+				.remove('Boomburst');
+		new ModifyPokemon('Seviper', this)
+			.abilities
+				.setHiddenAbility('Multiscale');
+		new ModifyPokemon('Shaymin', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Shiinotic', this)
+			.types
+				.setType('Grass', 'Cosmic')
+			.pokemon.learnset
+				.add('Pixie Burst');
+		new ModifyPokemon('Sigilyph', this)
+			.learnset
+				.add('Crest Rush')
+				.remove('Moonblast')
+				.remove('Cosmic Power')
+				.remove('Photon Geyser');
+		new ModifyPokemon('Silvally', this)
+			.learnset
+				.add('Aqua Tail')
+				.add('Flip Turn');
+		new ModifyPokemon('Simipour', this)
+			.learnset
+				.add('Endure')
+				.add('Liquidation')
+				.remove('Cut');
+		new ModifyPokemon('Simisage', this)
+			.learnset
+				.add('Endure')
+				.remove('Cut');
+		new ModifyPokemon('Simisear', this)
+			.learnset
+				.add('Endure')
+				.remove('Flame Wheel')
+				.remove('Cut');
+		new ModifyPokemon('Skuntank', this)
+			.abilities
+				.setHiddenAbility('Neutralizing Gas')
+			.pokemon.baseStats
+				.setSPE(74);
+		new ModifyPokemon('Slowbro', this)
+			.learnset
+				.add('Power Gem')
+				.add('Heal Block');
+		new ModifyPokemon('Slowbro-Galar',this)
+			.baseStats
+				.setSPD(75);
+		new ModifyPokemon('Slowking', this)
+			.learnset
+				.add('Heal Block');
+		new ModifyPokemon('Slurpuff', this)
+			.learnset
+				.add('Decorate')
+				.add('Swords Dance')
+				.add('Self-Destruct');
+		new ModifyPokemon('Snorlax', this)
+			.abilities
+				.setAbility0('Comatose');
+		new ModifyPokemon('Solgaleo', this)
+			.learnset
+				.remove('Cosmic Power');
+		new ModifyPokemon('Spinda', this)
+			.learnset
+				.add('Hammer Arm');
+		new ModifyPokemon('Spiritomb', this)
+			.baseStats
+				.setDEF(103)
+				.setSPD(103);
+		new ModifyPokemon('Squawkabilly', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Squawkabilly-Blue', this)
+			.learnset	
+				.add('Crest Rush');
+		new ModifyPokemon('Squawkabilly-White', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Squawkabilly-Yellow', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Stakataka', this)
+			.baseStats
+				.setDEF(200)
+				.setSPD(112);
+		new ModifyPokemon('Staraptor', this)
+			.types
+				.setType('Normal', 'Flying')
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Starmie', this)
+			.learnset
+				.add('Charge Beam')
+				.add('Aqua Jet')
+				.add('Liquidation')
+				.add('Self-Destruct')
+				.add('Bulk Up')
+				.add('Heal Block')
+				.add('Zen Headbutt');
+		new ModifyPokemon('Steelix', this)
+			.learnset
+				.add('Spikes');
+		new ModifyPokemon('Stonjourner', this)
+			.abilities
+				.setHiddenAbility('Sand Stream')
+			.pokemon.baseStats
+				.setHP(110)
+				.setATK(135)
+				.setSPD(70)
+				.setSPE(50);
+		new ModifyPokemon('Stunfisk', this)
+			.baseStats
+				.setHP(109)
+				.setSPD(104)
+			.pokemon.learnset
+				.add('Iron Defense')
+				.add('Crunch')
+				.add('Ice Fang')
+				.add('Flash Cannon');
+		new ModifyPokemon('Stunifisk-Galar', this)
+			.baseStats
+				.setHP(109)
+				.setDEF(104)
+			.pokemon.learnset
+				.add('Steel Spikes');
+		new ModifyPokemon('Sudowoodo', this)
+			.learnset
+				.remove('Meteor Beam');
+		new ModifyPokemon('Suicune', this)
+			.abilities
+				.setAbility0('Hydration');
+		new ModifyPokemon('Sunflora', this)
+			.baseStats
+				.setSPA(110)
+			.pokemon.learnset
+				.remove('Cut');
+		new ModifyPokemon('Swalot', this)
+			.abilities
+				.setAbility0('Oblivious');
+		new ModifyPokemon('Swanna', this)
+			.baseStats
+				.setATK(102)
+				.setSPA(102)
+				.setSPE(113)
+			.pokemon.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Swellow', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Swoobat', this)
+			.baseStats
+				.setATK(77)
+			.pokemon.learnset
+				.add('Esper Wing');
+		new ModifyPokemon('Sylveon', this)
+			.learnset
+				.add('Pixie Burst')
+				.add('Taunt')
+				.remove('Cut')
+				.remove('Moonblast');
+		new ModifyPokemon('Talonflame', this)
+			.baseStats
+				.setSPA(89)
+			.pokemon.learnset
+				.add('Crest Rush')
+				.add('Whirlwind')
+				.add('Sky Attack')
+				.add('Flame Wheel');
+		new ModifyPokemon('Tangrowth', this)
+			.learnset
+				.remove('Mornging Sun');
+		new ModifyPokemon('Tapu Bulu', this)
+			.learnset
+				.add('Grassy Glide');
+		new ModifyPokemon('Tapu Fini', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Tapu Lele', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Tauros', this)
+			.abilities
+				.setAbility1('Guts')
+			.pokemon.baseStats
+				.setHP(80)
+				.setATK(120)
+				.setDEF(110)
+				.setSPA(25)
+				.setSPD(75)
+			.pokemon.learnset
+				.add('Bulk Up')
+				.add('Taunt')
+				.add('Slack Off')
+				.add('Mega Kick')
+				.add('Low Sweep')
+				.add('Thunderous Kick')
+				.add('Rolling Kick')
+				.remove('Throat Chop');
+		new ModifyPokemon('Tentacruel', this)
+			.learnset
+				.remove('Spikes')
+				.remove('Nasty Plot');
+		new ModifyPokemon('Terrakion', this)
+			.learnset
+				.remove('Stone Axe');
+		new ModifyPokemon('Throh', this)
+			.baseStats
+				.setSPA(20)
+				.setSPD(95);
+		new ModifyPokemon('Ting-Lu', this)
+			.abilities
+				.setHiddenAbility('Terraforming')
+			.pokemon.learnset
+				.remove('Parting Shot');
+		new ModifyPokemon('Tinkaton', this)
+			.learnset
+				.add('Magical Torque')
+				.add('Ivy Cudgel');
+		new ModifyPokemon('Togedemaru', this)
+			.learnset
+				.add('Steel Spikes');
+		new ModifyPokemon('Togekiss', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Torkoal', this)
+			.learnset
+				.remove('Magma Storm');
+		new ModifyPokemon('Torterra', this)
+			.abilities
+				.setHiddenAbility('Terraforming');
+		new ModifyPokemon('Toxicroak', this)
+			.abilities
+				.setAbility0('Cold-Blooded')
+			.pokemon.baseStats
+				.setSPA(92)
+			.pokemon.learnset
+				.add('Piercing Doom')
+				.remove('Hydro Pump')
+				.remove('Liquidation');
+		new ModifyPokemon('Trevenant', this)
+			.learnset
+				.add('Heal Block');
+		new ModifyPokemon('Tropius', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Typhlosion', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Typhlosion-Hisui', this)
+			.learnset
+				.remove('Cut');
+		new ModifyPokemon('Tyrantrum', this)
+			.baseStats
+				.setSPA(66)
+				.setSPD(51);
+		new ModifyPokemon('Umbreon', this)
+			.abilities
+				.setHiddenAbility('Field Support')
+			.pokemon.learnset
+				.remove('Cut');
+		new ModifyPokemon('Unfezant', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Vaporeon', this)
+			.abilities
+				.setAbility1('Water Veil')
+			.pokemon.learnset
+				.add('Taunt');
+		new ModifyPokemon('Venomoth', this)
+			.learnset
+				.add('Corrosive Gas');
+		new ModifyPokemon('Victini', this)
+			.baseStats
+				.setHP(100)
+				.setDEF(100)
+				.setSPD(100)
+				.setSPE(100);
+		new ModifyPokemon('Victreebel', this)
+			.learnset
+				.add('Toxic Spikes');
+		new ModifyPokemon('Vikavolt', this)
+			.abilities
+				.setAbility1('undefined');
+		new ModifyPokemon('Vileplume', this)
+			.learnset
+				.remove('Moonblast');
+		new ModifyPokemon('Volbeat', this)
+			.learnset
+				.add('Powder');
+		new ModifyPokemon('Volcanion', this)
+			.learnset
+				.add('Searing Shot')
+				.remove('Cut');
+		new ModifyPokemon('Volcarona-Faerie', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Wailord', this)
+			.abilities
+				.setAbility1('Water Veil');
+		new ModifyPokemon('Walking Wake', this)
+			.baseStats
+				.setHP(93)
+				.setATK(89)
+				.setSPA(121)
+				.setSPD(87);
+		new ModifyPokemon('Watchog', this)
+			.learnset
+				.add('U-Turn')
+				.add('Double Edge')
+				.add('Endure');
+		new ModifyPokemon('Weezing', this)
+			.learnset
+				.add('Gastro Acid');
+		new ModifyPokemon('Weezing-Galar', this)
+			.learnset
+				.add('Gastro Acid');
+		new ModifyPokemon('Whimsicott', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Wigglytuff', this)
+			.learnset
+				.add('Pixie Burst')
+				.remove('Moonblast');
+		new ModifyPokemon('Wormadam', this)
+			.learnset
+				.add('Sticky Web');
+		new ModifyPokemon('Wormadam-Sandy', this)
+			.learnset
+				.add('Sticky Web');
+		new ModifyPokemon('Wormadam-Trash', this)
+			.learnset
+				.add('Sticky Web');
+		new ModifyPokemon('Zamazenta-Crowned', this)
+			.learnset
+				.remove('Moonblast');
+		new ModifyPokemon('Zangoose', this)
+			.abilities
+				.setHiddenAbility('Toxic Indulgence');
+		new ModifyPokemon('Zapdos', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Zapdos-Galar', this)
+			.learnset
+				.add('Crest Rush');
+		new ModifyPokemon('Zeraora', this)
+			.types
+				.setType('Electric');
+		new ModifyPokemon('Zygarde', this)
+			.learnset	
+				.add('Iron Head');
+				//end of season 5 Mon changes
+	}
  };
