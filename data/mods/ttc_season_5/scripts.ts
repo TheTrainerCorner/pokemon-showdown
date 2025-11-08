@@ -82,6 +82,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyMove('Snipe Shot', this)
 			.flags
 				.add('pulse');
+		new ModifyMove('Barrage', this)
+			.setType('Grass')
+			.setAccuracy(85);
 		// Pokemon Changes
 		new ModifyPokemon('Abomasnow', this)
 			.baseStats
