@@ -1534,7 +1534,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.remove('Cut')
 			.pokemon.baseStats
 				.setHP(94);
-		new ModifyPokemon('Mespirit', this)
+		new ModifyPokemon('Mespit', this)
 			.learnset
 				.add('Pixie Burst')
 				.remove('Moonblast');
