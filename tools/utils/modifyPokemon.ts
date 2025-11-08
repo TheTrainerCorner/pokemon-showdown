@@ -45,16 +45,16 @@ export class ModifyPokemon {
 				this._dex = dex;
 				this._pokemon = pokemon;
 			}
-		
-			setAbility0(name: string) {
+
+			setAbility0(name: string | undefined) {
 				this._dex.modData('Pokedex', this._name).abilities[0] = name;
 				return this;
 			}
-			setAbility1(name: string) {
+			setAbility1(name: string | undefined) {
 				this._dex.modData('Pokedex', this._name).abilities[1] = name;
 				return this;
 			}
-			setHiddenAbility(name: string) {
+			setHiddenAbility(name: string | undefined) {
 				this._dex.modData('Pokedex', this._name).abilities['H'] = name;
 				return this;
 			}

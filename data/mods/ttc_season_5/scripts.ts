@@ -2148,7 +2148,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Toxic Spikes');
 		new ModifyPokemon('Vikavolt', this)
 			.abilities
-				.setAbility1('undefined');
+				.setAbility1(undefined);
 		new ModifyPokemon('Vileplume', this)
 			.learnset
 				.remove('Moonblast');
