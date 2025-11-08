@@ -1982,7 +1982,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Crunch')
 				.add('Ice Fang')
 				.add('Flash Cannon');
-		new ModifyPokemon('Stunifisk-Galar', this)
+		new ModifyPokemon('Stunfisk-Galar', this)
 			.baseStats
 				.setHP(109)
 				.setDEF(104)
