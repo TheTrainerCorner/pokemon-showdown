@@ -92,6 +92,43 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "On switch-in, sets Rain Dance and Electric Terrain.",
 		desc: "On switch-in, this Pokemon sets Rain Dance and Electric Terrain.",
 	},
+	supremehatred: {
+		name: 'Supreme Hatred',
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Dark') {
+				this.boost({atk: 1});
+			}
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.atk && boost.atk < 0) {
+				delete boost.atk;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "Attack", "[from] ability: Hyper Cutter", "[of] " + target);
+				}
+			}
+		},
+		shortDesc: "Raises Attack by 1 if hit by a Dark move. Prevents Attack drops.",
+		desc: "If this Pokemon is hit by a Dark-type move, its Attack is raised by 1 stage. This Pokemon's Attack cannot be lowered by other Pokemon's moves or abilities.",
+	},
+	perfectsync: {
+		name: 'Perfect Sync',
+		onTryHit(target, source, move) {
+			if (target !== source && target.isAlly(source) && move.category !== 'Status') {
+				this.add('-activate', target, 'ability: Telepathy');
+				return null;
+			}
+		},
+		onModifyAccuracyPriority: 10,
+		onModifyAccuracy(accuracy, target, source, move) {
+			if (move.category === 'Status' && typeof accuracy === 'number') {
+				this.debug('Wonder Skin - setting accuracy to 50');
+				return 50;
+			}
+		},
+		shortDesc: "This Pokemon's allies cannot be damaged by its moves. Status moves used by allies have 50% accuracy.",
+		desc: "This Pokemon's allies cannot be damaged by its moves. Additionally, status moves used by allies have their accuracy set to 50%.",
+	},
 	// Mod Abilities
 	rockypayload: {
 		inherit: true,
