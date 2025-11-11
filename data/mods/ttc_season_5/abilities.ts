@@ -54,7 +54,43 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		gen: 9,
 	},
 	irondeposit: {
-		name: 'Iron Deposit', // Placeholder for right now.
+		name: 'Iron Deposit',
+		onSwitchIn(pokemon) {
+			for (const foe of pokemon.side.foes()) {
+				if (pokemon.abilityState.SteelSpikesTriggered) return;
+					pokemon.abilityState.SteelSpikesTriggered = true;
+					foe.side.addSideCondition('gmaxsteelsurge');
+					this.add('-activate', pokemon, 'ability: Iron Technician');
+			}
+		},
+		shortDesc: "On switch-in, sets Steelsurge spikes on the opposing side.",
+		desc: "On switch-in, this Pokemon sets Steelsurge spikes on the opposing side. Once per Turn",
+	},
+	enlightenment: {
+		name: 'Enlightenment',
+		onSourceModifyDamage(relayVar, source, target, move) {
+			let mod = 1;
+			if (move.type === 'Dark') mod *= 2;
+			if (move.category === 'Special') mod /2;
+			return this.chainModify(mod);
+		},
+		isBreakable: true,
+		num: -5004,
+		gen: 9,
+		shortDesc: "This Pokemon takes 2x damage from Dark moves and 0.5x from Special moves.",
+		desc: "This Pokemon takes double damage from Dark-type moves and half damage from Special moves.",
+	},
+	stormbringer: {
+		name: 'Strombringer',
+		onStart(pokemon) {
+			this.field.setWeather('raindance');
+			this.field.setTerrain('electricterrain');
+		},
+		isBreakable: true,
+		num: -5005,
+		gen: 9,
+		shortDesc: "On switch-in, sets Rain Dance and Electric Terrain.",
+		desc: "On switch-in, this Pokemon sets Rain Dance and Electric Terrain.",
 	},
 	// Mod Abilities
 	rockypayload: {
