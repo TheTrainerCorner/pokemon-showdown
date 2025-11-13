@@ -659,7 +659,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Crest Rush');
 		new ModifyPokemon('Cherrim', this)
 			.abilities
-				.setAbility1('None')
+				.setAbility1(undefined)
 			.pokemon.baseStats
 				.setHP(80)
 				.setATK(79)
@@ -858,7 +858,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(90);
 		new ModifyPokemon('Dracozolt', this)
 			.abilities
-				.setHiddenAbility('Electromorphasis')
+				.setHiddenAbility('Electromorphosis')
 			.pokemon.baseStats
 				.setHP(100)
 				.setATK(110)
@@ -877,6 +877,8 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Body Slam')
 				.add('Parabolic Charge')
 				.add('Whirlwind')
+				.add('Discharge')
+				.add('Rising Voltage')
 				.add('Earth Power');
 		new ModifyPokemon('Drapion', this)
 			.types
@@ -962,6 +964,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Excadrill', this)
 			.learnset
 				.add('Megahorn')
+				.add('Corkscrew Crash')
 				.add('Agility');
 		new ModifyPokemon('Exploud', this)
 			.baseStats
@@ -1363,6 +1366,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.pokemon.learnset
 				.add('Behemoth Bash')
 				.remove('Meteor Mash');
+		new ModifyPokemon('Klawf', this)
+			.learnset
+				.remove('Meteor Beam');
 		new ModifyPokemon('Kleavor', this)
 			.learnset
 				.remove('Morning Sun')	
@@ -1609,7 +1615,7 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Ninetales', this)
 			.abilities
 				.setHiddenAbility('Drought');
-		new ModifyPokemon('Ninetales', this)
+		new ModifyPokemon('Ninetales-Alola', this)
 			.learnset
 				.add('Pixie Burst')
 				.add('Alluring Voice')
@@ -1775,6 +1781,9 @@ export const Scripts: ModdedBattleScriptsData = {
 		new ModifyPokemon('Regirock', this)
 			.learnset	
 				.add('Salt Cure');
+		new ModifyPokemon('Registeel', this)
+			.abilities
+				.setAbility0('Iron Deposit');
 		new ModifyPokemon('Relicanth', this)
 			.learnset
 				.add('Wave Crash');
