@@ -125,7 +125,7 @@ export class ModifyPokemon {
 				const prevo = this._dex.modData('Pokedex', this._name).prevo;
 
 				if (!prevo) return;
-
+				console.log(prevo);
 				const prevoLearnset = this._dex.modData('Learnsets', prevo).learnset;
 
 				if (!prevoLearnset[move]) return;
