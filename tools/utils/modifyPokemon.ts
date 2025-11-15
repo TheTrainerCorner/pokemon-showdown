@@ -125,10 +125,13 @@ export class ModifyPokemon {
 				const prevo = this._dex.modData('Pokedex', this._name).prevo;
 
 				if (!prevo) return;
-				
+
 				let prevoName = prevo.includes("-") ? prevo.toLowerCase().replace('-' , '') : prevo.toLowerCase();
 				prevoName = prevoName.includes(" ") ? prevoName.replace(/ +/g, '') : prevoName;
+
 				const prevoLearnset = this._dex.modData('Learnsets', prevoName).learnset;
+
+				if (!prevoLearnset) return;
 
 				if (!prevoLearnset[move]) return;
 				
