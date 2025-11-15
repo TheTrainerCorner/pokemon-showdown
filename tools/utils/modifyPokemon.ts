@@ -129,9 +129,10 @@ export class ModifyPokemon {
 				let prevoName = prevo.includes("-") ? prevo.toLowerCase().replace('-' , '') : prevo.toLowerCase();
 				prevoName = prevoName.includes(" ") ? prevoName.replace(/ +/g, '') : prevoName;
 
+				if (!this._dex.modData('Learnsets', prevoName)) return;
+
 				const prevoLearnset = this._dex.modData('Learnsets', prevoName).learnset;
 
-				if (!prevoLearnset) return;
 
 				if (!prevoLearnset[move]) return;
 				
