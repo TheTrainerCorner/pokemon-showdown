@@ -2231,5 +2231,12 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset	
 				.add('Iron Head');
 				//end of season 5 Mon changes
+		this.modData('TypeChart', "fairy").damageTaken["Bug"]=1;
+		this.modData('TypeChart', "ice").damageTaken["Water"]=2;
+		this.modData('TypeChart', "cosmic").damageTaken["Grass"]=0;
+		this.modData('TypeChart', "grass").damageTaken["Cosmic"]=0;
+		this.modData('TypeChart', "ground").damageTaken["Cosmic"]=0;
+		this.modData('TypeChart', "psychic").damageTaken["Cosmic"]=0;
+				//end of season 5 type chart changes
 	}
  };
