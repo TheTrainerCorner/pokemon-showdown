@@ -169,6 +169,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Electric' && defender.types.includes('Ground')) {
+
 				this.debug('Teravolt nerf damaged');
 				return this.chainModify(0.5);
 			}

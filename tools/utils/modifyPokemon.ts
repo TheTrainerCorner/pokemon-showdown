@@ -117,8 +117,23 @@ export class ModifyPokemon {
 			remove(move: string) {
 				move = move.toLowerCase().replace(' ', '');
 				delete this._dex.modData('Learnsets', this._name).learnset[move];
+				this.removeFromPrevos(move);
 				return this;
 			}
+
+			private removeFromPrevos(move: string) {
+				const prevo = this._dex.modData('Pokedex', this._name).prevo;
+
+				if (!prevo) return;
+
+				const prevoLearnset = this._dex.modData('Learnsets', prevo).learnset;
+
+				if (!prevoLearnset[move]) return;
+				
+				delete prevoLearnset[move];
+				this.removeFromPrevos(move);
+			}
+			
 			public get pokemon() {
 				return this._pokemon;
 			}
