@@ -66,4 +66,18 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: -5003,
 		gen: 9,
 	},
+	barbaricite: {
+		name: "Barbaricite",
+		spritenum: -100,
+		megaStone: "Barbaracle-Mega",
+		megaEvolves: "Barbaracle",
+		itemUser: ["Barbaracle"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num:-5001,
+		gen: 10,
+		isNonstandard: "Past",	
+	}
 };

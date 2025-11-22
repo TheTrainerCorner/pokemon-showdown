@@ -330,7 +330,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.baseStats
 				.setHP(114)
 				.setATK(64)
-				.setSPA(110);
+				.setSPA(110)
+			.pokemon.abilities
+				.setAbility0('Triage');
 		new ModifyPokemon('Aurorus', this)
 			.baseStats
 				.setHP(123)
