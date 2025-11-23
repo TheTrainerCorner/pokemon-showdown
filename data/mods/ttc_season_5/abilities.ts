@@ -132,6 +132,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	// Mod Abilities
 	rockypayload: {
 		inherit: true,
+		onAnyDamage(damage, target, source, effect) {
+			if (effect && effect.name === 'Stealth Rock') {
+				if (!target.addVolatile('rockypayload')) {
+					this.add('-immune', target, '[from] ability: Rocky Payload');
+				}
+				return false;
+			}
+		}
 	},
 	roughskin: {
 		inherit: true,
@@ -179,10 +187,57 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	defeatist: {
 		inherit: true,
-		// Not adding this in till we talk about it.
+		onModifyAtkPriority: undefined,
+		onModifyAtk: undefined,
+		onModifySpAPriority: undefined,
+		onModifySpA: undefined,
+		onStart(pokemon) {
+			if (pokemon.side.totalFainted) {
+				this.add('-ability', pokemon, 'ability: Defeatist');
+				const fallen = Math.min(pokemon.side.totalFainted, 5);
+				this.add('-start', pokemon, `fallen${fallen}`, '[silent]');
+				this.effectState.fallen = fallen;
+			}
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, `fallen${this.effectState.fallen}`, '[silent]');
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.fallen) {
+				const powMod = [4915, 4424, 3981, 3583, 3225];
+				this.debug(`Defeatist weaken: ${powMod[this.effectState.fallen]}/4096`);
+				return this.chainModify(powMod[this.effectState.fallen], 4096);
+			}
+		},
+		desc: "This Pokemon deals 1.2x damage with damaging moves. Lose 10% Attack and Special Attack per ally fainted.",
+		shortDesc: "Deals 1.2x damage. Loses 10% Atk & SpA per ally fainted.",
+	},
+	filter: {
+		inherit: true,
+		onTryHit(target, source, move) {
+			if (target !== source && ['Poison', 'Rock'].includes(move.type)) {
+				if (!this.heal(target.baseMaxhp / 8)) {
+					this.add('-immune', target, '[from] ability: Filter');
+				}
+			}
+		},
+		desc: "Takes 3/4 supereffective damage; Poison & Rock attacks heal 1/8 max HP.",
+		shortDesc: "Takes 3/4 supereffective damage; Poison & Rock attacks heal 1/8 max HP.",
 	},
 	powerspot: {
 		inherit: true,
+		onResidual: undefined,
+		onResidualOrder: undefined,
+		onResidualSubOrder: undefined,
+		onBasePower(basePower, attacker, defender, move) {
+			return this.chainModify(1.3);
+		},
+		onAllyBasePower(basePower, attacker, defender, move) {
+			return this.chainModify(1.3);
+		},
+		desc: "This Pokemon and its allies have their base power multiplied by 1.3x.",
+		shortDesc: "This Pokemon and its allies have 1.3x base power.",
 	},
 	ballfetch: {
 		inherit: true,
