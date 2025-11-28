@@ -337,4 +337,15 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If Sandstorm is active, this Pokemon's Ground-, Rock-, and Steel-type attacks have their power multiplied by 1.5. This Pokemon takes no damage from Sandstorm.",
 		shortDesc: "This Pokemon's Ground/Rock/Steel attacks do 1.5x in Sandstorm; immunity to it.",
 	},
+	steadfast: {
+		inherit: true,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.target) {
+				const powMod = [4096, 4505, 4915, 5325, 5734, 6144];
+				const finalMod = powMod[this.effectState.target.steadfastBoosts] || 4096;
+				this.debug(`Steadfast boost: ${finalMod}/4096`);
+				return this.chainModify(finalMod, 4096);
+			}
+		}
+	},
 };
