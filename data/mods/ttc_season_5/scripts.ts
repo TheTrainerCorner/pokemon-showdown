@@ -2240,5 +2240,16 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData('TypeChart', "ground").damageTaken["Cosmic"]=0;
 		this.modData('TypeChart', "psychic").damageTaken["Cosmic"]=0;
 				//end of season 5 type chart changes
+		new ModifyPokemon('Cosmog', this)
+			.baseStats
+				.setHP(999)
+				.setATK(999)
+				.setDEF(999)
+				.setSPA(999)
+				.setSPD(999)
+				.setSPE(999)
+			.pokemon.learnset
+				.add('Explosion');
+		//haha panda funny star mon go boom
 	}
  };
