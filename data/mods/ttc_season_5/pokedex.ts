@@ -141,8 +141,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	eelektrossmega:{
 		num: 604,
-		name: "Elektross-Mega",
-		baseSpecies: "Elektross",
+		name: "Eelektross-Mega",
+		baseSpecies: "Eelektross",
 		forme: "Mega",
 		types: ["Electric", "Water"],
 		baseStats: {hp: 85, atk: 145, def: 80, spa: 135, spd: 90, spe: 80},
