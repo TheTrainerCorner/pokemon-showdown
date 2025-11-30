@@ -72,7 +72,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	dragalgemega:{
 		num: 884,
 		name: "Dragalge-Mega",
-		baseSpecies: "Dragagle",
+		baseSpecies: "Dragalge",
 		forme: "Mega",
 		types: ["Water", "Poison"],
 		baseStats: {hp: 75, atk: 85, def: 105, spa: 137, spd: 163, spe: 44},
