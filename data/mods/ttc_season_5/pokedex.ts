@@ -360,7 +360,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 192,
 		color: "Black",
 		eggGroups: ["Undiscovered"],
-		tags:["Fakemon","Has Back Sprite", "Paradox"],
+		tags:["Fakemon","Has Back Sprite"],
 	},
 	dienen: {
 		num: -5002,
@@ -373,6 +373,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		weightkg: 185,
 		color: "Pink",
 		eggGroups: ["Undiscovered"],
-		tags:["Fakemon","Has Back Sprite", "Paradox"],
+		tags:["Fakemon","Has Back Sprite"],
 	},
 }
