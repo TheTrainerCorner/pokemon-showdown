@@ -192,4 +192,39 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		desc: "Charges, then hits foe(s) turn 2. No charge if Tailwind is active. High crit ratio.",
 	},
+	cosmicterrain: {
+		inherit: true,
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source.hasItem('terrainextender')) {
+					return 8;
+				}
+
+				return 5;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Cosmic' || move.type === 'Rock') {
+					this.debug('cosmic terrain boost');
+					return this.chainModify([5325, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Cosmic Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Cosmic Terrain');
+				}
+			},
+			onModifyWeight(weighthg, pokemon) {
+				if (!pokemon.isGrounded) return;
+				pokemon.weighthg = Math.max(1, pokemon.weighthg - 1000);
+				return pokemon.weighthg;
+			},
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Cosmic Terrain');
+			}
+		}
+	},
 };
