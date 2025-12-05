@@ -81,7 +81,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "This Pokemon takes double damage from Dark-type moves and half damage from Special moves.",
 	},
 	stormbringer: {
-		name: 'Strombringer',
+		name: 'Stormbringer',
 		onStart(pokemon) {
 			this.field.setWeather('raindance');
 			this.field.setTerrain('electricterrain');
