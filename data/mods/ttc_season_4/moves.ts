@@ -20,7 +20,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			return null;
 		},
 		desc: "This attack charges on the first turn and executes on the second. If the user is holding a Power Herb or the terrain is Cosmic Terrain, the move completes in one turn.",
-		shortDesc: "Charges turn 1. Hits turn 2. No charge in Cosmic Terrain.",
+		shortDesc: "Charges SpA turn 1. Hits turn 2. No charge in Cosmic Terrain.",
 	},
 	swift: {
 		inherit: true,
