@@ -153,8 +153,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.damage(target.baseMaxhp / 16, target, source);
 			}
 		},
-		desc: "Contact moves from the user or target causes the target to lose 1/8 of their max HP.",
-		shortDesc: "Contact moves from the user or target cause the target to lose 1/8 of their max HP.",
+		desc: "Contact moves from the user or target causes the target to lose 1/16 of their max HP.",
+		shortDesc: "Contact moves from the user or target cause the target to lose 1/16 of their max HP.",
 	},
 	zenmode: {
 		inherit: true,
