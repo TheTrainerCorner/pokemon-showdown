@@ -610,6 +610,30 @@ export const Scripts: ModdedBattleScriptsData = {
 				.setSPA(90)
 				.setSPD(90)
 				.setSPE(90);
+		new ModifyPokemon('castformrainy', this)
+			.baseStats
+				.setHP(90)
+				.setATK(90)
+				.setDEF(90)
+				.setSPA(90)
+				.setSPD(90)
+				.setSPE(90);
+		new ModifyPokemon('castformsnowy', this)
+			.baseStats
+				.setHP(90)
+				.setATK(90)
+				.setDEF(90)
+				.setSPA(90)
+				.setSPD(90)
+				.setSPE(90);
+		new ModifyPokemon('castformsunny', this)
+			.baseStats
+				.setHP(90)
+				.setATK(90)
+				.setDEF(90)
+				.setSPA(90)
+				.setSPD(90)
+				.setSPE(90);
 		new ModifyPokemon('Celebi', this)
 			.learnset
 				.add('Forests Curse')
