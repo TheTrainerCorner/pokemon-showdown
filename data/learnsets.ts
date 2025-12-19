@@ -100749,4 +100749,14 @@ export const Learnsets: {[k: string]: LearnsetData} = {
 			{generation: 5, level: 47, moves: ["darkpulse", "flamethrower", "hyperbeam", "icebeam"]},
 		],
 	},
+	kirayami: {
+		learnset: {
+
+		},
+	},
+	dienen: {
+		learnset: {
+
+		},
+	}
 };

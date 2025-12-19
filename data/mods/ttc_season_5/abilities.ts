@@ -143,13 +143,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	roughskin: {
 		inherit: true,
-		onSourceDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target)) {
-				this.damage(target.baseMaxhp / 8, target, source);
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(source.baseMaxhp / 16, source, target);
 			}
 		},
-		desc: "Contact moves from the user or target causes the target to lose 1/8 of their max HP.",
-		shortDesc: "Contact moves from the user or target cause the target to lose 1/8 of their max HP.",
+		onSourceDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				this.damage(target.baseMaxhp / 16, target, source);
+			}
+		},
+		desc: "Contact moves from the user or target causes the target to lose 1/16 of their max HP.",
+		shortDesc: "Contact moves from the user or target cause the target to lose 1/16 of their max HP.",
 	},
 	zenmode: {
 		inherit: true,
