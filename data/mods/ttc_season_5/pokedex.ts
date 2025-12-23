@@ -4,7 +4,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		name: "Barbaracle-Mega",
 		baseSpecies: "Barbaracle",
 		forme: "Mega",
-		types: ["Rock", "Water"],
+		types: ["Fighting", "Rock"],
 		baseStats: {hp: 72, atk: 160, def: 135, spa: 69, spd: 111, spe: 88},
 		abilities: {0: "Tough Claws"},
 		heightm: 2.2,
@@ -184,7 +184,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	floettemega:{
 		num: 670,
 		name: "Floette-Mega",
-		baseSpecies: "Floette",
+		baseSpecies: "Floette-Eternal",
 		forme: "Mega",
 		types: ["Fairy"],
 		baseStats: {hp: 74, atk: 85, def: 87, spa: 155, spd: 148, spe: 102},

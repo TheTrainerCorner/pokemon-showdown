@@ -2417,7 +2417,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				.add('Psybeam')
 				.add('Psychic Terrain')
 				.add('Skill Swap')
-				.add('Synchronoize')
+				.add('Synchronoise')
 				.add('Trick Room')
 				.add('Psystrike')
 				.add('Eerie Spell')
