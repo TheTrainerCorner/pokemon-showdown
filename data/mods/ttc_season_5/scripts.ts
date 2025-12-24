@@ -1823,6 +1823,9 @@ export const Scripts: ModdedBattleScriptsData = {
 			.learnset	
 				.add('Pixie Burst')
 				.remove('Moonblast');
+		new ModifyPokemon('Cutiefly', this)
+			.learnset
+				.remove('Moonblast');
 		new ModifyPokemon('Roaring Moon', this)
 			.baseStats
 				.setATK(137)
