@@ -353,4 +353,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		}
 	},
+	moldbreaker: {
+		inherit: true,
+		shortDesc: "Ignores the effects of Moves and Abilities; Does 1.2x damage to Water-type Pokemon.",
+	}
 };
