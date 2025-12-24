@@ -227,4 +227,28 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			}
 		}
 	},
+	doomdesire: {
+		inherit: true,
+		onTryHit(source, target) {
+			if (!target.side.addSlotCondition(target, 'futuremove')) return false;
+			Object.assign(target.side.slotConditions[target.position]['futuremove'], {
+				move: 'doomdesire',
+				source: source,
+				moveData: {
+					id: 'doomdesire',
+					name: "Doom Desire",
+					accuracy: 100,
+					basePower: 140,
+					category: "Special",
+					priority: 0,
+					flags: { futuremove: 1 },
+					effectType: 'Move',
+					type: 'Cosmic',
+				},
+			});
+			this.add('-start', source, 'Doom Desire');
+			return this.NOT_FAIL;
+		},
+		type: 'Cosmic',
+	},
 };
