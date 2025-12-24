@@ -344,14 +344,27 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	steadfast: {
 		inherit: true,
-		onBasePower(basePower, attacker, defender, move) {
-			if (this.effectState.target) {
-				const powMod = [4096, 4505, 4915, 5325, 5734, 6144];
-				const finalMod = powMod[this.effectState.target.steadfastBoosts] || 4096;
-				this.debug(`Steadfast boost: ${finalMod}/4096`);
-				return this.chainModify(finalMod, 4096);
+		onStart(pokemon) {
+			if (pokemon.side.totalFainted) {
+				this.add('-ability', pokemon, 'Steadfast');
+				const fallen = Math.min(pokemon.side.totalFainted, 5);
+				this.add('-start', pokemon, `fallen${fallen}`, '[silent]');
+				this.effectState.fallen = fallen;
 			}
-		}
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, `fallen${this.effectState.fallen}`, '[silent]');
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.fallen) {
+				const powMod = [6144, 5734, 5325, 4915, 4505, 4096];
+				this.debug(`Steadfast boost: ${powMod[this.effectState.fallen]}/4096`);
+				return this.chainModify(powMod[this.effectState.fallen], 4096);
+			}
+		},
+		desc: "This Pokemon's moves have their power multiplied by 1+(X*0.1), where X is the total number of alive Pokemon on the user's side when this Ability became active, and X cannot be greater than 5.",
+		shortDesc: "This Pokemon's moves have 10% more power for each alive ally, up to 5 allies.",
 	},
 	moldbreaker: {
 		inherit: true,

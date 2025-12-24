@@ -1768,6 +1768,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	steadfast: {
 		name: "Steadfast",
 		shortDesc: "If this Pokemon flinches, its Speed is raised by 1 stage.",
+		activate: "  [POKEMON] gained strength from the living!", // TTC Season 5 Change
 	},
 	steamengine: {
 		name: "Steam Engine",
