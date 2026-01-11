@@ -251,4 +251,64 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 		type: 'Cosmic',
 	},
+	// Fixing moves
+	myriadterrain: {
+		inherit: true,
+		condition: {
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onStart() {
+				this.add('-clearallboost');
+				for (const pokemon of this.getAllActive()) {
+					pokemon.clearBoosts();
+				}
+			},
+			onTryBoost(boost, target, source, effect) {
+				if (!target.isGrounded || target.isSemiInvulnerable()) return;
+				// Prevent the activation of boosting by moves
+				// Items and Abilities are not restricted by the terrain.
+				
+				let i: BoostID;
+				let showMsg = false;
+				for (i in boost) {
+					if (boost[i]! > 0) {
+						delete boost[i];
+						showMsg = true;
+					}
+				}
+
+				if (effect.effectType === "Item" || effect.effectType === "Ability") return;
+				if (!showMsg) return;
+				
+				this.add('-activate', target, 'move: Myriad Terrain');
+				return null;
+			},
+			onBasePowerPriority: 6,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Bug' && attacker.isGrounded()) {
+					this.debug('myriad terrain boost');
+					return this.chainModify([5325, 4096]);
+				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect?.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Myriad Terrain', '[from] ability: ' + effect.name, '[of] ' + source);
+				} else {
+					this.add('-fieldstart', 'move: Myriad Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Myriad Terrain');
+			},
+			shortDesc: "5 turns. Grounded Pokemon: + Bug power, resets all stat boosts. Prevents positive stat boosts.",
+			desc: "For 5 turns, grounded Pokemon have their stat boosts reset and cannot gain positive stat boosts. Bug-type moves used by grounded Pokemon have their power multiplied by 1.3.",
+		},
+	},
 };

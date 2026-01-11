@@ -416,4 +416,17 @@ export const Items: {[k: string]: ModdedItemData} = {
 		gen: 10,
 		isNonstandard: "Past",
 	},
+
+	// Fixing Items
+	waveincense: {
+		inherit: true,
+		onDamagingHit(damage, target, source, move) {
+			if (move.category !== 'Special') return;
+			if (target.itemState.activated) return;
+			
+			source.addVolatile('partiallytrapped', target);
+			target.useItem();
+			target.itemState.activated = true;
+		},
+	},
 };

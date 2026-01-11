@@ -2242,4 +2242,12 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+
+	// Custom Text
+	myriadterrain: {
+		name: 'Myriad Terrain',
+		desc: "For 5 turns, the terrain becoms Myriad Terrain. At the start of the effect, resets all stat boosts. During the effect, the power of Bug-type attacks made by grounded Pokemon is multipled by 1.3 and grounded Pokemon cannot gain any stat boosts from moves. Items and Abilities are not under this affect. Fails if the current terrain is Myriad Terrain.",
+		shortDesc: "5 turns. Grounded: +Bug power, resets all stat boosts, cannot gain stat boost via moves.",
+		
+	},
 };
