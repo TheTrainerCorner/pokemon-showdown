@@ -68,10 +68,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	enlightenment: {
 		name: 'Enlightenment',
-		onSourceModifyDamage(relayVar, source, target, move) {
+		// onSourceModifyDamage(relayVar, source, target, move) {
+		// 	let mod = 1;
+		// 	if (move.type === 'Dark') mod *= 2;
+		// 	if (move.category === 'Special') mod /2;
+		// 	return this.chainModify(mod);
+		// },
+		onSourceModifyAtk(relayVar, source, target, move) {
 			let mod = 1;
 			if (move.type === 'Dark') mod *= 2;
-			if (move.category === 'Special') mod /2;
+			return this.chainModify(mod);
+		},
+		onSourceModifySpA(relayVar, source, target, move) {
+			let mod = 1;
+			if (move.type === 'Dark') mod *= 2;
+			else if (move.category === 'Special') mod /= 2;
 			return this.chainModify(mod);
 		},
 		isBreakable: true,
