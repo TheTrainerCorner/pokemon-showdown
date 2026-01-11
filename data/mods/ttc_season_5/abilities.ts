@@ -231,7 +231,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	filter: {
 		inherit: true,
-		onTryHit(target, source, move) {
+		// onTryHit(target, source, move) {
+		// 	if (target !== source && ['Poison', 'Rock'].includes(move.type)) {
+		// 		if (!this.heal(target.baseMaxhp / 8)) {
+		// 			this.add('-immune', target, '[from] ability: Filter');
+		// 		}
+		// 	}
+		// },
+		onSourceTryHit(target, source, move) {
 			if (target !== source && ['Poison', 'Rock'].includes(move.type)) {
 				if (!this.heal(target.baseMaxhp / 8)) {
 					this.add('-immune', target, '[from] ability: Filter');
