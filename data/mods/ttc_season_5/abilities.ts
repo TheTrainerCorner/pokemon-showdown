@@ -82,7 +82,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onSourceModifySpA(relayVar, source, target, move) {
 			let mod = 1;
 			if (move.type === 'Dark') mod *= 2;
-			else if (move.category === 'Special') mod /= 2;
+			else mod /= 2;
 			return this.chainModify(mod);
 		},
 		isBreakable: true,
@@ -380,5 +380,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	moldbreaker: {
 		inherit: true,
 		shortDesc: "Ignores the effects of Moves and Abilities; Does 1.2x damage to Water-type Pokemon.",
-	}
+	},
+	surgesurfer: {
+		inherit: true,
+		shortDesc: "If Terrain, this Pokemon's Speed is 1.3x."
+	},
 };
