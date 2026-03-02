@@ -17,6 +17,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		inherit: true,
 		onModifyAtk: undefined,
 		onModifySpA: undefined,
+		onSourceModifyDamage: undefined,
 		onBasePowerPriority: 21,
 		onBasePower(basePower, pokemon) {
 			let boosted = true;
