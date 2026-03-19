@@ -467,8 +467,9 @@ export abstract class ProcessManager<T extends ProcessWrapper = ProcessWrapper> 
 		if (!this.crashTime) this.crashTime = now;
 		this.crashRespawnCount += 1;
 		// Notify any global crash logger
-		void Promise.reject(
-			new Error(`Process ${this.basename} ${process.getProcess().pid} crashed and had to be restarted`)
+		global.Monitor?.crashlog?.(
+			new Error(`Process ${this.basename} ${process.getProcess().pid} crashed and had to be restarted`),
+			'a process manager'
 		);
 		this.releasingProcesses.push(process);
 		this.crashedProcesses.push(process);
