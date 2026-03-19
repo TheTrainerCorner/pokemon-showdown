@@ -1,0 +1,15 @@
+.git
+node_modules
+dist
+logs
+databases/*.db*
+databases/*.db-journal
+tmp
+test
+.vs
+.idea
+npm-debug.log
+.eslintcache
+.eslintcache-no-types
+*.tsbuildinfo
+**/sourceMaps
