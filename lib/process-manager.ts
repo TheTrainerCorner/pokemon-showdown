@@ -592,7 +592,9 @@ export class QueryProcessManager<T = string, U = string> extends ProcessManager<
 
 			void Promise.resolve(this._query(JSON.parse(message))).then(
 				response => process.send!(`${taskId}\n${JSON.stringify(response)}`)
-			);
+			).catch(err => {
+				process.send!(`THROW\n${err?.stack || err}`);
+			});
 		});
 		process.on('disconnect', () => {
 			process.exit();
