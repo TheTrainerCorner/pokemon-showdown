@@ -200,7 +200,7 @@ export class QueryProcessWrapper<T, U> implements ProcessWrapper {
 			// already destroyed
 			return;
 		}
-		this.process.disconnect();
+		if (this.process.connected) this.process.disconnect();
 		for (const resolver of this.pendingTasks.values()) {
 			// maybe we should track reject functions too...
 			resolver('' as any);
@@ -404,7 +404,7 @@ export class RawProcessWrapper implements ProcessWrapper, StreamWorker {
 			return;
 		}
 		void this.stream.destroy();
-		this.process.disconnect();
+		if (this.process.connected) this.process.disconnect();
 		return;
 	}
 }
