@@ -212,7 +212,7 @@ export const PrivateMessages = new class {
 	}
 };
 
-if (Config.usesqlite) {
+if (global.Config?.usesqlite) {
 	if (!process.send) {
 		PM.spawn(Config.pmprocesses || 1);
 		// clear super old pms on startup
