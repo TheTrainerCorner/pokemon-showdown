@@ -20,6 +20,8 @@ RUN npm run build
 # Remove dev dependencies
 RUN npm prune --production
 
+RUN mkdir -p /app/logs
+
 EXPOSE 8000
 
 CMD ["node", "pokemon-showdown", "start"]
