@@ -16,6 +16,7 @@ RUN npm ci --ignore-scripts
 # Copy source and build
 COPY . .
 RUN npm run build
+RUN npm rebuild better-sqlite3
 
 # Remove dev dependencies
 RUN npm prune --production
